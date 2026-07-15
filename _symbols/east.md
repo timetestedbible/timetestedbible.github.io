@@ -92,27 +92,27 @@ definitions:
 
 # East
 
-## Approved Definition
+## Summary
 
 **Where beginnings and returns come from — the front. Hebrew qedem joins “east” with “before” and “ancient”: Eden is planted eastward; the sanctuary's front door is its east gate; God's glory returns through that gate; and Christ's coming moves from east to [west](/research/symbols/west/). The compass direction is the literal image beneath the symbol.**
 
 The fuller book and notebook trail is available in [The Fall of Babylon](/books/symbolic-language/the-fall-of-babylon/), [research-directions.md](/books/symbolic-language/research/research-directions.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Where beginnings and returns come from — the front. Hebrew qedem joins “east” with “before” and “ancient”: Eden is planted eastward; the sanctuary's front door is its east gate; God's glory returns through that gate; and Christ's coming moves from east to [west](/research/symbols/west/). The compass direction is the literal image beneath the symbol.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **east** begins: “The point in the heavens where the sun is seen to rise at the equinox, or the corresponding point on the earth; that one of the four cardinal points of the compass which is in a direction at right angles to that of north and south, and which is toward the right hand of one who faces the north; the point directly opposite to the west.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -142,7 +142,7 @@ Webster's 1913 entry for **east** begins:
 
 > “East, n. Etym: [OE. est, east, AS. eást; akin to D. oost, oosten, OHG. , G. ost, osten, Icel. austr, Sw. ost, Dan. öst, östen, Lith. auszra dawn, L. aurora (for ausosa), Gr. ushas; cf. Skr. ush to burn, L. urere. Aurora, Easter, Sterling.] 1. The point in the heavens where the sun is seen to rise at the equinox, or the corresponding point on the earth; that one of the four cardinal points of the compass which is in a direction at right angles to that of north and south, and which is toward the right hand of one who faces the north; the point directly opposite to the west. The east began kindle. E. Everett.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -150,15 +150,15 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Where beginnings and returns come from — the front. Hebrew qedem joins “east” with “before” and “ancient”: Eden is planted eastward; the sanctuary's front door is its east gate; God's glory returns through that gate; and Christ's coming moves from east to [west](/research/symbols/west/). The compass direction is the literal image beneath the symbol.
+1. **Core sense:** Where beginnings and returns come from — the front. Hebrew qedem joins “east” with “before” and “ancient”: Eden is planted eastward; the sanctuary's front door is its east gate; God's glory returns through that gate; and Christ's coming moves from east to [west](/research/symbols/west/). The compass direction is the literal image beneath the symbol.
 2. **Defining witnesses:** Gen 2:8; Ex 27:13-16; Ezek 43:1-4; 46:1-3; Matt 24:27
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
 ## Competing Definitions Tested
 
-The approved definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
+The definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
 
 ## Relationship to Other Symbols
 
@@ -227,4 +227,4 @@ Related definitions used by this entry: [West](/research/symbols/west/).
 
 **Where beginnings and returns come from — the front. Hebrew qedem joins “east” with “before” and “ancient”: Eden is planted eastward; the sanctuary's front door is its east gate; God's glory returns through that gate; and Christ's coming moves from east to [west](/research/symbols/west/). The compass direction is the literal image beneath the symbol.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

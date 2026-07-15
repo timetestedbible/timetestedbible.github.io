@@ -80,27 +80,27 @@ definitions:
 
 # Wall
 
-## Approved Definition
+## Summary
 
 **Salvation — the [covenant](/research/symbols/covenant/)'s enclosure: “thou shalt call thy walls Salvation”; God Himself “a wall of fire round about.” The counterfeit is self-built — wealth's high wall “in his own conceit,” and the whitewashed wall of false peace that the storm flattens.**
 
 The fuller book and notebook trail is available in [The Parable of the Vineyard](/books/symbolic-language/the-parable-of-the-vineyard/), [research-wall.md](/books/symbolic-language/research/research-wall.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Salvation — the [covenant](/research/symbols/covenant/)'s enclosure: “thou shalt call thy walls Salvation”; God Himself “a wall of fire round about.” The counterfeit is self-built — wealth's high wall “in his own conceit,” and the whitewashed wall of false peace that the storm flattens.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **wall** begins: “Wall, n. (Naut.) Defn: A kind of knot often used at the end of a rope; a wall knot; a wale.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -130,7 +130,7 @@ Webster's 1913 entry for **wall** begins:
 
 > “Wall, n. (Naut.) Defn: A kind of knot often used at the end of a rope; a wall knot; a wale. Wall knot, a knot made by unlaying the strands of a rope, and making a bight with the first strand, then passing the second over the end of the first, and the third over the end of the second and through the bight of the first; a wale knot. Wall knots may be single or double, crowned or double-crowned.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -138,9 +138,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Salvation — the [covenant](/research/symbols/covenant/)'s enclosure: “thou shalt call thy walls Salvation”; God Himself “a wall of fire round about.” The counterfeit is self-built — wealth's high wall “in his own conceit,” and the whitewashed wall of false peace that the storm flattens.
+1. **Core sense:** Salvation — the [covenant](/research/symbols/covenant/)'s enclosure: “thou shalt call thy walls Salvation”; God Himself “a wall of fire round about.” The counterfeit is self-built — wealth's high wall “in his own conceit,” and the whitewashed wall of false peace that the storm flattens.
 2. **Defining witnesses:** Isa 60:18; Zech 2:5; Prov 18:11; Ezek 13:10-15
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -241,4 +241,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/).
 
 **Salvation — the [covenant](/research/symbols/covenant/)'s enclosure: “thou shalt call thy walls Salvation”; God Himself “a wall of fire round about.” The counterfeit is self-built — wealth's high wall “in his own conceit,” and the whitewashed wall of false peace that the storm flattens.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

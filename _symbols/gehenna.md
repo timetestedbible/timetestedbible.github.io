@@ -104,27 +104,27 @@ definitions:
 
 # Gehenna / Valley of Hinnom (“hell”)
 
-## Approved Definition
+## Summary
 
 **A valley-trial carried through to a destructive verdict. At Jerusalem's boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from [Sheol](/research/symbols/sheol/), which holds the dead.**
 
 The fuller book and notebook trail is available in [Heaven and Hell](/books/symbolic-language/heaven-and-hell/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A valley-trial carried through to a destructive verdict. At Jerusalem's boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from [Sheol](/research/symbols/sheol/), which holds the dead.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **The valley at Jerusalem's boundary where children were sacrificed in counterfeit worship; Josiah defiled its Topheth, and Jeremiah called it the coming Valley of Slaughter.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **gehenna** begins: “(Jewish Hist.) Defn: The valley of Hinnom, near Jerusalem, where some of the Israelites sacrificed their children to Moloch, which, on this account, was afterward regarded as a place of abomination, and made a receptacle for all the refuse of the city, perpetual fires being kept up in order to prevent pestilential effluvia.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -154,7 +154,7 @@ Webster's 1913 entry for **gehenna** begins:
 
 > “Ge*hen”na, n. Etym: [L. Gehenna, Gr. G.] (Jewish Hist.) Defn: The valley of Hinnom, near Jerusalem, where some of the Israelites sacrificed their children to Moloch, which, on this account, was afterward regarded as a place of abomination, and made a receptacle for all the refuse of the city, perpetual fires being kept up in order to prevent pestilential effluvia. In the New Testament the name is transferred, by an easy metaphor, to Hell. The pleasant valley of Hinnom. Tophet thence And black Gehenna called, the type of Hell. Milton.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -162,9 +162,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A valley-trial carried through to a destructive verdict. At Jerusalem's boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from [Sheol](/research/symbols/sheol/), which holds the dead.
+1. **Core sense:** A valley-trial carried through to a destructive verdict. At Jerusalem's boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from [Sheol](/research/symbols/sheol/), which holds the dead.
 2. **Defining witnesses:** Josh 15:8; 18:16; 2 Kgs 23:10; Jer 7:31-32; 19:2-6; Matt 10:28; Isa 66:24; Mark 9:43-48
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -196,4 +196,4 @@ No exact KJV English-form occurrences were found under the display forms searche
 
 **A valley-trial carried through to a destructive verdict. At Jerusalem's boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from [Sheol](/research/symbols/sheol/), which holds the dead.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

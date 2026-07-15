@@ -80,28 +80,28 @@ definitions:
 
 # Elam
 
-## Approved Definition
+## Summary
 
 **[Babel](/research/symbols/babel/)’s confederate — allied with Shinar in the first war and judged under Babylon's sentence. Its broken [bow](/research/symbols/bow/) introduces Babylon's fall.**
 > *"Thus saith the LORD of hosts; Behold, I will **break the bow** of Elam, the chief of their might."* — Jer 49:35
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **[Babel](/research/symbols/babel/)’s confederate — allied with Shinar in the first war and judged under Babylon's sentence. Its broken [bow](/research/symbols/bow/) introduces Babylon's fall.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 No exact Webster headword has yet been matched to **Elam**.
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -335,7 +335,7 @@ No reciprocal opposite is assigned to this entry.
 
 **[Babel](/research/symbols/babel/)’s confederate — allied with Shinar in the first war and judged under Babylon's sentence. Its broken [bow](/research/symbols/bow/) introduces Babylon's fall.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

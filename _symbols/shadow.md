@@ -108,28 +108,28 @@ definitions:
 
 The fuller book and notebook trail is available in [Shadow](/books/symbolic-language/shadow/).
 
-## Approved Definition
+## Summary
 
 **An object or activity shaped like the substance casting it, marking the reach and boundary of that substance's covering. The appointed times and holy assemblies are the Shadow of Christ's substance; the [Shadow of Death](/research/symbols/shadow-of-death/) is its opposite.**
 > *"He that dwelleth in the secret place of the Most High shall abide under the **shadow** of the Almighty."* — Ps 91:1
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **An object or activity shaped like the substance casting it, marking the reach and boundary of that substance's covering. The appointed times and holy assemblies are the Shadow of Christ's substance; the [Shadow of Death](/research/symbols/shadow-of-death/) is its opposite.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **The shaped area of shade made when a body intercepts light; its outline resembles the body casting it and may shelter whatever stands within it.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **shadow** begins: “Shade within defined limits; obscurity or deprivation of light, apparent on a surface, and representing the form of the body which intercepts the rays of light; as, the shadow of a man, of a tree, or of a tower.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## How the Definition Was Refined
 
@@ -334,7 +334,7 @@ Webster's 1913 entry for **shadow** begins:
 
 > “Shad”ow, n. Etym: [Originally the same word as shade. sq. root162. See Shade.] 1. Shade within defined limits; obscurity or deprivation of light, apparent on a surface, and representing the form of the body which intercepts the rays of light; as, the shadow of a man, of a tree, or of a tower. See the Note under Shade, n., 1.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -355,7 +355,7 @@ and boundary of that substance's covering. The appointed times and holy
 assemblies are the Shadow of Christ's substance; the [Shadow of
 Death](/research/symbols/shadow-of-death/) is its opposite.**
 
-This is the approved glossary wording. It keeps shelter as a genuine effect
+This is the glossary wording. It keeps shelter as a genuine effect
 while allowing the substance to determine whether its shadow ends in life or
 death.
 

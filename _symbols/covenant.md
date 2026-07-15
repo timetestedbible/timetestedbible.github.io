@@ -92,27 +92,27 @@ definitions:
 
 # Covenant
 
-## Approved Definition
+## Summary
 
 **The binding word by which a head establishes and governs a relationship through law, promises, and judgments. Unlike a contract among autonomous equals, those who enter a covenant come under its head and terms. God expressly calls the Ten Commandments His covenant; it is spoken, commanded, written, entered, cut in blood, kept or broken, and renewed by writing its law upon the heart.**
 
 The fuller book and notebook trail is available in [The Name](/books/symbolic-language/the-name/), [Gospel](/books/symbolic-language/gospel/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **The binding word by which a head establishes and governs a relationship through law, promises, and judgments. Unlike a contract among autonomous equals, those who enter a covenant come under its head and terms. God expressly calls the Ten Commandments His covenant; it is spoken, commanded, written, entered, cut in blood, kept or broken, and renewed by writing its law upon the heart.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **covenant** begins: “A mutual agreement of two or more persons or parties, or one of the stipulations in such an agreement.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -142,7 +142,7 @@ Webster's 1913 entry for **covenant** begins:
 
 > “Cov”e*nant (kv”-nant), n. Etym: [OF. covenant, fr. F. & OF. convenir to agree, L. convenire. See Convene.] 1. A mutual agreement of two or more persons or parties, or one of the stipulations in such an agreement. Then Jonathan and David made a covenant. 1 Sam. xviiii. 3. Let there be covenants drawn between us. Shak. If we conclude a peace, It shall be with such strict and severe covenants As little shall the Frenchmen gain thereby. Shak.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -150,9 +150,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The binding word by which a head establishes and governs a relationship through law, promises, and judgments. Unlike a contract among autonomous equals, those who enter a covenant come under its head and terms. God expressly calls the Ten Commandments His covenant; it is spoken, commanded, written, entered, cut in blood, kept or broken, and renewed by writing its law upon the heart.
+1. **Core sense:** The binding word by which a head establishes and governs a relationship through law, promises, and judgments. Unlike a contract among autonomous equals, those who enter a covenant come under its head and terms. God expressly calls the Ten Commandments His covenant; it is spoken, commanded, written, entered, cut in blood, kept or broken, and renewed by writing its law upon the heart.
 2. **Defining witnesses:** Ex 24:7-8; Deut 4:13; 29:10-13; 2 Kgs 11:17; Jer 31:31-33; Heb 8:10
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -249,4 +249,4 @@ This definition does not depend on another glossary term.
 
 **The binding word by which a head establishes and governs a relationship through law, promises, and judgments. Unlike a contract among autonomous equals, those who enter a covenant come under its head and terms. God expressly calls the Ten Commandments His covenant; it is spoken, commanded, written, entered, cut in blood, kept or broken, and renewed by writing its law upon the heart.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

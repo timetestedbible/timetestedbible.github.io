@@ -74,7 +74,7 @@ definitions:
 
 # Tartarus (*tartaroō*)
 
-## Approved Definition
+## Summary
 
 **To cast sinning angels into Tartarus: confinement in chains of darkness while they await judgment. The word does not name the grave of the human dead or [Gehenna](/research/symbols/gehenna/)'s destructive verdict.**
 Peter uses *tartaroō* once. The verse identifies its subjects, their present
@@ -83,17 +83,17 @@ and reserved for judgment (2 Pet 2:4). Jude 6 supplies the close parallel:
 angels who left their proper habitation are kept in chains under darkness
 until the judgment of the great day.
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *Not applicable. This is a recovered biblical word, not a separate symbol.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **To cast sinning angels into Tartarus: confinement in chains of darkness while they await judgment. The word does not name the grave of the human dead or [Gehenna](/research/symbols/gehenna/)'s destructive verdict.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry places Tartarus beneath Hades in Greek poetry and notes
 its later use for the punishment of wicked spirits or, more generally, the

@@ -103,27 +103,27 @@ usage_examples:
 
 # Stars
 
-## Approved Definition
+## Summary
 
 **The righteous, who rule the [night](/research/symbols/night/) with the Son — “they that be wise shall shine… as the stars for ever”; the twelve stars are the twelve tribes, gathered into the twelve constellations, the Mazzaroth.**
 
 The fuller book and notebook trail is available in [Sun, Moon & Stars](/books/symbolic-language/sun-moon-and-stars/), [research-sun-moon-stars.md](/books/symbolic-language/research/research-sun-moon-stars.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The righteous, who rule the [night](/research/symbols/night/) with the Son — “they that be wise shall shine… as the stars for ever”; the twelve stars are the twelve tribes, gathered into the twelve constellations, the Mazzaroth.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **Lights in the firmament appointed to give light, rule the night, mark signs and seasons, and move in ordered courses.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **star** begins: “One of the innumerable luminous bodies seen in the heavens; any heavenly body other than the sun, moon, comets, and nebulæ.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -147,7 +147,7 @@ Webster's 1913 entry for **star** begins:
 
 > “Icel. stjarna, Sw. stjerna, Dan. stierne, Goth. staírno, Armor. & Corn. stern, L. stella, Gr. star; perhaps from a root meaning, to seater, Skr. st, L. sternere (cf. Stratum), and originally applied to the stars as beingstrewn over the sky, or as beingscatterers or spreaders of light. *296. Cf. Aster, Asteroid, Constellation, Disaster, Stellar.] 1. One of the innumerable luminous bodies seen in the heavens; any heavenly body other than the sun, moon, comets, and nebulæ. His eyen twinkled in his head aright, As do the stars in the frosty night. Chaucer. Note: The stars are distinguished as planets, and fixed stars. See Planet, Fixed stars under Fixed, and Magnitude of a star under Magnitude.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -155,9 +155,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The righteous, who rule the [night](/research/symbols/night/) with the Son — “they that be wise shall shine… as the stars for ever”; the twelve stars are the twelve tribes, gathered into the twelve constellations, the Mazzaroth.
+1. **Core sense:** The righteous, who rule the [night](/research/symbols/night/) with the Son — “they that be wise shall shine… as the stars for ever”; the twelve stars are the twelve tribes, gathered into the twelve constellations, the Mazzaroth.
 2. **Defining witnesses:** Dan 12:3; Ps 136:9; Gen 37:9; Rev 12:1; Job 38:32
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -240,4 +240,4 @@ Related definitions used by this entry: [night](/research/symbols/night/).
 
 **The righteous, who rule the [night](/research/symbols/night/) with the Son — “they that be wise shall shine… as the stars for ever”; the twelve stars are the twelve tribes, gathered into the twelve constellations, the Mazzaroth.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

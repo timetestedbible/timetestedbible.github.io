@@ -71,28 +71,28 @@ definitions:
 
 # Jacob
 
-## Approved Definition
+## Summary
 
 **The crooked, supplanting [covenant](/research/symbols/covenant/) man or people before God gives the transformed [Name Israel](/research/symbols/new/).**
 > *"And he said, Thy name shall be called no more **Jacob**, but $[israel]: for as a prince hast thou power with God and with men, and hast prevailed."* — Gen 32:28
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The crooked, supplanting [covenant](/research/symbols/covenant/) man or people before God gives the transformed [Name Israel](/research/symbols/new/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **jacob** begins: “A Hebrew patriarch (son of Isaac, and ancestor of the Jews), who in a vision saw a ladder reaching up to heaven (Gen. xxviii. 12); -- also called Israel.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -233,7 +233,7 @@ Webster's 1913 entry for **jacob** begins:
 
 > “xxviii. 12); -- also called Israel. And Jacob said . . . with my staff I passed over this Jordan, and now I am become two bands. Gen. xxxii. 9, 10. Thy name shall be called no more Jacob, but Israel. Gen. xxxii. 28. Jacob's ladder. (a) (Bot.) A perennial herb of the genus Polemonium (P. coeruleum), having corymbs of drooping flowers, usually blue. Gray. (b) (Naut.) A rope ladder, with wooden steps, for going aloft. R. H. Dana, Jr. (c) (Naut.) A succession of short cracks in a defective spar. -- Jacob's membrane. See Retina. -- Jacob's staff. (a) A name given to many forms of staff or weapon, especially in the Middle Ages; a pilgrim's staff. [Obs.] Spenser. (b) (Surveying) See under Staff.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -324,7 +324,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The crooked, supplanting [covenant](/research/symbols/covenant/) man or people before God gives the transformed [Name Israel](/research/symbols/new/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

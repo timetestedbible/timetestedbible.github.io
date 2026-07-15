@@ -78,27 +78,27 @@ definitions:
 
 # Barley
 
-## Approved Definition
+## Summary
 
 **The firstfruits grain — humble, reaped in spring, and presented before the LORD. Its waved sheaf points to Christ risen as the firstfruits.**
 
 The fuller book and notebook trail is available in [Grass](/books/symbolic-language/grass/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The firstfruits grain — humble, reaped in spring, and presented before the LORD. Its waved sheaf points to Christ risen as the firstfruits.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **barley** begins: “(Bot.) Defn: A valuable grain, of the family of grasses, genus Hordeum, used for food, and for making malt, from which are prepared beer, ale, and whisky.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -122,7 +122,7 @@ Webster's 1913 entry for **barley** begins:
 
 > “Bar”ley, n. Etym: [OE. barli, barlich, AS. bærlic; bere barley + lic (which is prob. the same as E. like, adj., or perh. a form of AS. leac leek). AS. bere is akin to Icel, barr barley, Goth. barizeins made of barley, L. far spelt; cf. W. barlys barley, bara bread. Farina, 6th Bear.] (Bot.) Defn: A valuable grain, of the family of grasses, genus Hordeum, used for food, and for making malt, from which are prepared beer, ale, and whisky. Barley bird (Zoöl.), the siskin. -- Barley sugar, sugar boiled till it is brittle (formerly with a decoction of barley) and candied. -- Barley water, a decoction of barley, used in medicine, as a nutritive and demulcent.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -130,9 +130,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The firstfruits grain — humble, reaped in spring, and presented before the LORD. Its waved sheaf points to Christ risen as the firstfruits.
+1. **Core sense:** The firstfruits grain — humble, reaped in spring, and presented before the LORD. Its waved sheaf points to Christ risen as the firstfruits.
 2. **Defining witnesses:** Ex 9:31; Lev 23:10; Ruth 1:22; 2 Kgs 4:42; 1 Cor 15:20
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -203,4 +203,4 @@ This definition does not depend on another glossary term.
 
 **The firstfruits grain — humble, reaped in spring, and presented before the LORD. Its waved sheaf points to Christ risen as the firstfruits.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

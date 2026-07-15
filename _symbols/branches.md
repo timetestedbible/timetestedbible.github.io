@@ -60,27 +60,27 @@ definitions:
 
 # Branches
 
-## Approved Definition
+## Summary
 
 **The members of a nation — broken off, or [grafted](/research/symbols/grafting/) in, while the [tree](/research/symbols/tree/) itself stands.**
 
 The fuller book and notebook trail is available in [Trees](/books/symbolic-language/trees/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The members of a nation — broken off, or [grafted](/research/symbols/grafting/) in, while the [tree](/research/symbols/tree/) itself stands.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 No exact Webster headword has yet been matched to **Branches**.
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -100,9 +100,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The members of a nation — broken off, or [grafted](/research/symbols/grafting/) in, while the [tree](/research/symbols/tree/) itself stands.
+1. **Core sense:** The members of a nation — broken off, or [grafted](/research/symbols/grafting/) in, while the [tree](/research/symbols/tree/) itself stands.
 2. **Defining witnesses:** Rom 11:17
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -173,4 +173,4 @@ Related definitions used by this entry: [grafted](/research/symbols/grafting/), 
 
 **The members of a nation — broken off, or [grafted](/research/symbols/grafting/) in, while the [tree](/research/symbols/tree/) itself stands.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

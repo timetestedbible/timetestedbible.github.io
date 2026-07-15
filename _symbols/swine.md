@@ -93,27 +93,27 @@ definitions:
 
 # Swine (pig, boar, sow)
 
-## Approved Definition
+## Summary
 
 **An unclean [Beast](/research/symbols/beast/) — a people or kingdom displaying the outward [covenant](/research/symbols/covenant/) sign without the inward work, like a parted hoof without chewing the cud. Swine trample what is holy and return to uncleanness after washing. Gathered as a religious body, they are the [Synagogue of Satan](/research/symbols/assembly/): those who say they are Jews and are not.**
 
 The fuller book and notebook trail is available in [The Other White Meat](/books/symbolic-language/the-other-white-meat/), [research-swine.md](/books/symbolic-language/research/research-swine.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **An unclean [Beast](/research/symbols/beast/) — a people or kingdom displaying the outward [covenant](/research/symbols/covenant/) sign without the inward work, like a parted hoof without chewing the cud. Swine trample what is holy and return to uncleanness after washing. Gathered as a religious body, they are the [Synagogue of Satan](/research/symbols/assembly/): those who say they are Jews and are not.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **swine** begins: “(Zoöl.) Defn: Any animal of the hog kind, especially one of the domestical species.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -143,7 +143,7 @@ Webster's 1913 entry for **swine** begins:
 
 > “swein; originally a diminutive corresponding to E. sow. See Sow, n.] (Zoöl.) Defn: Any animal of the hog kind, especially one of the domestical species. Swine secrete a large amount of subcutaneous fat, which, when extracted, is known as lard. The male is specifically called boar, the female, sow, and the young, pig. See Hog. ”A great herd of swine.” Mark v. 11. Swine grass (Bot.), knotgrass (Polygonum aviculare); -- so called because eaten by swine. -- Swine oat (Bot.), a kind of oat sometimes grown for swine. -- Swine's cress (Bot.), a species of cress of the genus Senebiera (S. Coronopus). -- Swine's head, a dolt; a blockhead. [Obs.] Chaucer. -- Swine thistle (Bot.), the sow thistle.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -151,9 +151,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** An unclean [Beast](/research/symbols/beast/) — a people or kingdom displaying the outward [covenant](/research/symbols/covenant/) sign without the inward work, like a parted hoof without chewing the cud. Swine trample what is holy and return to uncleanness after washing. Gathered as a religious body, they are the [Synagogue of Satan](/research/symbols/assembly/): those who say they are Jews and are not.
+1. **Core sense:** An unclean [Beast](/research/symbols/beast/) — a people or kingdom displaying the outward [covenant](/research/symbols/covenant/) sign without the inward work, like a parted hoof without chewing the cud. Swine trample what is holy and return to uncleanness after washing. Gathered as a religious body, they are the [Synagogue of Satan](/research/symbols/assembly/): those who say they are Jews and are not.
 2. **Defining witnesses:** Lev 11:7; Isa 66:5, 17; Matt 7:6; 23:27-28; Rom 2:28-29; 2 Pet 2:22; Rev 2:9; 3:9
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -200,4 +200,4 @@ Related definitions used by this entry: [Beast](/research/symbols/beast/), [cove
 
 **An unclean [Beast](/research/symbols/beast/) — a people or kingdom displaying the outward [covenant](/research/symbols/covenant/) sign without the inward work, like a parted hoof without chewing the cud. Swine trample what is holy and return to uncleanness after washing. Gathered as a religious body, they are the [Synagogue of Satan](/research/symbols/assembly/): those who say they are Jews and are not.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

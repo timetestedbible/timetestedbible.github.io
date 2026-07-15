@@ -39,6 +39,7 @@ caps on the plaque; citation beneath at reduced size. Consumed by
 | 30-lucifer-moon | MY THRONE ABOVE THE STARS OF GOD | ISAIAH 14:13 |
 | 31-merchant-pearl | ONE PEARL OF GREAT PRICE | MATTHEW 13:46 |
 | 33-ttt-cover | PROVE ALL THINGS; HOLD FAST THE GOOD | 1 THESSALONIANS 5:21 |
+| 33x-last-day-laughter | SHE LAUGHETH AT THE LAST DAY | PROVERBS 31:25 |
 | 34-four-horsemen | THE FOUR WINDS OF THE HEAVENS | ZECHARIAH 6:5 |
 | 35-fall-of-babylon | THUS SHALL BABYLON BE THROWN DOWN | REVELATION 18:21 |
 | 36-daniel-sealed | SHUT UP THE WORDS, SEAL THE BOOK | DANIEL 12:4 |

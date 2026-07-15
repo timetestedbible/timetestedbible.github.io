@@ -74,27 +74,27 @@ definitions:
 
 # Four winds
 
-## Approved Definition
+## Summary
 
 **The four spirits of heaven — God's executing agents, shown as the four horsemen. The same fourfold outgoing pattern appears in the river dividing from Eden.**
 
 The fuller book and notebook trail is available in [The Four Winds](/books/symbolic-language/the-four-winds/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The four spirits of heaven — God's executing agents, shown as the four horsemen. The same fourfold outgoing pattern appears in the river dividing from Eden.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **four** begins: “One more than three; twice two.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -124,7 +124,7 @@ Webster's 1913 entry for **four** begins:
 
 > “Four, a. Etym: [OE. four, fower, feower, AS. feówer; akin to OS. fiwar, D. & G. vier, OHG. fior, Icel. fj, Sw. fyra, Dan. fire, Goth. fidw, Russ. chetuire, chetvero, W. pedwar, L. quatuor, Gr. catur. Farthing, Firkin, Forty, Cater four, Quater-cousin, Quatuor, Quire of paper, tetrarch.] Defn: One more than three; twice two.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -132,9 +132,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The four spirits of heaven — God's executing agents, shown as the four horsemen. The same fourfold outgoing pattern appears in the river dividing from Eden.
+1. **Core sense:** The four spirits of heaven — God's executing agents, shown as the four horsemen. The same fourfold outgoing pattern appears in the river dividing from Eden.
 2. **Defining witnesses:** Gen 2:10; Zech 6:5; Rev 6:1-8; 22:1
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -181,4 +181,4 @@ This definition does not depend on another glossary term.
 
 **The four spirits of heaven — God's executing agents, shown as the four horsemen. The same fourfold outgoing pattern appears in the river dividing from Eden.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

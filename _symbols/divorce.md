@@ -81,27 +81,27 @@ definitions:
 
 # Divorce (bill of divorcement)
 
-## Approved Definition
+## Summary
 
 **A [covenant](/research/symbols/covenant/) severed and the wife sent from the house — exile and scattering. Scripture distinguishes treacherous divorce from separation out of a union God never joined.**
 
 The fuller book and notebook trail is available in [Marriage and Divorce](/books/symbolic-language/marriage-and-divorce/), [research-marriage-divorce.md](/books/symbolic-language/research/research-marriage-divorce.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A [covenant](/research/symbols/covenant/) severed and the wife sent from the house — exile and scattering. Scripture distinguishes treacherous divorce from separation out of a union God never joined.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **divorce** begins: “(Law) (a) A legal dissolution of the marriage contract by a court or other body having competent authority.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -131,7 +131,7 @@ Webster's 1913 entry for **divorce** begins:
 
 > “Di*vorce”, n. Etym: [F. divorce, L. divortium, fr. divortere, divertere, to turn different ways, to separate. See Divert.] 1. (Law) (a) A legal dissolution of the marriage contract by a court or other body having competent authority. This is properly a divorce, and called, technically, divorce a vinculo matrimonii. ”from the bond of matrimony.” (b) The separation of a married woman from the bed and board of her husband -- divorce a mensa et toro (or thoro), ”from bed board.””
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -139,9 +139,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A [covenant](/research/symbols/covenant/) severed and the wife sent from the house — exile and scattering. Scripture distinguishes treacherous divorce from separation out of a union God never joined.
+1. **Core sense:** A [covenant](/research/symbols/covenant/) severed and the wife sent from the house — exile and scattering. Scripture distinguishes treacherous divorce from separation out of a union God never joined.
 2. **Defining witnesses:** Jer 3:8; Isa 50:1; Deut 24:1-4; Ezra 10:3; Mal 2:11-16
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -176,4 +176,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/),
 
 **A [covenant](/research/symbols/covenant/) severed and the wife sent from the house — exile and scattering. Scripture distinguishes treacherous divorce from separation out of a union God never joined.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

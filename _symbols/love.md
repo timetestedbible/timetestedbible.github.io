@@ -81,27 +81,27 @@ definitions:
 
 # Love
 
-## Approved Definition
+## Summary
 
 **Self-giving, faithful obedience to God's law in one's dealings with God and others. Without obedience, there is no love.**
 
 The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **Self-giving, faithful obedience to God's law in one's dealings with God and others. Without obedience, there is no love.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **love** begins: “A feeling of strong attachment induced by that which delights or commands admiration; preëminent kindness or devotion to another; affection; tenderness; as, the love of brothers and sisters.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -129,7 +129,7 @@ Webster's 1913 entry for **love** begins:
 
 > “Love, n. Etym: [OE. love, luve, AS. lufe, lufu; akin to E.lief, believe, L. lubet, libet,it pleases, Skr. lubh to be lustful. See Lief.] 1. A feeling of strong attachment induced by that which delights or commands admiration; preëminent kindness or devotion to another; affection; tenderness; as, the love of brothers and sisters. Of all the dearest bonds we prove Thou countest sons' and mothers' love Most sacred, most Thine own. Keble.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -137,9 +137,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Self-giving, faithful obedience to God's law in one's dealings with God and others. Without obedience, there is no love.
+1. **Core sense:** Self-giving, faithful obedience to God's law in one's dealings with God and others. Without obedience, there is no love.
 2. **Defining witnesses:** John 14:15; 1 Cor 13:3; 1 John 4:8-10; 5:3; 2 John 4-6; Rom 13:10
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -270,4 +270,4 @@ Related definitions used by this entry: [Hate](/research/symbols/hate/).
 
 **Self-giving, faithful obedience to God's law in one's dealings with God and others. Without obedience, there is no love.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -67,28 +67,28 @@ definitions:
 
 # Darkness
 
-## Approved Definition
+## Summary
 
 **Concealed disobedience — deeds hidden from the [light](/research/symbols/light/).**
 > *"And this is the condemnation, that $[light] is come into the world, and men loved **darkness** rather than $[light], because their deeds were evil. For every one that doeth evil hateth the $[light], neither cometh to the $[light], lest his deeds should be reproved."* — Jn 3:19–20
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Concealed disobedience — deeds hidden from the [light](/research/symbols/light/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **darkness** begins: “The absence of light; blackness; obscurity; gloom.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -319,7 +319,7 @@ Webster's 1913 entry for **darkness** begins:
 
 > “Dark”ness, n. 1. The absence of light; blackness; obscurity; gloom. And darkness was upon the face of the deep. Gen. i.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -337,7 +337,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **Concealed disobedience — deeds hidden from the [light](/research/symbols/light/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

@@ -72,27 +72,27 @@ definitions:
 
 # Chaff
 
-## Approved Definition
+## Summary
 
 **The empty wicked husk separated from the grain, driven away, and burned. Unlike [tares](/research/symbols/tares/), chaff is what remains after the grain has matured.**
 
 The fuller book and notebook trail is available in [Grass](/books/symbolic-language/grass/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The empty wicked husk separated from the grain, driven away, and burned. Unlike [tares](/research/symbols/tares/), chaff is what remains after the grain has matured.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **chaff** begins: “The glumes or husks of grains and grasses separated from the seed by threshing and winnowing, etc.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -110,7 +110,7 @@ Webster's 1913 entry for **chaff** begins:
 
 > “Chaff, n. Etym: [AC. ceaf; akin to D. kaf, G. kaff.] 1. The glumes or husks of grains and grasses separated from the seed by threshing and winnowing, etc. So take the corn and leave the chaff behind. Dryden. Old birds are not caught with caff. Old Proverb.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -118,9 +118,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The empty wicked husk separated from the grain, driven away, and burned. Unlike [tares](/research/symbols/tares/), chaff is what remains after the grain has matured.
+1. **Core sense:** The empty wicked husk separated from the grain, driven away, and burned. Unlike [tares](/research/symbols/tares/), chaff is what remains after the grain has matured.
 2. **Defining witnesses:** Ps 1:4; Matt 3:12
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -171,4 +171,4 @@ Related definitions used by this entry: [tares](/research/symbols/tares/).
 
 **The empty wicked husk separated from the grain, driven away, and burned. Unlike [tares](/research/symbols/tares/), chaff is what remains after the grain has matured.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

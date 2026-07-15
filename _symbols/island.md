@@ -86,28 +86,28 @@ definitions:
 
 # Island
 
-## Approved Definition
+## Summary
 
 **A set-apart people rising from the [sea](/research/symbols/sea/) of nations, waiting for God's law and preserved while surrounding kingdoms fall.**
 > *"Surely the **isles** shall wait for me, and the ships of Tarshish first, to bring thy sons from far, their silver and their gold with them, unto the name of the LORD thy God, and to the Holy One of Israel, because he hath glorified thee."* — Isa 60:9
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A set-apart people rising from the [sea](/research/symbols/sea/) of nations, waiting for God's law and preserved while surrounding kingdoms fall.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **island** begins: “A tract of land surrounded by water, and smaller than a continent.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -272,7 +272,7 @@ Webster's 1913 entry for **island** begins:
 
 > “Is”land, n. Etym: [OE. iland, yland, AS. igland, , ; ig, , island + land, lond, land. AS. ig, , is akin to AS. eá water, river, OHG. , G. au meadow, Icel. ey island, Dan. & Sw. ö, Goth. ahwa a stream, water, L. aqua water. The s is due to confusion with isle. Cf. Ait, Eyot, Ewer, Aquatic.] 1. A tract of land surrounded by water, and smaller than a continent. Cf. Continent.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -290,7 +290,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **A set-apart people rising from the [sea](/research/symbols/sea/) of nations, waiting for God's law and preserved while surrounding kingdoms fall.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

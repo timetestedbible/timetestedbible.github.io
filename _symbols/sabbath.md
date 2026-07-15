@@ -90,27 +90,27 @@ definitions:
 
 # Sabbath
 
-## Approved Definition
+## Summary
 
 **A complete seven crowned by rest — the seven-day week, the land's seventh year, or seven sevens leading to Jubilee. The rest is the completing member of the whole unit, most commonly 6 days followed by 1 day of rest.**
 
 The fuller book and notebook trail is available in [The Sabbath](/books/symbolic-language/the-sabbath/), [research-sabbath.md](/books/symbolic-language/research/research-sabbath.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A complete seven crowned by rest — the seven-day week, the land's seventh year, or seven sevens leading to Jubilee. The rest is the completing member of the whole unit, most commonly 6 days followed by 1 day of rest.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **sabbath** begins: “A season or day of rest; one day in seven appointed for rest or worship, the observance of which was enjoined upon the Jews in the Decalogue, and has been continued by the Christian church with a transference of the day observed from the last to the first day of the week, which is called also Lord's Day.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -140,7 +140,7 @@ Webster's 1913 entry for **sabbath** begins:
 
 > “Sab”bath, n. Etym: [OE. sabat, sabbat, F. sabbat, L. sabbatum, Gr. shabbath, fr. shabath to rest from labor. Cf. Sabbat.] 1. A season or day of rest; one day in seven appointed for rest or worship, the observance of which was enjoined upon the Jews in the Decalogue, and has been continued by the Christian church with a transference of the day observed from the last to the first day of the week, which is called also Lord's Day. Remember the sabbath day, to keep it holy. Ex. xx. 8.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -148,9 +148,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A complete seven crowned by rest — the seven-day week, the land's seventh year, or seven sevens leading to Jubilee. The rest is the completing member of the whole unit, most commonly 6 days followed by 1 day of rest.
+1. **Core sense:** A complete seven crowned by rest — the seven-day week, the land's seventh year, or seven sevens leading to Jubilee. The rest is the completing member of the whole unit, most commonly 6 days followed by 1 day of rest.
 2. **Defining witnesses:** Lev 23:15 with Deut 16:9; Lev 25:2-8; 2 Chr 36:21; Luke 18:12; Matt 28:1; Heb 4:9
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -225,4 +225,4 @@ This definition does not depend on another glossary term.
 
 **A complete seven crowned by rest — the seven-day week, the land's seventh year, or seven sevens leading to Jubilee. The rest is the completing member of the whole unit, most commonly 6 days followed by 1 day of rest.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

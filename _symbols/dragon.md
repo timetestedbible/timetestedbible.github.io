@@ -87,28 +87,28 @@ definitions:
 
 # Dragon
 
-## Approved Definition
+## Summary
 
 **The devouring spiritual power behind earthly [beasts](/research/symbols/beast/) and kingdoms, identified as the Devil and Satan and giving its power, throne, and authority to the beast.**
 > *"And the great **dragon** was cast out, that old $[serpent], called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him."* — Rev 12:9
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The devouring spiritual power behind earthly [beasts](/research/symbols/beast/) and kingdoms, identified as the Devil and Satan and giving its power, throne, and authority to the beast.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **dragon** begins: “(Myth.) Defn: A fabulous animal, generally represented as a monstrous winged serpent or lizard, with a crested head and enormous claws, and regarded as very powerful and ferocious.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -393,7 +393,7 @@ Webster's 1913 entry for **dragon** begins:
 
 > “Drag”on, n. Etym: [F. dragon, L. draco, fr. Gr. dar to see), and so called from its terrible eyes. Cf. Drake a dragon, Dragoon.] 1. (Myth.) Defn: A fabulous animal, generally represented as a monstrous winged serpent or lizard, with a crested head and enormous claws, and regarded as very powerful and ferocious. The dragons which appear in early paintings and sculptures are invariably representations of a winged crocodile. Fairholt.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -411,7 +411,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The devouring spiritual power behind earthly [beasts](/research/symbols/beast/) and kingdoms, identified as the Devil and Satan and giving its power, throne, and authority to the beast.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

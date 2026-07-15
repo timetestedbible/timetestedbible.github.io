@@ -82,27 +82,27 @@ definitions:
 
 # Worship
 
-## Approved Definition
+## Summary
 
 **To bow down and serve — homage in the body, allegiance in the life; the [fear of the LORD](/research/symbols/fear/) made visible, kept at His appointed times, on His terms. Not the song service: Scripture separates worship from singing in single scenes.**
 
 The fuller book and notebook trail is available in [Worship](/books/symbolic-language/worship/), [research-worship.md](/books/symbolic-language/research/research-worship.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **To bow down and serve — homage in the body, allegiance in the life; the [fear of the LORD](/research/symbols/fear/) made visible, kept at His appointed times, on His terms. Not the song service: Scripture separates worship from singing in single scenes.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **worship** begins: “Excellence of character; dignity; worth; worthiness. [Obs.] Shak.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -126,7 +126,7 @@ Webster's 1913 entry for **worship** begins:
 
 > “Wor”ship, n. Etym: [OE. worshipe, wuredhscipe, AS. weoredhscipe; weoredh worth + -scipe -ship. See Worth, a., and -ship.] 1. Excellence of character; dignity; worth; worthiness. [Obs.] Shak. A man of worship and honour. Chaucer. Elfin, born of noble state, And muckle worship in his native land. Spenser.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -134,9 +134,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** To bow down and serve — homage in the body, allegiance in the life; the [fear of the LORD](/research/symbols/fear/) made visible, kept at His appointed times, on His terms. Not the song service: Scripture separates worship from singing in single scenes.
+1. **Core sense:** To bow down and serve — homage in the body, allegiance in the life; the [fear of the LORD](/research/symbols/fear/) made visible, kept at His appointed times, on His terms. Not the song service: Scripture separates worship from singing in single scenes.
 2. **Defining witnesses:** Ex 20:5; Matt 4:10/Deut 6:13; 2 Chr 20:18-19; Rev 14:7
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -215,4 +215,4 @@ Related definitions used by this entry: [fear of the LORD](/research/symbols/fea
 
 **To bow down and serve — homage in the body, allegiance in the life; the [fear of the LORD](/research/symbols/fear/) made visible, kept at His appointed times, on His terms. Not the song service: Scripture separates worship from singing in single scenes.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

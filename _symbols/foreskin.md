@@ -90,27 +90,27 @@ definitions:
 
 # Foreskin (uncircumcised)
 
-## Approved Definition
+## Summary
 
 **Obstructing flesh that covers a [covenant](/research/symbols/covenant/) member and prevents its proper work. Heart, ear, lips, and fruit are uncircumcised while flesh blocks humility, hearing, speech, or fruitfulness.**
 
 The fuller book and notebook trail is available in [The Foreskin](/books/symbolic-language/foreskin/), [research-foreskin.md](/books/symbolic-language/research/research-foreskin.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Obstructing flesh that covers a [covenant](/research/symbols/covenant/) member and prevents its proper work. Heart, ear, lips, and fruit are uncircumcised while flesh blocks humility, hearing, speech, or fruitfulness.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **foreskin** begins: “Fore”skin, n. (Anat.) Defn: The fold of skin which covers the glans of the penis; the prepuce.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -140,7 +140,7 @@ Webster's 1913 entry for **foreskin** begins:
 
 > “Fore”skin, n. (Anat.) Defn: The fold of skin which covers the glans of the penis; the prepuce.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -148,9 +148,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Obstructing flesh that covers a [covenant](/research/symbols/covenant/) member and prevents its proper work. Heart, ear, lips, and fruit are uncircumcised while flesh blocks humility, hearing, speech, or fruitfulness.
+1. **Core sense:** Obstructing flesh that covers a [covenant](/research/symbols/covenant/) member and prevents its proper work. Heart, ear, lips, and fruit are uncircumcised while flesh blocks humility, hearing, speech, or fruitfulness.
 2. **Defining witnesses:** Gen 17:14; Lev 19:23; 26:41; Deut 10:16; 30:6; Jer 4:4; 6:10; Ex 6:12; Acts 7:51; Col 2:11
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -201,4 +201,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/).
 
 **Obstructing flesh that covers a [covenant](/research/symbols/covenant/) member and prevents its proper work. Heart, ear, lips, and fruit are uncircumcised while flesh blocks humility, hearing, speech, or fruitfulness.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

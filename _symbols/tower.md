@@ -102,27 +102,27 @@ definitions:
 
 # Tower
 
-## Approved Definition
+## Summary
 
 **The stronghold raised by a [Name](/research/symbols/name/) around its house — refuge, watchtower, and lighthouse in one: high to see danger, giving [light](/research/symbols/light/) to guide the house, and covered to shelter those who come inside. A strong tower is an intact Name protecting its people; an unfinished tower is a Name begun without depth to endure its cost; a fallen tower is a [covenant](/research/symbols/covenant/) stronghold broken, emptied, or judged.**
 
 The fuller book and notebook trail is available in [The Tower](/books/symbolic-language/tower/), [research-tower.md](/books/symbolic-language/research/research-tower.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The stronghold raised by a [Name](/research/symbols/name/) around its house — refuge, watchtower, and lighthouse in one: high to see danger, giving [light](/research/symbols/light/) to guide the house, and covered to shelter those who come inside. A strong tower is an intact Name protecting its people; an unfinished tower is a Name begun without depth to endure its cost; a fallen tower is a [covenant](/research/symbols/covenant/) stronghold broken, emptied, or judged.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **tower** begins: “(Arch.) (a) A mass of building standing alone and insulated, usually higher than its diameter, but when of great size not always of that proportion. (b) A projection from a line of wall, as a fortification, for purposes of defense, as a flanker, either or the same height as the curtain wall or higher. (c) A structure appended to a larger edifice for a special purpose, as for a belfry, and then usually high in proportion to its width and to the height of the rest of the edifice; as, a church towe”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -152,7 +152,7 @@ Webster's 1913 entry for **tower** begins:
 
 > “Tow”er, n. Etym: [OE. tour,tor,tur, F. tour, L. turris; akin to Gr. twr a tower, Ir. tor a castle, Gael. torr a tower, castle. Cf. Tor, Turret.] 1. (Arch.) (a) A mass of building standing alone and insulated, usually higher than its diameter, but when of great size not always of that proportion. (b) A projection from a line of wall, as a fortification, for purposes of defense, as a flanker, either or the same height as the curtain wall or higher. (c) A structure appended to a larger edifice for a special purpose, as for a belfry, and then usually high in proportion to its width and to the height of the rest of the edifice; as, a church tower.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -160,9 +160,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The stronghold raised by a [Name](/research/symbols/name/) around its house — refuge, watchtower, and lighthouse in one: high to see danger, giving [light](/research/symbols/light/) to guide the house, and covered to shelter those who come inside. A strong tower is an intact Name protecting its people; an unfinished tower is a Name begun without depth to endure its cost; a fallen tower is a [covenant](/research/symbols/covenant/) stronghold broken, emptied, or judged.
+1. **Core sense:** The stronghold raised by a [Name](/research/symbols/name/) around its house — refuge, watchtower, and lighthouse in one: high to see danger, giving [light](/research/symbols/light/) to guide the house, and covered to shelter those who come inside. A strong tower is an intact Name protecting its people; an unfinished tower is a Name begun without depth to endure its cost; a fallen tower is a [covenant](/research/symbols/covenant/) stronghold broken, emptied, or judged.
 2. **Defining witnesses:** Prov 18:10; Ex 13:21; Isa 4:5-6; Hab 2:1; Gen 11:1-8; Luke 14:28-30; Matt 13:20-21; Luke 13:4-5
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -233,4 +233,4 @@ Related definitions used by this entry: [Name](/research/symbols/name/), [light]
 
 **The stronghold raised by a [Name](/research/symbols/name/) around its house — refuge, watchtower, and lighthouse in one: high to see danger, giving [light](/research/symbols/light/) to guide the house, and covered to shelter those who come inside. A strong tower is an intact Name protecting its people; an unfinished tower is a Name begun without depth to endure its cost; a fallen tower is a [covenant](/research/symbols/covenant/) stronghold broken, emptied, or judged.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

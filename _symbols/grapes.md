@@ -82,27 +82,27 @@ definitions:
 
 # Grapes
 
-## Approved Definition
+## Summary
 
 **A people's works ripened into persons as the vineyard's yield. Pressed grapes produce [covenant](/research/symbols/covenant/) wine or the blood of [judgment](/research/symbols/judgment/) according to whether the vintage is good or wild.**
 
 The fuller book and notebook trail is available in [The Parable of the Vineyard](/books/symbolic-language/the-parable-of-the-vineyard/), [research-grapes.md](/books/symbolic-language/research/research-grapes.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A people's works ripened into persons as the vineyard's yield. Pressed grapes produce [covenant](/research/symbols/covenant/) wine or the blood of [judgment](/research/symbols/judgment/) according to whether the vintage is good or wild.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **grape** begins: “(Bot.) Defn: A well-known edible berry growing in pendent clusters or bunches on the grapevine.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -132,7 +132,7 @@ Webster's 1913 entry for **grape** begins:
 
 > “Grape, n. Etym: [OF. grape, crape, bunch or cluster of grapes, F. grappe, akin to F. grappin grapnel, hook; fr. OHG. chrapfo hook, G. krapfen, akin to E. cramp. The sense seems to have come from the idea of clutching. Cf. Agraffe, Cramp, Grapnel, Grapple.] 1. (Bot.) Defn: A well-known edible berry growing in pendent clusters or bunches on the grapevine. The berries are smooth-skinned, have a juicy pulp, and are cultivated in great quantities for table use and for making wine and raisins.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -140,9 +140,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A people's works ripened into persons as the vineyard's yield. Pressed grapes produce [covenant](/research/symbols/covenant/) wine or the blood of [judgment](/research/symbols/judgment/) according to whether the vintage is good or wild.
+1. **Core sense:** A people's works ripened into persons as the vineyard's yield. Pressed grapes produce [covenant](/research/symbols/covenant/) wine or the blood of [judgment](/research/symbols/judgment/) according to whether the vintage is good or wild.
 2. **Defining witnesses:** Isa 5:2-7; Hos 9:10; Mic 7:1-2; Isa 65:8; Gen 49:11; Rev 14:18-20
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -207,4 +207,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/),
 
 **A people's works ripened into persons as the vineyard's yield. Pressed grapes produce [covenant](/research/symbols/covenant/) wine or the blood of [judgment](/research/symbols/judgment/) according to whether the vintage is good or wild.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

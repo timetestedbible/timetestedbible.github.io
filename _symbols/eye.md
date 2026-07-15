@@ -83,27 +83,27 @@ definitions:
 
 # Eye
 
-## Approved Definition
+## Summary
 
 **The [lamp](/research/symbols/lamp/) of the body, revealing the [light](/research/symbols/light/) within. A good eye gives; an evil eye withholds; God's fiery eyes — His righteous watchers — range throughout the earth and shine like the [stars](/research/symbols/stars/) in heaven.**
 
 The fuller book and notebook trail is available in [Sun, Moon & Stars](/books/symbolic-language/sun-moon-and-stars/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The [lamp](/research/symbols/lamp/) of the body, revealing the [light](/research/symbols/light/) within. A good eye gives; an evil eye withholds; God's fiery eyes — His righteous watchers — range throughout the earth and shine like the [stars](/research/symbols/stars/) in heaven.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **eye** begins: “(Zoöl.) Defn: A brood; as, an eye of pheasants.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -131,7 +131,7 @@ Webster's 1913 entry for **eye** begins:
 
 > “Eye, n. Etym: [Prob. fr. nye, an eye being for a nye. See Nye.] (Zoöl.) Defn: A brood; as, an eye of pheasants.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -139,9 +139,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The [lamp](/research/symbols/lamp/) of the body, revealing the [light](/research/symbols/light/) within. A good eye gives; an evil eye withholds; God's fiery eyes — His righteous watchers — range throughout the earth and shine like the [stars](/research/symbols/stars/) in heaven.
+1. **Core sense:** The [lamp](/research/symbols/lamp/) of the body, revealing the [light](/research/symbols/light/) within. A good eye gives; an evil eye withholds; God's fiery eyes — His righteous watchers — range throughout the earth and shine like the [stars](/research/symbols/stars/) in heaven.
 2. **Defining witnesses:** Matt 6:22-23; Prov 22:9; 23:6; Zech 4:10; Rev 1:14; 5:6
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -274,4 +274,4 @@ Related definitions used by this entry: [lamp](/research/symbols/lamp/), [light]
 
 **The [lamp](/research/symbols/lamp/) of the body, revealing the [light](/research/symbols/light/) within. A good eye gives; an evil eye withholds; God's fiery eyes — His righteous watchers — range throughout the earth and shine like the [stars](/research/symbols/stars/) in heaven.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -83,27 +83,27 @@ definitions:
 
 # Liberty
 
-## Approved Definition
+## Summary
 
 **The King's jubilee release from bondage to [sin](/research/symbols/sin/) into God's household, inheritance, and faithful service. It changes masters rather than abolishing all authority; liberty is neither a license to sin nor freedom from the law's obligations.**
 
 The fuller book and notebook trail is available in [Liberty](/books/symbolic-language/liberty/), [research-liberty.md](/books/symbolic-language/research/research-liberty.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The King's jubilee release from bondage to [sin](/research/symbols/sin/) into God's household, inheritance, and faithful service. It changes masters rather than abolishing all authority; liberty is neither a license to sin nor freedom from the law's obligations.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **liberty** begins: “The state of a free person; exemption from subjection to the will of another claiming ownership of the person or services; freedom; -- opposed to slavery, serfdom, bondage, or subjection.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -125,7 +125,7 @@ Webster's 1913 entry for **liberty** begins:
 
 > “Lib”er*ty, n.; pl. Liberties (. Etym: [OE. liberte, F. liberté, fr. L. libertas, fr. liber free. See Liberal.] 1. The state of a free person; exemption from subjection to the will of another claiming ownership of the person or services; freedom; -- opposed to slavery, serfdom, bondage, or subjection. But ye . . . caused every man his servant, and every man his handmaid whom he had set at liberty at their pleasure, to return, and brought them into subjection. Jer. xxxiv. 16. Delivered fro the bondage of corruption into the glorious liberty of the sons of God. Bible, 1551. Rom. viii. 21.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -133,9 +133,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The King's jubilee release from bondage to [sin](/research/symbols/sin/) into God's household, inheritance, and faithful service. It changes masters rather than abolishing all authority; liberty is neither a license to sin nor freedom from the law's obligations.
+1. **Core sense:** The King's jubilee release from bondage to [sin](/research/symbols/sin/) into God's household, inheritance, and faithful service. It changes masters rather than abolishing all authority; liberty is neither a license to sin nor freedom from the law's obligations.
 2. **Defining witnesses:** Lev 25:10; Isa 61:1; Jas 1:25; 2 Pet 2:19
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -198,4 +198,4 @@ Related definitions used by this entry: [sin](/research/symbols/sin/).
 
 **The King's jubilee release from bondage to [sin](/research/symbols/sin/) into God's household, inheritance, and faithful service. It changes masters rather than abolishing all authority; liberty is neither a license to sin nor freedom from the law's obligations.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

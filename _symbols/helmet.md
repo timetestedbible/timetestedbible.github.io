@@ -79,27 +79,27 @@ definitions:
 
 # Helmet of salvation
 
-## Approved Definition
+## Summary
 
 **Salvation covering the head: Christ, the Head. It is God's own armor lent to His people, protecting the same place where true or counterfeit allegiance is marked.**
 
 The fuller book and notebook trail is available in [Garments & Armor](/books/symbolic-language/garments/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Salvation covering the head: Christ, the Head. It is God's own armor lent to His people, protecting the same place where true or counterfeit allegiance is marked.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **helmet** begins: “(Armor) Defn: A defensive covering for the head.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -129,7 +129,7 @@ Webster's 1913 entry for **helmet** begins:
 
 > “Hel”met, n. Etym: [OF. helmet, a dim of helme, F. heaume; of Teutonic origin; cf. G. helm, akin to AS. & OS. helm, D. helm, helmet, Icel. hjalmr, Sw. hjelm, Dan. hielm, Goth. hilms; and prob. from the root of AS. helan to hide, to hele; cf. also Lith. szalmas, Russ. shleme, Skr. çarman protection. sq. root17. Cf. Hele, Hell, Helm a helmet.] 1. (Armor) Defn: A defensive covering for the head. See Casque, Headpiece, Morion, Sallet, and Illust. of Beaver.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -137,9 +137,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Salvation covering the head: Christ, the Head. It is God's own armor lent to His people, protecting the same place where true or counterfeit allegiance is marked.
+1. **Core sense:** Salvation covering the head: Christ, the Head. It is God's own armor lent to His people, protecting the same place where true or counterfeit allegiance is marked.
 2. **Defining witnesses:** Isa 59:16-17; Eph 6:11, 17; Ps 140:7; 1 Cor 11:3; 1 Thess 5:8; Rev 22:4
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -176,4 +176,4 @@ This definition does not depend on another glossary term.
 
 **Salvation covering the head: Christ, the Head. It is God's own armor lent to His people, protecting the same place where true or counterfeit allegiance is marked.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -83,28 +83,28 @@ definitions:
 
 # Heart
 
-## Approved Definition
+## Summary
 
 **Jerusalem — the navel and heart of the land.**
 > *"Keep thy **heart** with all diligence; for out of it are the issues of life."* — Prov 4:23
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Jerusalem — the navel and heart of the land.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **heart** begins: “(Anat.) Defn: A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -462,7 +462,7 @@ Webster's 1913 entry for **heart** begins:
 
 > “Heart, n. Etym: [OE. harte, herte, heorte, AS. heorte; akin to OS. herta, OFies. hirte, D. hart, OHG. herza, G. herz, Icel. hjarta, Sw. hjerta, Goth. haírt, Lith. szirdis, Russ. serdtse, Ir. cridhe, L. cor, Gr. Accord, Discord, Cordial, 4th Core, Courage.] 1. (Anat.) Defn: A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood. Why does my blood thus muster to my heart! Shak.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -482,7 +482,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **Jerusalem — the navel and heart of the land.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

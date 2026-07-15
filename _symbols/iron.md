@@ -76,28 +76,28 @@ definitions:
 
 # Iron
 
-## Approved Definition
+## Summary
 
 **The crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the empire ruling when Christ came.**
 > *"And the fourth kingdom shall be strong as **iron**: forasmuch as **iron** breaketh in pieces and subdueth all things: and as **iron** that breaketh all these, shall it break in pieces and bruise."* — Dan 2:40
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the empire ruling when Christ came.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **iron** begins: “(Chem.) Defn: The most common and most useful metallic element, being of almost universal occurrence, usually in the form of an oxide (as hematite, magnetite, etc.), or a hydrous oxide (as limonite, turgite, etc.).”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -333,13 +333,13 @@ Webster's 1913 entry for **iron** begins:
 
 > “houarn.] 1. (Chem.) Defn: The most common and most useful metallic element, being of almost universal occurrence, usually in the form of an oxide (as hematite, magnetite, etc.), or a hydrous oxide (as limonite, turgite, etc.). It is reduced on an enormous scale in three principal forms; viz., cast iron, steel, and wrought iron. Iron usually appears dark brown, from oxidation or impurity, but when pure, or an fresh surface, is a gray or white metal. It is easily oxidized (rusted) by moisture, and is attacked by many corrosive agents. Symbol Fe (Latin Ferrum). Atomic weight 55.9. Specific gravity, pure iron, 7.86; cast iron, 7.1. In magnetic properties, it is superior to all other substances.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Conclusion
 
 **The crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the empire ruling when Christ came.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

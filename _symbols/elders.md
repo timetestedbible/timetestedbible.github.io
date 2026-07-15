@@ -76,27 +76,27 @@ definitions:
 
 # Elders
 
-## Approved Definition
+## Summary
 
 **Leaders and representatives of the assemblies, seated as a court around the throne — the constellations among the host of heaven and their [stars](/research/symbols/stars/).**
 
 The fuller book and notebook trail is available in [Sun, Moon & Stars](/books/symbolic-language/sun-moon-and-stars/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Leaders and representatives of the assemblies, seated as a court around the throne — the constellations among the host of heaven and their [stars](/research/symbols/stars/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **elder** begins: “Older; more aged, or existing longer.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -124,7 +124,7 @@ Webster's 1913 entry for **elder** begins:
 
 > “Eld”er, a. Etym: [AS. yldra, compar. of eald old. See Old.] 1. Older; more aged, or existing longer. Let the elder men among us emulate their own earlier deeds. Jowett (Thucyd. )”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -132,9 +132,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Leaders and representatives of the assemblies, seated as a court around the throne — the constellations among the host of heaven and their [stars](/research/symbols/stars/).
+1. **Core sense:** Leaders and representatives of the assemblies, seated as a court around the throne — the constellations among the host of heaven and their [stars](/research/symbols/stars/).
 2. **Defining witnesses:** 1 Kgs 22:19; Isa 24:23; Rev 4:4; Matt 19:28; Ps 89:5-7
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -231,4 +231,4 @@ Related definitions used by this entry: [stars](/research/symbols/stars/).
 
 **Leaders and representatives of the assemblies, seated as a court around the throne — the constellations among the host of heaven and their [stars](/research/symbols/stars/).**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -81,27 +81,27 @@ definitions:
 
 # Works of the law
 
-## Approved Definition
+## Summary
 
 **Deeds performed under an obligation imposed by law or decree. Context identifies whose law and which duty; fulfilling it may be obedience, but it does not put the lawgiver in debt or earn any benefit.**
 
 The fuller book and notebook trail is available in [The End of the Law](/books/symbolic-language/the-end-of-the-law/), [research-works-of-law.md](/books/symbolic-language/research/research-works-of-law.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **Deeds performed under an obligation imposed by law or decree. Context identifies whose law and which duty; fulfilling it may be obedience, but it does not put the lawgiver in debt or earn any benefit.**
 
-### Webster's English sense
+### Webster's Definition
 
 No exact Webster headword has yet been matched to **Works of the law**.
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -133,9 +133,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Deeds performed under an obligation imposed by law or decree. Context identifies whose law and which duty; fulfilling it may be obedience, but it does not put the lawgiver in debt or earn any benefit.
+1. **Core sense:** Deeds performed under an obligation imposed by law or decree. Context identifies whose law and which duty; fulfilling it may be obedience, but it does not put the lawgiver in debt or earn any benefit.
 2. **Defining witnesses:** Rom 3:20, 28; 9:32 KJV/TR; Gal 2:16; 3:2, 5, 10
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -174,4 +174,4 @@ This definition does not depend on another glossary term.
 
 **Deeds performed under an obligation imposed by law or decree. Context identifies whose law and which duty; fulfilling it may be obedience, but it does not put the lawgiver in debt or earn any benefit.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

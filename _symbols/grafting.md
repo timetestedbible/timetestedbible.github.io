@@ -68,27 +68,27 @@ definitions:
 
 # Grafting (grafted in)
 
-## Approved Definition
+## Summary
 
 **The wild [branch](/research/symbols/branches/) — the [stranger](/research/symbols/stranger/), the Gentile — received into the [covenant](/research/symbols/covenant/) [tree](/research/symbols/tree/), or repentant Israel accepted back.**
 
 The fuller book and notebook trail is available in [Trees](/books/symbolic-language/trees/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The wild [branch](/research/symbols/branches/) — the [stranger](/research/symbols/stranger/), the Gentile — received into the [covenant](/research/symbols/covenant/) [tree](/research/symbols/tree/), or repentant Israel accepted back.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **grafting** begins: “(Hort.) The act, art, or process of inserting grafts.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -106,7 +106,7 @@ Webster's 1913 entry for **grafting** begins:
 
 > “Graft”ing n. 1. (Hort.) The act, art, or process of inserting grafts.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -114,9 +114,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The wild [branch](/research/symbols/branches/) — the [stranger](/research/symbols/stranger/), the Gentile — received into the [covenant](/research/symbols/covenant/) [tree](/research/symbols/tree/), or repentant Israel accepted back.
+1. **Core sense:** The wild [branch](/research/symbols/branches/) — the [stranger](/research/symbols/stranger/), the Gentile — received into the [covenant](/research/symbols/covenant/) [tree](/research/symbols/tree/), or repentant Israel accepted back.
 2. **Defining witnesses:** Rom 11:17, 23
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -146,4 +146,4 @@ No exact KJV English-form occurrences were found under the display forms searche
 
 **The wild [branch](/research/symbols/branches/) — the [stranger](/research/symbols/stranger/), the Gentile — received into the [covenant](/research/symbols/covenant/) [tree](/research/symbols/tree/), or repentant Israel accepted back.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

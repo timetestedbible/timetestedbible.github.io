@@ -68,27 +68,27 @@ definitions:
 
 # Nineveh
 
-## Approved Definition
+## Summary
 
 **A great city of the [sea](/research/symbols/sea/) — Gentile people who repent and rise in judgment against those who reject Jesus.**
 
 The fuller book and notebook trail is available in [The Sign of Jonah](/books/symbolic-language/sign-of-jonah/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A great city of the [sea](/research/symbols/sea/) — Gentile people who repent and rise in judgment against those who reject Jesus.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 No exact Webster headword has yet been matched to **Nineveh**.
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -108,9 +108,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A great city of the [sea](/research/symbols/sea/) — Gentile people who repent and rise in judgment against those who reject Jesus.
+1. **Core sense:** A great city of the [sea](/research/symbols/sea/) — Gentile people who repent and rise in judgment against those who reject Jesus.
 2. **Defining witnesses:** Matt 12:41
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -157,4 +157,4 @@ Related definitions used by this entry: [sea](/research/symbols/sea/).
 
 **A great city of the [sea](/research/symbols/sea/) — Gentile people who repent and rise in judgment against those who reject Jesus.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -64,27 +64,27 @@ definitions:
 
 # Horse, white horse
 
-## Approved Definition
+## Summary
 
 **The mount of an executing spirit; the conqueror who wins the nations by the [covenant](/research/symbols/covenant/) [bow](/research/symbols/bow/).**
 
 The fuller book and notebook trail is available in [The Four Winds](/books/symbolic-language/the-four-winds/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The mount of an executing spirit; the conqueror who wins the nations by the [covenant](/research/symbols/covenant/) [bow](/research/symbols/bow/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **horse** begins: “(Zoöl.) Defn: A hoofed quadruped of the genus Equus; especially, the domestic horse (E. caballus), which was domesticated in Egypt and Asia at a very early period.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -100,7 +100,7 @@ Webster's 1913 entry for **horse** begins:
 
 > “course, current Cf. Walrus.] 1. (Zoöl.) Defn: A hoofed quadruped of the genus Equus; especially, the domestic horse (E. caballus), which was domesticated in Egypt and Asia at a very early period. It has six broad molars, on each side of each jaw, with six incisors, and two canine teeth, both above and below. The mares usually have the canine teeth rudimentary or wanting. The horse differs from the true asses, in having a long, flowing mane, and the tail bushy to the base. Unlike the asses it has callosities, or chestnuts, on all its legs. The horse excels in strength, speed, docility, courage, and nobleness of character, and is used for drawing, carrying, bearing a rider, and like purposes.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -108,9 +108,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The mount of an executing spirit; the conqueror who wins the nations by the [covenant](/research/symbols/covenant/) [bow](/research/symbols/bow/).
+1. **Core sense:** The mount of an executing spirit; the conqueror who wins the nations by the [covenant](/research/symbols/covenant/) [bow](/research/symbols/bow/).
 2. **Defining witnesses:** Rev 6:2
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -203,4 +203,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/),
 
 **The mount of an executing spirit; the conqueror who wins the nations by the [covenant](/research/symbols/covenant/) [bow](/research/symbols/bow/).**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

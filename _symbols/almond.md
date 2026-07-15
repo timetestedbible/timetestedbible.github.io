@@ -92,28 +92,28 @@ definitions:
 
 # Almond
 
-## Approved Definition
+## Summary
 
 **The watcher-tree and sign of the chosen Levitical priesthood. Its early waking pictures watchfulness; Aaron's fruitful rod marks the appointed priesthood, and almond cups carry the sanctuary [lamps](/research/symbols/lamp/).**
 > *"Then said the LORD unto me, Thou hast well seen: for I will hasten (H8245 *shaqad*) my word to perform it."* — Jer 1:12
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The watcher-tree and sign of the chosen Levitical priesthood. Its early waking pictures watchfulness; Aaron's fruitful rod marks the appointed priesthood, and almond cups carry the sanctuary [lamps](/research/symbols/lamp/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **almond** begins: “The fruit of the almond tree.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -302,7 +302,7 @@ Webster's 1913 entry for **almond** begins:
 
 > “Alm”ond, n. Etym: [OE. almande, almaunde, alemaunde, F. amande, L. amygdala, fr. Gr. almendra. Cf. Amygdalate.] 1. The fruit of the almond tree. Note: The different kinds, as bitter, sweet, thin-shelled, thick- shelled almonds, and Jordan almonds, are the products of different varieties of the one species, Amygdalus communis, a native of the Mediterranean region and western Asia.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -320,7 +320,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The watcher-tree and sign of the chosen Levitical priesthood. Its early waking pictures watchfulness; Aaron's fruitful rod marks the appointed priesthood, and almond cups carry the sanctuary [lamps](/research/symbols/lamp/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

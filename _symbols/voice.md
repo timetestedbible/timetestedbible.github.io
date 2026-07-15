@@ -63,27 +63,27 @@ definitions:
 
 # Voice
 
-## Approved Definition
+## Summary
 
 **The words of the one who speaks; the Shepherd's voice is His words.**
 
 The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The words of the one who speaks; the Shepherd's voice is His words.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **voice** begins: “Sound uttered by the mouth, especially that uttered by human beings in speech or song; sound thus uttered considered as possessing some special quality or character; as, the human voice; a pleasant voice; a low voice.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -99,7 +99,7 @@ Webster's 1913 entry for **voice** begins:
 
 > “Voice, n. Etym: [OE. vois, voys, OF. vois, voiz, F. voix, L. vox, vocis, akin to Gr. vac to say, to speak, G. erwähnen to mention. Cf. Advocate, Advowson, Avouch, Convoke, Epic, Vocal, Vouch, Vowel.] 1. Sound uttered by the mouth, especially that uttered by human beings in speech or song; sound thus uttered considered as possessing some special quality or character; as, the human voice; a pleasant voice; a low voice. He with a manly voice saith his message. Chaucer. Her voice was ever soft, Gentle, and low; an excellent thing in woman. Shak. Thy voice is music. Shak. Join thy voice unto the angel choir. Milton.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -107,9 +107,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The words of the one who speaks; the Shepherd's voice is His words.
+1. **Core sense:** The words of the one who speaks; the Shepherd's voice is His words.
 2. **Defining witnesses:** John 10:27
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -234,4 +234,4 @@ This definition does not depend on another glossary term.
 
 **The words of the one who speaks; the Shepherd's voice is His words.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

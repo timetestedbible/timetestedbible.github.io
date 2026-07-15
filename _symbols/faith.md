@@ -81,28 +81,28 @@ definitions:
 
 # Faith
 
-## Approved Definition
+## Summary
 
 **Trusting faithfulness — reliance on God's unseen promise held steady and brought to life through obedience.**
 > *"Even so **faith**, if it hath not works, is dead, being alone."* — Jas 2:17
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **Trusting faithfulness — reliance on God's unseen promise held steady and brought to life through obedience.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **faith** begins: “Belief; the assent of the mind to the truth of what is declared by another, resting solely and implicitly on his authority and veracity; reliance on testimony.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -315,7 +315,7 @@ Webster's 1913 entry for **faith** begins:
 
 > “Faith, n. Etym: [OE. feith, fayth, fay, OF. feid, feit, fei, F. foi, fr. L. fides; akin to fidere to trust, Gr. th is perhaps due to the influence of such words as truth, health, wealth. See Bid, Bide, and cf. Confide, Defy, Fealty.] 1. Belief; the assent of the mind to the truth of what is declared by another, resting solely and implicitly on his authority and veracity; reliance on testimony.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -335,7 +335,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **Trusting faithfulness — reliance on God's unseen promise held steady and brought to life through obedience.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

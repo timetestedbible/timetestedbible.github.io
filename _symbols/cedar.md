@@ -75,27 +75,27 @@ definitions:
 
 # Cedar
 
-## Approved Definition
+## Summary
 
 **A towering power of great height and majesty. Assyria, the house of David, and the righteous may each bear the figure; the cedar signifies stature, not one fixed identity.**
 
 The fuller book and notebook trail is available in [Trees](/books/symbolic-language/trees/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A towering power of great height and majesty. Assyria, the house of David, and the righteous may each bear the figure; the cedar signifies stature, not one fixed identity.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **cedar** begins: “Ce”dar, n.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -121,7 +121,7 @@ Webster's 1913 entry for **cedar** begins:
 
 > “Ce”dar, n. Etym: [AS. ceder, fr. L. cedrus, Gr. (Bot.) Defn: The name of several evergreen trees. The wood is remarkable for its durability and fragrant odor. Note: The cedar of Lebanon is the Cedrus Libani; the white cedar (Cupressus thyoides) is now called Chamoecyparis sphæroidea; American red cedar is the Juniperus Virginiana; Spanish cedar, the West Indian Cedrela odorata. Many other trees with odoriferous wood are locally called cedar. Cedar bird (Zoöl.), a species of chatterer (Ampelis cedrarum), so named from its frequenting cedar trees; -- called also cherry bird, Canada robin, and American waxwing.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -129,9 +129,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A towering power of great height and majesty. Assyria, the house of David, and the righteous may each bear the figure; the cedar signifies stature, not one fixed identity.
+1. **Core sense:** A towering power of great height and majesty. Assyria, the house of David, and the righteous may each bear the figure; the cedar signifies stature, not one fixed identity.
 2. **Defining witnesses:** Ezek 31:3; 17:22-24; Ps 92:12; Isa 2:13
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -200,4 +200,4 @@ This definition does not depend on another glossary term.
 
 **A towering power of great height and majesty. Assyria, the house of David, and the righteous may each bear the figure; the cedar signifies stature, not one fixed identity.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -70,28 +70,28 @@ definitions:
 
 # Light
 
-## Approved Definition
+## Summary
 
 **The law lived visibly as an example — obedient actions others can see.**
 > *"Let your **light** so shine before men, that they may see your good works, and glorify your Father which is in heaven."* — Mat 5:16
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The law lived visibly as an example — obedient actions others can see.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **light** begins: “That agent, force, or action in nature by the operation of which upon the organs of sight, objects are rendered visible or luminous.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -353,7 +353,7 @@ Webster's 1913 entry for **light** begins:
 
 > “velocity of about 186,300 miles per second; but it is now generally understood to consist, not in any actual transmission of particles or substance, but in the propagation of vibrations or undulations in a subtile, elastic medium, or ether, assumed to pervade all space, and to be thus set in vibratory motion by the action of luminous bodies, as the atmosphere is by sonorous bodies. This view of the nature of light is known as the undulatory or wave theory; the other, advocated by Newton (but long since abandoned), as the corpuscular, emission, or Newtonian theory. A more recent theory makes light to consist in electrical oscillations, and is known as the electro-magnetic theory of light.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -371,7 +371,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The law lived visibly as an example — obedient actions others can see.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

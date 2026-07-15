@@ -86,27 +86,27 @@ definitions:
 
 # Works (good works, evil works)
 
-## Approved Definition
+## Summary
 
 **A work is a deed, not a synonym for obedience. It becomes obedience when it fulfills a legitimate command and disobedience when it conflicts with God's command; context separately identifies wages, duty, or faith made visible.**
 
 The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/), [The End of the Law](/books/symbolic-language/the-end-of-the-law/), [research-works.md](/books/symbolic-language/research/research-works.md), [research-dead-works.md](/books/symbolic-language/research/research-dead-works.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **A work is a deed, not a synonym for obedience. It becomes obedience when it fulfills a legitimate command and disobedience when it conflicts with God's command; context separately identifies wages, duty, or faith made visible.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **work** begins: “Exertion of strength or faculties; physical or intellectual effort directed to an end; industrial activity; toil; employment; sometimes, specifically, physically labor.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -136,7 +136,7 @@ Webster's 1913 entry for **work** begins:
 
 > “Work, n. Etym: [OE. work, werk, weork, AS. weorc, worc; akin to OFries. werk, wirk, OS., D., & G. werk, OHG. werc, werah, Icel. & Sw. verk, Dan. værk, Goth. gawaúrki, Gr. verez to work. Bulwark, Energy, Erg, Georgic, Liturgy, Metallurgy, Organ, Surgeon, Wright.] 1. Exertion of strength or faculties; physical or intellectual effort directed to an end; industrial activity; toil; employment; sometimes, specifically, physically labor. Man hath his daily work of body or mind Appointed. Milton.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -144,9 +144,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A work is a deed, not a synonym for obedience. It becomes obedience when it fulfills a legitimate command and disobedience when it conflicts with God's command; context separately identifies wages, duty, or faith made visible.
+1. **Core sense:** A work is a deed, not a synonym for obedience. It becomes obedience when it fulfills a legitimate command and disobedience when it conflicts with God's command; context separately identifies wages, duty, or faith made visible.
 2. **Defining witnesses:** Ex 18:20; Ps 111:7; Mic 6:16; Luke 17:7-10; Rom 4:4-5; Jas 2:21-22
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -263,4 +263,4 @@ This definition does not depend on another glossary term.
 
 **A work is a deed, not a synonym for obedience. It becomes obedience when it fulfills a legitimate command and disobedience when it conflicts with God's command; context separately identifies wages, duty, or faith made visible.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -74,27 +74,27 @@ definitions:
 
 # Babel / Babylon
 
-## Approved Definition
+## Summary
 
 **The self-made kingdom that builds a [name](/research/symbols/name/) against heaven — an empire raised over many kingdoms, the [covenant](/research/symbols/covenant/) counterfeit.**
 
 The fuller book and notebook trail is available in [The Bow](/books/symbolic-language/the-bow/), [The Fall of Babylon](/books/symbolic-language/the-fall-of-babylon/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The self-made kingdom that builds a [name](/research/symbols/name/) against heaven — an empire raised over many kingdoms, the [covenant](/research/symbols/covenant/) counterfeit.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **babel** begins: “The city and tower in the land of Shinar, where the confusion of languages took place.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -114,7 +114,7 @@ Webster's 1913 entry for **babel** begins:
 
 > “Ba”bel, n. Etym: [Heb. Babel, the name of the capital of Babylonia; in Genesis associated with the idea of ”confusion”] 1. The city and tower in the land of Shinar, where the confusion of languages took place. Therefore is the name of it called Babel. Gen. xi. 9.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -122,9 +122,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The self-made kingdom that builds a [name](/research/symbols/name/) against heaven — an empire raised over many kingdoms, the [covenant](/research/symbols/covenant/) counterfeit.
+1. **Core sense:** The self-made kingdom that builds a [name](/research/symbols/name/) against heaven — an empire raised over many kingdoms, the [covenant](/research/symbols/covenant/) counterfeit.
 2. **Defining witnesses:** Gen 11:4; Jer 51:7; Rev 17:18
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -193,4 +193,4 @@ Related definitions used by this entry: [name](/research/symbols/name/), [covena
 
 **The self-made kingdom that builds a [name](/research/symbols/name/) against heaven — an empire raised over many kingdoms, the [covenant](/research/symbols/covenant/) counterfeit.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

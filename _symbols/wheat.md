@@ -65,27 +65,27 @@ definitions:
 
 # Wheat
 
-## Approved Definition
+## Summary
 
 **The children of the kingdom — the good grain gathered into the barn at the harvest.**
 
 The fuller book and notebook trail is available in [Grass](/books/symbolic-language/grass/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The children of the kingdom — the good grain gathered into the barn at the harvest.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **wheat** begins: “(Bot.) Defn: A cereal grass (Triticum vulgare) and its grain, which furnishes a white flour for bread, and, next to rice, is the grain most largely used by the human race.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -103,7 +103,7 @@ Webster's 1913 entry for **wheat** begins:
 
 > “in Europe and America. The female lays her eggs in the flowers of wheat, and the larvæ suck the juice of the young kernels and when full grown change to pupæ in the earth. (b) The Hessian fly. See under Hessian. -- Wheat moth (Zoöl.), any moth whose larvæ devour the grains of wheat, chiefly after it is harvested; a grain moth. See Angoumois Moth, also Grain moth, under Grain. -- Wheat thief (Bot.), gromwell; -- so called because it is a troublesome weed in wheat fields. See Gromwell. -- Wheat thrips (Zoöl.), a small brown thrips (Thrips cerealium) which is very injurious to the grains of growing wheat. -- Wheat weevil. (Zoöl.) (a) The grain weevil. (b) The rice weevil when found in wheat.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -111,9 +111,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The children of the kingdom — the good grain gathered into the barn at the harvest.
+1. **Core sense:** The children of the kingdom — the good grain gathered into the barn at the harvest.
 2. **Defining witnesses:** Matt 13:38; 3:12
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -200,4 +200,4 @@ Related definitions used by this entry: [Tares](/research/symbols/tares/).
 
 **The children of the kingdom — the good grain gathered into the barn at the harvest.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

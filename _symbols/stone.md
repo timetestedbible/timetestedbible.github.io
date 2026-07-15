@@ -88,27 +88,27 @@ definitions:
 
 # Stone
 
-## Approved Definition
+## Summary
 
 **A person as a building member of a house or kingdom. Jesus is the rejected living Stone made the chief cornerstone; His people are living stones built under and aligned to Him. The Stone cut without hands is Christ as Head of the kingdom that grows into the [Mountain](/research/symbols/mountain/) filling the earth.**
 
 The fuller book and notebook trail is available in [Mountain](/books/symbolic-language/mountain/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A person as a building member of a house or kingdom. Jesus is the rejected living Stone made the chief cornerstone; His people are living stones built under and aligned to Him. The Stone cut without hands is Christ as Head of the kingdom that grows into the [Mountain](/research/symbols/mountain/) filling the earth.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **stone** begins: “Concreted earthy or mineral matter; also, any particular mass of such matter; as, a house built of stone; the boy threw a stone; pebbles are rounded stones.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -138,7 +138,7 @@ Webster's 1913 entry for **stone** begins:
 
 > “to OS. & OFries. sten, D. steen, G. stein, Icel. steinn, Sw. sten, Dan. steen, Goth. stains, Russ. stiena a wall, Gr. Steen.] 1. Concreted earthy or mineral matter; also, any particular mass of such matter; as, a house built of stone; the boy threw a stone; pebbles are rounded stones. ”Dumb as a stone.” Chaucer. They had brick for stone, and slime . . . for mortar. Gen. xi. 3. Note: In popular language, very large masses of stone are called rocks; small masses are called stones; and the finer kinds, gravel, or sand, or grains of sand. Stone is much and widely used in the construction of buildings of all kinds, for walls, fences, piers, abutments, arches, monuments, sculpture, and the like.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -146,9 +146,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A person as a building member of a house or kingdom. Jesus is the rejected living Stone made the chief cornerstone; His people are living stones built under and aligned to Him. The Stone cut without hands is Christ as Head of the kingdom that grows into the [Mountain](/research/symbols/mountain/) filling the earth.
+1. **Core sense:** A person as a building member of a house or kingdom. Jesus is the rejected living Stone made the chief cornerstone; His people are living stones built under and aligned to Him. The Stone cut without hands is Christ as Head of the kingdom that grows into the [Mountain](/research/symbols/mountain/) filling the earth.
 2. **Defining witnesses:** Isa 28:16; Ps 118:22; Dan 2:34-35, 44-45; Matt 21:42; Eph 2:20-22; 1 Pet 2:4-7
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -259,4 +259,4 @@ Related definitions used by this entry: [Mountain](/research/symbols/mountain/).
 
 **A person as a building member of a house or kingdom. Jesus is the rejected living Stone made the chief cornerstone; His people are living stones built under and aligned to Him. The Stone cut without hands is Christ as Head of the kingdom that grows into the [Mountain](/research/symbols/mountain/) filling the earth.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

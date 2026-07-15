@@ -88,28 +88,28 @@ definitions:
 
 # Egypt
 
-## Approved Definition
+## Summary
 
 **A [covenant](/research/symbols/covenant/) city in bondage under worldly rule. Revelation applies the spiritual name Egypt to the great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.**
 > *"And that great city, which **spiritually** is called $[sodom] and **Egypt**, where also our Lord was crucified."* — Rev 11:8
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A [covenant](/research/symbols/covenant/) city in bondage under worldly rule. Revelation applies the spiritual name Egypt to the great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 No exact Webster headword has yet been matched to **Egypt**.
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -329,7 +329,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **A [covenant](/research/symbols/covenant/) city in bondage under worldly rule. Revelation applies the spiritual name Egypt to the great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

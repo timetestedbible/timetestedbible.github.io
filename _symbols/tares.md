@@ -74,27 +74,27 @@ definitions:
 
 # Tares (darnel)
 
-## Approved Definition
+## Summary
 
 **The counterfeit sown among the [wheat](/research/symbols/wheat/) by the enemy — a weed that mimics the true grain until the harvest, then is bound in bundles and burned; the children of the wicked one, distinct from the winnowed [chaff](/research/symbols/chaff/).**
 
 The fuller book and notebook trail is available in [Grass](/books/symbolic-language/grass/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The counterfeit sown among the [wheat](/research/symbols/wheat/) by the enemy — a weed that mimics the true grain until the harvest, then is bound in bundles and burned; the children of the wicked one, distinct from the winnowed [chaff](/research/symbols/chaff/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **tare** begins: “Tare, obs. imp. of Tear.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -124,7 +124,7 @@ Webster's 1913 entry for **tare** begins:
 
 > “Tare, obs. imp. of Tear. Defn: Tore.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -132,9 +132,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The counterfeit sown among the [wheat](/research/symbols/wheat/) by the enemy — a weed that mimics the true grain until the harvest, then is bound in bundles and burned; the children of the wicked one, distinct from the winnowed [chaff](/research/symbols/chaff/).
+1. **Core sense:** The counterfeit sown among the [wheat](/research/symbols/wheat/) by the enemy — a weed that mimics the true grain until the harvest, then is bound in bundles and burned; the children of the wicked one, distinct from the winnowed [chaff](/research/symbols/chaff/).
 2. **Defining witnesses:** Matt 13:25-30, 38-40
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -169,4 +169,4 @@ Related definitions used by this entry: [wheat](/research/symbols/wheat/), [chaf
 
 **The counterfeit sown among the [wheat](/research/symbols/wheat/) by the enemy — a weed that mimics the true grain until the harvest, then is bound in bundles and burned; the children of the wicked one, distinct from the winnowed [chaff](/research/symbols/chaff/).**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

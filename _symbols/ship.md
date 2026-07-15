@@ -84,27 +84,27 @@ definitions:
 
 # Ship
 
-## Approved Definition
+## Summary
 
 **An organized kingdom, city, or state riding upon the [sea](/research/symbols/sea/) of peoples. Its rulers steer and inhabitants crew it; Christ can rule the waters without a vessel, but when He boards one it comes under its true Head.**
 
 The fuller book and notebook trail is available in [The Ship](/books/symbolic-language/the-ship/), [research-ship.md](/books/symbolic-language/research/research-ship.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **An organized kingdom, city, or state riding upon the [sea](/research/symbols/sea/) of peoples. Its rulers steer and inhabitants crew it; Christ can rule the waters without a vessel, but when He boards one it comes under its true Head.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **ship** begins: “Pay; reward. [Obs.] In withholding or abridging of the ship or the hire or the wages of servants.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -134,7 +134,7 @@ Webster's 1913 entry for **ship** begins:
 
 > “Ship, n. Etym: [AS. scipe.] Defn: Pay; reward. [Obs.] In withholding or abridging of the ship or the hire or the wages of servants. Chaucer.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -142,15 +142,15 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** An organized kingdom, city, or state riding upon the [sea](/research/symbols/sea/) of peoples. Its rulers steer and inhabitants crew it; Christ can rule the waters without a vessel, but when He boards one it comes under its true Head.
+1. **Core sense:** An organized kingdom, city, or state riding upon the [sea](/research/symbols/sea/) of peoples. Its rulers steer and inhabitants crew it; Christ can rule the waters without a vessel, but when He boards one it comes under its true Head.
 2. **Defining witnesses:** Ezek 27:2-36; Isa 23:1-18; Acts 27:22, 31, 37, 41-44; Rev 18:9-19; Jonah 1:4-16
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
 ## Competing Definitions Tested
 
-The approved definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
+The definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
 
 ## Relationship to Other Symbols
 
@@ -209,4 +209,4 @@ Related definitions used by this entry: [sea](/research/symbols/sea/).
 
 **An organized kingdom, city, or state riding upon the [sea](/research/symbols/sea/) of peoples. Its rulers steer and inhabitants crew it; Christ can rule the waters without a vessel, but when He boards one it comes under its true Head.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

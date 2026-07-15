@@ -76,28 +76,28 @@ definitions:
 
 # Wise
 
-## Approved Definition
+## Summary
 
 **One who hears God's word and does it, who fears the LORD.**
 > *"The fear of the LORD is the beginning of wisdom: a good understanding have all they that **do** his commandments."* — Ps 111:10
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **One who hears God's word and does it, who fears the LORD.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **wise** begins: “Having knowledge; knowing; enlightened; of extensive information; erudite; learned.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -292,7 +292,7 @@ Webster's 1913 entry for **wise** begins:
 
 > “Wise, a. [Compar. Wiser; superl. Wisest.] Etym: [OE. wis, AS. wis; akin to OS. & OFries. wis, D. wijs, G. weise, OHG. wis, wisi, Icel. viss, Sw. vis, Dan. viis, Goth. weis; akin to wit, v. i. See Wit, v., and cf. Righteous, Wisdom.] 1. Having knowledge; knowing; enlightened; of extensive information; erudite; learned. They are wise to do evil, but to do good they have no knowledge. Jer. iv. 22.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -308,7 +308,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **One who hears God's word and does it, who fears the LORD.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

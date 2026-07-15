@@ -84,28 +84,28 @@ definitions:
 
 # Israel
 
-## Approved Definition
+## Summary
 
 **The [covenant](/research/symbols/covenant/) [Name](/research/symbols/name/) given to Jacob and borne at several scales: the man, his descendants, the nation, or the faithful people who prevail with God. Context determines the sense; blood alone does not settle it.**
 > *"Thy name shall be called no more Jacob, but **Israel**: for as a prince hast thou power with God and with men, and hast prevailed."* — Gen 32:28
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The [covenant](/research/symbols/covenant/) [Name](/research/symbols/name/) given to Jacob and borne at several scales: the man, his descendants, the nation, or the faithful people who prevail with God. Context determines the sense; blood alone does not settle it.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 No exact Webster headword has yet been matched to **Israel**.
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -306,7 +306,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The [covenant](/research/symbols/covenant/) [Name](/research/symbols/name/) given to Jacob and borne at several scales: the man, his descendants, the nation, or the faithful people who prevail with God. Context determines the sense; blood alone does not settle it.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

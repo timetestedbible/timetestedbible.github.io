@@ -74,27 +74,27 @@ definitions:
 
 # Grace
 
-## Approved Definition
+## Summary
 
 **Favor that moves first and then teaches its recipient to reject ungodliness and live rightly. Counterfeit grace turns favor into permission to remain lawless.**
 
 The fuller book and notebook trail is available in [Grace, Mercy & the Gift](/books/symbolic-language/path-to-salvation/), [research-grace-mercy-gift.md](/books/symbolic-language/research/research-grace-mercy-gift.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **Favor that moves first and then teaches its recipient to reject ungodliness and live rightly. Counterfeit grace turns favor into permission to remain lawless.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **grace** begins: “The exercise of love, kindness, mercy, favor; disposition to benefit or serve another; favor bestowed or privilege conferred.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -116,7 +116,7 @@ Webster's 1913 entry for **grace** begins:
 
 > “Grace, n. Etym: [F. grâce, L. gratia, from gratus beloved, dear, agreeable; perh. akin to Gr. hary to desire, and E. yearn. Cf. Grateful, Gratis.] 1. The exercise of love, kindness, mercy, favor; disposition to benefit or serve another; favor bestowed or privilege conferred. To bow and sue for grace With suppliant knee. Milton.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -124,9 +124,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Favor that moves first and then teaches its recipient to reject ungodliness and live rightly. Counterfeit grace turns favor into permission to remain lawless.
+1. **Core sense:** Favor that moves first and then teaches its recipient to reject ungodliness and live rightly. Counterfeit grace turns favor into permission to remain lawless.
 2. **Defining witnesses:** Rom 5:8; Titus 2:11-12; Ex 34:6
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -227,4 +227,4 @@ This definition does not depend on another glossary term.
 
 **Favor that moves first and then teaches its recipient to reject ungodliness and live rightly. Counterfeit grace turns favor into permission to remain lawless.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

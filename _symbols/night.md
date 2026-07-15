@@ -83,28 +83,28 @@ definitions:
 
 # Night
 
-## Approved Definition
+## Summary
 
 **The absence of [Day](/research/symbols/day/) and [Light](/research/symbols/light/) — visible obedience — marked by sleep or death and by sinful deeds concealed in [darkness](/research/symbols/darkness/). At the largest scale, it is the period from the fall of man until the Kingdom of God begins on earth.**
 > *"The **night** is far spent, the $[day] is at hand: let us therefore cast off the works of $[darkness], and let us put on the armour of $[light]."* — Rom 13:12
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The absence of [Day](/research/symbols/day/) and [Light](/research/symbols/light/) — visible obedience — marked by sleep or death and by sinful deeds concealed in [darkness](/research/symbols/darkness/). At the largest scale, it is the period from the fall of man until the Kingdom of God begins on earth.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **night** begins: “That part of the natural day when the sun is beneath the horizon, or the time from sunset to sunrise; esp., the time between dusk and dawn, when there is no light of the sun, but only moonlight, starlight, or artificial light.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -290,7 +290,7 @@ Webster's 1913 entry for **night** begins:
 
 > “Night, n. Etym: [OE. night, niht, AS. neaht, niht; akin to D. nacht, OS. & OHG. naht, G. nacht, Icel. n, Sw. natt, Dan. nat, Goth. nachts, Lith. naktis, Russ. noche, W. nos, Ir. nochd, L. nox, noctis, gr. nakta, nakti. sq. root 265. Cf. Equinox, Nocturnal.] 1. That part of the natural day when the sun is beneath the horizon, or the time from sunset to sunrise; esp., the time between dusk and dawn, when there is no light of the sun, but only moonlight, starlight, or artificial light. And God called the light Day, and the darkness he called Night. Gen. i. 5.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -308,7 +308,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The absence of [Day](/research/symbols/day/) and [Light](/research/symbols/light/) — visible obedience — marked by sleep or death and by sinful deeds concealed in [darkness](/research/symbols/darkness/). At the largest scale, it is the period from the fall of man until the Kingdom of God begins on earth.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

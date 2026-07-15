@@ -95,28 +95,28 @@ definitions:
 
 # New Moon — The Renewed Moon
 
-## Approved Definition
+## Summary
 
 **The renewed moon — the phase of the moon that marks the start of the month: the full moon in the [east](/research/symbols/east/) gate and sign of the appointed times.**
 > *"Blow up the **trumpet** in the **renewed moon** (H2320 chodesh), in the **$[full-moon]** (H3677 keseh), on our solemn feast day."* — Ps 81:3
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The renewed moon — the phase of the moon that marks the start of the month: the full moon in the [east](/research/symbols/east/) gate and sign of the appointed times.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **new** begins: “Having existed, or having been made, but a short time; having originated or occured lately; having recently come into existence, or into one's possession; not early or long in being; of late origin; recent; fresh; modern; -- opposed to old, as, a new coat; a new house; a new book; a new fashion.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -375,7 +375,7 @@ Webster's 1913 entry for **new** begins:
 
 > “New, a. [Compar. Newer; superl. Newest.] Etym: [OE. OE. newe, AS. niwe, neowe; akin to D. nieuw, OS. niwi, OHG. niuwi, G. neu, Icel. n, Dan. & Sw. ny, Goth. niujis, Lith. naujas, Russ. novuii, Ir. nua, nuadh, Gael. nuadh, W. newydd, Armor. nevez, L. novus, gr. nava, and prob. to E. now. Now, and cf. Announce, Innovate, Neophyte, Novel.] 1. Having existed, or having been made, but a short time; having originated or occured lately; having recently come into existence, or into one's possession; not early or long in being; of late origin; recent; fresh; modern; -- opposed to old, as, a new coat; a new house; a new book; a new fashion. ”Your new wife.” Chaucer.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -500,7 +500,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The renewed moon — the phase of the moon that marks the start of the month: the full moon in the [east](/research/symbols/east/) gate and sign of the appointed times.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

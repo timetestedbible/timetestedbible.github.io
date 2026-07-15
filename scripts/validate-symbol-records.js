@@ -231,13 +231,13 @@ for (const file of files) {
   }
 
   const requiredHeadings = [
-    '## Definition Layers',
+    '## Definitions',
     '## Corpus and Method',
     '## Competing Definitions Tested',
     '## Relationship to Other Symbols',
     '## Conclusion'
   ];
-  const definitionHeading = meta.status === 'draft' ? '## Current Glossary Draft' : '## Approved Definition';
+  const definitionHeading = '## Summary';
   if (!body.includes(definitionHeading)) warnings.push(`${key}: prose study is missing '${definitionHeading}'`);
   for (const heading of requiredHeadings) {
     if (!body.includes(heading)) warnings.push(`${key}: prose study is missing '${heading}'`);

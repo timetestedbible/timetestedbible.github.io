@@ -1,0 +1,27 @@
+{
+  "created_at": "2026-07-15T02:50:56.361890+00:00",
+  "purpose": "Evidence rerun: three-paragraph traditional Christian reader review of Pearls of Wisdom with What Is the Point, Sun Moon and Stars, the complete peninim case, and the Scripture-only Pearl symbol study.",
+  "providers": {
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages"
+    },
+    "gemini": {
+      "model": "gemini-3.1-pro-preview",
+      "api": "gemini_generate_content"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses"
+    }
+  },
+  "input_sha256": {
+    "25-what-is-the-point.adoc": "daa580b43f9708043074717aaa0040f7047033596671ab03532a153b5cf72ba2",
+    "29-sun-moon-and-stars.adoc": "5ff0940d8aaa43a59243f5bd8fa6b141e7b9b101104f426730c41c227cb72e6b",
+    "31-the-pearl.adoc": "d0d11cd07c8ab054d4256bf31c129eede0e7f1645e250026fb51a9f164aaded0",
+    "2026-07-14-peninim-pearl-or-ruby.html": "98cf483b5dd4bbf53ff1f1c0b62981132c0e6d99be5f942c195a0969f3046ec2",
+    "pearl.md": "860b5a0191594780d3d8be27af855903216c43c59ad41cb1fb5ab92097eeab94"
+  },
+  "prompt_sha256": "45e847b271762c8ea170b6661db1c67dcb936073486f39a3383b57a71f92065a",
+  "credentials_written": false
+}

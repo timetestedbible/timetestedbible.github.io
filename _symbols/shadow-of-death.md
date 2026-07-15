@@ -110,16 +110,16 @@ dictionary:
 The fuller book trail continues through [Shadow](/books/symbolic-language/shadow/)
 and [Heaven and Hell](/books/symbolic-language/heaven-and-hell/).
 
-## Approved Definition
+## Summary
 
 **The symbolic Way and pattern of the world shaped like Death's substance: sin, darkness, and bondage whose wages end at the pit or grave. Opposite the shadow of Christ—the appointed times, assemblies, and humbled Way shaped like His substance—which leads through death to the gift of eternal life.**
 
-This is the approved glossary definition. Shadow of Death remains distinct
+This is the glossary definition. Shadow of Death remains distinct
 from both $shadow and $valley.
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 The symbolic way, order, and activity of the world shaped like Death's
 substance. Its people sit or walk in sin, darkness, and bondage, and its wages
@@ -127,14 +127,14 @@ end at the pit or grave. Christ brings them out, shines upon them, and guides
 their feet into the contrary Way of life (Ps 107:10, 14; Isa 9:2; Luke 1:79;
 Rom 6:23).
 
-### Bible literal or lexical sense
+### Literal Biblical Definition
 
 The KJV phrase translates Hebrew *tsalmaveth* (H6757), the death-shadow or deep
 darkness associated with a land without order, pits, the gates of death, and
 the grave (Job 10:21-22; 38:17; Jer 2:6). It names more than an ordinary patch
 of shade.
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry defines *shadow of death* as **“darkness or gloom like that
 caused by the presence or the impending of death.”** That captures the ordinary
@@ -270,7 +270,7 @@ isolation.
 
 ## Conclusion
 
-The approved glossary definition is:
+The glossary definition is:
 
 > **The symbolic Way and pattern of the world shaped like Death's substance:
 > sin, darkness, and bondage whose wages end at the pit or grave. Opposite the

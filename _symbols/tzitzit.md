@@ -68,27 +68,27 @@ definitions:
 
 # Tzitzit
 
-## Approved Definition
+## Summary
 
 **The tassels bound to the corners of the [garment](/research/symbols/garment/); looking upon them reminds the wearer of all the LORD's commandments, to do them.**
 
 The fuller book and notebook trail is available in [Wings](/books/symbolic-language/wings/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The tassels bound to the corners of the [garment](/research/symbols/garment/); looking upon them reminds the wearer of all the LORD's commandments, to do them.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 No exact Webster headword has yet been matched to **Tzitzit**.
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -110,9 +110,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The tassels bound to the corners of the [garment](/research/symbols/garment/); looking upon them reminds the wearer of all the LORD's commandments, to do them.
+1. **Core sense:** The tassels bound to the corners of the [garment](/research/symbols/garment/); looking upon them reminds the wearer of all the LORD's commandments, to do them.
 2. **Defining witnesses:** Num 15:38-39
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -142,4 +142,4 @@ No exact KJV English-form occurrences were found under the display forms searche
 
 **The tassels bound to the corners of the [garment](/research/symbols/garment/); looking upon them reminds the wearer of all the LORD's commandments, to do them.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

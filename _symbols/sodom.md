@@ -88,28 +88,28 @@ definitions:
 
 # Sodom
 
-## Approved Definition
+## Summary
 
 **A spiritual name of Jerusalem — the prophets address her rulers so to their faces: “Hear the word of the LORD, ye rulers of Sodom… ye people of Gomorrah”; Ezekiel calls Sodom her sister and Jerusalem the worse; and Revelation writes the name on “the great city… where also our Lord was crucified.”**
 > *"Behold, this was the iniquity of thy sister **Sodom**, pride, fulness of $[bread], and abundance of idleness was in her and in her daughters, neither did she strengthen the hand of the poor and needy."* — Ezek 16:49
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A spiritual name of Jerusalem — the prophets address her rulers so to their faces: “Hear the word of the LORD, ye rulers of Sodom… ye people of Gomorrah”; Ezekiel calls Sodom her sister and Jerusalem the worse; and Revelation writes the name on “the great city… where also our Lord was crucified.”**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 No exact Webster headword has yet been matched to **Sodom, Gomorrah**.
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -410,7 +410,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **A spiritual name of Jerusalem — the prophets address her rulers so to their faces: “Hear the word of the LORD, ye rulers of Sodom… ye people of Gomorrah”; Ezekiel calls Sodom her sister and Jerusalem the worse; and Revelation writes the name on “the great city… where also our Lord was crucified.”**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

@@ -83,28 +83,28 @@ definitions:
 
 # Harvest
 
-## Approved Definition
+## Summary
 
 **The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.**
 > *"The **harvest** is the end of the world; and the **reapers** are the angels."* — Mat 13:39
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **harvest** begins: “The gathering of a crop of any kind; the ingathering of the crops; also, the season of gathering grain and fruits, late summer or early autumn.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -412,7 +412,7 @@ Webster's 1913 entry for **harvest** begins:
 
 > “Har”vest, n. Etym: [OE. harvest, hervest, AS. hærfest autumn; akin to LG. harfst, D. herfst, OHG. herbist, G. herbst, and prob. to L. carpere to pluck, Gr. Carpet.] 1. The gathering of a crop of any kind; the ingathering of the crops; also, the season of gathering grain and fruits, late summer or early autumn. Seedtime and harvest . . . shall not cease. Gen viii. 22. At harvest, when corn is ripe. Tyndale.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -430,7 +430,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

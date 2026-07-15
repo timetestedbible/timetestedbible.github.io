@@ -70,27 +70,27 @@ definitions:
 
 # Understanding
 
-## Approved Definition
+## Summary
 
 **Discernment of good from evil, gained by departing from evil — “a good understanding have all they that do his commandments”.**
 
 The fuller book and notebook trail is available in [The Fool and the Wise](/books/symbolic-language/the-fool-and-the-wise/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Discernment of good from evil, gained by departing from evil — “a good understanding have all they that do his commandments”.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **understanding** begins: “Un`der*stand”ing, a.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -108,7 +108,7 @@ Webster's 1913 entry for **understanding** begins:
 
 > “Un`der*stand”ing, a. Defn: Knowing; intelligent; skillful; as, he is an understanding man.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -116,9 +116,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Discernment of good from evil, gained by departing from evil — “a good understanding have all they that do his commandments”.
+1. **Core sense:** Discernment of good from evil, gained by departing from evil — “a good understanding have all they that do his commandments”.
 2. **Defining witnesses:** Job 28:28; Ps 111:10
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -211,4 +211,4 @@ This definition does not depend on another glossary term.
 
 **Discernment of good from evil, gained by departing from evil — “a good understanding have all they that do his commandments”.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

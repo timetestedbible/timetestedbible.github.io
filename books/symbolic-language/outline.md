@@ -341,6 +341,15 @@ printed order — annotate/reorder freely; chapters are movable blocks).
     - Joseph's bow abides — strung by God
     - Every bow strung against Him unstrings
 
+- **She Laughs at the Last Day**  ⟶ establishes the full-moon structure of the Day of the Lord
+  - Proverbs 31: last day → children arise → Husband makes her shine → she goes up above
+  - Husband returns and shofar sounds at the full moon
+  - East-to-west shining and light at evening
+  - Moon as bright as sun; sun sevenfold
+  - Joshua: facing lights, _damam_ silence, hail, and kings hidden beneath rocks
+  - Revelation: half-hour silence, trumpets, black sun, and the whole moon as blood
+  - Establishes the phase without predicting a modern date
+
 - **The Four Winds**  ⟶ overturns: Four winds as mere compass-points idiom
   - Opening — Zechariah's Four Spirits
     - Takes up Sea chapter's unfinished thread

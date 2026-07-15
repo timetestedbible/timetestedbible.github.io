@@ -257,7 +257,7 @@ function linkedDefinition(record, sourceText = record.definition) {
 
 function competingSection(record) {
   if (record.experiment?.revisionPending) {
-    return 'The approved definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.';
+    return 'The definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.';
   }
   if (!(record.objections || []).length && !record.commonView) {
     return 'No material competing definition is recorded in the current independent review. Literal uses still constrain the symbol: the figurative reading must arise from the passage rather than being imposed on every occurrence.';
@@ -275,7 +275,7 @@ function dictionarySection(record, dictionary) {
   if (!dictionary) {
     return `The local 1913 Webster dataset has no exact headword for **${record.term}** under the display form used by the glossary. The biblical study therefore begins with the ordinary physical or grammatical sense visible in context and tests whether Scripture assigns it a more precise figurative sense.`;
   }
-  return `Webster's 1913 entry for **${dictionary.headword.toLowerCase()}** begins:\n\n> “${dictionary.excerpt.replace(/"/g, '”')}”\n\nThe dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.`;
+  return `Webster's 1913 entry for **${dictionary.headword.toLowerCase()}** begins:\n\n> “${dictionary.excerpt.replace(/"/g, '”')}”\n\nThe dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.`;
 }
 
 function definitionLayers(record, existing = {}, dictionary = null) {
@@ -362,21 +362,21 @@ function definitionComparisonSection(record, definitions) {
     ? `Webster's 1913 entry for **${String(webster.headword || record.term).toLowerCase()}** begins: “${String(webster.text).replace(/"/g, '”')}”`
     : `No exact Webster headword has yet been matched to **${record.term}**.`;
 
-  return `## Definition Layers
+  return `## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 ${symbolicText}
 
-### Bible literal sense
+### Literal Biblical Definition
 
 ${literalText}
 
-### Webster's English sense
+### Webster's Definition
 
 ${websterText}
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.`;
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.`;
 }
 
 function corpusSection(record, forms, register) {
@@ -465,14 +465,14 @@ function generatedBody(record, cited, dictionary, forms, register) {
   const relationshipText = record.opposite
     ? `The glossary names **${record.opposite}** as the reciprocal opposite. That relation must work in both directions; a merely related image is not an opposite.`
     : 'No reciprocal opposite is assigned. Related images may share a scene or a consequence without becoming aliases.';
-  return `# ${record.term}\n\n## Approved Definition\n\n**${displayedDefinition}**\n\n${sourceParagraph}\n\n${definitionComparisonSection(record, definitions)}\n\n## The Short Case\n\n${conciseArgument(record)}\n\n${evidence || `The current glossary points to ${record.citations || 'no separate citation list'}. Those references should be read in their full literary setting before the symbolic sense is extended.`}\n\nThe definition stays with the relationship these passages establish. Literal appearances preserve the image; they do not require every occurrence to be symbolic, and some passages intentionally carry both senses together.\n\n## Corpus and Method\n\n${corpusSection(record, forms, register)}\n\n## Evidence by Sense\n\nThe approved entry currently states one controlling sense:\n\n1. **Approved core:** ${displayedDefinition}\n2. **Defining witnesses:** ${record.citations || 'No separate glossary citations recorded.'}\n3. **Boundary:** classify a use as literal, symbolic, or both only from its context. A dual-use passage belongs to both applicable groups.\n\n## Competing Definitions Tested\n\n${competingSection(record)}\n\n## Relationship to Other Symbols\n\n${relationshipText}\n\n${related.length ? `Related definitions used by this entry: ${[...new Set(related)].join(', ')}.` : 'This definition does not depend on another glossary term.'}\n\n## Occurrence Register\n\n${occurrenceSection(register)}\n\n## Conclusion\n\n**${displayedDefinition}**\n\nThis is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.\n`;
+  return `# ${record.term}\n\n## Summary\n\n**${displayedDefinition}**\n\n${sourceParagraph}\n\n${definitionComparisonSection(record, definitions)}\n\n## The Short Case\n\n${conciseArgument(record)}\n\n${evidence || `The current glossary points to ${record.citations || 'no separate citation list'}. Those references should be read in their full literary setting before the symbolic sense is extended.`}\n\nThe definition stays with the relationship these passages establish. Literal appearances preserve the image; they do not require every occurrence to be symbolic, and some passages intentionally carry both senses together.\n\n## Corpus and Method\n\n${corpusSection(record, forms, register)}\n\n## Evidence by Sense\n\nThe entry states one controlling sense:\n\n1. **Core sense:** ${displayedDefinition}\n2. **Defining witnesses:** ${record.citations || 'No separate glossary citations recorded.'}\n3. **Boundary:** classify a use as literal, symbolic, or both only from its context. A dual-use passage belongs to both applicable groups.\n\n## Competing Definitions Tested\n\n${competingSection(record)}\n\n## Relationship to Other Symbols\n\n${relationshipText}\n\n${related.length ? `Related definitions used by this entry: ${[...new Set(related)].join(', ')}.` : 'This definition does not depend on another glossary term.'}\n\n## Occurrence Register\n\n${occurrenceSection(register)}\n\n## Conclusion\n\n**${displayedDefinition}**\n\nThe occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test the definition.\n`;
 }
 
 function supplementExistingBody(record, body, cited, dictionary, forms, register, definitions, definitionStatus) {
   let updated = body;
   const displayedDefinition = linkedDefinition(record);
-  const definitionHeading = definitionStatus === 'draft' ? 'Current Glossary Draft' : 'Approved Definition';
-  const approvedBlock = updated.match(/^(## (?:Approved Definition|Current Glossary Draft)\s*\n+)(\*\*.+?\*\*)/m);
+  const definitionHeading = 'Summary';
+  const approvedBlock = updated.match(/^(## (?:Summary|Definition|Approved Definition|Current Glossary Draft)\s*\n+)(\*\*.+?\*\*)/m);
   const firstBold = updated.match(/^\*\*(.+?)\*\*\s*$/m);
   if (approvedBlock) {
     updated = `${updated.slice(0, approvedBlock.index)}## ${definitionHeading}\n\n**${displayedDefinition}**${updated.slice(approvedBlock.index + approvedBlock[0].length)}`;
@@ -485,10 +485,10 @@ function supplementExistingBody(record, body, cited, dictionary, forms, register
   }
 
   const comparison = definitionComparisonSection(record, definitions);
-  if (/^## (?:Three Definitions|Definition Layers)\s*$/m.test(updated)) {
-    updated = updated.replace(/^## (?:Three Definitions|Definition Layers)\s*\n[\s\S]*?(?=^##\s)/m, `${comparison}\n\n`);
+  if (/^## (?:Definitions|Three Definitions|Definition Layers)\s*$/m.test(updated)) {
+    updated = updated.replace(/^## (?:Definitions|Three Definitions|Definition Layers)\s*\n[\s\S]*?(?=^##\s)/m, `${comparison}\n\n`);
   } else {
-    const approvedSection = updated.match(/^## (?:Approved Definition|Current Glossary Draft)\s*\n[\s\S]*?(?=^##\s)/m);
+    const approvedSection = updated.match(/^## (?:Summary|Definition|Approved Definition|Current Glossary Draft)\s*\n[\s\S]*?(?=^##\s)/m);
     if (approvedSection) {
       const insertAt = approvedSection.index + approvedSection[0].length;
       updated = `${updated.slice(0, insertAt)}${comparison}\n\n${updated.slice(insertAt)}`;
@@ -513,7 +513,7 @@ function supplementExistingBody(record, body, cited, dictionary, forms, register
   if (!/^## Competing Definitions Tested\s*$/m.test(updated)) additions.push(`## Competing Definitions Tested\n\n${competingSection(record)}`);
   if (!/occurrence|every use|all uses/.test(headingText)) additions.push(`## Occurrence Register\n\n${occurrenceSection(register)}`);
   if (!/^## Relationship to Other Symbols\s*$/m.test(updated)) additions.push(`## Relationship to Other Symbols\n\n${record.opposite ? `The glossary identifies **${record.opposite}** as the reciprocal opposite.` : 'No reciprocal opposite is assigned to this entry.'}`);
-  if (!/^## Conclusion\s*$/m.test(updated)) additions.push(`## Conclusion\n\n**${displayedDefinition}**\n\nThis is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.`);
+  if (!/^## Conclusion\s*$/m.test(updated)) additions.push(`## Conclusion\n\n**${displayedDefinition}**\n\nBroader applications in the study remain subordinate to the defining texts and countertexts.`);
   if (additions.length) updated = `${updated.trimEnd()}\n\n---\n\n${additions.join('\n\n')}\n`;
   return updated;
 }

@@ -85,27 +85,27 @@ definitions:
 
 # Belief, to believe
 
-## Approved Definition
+## Summary
 
 **Receiving God's testimony as [true](/research/symbols/truth/) and governing, then acting upon it. Mere assent can acknowledge a fact; persistent refusal to obey exposes unbelief.**
 
 The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/), [research-faith.md](/books/symbolic-language/research/research-faith.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **Receiving God's testimony as true and governing, then acting upon it. Mere assent can acknowledge a fact; persistent refusal to obey exposes unbelief.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **belief** begins: “Assent to a proposition or affirmation, or the acceptance of a fact, opinion, or assertion as real or true, without immediate personal knowledge; reliance upon word or testimony; partial or full assurance without positive knowledge or absolute certainty; persuasion; conviction; confidence; as, belief of a witness; the belief of our senses.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -135,7 +135,7 @@ Webster's 1913 entry for **belief** begins:
 
 > “Be*lief”, n. Etym: [OE. bileafe, bileve; cf. AS. geleáfa. See Believe.] 1. Assent to a proposition or affirmation, or the acceptance of a fact, opinion, or assertion as real or true, without immediate personal knowledge; reliance upon word or testimony; partial or full assurance without positive knowledge or absolute certainty; persuasion; conviction; confidence; as, belief of a witness; the belief of our senses. Belief admits of all degrees, from the slightest suspicion to the fullest assurance. Reid.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -143,9 +143,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Receiving God's testimony as [true](/research/symbols/truth/) and governing, then acting upon it. Mere assent can acknowledge a fact; persistent refusal to obey exposes unbelief.
+1. **Core sense:** Receiving God's testimony as [true](/research/symbols/truth/) and governing, then acting upon it. Mere assent can acknowledge a fact; persistent refusal to obey exposes unbelief.
 2. **Defining witnesses:** Mark 1:27; John 3:36; 12:42-43; Rom 10:16; Heb 3:18-19; Jas 2:19-22
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -186,4 +186,4 @@ Related definitions used by this entry: [true](/research/symbols/truth/).
 
 **Receiving God's testimony as [true](/research/symbols/truth/) and governing, then acting upon it. Mere assent can acknowledge a fact; persistent refusal to obey exposes unbelief.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

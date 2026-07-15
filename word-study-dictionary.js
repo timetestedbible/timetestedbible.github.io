@@ -51,6 +51,22 @@ const WORD_STUDY_DICTIONARY = {
     bookChapterTitle: 'When Does the Month Start?',
     link: '/reader/words/H2320'
   },
+
+  'H6443': {
+    strongs: 'H6443',
+    lemma: 'פָּנִין',
+    transliteration: 'paniyn / peninim',
+    pronunciation: "paw-neen'",
+    root: null,
+    rootLemma: null,
+    rootMeaning: null,
+    summary: 'The noun occurs 6 times. Strong\'s calls it “probably a pearl (as round),” while Brown–Driver–Briggs prefers coral but expressly records pearls as an alternative. The ancient versions usually preserve a general precious-stone sense; the Aramaic Targum to Job 28:18 uses an unambiguous pearl word. “Ruby” is therefore a traditional English choice, not a settled identification of the object.',
+    keyVerse: 'Proverbs 31:10',
+    keyVerseText: 'Who can find a woman of valour? for her price is far above pearls.',
+    bookChapter: '/blog/peninim-pearl-or-ruby/',
+    bookChapterTitle: 'Peninim: Why Pearl Fits Better Than Ruby',
+    link: '/reader/words/H6443'
+  },
   
   'H802': {
     strongs: 'H802',

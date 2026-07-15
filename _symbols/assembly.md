@@ -96,27 +96,27 @@ definitions:
 
 # Assembly of the wicked / synagogue of Satan
 
-## Approved Definition
+## Summary
 
 **A counterfeit congregation claiming [covenant](/research/symbols/covenant/) standing while gathered against the covenant's Lord. Korah's company; the brood of vipers and children of the Devil, the father of lies; the assembly surrounding the Messiah; and those who say they are Jews but are not display the pattern.**
 
 The fuller book and notebook trail is available in [What Is the Point?](/books/symbolic-language/what-is-the-point/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A counterfeit congregation claiming [covenant](/research/symbols/covenant/) standing while gathered against the covenant's Lord. Korah's company; the brood of vipers and children of the Devil, the father of lies; the assembly surrounding the Messiah; and those who say they are Jews but are not display the pattern.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **assembly** begins: “A company of persons collected together in one place, and usually for some common purpose, esp. for deliberation and legislation, for worship, or for social entertainment.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -146,7 +146,7 @@ Webster's 1913 entry for **assembly** begins:
 
 > “As*sem”bly, n.; pl. Assemblies. Etym: [F. assemblée, fr. assembler. See Assemble.] 1. A company of persons collected together in one place, and usually for some common purpose, esp. for deliberation and legislation, for worship, or for social entertainment.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -154,9 +154,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A counterfeit congregation claiming [covenant](/research/symbols/covenant/) standing while gathered against the covenant's Lord. Korah's company; the brood of vipers and children of the Devil, the father of lies; the assembly surrounding the Messiah; and those who say they are Jews but are not display the pattern.
+1. **Core sense:** A counterfeit congregation claiming [covenant](/research/symbols/covenant/) standing while gathered against the covenant's Lord. Korah's company; the brood of vipers and children of the Devil, the father of lies; the assembly surrounding the Messiah; and those who say they are Jews but are not display the pattern.
 2. **Defining witnesses:** Ps 22:16; Num 14:35; 16:3; Matt 3:7; 12:34; John 8:44; Acts 4:27; Rev 2:9; 3:9
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -193,4 +193,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/).
 
 **A counterfeit congregation claiming [covenant](/research/symbols/covenant/) standing while gathered against the covenant's Lord. Korah's company; the brood of vipers and children of the Devil, the father of lies; the assembly surrounding the Messiah; and those who say they are Jews but are not display the pattern.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

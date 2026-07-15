@@ -80,28 +80,28 @@ definitions:
 
 # Sand
 
-## Approved Definition
+## Summary
 
 **A countless multitude and, when used as a foundation, the instability of building upon the crowd rather than the [covenant](/research/symbols/covenant/) [Rock](/research/symbols/rock/) — people not bound together by a covenant.**
 > *"That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the **sand** which is upon the $[sea] shore"* — Gen 22:17
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A countless multitude and, when used as a foundation, the instability of building upon the crowd rather than the [covenant](/research/symbols/covenant/) [Rock](/research/symbols/rock/) — people not bound together by a covenant.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **sand** begins: “Fine particles of stone, esp. of siliceous stone, but not reduced to dust; comminuted stone in the form of loose grains, which are not coherent when wet.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -302,13 +302,13 @@ Webster's 1913 entry for **sand** begins:
 
 > “Sand, n. Etym: [AS. sand; akin to D. zand, G. sand, OHG. sant, Icel. sandr, Dan. & Sw. sand, Gr. 1. Fine particles of stone, esp. of siliceous stone, but not reduced to dust; comminuted stone in the form of loose grains, which are not coherent when wet. That finer matter, called sand, is no other than very small pebbles. Woodsward.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Conclusion
 
 **A countless multitude and, when used as a foundation, the instability of building upon the crowd rather than the [covenant](/research/symbols/covenant/) [Rock](/research/symbols/rock/) — people not bound together by a covenant.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

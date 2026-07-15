@@ -78,27 +78,27 @@ definitions:
 
 # New name
 
-## Approved Definition
+## Summary
 
 **A renewed Word, [covenant](/research/symbols/covenant/), and priesthood — known, received, and kept only by the one who bears the renewed [Name](/research/symbols/name/).**
 
 The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A renewed Word, [covenant](/research/symbols/covenant/), and priesthood — known, received, and kept only by the one who bears the renewed [Name](/research/symbols/name/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **new** begins: “Having existed, or having been made, but a short time; having originated or occured lately; having recently come into existence, or into one's possession; not early or long in being; of late origin; recent; fresh; modern; -- opposed to old, as, a new coat; a new house; a new book; a new fashion.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -126,7 +126,7 @@ Webster's 1913 entry for **new** begins:
 
 > “New, a. [Compar. Newer; superl. Newest.] Etym: [OE. OE. newe, AS. niwe, neowe; akin to D. nieuw, OS. niwi, OHG. niuwi, G. neu, Icel. n, Dan. & Sw. ny, Goth. niujis, Lith. naujas, Russ. novuii, Ir. nua, nuadh, Gael. nuadh, W. newydd, Armor. nevez, L. novus, gr. nava, and prob. to E. now. Now, and cf. Announce, Innovate, Neophyte, Novel.] 1. Having existed, or having been made, but a short time; having originated or occured lately; having recently come into existence, or into one's possession; not early or long in being; of late origin; recent; fresh; modern; -- opposed to old, as, a new coat; a new house; a new book; a new fashion. ”Your new wife.” Chaucer.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -134,15 +134,15 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A renewed Word, [covenant](/research/symbols/covenant/), and priesthood — known, received, and kept only by the one who bears the renewed [Name](/research/symbols/name/).
+1. **Core sense:** A renewed Word, [covenant](/research/symbols/covenant/), and priesthood — known, received, and kept only by the one who bears the renewed [Name](/research/symbols/name/).
 2. **Defining witnesses:** Gen 32:28; Isa 62:2-5; 65:15; Rev 2:17
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
 ## Competing Definitions Tested
 
-The approved definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
+The definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
 
 ## Relationship to Other Symbols
 
@@ -165,4 +165,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/),
 
 **A renewed Word, [covenant](/research/symbols/covenant/), and priesthood — known, received, and kept only by the one who bears the renewed [Name](/research/symbols/name/).**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

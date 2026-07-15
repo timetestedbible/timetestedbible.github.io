@@ -70,28 +70,28 @@ definitions:
 
 # Wind
 
-## Approved Definition
+## Summary
 
 **Spirit — ruach.**
 > *"The **wind** bloweth where it listeth, and thou hearest the sound thereof, but canst not tell whence it cometh, and whither it goeth: so is every one that is born of the Spirit."* — Jn 3:8
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Spirit — ruach.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **wind** begins: “To turn completely, or with repeated turns; especially, to turn about something fixed; to cause to form convolutions about anything; to coil; to twine; to twist; to wreathe; as, to wind thread on a spool or into a ball.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -277,7 +277,7 @@ Webster's 1913 entry for **wind** begins:
 
 > “Wind, v. t. [imp. & p. p. Wound (wound) (rarely Winded); p. pr. & vb. n. Winding.] Etym: [OE. winden, AS. windan; akin to OS. windan, D. & G. winden, OHG. wintan, Icel. & Sw. vinda, Dan. vinde, Goth. windan (in comp.). Cf. Wander, Wend.] 1. To turn completely, or with repeated turns; especially, to turn about something fixed; to cause to form convolutions about anything; to coil; to twine; to twist; to wreathe; as, to wind thread on a spool or into a ball. Whether to wind The woodbine round this arbor. Milton.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -295,7 +295,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **Spirit — ruach.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

@@ -95,7 +95,7 @@ definitions:
 
 # Meat
 
-## Approved Definition
+## Summary
 
 **The word obeyed to completeness. [Milk](/research/symbols/milk/) is the word received; meat is the same word carried through to complete obedience, exercising the senses to discern.**
 > *"Jesus saith unto them, My **meat** is to do the will of him that sent me, and to finish his work."* — John 4:34
@@ -106,21 +106,21 @@ This is the rare case where the symbol is **defined out loud**. Jesus doesn't sa
 **Opposite:** $milk — the word merely *heard / received* (a babe is fed; he hasn't yet *done*)
 **Connected:** $milk, $bread, $blood
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The word obeyed to completeness. [Milk](/research/symbols/milk/) is the word received; meat is the same word carried through to complete obedience, exercising the senses to discern.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **meat** begins: “Food, in general; anything eaten for nourishment, either by man or beast.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## "My flesh is meat indeed" — the will done, then given
 
@@ -208,7 +208,7 @@ Webster's 1913 entry for **meat** begins:
 
 > “Meat, n. Etym: [OE. mete, AS. mete; akin to OS. mat, meti, D. met hashed meat, G. mettwurst sausage, OHG. maz food, Icel. matr, Sw. mat, Dan. mad, Goth. mats. Cf. Mast fruit, Mush.] 1. Food, in general; anything eaten for nourishment, either by man or beast. Hence, the edible part of anything; as, the meat of a lobster, a nut, or an egg. Chaucer. And God said, Behold, I have given you every herb bearing seed, . . . to you it shall be for meat. Gen. i. 29. Every moving thing that liveth shall be meat for you. Gen. ix. 3.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -311,7 +311,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The word obeyed to completeness. [Milk](/research/symbols/milk/) is the word received; meat is the same word carried through to complete obedience, exercising the senses to discern.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

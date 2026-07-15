@@ -1083,6 +1083,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'worship'               => 'images/print/22-temple-worship.jpg',
     'the-fear-of-the-lord'  => 'images/print/23-sinai-fear.jpg',
     'time-tested-tradition' => 'images/print/33-ttt-cover.jpg',
+    'she-laughs-at-the-last-day' => 'images/print/33x-last-day-laughter.jpg',
     'path-to-salvation'     => 'images/print/24-tabernacle-path.jpg',
     'the-four-winds'        => 'images/print/34-four-horsemen.jpg',
     'mountain'              => 'images/print/39-colossus-mountain.jpg',

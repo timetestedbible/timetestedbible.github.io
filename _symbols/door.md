@@ -85,27 +85,27 @@ definitions:
 
 # Door, gate
 
-## Approved Definition
+## Summary
 
 **Jesus — the destination of the [Way](/research/symbols/way/) and the threshold into the [covenant](/research/symbols/covenant/) house. Blood and the word of God mark its posts; heaven's gates also mark the constellations through which the [New Moon](/research/symbols/new-moon/) appears each month.**
 
 The fuller book and notebook trail is available in [The Way, the Truth & the Life](/books/symbolic-language/the-way-the-truth-and-the-life/), [The Pearls of Wisdom](/books/symbolic-language/the-pearl/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Jesus — the destination of the [Way](/research/symbols/way/) and the threshold into the [covenant](/research/symbols/covenant/) house. Blood and the word of God mark its posts; heaven's gates also mark the constellations through which the [New Moon](/research/symbols/new-moon/) appears each month.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **door** begins: “An opening in the wall of a house or of an apartment, by which to go in and out; an entrance way.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -131,7 +131,7 @@ Webster's 1913 entry for **door** begins:
 
 > “Door, n. Etym: [OE. dore, dure, AS. duru; akin to OS. dura, dor, D. deur, OHG. turi, door, tor gate, G. thür, thor, Icel. dyrr, Dan. dör, Sw. dörr, Goth. daur, Lith. durys, Russ. dvere, Olr. dorus, L. fores, Gr. dur, dvara. . Cf. Foreign.] 1. An opening in the wall of a house or of an apartment, by which to go in and out; an entrance way. To the same end, men several paths may tread, As many doors into one temple lead. Denham.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -139,9 +139,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Jesus — the destination of the [Way](/research/symbols/way/) and the threshold into the [covenant](/research/symbols/covenant/) house. Blood and the word of God mark its posts; heaven's gates also mark the constellations through which the [New Moon](/research/symbols/new-moon/) appears each month.
+1. **Core sense:** Jesus — the destination of the [Way](/research/symbols/way/) and the threshold into the [covenant](/research/symbols/covenant/) house. Blood and the word of God mark its posts; heaven's gates also mark the constellations through which the [New Moon](/research/symbols/new-moon/) appears each month.
 2. **Defining witnesses:** Gen 28:17; Ex 12:7; Deut 6:9; John 10:9; Rev 21:12-13
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -264,4 +264,4 @@ Related definitions used by this entry: [Way](/research/symbols/way/), [covenant
 
 **Jesus — the destination of the [Way](/research/symbols/way/) and the threshold into the [covenant](/research/symbols/covenant/) house. Blood and the word of God mark its posts; heaven's gates also mark the constellations through which the [New Moon](/research/symbols/new-moon/) appears each month.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

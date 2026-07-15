@@ -67,27 +67,27 @@ definitions:
 
 # Holy
 
-## Approved Definition
+## Summary
 
 **Set apart from the common; for created things, claimed by God for an appointed purpose.**
 
 The fuller book and notebook trail is available in [Uncommon Sanctification, Justification, and Cleanliness](/books/symbolic-language/uncommon-sanctification-justification-and-cleanliness/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **Set apart from the common; for created things, claimed by God for an appointed purpose.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **holy** begins: “Set apart to the service or worship of God; hallowed; sacred; reserved from profane or common use; holy vessels; a holy priesthood.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -109,7 +109,7 @@ Webster's 1913 entry for **holy** begins:
 
 > “Ho”ly, a. [Compar. Holier; superl. Holiest.] Etym: [OE. holi, hali, AS.halig, fr. hæl health, salvation, happiness, fr. hal whole, well; akin to OS. h, D. & G.heilig, OHG. heilac, Dan. hellig, Sw. helig, Icel. heilagr. See Whole, and cf. Halibut, Halidom, Hallow, Hollyhock.] 1. Set apart to the service or worship of God; hallowed; sacred; reserved from profane or common use; holy vessels; a holy priesthood. ”Holy rites and solemn feasts.” Milton.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -117,9 +117,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Set apart from the common; for created things, claimed by God for an appointed purpose.
+1. **Core sense:** Set apart from the common; for created things, claimed by God for an appointed purpose.
 2. **Defining witnesses:** Ex 13:2; Lev 10:10; 20:26; Deut 7:6
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -244,4 +244,4 @@ This definition does not depend on another glossary term.
 
 **Set apart from the common; for created things, claimed by God for an appointed purpose.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

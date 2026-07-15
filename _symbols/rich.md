@@ -78,27 +78,27 @@ definitions:
 
 # Rich
 
-## Approved Definition
+## Summary
 
 **The self-sufficient who believe they need nothing and therefore cannot receive. True wealth is riches toward God: tested [faith](/research/symbols/faith/) and righteous [covering](/research/symbols/garment/).**
 
 The fuller book and notebook trail is available in [Orphans, Widows & the Fatherless](/books/symbolic-language/orphans-widows-and-the-fatherless/), [research-poor-rich.md](/books/symbolic-language/research/research-poor-rich.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The self-sufficient who believe they need nothing and therefore cannot receive. True wealth is riches toward God: tested [faith](/research/symbols/faith/) and righteous [covering](/research/symbols/garment/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **rich** begins: “Having an abundance of material possessions; possessed of a large amount of property; well supplied with land, goods, or money; wealthy; opulent; affluent; -- opposed to Ant: poor.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -122,7 +122,7 @@ Webster's 1913 entry for **rich** begins:
 
 > “a. [Compar. Richer (; superl. Richest.] Etym: [OE. riche, AS. rice rich, powerful; akin to OS. riki, D. rijk, G. reich, OHG. rihhi, Icel. rikr, Sw. rik, Dan. rig, Goth. reiks; from a word meaning, ruler, king, probably borrowed from Celtic, and akin to L. rex, regis, king, regere to guide, rule. sq. root283. See Right, and cf. Derrick, Enrich, Rajah, Riches, Royal.] 1. Having an abundance of material possessions; possessed of a large amount of property; well supplied with land, goods, or money; wealthy; opulent; affluent; -- opposed to Ant: poor. ”Rich merchants.” Chaucer. The rich [person] hath many friends. Prov. xiv. 20. As a thief, bent to unhoard the cash Of some rich burgher. Milton.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -130,9 +130,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The self-sufficient who believe they need nothing and therefore cannot receive. True wealth is riches toward God: tested [faith](/research/symbols/faith/) and righteous [covering](/research/symbols/garment/).
+1. **Core sense:** The self-sufficient who believe they need nothing and therefore cannot receive. True wealth is riches toward God: tested [faith](/research/symbols/faith/) and righteous [covering](/research/symbols/garment/).
 2. **Defining witnesses:** Rev 3:17-18; Rev 2:9; Prov 13:7; Luke 12:21
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -235,4 +235,4 @@ Related definitions used by this entry: [faith](/research/symbols/faith/), [cove
 
 **The self-sufficient who believe they need nothing and therefore cannot receive. True wealth is riches toward God: tested [faith](/research/symbols/faith/) and righteous [covering](/research/symbols/garment/).**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

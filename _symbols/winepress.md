@@ -91,27 +91,27 @@ definitions:
 
 # Winepress
 
-## Approved Definition
+## Summary
 
 **The vineyard's reckoning — where the [fruit](/research/symbols/fruit/) a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine, when the vintage is wickedness.**
 
 The fuller book and notebook trail is available in [The Parable of the Vineyard](/books/symbolic-language/the-parable-of-the-vineyard/), [research-winepress.md](/books/symbolic-language/research/research-winepress.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The vineyard's reckoning — where the [fruit](/research/symbols/fruit/) a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine, when the vintage is wickedness.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 No exact Webster headword has yet been matched to **Winepress**.
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -145,9 +145,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The vineyard's reckoning — where the [fruit](/research/symbols/fruit/) a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine, when the vintage is wickedness.
+1. **Core sense:** The vineyard's reckoning — where the [fruit](/research/symbols/fruit/) a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine, when the vintage is wickedness.
 2. **Defining witnesses:** Isa 5:2, 7; Prov 3:10; Joel 2:24; 3:13; Lam 1:15; Isa 63:3; Rev 14:19-20
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -204,4 +204,4 @@ Related definitions used by this entry: [fruit](/research/symbols/fruit/).
 
 **The vineyard's reckoning — where the [fruit](/research/symbols/fruit/) a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine, when the vintage is wickedness.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -105,28 +105,28 @@ definitions:
 
 # Marriage
 
-## Approved Definition
+## Summary
 
 **The [covenant](/research/symbols/covenant/) union of God and His people — a one-flesh bond in which the wife receives the Husband's [Name](/research/symbols/name/) and comes under His [covering](/research/symbols/wings/).**
 > *"I spread my $[wings] over thee, and covered thy nakedness: yea, I sware unto thee, and entered into a **covenant** with thee, saith the Lord GOD, and thou becamest mine."* — Ezek 16:8
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The [covenant](/research/symbols/covenant/) union of God and His people — a one-flesh bond in which the wife receives the Husband's [Name](/research/symbols/name/) and comes under His [covering](/research/symbols/wings/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **marriage** begins: “The act of marrying, or the state of being married; legal union of a man and a woman for life, as husband and wife; wedlock; matrimony.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -343,7 +343,7 @@ Webster's 1913 entry for **marriage** begins:
 
 > “Mar”riage, n. Etym: [OE. mariage, F. mariage. See Marry, v. t.] 1. The act of marrying, or the state of being married; legal union of a man and a woman for life, as husband and wife; wedlock; matrimony. Marriage is honorable in all. Heb. xiii. 4.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -361,7 +361,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The [covenant](/research/symbols/covenant/) union of God and His people — a one-flesh bond in which the wife receives the Husband's [Name](/research/symbols/name/) and comes under His [covering](/research/symbols/wings/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

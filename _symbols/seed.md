@@ -60,27 +60,27 @@ definitions:
 
 # Seed
 
-## Approved Definition
+## Summary
 
 **The word of God, sown in the hearts of men.**
 
 The fuller book and notebook trail is available in [Grass](/books/symbolic-language/grass/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The word of God, sown in the hearts of men.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **seed** begins: “(Bot.) (a) A ripened ovule, consisting of an embryo with one or more integuments, or coverings; as, an apple seed; a currant seed.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -96,7 +96,7 @@ Webster's 1913 entry for **seed** begins:
 
 > “it produces a new plant. (b) Any small seedlike fruit, though it may consist of a pericarp, or even a calyx, as well as the seed proper; as, parsnip seed; thistle seed. And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself. Gen. i. 11. Note: The seed proper has an outer and an inner coat, and within these the kernel or nucleus. The kernel is either the embryo alone, or the embryo inclosed in the albumen, which is the material for the nourishment of the developing embryo. The scar on a seed, left where the stem parted from it, is called the hilum, and the closed orifice of the ovule, the micropyle.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -104,9 +104,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The word of God, sown in the hearts of men.
+1. **Core sense:** The word of God, sown in the hearts of men.
 2. **Defining witnesses:** Luke 8:11
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -223,4 +223,4 @@ This definition does not depend on another glossary term.
 
 **The word of God, sown in the hearts of men.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -83,28 +83,28 @@ definitions:
 
 # Rock
 
-## Approved Definition
+## Summary
 
 **Jesus Christ, the [covenant](/research/symbols/covenant/) Head and bedrock beneath His house and [kingdom](/research/symbols/mountain/) — the foundation, refuge, and source upon whom His people stand.**
 > *"Moreover, brethren, I would not that ye should be ignorant, how that all our fathers… did all drink the same spiritual drink: for they drank of that spiritual **Rock** that followed them: and that **Rock** was Christ."* — 1 Co 10:4
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Jesus Christ, the [covenant](/research/symbols/covenant/) Head and bedrock beneath His house and [kingdom](/research/symbols/mountain/) — the foundation, refuge, and source upon whom His people stand.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **rock** begins: “Rock, n.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -330,7 +330,7 @@ Webster's 1913 entry for **rock** begins:
 
 > “Rock, n. Defn: See Roc.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -348,7 +348,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **Jesus Christ, the [covenant](/research/symbols/covenant/) Head and bedrock beneath His house and [kingdom](/research/symbols/mountain/) — the foundation, refuge, and source upon whom His people stand.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

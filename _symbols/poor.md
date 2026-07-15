@@ -87,27 +87,27 @@ definitions:
 
 # Poor, meek, needy
 
-## Approved Definition
+## Summary
 
 **Those bowed and empty-handed before God, able to receive what the self-sufficient refuse. The poor, meek, and needy hear the [gospel](/research/symbols/gospel/) and inherit the kingdom.**
 
 The fuller book and notebook trail is available in [Orphans, Widows & the Fatherless](/books/symbolic-language/orphans-widows-and-the-fatherless/), [research-poor-rich.md](/books/symbolic-language/research/research-poor-rich.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Those bowed and empty-handed before God, able to receive what the self-sufficient refuse. The poor, meek, and needy hear the [gospel](/research/symbols/gospel/) and inherit the kingdom.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **poor** begins: “Destitute of property; wanting in material riches or goods; needy; indigent.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -133,7 +133,7 @@ Webster's 1913 entry for **poor** begins:
 
 > “Poor, a. [Compar. Poorer (; 254); superl. Poorest.] Etym: [OE. poure or povre, OF. povre, F. pauvre, L. pauper; the first syllable of which is probably akin to paucus few (see Paucity, Few), and the second to parare to prepare, procure. See Few, and cf. Parade, Pauper, Poverty.] 1. Destitute of property; wanting in material riches or goods; needy; indigent. Note: It is often synonymous with indigent and with necessitous denoting extreme want. It is also applied to persons who are not entirely destitute of property, but who are not rich; as, a poor man or woman; poor people.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -141,9 +141,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Those bowed and empty-handed before God, able to receive what the self-sufficient refuse. The poor, meek, and needy hear the [gospel](/research/symbols/gospel/) and inherit the kingdom.
+1. **Core sense:** Those bowed and empty-handed before God, able to receive what the self-sufficient refuse. The poor, meek, and needy hear the [gospel](/research/symbols/gospel/) and inherit the kingdom.
 2. **Defining witnesses:** Ps 37:11/Matt 5:5; Isa 61:1/Luke 4:18; Isa 66:2; Jas 2:5; Ps 72:12-13
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -244,4 +244,4 @@ Related definitions used by this entry: [gospel](/research/symbols/gospel/), [Ri
 
 **Those bowed and empty-handed before God, able to receive what the self-sufficient refuse. The poor, meek, and needy hear the [gospel](/research/symbols/gospel/) and inherit the kingdom.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

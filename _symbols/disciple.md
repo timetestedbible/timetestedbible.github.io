@@ -87,27 +87,27 @@ definitions:
 
 # Disciple
 
-## Approved Definition
+## Summary
 
 **One who continues under the Master until His law is sealed within and His teaching bears obedient [fruit](/research/symbols/fruit/). A disciple enters the [Name](/research/symbols/name/), accepts the cost, and is perfected to be as his Master.**
 
 The fuller book and notebook trail is available in [The Disciple](/books/symbolic-language/the-disciple/), [research-disciple.md](/books/symbolic-language/research/research-disciple.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **One who continues under the Master until His law is sealed within and His teaching bears obedient [fruit](/research/symbols/fruit/). A disciple enters the [Name](/research/symbols/name/), accepts the cost, and is perfected to be as his Master.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **disciple** begins: “One who receives instruction from another; a scholar; a learner; especially, a follower who has learned to believe in the truth of the doctrine of his teacher; an adherent in doctrine; as, the disciples of Plato; the disciples of our Savior.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -137,7 +137,7 @@ Webster's 1913 entry for **disciple** begins:
 
 > “Dis*ci”ple, n. Etym: [OE. disciple, deciple, OF. disciple, fr. L. discipulus, fr. discere to learn (akin to docere to teach; see Docile) + prob. a root meaning to turn or drive, as in L. pellere to drive (see Pulse).] Defn: One who receives instruction from another; a scholar; a learner; especially, a follower who has learned to believe in the truth of the doctrine of his teacher; an adherent in doctrine; as, the disciples of Plato; the disciples of our Savior. The disciples, or The twelve disciples, the twelve selected companions of Jesus; -- also called the apostles. -- Disciples of Christ. See Christian, n., 3, and Campbellite.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -145,9 +145,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** One who continues under the Master until His law is sealed within and His teaching bears obedient [fruit](/research/symbols/fruit/). A disciple enters the [Name](/research/symbols/name/), accepts the cost, and is perfected to be as his Master.
+1. **Core sense:** One who continues under the Master until His law is sealed within and His teaching bears obedient [fruit](/research/symbols/fruit/). A disciple enters the [Name](/research/symbols/name/), accepts the cost, and is perfected to be as his Master.
 2. **Defining witnesses:** Isa 8:16; Luke 6:40; Ex 23:21; Jer 31:33; John 8:31; Luke 14:26-33; Rev 14:1
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -194,4 +194,4 @@ Related definitions used by this entry: [fruit](/research/symbols/fruit/), [Name
 
 **One who continues under the Master until His law is sealed within and His teaching bears obedient [fruit](/research/symbols/fruit/). A disciple enters the [Name](/research/symbols/name/), accepts the cost, and is perfected to be as his Master.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -95,28 +95,28 @@ definitions:
 
 # Lion
 
-## Approved Definition
+## Summary
 
 **A royal and devouring ruler or empire. Wicked rulers, Assyria, and Babylon bear the predatory figure; its rightful holder is the Lion of Judah.**
 > *"And one of the elders saith unto me, Weep not: behold, the **Lion** of the tribe of $[judah], the Root of David, hath prevailed to open the book, and to loose the seven seals thereof. And I beheld, and, lo, in the midst of the $[throne] and of the four beasts… stood a **$[lamb]** as it had been slain"* — Rev 5:5–6
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A royal and devouring ruler or empire. Wicked rulers, Assyria, and Babylon bear the predatory figure; its rightful holder is the Lion of Judah.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **lion** begins: “(Zoöl.) Defn: A large carnivorous feline mammal (Felis leo), found in Southern Asia and in most parts of Africa, distinct varieties occurring in the different countries.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -394,13 +394,13 @@ Webster's 1913 entry for **lion** begins:
 
 > “Li”on, n. Etym: [F. lion, L. leo, -onis, akin to Gr. Chameleon, Dandelion, Leopard.] 1. (Zoöl.) Defn: A large carnivorous feline mammal (Felis leo), found in Southern Asia and in most parts of Africa, distinct varieties occurring in the different countries. The adult male, in most varieties, has a thick mane of long shaggy hair that adds to his apparent size, which is less than that of the largest tigers. The length, however, is sometimes eleven feet to the base of the tail. The color is a tawny yellow or yellowish brown; the mane is darker, and the terminal tuft of the tail is black. In one variety, called the maneless lion, the male has only a slight mane.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Conclusion
 
 **A royal and devouring ruler or empire. Wicked rulers, Assyria, and Babylon bear the predatory figure; its rightful holder is the Lion of Judah.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

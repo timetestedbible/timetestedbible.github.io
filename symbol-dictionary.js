@@ -63,7 +63,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The starting point from which the days advance',
     sentence: 'The starting point from which the days advance. The Aramaic root behind "Ancient" means "to advance, to proceed forward" — not merely "the old one." He is the Beginning of Days: the personified calendar origin, seated on His throne at Nisan 1.',
     opposite: 'The adversary of Daniel 7:25, who *"thinks to change **times** and laws"* — attempting to displace the Starting of Days from His seat and substitute a counterfeit calendar.',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/ancient-of-days/'
@@ -79,7 +79,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A people, tribe, or nation',
     sentence: 'A people, tribe, or nation — its species revealing the character of that group.',
     opposite: null,
-    rank: 6.1,
+    rank: 6,
     category: 'Kingdoms & Peoples',
     subcategory: 'Peoples',
     link: '/research/symbols/animal/'
@@ -95,7 +95,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'To mark a person or thing as God\'s own and appoint it to a stated office or work. The oil may carry the visible mark; the Spirit may carry the power; the work declares what the appointment is for.',
     sentence: 'To mark a person or thing as God\'s own and appoint it to a stated office or work. The oil may carry the visible mark; the Spirit may carry the power; the work declares what the appointment is for.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/anointing/'
@@ -111,7 +111,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The civic escort',
     sentence: 'The civic escort — going out to meet an arriving king and accompanying him back to his destination.',
     opposite: 'Departure — leaving to go somewhere else. *Apantēsis* is always movement *toward* the dignitary\'s destination, not away from it',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Gathering & Consummation',
     subcategory: null,
     link: '/research/symbols/apantesis/'
@@ -143,7 +143,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A counterfeit congregation claiming covenant standing while gathered against the covenant\'s Lord. Korah\'s company; the brood of vipers and children of the Devil, the father of lies; the assembly surrounding the Messiah; and those who say they are Jews but are not display the pattern.',
     sentence: 'A counterfeit congregation claiming covenant standing while gathered against the covenant\'s Lord. Korah\'s company; the brood of vipers and children of the Devil, the father of lies; the assembly surrounding the Messiah; and those who say they are Jews but are not display the pattern.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/assembly/'
@@ -159,7 +159,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The self-made kingdom that builds a name against heaven — an empire raised over many kingdoms, the covenant counterfeit.',
     sentence: 'The self-made kingdom that builds a name against heaven — an empire raised over many kingdoms, the covenant counterfeit.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/babel/'
@@ -192,7 +192,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Man\'s substitute system for God\'s covenant rule',
     sentence: 'Man\'s substitute system for God\'s covenant rule — the kingdom built on bricks instead of rock, reaching for a name instead of receiving one.',
     opposite: 'Jerusalem — the covenant community that descends from God (Rev 21:2), receives a Name (Isa 62:2), and is built on Rock (Mat 16:18)',
-    rank: 9.7,
+    rank: 9.5,
     category: 'Kingdoms & Peoples',
     subcategory: 'Nations & Empires',
     link: '/research/symbols/babylon/'
@@ -208,7 +208,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The firstfruits grain — humble, reaped in spring, and presented before the LORD. Its waved sheaf points to Christ risen as the firstfruits.',
     sentence: 'The firstfruits grain — humble, reaped in spring, and presented before the LORD. Its waved sheaf points to Christ risen as the firstfruits.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/barley/'
@@ -240,7 +240,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A nation or kingdom organized under earthly rule, often shown in its wild or predatory character. Different beasts distinguish different kingdoms; clean and unclean beasts distinguish kinds of people.',
     sentence: 'A nation or kingdom organized under earthly rule, often shown in its wild or predatory character. Different beasts distinguish different kingdoms; clean and unclean beasts distinguish kinds of people.',
     opposite: null,
-    rank: 0,
+    rank: 5.3,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/beast/'
@@ -256,7 +256,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Receiving God\'s testimony as true and governing, then acting upon it. Mere assent can acknowledge a fact; persistent refusal to obey exposes unbelief.',
     sentence: 'Receiving God\'s testimony as true and governing, then acting upon it. Mere assent can acknowledge a fact; persistent refusal to obey exposes unbelief.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/belief/'
@@ -272,7 +272,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'To obey',
     sentence: 'To obey — to commit oneself in trusting action upon God\'s word.',
     opposite: 'Disobey — refuse to act, refuse to commit',
-    rank: 5.3,
+    rank: 5.1,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/believe/'
@@ -288,7 +288,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant judgment producing a renewed-covenant order',
     sentence: 'Covenant judgment producing a renewed-covenant order — painful transition that always precedes deliverance, not death.',
     opposite: 'Rest — the settled condition after deliverance, the cessation of labor',
-    rank: 6,
+    rank: 5.9,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/birth-pains/'
@@ -304,7 +304,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The life of the flesh made visible',
     sentence: 'The life of the flesh made visible — which when offered atones, when taken accuses, and when displayed marks what belongs to God.',
     opposite: 'Water — sustaining provision. When Water becomes blood (Exod 7:17, Rev 16:3–4), provision is inverted into testimony of death',
-    rank: 5.9,
+    rank: 5.8,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/blood/'
@@ -320,7 +320,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Receiving God\'s nature from above through His word',
     sentence: 'Receiving God\'s nature from above through His word — becoming His child and heir by a birth sourced from heaven, not from human will.',
     opposite: 'Born of flesh — lineage, human will, and fleshly effort producing only more flesh (Joh 1:13, Joh 3:6, Gal 4:23)',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/born-again/'
@@ -336,7 +336,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A kingdom\'s covenant and the power joined by it. To break the bow is to unstring the kingdom and end its might.',
     sentence: 'A kingdom\'s covenant and the power joined by it. To break the bow is to unstring the kingdom and end its might.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/bow/'
@@ -352,7 +352,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The curse-ground\'s fruitless growth — worldly care and deceitful riches that choke the word, offer false protection, and end in fire.',
     sentence: 'The curse-ground\'s fruitless growth — worldly care and deceitful riches that choke the word, offer false protection, and end in fire.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/bramble/'
@@ -368,7 +368,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The members of a nation — broken off, or grafted in, while the tree itself stands.',
     sentence: 'The members of a nation — broken off, or grafted in, while the tree itself stands.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/branches/'
@@ -384,7 +384,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The word of God. Unleavened bread is pure doctrine; leavened bread contains corrupting doctrine.',
     sentence: 'The word of God. Unleavened bread is pure doctrine; leavened bread contains corrupting doctrine.',
     opposite: 'Famine — specifically "not a famine of bread… but of hearing the words of the LORD" (Amos 8:11)',
-    rank: 8.7,
+    rank: 8.2,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/bread/'
@@ -432,7 +432,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The word worked from milk into sound judgment — teaching tested until one can refuse evil and choose good. Worked into the walk, it cleanses the feet; its counterfeit is smooth speech concealing war.',
     sentence: 'The word worked from milk into sound judgment — teaching tested until one can refuse evil and choose good. Worked into the walk, it cleanses the feet; its counterfeit is smooth speech concealing war.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/butter/'
@@ -449,7 +449,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A ruling power irreversibly destroyed and sunk into the sea of peoples, never to rise; especially the fall of Babylon the Great.',
     sentence: 'A ruling power irreversibly destroyed and sunk into the sea of peoples, never to rise; especially the fall of Babylon the Great.',
     opposite: 'A Mountain rising from the Sea — a kingdom established from among the nations (Dan 2:35, Rev 13:1)',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/cast-into-sea/'
@@ -465,7 +465,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A towering power of great height and majesty. Assyria, the house of David, and the righteous may each bear the figure; the cedar signifies stature, not one fixed identity.',
     sentence: 'A towering power of great height and majesty. Assyria, the house of David, and the righteous may each bear the figure; the cedar signifies stature, not one fixed identity.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/cedar/'
@@ -481,7 +481,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The empty wicked husk separated from the grain, driven away, and burned. Unlike tares, chaff is what remains after the grain has matured.',
     sentence: 'The empty wicked husk separated from the grain, driven away, and burned. Unlike tares, chaff is what remains after the grain has matured.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/chaff/'
@@ -497,7 +497,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s total enclosure',
     sentence: 'God\'s total enclosure — irrevocable seizure by divine claim from which nothing escapes, nothing is redeemed, and nothing remains neutral.',
     opposite: 'Redemption *gaal* / *padah*) — cherem is defined as that which *cannot* be redeemed (Lev 27:28–29)',
-    rank: 5.1,
+    rank: 5,
     category: 'Covenant & Relationship',
     subcategory: 'Unfaithfulness',
     link: '/research/symbols/cherem/'
@@ -545,7 +545,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Clean means free from defilement and fit for permitted contact, approach, or use; to cleanse is to remove that defilement. Uncleanness may be physical, ceremonial, or moral and does not always imply guilt; sanctification concerns holy claim and use, not merely cleanliness.',
     sentence: 'Clean means free from defilement and fit for permitted contact, approach, or use; to cleanse is to remove that defilement. Uncleanness may be physical, ceremonial, or moral and does not always imply guilt; sanctification concerns holy claim and use, not merely cleanliness.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/cleanliness/'
@@ -561,7 +561,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s chariot',
     sentence: 'God\'s chariot — the vehicle by which He arrives, departs, guides, and carries His people from place to place.',
     opposite: 'Clear sky — "a morning without **clouds**" (2 Sam 23:4) = unmediated, unveiled light; no vehicle needed because God is present without transport',
-    rank: 5.2,
+    rank: 5.1,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/clouds/'
@@ -577,7 +577,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A person as the owner\'s stamped image-bearer — refined like gold, bearing the sign, Name, and image of God or the beast, assigned a value, and sought when lost. The recovered coin pictures a repentant sinner; human valuation and God\'s valuation are not the same.',
     sentence: 'A person as the owner\'s stamped image-bearer — refined like gold, bearing the sign, Name, and image of God or the beast, assigned a value, and sought when lost. The recovered coin pictures a repentant sinner; human valuation and God\'s valuation are not the same.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/coin/'
@@ -593,7 +593,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The binding word by which a head establishes and governs a relationship through law, promises, and judgments. Unlike a contract among autonomous equals, those who enter a covenant come under its head and terms. God expressly calls the Ten Commandments His covenant; it is spoken, commanded, written, entered, cut in blood, kept or broken, and renewed by writing its law upon the heart.',
     sentence: 'The binding word by which a head establishes and governs a relationship through law, promises, and judgments. Unlike a contract among autonomous equals, those who enter a covenant come under its head and terms. God expressly calls the Ten Commandments His covenant; it is spoken, commanded, written, entered, cut in blood, kept or broken, and renewed by writing its law upon the heart.',
     opposite: null,
-    rank: 0,
+    rank: 5.6,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/covenant/'
@@ -625,7 +625,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The covenant penalty clause',
     sentence: 'The covenant penalty clause — the self-activating consequence written into every oath that executes upon violation.',
     opposite: 'Blessing *berakah* / *eulogia*) — curse and blessing are the two outcomes of covenant, never independent forces; always paired, always set before the people as a choice (Deut 11:26, Deut 30:19)',
-    rank: 5.2,
+    rank: 5.1,
     category: 'Covenant & Relationship',
     subcategory: 'Unfaithfulness',
     link: '/research/symbols/curse/'
@@ -658,7 +658,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s covenant timeline operates outside human time',
     sentence: 'God\'s covenant timeline operates outside human time — His "delay" is patient covenant faithfulness, not slowness; a thousand years is one covenant-day of accountability.',
     opposite: 'The Moment — sudden judgment compressed to an instant, without warning or patience-window',
-    rank: 5.1,
+    rank: 5,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/day-as-1000-years/'
@@ -723,7 +723,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'One who continues under the Master until His law is sealed within and His teaching bears obedient fruit. A disciple enters the Name, accepts the cost, and is perfected to be as his Master.',
     sentence: 'One who continues under the Master until His law is sealed within and His teaching bears obedient fruit. A disciple enters the Name, accepts the cost, and is perfected to be as his Master.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/disciple/'
@@ -739,7 +739,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A covenant severed and the wife sent from the house — exile and scattering. Scripture distinguishes treacherous divorce from separation out of a union God never joined.',
     sentence: 'A covenant severed and the wife sent from the house — exile and scattering. Scripture distinguishes treacherous divorce from separation out of a union God never joined.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/divorce/'
@@ -755,7 +755,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A wild beast representing a kingdom or its citizens, especially Rome in the crucifixion pattern. Gentile dogs eat crumbs from Israel\'s table; Roman soldiers surrounded Jesus at the cross.',
     sentence: 'A wild beast representing a kingdom or its citizens, especially Rome in the crucifixion pattern. Gentile dogs eat crumbs from Israel\'s table; Roman soldiers surrounded Jesus at the cross.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/dog/'
@@ -771,7 +771,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Jesus — the destination of the Way and the threshold into the covenant house. Blood and the word of God mark its posts; heaven\'s gates also mark the constellations through which the New Moon appears each month.',
     sentence: 'Jesus — the destination of the Way and the threshold into the covenant house. Blood and the word of God mark its posts; heaven\'s gates also mark the constellations through which the New Moon appears each month.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/door/'
@@ -787,7 +787,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Faithful covenant devotion',
     sentence: 'Faithful covenant devotion — undivided loyalty to one master, returning home, dwelling in the rock, and remaining unmixed.',
     opposite: 'The Raven — restless, never returns, feeds on death, at home in desolation. Also the Harlot — divided loyalty, foreign alliances',
-    rank: 5.7,
+    rank: 5.6,
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/dove/'
@@ -819,7 +819,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A messenger sent under covenant authority',
     sentence: 'A messenger sent under covenant authority — an agent who bears, carries, and executes on behalf of the sender.',
     opposite: 'The unsent, the unauthorized — those who act without commission',
-    rank: 5.5,
+    rank: 5.4,
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/eagle/'
@@ -835,7 +835,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God shaking any established order',
     sentence: 'God shaking any established order — ground, sky, nations, kingdoms — to judge and remove what is unfaithful, so that what cannot be shaken remains.',
     opposite: 'The Rock — the unchanging covenant that cannot be shaken',
-    rank: 6.1,
+    rank: 6,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/earthquake/'
@@ -851,7 +851,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Where beginnings and returns come from — the front. Hebrew qedem joins “east” with “before” and “ancient”: Eden is planted eastward; the sanctuary\'s front door is its east gate; God\'s glory returns through that gate; and Christ\'s coming moves from east to west. The compass direction is the literal image beneath the symbol.',
     sentence: 'Where beginnings and returns come from — the front. Hebrew qedem joins “east” with “before” and “ancient”: Eden is planted eastward; the sanctuary\'s front door is its east gate; God\'s glory returns through that gate; and Christ\'s coming moves from east to west. The compass direction is the literal image beneath the symbol.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/east/'
@@ -899,7 +899,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Leaders and representatives of the assemblies, seated as a court around the throne — the constellations among the host of heaven and their stars.',
     sentence: 'Leaders and representatives of the assemblies, seated as a court around the throne — the constellations among the host of heaven and their stars.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/elders/'
@@ -947,7 +947,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The hour of sacrifice',
     sentence: 'The hour of sacrifice — the appointed time when atonement is made and uncleanness is removed.',
     opposite: 'Morning — the beginning of the Day cycle, the hour of the first sacrifice and the start of work; evening is where the cycle resolves',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/evening/'
@@ -963,7 +963,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The lamp of the body, revealing the light within. A good eye gives; an evil eye withholds; God\'s fiery eyes — His righteous watchers — range throughout the earth and shine like the stars in heaven.',
     sentence: 'The lamp of the body, revealing the light within. A good eye gives; an evil eye withholds; God\'s fiery eyes — His righteous watchers — range throughout the earth and shine like the stars in heaven.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/eye/'
@@ -979,7 +979,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Trusting faithfulness — reliance on God\'s unseen promise held steady and brought to life through obedience.',
     sentence: 'Trusting faithfulness — reliance on God\'s unseen promise held steady and brought to life through obedience.',
     opposite: 'Unbelief / disobedience — refusing to act on what God has spoken (Heb 3:18–19)',
-    rank: 7.4,
+    rank: 7,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/faith/'
@@ -995,7 +995,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The Messiah, who bears the Father\'s light faithfully through the night. The moon writes this witness in the sky.',
     sentence: 'The Messiah, who bears the Father\'s light faithfully through the night. The moon writes this witness in the sky.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/faithful-witness/'
@@ -1011,7 +1011,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The sudden, irreversible collapse of man\'s unified self-ruling system when…',
     sentence: 'The sudden, irreversible collapse of man\'s unified self-ruling system when God\'s covenant judgment terminates all authority built against His Word.',
     opposite: 'Jerusalem — the Bride, the covenant community that *descends from God* (Rev 21:2) rather than ascending against Him. Babylon falls; Jerusalem comes down. Babylon is the Harlot; Jerusalem is the Bride. One is built by human hands and collapses; the other is prepared by God and endures.',
-    rank: 5.8,
+    rank: 5.7,
     category: 'Gathering & Consummation',
     subcategory: null,
     link: '/research/symbols/fall-of-babylon/'
@@ -1059,7 +1059,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s covenant people left without their Father — the remnant.',
     sentence: 'God\'s covenant people left without their Father — the remnant.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/fatherless/'
@@ -1075,7 +1075,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Reverent awe expressed as keeping the commandments and departing from evil.',
     sentence: 'Reverent awe expressed as keeping the commandments and departing from evil.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/fear/'
@@ -1091,7 +1091,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A person\'s walk or conduct — the way that must remain clean.',
     sentence: 'A person\'s walk or conduct — the way that must remain clean.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/feet/'
@@ -1107,7 +1107,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The world — sown with the word and reaped at the harvest. Its edge feeds the poor and stranger, and its hidden treasure is found beneath the surface.',
     sentence: 'The world — sown with the word and reaped at the harvest. Its edge feeds the poor and stranger, and its hidden treasure is found beneath the surface.',
     opposite: null,
-    rank: 0,
+    rank: 5.1,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/field/'
@@ -1139,7 +1139,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Self-made righteousness — a covering of one\'s own cut, all show and no substance; the cursed fig tree bore leaves but no fruit.',
     sentence: 'Self-made righteousness — a covering of one\'s own cut, all show and no substance; the cursed fig tree bore leaves but no fruit.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/fig/'
@@ -1156,7 +1156,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s all-consuming presence, which reveals, refines, or destroys according to what encounters it. The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered wickedness.',
     sentence: 'God\'s all-consuming presence, which reveals, refines, or destroys according to what encounters it. The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered wickedness.',
     opposite: 'Quenching (1 Th 5:19 — "Quench not the Spirit") / Water as paired judgment agent (2 Pet 3:5–7 — the world judged first by water, reserved now for fire)',
-    rank: 12.7,
+    rank: 12.5,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/fire/'
@@ -1172,7 +1172,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The divider between the restless sea of peoples below and the gathered heavenly waters above; the place where the ruling lights are set.',
     sentence: 'The divider between the restless sea of peoples below and the gathered heavenly waters above; the place where the ruling lights are set.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/firmament/'
@@ -1204,7 +1204,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A great ruler among the sea of peoples — the personal head who can stand for the kingdom, state, and administration acting through him. Pharaoh stands for Egypt, Nebuchadnezzar for Babylon, and Caesar for Rome: the ruler swallows through the body he heads, and is forced to give back what he swallowed.',
     sentence: 'A great ruler among the sea of peoples — the personal head who can stand for the kingdom, state, and administration acting through him. Pharaoh stands for Egypt, Nebuchadnezzar for Babylon, and Caesar for Rome: the ruler swallows through the body he heads, and is forced to give back what he swallowed.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/fish-2/'
@@ -1220,7 +1220,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A person in the sea of nations, clean or unclean, gathered and sorted at the harvest. Fishers of men draw the catch from the sea in the net.',
     sentence: 'A person in the sea of nations, clean or unclean, gathered and sorted at the harvest. Fishers of men draw the catch from the sea in the net.',
     opposite: 'Beasts of the field — land creatures under a ruler, in contrast to fish with "no ruler" (Hab 1:14)',
-    rank: 5,
+    rank: 5.1,
     category: 'Kingdoms & Peoples',
     subcategory: 'Peoples',
     link: '/research/symbols/fish/'
@@ -1236,7 +1236,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Destroying waters — peoples in motion: a nation invading, or the Lord\'s own host sweeping the enemy away.',
     sentence: 'Destroying waters — peoples in motion: a nation invading, or the Lord\'s own host sweeping the enemy away.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/flood/'
@@ -1252,7 +1252,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant-judgment delivery mechanism',
     sentence: 'Covenant-judgment delivery mechanism — the written decree of curse that goes forth over the whole earth, enters what it contacts, and consumes from within.',
     opposite: 'The Book of Life (Rev 20:12, 21:27) — same format *biblion*), opposite function: one preserves, the other condemns',
-    rank: 5.1,
+    rank: 5,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/flying-scroll/'
@@ -1284,7 +1284,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Obstructing flesh that covers a covenant member and prevents its proper work. Heart, ear, lips, and fruit are uncircumcised while flesh blocks humility, hearing, speech, or fruitfulness.',
     sentence: 'Obstructing flesh that covers a covenant member and prevents its proper work. Heart, ear, lips, and fruit are uncircumcised while flesh blocks humility, hearing, speech, or fruitfulness.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/foreskin/'
@@ -1300,7 +1300,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant unfaithfulness — joining oneself to other gods or kingdoms outside the union God established. The physical sin supplies the image.',
     sentence: 'Covenant unfaithfulness — joining oneself to other gods or kingdoms outside the union God established. The physical sin supplies the image.',
     opposite: 'Faith — trusting obedience, exclusive devotion to God',
-    rank: 5.9,
+    rank: 5.8,
     category: 'Covenant & Relationship',
     subcategory: 'Unfaithfulness',
     link: '/research/symbols/fornication/'
@@ -1332,7 +1332,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The four spirits of heaven — God\'s executing agents, shown as the four horsemen. The same fourfold outgoing pattern appears in the river dividing from Eden.',
     sentence: 'The four spirits of heaven — God\'s executing agents, shown as the four horsemen. The same fourfold outgoing pattern appears in the river dividing from Eden.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/four/'
@@ -1348,7 +1348,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The works produced by a person or people, revealing the tree and supplying the basis for judgment.',
     sentence: 'The works produced by a person or people, revealing the tree and supplying the basis for judgment.',
     opposite: 'Barrenness, fruitlessness — producing no works, having nothing to show',
-    rank: 7.6,
+    rank: 7.5,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/fruit/'
@@ -1380,7 +1380,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A planted grouping of trees — nations or peoples arranged together under a gardener\'s rule.',
     sentence: 'A planted grouping of trees — nations or peoples arranged together under a gardener\'s rule.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/garden/'
@@ -1396,7 +1396,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Righteousness — the righteous acts of the saints; garments can be soiled by blood and sin.',
     sentence: 'Righteousness — the righteous acts of the saints; garments can be soiled by blood and sin.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/garment/'
@@ -1412,7 +1412,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A valley-trial carried through to a destructive verdict. At Jerusalem\'s boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from Sheol, which holds the dead.',
     sentence: 'A valley-trial carried through to a destructive verdict. At Jerusalem\'s boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from Sheol, which holds the dead.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/gehenna/'
@@ -1428,7 +1428,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The rage of the wicked at the righteous, especially when they see the kingdom from which they are excluded. Their grief, hatred, gnashing, and destruction follow the pattern of the Psalms and Stephen\'s accusers.',
     sentence: 'The rage of the wicked at the righteous, especially when they see the kingdom from which they are excluded. Their grief, hatred, gnashing, and destruction follow the pattern of the Psalms and Stephen\'s accusers.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/gnashing/'
@@ -1476,7 +1476,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed beforehand to Abraham and at Mount Sinai, and renewed under Jesus\' rule.',
     sentence: 'The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed beforehand to Abraham and at Mount Sinai, and renewed under Jesus\' rule.',
     opposite: 'Deceive — false prophets who misrepresent God\'s commands, leading people away from the covenant',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Gathering & Consummation',
     subcategory: null,
     link: '/research/symbols/gospel/'
@@ -1492,7 +1492,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Favor that moves first and then teaches its recipient to reject ungodliness and live rightly. Counterfeit grace turns favor into permission to remain lawless.',
     sentence: 'Favor that moves first and then teaches its recipient to reject ungodliness and live rightly. Counterfeit grace turns favor into permission to remain lawless.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/grace/'
@@ -1508,7 +1508,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The wild branch — the stranger, the Gentile — received into the covenant tree, or repentant Israel accepted back.',
     sentence: 'The wild branch — the stranger, the Gentile — received into the covenant tree, or repentant Israel accepted back.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/grafting/'
@@ -1524,7 +1524,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A people\'s works ripened into persons as the vineyard\'s yield. Pressed grapes produce covenant wine or the blood of judgment according to whether the vintage is good or wild.',
     sentence: 'A people\'s works ripened into persons as the vineyard\'s yield. Pressed grapes produce covenant wine or the blood of judgment according to whether the vintage is good or wild.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/grapes/'
@@ -1540,7 +1540,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Mortal people or flesh, growing across the field until they wither or are gathered at harvest.',
     sentence: 'Mortal people or flesh, growing across the field until they wither or are gathered at harvest.',
     opposite: 'The Word of God — eternal, enduring, never withering (Isa 40:8, 1 Pet 1:25)',
-    rank: 5.9,
+    rank: 5.8,
     category: 'Kingdoms & Peoples',
     subcategory: 'Peoples',
     link: '/research/symbols/grass/'
@@ -1572,7 +1572,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Progressive resistance to God\'s revealed word',
     sentence: 'Progressive resistance to God\'s revealed word — refusal that becomes inability, heaviness that becomes stone.',
     opposite: 'The circumcised heart / Heart of Flesh — "I will take away the stony heart out of your flesh, and I will give you a heart of flesh" (Eze 36:26). Also Deu 10:16: "Circumcise the foreskin of your heart, and be no more stiffnecked."',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Covenant & Relationship',
     subcategory: 'Unfaithfulness',
     link: '/research/symbols/hardened-heart/'
@@ -1589,7 +1589,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A covenant city or people unfaithful to its Husband while retaining the outward form of covenant. In Revelation, the Harlot is the great city that rules over kings — spiritually named Sodom, Egypt, and Babylon, but literally Jerusalem, where Jesus and the prophets were killed.',
     sentence: 'A covenant city or people unfaithful to its Husband while retaining the outward form of covenant. In Revelation, the Harlot is the great city that rules over kings — spiritually named Sodom, Egypt, and Babylon, but literally Jerusalem, where Jesus and the prophets were killed.',
     opposite: 'The Virgin — faithful, exclusively devoted, the one who has not broken covenant',
-    rank: 7.4,
+    rank: 7.3,
     category: 'Covenant & Relationship',
     subcategory: 'Unfaithfulness',
     link: '/research/symbols/harlot/'
@@ -1605,7 +1605,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.',
     sentence: 'The end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.',
     opposite: 'Seedtime / Sowing (Gen 8:22) — the beginning of the process whose end is harvest',
-    rank: 5.3,
+    rank: 5.1,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/harvest/'
@@ -1621,7 +1621,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'To un-choose — to repudiate a covenant partner or claim in favor of another. Scripture enacts hate through refusal, disfavor, or sending away, not merely through feelings of hostility.',
     sentence: 'To un-choose — to repudiate a covenant partner or claim in favor of another. Scripture enacts hate through refusal, disfavor, or sending away, not merely through feelings of hostility.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/hate/'
@@ -1637,7 +1637,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Jerusalem — the navel and heart of the land.',
     sentence: 'Jerusalem — the navel and heart of the land.',
     opposite: 'Lips / mouth — outward profession without inward allegiance. "This people draw near me with their mouth, and with their **lips** do honour me, but have removed their **heart** far from me" (Isa 29:13; quoted by Jesus in Mat 15:8, Mk 7:6)',
-    rank: 5.4,
+    rank: 5.3,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/heart/'
@@ -1669,7 +1669,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A valley-trial carried through to a destructive verdict. At Jerusalem\'s boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from Sheol, which holds the dead.',
     sentence: 'A valley-trial carried through to a destructive verdict. At Jerusalem\'s boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from Sheol, which holds the dead.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/gehenna/'
@@ -1717,7 +1717,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'To cast sinning angels into Tartarus: confinement in chains of darkness while they await judgment. The word does not name the grave of the human dead or Gehenna\'s destructive verdict.',
     sentence: 'To cast sinning angels into Tartarus: confinement in chains of darkness while they await judgment. The word does not name the grave of the human dead or Gehenna\'s destructive verdict.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/tartarus/'
@@ -1733,7 +1733,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'An ambiguous English translation label with no single scriptural referent. Its meaning must be taken from the underlying Hebrew or Greek word.',
     sentence: 'An ambiguous English translation label with no single scriptural referent. Its meaning must be taken from the underlying Hebrew or Greek word.',
     opposite: 'Eternal life / the resurrection / the Garden of Eden',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/hell/'
@@ -1749,7 +1749,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Salvation covering the head: Christ, the Head. It is God\'s own armor lent to His people, protecting the same place where true or counterfeit allegiance is marked.',
     sentence: 'Salvation covering the head: Christ, the Head. It is God\'s own armor lent to His people, protecting the same place where true or counterfeit allegiance is marked.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/helmet/'
@@ -1781,7 +1781,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Set apart from the common; for created things, claimed by God for an appointed purpose.',
     sentence: 'Set apart from the common; for created things, claimed by God for an appointed purpose.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/holy/'
@@ -1797,7 +1797,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The mount of an executing spirit; the conqueror who wins the nations by the covenant bow.',
     sentence: 'The mount of an executing spirit; the conqueror who wins the nations by the covenant bow.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/horse/'
@@ -1813,7 +1813,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'One who pursues and captures by targeted force',
     sentence: 'One who pursues and captures by targeted force — either as a predatory empire-builder or as God\'s agent of unavoidable pursuit. The hunter finds what the fisherman\'s net cannot reach.',
     opposite: 'The Shepherd, who gathers by leading and voice rather than by pursuit and force',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Kingdoms & Peoples',
     subcategory: 'Nations & Empires',
     link: '/research/symbols/hunter/'
@@ -1845,7 +1845,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The succession of gentile world-kingdoms, shattered by the stone-kingdom of God.',
     sentence: 'The succession of gentile world-kingdoms, shattered by the stone-kingdom of God.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/image/'
@@ -1861,7 +1861,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The law\'s discipline and correction, received and kept by the wise but despised by fools.',
     sentence: 'The law\'s discipline and correction, received and kept by the wise but despised by fools.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/instruction/'
@@ -1893,7 +1893,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A set-apart people rising from the sea of nations, waiting for God\'s law and preserved while surrounding kingdoms fall.',
     sentence: 'A set-apart people rising from the sea of nations, waiting for God\'s law and preserved while surrounding kingdoms fall.',
     opposite: 'The Sea — chaotic, unsanctified masses of humanity (Rev 17:15)',
-    rank: 5.7,
+    rank: 5.6,
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/island/'
@@ -1909,10 +1909,26 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The covenant Name given to Jacob and borne at several scales: the man, his descendants, the nation, or the faithful people who prevail with God. Context determines the sense; blood alone does not settle it.',
     sentence: 'The covenant Name given to Jacob and borne at several scales: the man, his descendants, the nation, or the faithful people who prevail with God. Context determines the sense; blood alone does not settle it.',
     opposite: 'The nations outside covenant; Esau, who despised his birthright (Gen 25:34)',
-    rank: 7.2,
+    rank: 7.1,
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/israel/'
+  },
+
+  'issachar': {
+    key: 'issachar',
+    name: 'ISSACHAR',
+    recordType: 'symbol',
+    aliasOf: null,
+    words: ['issachar', 'isachar', 'yissachar'],
+    strongs: ['H3485', 'G2466'],
+    meaning: 'The hireling who owns the field: strong as the donkey to carry, humble enough to bow, settled in tents, discerning the appointed times, rich enough to feed a king, and willing to walk into the valley when Israel must be saved. In the heavenly camp he is Virgo in the east — the place of beginnings and returns — and is identified with sapphire, the full moon.',
+    sentence: 'The hireling who owns the field: strong as the donkey to carry, humble enough to bow, settled in tents, discerning the appointed times, rich enough to feed a king, and willing to walk into the valley when Israel must be saved. In the heavenly camp he is Virgo in the east — the place of beginnings and returns — and is identified with sapphire, the full moon.',
+    opposite: null,
+    rank: 4.8,
+    category: 'Uncategorized',
+    subcategory: null,
+    link: '/research/symbols/issachar/'
   },
 
   'jacob': {
@@ -1925,7 +1941,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The crooked, supplanting covenant man or people before God gives the transformed Name Israel.',
     sentence: 'The crooked, supplanting covenant man or people before God gives the transformed Name Israel.',
     opposite: 'Esau — who didn\'t grasp at all; he let the birthright go (Gen 25:34)',
-    rank: 5.3,
+    rank: 5.2,
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/jacob/'
@@ -1941,7 +1957,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The moon-city',
     sentence: 'The moon-city — the prototype of fortified systems that fall not by human force but by obedient process under God\'s cherem-ban. Always down from Jerusalem.',
     opposite: 'Jerusalem — the city of God\'s throne, always *up*. Going to Jerusalem is ascent; going to Jericho is descent.',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Kingdoms & Peoples',
     subcategory: 'Nations & Empires',
     link: '/research/symbols/jericho/'
@@ -1957,7 +1973,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The covenant community',
     sentence: 'The covenant community — God\'s bride, the people He dwells among, the mother of the faithful.',
     opposite: 'Babylon — man\'s substitute system for God\'s covenant rule. The Harlot where Jerusalem is the bride. The city that falls where Jerusalem descends from God. The mother of idolaters where Jerusalem is the mother of the faithful.',
-    rank: 6.9,
+    rank: 6.8,
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/jerusalem/'
@@ -1973,7 +1989,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'One belonging to Judah, used at several scales: the tribe itself, Israel collectively, the ethnic people, or the faithful inward subset whose praise comes from God. Context determines the sense.',
     sentence: 'One belonging to Judah, used at several scales: the tribe itself, Israel collectively, the ethnic people, or the faithful inward subset whose praise comes from God. Context determines the sense.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/jew/'
@@ -2021,7 +2037,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The act of governing, administering, and discerning right from wrong; also the ruling made or executed. Condemnation is only one aspect, and good judgment follows God\'s law and statutes.',
     sentence: 'The act of governing, administering, and discerning right from wrong; also the ruling made or executed. Condemnation is only one aspect, and good judgment follows God\'s law and statutes.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/judgment/'
@@ -2037,7 +2053,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Righteousness applied to right a neighbor who has been wronged — the right Way to live. English translations often render the same Hebrew righteousness word as justice in such contexts.',
     sentence: 'Righteousness applied to right a neighbor who has been wronged — the right Way to live. English translations often render the same Hebrew righteousness word as justice in such contexts.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/justice/'
@@ -2053,7 +2069,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'To judge, declare, or demonstrate a person, word, deed, or cause right against a charge; the opposite is to condemn. God justifies the sinner through forgiveness in Christ, not by declaring wrongdoing right.',
     sentence: 'To judge, declare, or demonstrate a person, word, deed, or cause right against a charge; the opposite is to condemn. God justifies the sinner through forgiveness in Christ, not by declaring wrongdoing right.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/justification/'
@@ -2069,7 +2085,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant relationship recognized and proven by faithful obedience, extending from marital intimacy to acknowledgment by one\'s covenant Lord. Knowing is not mere mental assent or awareness.',
     sentence: 'Covenant relationship recognized and proven by faithful obedience, extending from marital intimacy to acknowledgment by one\'s covenant Lord. Knowing is not mere mental assent or awareness.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/knowing/'
@@ -2085,7 +2101,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Discernment between good and evil',
     sentence: 'Discernment between good and evil — rooted in the fear of God, equated with Torah, and expressed through obedience to His commands.',
     opposite: 'Fool — "fools despise wisdom and instruction" (Prov 1:7)',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/knowledge/'
@@ -2101,7 +2117,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Jesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now reigning.',
     sentence: 'Jesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now reigning.',
     opposite: 'The Dragon / Beast — authority seized by violence and deception rather than earned by sacrifice (Rev 13:2 vs. Rev 5:6)',
-    rank: 6,
+    rank: 5.9,
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/lamb/'
@@ -2117,7 +2133,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The commandment.',
     sentence: 'The commandment.',
     opposite: 'Darkness — the absence of commandment, the concealment of disobedience where no instruction shines',
-    rank: 5.4,
+    rank: 5.6,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/lamp/'
@@ -2149,7 +2165,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Corrupt teaching or conduct that works unseen until it permeates the whole body, like sour leaven spreading through bread.',
     sentence: 'Corrupt teaching or conduct that works unseen until it permeates the whole body, like sour leaven spreading through bread.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/leaven/'
@@ -2165,7 +2181,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The King\'s jubilee release from bondage to sin into God\'s household, inheritance, and faithful service. It changes masters rather than abolishing all authority; liberty is neither a license to sin nor freedom from the law\'s obligations.',
     sentence: 'The King\'s jubilee release from bondage to sin into God\'s household, inheritance, and faithful service. It changes masters rather than abolishing all authority; liberty is neither a license to sin nor freedom from the law\'s obligations.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/liberty/'
@@ -2181,7 +2197,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant existence — the life lived walking in the Way according to God\'s law.',
     sentence: 'Covenant existence — the life lived walking in the Way according to God\'s law.',
     opposite: null,
-    rank: 0,
+    rank: 5.3,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/life/'
@@ -2229,7 +2245,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The Spirit and word of God going out to give life.',
     sentence: 'The Spirit and word of God going out to give life.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/living-2/'
@@ -2245,7 +2261,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A nation or organized people — the living counterpart of a beast or animal.',
     sentence: 'A nation or organized people — the living counterpart of a beast or animal.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/living/'
@@ -2277,7 +2293,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The scattered house of Israel mingled with the nations, sought and regathered; more generally, any unrepentant sinner.',
     sentence: 'The scattered house of Israel mingled with the nations, sought and regathered; more generally, any unrepentant sinner.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/lost/'
@@ -2293,7 +2309,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Self-giving, faithful obedience to God\'s law in one\'s dealings with God and others. Without obedience, there is no love.',
     sentence: 'Self-giving, faithful obedience to God\'s law in one\'s dealings with God and others. Without obedience, there is no love.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/love/'
@@ -2342,7 +2358,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Observable practice',
     sentence: 'Observable practice — the visible evidence of whose covenant you keep, expressed in what you do and what you believe.',
     opposite: 'Unmarked / unidentified — no visible allegiance, no distinguishing practice',
-    rank: 5.6,
+    rank: 5.3,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/mark/'
@@ -2358,7 +2374,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The covenant union of God and His people — a one-flesh bond in which the wife receives the Husband\'s Name and comes under His covering.',
     sentence: 'The covenant union of God and His people — a one-flesh bond in which the wife receives the Husband\'s Name and comes under His covering.',
     opposite: 'Divorce / covenant breaking — the termination of that relationship through Fornication (idolatry)',
-    rank: 6.5,
+    rank: 6.2,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/marriage/'
@@ -2374,7 +2390,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The word obeyed to completeness. Milk is the word received; meat is the same word carried through to complete obedience, exercising the senses to discern.',
     sentence: 'The word obeyed to completeness. Milk is the word received; meat is the same word carried through to complete obedience, exercising the senses to discern.',
     opposite: 'Milk — the word merely *heard / received* (a babe is fed; he hasn\'t yet *done*)',
-    rank: 5.3,
+    rank: 5.2,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/meat/'
@@ -2390,7 +2406,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant loyalty expressed through compassion, forgiveness, and faithful dealing. Mercy received creates an obligation to show mercy, and Scripture joins pardon with confession and forsaking.',
     sentence: 'Covenant loyalty expressed through compassion, forgiveness, and faithful dealing. Mercy received creates an obligation to show mercy, and Scripture joins pardon with confession and forsaking.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/mercy/'
@@ -2406,7 +2422,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The word received before interpretation — proper food for babes, but meant to be worked, tested, and outgrown. Churned milk becomes butter, and butter is considered meat.',
     sentence: 'The word received before interpretation — proper food for babes, but meant to be worked, tested, and outgrown. Churned milk becomes butter, and butter is considered meat.',
     opposite: 'Meat — the will *done* (milk is fed *to* you; meat you must work and discern)',
-    rank: 5.1,
+    rank: 5,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/milk/'
@@ -2438,7 +2454,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The faithful witness — the reflecting, submissive side of a relationship. It pictures the Son submitting to and reflecting the Father, the wife submitting to her husband, and the Church submitting to Christ as Christ submits to the Father.',
     sentence: 'The faithful witness — the reflecting, submissive side of a relationship. It pictures the Son submitting to and reflecting the Father, the wife submitting to her husband, and the Church submitting to Christ as Christ submits to the Father.',
     opposite: null,
-    rank: 0,
+    rank: 5.2,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/moon/'
@@ -2454,7 +2470,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A kingdom, nation, or high place — the seat of ruling authority.',
     sentence: 'A kingdom, nation, or high place — the seat of ruling authority.',
     opposite: 'The Sea — chaotic nations without government, turbulent peoples. Also the Valley — the low place of subjection, not rule',
-    rank: 7.3,
+    rank: 7.1,
     category: 'Authority & Governance',
     subcategory: null,
     link: '/research/symbols/mountain/'
@@ -2502,7 +2518,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The covenant identity of a house, consisting of its Head\'s Word, covenant law, and fruitful priesthood. Substituting any one creates a counterfeit Name; rejecting, replacing, or removing any one takes the Name in vain.',
     sentence: 'The covenant identity of a house, consisting of its Head\'s Word, covenant law, and fruitful priesthood. Substituting any one creates a counterfeit Name; rejecting, replacing, or removing any one takes the Name in vain.',
     opposite: null,
-    rank: 8.6,
+    rank: 8.5,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/name/'
@@ -2566,7 +2582,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A renewed Word, covenant, and priesthood — known, received, and kept only by the one who bears the renewed Name.',
     sentence: 'A renewed Word, covenant, and priesthood — known, received, and kept only by the one who bears the renewed Name.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/new/'
@@ -2582,7 +2598,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The absence of Day and Light — visible obedience — marked by sleep or death and by sinful deeds concealed in darkness. At the largest scale, it is the period from the fall of man until the Kingdom of God begins on earth.',
     sentence: 'The absence of Day and Light — visible obedience — marked by sleep or death and by sinful deeds concealed in darkness. At the largest scale, it is the period from the fall of man until the Kingdom of God begins on earth.',
     opposite: 'Day — exposure, the time of accountability, when everything hidden is brought into the open',
-    rank: 6.1,
+    rank: 6,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/night/'
@@ -2598,7 +2614,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A great city of the sea — Gentile people who repent and rise in judgment against those who reject Jesus.',
     sentence: 'A great city of the sea — Gentile people who repent and rise in judgment against those who reject Jesus.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/nineveh/'
@@ -2630,7 +2646,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to give a visible example that lights the Way.',
     sentence: 'The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to give a visible example that lights the Way.',
     opposite: 'Untested, unproven — having lamps but no reserve, the appearance of devotion without the substance',
-    rank: 5.7,
+    rank: 5.8,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/oil/'
@@ -2646,7 +2662,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Israel, the covenant people.',
     sentence: 'Israel, the covenant people.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/olive/'
@@ -2662,7 +2678,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The compound claim of covenant-wholeness plus unshakable security',
     sentence: 'The compound claim of covenant-wholeness plus unshakable security — genuine when God-given after righteousness, false and lethal when self-declared while covenant is broken. The false form is Scripture\'s diagnostic marker: when a covenant-breaking people SAY "peace and safety," inescapable judgment is imminent.',
     opposite: 'Watch / sober (1Th 5:6) — the posture that perceives the gap between claimed peace and actual standing',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/peace-and-safety/'
@@ -2694,7 +2710,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant wholeness restored through righteousness — completion, restoration, and repayment rather than merely a truce or feeling. Counterfeit peace announces wholeness over an unkept covenant.',
     sentence: 'Covenant wholeness restored through righteousness — completion, restoration, and repayment rather than merely a truce or feeling. Counterfeit peace announces wholeness over an unkept covenant.',
     opposite: null,
-    rank: 0,
+    rank: 5,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/peace/'
@@ -2706,11 +2722,11 @@ const SYMBOL_DICTIONARY = {
     recordType: 'symbol',
     aliasOf: null,
     words: ['pearl'],
-    strongs: [],
+    strongs: ['H6443', 'G3135'],
     meaning: 'The full moon — one complete light marking an appointed month and meeting at the east gate. The city\'s twelve pearl-gates correspond to the twelve months and bear the tribes\' names.',
     sentence: 'The full moon — one complete light marking an appointed month and meeting at the east gate. The city\'s twelve pearl-gates correspond to the twelve months and bear the tribes\' names.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/pearl/'
@@ -2727,7 +2743,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Irrevocable judgment-death arriving through intoxication and false security',
     sentence: 'Irrevocable judgment-death arriving through intoxication and false security — drunkenness leads to a sleep from which there is no awakening.',
     opposite: 'Watch — vigilance, sobriety, readiness; the posture that prevents this death',
-    rank: 5.1,
+    rank: 5,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/perpetual-sleep/'
@@ -2775,7 +2791,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Those bowed and empty-handed before God, able to receive what the self-sufficient refuse. The poor, meek, and needy hear the gospel and inherit the kingdom.',
     sentence: 'Those bowed and empty-handed before God, able to receive what the self-sufficient refuse. The poor, meek, and needy hear the gospel and inherit the kingdom.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/poor/'
@@ -2807,7 +2823,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The creature of desolation',
     sentence: 'The creature of desolation — restless, scavenging, at home where covenant order has collapsed. babylon\'s spirit in feathers.',
     opposite: 'The Dove — faithful covenant devotion that returns home, seeks rest, brings life, and remains undivided',
-    rank: 5.1,
+    rank: 5,
     category: 'Kingdoms & Peoples',
     subcategory: 'Nations & Empires',
     link: '/research/symbols/raven/'
@@ -2823,7 +2839,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The faithful few preserved and gathered from what remains — like gleanings left at the field’s edge and gold separated from dross.',
     sentence: 'The faithful few preserved and gathered from what remains — like gleanings left at the field’s edge and gold separated from dross.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/remnant/'
@@ -2839,7 +2855,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The Hebrew word behind "new covenant" comes from a root that means "to renew,…',
     sentence: 'The Hebrew word behind "new covenant" comes from a root that means "to renew, repair, rebuild" — and every layer of the source languages confirms it. The everlasting covenant was not replaced. It was renewed.',
     opposite: null,
-    rank: 7.1,
+    rank: 7,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/renewed-covenant/'
@@ -2871,7 +2887,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The self-sufficient who believe they need nothing and therefore cannot receive. True wealth is riches toward God: tested faith and righteous covering.',
     sentence: 'The self-sufficient who believe they need nothing and therefore cannot receive. True wealth is riches toward God: tested faith and righteous covering.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/rich/'
@@ -2887,7 +2903,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Right-living. God is Right-Living by definition; for those under His authority, righteousness is His commandments lived out.',
     sentence: 'Right-living. God is Right-Living by definition; for those under His authority, righteousness is His commandments lived out.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/righteousness/'
@@ -2903,7 +2919,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Jesus Christ, the covenant Head and bedrock beneath His house and kingdom — the foundation, refuge, and source upon whom His people stand.',
     sentence: 'Jesus Christ, the covenant Head and bedrock beneath His house and kingdom — the foundation, refuge, and source upon whom His people stand.',
     opposite: 'Sand — multitudes at the covenant boundary, people without a binding relationship to God, shifting and innumerable but not yet bound',
-    rank: 8.2,
+    rank: 7.7,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/rock/'
@@ -2919,7 +2935,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A complete seven crowned by rest — the seven-day week, the land\'s seventh year, or seven sevens leading to Jubilee. The rest is the completing member of the whole unit, most commonly 6 days followed by 1 day of rest.',
     sentence: 'A complete seven crowned by rest — the seven-day week, the land\'s seventh year, or seven sevens leading to Jubilee. The rest is the completing member of the whole unit, most commonly 6 days followed by 1 day of rest.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/sabbath/'
@@ -2935,7 +2951,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The visible testimony of judgment',
     sentence: 'The visible testimony of judgment — the dark covering that replaces glory, worn by people when covenant standing is broken and by the heavens themselves when governing authority is removed.',
     opposite: 'Beautiful garments / gladness — "Thou hast turned for me my mourning into dancing: thou hast put off my **sackcloth**, and girded me with gladness" (Ps 30:11). Also Isa 3:24: "instead of a stomacher, a girding of **sackcloth**; and burning instead of beauty."',
-    rank: 5,
+    rank: 4.9,
     category: 'Gathering & Consummation',
     subcategory: null,
     link: '/research/symbols/sackcloth/'
@@ -2951,7 +2967,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'To remove from common status and place under an owner\'s claim for an appointed purpose; also, to acknowledge and treat as holy. God sanctifies by claiming; people sanctify God and His Name by honoring Him as holy.',
     sentence: 'To remove from common status and place under an owner\'s claim for an appointed purpose; also, to acknowledge and treat as holy. God sanctifies by claiming; people sanctify God and His Name by honoring Him as holy.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/sanctification/'
@@ -2967,7 +2983,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A countless multitude and, when used as a foundation, the instability of building upon the crowd rather than the covenant Rock — people not bound together by a covenant.',
     sentence: 'A countless multitude and, when used as a foundation, the instability of building upon the crowd rather than the covenant Rock — people not bound together by a covenant.',
     opposite: 'The Rock — covenant that is unchanging, immovable, binding. Sand shifts; Rock stands. Sand scatters; Rock holds together.',
-    rank: 5.9,
+    rank: 5.6,
     category: 'Kingdoms & Peoples',
     subcategory: 'Peoples',
     link: '/research/symbols/sand/'
@@ -2980,10 +2996,10 @@ const SYMBOL_DICTIONARY = {
     aliasOf: null,
     words: ['sapphire'],
     strongs: [],
-    meaning: 'The full moon in its enthroned and bridal form — the clear sapphire likeness beneath God\'s throne and in the Bride-city\'s foundations.',
-    sentence: 'The full moon in its enthroned and bridal form — the clear sapphire likeness beneath God\'s throne and in the Bride-city\'s foundations.',
+    meaning: 'The full moon in its enthroned and bridal form — the clear sapphire likeness at the place of God\'s throne, identified with Issachar.',
+    sentence: 'The full moon in its enthroned and bridal form — the clear sapphire likeness at the place of God\'s throne, identified with Issachar.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/sapphire/'
@@ -3031,7 +3047,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Peoples and nations in an unrooted mass. Below the firmament they are restless; gathered above, they become the still waters of heaven, the sea of glass.',
     sentence: 'Peoples and nations in an unrooted mass. Below the firmament they are restless; gathered above, they become the still waters of heaven, the sea of glass.',
     opposite: 'Island / dry land — the set-apart, the sanctified, that which God has separated *out* of the sea',
-    rank: 8.8,
+    rank: 8.5,
     category: 'Kingdoms & Peoples',
     subcategory: 'Peoples',
     link: '/research/symbols/sea/'
@@ -3063,7 +3079,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The word of God, sown in the hearts of men.',
     sentence: 'The word of God, sown in the hearts of men.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/seed/'
@@ -3095,7 +3111,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The symbolic Way and pattern of the world shaped like Death\'s substance: sin, darkness, and bondage whose wages end at the pit or grave. Opposite the shadow of Christ—the appointed times, assemblies, and humbled Way shaped like His substance—which leads through death to the gift of eternal life.',
     sentence: 'The symbolic Way and pattern of the world shaped like Death\'s substance: sin, darkness, and bondage whose wages end at the pit or grave. Opposite the shadow of Christ—the appointed times, assemblies, and humbled Way shaped like His substance—which leads through death to the gift of eternal life.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/shadow-of-death/'
@@ -3111,7 +3127,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'An object or activity shaped like the substance casting it, marking the reach and boundary of that substance\'s covering. The appointed times and holy assemblies are the Shadow of Christ\'s substance; the Shadow of Death is its opposite.',
     sentence: 'An object or activity shaped like the substance casting it, marking the reach and boundary of that substance\'s covering. The appointed times and holy assemblies are the Shadow of Christ\'s substance; the Shadow of Death is its opposite.',
     opposite: null,
-    rank: 6.4,
+    rank: 6.5,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/shadow/'
@@ -3127,7 +3143,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The covenant people — His flock — who hear the Shepherd\'s voice and follow.',
     sentence: 'The covenant people — His flock — who hear the Shepherd\'s voice and follow.',
     opposite: 'Goat — self-willed, independent, self-sufficient; in the final judgment, separated to the left hand (Mat 25:32–33)',
-    rank: 5.7,
+    rank: 5.6,
     category: 'Kingdoms & Peoples',
     subcategory: 'Covenant People',
     link: '/research/symbols/sheep/'
@@ -3175,7 +3191,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'An organized kingdom, city, or state riding upon the sea of peoples. Its rulers steer and inhabitants crew it; Christ can rule the waters without a vessel, but when He boards one it comes under its true Head.',
     sentence: 'An organized kingdom, city, or state riding upon the sea of peoples. Its rulers steer and inhabitants crew it; Christ can rule the waters without a vessel, but when He boards one it comes under its true Head.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/ship/'
@@ -3191,7 +3207,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A prophecy given in advance — often a prophet\'s lived story — whose fulfillment testifies; not a wonder performed on demand.',
     sentence: 'A prophecy given in advance — often a prophet\'s lived story — whose fulfillment testifies; not a wonder performed on demand.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/sign/'
@@ -3223,7 +3239,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The transgression of the law — Scripture\'s own definition: “sin is the transgression of the law”; where no law is, there is no transgression, and by the law is the knowledge of sin.',
     sentence: 'The transgression of the law — Scripture\'s own definition: “sin is the transgression of the law”; where no law is, there is no transgression, and by the law is the knowledge of sin.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/sin/'
@@ -3240,7 +3256,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The trigger-stick of a trap',
     sentence: 'The trigger-stick of a trap — external pressure activating internal weakness, causing covenant departure.',
     opposite: 'Faith — trusting obedience that remains standing under the same pressure',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/skandalizo-stumble/'
@@ -3256,7 +3272,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Death',
     sentence: 'Death — and the spiritual unawareness that mirrors it.',
     opposite: 'Awake / Watch *grēgoreō* — to be vigilant, alert, spiritually aware)',
-    rank: 6.4,
+    rank: 6.3,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/sleep/'
@@ -3272,7 +3288,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A concealed mechanism of sudden seizure',
     sentence: 'A concealed mechanism of sudden seizure — what you cannot see captures you.',
     opposite: 'Watchfulness / Escape *malat* — Ps 124:7; *gregoreuo* — Lk 21:36)',
-    rank: 5.4,
+    rank: 5.3,
     category: 'Judgment & Consequence',
     subcategory: null,
     link: '/research/symbols/snare/'
@@ -3304,7 +3320,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The righteous, who rule the night with the Son — “they that be wise shall shine… as the stars for ever”; the twelve stars are the twelve tribes, gathered into the twelve constellations, the Mazzaroth.',
     sentence: 'The righteous, who rule the night with the Son — “they that be wise shall shine… as the stars for ever”; the twelve stars are the twelve tribes, gathered into the twelve constellations, the Mazzaroth.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/stars/'
@@ -3320,7 +3336,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A person as a building member of a house or kingdom. Jesus is the rejected living Stone made the chief cornerstone; His people are living stones built under and aligned to Him. The Stone cut without hands is Christ as Head of the kingdom that grows into the Mountain filling the earth.',
     sentence: 'A person as a building member of a house or kingdom. Jesus is the rejected living Stone made the chief cornerstone; His people are living stones built under and aligned to Him. The Stone cut without hands is Christ as Head of the kingdom that grows into the Mountain filling the earth.',
     opposite: null,
-    rank: 0,
+    rank: 5.1,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/stone/'
@@ -3336,7 +3352,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The nations in turmoil — the raging sea, stilled at Christ\'s word, “Peace, be still”.',
     sentence: 'The nations in turmoil — the raging sea, stilled at Christ\'s word, “Peace, be still”.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/storm/'
@@ -3352,7 +3368,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A non-citizen of God\'s commonwealth — one outside the covenant, drawn in, or, once in, made a stranger to the world.',
     sentence: 'A non-citizen of God\'s commonwealth — one outside the covenant, drawn in, or, once in, made a stranger to the world.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/stranger/'
@@ -3400,7 +3416,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The Father, the source of light, from which every lesser light is drawn; the righteous shall shine as the sun in His kingdom.',
     sentence: 'The Father, the source of light, from which every lesser light is drawn; the righteous shall shine as the sun in His kingdom.',
     opposite: null,
-    rank: 0,
+    rank: 5.2,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/sun/'
@@ -3416,7 +3432,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'An unclean Beast — a people or kingdom displaying the outward covenant sign without the inward work, like a parted hoof without chewing the cud. Swine trample what is holy and return to uncleanness after washing. Gathered as a religious body, they are the Synagogue of Satan: those who say they are Jews and are not.',
     sentence: 'An unclean Beast — a people or kingdom displaying the outward covenant sign without the inward work, like a parted hoof without chewing the cud. Swine trample what is holy and return to uncleanness after washing. Gathered as a religious body, they are the Synagogue of Satan: those who say they are Jews and are not.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/swine/'
@@ -3448,7 +3464,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The prophet that teacheth lies — Isaiah\'s own decode, with head and tail already defined by the covenant: obedience makes Israel “the head, and not the tail,” and the curse inverts it. The dragon fells a third of the stars with its tail — the led destroyed by the misleading — and the trumpet armies\' serpent-tails “had heads”: the liar enthroned. Moses is told to seize the serpent exactly there.',
     sentence: 'The prophet that teacheth lies — Isaiah\'s own decode, with head and tail already defined by the covenant: obedience makes Israel “the head, and not the tail,” and the curse inverts it. The dragon fells a third of the stars with its tail — the led destroyed by the misleading — and the trumpet armies\' serpent-tails “had heads”: the liar enthroned. Moses is told to seize the serpent exactly there.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/tail/'
@@ -3464,7 +3480,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The counterfeit sown among the wheat by the enemy — a weed that mimics the true grain until the harvest, then is bound in bundles and burned; the children of the wicked one, distinct from the winnowed chaff.',
     sentence: 'The counterfeit sown among the wheat by the enemy — a weed that mimics the true grain until the harvest, then is bound in bundles and burned; the children of the wicked one, distinct from the winnowed chaff.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/tares/'
@@ -3480,7 +3496,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'To cast sinning angels into Tartarus: confinement in chains of darkness while they await judgment. The word does not name the grave of the human dead or Gehenna\'s destructive verdict.',
     sentence: 'To cast sinning angels into Tartarus: confinement in chains of darkness while they await judgment. The word does not name the grave of the human dead or Gehenna\'s destructive verdict.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/tartarus/'
@@ -3496,7 +3512,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'To cast sinning angels into Tartarus: confinement in chains of darkness while they await judgment. The word does not name the grave of the human dead or Gehenna\'s destructive verdict.',
     sentence: 'To cast sinning angels into Tartarus: confinement in chains of darkness while they await judgment. The word does not name the grave of the human dead or Gehenna\'s destructive verdict.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/tartarus/'
@@ -3512,7 +3528,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The complete set of delegated imperial powers',
     sentence: 'The complete set of delegated imperial powers — vassal-kings who derive authority from the beast, reign briefly, and ultimately devour the system they served.',
     opposite: 'The seven horns of the Lamb (Rev 5:6) — complete divine power inherent to the Lamb, not delegated, not temporary, not self-consuming',
-    rank: 5,
+    rank: 4.9,
     category: 'Kingdoms & Peoples',
     subcategory: 'Nations & Empires',
     link: '/research/symbols/ten-horns/'
@@ -3528,7 +3544,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant fulfillment',
     sentence: 'Covenant fulfillment — the goal toward which God\'s covenant process drives, arriving at its appointed consummation.',
     opposite: 'BEGINNING *reshith* / *arche*) — the origin point from which the purpose departs. The beginning initiates; the end consummates.',
-    rank: 5.6,
+    rank: 5.5,
     category: 'Gathering & Consummation',
     subcategory: null,
     link: '/research/symbols/the-end/'
@@ -3576,7 +3592,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The specific covenant pattern that God defines and Christ embodies',
     sentence: 'The specific covenant pattern that God defines and Christ embodies — distinct from generic way (any person\'s conduct), THE way is the one road that leads to life.',
     opposite: '"The way of the wicked" (Ps 1:6, Prov 4:19) — also definite, but the anti-pattern; "the broad way" that leads to destruction (Mat 7:13)',
-    rank: 6.4,
+    rank: 6.1,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/the-way/'
@@ -3625,7 +3641,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Worldly people who choke fruitfulness',
     sentence: 'Worldly people who choke fruitfulness.',
     opposite: 'Good ground — "an honest and good heart" that hears the word and brings forth Fruit with patience (Lk 8:15)',
-    rank: 6.1,
+    rank: 6,
     category: 'Works & Evidence',
     subcategory: 'Rebellion\'s Fruit',
     link: '/research/symbols/thorns/'
@@ -3674,7 +3690,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The stronghold raised by a Name around its house — refuge, watchtower, and lighthouse in one: high to see danger, giving light to guide the house, and covered to shelter those who come inside. A strong tower is an intact Name protecting its people; an unfinished tower is a Name begun without depth to endure its cost; a fallen tower is a covenant stronghold broken, emptied, or judged.',
     sentence: 'The stronghold raised by a Name around its house — refuge, watchtower, and lighthouse in one: high to see danger, giving light to guide the house, and covered to shelter those who come inside. A strong tower is an intact Name protecting its people; an unfinished tower is a Name begun without depth to endure its cost; a fallen tower is a covenant stronghold broken, emptied, or judged.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/tower/'
@@ -3690,7 +3706,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A nation or people.',
     sentence: 'A nation or people.',
     opposite: 'A cut-down tree or dry tree — a judged nation, stripped of life and shelter',
-    rank: 7.3,
+    rank: 7.2,
     category: 'Kingdoms & Peoples',
     subcategory: 'Peoples',
     link: '/research/symbols/tree/'
@@ -3722,7 +3738,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s law — the standard.',
     sentence: 'God\'s law — the standard.',
     opposite: 'The lie — rejecting God\'s standard; man\'s way substituted for God\'s way',
-    rank: 8.1,
+    rank: 7.9,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/truth/'
@@ -3754,7 +3770,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The tassels bound to the corners of the garment; looking upon them reminds the wearer of all the LORD\'s commandments, to do them.',
     sentence: 'The tassels bound to the corners of the garment; looking upon them reminds the wearer of all the LORD\'s commandments, to do them.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/tzitzit/'
@@ -3770,7 +3786,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Discernment of good from evil, gained by departing from evil — “a good understanding have all they that do his commandments”.',
     sentence: 'Discernment of good from evil, gained by departing from evil — “a good understanding have all they that do his commandments”.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/understanding/'
@@ -3802,7 +3818,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A valley-trial carried through to a destructive verdict. At Jerusalem\'s boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from Sheol, which holds the dead.',
     sentence: 'A valley-trial carried through to a destructive verdict. At Jerusalem\'s boundary, the Valley of Hinnom—where counterfeit worship sacrificed children and which God renamed the Valley of Slaughter—pictures the judgment that destroys both body and soul. Distinct from Sheol, which holds the dead.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/gehenna/'
@@ -3818,7 +3834,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The low and humbled passage between mountain-kingdoms: the Way of descent, service, and obedience even unto death by which one leaves one rule and ascends another. A valley lifted or filled pictures resurrection, exaltation, and the preparation of the Way into the Mountain of God.',
     sentence: 'The low and humbled passage between mountain-kingdoms: the Way of descent, service, and obedience even unto death by which one leaves one rule and ascends another. A valley lifted or filled pictures resurrection, exaltation, and the preparation of the Way into the Mountain of God.',
     opposite: 'mountain',
-    rank: 5,
+    rank: 5.1,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/valley/'
@@ -3834,7 +3850,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The espoused — betrothed to one husband with the wedding still ahead: covenant standing, not attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the bride’s companions who follow her in.',
     sentence: 'The espoused — betrothed to one husband with the wedding still ahead: covenant standing, not attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the bride’s companions who follow her in.',
     opposite: 'The Harlot — Idolatry, covenant breaking, divided allegiance, serving other gods',
-    rank: 5.9,
+    rank: 6,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/virgin/'
@@ -3850,7 +3866,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The words of the one who speaks; the Shepherd\'s voice is His words.',
     sentence: 'The words of the one who speaks; the Shepherd\'s voice is His words.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/voice/'
@@ -3866,7 +3882,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Salvation — the covenant\'s enclosure: “thou shalt call thy walls Salvation”; God Himself “a wall of fire round about.” The counterfeit is self-built — wealth\'s high wall “in his own conceit,” and the whitewashed wall of false peace that the storm flattens.',
     sentence: 'Salvation — the covenant\'s enclosure: “thou shalt call thy walls Salvation”; God Himself “a wall of fire round about.” The counterfeit is self-built — wealth\'s high wall “in his own conceit,” and the whitewashed wall of false peace that the storm flattens.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/wall/'
@@ -3882,7 +3898,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant conflict',
     sentence: 'Covenant conflict — divine judgment manifesting as fracture within and between covenant peoples, the sign that covenant dissolution is underway but not yet complete.',
     opposite: 'Peace — *shalom*, covenant wholeness and fulfillment. Where peace is the wholeness of covenant kept, war is the fracture of covenant broken',
-    rank: 5,
+    rank: 4.9,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/wars-rumors/'
@@ -3898,7 +3914,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The life that flows from God\'s presence',
     sentence: 'The life that flows from God\'s presence — distinguished from the sea by its source and movement, and from human religion by its continuous, self-renewing supply.',
     opposite: 'Cisterns (man-made, broken, containment of dead water) / bitter water / the Sea (gathered, chaotic, restless)',
-    rank: 6.8,
+    rank: 6.6,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/water/'
@@ -3914,7 +3930,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant conduct — the walk.',
     sentence: 'Covenant conduct — the walk.',
     opposite: 'Wickedness (lawlessness, covenant transgression), crooked paths, the broad way',
-    rank: 6.3,
+    rank: 6.4,
     category: 'Covenant & Relationship',
     subcategory: 'Faithfulness',
     link: '/research/symbols/way/'
@@ -3930,7 +3946,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A unit of seven, not necessarily seven days. Scripture applies a week to days or years according to the scale being counted.',
     sentence: 'A unit of seven, not necessarily seven days. Scripture applies a week to days or years according to the scale being counted.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/week/'
@@ -3946,7 +3962,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Where a course ends — behind, the destination. The Hebrew for west is “sea” (yam): Scripture\'s compass faces east, placing the western sea at the back as the “hinder sea.” The related after/back/end word-family can therefore mark what is last, latter, or westernmost; and east and west together span complete separation.',
     sentence: 'Where a course ends — behind, the destination. The Hebrew for west is “sea” (yam): Scripture\'s compass faces east, placing the western sea at the back as the “hinder sea.” The related after/back/end word-family can therefore mark what is last, latter, or westernmost; and east and west together span complete separation.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/west/'
@@ -3962,7 +3978,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The children of the kingdom — the good grain gathered into the barn at the harvest.',
     sentence: 'The children of the kingdom — the good grain gathered into the barn at the harvest.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/wheat/'
@@ -3978,7 +3994,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The beast she rides',
     sentence: 'The beast she rides. The fire she kindled. The net she cast. Babylon\'s destroyer is Babylon herself — her own political apparatus turned against her at God\'s sovereign direction.',
     opposite: 'God\'s direct, visible judgment from heaven (Gen 19:24 — Sodom destroyed by fire *from above*; Babylon destroyed by fire *from within*, Ezek 28:18)',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Counterfeit & Deception',
     subcategory: null,
     link: '/research/symbols/who-destroys-babylon/'
@@ -3994,7 +4010,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Covenant transgression',
     sentence: 'Covenant transgression — lawlessness that rejects God\'s standard, burns like fire, and consumes itself.',
     opposite: 'Righteousness — covenant keeping, walking according to God\'s law',
-    rank: 7.5,
+    rank: 7.1,
     category: 'Covenant & Relationship',
     subcategory: 'Unfaithfulness',
     link: '/research/symbols/wickedness/'
@@ -4010,7 +4026,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'God\'s covenant people cut off from their Husband.',
     sentence: 'God\'s covenant people cut off from their Husband.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/widow/'
@@ -4026,7 +4042,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Spirit — ruach.',
     sentence: 'Spirit — ruach.',
     opposite: 'Stillness — when the winds are held back, God\'s executing power is restrained (Rev 7:1)',
-    rank: 5.8,
+    rank: 5.7,
     category: 'Gathering & Consummation',
     subcategory: null,
     link: '/research/symbols/wind/'
@@ -4042,7 +4058,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Blood',
     sentence: 'Blood — covenant blood: life poured out to ratify, seal, and sustain the agreement between God and man.',
     opposite: 'Thirst / Water — the absence of covenant life, or the unstable, uncovenant element',
-    rank: 6.4,
+    rank: 6.3,
     category: 'Works & Evidence',
     subcategory: 'Covenant Fruit',
     link: '/research/symbols/wine/'
@@ -4058,7 +4074,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The vineyard\'s reckoning — where the fruit a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine, when the vintage is wickedness.',
     sentence: 'The vineyard\'s reckoning — where the fruit a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine, when the vintage is wickedness.',
     opposite: null,
-    rank: 0,
+    rank: 4.9,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/winepress/'
@@ -4090,7 +4106,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'The fear of the LORD lived out — the doing of the commandments; “the fear of the LORD is the beginning of wisdom”.',
     sentence: 'The fear of the LORD lived out — the doing of the commandments; “the fear of the LORD is the beginning of wisdom”.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/wisdom/'
@@ -4122,7 +4138,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'Deeds performed under an obligation imposed by law or decree. Context identifies whose law and which duty; fulfilling it may be obedience, but it does not put the lawgiver in debt or earn any benefit.',
     sentence: 'Deeds performed under an obligation imposed by law or decree. Context identifies whose law and which duty; fulfilling it may be obedience, but it does not put the lawgiver in debt or earn any benefit.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/works-of-law/'
@@ -4138,7 +4154,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A work is a deed, not a synonym for obedience. It becomes obedience when it fulfills a legitimate command and disobedience when it conflicts with God\'s command; context separately identifies wages, duty, or faith made visible.',
     sentence: 'A work is a deed, not a synonym for obedience. It becomes obedience when it fulfills a legitimate command and disobedience when it conflicts with God\'s command; context separately identifies wages, duty, or faith made visible.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/works/'
@@ -4154,7 +4170,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'To bow down and serve — homage in the body, allegiance in the life; the fear of the LORD made visible, kept at His appointed times, on His terms. Not the song service: Scripture separates worship from singing in single scenes.',
     sentence: 'To bow down and serve — homage in the body, allegiance in the life; the fear of the LORD made visible, kept at His appointed times, on His terms. Not the song service: Scripture separates worship from singing in single scenes.',
     opposite: null,
-    rank: 0,
+    rank: 4.8,
     category: 'Uncategorized',
     subcategory: null,
     link: '/research/symbols/worship/'
@@ -4186,7 +4202,7 @@ const SYMBOL_DICTIONARY = {
     meaning: 'A turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees, and a thousand years pass as a day.',
     sentence: 'A turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees, and a thousand years pass as a day.',
     opposite: 'Day — concentrated judgment. Where "year" is the comprehensive restoration-cycle, "day" is the singular moment of divine action. Isaiah consistently pairs them: "the **day** of vengeance" with "the **year** of [Jubilee concept]." The day destroys the bondage-system; the year establishes the liberty.',
-    rank: 4.9,
+    rank: 4.8,
     category: 'Prophetic Signs & Timing',
     subcategory: null,
     link: '/research/symbols/year/'

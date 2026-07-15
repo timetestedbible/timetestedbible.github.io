@@ -87,28 +87,28 @@ definitions:
 
 # Year
 
-## Approved Definition
+## Summary
 
 **A turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees, and a thousand years pass as a [day](/research/symbols/day/).**
 > *"To proclaim the acceptable **year** of the LORD, and the $[day] of vengeance of our God; to comfort all that mourn"* — Isa 61:2
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees, and a thousand years pass as a [day](/research/symbols/day/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **year** begins: “The time of the apparent revolution of the sun trough the ecliptic; the period occupied by the earth in making its revolution around the sun, called the astronomical year; also, a period more or less nearly agreeing with this, adopted by various nations as a measure of time, and called the civil year; as, the common lunar year of 354 days, still in use among the Mohammedans; the year of 360 days, etc.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -391,7 +391,7 @@ Webster's 1913 entry for **year** begins:
 
 > “sun, called the astronomical year; also, a period more or less nearly agreeing with this, adopted by various nations as a measure of time, and called the civil year; as, the common lunar year of 354 days, still in use among the Mohammedans; the year of 360 days, etc. In common usage, the year consists of 365 days, and every fourth year (called bissextile, or leap year) of 366 days, a day being added to February on that year, on account of the excess above 365 days (see Bissextile). Of twenty year of age he was, I guess. Chaucer. Note: The civil, or legal, year, in England, formerly commenced on the 25th of March. This practice continued throughout the British dominions till the year 1752.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -401,7 +401,7 @@ No material competing definition is recorded in the current independent review. 
 
 **A turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees, and a thousand years pass as a [day](/research/symbols/day/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

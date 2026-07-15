@@ -74,27 +74,27 @@ definitions:
 
 # Week
 
-## Approved Definition
+## Summary
 
 **A unit of seven, not necessarily seven days. Scripture applies a week to days or years according to the scale being counted.**
 
 The fuller book and notebook trail is available in [Daniel Unsealed](/books/symbolic-language/daniel-unsealed/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A unit of seven, not necessarily seven days. Scripture applies a week to days or years according to the scale being counted.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **week** begins: “-- Prophetic week, a week of years, or seven years.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -122,7 +122,7 @@ Webster's 1913 entry for **week** begins:
 
 > “G. woche, OHG. wohha, wehha, Icel. vika, Sw. vecka, Dan. uge, Goth. wik, probably originally meaning, a succession or change, and akin to G. wechsel change, L. vicis turn, alternation, and E. weak. Cf. Weak.] Defn: A period of seven days, usually that reckoned from one Sabbath or Sunday to the next. I fast twice in the week. Luke xviii. 12. Note: Although it [the week] did not enter into the calendar of the Greeks, and was not introduced at Rome till after the reign of Theodesius, it has been employed from time immemorial in almost all Eastern countries. Encyc. Brit. Feast of Weeks. See Pentecost, 1. -- Prophetic week, a week of years, or seven years. Dan. ix. 24. -- Week day. See under Day.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -130,9 +130,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A unit of seven, not necessarily seven days. Scripture applies a week to days or years according to the scale being counted.
+1. **Core sense:** A unit of seven, not necessarily seven days. Scripture applies a week to days or years according to the scale being counted.
 2. **Defining witnesses:** Gen 29:27-28; Lev 23:15-16; 25:8; Dan 9:24-25
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -193,4 +193,4 @@ This definition does not depend on another glossary term.
 
 **A unit of seven, not necessarily seven days. Scripture applies a week to days or years according to the scale being counted.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

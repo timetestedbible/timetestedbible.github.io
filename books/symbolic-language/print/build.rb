@@ -191,7 +191,7 @@ PARTS = {
   'gospel'             => 'Part Two — The Doctrine',
   'what-is-the-point'  => 'Part Three — The Point',
   'sun-moon-and-stars' => 'Part Four — The Calendar',
-  'the-four-winds'     => 'Part Five — The Prophecy',
+  'she-laughs-at-the-last-day' => 'Part Five — The Prophecy',
   'mountain'           => 'Part Six — Symbol Studies',
   'the-end-of-the-law' => 'Part Seven — Reference',
 }

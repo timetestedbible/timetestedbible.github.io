@@ -92,27 +92,27 @@ definitions:
 
 # Clean, unclean; cleanse, cleansing
 
-## Approved Definition
+## Summary
 
 **Clean means free from defilement and fit for permitted contact, approach, or use; to cleanse is to remove that defilement. Uncleanness may be physical, ceremonial, or moral and does not always imply guilt; sanctification concerns holy claim and use, not merely cleanliness.**
 
 The fuller book and notebook trail is available in [Uncommon Sanctification, Justification, and Cleanliness](/books/symbolic-language/uncommon-sanctification-justification-and-cleanliness/), [research-tohar-clearness.md](/books/symbolic-language/research/research-tohar-clearness.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **Clean means free from defilement and fit for permitted contact, approach, or use; to cleanse is to remove that defilement. Uncleanness may be physical, ceremonial, or moral and does not always imply guilt; sanctification concerns holy claim and use, not merely cleanliness.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **clean** begins: “Free from dirt or filth; as, clean clothes.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -142,7 +142,7 @@ Webster's 1913 entry for **clean** begins:
 
 > “Clean, a. [Compar. Cleaner (; superl. Cleanest.] Etym: [OE. clene, AS. cl; akin to OHG. chleini pure, neat, graceful, small, G. klein small, and perh. to W. glan clean, pure, bright; all perh. from a primitive, meaning bright, shining. Cf. Glair.] 1. Free from dirt or filth; as, clean clothes.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -150,9 +150,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Clean means free from defilement and fit for permitted contact, approach, or use; to cleanse is to remove that defilement. Uncleanness may be physical, ceremonial, or moral and does not always imply guilt; sanctification concerns holy claim and use, not merely cleanliness.
+1. **Core sense:** Clean means free from defilement and fit for permitted contact, approach, or use; to cleanse is to remove that defilement. Uncleanness may be physical, ceremonial, or moral and does not always imply guilt; sanctification concerns holy claim and use, not merely cleanliness.
 2. **Defining witnesses:** Lev 10:10; 12:2; 15:18; Num 19:11; Ps 51:2, 10; Eph 5:26; 1 John 1:7, 9
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -263,4 +263,4 @@ This definition does not depend on another glossary term.
 
 **Clean means free from defilement and fit for permitted contact, approach, or use; to cleanse is to remove that defilement. Uncleanness may be physical, ceremonial, or moral and does not always imply guilt; sanctification concerns holy claim and use, not merely cleanliness.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

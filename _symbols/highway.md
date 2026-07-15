@@ -74,28 +74,28 @@ definitions:
 
 # Highway
 
-## Approved Definition
+## Summary
 
 **The [Way](/research/symbols/way/) of holiness — the prepared road home, made straight and smooth, where the wicked do not walk.**
 > *"And an **highway** shall be there, and a $[way], and it shall be called The $[way] of holiness; the unclean shall not pass over it; but it shall be for those: the wayfaring men, though fools, shall not err therein."* — Isa 35:8
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The [Way](/research/symbols/way/) of holiness — the prepared road home, made straight and smooth, where the wicked do not walk.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **highway** begins: “High”way`, n.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -285,7 +285,7 @@ Webster's 1913 entry for **highway** begins:
 
 > “High”way`, n. Defn: A road or way open to the use of the public; a main road or thoroughfare.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -303,7 +303,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The [Way](/research/symbols/way/) of holiness — the prepared road home, made straight and smooth, where the wicked do not walk.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

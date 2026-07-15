@@ -189,31 +189,31 @@ The fuller book trail begins with [Mountain](/books/symbolic-language/mountain/)
 and [Shadow](/books/symbolic-language/shadow/), whose established symbols meet
 in the valley's boundary-passage.
 
-## Approved Definition
+## Summary
 
 **The low and humbled passage between [mountain](/research/symbols/mountain/)-kingdoms: the [Way](/research/symbols/way/) of descent, service, and obedience even unto death by which one leaves one rule and ascends another. A valley lifted or filled pictures resurrection, exaltation, and the preparation of the Way into the Mountain of God.**
 
 Isaiah places Valley opposite $mountain and reverses their positions: the
 valley is lifted or filled while the mountain is made low (Isa 40:4; Luke
-3:5). The approved definition retains that low and humbled position while also
+3:5). The definition retains that low and humbled position while also
 accounting for the passage between kingdoms, Christ's descent and exaltation,
 and the resurrection of the dead in the valley.
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The low and humbled passage between [mountain](/research/symbols/mountain/)-kingdoms: the Way of descent, service, and obedience even unto death by which one leaves one rule and ascends another. A valley lifted or filled pictures resurrection, exaltation, and the preparation of the Way into the Mountain of God.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **Low ground lying between or beneath surrounding heights, often receiving water and marking the border between territories.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **valley** begins: “The space inclosed between ranges of hills or mountains; the strip of land at the bottom of the depressions intersecting a country, including usually the bed of a stream, with frequently broad alluvial plains on one or both sides of the stream.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Definition in Full
 
@@ -467,7 +467,7 @@ crossed, the dead raised, and the low boundary filled with life from above.
 | **Shadow of Death** | The joined phrase in Ps 23:4 and the valleys containing graves, slaughter, or dry bones. | Shadow of Death has uses without a valley, and valleys have fruitful, territorial, and jurisdictional uses without that phrase. The symbols combine but are not aliases. |
 | **The low and humbled Way between mountain-kingdoms** | Borders, descent and ascent, service, rival claims, resurrection, the opened Way, and transfer into God's Mountain. | It does not make every literal valley a prophecy; context must activate the symbolic movement. |
 
-The approved definition preserves the literal geography while explaining why
+The definition preserves the literal geography while explaining why
 humility, service, death, and resurrection repeatedly occupy it. Valley is the
 low passage; Shadow of Death is one covering under which that passage may be
 crossed. Psalm 23 needs both symbols, and neither should swallow the other.
@@ -537,7 +537,7 @@ The defining and most consequential uses appear in the sections above. The follo
 
 ## Conclusion
 
-The approved glossary definition is:
+The glossary definition is:
 
 > **The low and humbled passage between $[mountain]-kingdoms: the $[Way] of
 > descent, service, and obedience even unto death by which one leaves one rule

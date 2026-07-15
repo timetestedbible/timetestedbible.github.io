@@ -66,28 +66,28 @@ definitions:
 
 # Grass
 
-## Approved Definition
+## Summary
 
 **Mortal people or flesh, growing across the [field](/research/symbols/field/) until they wither or are gathered at [harvest](/research/symbols/harvest/).**
 > *"The voice said, Cry. And he said, What shall I cry? All flesh is **grass**, and all the goodliness thereof is as the flower of the field: The **grass** withereth, the flower fadeth: because the spirit of the LORD bloweth upon it: surely the people is **grass**."* — Isa 40:6–7
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Mortal people or flesh, growing across the [field](/research/symbols/field/) until they wither or are gathered at [harvest](/research/symbols/harvest/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **grass** begins: “Popularly: Herbage; the plants which constitute the food of cattle and other beasts; pasture.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -320,7 +320,7 @@ Webster's 1913 entry for **grass** begins:
 
 > “Grass, n. Etym: [OE. gras, gres, gers, AS, qr, g; akin to OFries. gres, gers, OS., D., G., Icel., & Goth. gras, Dan. gr, Sw. gr, and prob. to Z. grcen, grow. Cf. Graze.] 1. Popularly: Herbage; the plants which constitute the food of cattle and other beasts; pasture.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -338,7 +338,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **Mortal people or flesh, growing across the [field](/research/symbols/field/) until they wither or are gathered at [harvest](/research/symbols/harvest/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

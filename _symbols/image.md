@@ -63,27 +63,27 @@ definitions:
 
 # Image of metals (gold, silver, brass, clay)
 
-## Approved Definition
+## Summary
 
 **The succession of gentile world-kingdoms, shattered by the stone-kingdom of God.**
 
 The fuller book and notebook trail is available in [Mountain](/books/symbolic-language/mountain/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The succession of gentile world-kingdoms, shattered by the stone-kingdom of God.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **image** begins: “An imitation, representation, or similitude of any person, thing, or act, sculptured, drawn, painted, or otherwise made perceptible to the sight; a visible presentation; a copy; a likeness; an effigy; a picture; a semblance.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -113,7 +113,7 @@ Webster's 1913 entry for **image** begins:
 
 > “Im”age, n. Etym: [F., fr. L. imago, imaginis, from the root of imitari to imitate. See Imitate, and cf. Imagine.] 1. An imitation, representation, or similitude of any person, thing, or act, sculptured, drawn, painted, or otherwise made perceptible to the sight; a visible presentation; a copy; a likeness; an effigy; a picture; a semblance. Even like a stony image, cold and numb. Shak. Whose is this image and superscription Matt. xxii. 20. This play is the image of a murder done in Vienna. Shak. And God created man in his own image. Gen. i. 27.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -121,9 +121,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The succession of gentile world-kingdoms, shattered by the stone-kingdom of God.
+1. **Core sense:** The succession of gentile world-kingdoms, shattered by the stone-kingdom of God.
 2. **Defining witnesses:** Dan 2:32-45
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -153,4 +153,4 @@ No exact KJV English-form occurrences were found under the display forms searche
 
 **The succession of gentile world-kingdoms, shattered by the stone-kingdom of God.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

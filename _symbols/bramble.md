@@ -77,27 +77,27 @@ definitions:
 
 # Bramble (thorns, thistles, briers)
 
-## Approved Definition
+## Summary
 
 **The curse-ground's fruitless growth — worldly care and deceitful riches that choke the word, offer false [protection](/research/symbols/shadow/), and end in fire.**
 
 The fuller book and notebook trail is available in [The Parables of the Kingdom](/books/symbolic-language/the-parables-of-the-kingdom/), [research-bramble-thorns.md](/books/symbolic-language/research/research-bramble-thorns.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The curse-ground's fruitless growth — worldly care and deceitful riches that choke the word, offer false [protection](/research/symbols/shadow/), and end in fire.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **bramble** begins: “(Bot.) Defn: Any plant of the genus Rubus, including the raspberry and blackberry.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -123,7 +123,7 @@ Webster's 1913 entry for **bramble** begins:
 
 > “Bram”ble, n. Etym: [OE. brembil, AS.brbramal), fr. the same root as E. broom, As. br. See Broom.] 1. (Bot.) Defn: Any plant of the genus Rubus, including the raspberry and blackberry. Hence: Any rough, prickly shrub. The thorny brambles, and embracing bushes. Shak.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -131,9 +131,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The curse-ground's fruitless growth — worldly care and deceitful riches that choke the word, offer false [protection](/research/symbols/shadow/), and end in fire.
+1. **Core sense:** The curse-ground's fruitless growth — worldly care and deceitful riches that choke the word, offer false [protection](/research/symbols/shadow/), and end in fire.
 2. **Defining witnesses:** Gen 3:18; Matt 13:22; Judg 9:15; 2 Sam 23:6-7; Heb 6:8
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -172,4 +172,4 @@ Related definitions used by this entry: [protection](/research/symbols/shadow/).
 
 **The curse-ground's fruitless growth — worldly care and deceitful riches that choke the word, offer false [protection](/research/symbols/shadow/), and end in fire.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

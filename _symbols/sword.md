@@ -111,28 +111,28 @@ definitions:
 The fuller book trail continues in [Garments & Armor](/books/symbolic-language/garments/),
 where the Sword of the Spirit appears as one piece of God's covenant armor.
 
-## Approved Definition
+## Summary
 
 **The Word of God wielded by the Spirit to discern and execute [judgment](/research/symbols/judgment/); also war and the governing force that carries judgment out. It proceeds from Christ's mouth, takes [peace](/research/symbols/peace/) from the earth, and guards the [way](/research/symbols/way/).**
 > *"For my **sword** shall be bathed in $[heaven]: behold, it shall come down upon Idumea, and upon the people of my curse, to judgment."* — Isa 34:5
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The Word of God wielded by the Spirit to discern and execute [judgment](/research/symbols/judgment/); also war and the governing force that carries judgment out. It proceeds from Christ's mouth, takes [peace](/research/symbols/peace/) from the earth, and guards the [way](/research/symbols/way/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **sword** begins: “An offensive weapon, having a long and usually sharp”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -462,7 +462,7 @@ Webster's 1913 entry for **sword** begins:
 
 > “Sword, n. Etym: [OE. swerd, AS. sweord; akin to OFries. swerd, swird, D. zwaard, OS. swerd, OHG. swert, G. schwert, Icel. sver, Sw. svärd, Dan. sværd; of uncertain origin.] 1. An offensive weapon, having a long and usually sharp”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -480,7 +480,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The Word of God wielded by the Spirit to discern and execute [judgment](/research/symbols/judgment/); also war and the governing force that carries judgment out. It proceeds from Christ's mouth, takes [peace](/research/symbols/peace/) from the earth, and guards the [way](/research/symbols/way/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

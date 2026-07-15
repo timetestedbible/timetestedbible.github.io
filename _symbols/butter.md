@@ -84,27 +84,27 @@ definitions:
 
 # Butter (curdled milk)
 
-## Approved Definition
+## Summary
 
 **The word worked from [milk](/research/symbols/milk/) into sound judgment — teaching tested until one can refuse evil and choose good. Worked into the walk, it cleanses the feet; its counterfeit is smooth speech concealing war.**
 
 The fuller book and notebook trail is available in [Butter](/books/symbolic-language/butter/), [research-butter.md](/books/symbolic-language/research/research-butter.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The word worked from [milk](/research/symbols/milk/) into sound judgment — teaching tested until one can refuse evil and choose good. Worked into the walk, it cleanses the feet; its counterfeit is smooth speech concealing war.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **butter** begins: “An oily, unctuous substance obtained from cream or milk by churning.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -134,7 +134,7 @@ Webster's 1913 entry for **butter** begins:
 
 > “But”ter, n. Etym: [OE. botere, butter, AS. butere, fr. L. butyrum, Gr. Cow.] 1. An oily, unctuous substance obtained from cream or milk by churning.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -142,9 +142,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The word worked from [milk](/research/symbols/milk/) into sound judgment — teaching tested until one can refuse evil and choose good. Worked into the walk, it cleanses the feet; its counterfeit is smooth speech concealing war.
+1. **Core sense:** The word worked from [milk](/research/symbols/milk/) into sound judgment — teaching tested until one can refuse evil and choose good. Worked into the walk, it cleanses the feet; its counterfeit is smooth speech concealing war.
 2. **Defining witnesses:** Prov 30:33; Isa 7:15, 22; Job 29:6; John 13:5-10; 2 Sam 17:29; Ps 55:21
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -193,4 +193,4 @@ Related definitions used by this entry: [milk](/research/symbols/milk/).
 
 **The word worked from [milk](/research/symbols/milk/) into sound judgment — teaching tested until one can refuse evil and choose good. Worked into the walk, it cleanses the feet; its counterfeit is smooth speech concealing war.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

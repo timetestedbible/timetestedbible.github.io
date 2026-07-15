@@ -92,27 +92,27 @@ definitions:
 
 # Tail
 
-## Approved Definition
+## Summary
 
 **The prophet that teacheth lies — Isaiah's own decode, with head and tail already defined by the [covenant](/research/symbols/covenant/): obedience makes Israel “the head, and not the tail,” and the curse inverts it. The dragon fells a third of the [stars](/research/symbols/stars/) with its tail — the led destroyed by the misleading — and the trumpet armies' serpent-tails “had heads”: the liar enthroned. Moses is told to seize the serpent exactly there.**
 
 The fuller book and notebook trail is available in [The Fall of Babylon](/books/symbolic-language/the-fall-of-babylon/), [research-tail.md](/books/symbolic-language/research/research-tail.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The prophet that teacheth lies — Isaiah's own decode, with head and tail already defined by the [covenant](/research/symbols/covenant/): obedience makes Israel “the head, and not the tail,” and the curse inverts it. The dragon fells a third of the [stars](/research/symbols/stars/) with its tail — the led destroyed by the misleading — and the trumpet armies' serpent-tails “had heads”: the liar enthroned. Moses is told to seize the serpent exactly there.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **tail** begins: “(Law) Defn: Limitation; abridgment.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -140,7 +140,7 @@ Webster's 1913 entry for **tail** begins:
 
 > “Tail, n. Etym: [F. taille a cutting. See Entail, Tally.] (Law) Defn: Limitation; abridgment. Burrill. Estate in tail, a limited, abridged, or reduced fee; an estate limited to certain heirs, and from which the other heirs are precluded; -- called also estate tail. Blackstone.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -148,9 +148,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The prophet that teacheth lies — Isaiah's own decode, with head and tail already defined by the [covenant](/research/symbols/covenant/): obedience makes Israel “the head, and not the tail,” and the curse inverts it. The dragon fells a third of the [stars](/research/symbols/stars/) with its tail — the led destroyed by the misleading — and the trumpet armies' serpent-tails “had heads”: the liar enthroned. Moses is told to seize the serpent exactly there.
+1. **Core sense:** The prophet that teacheth lies — Isaiah's own decode, with head and tail already defined by the [covenant](/research/symbols/covenant/): obedience makes Israel “the head, and not the tail,” and the curse inverts it. The dragon fells a third of the [stars](/research/symbols/stars/) with its tail — the led destroyed by the misleading — and the trumpet armies' serpent-tails “had heads”: the liar enthroned. Moses is told to seize the serpent exactly there.
 2. **Defining witnesses:** Isa 9:15-16; Deut 28:13, 44; Rev 12:4; 9:19; Ex 4:4
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -195,4 +195,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/),
 
 **The prophet that teacheth lies — Isaiah's own decode, with head and tail already defined by the [covenant](/research/symbols/covenant/): obedience makes Israel “the head, and not the tail,” and the curse inverts it. The dragon fells a third of the [stars](/research/symbols/stars/) with its tail — the led destroyed by the misleading — and the trumpet armies' serpent-tails “had heads”: the liar enthroned. Moses is told to seize the serpent exactly there.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

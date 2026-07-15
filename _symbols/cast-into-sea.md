@@ -84,28 +84,28 @@ definitions:
 
 # Cast into the Sea
 
-## Approved Definition
+## Summary
 
 **A ruling power irreversibly destroyed and sunk into the [sea](/research/symbols/sea/) of peoples, never to rise; especially the fall of [Babylon the Great](/research/symbols/babel/).**
 > *"And a mighty angel took up a stone like a great **millstone**, and **cast it into the sea**, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all."* — Rev 18:21
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A ruling power irreversibly destroyed and sunk into the [sea](/research/symbols/sea/) of peoples, never to rise; especially the fall of [Babylon the Great](/research/symbols/babel/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **cast** begins: “To send or drive by force; to throw; to fling; to hurl; to impel.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -310,7 +310,7 @@ Webster's 1913 entry for **cast** begins:
 
 > “Cast, v. t. [imp. & p. p. Cast; p. pr. & vb. n. Casting.] Etym: [Cf. Dan. kastw, Icel. & Sw. kasta; perh. akin to L. gerer to bear, carry. E. Jest.] 1. To send or drive by force; to throw; to fling; to hurl; to impel. Uzziash prepared . . . slings to cast stones. 2 Chron. xxvi. 14 Cast thy garment about thee, and follow me. Acts. xii. 8 We must be cast upon a certain island. Acts. xxvii. 26.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -332,4 +332,4 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **A ruling power irreversibly destroyed and sunk into the [sea](/research/symbols/sea/) of peoples, never to rise; especially the fall of [Babylon the Great](/research/symbols/babel/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.

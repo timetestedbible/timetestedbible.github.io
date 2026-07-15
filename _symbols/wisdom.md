@@ -75,27 +75,27 @@ definitions:
 
 # Wisdom
 
-## Approved Definition
+## Summary
 
 **The [fear of the LORD](/research/symbols/fear/) lived out — the doing of the commandments; “the fear of the LORD is the beginning of wisdom”.**
 
 The fuller book and notebook trail is available in [The Fool and the Wise](/books/symbolic-language/the-fool-and-the-wise/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The [fear of the LORD](/research/symbols/fear/) lived out — the doing of the commandments; “the fear of the LORD is the beginning of wisdom”.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **wisdom** begins: “The quality of being wise; knowledge, and the capacity to make due use of it; knowledge of the best ends and the best means; discernment and judgment; discretion; sagacity; skill; dexterity.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -115,7 +115,7 @@ Webster's 1913 entry for **wisdom** begins:
 
 > “Wis”dom (-dûm), n. Etym: [AS. wisdom. See Wise, a., and -dom.] 1. The quality of being wise; knowledge, and the capacity to make due use of it; knowledge of the best ends and the best means; discernment and judgment; discretion; sagacity; skill; dexterity. We speak also not in wise words of man's wisdom, but in the doctrine of the spirit. Wyclif (1 Cor. ii. 13). Behold, the fear of the Lord, that is wisdom; and to depart from evil is understanding. Job xxviii. 28. It is hoped that our rulers will act with dignity and wisdom that they will yield everything to reason, and refuse everything to force. Ames. Common sense in an uncommon degree is what the world calls wisdom. Coleridge.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -123,9 +123,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The [fear of the LORD](/research/symbols/fear/) lived out — the doing of the commandments; “the fear of the LORD is the beginning of wisdom”.
+1. **Core sense:** The [fear of the LORD](/research/symbols/fear/) lived out — the doing of the commandments; “the fear of the LORD is the beginning of wisdom”.
 2. **Defining witnesses:** Prov 9:10; Ps 111:10; Deut 4:6
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -210,4 +210,4 @@ Related definitions used by this entry: [fear of the LORD](/research/symbols/fea
 
 **The [fear of the LORD](/research/symbols/fear/) lived out — the doing of the commandments; “the fear of the LORD is the beginning of wisdom”.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

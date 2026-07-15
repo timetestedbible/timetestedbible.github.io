@@ -75,27 +75,27 @@ definitions:
 
 # Flood
 
-## Approved Definition
+## Summary
 
 **Destroying waters — peoples in motion: a nation invading, or the Lord's own host sweeping the enemy away.**
 
 The fuller book and notebook trail is available in [Sea & Waters](/books/symbolic-language/sea-and-waters/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Destroying waters — peoples in motion: a nation invading, or the Lord's own host sweeping the enemy away.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **flood** begins: “A great flow of water; a body of moving water; the flowing stream, as of a river; especially, a body of water, rising, swelling, and overflowing land not usually thus covered; a deluge; a freshet; an inundation.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -115,7 +115,7 @@ Webster's 1913 entry for **flood** begins:
 
 > “Flood, n. Etym: [OE. flod a flowing, stream, flood, AS. flod; akin to D. vloed, OS. flod, OHG. fluot, G. flut, Icel. floedh, Sw. & Dan. flod, Goth. flodus; from the root of E. flow. sq. root80. See Flow, v. i.] 1. A great flow of water; a body of moving water; the flowing stream, as of a river; especially, a body of water, rising, swelling, and overflowing land not usually thus covered; a deluge; a freshet; an inundation. A covenant never to destroy The earth again by flood. Milton.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -123,9 +123,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Destroying waters — peoples in motion: a nation invading, or the Lord's own host sweeping the enemy away.
+1. **Core sense:** Destroying waters — peoples in motion: a nation invading, or the Lord's own host sweeping the enemy away.
 2. **Defining witnesses:** Isa 8:7; Jer 47:2; Dan 9:26
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -194,4 +194,4 @@ This definition does not depend on another glossary term.
 
 **Destroying waters — peoples in motion: a nation invading, or the Lord's own host sweeping the enemy away.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

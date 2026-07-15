@@ -73,27 +73,27 @@ definitions:
 
 # Sun
 
-## Approved Definition
+## Summary
 
 **The Father, the source of light, from which every lesser light is drawn; the righteous shall shine as the sun in His kingdom.**
 
 The fuller book and notebook trail is available in [Sun, Moon & Stars](/books/symbolic-language/sun-moon-and-stars/), [research-sun-moon-stars.md](/books/symbolic-language/research/research-sun-moon-stars.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The Father, the source of light, from which every lesser light is drawn; the righteous shall shine as the sun in His kingdom.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **sun** begins: “Sun, n. (Bot.) Defn: See Sunn.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -113,7 +113,7 @@ Webster's 1913 entry for **sun** begins:
 
 > “Sun, n. (Bot.) Defn: See Sunn.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -121,9 +121,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The Father, the source of light, from which every lesser light is drawn; the righteous shall shine as the sun in His kingdom.
+1. **Core sense:** The Father, the source of light, from which every lesser light is drawn; the righteous shall shine as the sun in His kingdom.
 2. **Defining witnesses:** Ps 84:11; Gen 37:9; Matt 13:43
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -228,4 +228,4 @@ This definition does not depend on another glossary term.
 
 **The Father, the source of light, from which every lesser light is drawn; the righteous shall shine as the sun in His kingdom.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

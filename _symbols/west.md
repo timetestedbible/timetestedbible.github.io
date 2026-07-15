@@ -92,27 +92,27 @@ definitions:
 
 # West
 
-## Approved Definition
+## Summary
 
 **Where a course ends — behind, the destination. The Hebrew for west is “sea” (yam): Scripture's compass faces [east](/research/symbols/east/), placing the western sea at the back as the “hinder sea.” The related after/back/end word-family can therefore mark what is last, latter, or westernmost; and east and west together span complete separation.**
 
 The fuller book and notebook trail is available in [The Fall of Babylon](/books/symbolic-language/the-fall-of-babylon/), [research-directions.md](/books/symbolic-language/research/research-directions.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Where a course ends — behind, the destination. The Hebrew for west is “sea” (yam): Scripture's compass faces [east](/research/symbols/east/), placing the western sea at the back as the “hinder sea.” The related after/back/end word-family can therefore mark what is last, latter, or westernmost; and east and west together span complete separation.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **west** begins: “The point in the heavens where the sun is seen to set at the equinox; or, the corresponding point on the earth; that one of the four cardinal points of the compass which is in a direction at right angles to that of north and south, and on the left hand of a person facing north; the point directly opposite to east.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -136,7 +136,7 @@ Webster's 1913 entry for **west** begins:
 
 > “West, n. Etym: [AS. west, adv.; akin to D. west, G. west, westen, OHG. westan, Icel. vestr, Sw. vest, vester, vestan, Dan. vest, vesten, and perhaps to L. vesper evening, Gr. Vesper, Visigoth.] 1. The point in the heavens where the sun is seen to set at the equinox; or, the corresponding point on the earth; that one of the four cardinal points of the compass which is in a direction at right angles to that of north and south, and on the left hand of a person facing north; the point directly opposite to east. And fresh from the west is the free wind's breath. Bryant.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -144,15 +144,15 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Where a course ends — behind, the destination. The Hebrew for west is “sea” (yam): Scripture's compass faces [east](/research/symbols/east/), placing the western sea at the back as the “hinder sea.” The related after/back/end word-family can therefore mark what is last, latter, or westernmost; and east and west together span complete separation.
+1. **Core sense:** Where a course ends — behind, the destination. The Hebrew for west is “sea” (yam): Scripture's compass faces [east](/research/symbols/east/), placing the western sea at the back as the “hinder sea.” The related after/back/end word-family can therefore mark what is last, latter, or westernmost; and east and west together span complete separation.
 2. **Defining witnesses:** Deut 11:24; Zech 14:8; Joel 2:20; Jer 50:12; Ps 103:12
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
 ## Competing Definitions Tested
 
-The approved definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
+The definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
 
 ## Relationship to Other Symbols
 
@@ -207,4 +207,4 @@ Related definitions used by this entry: [East](/research/symbols/east/).
 
 **Where a course ends — behind, the destination. The Hebrew for west is “sea” (yam): Scripture's compass faces [east](/research/symbols/east/), placing the western sea at the back as the “hinder sea.” The related after/back/end word-family can therefore mark what is last, latter, or westernmost; and east and west together span complete separation.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

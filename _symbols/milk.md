@@ -89,7 +89,7 @@ definitions:
 
 # Milk
 
-## Approved Definition
+## Summary
 
 **The word received before interpretation — proper food for babes, but meant to be worked, tested, and outgrown. Churned milk becomes [butter](/research/symbols/butter/), and butter is considered [meat](/research/symbols/meat/).**
 > *"As newborn babes, desire the sincere **milk** of the word, that ye may grow thereby."* — 1 Pet 2:2
@@ -98,21 +98,21 @@ definitions:
 **Opposite:** $meat — the will *done* (milk is fed *to* you; meat you must work and discern)
 **Connected:** $meat, $bread
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The word received before interpretation — proper food for babes, but meant to be worked, tested, and outgrown. Churned milk becomes [butter](/research/symbols/butter/), and butter is considered [meat](/research/symbols/meat/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **milk** begins: “(Physiol.) Defn: A white fluid secreted by the mammary glands of female mammals for the nourishment of their young, consisting of minute globules of fat suspended in a solution of casein, albumin, milk sugar, and inorganic salts.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The key insight — milk is pre-digested
 
@@ -179,7 +179,7 @@ Webster's 1913 entry for **milk** begins:
 
 > “Milk, n. Etym: [AS. meoluc, meoloc, meolc, milc; akin to OFries. meloc, D. melk, G. milch, OHG. miluh, Icel. mj, Sw. mjölk, Dan. melk, Goth. miluks, G. melken to milk, OHG. melchan, Lith. milszti, L. mulgere, Gr. Milch, Emulsion, Milt soft roe of fishes.] 1. (Physiol.) Defn: A white fluid secreted by the mammary glands of female mammals for the nourishment of their young, consisting of minute globules of fat suspended in a solution of casein, albumin, milk sugar, and inorganic salts. ”White as morne milk.” Chaucer.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -240,7 +240,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The word received before interpretation — proper food for babes, but meant to be worked, tested, and outgrown. Churned milk becomes [butter](/research/symbols/butter/), and butter is considered [meat](/research/symbols/meat/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

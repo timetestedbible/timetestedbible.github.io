@@ -81,27 +81,27 @@ definitions:
 
 # Bow
 
-## Approved Definition
+## Summary
 
 **A kingdom's [covenant](/research/symbols/covenant/) and the power joined by it. To break the bow is to unstring the kingdom and end its might.**
 
 The fuller book and notebook trail is available in [The Bow](/books/symbolic-language/the-bow/), [research-bow.md](/books/symbolic-language/research/research-bow.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A kingdom's [covenant](/research/symbols/covenant/) and the power joined by it. To break the bow is to unstring the kingdom and end its might.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **bow** begins: “To cause to deviate from straightness; to bend; to inflect; to make crooked or curved.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -131,7 +131,7 @@ Webster's 1913 entry for **bow** begins:
 
 > “Bow (bou), v. t. [imp. & p. p. Bowed; p. pr. & vb. n. Bowing.] Etym: [OE. bowen, bogen, bugen, AS. bugan (generally v.i.); akin to D. buigen, OHG. biogan, G. biegen, beugen, Icel. boginn bent, beygja to bend, Sw. böja, Dan. böie, bugne, Coth. biugan; also to L. fugere to flee, Gr. bhuj to bend. sq. root88. Cf. Fugitive.] 1. To cause to deviate from straightness; to bend; to inflect; to make crooked or curved. We bow things the contrary way, to make them come to their natural straightness. Milton. The whole nation bowed their necks to the worst kind of tyranny. Prescott.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -139,9 +139,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A kingdom's [covenant](/research/symbols/covenant/) and the power joined by it. To break the bow is to unstring the kingdom and end its might.
+1. **Core sense:** A kingdom's [covenant](/research/symbols/covenant/) and the power joined by it. To break the bow is to unstring the kingdom and end its might.
 2. **Defining witnesses:** Gen 9:13, 16; Jer 49:35; Isa 22:3; Hos 1:5; 2:18; Ps 46:9; 78:57
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -248,4 +248,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/).
 
 **A kingdom's [covenant](/research/symbols/covenant/) and the power joined by it. To break the bow is to unstring the kingdom and end its might.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

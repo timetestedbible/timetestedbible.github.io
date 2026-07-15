@@ -96,28 +96,28 @@ definitions:
 
 # Fire
 
-## Approved Definition
+## Summary
 
 **God's all-consuming presence, which reveals, refines, or destroys according to what encounters it. The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered wickedness.**
 > *"For the LORD thy God is a consuming **fire**, even a jealous God."* — Deut 4:24
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **God's all-consuming presence, which reveals, refines, or destroys according to what encounters it. The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered wickedness.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **fire** begins: “The evolution of light and heat in the combustion of bodies; combustion; state of ignition.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -431,13 +431,13 @@ Webster's 1913 entry for **fire** begins:
 
 > “Fire, n. Etym: [OE. fir, fyr, fur AS. fr; akin to D. vuur, OS. & OHG. fiur, G. feuer, Icel. f, f, Gr. purus pure, E. pure Cf. Empyrean, Pyre.] 1. The evolution of light and heat in the combustion of bodies; combustion; state of ignition. Note: The form of fire exhibited in the combustion of gases in an ascending stream or current is called flame. Anciently, fire, air, earth, and water were regarded as the four elements of which all things are composed.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Conclusion
 
 **God's all-consuming presence, which reveals, refines, or destroys according to what encounters it. The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered wickedness.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

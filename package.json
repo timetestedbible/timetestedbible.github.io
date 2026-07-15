@@ -8,6 +8,8 @@
     "verify:symbols": "node scripts/verify-symbol-refs.js",
     "verify:symbol-records": "node scripts/validate-symbol-records.js",
     "lookup:webster": "node scripts/lookup-webster-1913.js",
+    "parse:webster": "node scripts/parse-webster-1913.js",
+    "test:webster": "node tests/webster-1913-parser-test.js",
     "build:symbol-audit": "node scripts/build-symbol-support-audit.js",
     "reconcile:symbol-studies": "node scripts/reconcile-symbol-studies.js --write"
   },

@@ -72,27 +72,27 @@ definitions:
 
 # Fig leaves
 
-## Approved Definition
+## Summary
 
 **Self-made righteousness — a covering of one's own cut, all show and no substance; the cursed fig tree bore leaves but no fruit.**
 
 The fuller book and notebook trail is available in [Garments & Armor](/books/symbolic-language/garments/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Self-made righteousness — a covering of one's own cut, all show and no substance; the cursed fig tree bore leaves but no fruit.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **fig** begins: “(Bot.) Defn: A small fruit tree (Ficus Carica) with large leaves, known from the remotest antiquity.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -110,7 +110,7 @@ Webster's 1913 entry for **fig** begins:
 
 > “Fig, n. Etym: [F. figue the fruit of the tree, Pr. figa, fr. L. ficus fig tree, fig. Cf. Fico.] 1. (Bot.) Defn: A small fruit tree (Ficus Carica) with large leaves, known from the remotest antiquity. It was probably native from Syria westward to the Canary Islands.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -118,9 +118,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Self-made righteousness — a covering of one's own cut, all show and no substance; the cursed fig tree bore leaves but no fruit.
+1. **Core sense:** Self-made righteousness — a covering of one's own cut, all show and no substance; the cursed fig tree bore leaves but no fruit.
 2. **Defining witnesses:** Gen 3:7; Matt 21:19
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -155,4 +155,4 @@ This definition does not depend on another glossary term.
 
 **Self-made righteousness — a covering of one's own cut, all show and no substance; the cursed fig tree bore leaves but no fruit.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

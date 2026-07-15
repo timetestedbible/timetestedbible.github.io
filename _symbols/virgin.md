@@ -96,28 +96,28 @@ definitions:
 
 # Virgin
 
-## Approved Definition
+## Summary
 
 **The espoused — betrothed to one husband with the wedding still ahead: [covenant](/research/symbols/covenant/) standing, not attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the [bride](/research/symbols/marriage/)’s companions who follow her in.**
 > *"For I am jealous over you with godly jealousy: for I have espoused you to one husband, that I may present you as a chaste **virgin** to Christ."* — 2 Cor 11:2
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The espoused — betrothed to one husband with the wedding still ahead: [covenant](/research/symbols/covenant/) standing, not attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the [bride](/research/symbols/marriage/)’s companions who follow her in.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **virgin** begins: “A woman who has had no carnal knowledge of man; a maid.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -345,7 +345,7 @@ Webster's 1913 entry for **virgin** begins:
 
 > “Vir”gin, n. Etym: [L. virgo, -inis: cf. OF. virgine, virgene, virge, vierge, F. vierge.] 1. A woman who has had no carnal knowledge of man; a maid.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -363,7 +363,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The espoused — betrothed to one husband with the wedding still ahead: [covenant](/research/symbols/covenant/) standing, not attainment; the law counts a betrothed virgin already a wife, the prophets call the ten-tribe house re-espoused after her divorce “the virgin of Israel,” and virgins plural are the [bride](/research/symbols/marriage/)’s companions who follow her in.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

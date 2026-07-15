@@ -100,28 +100,28 @@ definitions:
 
 # Sheol
 
-## Approved Definition
+## Summary
 
 **The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” Distinct from Gehenna, the judgment.**
 > *"I will ransom them from the power of the **grave**; I will redeem them from **death**: O **death**, I will be thy plagues; O **grave**, I will be thy destruction."* — Hos 13:14
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” Distinct from Gehenna, the judgment.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **sheol** begins: “The place of departed spirits; Hades; also, the grave.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -384,7 +384,7 @@ Webster's 1913 entry for **sheol** begins:
 
 > “She”ol, n. Etym: [Heb. sh.] Defn: The place of departed spirits; Hades; also, the grave. For thou wilt not leave my soul to sheel. Ps. xvi. 10. (Rev. Ver.)”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -402,7 +402,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.” Distinct from Gehenna, the judgment.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

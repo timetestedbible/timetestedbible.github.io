@@ -102,28 +102,28 @@ definitions:
 
 # North
 
-## Approved Definition
+## Summary
 
 **The hidden quarter and the direction from which concealed invaders emerge. The north country gathers the nations that spoil [Babylon](/research/symbols/babel/); the enemy seeks his seat in its hidden recesses. It is also the direction of God's [mountain](/research/symbols/mountain/).**
 > *"And the word of the LORD came unto me the second time, saying, What seest thou? And I said, I see a seething pot; and the face thereof is toward the **north**. Then the LORD said unto me, Out of the **north** an evil shall break forth upon all the inhabitants of the land."* — Jer 1:13–14
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The hidden quarter and the direction from which concealed invaders emerge. The north country gathers the nations that spoil [Babylon](/research/symbols/babel/); the enemy seeks his seat in its hidden recesses. It is also the direction of God's [mountain](/research/symbols/mountain/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **north** begins: “That one of the four cardinal points of the compass, at any place, which lies in the direction of the true meridian, and to the left hand of a person facing the east; the direction opposite to the south.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -372,7 +372,7 @@ Webster's 1913 entry for **north** begins:
 
 > “North, n. Etym: [AS. noredh; akin to D. noord, G., Sw., & Dan. nord, Icel. noredhr. Cf. Norman, Norse.] 1. That one of the four cardinal points of the compass, at any place, which lies in the direction of the true meridian, and to the left hand of a person facing the east; the direction opposite to the south.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -390,7 +390,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The hidden quarter and the direction from which concealed invaders emerge. The north country gathers the nations that spoil [Babylon](/research/symbols/babel/); the enemy seeks his seat in its hidden recesses. It is also the direction of God's [mountain](/research/symbols/mountain/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

@@ -87,27 +87,27 @@ definitions:
 
 # Jew
 
-## Approved Definition
+## Summary
 
 **One belonging to Judah, used at several scales: the tribe itself, Israel collectively, the ethnic people, or the faithful inward subset whose praise comes from God. Context determines the sense.**
 
 The fuller book and notebook trail is available in [Jacob, Israel & Ephraim](/books/symbolic-language/jacob-israel-and-ephraim/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **One belonging to Judah, used at several scales: the tribe itself, Israel collectively, the ethnic people, or the faithful inward subset whose praise comes from God. Context determines the sense.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **jew** begins: “Originally, one belonging to the tribe or kingdom of Judah; after the return from the Babylonish captivity, any member of the new state; a Hebrew; an Israelite.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -137,7 +137,7 @@ Webster's 1913 entry for **jew** begins:
 
 > “Jew, n. Etym: [OF. Juis, pl., F. Juif, L. Judaeus, Gr. Y Judah, son of Jacob. Cf. Judaic.] Defn: Originally, one belonging to the tribe or kingdom of Judah; after the return from the Babylonish captivity, any member of the new state; a Hebrew; an Israelite. Jew's frankincense, gum styrax, or benzoin. -- Jew's mallow (Bot.), an annual herb (Corchorus olitorius) cultivated in Syria and Egypt as a pot herb, and in India for its fiber. -- Jew's pitch, asphaltum; bitumen. -- The Wandering Jew, an imaginary personage, who, for his cruelty to the Savior during his passion, is doomed to wander on the earth till Christ's second coming.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -145,9 +145,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** One belonging to Judah, used at several scales: the tribe itself, Israel collectively, the ethnic people, or the faithful inward subset whose praise comes from God. Context determines the sense.
+1. **Core sense:** One belonging to Judah, used at several scales: the tribe itself, Israel collectively, the ethnic people, or the faithful inward subset whose praise comes from God. Context determines the sense.
 2. **Defining witnesses:** 2 Kgs 16:6; Gen 29:35; Esth 2:5; Rom 2:28-29; 3:9; 9:6; Rev 3:9; Zech 8:23
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -222,4 +222,4 @@ This definition does not depend on another glossary term.
 
 **One belonging to Judah, used at several scales: the tribe itself, Israel collectively, the ethnic people, or the faithful inward subset whose praise comes from God. Context determines the sense.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

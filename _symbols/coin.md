@@ -117,7 +117,7 @@ definitions:
 
 # Coin
 
-## Approved Definition
+## Summary
 
 **A person as the owner's stamped image-bearer — refined like gold, bearing the [sign](/research/symbols/sign/), [Name](/research/symbols/name/), and image of God or the [beast](/research/symbols/beast/), assigned a value, and sought when lost. The recovered coin pictures a repentant sinner; human valuation and God's valuation are not the same.**
 > *"Whose is this **image** and **superscription**? … Render therefore unto Caesar the things which are Caesar's; and unto God the things that are God's."* — Matt 22:20-21
@@ -128,21 +128,21 @@ A coin is the $seal made money: metal dug from a field, refined in fire, struck 
 **Counterfeit:** the mark of the beast — Babylon's census-coin (name, number, buy-and-sell) where God's census takes the Name, the count, and the atonement money
 **Connected:** $seal, $name, $fish, $widow, $field, $lamp, $remnant
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A person as the owner's stamped image-bearer — refined like gold, bearing the [sign](/research/symbols/sign/), [Name](/research/symbols/name/), and image of God or the [beast](/research/symbols/beast/), assigned a value, and sought when lost. The recovered coin pictures a repentant sinner; human valuation and God's valuation are not the same.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **coin** begins: “A quoin; a corner or external angle; a wegde.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## Scripture states it
 
@@ -168,7 +168,7 @@ Webster's 1913 entry for **coin** begins:
 
 > “Coin (koin), n. Etym: [F. coin, formerly also coing, wedge, stamp, corner, fr. L. cuneus wedge; prob. akin to E. cone, hone. See Hone, n., and cf. Coigne, Quoin, Cuneiform.] 1. A quoin; a corner or external angle; a wegde. See Coigne, and Quoin.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -275,4 +275,4 @@ No reciprocal opposite is assigned to this entry.
 
 **A person as the owner's stamped image-bearer — refined like gold, bearing the [sign](/research/symbols/sign/), [Name](/research/symbols/name/), and image of God or the [beast](/research/symbols/beast/), assigned a value, and sought when lost. The recovered coin pictures a repentant sinner; human valuation and God's valuation are not the same.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.

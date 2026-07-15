@@ -69,27 +69,27 @@ definitions:
 
 # Stranger
 
-## Approved Definition
+## Summary
 
 **A non-citizen of God's commonwealth — one outside the [covenant](/research/symbols/covenant/), drawn in, or, once in, made a stranger to the world.**
 
 The fuller book and notebook trail is available in [Orphans, Widows & the Fatherless](/books/symbolic-language/orphans-widows-and-the-fatherless/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A non-citizen of God's commonwealth — one outside the [covenant](/research/symbols/covenant/), drawn in, or, once in, made a stranger to the world.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **stranger** begins: “One who is strange, foreign, or unknown.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -107,7 +107,7 @@ Webster's 1913 entry for **stranger** begins:
 
 > “Stran”ger, n. Etym: [OF. estrangier, F. étranger. See Strange.] 1. One who is strange, foreign, or unknown. Specifically: -- (a) One who comes from a foreign land; a foreigner. I am a most poor woman and a stranger, Born out of your dominions. Shak. (b) One whose home is at a distance from the place where he is, but in the same country. (c) One who is unknown or unacquainted; as, the gentleman is a stranger to me; hence, one not admitted to communication, fellowship, or acquaintance. Melons on beds of ice are taught to bear, And strangers to the sun yet ripen here. Granville. My child is yet a stranger in the world. Shak. I was no stranger to the original. Dryden.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -115,9 +115,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A non-citizen of God's commonwealth — one outside the [covenant](/research/symbols/covenant/), drawn in, or, once in, made a stranger to the world.
+1. **Core sense:** A non-citizen of God's commonwealth — one outside the [covenant](/research/symbols/covenant/), drawn in, or, once in, made a stranger to the world.
 2. **Defining witnesses:** Eph 2:12, 19
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -220,4 +220,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/),
 
 **A non-citizen of God's commonwealth — one outside the [covenant](/research/symbols/covenant/), drawn in, or, once in, made a stranger to the world.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

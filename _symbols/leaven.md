@@ -75,27 +75,27 @@ definitions:
 
 # Leaven
 
-## Approved Definition
+## Summary
 
 **Corrupt teaching or conduct that works unseen until it permeates the whole body, like sour leaven spreading through [bread](/research/symbols/bread/).**
 
 The fuller book and notebook trail is available in [Grass](/books/symbolic-language/grass/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Corrupt teaching or conduct that works unseen until it permeates the whole body, like sour leaven spreading through [bread](/research/symbols/bread/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **leaven** begins: “Any substance that produces, or is designed to produce, fermentation, as in dough or liquids; esp., a portion of fermenting dough, which, mixed with a larger quantity of dough, produces a general change in the mass, and renders it light; yeast; barm.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -117,7 +117,7 @@ Webster's 1913 entry for **leaven** begins:
 
 > “Leav”en, n. Etym: [OE. levain, levein, F. levain, L. levamen alleviation, mitigation; but taken in the sense of, a raising, that which raises, fr. levare to raise. See Lever, n.] 1. Any substance that produces, or is designed to produce, fermentation, as in dough or liquids; esp., a portion of fermenting dough, which, mixed with a larger quantity of dough, produces a general change in the mass, and renders it light; yeast; barm.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -125,9 +125,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** Corrupt teaching or conduct that works unseen until it permeates the whole body, like sour leaven spreading through [bread](/research/symbols/bread/).
+1. **Core sense:** Corrupt teaching or conduct that works unseen until it permeates the whole body, like sour leaven spreading through [bread](/research/symbols/bread/).
 2. **Defining witnesses:** Lev 2:11; Matt 16:12; 1 Cor 5:7-8
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -180,4 +180,4 @@ Related definitions used by this entry: [bread](/research/symbols/bread/).
 
 **Corrupt teaching or conduct that works unseen until it permeates the whole body, like sour leaven spreading through [bread](/research/symbols/bread/).**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -78,7 +78,7 @@ definitions:
 
 # Hell
 
-## Approved Definition
+## Summary
 
 **An ambiguous English translation label with no single scriptural referent. Its meaning must be taken from the underlying Hebrew or Greek word.**
 
@@ -94,21 +94,21 @@ This study examines what Scripture actually says — from Torah's own punishment
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *Not applicable. “Hell” is an English translation label, not a biblical object with one symbolic sense.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **An ambiguous English translation label with no single scriptural referent. Its meaning must be taken from the underlying Hebrew or Greek word.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **hell** begins: “The place of the dead, or of souls after death; the grave; -- called in Hebrew sheol, and by the Greeks hades.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## What Torah Says About Punishment
 
@@ -676,13 +676,13 @@ Webster's 1913 entry for **hell** begins:
 
 > “Hell, n. Etym: [AS. hell; akin to D. hel, OHG. hella, G. hölle, Icel. hal, Sw. helfvete, Dan. helvede, Goth. halja, and to AS. helan to conceal. Hele, v. t., Conceal, Cell, Helmet, Hole, Occult.] 1. The place of the dead, or of souls after death; the grave; -- called in Hebrew sheol, and by the Greeks hades. He descended into hell. Book of Common Prayer. Thou wilt not leave my soul in hell. Ps. xvi. 10.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Conclusion
 
 **An ambiguous English translation label with no single scriptural referent. Its meaning must be taken from the underlying Hebrew or Greek word.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

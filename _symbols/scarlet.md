@@ -89,28 +89,28 @@ definitions:
 
 # Scarlet
 
-## Approved Definition
+## Summary
 
 **[Covenant](/research/symbols/covenant/) blood displayed outwardly — and counterfeited by those who wear the form without the substance.**
 > *"Come now, and let us reason together, saith the LORD: though your sins be as **scarlet**, they shall be as $[white] as $[snow]; though they be red like **crimson**, they shall be as wool."* — Isa 1:18
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **[Covenant](/research/symbols/covenant/) blood displayed outwardly — and counterfeited by those who wear the form without the substance.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **scarlet** begins: “A deep bright red tinged with orange or yellow, -- of many tints and shades; a vivid or bright red color. 2.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -353,13 +353,13 @@ Webster's 1913 entry for **scarlet** begins:
 
 > “Scar”let, n. Etym: [OE. scarlat, scarlet, OF. escarlate, F. écarlate (cf. Pr. escarlat, escarlata, Sp. & Pg. escarlata, It. scarlatto, LL. scarlatum), from Per. sakirlat.] Defn: A deep bright red tinged with orange or yellow, -- of many tints and shades; a vivid or bright red color.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Conclusion
 
 **[Covenant](/research/symbols/covenant/) blood displayed outwardly — and counterfeited by those who wear the form without the substance.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

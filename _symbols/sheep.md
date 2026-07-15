@@ -81,28 +81,28 @@ definitions:
 
 # Sheep
 
-## Approved Definition
+## Summary
 
 **The [covenant](/research/symbols/covenant/) people — His flock — who hear the Shepherd's [voice](/research/symbols/voice/) and follow.**
 > *"And ye my flock, the flock of my **pasture**, are men, and I am your God, saith the Lord GOD."* — Ezek 34:31
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The [covenant](/research/symbols/covenant/) people — His flock — who hear the Shepherd's [voice](/research/symbols/voice/) and follow.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **sheep** begins: “(Zoöl.) Defn: Any one of several species of ruminants of the genus Ovis, native of the higher mountains of both hemispheres, but most numerous in Asia.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -365,17 +365,17 @@ Webster's 1913 entry for **sheep** begins:
 
 > “Sheep, n. sing. & pl. Etym: [OE. shep, scheep, AS. sc, sceáp; akin to OFries. sk, LG. & D. schaap, G. schaf, OHG. scaf, Skr. chaga. sq. root295. Cf. Sheepherd.] 1. (Zoöl.) Defn: Any one of several species of ruminants of the genus Ovis, native of the higher mountains of both hemispheres, but most numerous in Asia.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
-The approved definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
+The definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
 
 ## Conclusion
 
 **The [covenant](/research/symbols/covenant/) people — His flock — who hear the Shepherd's [voice](/research/symbols/voice/) and follow.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

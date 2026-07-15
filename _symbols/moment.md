@@ -81,28 +81,28 @@ definitions:
 
 # Moment
 
-## Approved Definition
+## Summary
 
 **A short time expression pointing to the sudden destruction of [Babylon the Great](/research/symbols/babel/), aligned with the resurrection, gathering, and protection through judgment. In prophecy, unusually brief intervals may point directly or by type, shadow, or similitude to that appointed moment.**
 > *"In a **moment** shall they die, and the people shall be troubled at midnight, and pass away: and the mighty shall be taken away without hand."* — Job 34:20
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A short time expression pointing to the sudden destruction of [Babylon the Great](/research/symbols/babel/), aligned with the resurrection, gathering, and protection through judgment. In prophecy, unusually brief intervals may point directly or by type, shadow, or similitude to that appointed moment.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **moment** begins: “A minute portion of time; a point of time; an instant; as, at thet very moment.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -296,7 +296,7 @@ Webster's 1913 entry for **moment** begins:
 
 > “Mo”ment, n. Etym: [F. moment, L. momentum, for movimentum movement, motion, moment, fr. movere to move. See Move, and cf. Momentum, Movement.] 1. A minute portion of time; a point of time; an instant; as, at thet very moment. In a moment, in the twinkling of an eye. 1 Cor. xv. 52.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -314,7 +314,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **A short time expression pointing to the sudden destruction of [Babylon the Great](/research/symbols/babel/), aligned with the resurrection, gathering, and protection through judgment. In prophecy, unusually brief intervals may point directly or by type, shadow, or similitude to that appointed moment.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

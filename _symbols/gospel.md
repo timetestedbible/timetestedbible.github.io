@@ -86,28 +86,28 @@ definitions:
 
 # Gospel of the Kingdom
 
-## Approved Definition
+## Summary
 
 **The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed beforehand to Abraham and at Mount Sinai, and renewed under Jesus' rule.**
 > *"And this **gospel of the kingdom** shall be preached in all the world for a **witness** unto all nations; and then shall **the end** come."* — Mat 24:14
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed beforehand to Abraham and at Mount Sinai, and renewed under Jesus' rule.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **gospel** begins: “Glad tidings; especially, the good news concerning Christ, the Kingdom of God, and salvation.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -359,7 +359,7 @@ Webster's 1913 entry for **gospel** begins:
 
 > “See God, and Spell, v.] 1. Glad tidings; especially, the good news concerning Christ, the Kingdom of God, and salvation. And Jesus went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom. Matt. iv. 23. The steadfast belief of the promises of the gospel. Bentley. Note: It is probable that gospel is from. OE. godspel, God story, the narrative concerning God; but it was early confused with god spell, good story, good tidings, and was so used by the translators of the Authorized version of Scripture. This use has been retained in most cases in the Revised Version. Thus the literal sense [of gospel] is the ”narrative of God,” i. e., the life of Christ. Skeat.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -379,7 +379,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The gospel of the coming kingdom, in which the law goes forth from Zion — proclaimed beforehand to Abraham and at Mount Sinai, and renewed under Jesus' rule.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

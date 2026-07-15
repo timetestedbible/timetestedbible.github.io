@@ -109,28 +109,28 @@ definitions:
 
 # Oil
 
-## Approved Definition
+## Summary
 
 **The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to give a visible example that lights the [Way](/research/symbols/way/).**
 > *"Then all those **virgins** arose, and trimmed their lamps. And the foolish said unto the wise, Give us of your **oil**; for our lamps are gone out. But the wise answered, saying, Not so; lest there be not enough for us and you: but go ye rather to them that sell, and **buy** for yourselves."* — Mat 25:7–9
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to give a visible example that lights the [Way](/research/symbols/way/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **oil** begins: “Any one of a great variety of unctuous combustible substances, not miscible with water; as, olive oil, whale oil, rock oil, etc.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -327,7 +327,7 @@ Webster's 1913 entry for **oil** begins:
 
 > “palm (Bot.), a palm tree whose fruit furnishes oil, esp. Elæis Guineensis. See Elæis. -- Oil sardine (Zoöl.), an East Indian herring (Clupea scombrina), valued for its oil. -- Oil shark (Zoöl.) (a) The liver shark. (b) The tope. -- Oil still, a still for hydrocarbons, esp. for petroleum. -- Oil test, a test for determining the temperature at which petroleum oils give off vapor which is liable to explode. -- Oil tree. (Bot.) (a) A plant of the genus Ricinus (R. communis), from the seeds of which castor oil is obtained. (b) An Indian tree, the mahwa. See Mahwa. (c) The oil palm. -- To burn the midnight oil, to study or work late at night. -- Volatle oils. See Essential oils, under Essential.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -347,7 +347,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to give a visible example that lights the [Way](/research/symbols/way/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

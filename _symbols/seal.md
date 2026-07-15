@@ -102,28 +102,28 @@ definitions:
 
 # Seal
 
-## Approved Definition
+## Summary
 
 **The [Name](/research/symbols/name/) impressed upon its owner, marking [covenant](/research/symbols/covenant/) identity and allegiance in the forehead. God's seal joins ownership with departure from iniquity; the counterfeit claims the same place.**
 > *"Write ye also for the Jews, as it liketh you, in the king's name, and **seal** it with the king's ring: for the writing which is written in the king's name, and **sealed** with the king's ring, may no man reverse."* — Est 8:8
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The [Name](/research/symbols/name/) impressed upon its owner, marking [covenant](/research/symbols/covenant/) identity and allegiance in the forehead. God's seal joins ownership with departure from iniquity; the counterfeit claims the same place.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **seal** begins: “(Zoöl.) Defn: Any aquatic carnivorous mammal of the families Phocidæ and Otariidæ.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -388,7 +388,7 @@ Webster's 1913 entry for **seal** begins:
 
 > “names as sea lion, sea leopard, sea bear, or ursine seal, fur seal, and sea elephant. The bearded seal (Erignathus barbatus), the hooded seal (Cystophora crustata), and the ringed seal (Phoca foetida), are northern species. See also Eared seal, Harp seal, and Fur seal, under Eared, Harp, Monk, and Fur. Seals are much hunted for their skins and fur, and also for their oil, which in some species is very abundant. Harbor seal (Zoöl.), the common seal (Phoca vitulina). It inhabits both the North Atlantic and the North Pacific Ocean, and often ascends rivers; -- called also marbled seal, native seal, river seal, bay seal, land seal, sea calf, sea cat, sea dog, dotard, ranger, selchie, tangfish.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -406,7 +406,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The [Name](/research/symbols/name/) impressed upon its owner, marking [covenant](/research/symbols/covenant/) identity and allegiance in the forehead. God's seal joins ownership with departure from iniquity; the counterfeit claims the same place.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

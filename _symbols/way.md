@@ -67,28 +67,28 @@ definitions:
 
 # Way
 
-## Approved Definition
+## Summary
 
 **[Covenant](/research/symbols/covenant/) conduct — the walk.**
 > *"For I know him, that he will command his children and his household after him, and they shall keep the **way** of the LORD, to do justice and judgment."* — Gen 18:19
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **[Covenant](/research/symbols/covenant/) conduct — the walk.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **way** begins: “Away. [Obs. or Archaic] Chaucer.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -330,13 +330,13 @@ Webster's 1913 entry for **way** begins:
 
 > “Way, adv. Etym: [Aphetic form of away.] Defn: Away. [Obs. or Archaic] Chaucer. To do way, to take away; to remove. [Obs.] ”Do way your hands.” Chaucer. -- To make way with, to make away with. See under Away. [Archaic]”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Conclusion
 
 **[Covenant](/research/symbols/covenant/) conduct — the walk.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

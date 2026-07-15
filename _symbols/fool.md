@@ -79,28 +79,28 @@ definitions:
 
 # Fool
 
-## Approved Definition
+## Summary
 
 **One who hears God's word and will not do it — the lawless, not the unintelligent.**
 > *"For we ourselves also were sometimes **foolish**, disobedient, deceived, serving divers lusts and pleasures, living in malice and envy, hateful, and hating one another."* — Titus 3:3
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **One who hears God's word and will not do it — the lawless, not the unintelligent.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **fool** begins: “A compound of gooseberries scalded and crushed, with cream; -- commonly called gooseberry fool.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -351,7 +351,7 @@ Webster's 1913 entry for **fool** begins:
 
 > “Fool, n. Etym: [Cf. F. fouler to tread, crush. Cf. 1st Foil.] Defn: A compound of gooseberries scalded and crushed, with cream; -- commonly called gooseberry fool.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -369,7 +369,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **One who hears God's word and will not do it — the lawless, not the unintelligent.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

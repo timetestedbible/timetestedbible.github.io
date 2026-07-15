@@ -76,7 +76,7 @@ definitions:
 
 # Mountain
 
-## Approved Definition
+## Summary
 
 **A kingdom, nation, or high place — the seat of ruling authority.**
 
@@ -85,21 +85,21 @@ The fuller book and notebook trail is available in [Mountain](/books/symbolic-la
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A kingdom, nation, or high place — the seat of ruling authority.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **mountain** begins: “A large mass of earth and rock, rising above the common level of the earth or adjacent land; earth and rock forming an isolated peak or a ridge; an eminence higher than a hill; a mount.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -315,7 +315,7 @@ Webster's 1913 entry for **mountain** begins:
 
 > “Moun”tain, n. Etym: [OE. mountaine, montaine, F. montagne, LL. montanea, montania, fr. L. mons, montis, a mountain; cf. montanus belonging to a mountain. See 1st Mount.] 1. A large mass of earth and rock, rising above the common level of the earth or adjacent land; earth and rock forming an isolated peak or a ridge; an eminence higher than a hill; a mount.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -333,7 +333,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **A kingdom, nation, or high place — the seat of ruling authority.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

@@ -99,27 +99,27 @@ definitions:
 
 # Peace
 
-## Approved Definition
+## Summary
 
 **[Covenant](/research/symbols/covenant/) wholeness restored through [righteousness](/research/symbols/righteousness/) — completion, restoration, and repayment rather than merely a truce or feeling. Counterfeit peace announces wholeness over an unkept covenant.**
 
 The fuller book and notebook trail is available in [Gospel](/books/symbolic-language/gospel/), [research-peace.md](/books/symbolic-language/research/research-peace.md), [research-peace-taken.md](/books/symbolic-language/research/research-peace-taken.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **[Covenant](/research/symbols/covenant/) wholeness restored through [righteousness](/research/symbols/righteousness/) — completion, restoration, and repayment rather than merely a truce or feeling. Counterfeit peace announces wholeness over an unkept covenant.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **peace** begins: “A state of quiet or tranquillity; freedom from disturbance or agitation; calm; repose; specifically: (a) Exemption from, or cessation of, war with public enemies. (b) Public quiet, order, and contentment in obedience to law. (c) Exemption from, or subjection of, agitating passions; tranquillity of mind or conscience. (d) Reconciliation; agreement after variance; harmony; concord.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -149,7 +149,7 @@ Webster's 1913 entry for **peace** begins:
 
 > “in wills, indictments, etc., as denoting a state of peace and good conduct. (b) (Theol.) The peace of heart which is the gift of God. -- Peace offering. (a) (Jewish Antiq.) A voluntary offering to God in token of devout homage and of a sense of friendly communion with Him. (b) A gift or service offered as satisfaction to an offended person. -- Peace officer, a civil officer whose duty it is to preserve the public peace, to prevent riots, etc., as a sheriff or constable. -- To hold one's peace, to be silent; to refrain from speaking. -- To make one's peace with, to reconcile one with, to plead one's cause with, or to become reconciled with, another. ”I will make your peace with him.” Shak.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -157,9 +157,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** [Covenant](/research/symbols/covenant/) wholeness restored through [righteousness](/research/symbols/righteousness/) — completion, restoration, and repayment rather than merely a truce or feeling. Counterfeit peace announces wholeness over an unkept covenant.
+1. **Core sense:** [Covenant](/research/symbols/covenant/) wholeness restored through [righteousness](/research/symbols/righteousness/) — completion, restoration, and repayment rather than merely a truce or feeling. Counterfeit peace announces wholeness over an unkept covenant.
 2. **Defining witnesses:** Isa 32:17; Ps 119:165; Isa 48:18; Num 25:12; Ezek 34:25; 37:26; Isa 52:7; Eph 2:14; Jer 6:14; John 14:27; Heb 7:2
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -310,4 +310,4 @@ Related definitions used by this entry: [Covenant](/research/symbols/covenant/),
 
 **[Covenant](/research/symbols/covenant/) wholeness restored through [righteousness](/research/symbols/righteousness/) — completion, restoration, and repayment rather than merely a truce or feeling. Counterfeit peace announces wholeness over an unkept covenant.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

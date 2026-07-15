@@ -81,27 +81,27 @@ definitions:
 
 # Justice
 
-## Approved Definition
+## Summary
 
 **[Righteousness](/research/symbols/righteousness/) applied to right a neighbor who has been wronged — the right [Way](/research/symbols/way/) to live. English translations often render the same Hebrew righteousness word as justice in such contexts.**
 
 The fuller book and notebook trail is available in [Justice and Judgment](/books/symbolic-language/justice-and-judgment/), [research-justice-judgment.md](/books/symbolic-language/research/research-justice-judgment.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **[Righteousness](/research/symbols/righteousness/) applied to right a neighbor who has been wronged — the right [Way](/research/symbols/way/) to live. English translations often render the same Hebrew righteousness word as justice in such contexts.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **justice** begins: “The quality of being just; conformity to the principles of righteousness and rectitude in all things; strict performance of moral obligations; practical conformity to human or divine law; integrity in the dealings of men with each other; rectitude; equity; uprightness.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -119,7 +119,7 @@ Webster's 1913 entry for **justice** begins:
 
 > “Jus”tice, n. Etym: [F., fr. L. justitia, fr. justus just. See Just, a.] 1. The quality of being just; conformity to the principles of righteousness and rectitude in all things; strict performance of moral obligations; practical conformity to human or divine law; integrity in the dealings of men with each other; rectitude; equity; uprightness. Justice and judgment are the haditation of thy throne. Ps. ixxxix. 11. The king-becoming graces, As justice, verity, temperance, stableness, . . . I have no relish of them. Shak.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -127,9 +127,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** [Righteousness](/research/symbols/righteousness/) applied to right a neighbor who has been wronged — the right [Way](/research/symbols/way/) to live. English translations often render the same Hebrew righteousness word as justice in such contexts.
+1. **Core sense:** [Righteousness](/research/symbols/righteousness/) applied to right a neighbor who has been wronged — the right [Way](/research/symbols/way/) to live. English translations often render the same Hebrew righteousness word as justice in such contexts.
 2. **Defining witnesses:** Gen 18:19/Jer 22:3; Ps 89:14/97:2
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -188,4 +188,4 @@ Related definitions used by this entry: [Righteousness](/research/symbols/righte
 
 **[Righteousness](/research/symbols/righteousness/) applied to right a neighbor who has been wronged — the right [Way](/research/symbols/way/) to live. English translations often render the same Hebrew righteousness word as justice in such contexts.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

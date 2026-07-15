@@ -96,27 +96,27 @@ definitions:
 
 # Name
 
-## Approved Definition
+## Summary
 
 **The [covenant](/research/symbols/covenant/) identity of a house, consisting of its Head's Word, covenant law, and fruitful priesthood. Substituting any one creates a counterfeit Name; rejecting, replacing, or removing any one takes the Name in vain.**
 
 The fuller book and notebook trail is available in [The Name](/books/symbolic-language/the-name/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The [covenant](/research/symbols/covenant/) identity of a house, consisting of its Head's Word, covenant law, and fruitful priesthood. Substituting any one creates a counterfeit Name; rejecting, replacing, or removing any one takes the Name in vain.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **name** begins: “The title by which any person or thing is known or designated; a distinctive specific appellation, whether of an individual or a class.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -146,7 +146,7 @@ Webster's 1913 entry for **name** begins:
 
 > “Name, n. Etym: [AS. nama; akin to D. naam, OS. & OHG. namo, G. name, Icel. nafn, for namn, Dan. navn, Sw. namn, Goth. namo, L. nomen (perh. influenced by noscere, gnoscere, to learn to know), Gr. 'o`mona, Scr. naman. sq. root267. Cf. Anonymous, Ignominy, Misnomer, Nominal, Noun.] 1. The title by which any person or thing is known or designated; a distinctive specific appellation, whether of an individual or a class. Whatsoever Adam called every living creature, that was the name thereof. Gen. ii. 19. What's in a name That which we call a rose By any other name would smell as sweet. Shak.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -154,9 +154,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The [covenant](/research/symbols/covenant/) identity of a house, consisting of its Head's Word, covenant law, and fruitful priesthood. Substituting any one creates a counterfeit Name; rejecting, replacing, or removing any one takes the Name in vain.
+1. **Core sense:** The [covenant](/research/symbols/covenant/) identity of a house, consisting of its Head's Word, covenant law, and fruitful priesthood. Substituting any one creates a counterfeit Name; rejecting, replacing, or removing any one takes the Name in vain.
 2. **Defining witnesses:** 2 Sam 6:2; 7:2, 13; 1 Kgs 8:20-21; Heb 9:4; Deut 8:3; 4:13; Num 17:5, 8; Ex 20:7; Isa 4:1
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -299,4 +299,4 @@ Related definitions used by this entry: [covenant](/research/symbols/covenant/).
 
 **The [covenant](/research/symbols/covenant/) identity of a house, consisting of its Head's Word, covenant law, and fruitful priesthood. Substituting any one creates a counterfeit Name; rejecting, replacing, or removing any one takes the Name in vain.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

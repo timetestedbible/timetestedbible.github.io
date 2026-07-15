@@ -80,27 +80,27 @@ definitions:
 
 # Knowing, to know
 
-## Approved Definition
+## Summary
 
 **[Covenant](/research/symbols/covenant/) relationship recognized and proven by [faithful obedience](/research/symbols/faith/), extending from marital intimacy to acknowledgment by one's covenant Lord. Knowing is not mere mental assent or awareness.**
 
 The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **[Covenant](/research/symbols/covenant/) relationship recognized and proven by [faithful obedience](/research/symbols/faith/), extending from marital intimacy to acknowledgment by one's covenant Lord. Knowing is not mere mental assent or awareness.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **knowing** begins: “Skilful; well informed; intelligent; as, a knowing man; a knowing dog.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -124,7 +124,7 @@ Webster's 1913 entry for **knowing** begins:
 
 > “Know”ing, a. 1. Skilful; well informed; intelligent; as, a knowing man; a knowing dog. The knowing and intelligent part of the world. South.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -132,9 +132,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** [Covenant](/research/symbols/covenant/) relationship recognized and proven by [faithful obedience](/research/symbols/faith/), extending from marital intimacy to acknowledgment by one's covenant Lord. Knowing is not mere mental assent or awareness.
+1. **Core sense:** [Covenant](/research/symbols/covenant/) relationship recognized and proven by [faithful obedience](/research/symbols/faith/), extending from marital intimacy to acknowledgment by one's covenant Lord. Knowing is not mere mental assent or awareness.
 2. **Defining witnesses:** Gen 4:1; Hos 4:6; Matt 7:23; 1 John 2:3-4
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -249,4 +249,4 @@ Related definitions used by this entry: [Covenant](/research/symbols/covenant/),
 
 **[Covenant](/research/symbols/covenant/) relationship recognized and proven by [faithful obedience](/research/symbols/faith/), extending from marital intimacy to acknowledgment by one's covenant Lord. Knowing is not mere mental assent or awareness.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

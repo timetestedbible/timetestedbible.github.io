@@ -79,27 +79,27 @@ definitions:
 
 # Mercy
 
-## Approved Definition
+## Summary
 
 **[Covenant](/research/symbols/covenant/) loyalty expressed through compassion, forgiveness, and faithful dealing. Mercy received creates an obligation to show mercy, and Scripture joins pardon with confession and forsaking.**
 
 The fuller book and notebook trail is available in [Grace, Mercy & the Gift](/books/symbolic-language/path-to-salvation/), [research-grace-mercy-gift.md](/books/symbolic-language/research/research-grace-mercy-gift.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **Covenant loyalty expressed through compassion, forgiveness, and faithful dealing. Mercy received creates an obligation to show mercy, and Scripture joins pardon with confession and forsaking.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **mercy** begins: “Forbearance to inflict harm under circumstances of provocation, when one has the power to inflict it; compassionate treatment of an offender or adversary; clemency.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -129,7 +129,7 @@ Webster's 1913 entry for **mercy** begins:
 
 > “Mer”cy, n.; pl. Mercies. Etym: [OE. merci, F. merci, L. merces, mercedis, hire, pay, reward, LL., equiv. to misericordia pity, mercy. L. merces is probmerere to deserve, acquire. See Merit, and cf. Amerce.] 1. Forbearance to inflict harm under circumstances of provocation, when one has the power to inflict it; compassionate treatment of an offender or adversary; clemency. Examples of justice must be made for terror to some; examples of mercy for comfort to others. Bacon.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -137,9 +137,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** [Covenant](/research/symbols/covenant/) loyalty expressed through compassion, forgiveness, and faithful dealing. Mercy received creates an obligation to show mercy, and Scripture joins pardon with confession and forsaking.
+1. **Core sense:** [Covenant](/research/symbols/covenant/) loyalty expressed through compassion, forgiveness, and faithful dealing. Mercy received creates an obligation to show mercy, and Scripture joins pardon with confession and forsaking.
 2. **Defining witnesses:** Deut 7:9; Prov 28:13; Matt 18:27-35; 5:7
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -250,4 +250,4 @@ Related definitions used by this entry: [Covenant](/research/symbols/covenant/).
 
 **[Covenant](/research/symbols/covenant/) loyalty expressed through compassion, forgiveness, and faithful dealing. Mercy received creates an obligation to show mercy, and Scripture joins pardon with confession and forsaking.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

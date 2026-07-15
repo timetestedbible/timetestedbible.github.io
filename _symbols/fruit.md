@@ -77,28 +77,28 @@ definitions:
 
 # Fruit
 
-## Approved Definition
+## Summary
 
 **The works produced by a person or people, revealing the [tree](/research/symbols/tree/) and supplying the basis for judgment.**
 > *"Ye shall know them by their **fruits**. Do men gather grapes of $[thorns], or figs of thistles?"* — Mat 7:16
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The works produced by a person or people, revealing the [tree](/research/symbols/tree/) and supplying the basis for judgment.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **fruit** begins: “Whatever is produced for the nourishment or enjoyment of man or animals by the processes of vegetable growth, as corn, grass, cotton, flax, etc.; -- commonly used in the plural.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -267,7 +267,7 @@ Webster's 1913 entry for **fruit** begins:
 
 > “Fruit, n. Etym: [OE. fruit, frut, F. fruit, from L. fructus enjoyment, product, fruit, from frui, p. p. fructus, to enjoy; akin to E. brook, v. t. See Broook, v. t., and cf. Fructify, Frugal.] 1. Whatever is produced for the nourishment or enjoyment of man or animals by the processes of vegetable growth, as corn, grass, cotton, flax, etc.; -- commonly used in the plural. Six years thou shalt sow thy land, and shalt gather in the fruits thereof. Ex. xxiii. 10.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -285,7 +285,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **The works produced by a person or people, revealing the [tree](/research/symbols/tree/) and supplying the basis for judgment.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

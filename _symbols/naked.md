@@ -78,28 +78,28 @@ definitions:
 
 # Naked
 
-## Approved Definition
+## Summary
 
 **Without [covenant](/research/symbols/covenant/) covering — exposed in one's [sin](/research/symbols/sin/).**
 > *"I spread my skirt over thee, and **covered thy nakedness**: yea, I sware unto thee, and entered into a $[covenant] with thee, saith the Lord GOD, and thou becamest mine."* — Ezek 16:8
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **Without [covenant](/research/symbols/covenant/) covering — exposed in one's [sin](/research/symbols/sin/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **naked** begins: “Having no clothes on; uncovered; nude; bare; as, a naked body; a naked limb; a naked sword.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -353,7 +353,7 @@ Webster's 1913 entry for **naked** begins:
 
 > “Na”ked, a. Etym: [AS. nacod; akin to D. naakt, G. nackt, OHG. nacchot, nahhot, Icel. nökvi, nakinn, Sw. naken, Dan. nögen, Goth. naqa, Lith. n, Russ. nagii, L. nudus, Skr. nagna. sq. root266. Cf. Nude.] 1. Having no clothes on; uncovered; nude; bare; as, a naked body; a naked limb; a naked sword.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -371,7 +371,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **Without [covenant](/research/symbols/covenant/) covering — exposed in one's [sin](/research/symbols/sin/).**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

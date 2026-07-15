@@ -62,27 +62,27 @@ definitions:
 
 # Instruction
 
-## Approved Definition
+## Summary
 
 **The law's discipline and correction, received and kept by the [wise](/research/symbols/wise/) but despised by [fools](/research/symbols/fool/).**
 
 The fuller book and notebook trail is available in [The Fool and the Wise](/books/symbolic-language/the-fool-and-the-wise/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The law's discipline and correction, received and kept by the [wise](/research/symbols/wise/) but despised by [fools](/research/symbols/fool/).**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **instruction** begins: “The act of instructing, teaching, or furnishing with knowledge; information.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -100,7 +100,7 @@ Webster's 1913 entry for **instruction** begins:
 
 > “In*struc”tion, n. Etym: [L. instructio: cf. F. instruction.] 1. The act of instructing, teaching, or furnishing with knowledge; information.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -108,9 +108,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The law's discipline and correction, received and kept by the [wise](/research/symbols/wise/) but despised by [fools](/research/symbols/fool/).
+1. **Core sense:** The law's discipline and correction, received and kept by the [wise](/research/symbols/wise/) but despised by [fools](/research/symbols/fool/).
 2. **Defining witnesses:** Prov 1:7; 23:23
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -157,4 +157,4 @@ Related definitions used by this entry: [wise](/research/symbols/wise/), [fools]
 
 **The law's discipline and correction, received and kept by the [wise](/research/symbols/wise/) but despised by [fools](/research/symbols/fool/).**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

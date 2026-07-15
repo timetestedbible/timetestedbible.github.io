@@ -89,27 +89,27 @@ definitions:
 
 # Great Fish (Sea-monster)
 
-## Approved Definition
+## Summary
 
 **A great ruler among the [sea](/research/symbols/sea/) of peoples — the personal head who can stand for the kingdom, state, and administration acting through him. Pharaoh stands for Egypt, Nebuchadnezzar for Babylon, and Caesar for Rome: the ruler swallows through the body he heads, and is forced to give back what he swallowed.**
 
 The fuller book and notebook trail is available in [The Sign of Jonah](/books/symbolic-language/sign-of-jonah/), [research-jonah-sign-prevalence.md](/books/symbolic-language/research/research-jonah-sign-prevalence.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A great ruler among the [sea](/research/symbols/sea/) of peoples — the personal head who can stand for the kingdom, state, and administration acting through him. Pharaoh stands for Egypt, Nebuchadnezzar for Babylon, and Caesar for Rome: the ruler swallows through the body he heads, and is forced to give back what he swallowed.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **great** begins: “Large in space; of much size; big; immense; enormous; expanded; -- opposed to small and little; as, a great house, ship, farm, plain, distance, length.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -139,7 +139,7 @@ Webster's 1913 entry for **great** begins:
 
 > “Great, a. [Compar. Greater (; superl. Greatest.] Etym: [OE. gret, great, AS. gret; akin to OS. & LG. grt, D. groot, OHG. grz, G. gross. Cf. Groat the coin.] 1. Large in space; of much size; big; immense; enormous; expanded; -- opposed to small and little; as, a great house, ship, farm, plain, distance, length.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -147,15 +147,15 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A great ruler among the [sea](/research/symbols/sea/) of peoples — the personal head who can stand for the kingdom, state, and administration acting through him. Pharaoh stands for Egypt, Nebuchadnezzar for Babylon, and Caesar for Rome: the ruler swallows through the body he heads, and is forced to give back what he swallowed.
+1. **Core sense:** A great ruler among the [sea](/research/symbols/sea/) of peoples — the personal head who can stand for the kingdom, state, and administration acting through him. Pharaoh stands for Egypt, Nebuchadnezzar for Babylon, and Caesar for Rome: the ruler swallows through the body he heads, and is forced to give back what he swallowed.
 2. **Defining witnesses:** Ezek 29:3; 32:2; Jer 51:34, 44; Dan 7:17, 23; John 19:15-16
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
 ## Competing Definitions Tested
 
-The approved definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
+The definition has changed since the preserved independent judgment. Objections aimed at the earlier wording are historical, not evidence against this replacement. The current definition needs a fresh relationship judgment; persuasion is needed only if that new judgment still finds a divergent core.
 
 ## Relationship to Other Symbols
 
@@ -178,4 +178,4 @@ Related definitions used by this entry: [sea](/research/symbols/sea/).
 
 **A great ruler among the [sea](/research/symbols/sea/) of peoples — the personal head who can stand for the kingdom, state, and administration acting through him. Pharaoh stands for Egypt, Nebuchadnezzar for Babylon, and Caesar for Rome: the ruler swallows through the body he heads, and is forced to give back what he swallowed.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

@@ -81,27 +81,27 @@ definitions:
 
 # Gnashing of teeth
 
-## Approved Definition
+## Summary
 
 **The rage of the wicked at the righteous, especially when they see the kingdom from which they are excluded. Their grief, hatred, gnashing, and destruction follow the pattern of the Psalms and Stephen's accusers.**
 
 The fuller book and notebook trail is available in [The Weeping and the Gnashing](/books/symbolic-language/weeping-and-gnashing/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The rage of the wicked at the righteous, especially when they see the kingdom from which they are excluded. Their grief, hatred, gnashing, and destruction follow the pattern of the Psalms and Stephen's accusers.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 No exact Webster headword has yet been matched to **Gnashing of teeth**.
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -129,9 +129,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The rage of the wicked at the righteous, especially when they see the kingdom from which they are excluded. Their grief, hatred, gnashing, and destruction follow the pattern of the Psalms and Stephen's accusers.
+1. **Core sense:** The rage of the wicked at the righteous, especially when they see the kingdom from which they are excluded. Their grief, hatred, gnashing, and destruction follow the pattern of the Psalms and Stephen's accusers.
 2. **Defining witnesses:** Ps 112:10; Ps 37:12; Luke 13:28; Acts 7:54; Matt 8:12
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -170,4 +170,4 @@ This definition does not depend on another glossary term.
 
 **The rage of the wicked at the righteous, especially when they see the kingdom from which they are excluded. Their grief, hatred, gnashing, and destruction follow the pattern of the Psalms and Stephen's accusers.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

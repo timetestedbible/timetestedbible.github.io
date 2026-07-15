@@ -84,28 +84,28 @@ definitions:
 
 # Wings
 
-## Approved Definition
+## Summary
 
 **The [covenant](/research/symbols/covenant/) edge — wing, skirt, border, corner — where the reminder of the law is bound and refuge is found.**
 > *"Now when I passed by thee, and looked upon thee, behold, thy time was the time of love; and I spread my **skirt** over thee, and covered thy nakedness: yea, I sware unto thee, and **entered into a covenant** with thee, saith the Lord GOD; and thou becamest mine."* — Ezek 16:8
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The [covenant](/research/symbols/covenant/) edge — wing, skirt, border, corner — where the reminder of the law is bound and refuge is found.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **wing** begins: “One of the two anterior limbs of a bird, pterodactyl, or bat.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -333,13 +333,13 @@ Webster's 1913 entry for **wing** begins:
 
 > “or bat. They correspond to the arms of man, and are usually modified for flight, but in the case of a few species of birds, as the ostrich, auk, etc., the wings are used only as an assistance in running or swimming. As an eagle stirreth up her nest, fluttereth over her young, spreadeth abroad her wings, taketh them, beareth them on her wings. Deut. xxxii. 11. Note: In the wing of a bird the long quill feathers are in series. The primaries are those attached to the ulnar side of the hand; the secondaries, or wing coverts, those of the forearm: the scapulars, those that lie over the humerus; and the bastard feathers, those of the short outer digit. See Illust. of Bird, and Plumage.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Conclusion
 
 **The [covenant](/research/symbols/covenant/) edge — wing, skirt, border, corner — where the reminder of the law is bound and refuge is found.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

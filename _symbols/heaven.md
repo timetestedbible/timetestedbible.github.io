@@ -95,28 +95,28 @@ definitions:
 
 # Heaven
 
-## Approved Definition
+## Summary
 
 **The jurisdiction where God's will is already done — both the visible sky and the seat of rule. Scripture's saving movement comes downward from heaven to earth.**
 > *"Thy kingdom come. Thy will be done in **earth**, as it is in **heaven**."* — Mat 6:10
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The jurisdiction where God's will is already done — both the visible sky and the seat of rule. Scripture's saving movement comes downward from heaven to earth.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **heaven** begins: “The expanse of space surrounding the earth; esp., that which seems to be over the earth like a great arch or dome; the firmament; the sky; the place where the sun, moon, and stars appear; -- often used in the plural in this sense.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -395,13 +395,13 @@ Webster's 1913 entry for **heaven** begins:
 
 > “heven, hefen, heofen, AS. heofon; akin to OS. hevan, LG. heben, heven, Icel. hifinn; of uncertain origin, cf. D. hemel, G. himmel, Icel. himmin, Goth. himins; perh. akin to, or influenced by, the root of E. heave, or from a root signifying to cover, cf. Goth. gaham to put on, clothe one's self, G. hemd shirt, and perh. E. chemise.] 1. The expanse of space surrounding the earth; esp., that which seems to be over the earth like a great arch or dome; the firmament; the sky; the place where the sun, moon, and stars appear; -- often used in the plural in this sense. I never saw the heavens so dim by day. Shak. When my eyes shall be turned to behold for the last time the sun in heaven. D. Webster.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Conclusion
 
 **The jurisdiction where God's will is already done — both the visible sky and the seat of rule. Scripture's saving movement comes downward from heaven to earth.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

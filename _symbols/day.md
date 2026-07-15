@@ -87,28 +87,28 @@ definitions:
 
 # Day
 
-## Approved Definition
+## Summary
 
 **The time of [light](/research/symbols/light/), exposure, and accountable action. In prophetic counts, a day may also scale to a [year](/research/symbols/year/) or a thousand years, depending on context.**
 > *"And God called the $[light] **Day**, and the $[darkness] he called $[Night]: and the evening and the morning were the first **day**."* — Gen 1:5
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The time of [light](/research/symbols/light/), exposure, and accountable action. In prophetic counts, a day may also scale to a [year](/research/symbols/year/) or a thousand years, depending on context.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **day** begins: “The time of light, or interval between one night and the next; the time between sunrise and sunset, or from dawn to darkness; hence, the light; sunshine.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Many Senses of *Yom*
 
@@ -303,13 +303,13 @@ Webster's 1913 entry for **day** begins:
 
 > “Day, n. Etym: [OE. day, dai,, dei, AS. dæg; akin to OS., D., Dan., & Sw. dag, G, tag, Icel. dagr, Goth. dags; cf. Skr. dah (for dhagh ) to burn. *69. Cf. Dawn.] 1. The time of light, or interval between one night and the next; the time between sunrise and sunset, or from dawn to darkness; hence, the light; sunshine.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Conclusion
 
 **The time of [light](/research/symbols/light/), exposure, and accountable action. In prophetic counts, a day may also scale to a [year](/research/symbols/year/) or a thousand years, depending on context.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

@@ -70,28 +70,28 @@ definitions:
 
 # Tree
 
-## Approved Definition
+## Summary
 
 **A nation or people.**
 > *"For the vineyard of the LORD of hosts is the house of Israel, and the men of Judah his pleasant plant."* — Isa 5:7
 
 ---
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A nation or people.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **tree** begins: “(Bot.) Defn: Any perennial woody plant of considerable size (usually over twenty feet high) and growing with a single trunk.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Key Insight
 
@@ -295,7 +295,7 @@ Webster's 1913 entry for **tree** begins:
 
 > “Tree, n. Etym: [OE. tree, tre, treo, AS. treó, treów, tree, wood; akin to OFries. tr, OS. treo, trio, Icel. tr, Dan. træ, Sw. trä, träd, Goth. triu, Russ. drevo, W. derw an oak, Ir. darag, darog, Gr. dru tree, wood, daru wood. Dryad, Germander, Tar, n., Trough.] 1. (Bot.) Defn: Any perennial woody plant of considerable size (usually over twenty feet high) and growing with a single trunk.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Competing Definitions Tested
 
@@ -313,7 +313,7 @@ These tests identify the boundary the definition must explain. A shared phrase o
 
 **A nation or people.**
 
-This is the approved glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
+This is the glossary conclusion; broader applications in the study remain subordinate to the defining texts and countertexts.
 
 ---
 

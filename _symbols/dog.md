@@ -79,27 +79,27 @@ definitions:
 
 # Dog
 
-## Approved Definition
+## Summary
 
 **A wild [beast](/research/symbols/beast/) representing a kingdom or its citizens, especially Rome in the crucifixion pattern. Gentile dogs eat crumbs from Israel's table; Roman soldiers surrounded Jesus at the cross.**
 
 The fuller book and notebook trail is available in [Trees](/books/symbolic-language/trees/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **A wild [beast](/research/symbols/beast/) representing a kingdom or its citizens, especially Rome in the crucifixion pattern. Gentile dogs eat crumbs from Israel's table; Roman soldiers surrounded Jesus at the cross.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **dog** begins: “(Zoöl.) Defn: A quadruped of the genus Canis, esp. the domestic dog (C. familiaris).”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -129,7 +129,7 @@ Webster's 1913 entry for **dog** begins:
 
 > “Dog, n. Etym: [AS. docga; akin to D. dog mastiff, Dan. dogge, Sw. dogg.] 1. (Zoöl.) Defn: A quadruped of the genus Canis, esp. the domestic dog (C. familiaris).”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -137,9 +137,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** A wild [beast](/research/symbols/beast/) representing a kingdom or its citizens, especially Rome in the crucifixion pattern. Gentile dogs eat crumbs from Israel's table; Roman soldiers surrounded Jesus at the cross.
+1. **Core sense:** A wild [beast](/research/symbols/beast/) representing a kingdom or its citizens, especially Rome in the crucifixion pattern. Gentile dogs eat crumbs from Israel's table; Roman soldiers surrounded Jesus at the cross.
 2. **Defining witnesses:** Ps 22:16; Matt 15:26-27; 27:27-35; Mark 7:28; Rev 22:15
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -210,4 +210,4 @@ Related definitions used by this entry: [beast](/research/symbols/beast/).
 
 **A wild [beast](/research/symbols/beast/) representing a kingdom or its citizens, especially Rome in the crucifixion pattern. Gentile dogs eat crumbs from Israel's table; Roman soldiers surrounded Jesus at the cross.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

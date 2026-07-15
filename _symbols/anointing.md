@@ -85,27 +85,27 @@ definitions:
 
 # Anoint, anointing
 
-## Approved Definition
+## Summary
 
 **To mark a person or thing as God's own and appoint it to a stated office or work. The oil may carry the visible mark; the Spirit may carry the power; the work declares what the appointment is for.**
 
 The fuller book and notebook trail is available in [The Anointing](/books/symbolic-language/the-anointing/), [research-anointing.md](/books/symbolic-language/research/research-anointing.md).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 *No separate symbolic sense is asserted. This entry recovers a biblical word meaning rather than interpreting an image.*
 
-### Bible literal sense
+### Literal Biblical Definition
 
 **To mark a person or thing as God's own and appoint it to a stated office or work. The oil may carry the visible mark; the Spirit may carry the power; the work declares what the appointment is for.**
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **anoint** begins: “To smear or rub over with oil or an unctuous substance; also, to spread over, as oil.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -135,7 +135,7 @@ Webster's 1913 entry for **anoint** begins:
 
 > “A*noint”, v. t. [imp. & p. p. Anointed; p. pr. & vb. n. Anointing.] Etym: [OF. enoint, p. p. of enoindre, fr. L. inungere; in + ungere, unguere, to smear, anoint. See Ointment, Unguent.] 1. To smear or rub over with oil or an unctuous substance; also, to spread over, as oil. And fragrant oils the stiffened limbs anoint. Dryden. He anointed the eyes of the blind man with the clay. John ix. 6.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -143,9 +143,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** To mark a person or thing as God's own and appoint it to a stated office or work. The oil may carry the visible mark; the Spirit may carry the power; the work declares what the appointment is for.
+1. **Core sense:** To mark a person or thing as God's own and appoint it to a stated office or work. The oil may carry the visible mark; the Spirit may carry the power; the work declares what the appointment is for.
 2. **Defining witnesses:** Ex 28:41; 40:9; 1 Sam 16:13-14; 24:6; Isa 45:1, 4-5; Acts 10:38
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -236,4 +236,4 @@ This definition does not depend on another glossary term.
 
 **To mark a person or thing as God's own and appoint it to a stated office or work. The oil may carry the visible mark; the Spirit may carry the power; the work declares what the appointment is for.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.

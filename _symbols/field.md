@@ -70,27 +70,27 @@ definitions:
 
 # Field
 
-## Approved Definition
+## Summary
 
 **The world — sown with the word and reaped at the [harvest](/research/symbols/harvest/). Its edge feeds the [poor](/research/symbols/poor/) and [stranger](/research/symbols/stranger/), and its hidden treasure is found beneath the surface.**
 
 The fuller book and notebook trail is available in [Grass](/books/symbolic-language/grass/).
 
-## Definition Layers
+## Definitions
 
-### Bible symbolic sense
+### Symbolic Definition
 
 **The world — sown with the word and reaped at the [harvest](/research/symbols/harvest/). Its edge feeds the [poor](/research/symbols/poor/) and [stranger](/research/symbols/stranger/), and its hidden treasure is found beneath the surface.**
 
-### Bible literal sense
+### Literal Biblical Definition
 
 *Not yet stated separately. This is a research gap: the literal sense must be derived from ordinary biblical uses, not copied from Webster.*
 
-### Webster's English sense
+### Webster's Definition
 
 Webster's 1913 entry for **field** begins: “Cleared land; land suitable for tillage or pasture; cultivated ground; the open country.”
 
-These layers may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
+These definitions may agree, but they are independent evidence. A biblical passage may use the term literally, symbolically, or both at the same time; the literal properties remain part of the logic when Scripture uses the object as a symbol.
 
 ## The Short Case
 
@@ -110,7 +110,7 @@ Webster's 1913 entry for **field** begins:
 
 > “Field, n. Etym: [OE. feld, fild, AS. feld; akin to D. veld, G. feld, Sw. fält, Dan. felt, Icel. fold field of grass, AS. folde earth, land, ground, OS. folda.] 1. Cleared land; land suitable for tillage or pasture; cultivated ground; the open country.”
 
-The dictionary supplies the ordinary sense. The approved definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
+The dictionary supplies the ordinary sense. The definition above is narrower or figurative only where Scripture's own cross-references require that transfer.
 
 ## Corpus and Method
 
@@ -118,9 +118,9 @@ This study checks the glossary's defining citations first, then compares them wi
 
 ## Evidence by Sense
 
-The approved entry currently states one controlling sense:
+The entry currently states one controlling sense:
 
-1. **Approved core:** The world — sown with the word and reaped at the [harvest](/research/symbols/harvest/). Its edge feeds the [poor](/research/symbols/poor/) and [stranger](/research/symbols/stranger/), and its hidden treasure is found beneath the surface.
+1. **Core sense:** The world — sown with the word and reaped at the [harvest](/research/symbols/harvest/). Its edge feeds the [poor](/research/symbols/poor/) and [stranger](/research/symbols/stranger/), and its hidden treasure is found beneath the surface.
 2. **Defining witnesses:** Matt 13:38; Lev 19:9-10
 3. **Boundary:** the sense applies where the passage activates the same relationship; ordinary literal uses remain literal.
 
@@ -229,4 +229,4 @@ Related definitions used by this entry: [harvest](/research/symbols/harvest/), [
 
 **The world — sown with the word and reaped at the [harvest](/research/symbols/harvest/). Its edge feeds the [poor](/research/symbols/poor/) and [stranger](/research/symbols/stranger/), and its hidden treasure is found beneath the surface.**
 
-This is the approved glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
+This is the glossary conclusion. The occurrence register and competing-reading section show where further evidence would strengthen, narrow, or test it without silently changing the definition.
