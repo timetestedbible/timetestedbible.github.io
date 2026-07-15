@@ -364,10 +364,11 @@ against covenant-men who will not know. Stated as structure, not proof:
   Coin chapter as a section, or carry its own chapter with the wild/tame
   fork and the King's mount? The limmud find (Jer 2:24) also offers the
   Disciple chapter a dark twin ("disciple of the wilderness").
-- HG curiosity, unweighed: where the Greek reads "village," Hebrew Matthew
-  21:2 reads "the FORTRESS (mivtsar)" and Hebrew Mark 11:2 "that TOWER
-  (migdal)" — the colt stands tied at a tower. Possibly cross-links the
-  tower study (sym-tower); needs its own sweep before any claim.
+- The tower, UPGRADED (2026-07-15): Hebrew Luke 19:30 reads migdol
+  (H4024) where the Greek has "village" — joining Hebrew Matthew's
+  mivtsar (fortress) and Hebrew Mark's migdal. All three Hebrew synoptics
+  tie the colt at a tower/stronghold: a three-witness pattern awaiting
+  its sweep against the tower study (sym-tower). See Addendum 2.
 - Isa 32:20 — "blessed are ye that sow beside all waters, that send forth
   thither the feet of the ox and the ass" — sits directly after the Spirit
   poured out (32:15): clean and unclean laborers sent forth (not yoked
@@ -474,6 +475,40 @@ The question: does Matt 21:3's "right away" connect to "immediately" or
   and the dead are raised "in a moment" (1 Cor 15:52); the colt is
   loosed "because the Lord hath need of him." The vocabulary differs;
   the grammar of instant claim-and-release is one.
+
+**The other Hebrew Gospels (same question, checked):**
+
+- **Hebrew Mark 11:3** matches Hebrew Matthew: __“the Lord needs him, and
+  miyad (from-the-hand) they will let him go (yanichuhu).”__ Both
+  witnesses read the promptness as the owner's instant release.
+- **Hebrew Luke has no immediacy clause** (faithful to the Greek, which
+  lacks euthys) — but it pays for the absence three times over:
+  1. **The colt stands at the TOWER.** HG Luke 19:30 reads מגדול
+     (migdol, tagged H4024) where the Greek has kōmē, "village" — and
+     with HG Matthew's mivtsar (fortress) and HG Mark's migdal, ALL
+     THREE Hebrew synoptics now site the tied colt at a
+     tower/stronghold. The open question below is upgraded: this is a
+     three-witness pattern, not a curiosity. (H4024 Migdol is also the
+     Exodus camp before the sea, Exod 14:2 — noted only.)
+  2. **The answer is wage-grammar.** HG Luke 19:31: say __“you have done
+     as our lord DESIRES (chafets) his PE'ULAH (work).”__ Pe'ulah
+     (H6468) is precisely the word Scripture pairs with sachar in the
+     coming-King texts — __“behold, his REWARD (sachar) is with him, and
+     his WORK (pe'ulah) before him”__ (Isa 40:10; 62:11, the line Rev
+     22:12 takes up) — and the word whose wage is promised in Issachar's
+     name-verse: __“thy WORK (pe'ulah) shall be rewarded (yesh sachar)”__
+     (Jer 31:16). All tags verified. In the Hebrew Luke, loosing the
+     colt IS the lord's wage-work: the King comes with His sachar, and
+     His pe'ulah walks before Him on four feet.
+  3. **Two adons.** The colt's __“adon”__ (HG 19:33) questions the
+     untying and yields to __“adoneinu”__ — the lesser lord releases the
+     beast at the greater Lord's claim, the taking-test of 1 Sam 12:3
+     passed at the tower.
+- **Hebrew John 12:15** carries John's famous rendering — __“Do not
+  fear, daughter of Tsiyon”__ for Zechariah's "rejoice greatly" — with
+  the same ayir-ben-atonot vocabulary, and closes: the disciples
+  understood __“when Yeshua was exalted in the light of the Most High”__
+  (HG 12:16).
 
 ## Glossary entry
 
