@@ -33,6 +33,6 @@ no plates; About the Author carries the unplaqued portrait.
 | 15x4-steadfast-heavens | THE ORDINANCES OF THE MOON AND STARS | JEREMIAH 31:35 |
 | 16-thief-beside-him | REMEMBER ME IN YOUR KINGDOM | LUKE 23:42 |
 | 17-taught-at-the-door | TEACH THEM DILIGENTLY UNTO THY CHILDREN | DEUTERONOMY 6:7 |
-| 18-booths-full-moon | THE FEAST UNDER THE FULL MOON | LEVITICUS 23:34 |
+| 18-dwelling-in-booths | DWELLING IN BOOTHS SEVEN DAYS | LEVITICUS 23:42 |
 | 19-fringes-remembered | REMEMBER ALL THE COMMANDMENTS | NUMBERS 15:39 |
 | 23-repent-and-be-baptized | REPENT AND BE BAPTIZED | ACTS 2:38 |

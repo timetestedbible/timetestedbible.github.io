@@ -1091,7 +1091,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'stability-of-astronomy' => 'images/print/15x4-steadfast-heavens.jpg',
     'the-path-to-salvation' => 'images/print/16-thief-beside-him.jpg',
     'commands-to-follow' => 'images/print/17-taught-at-the-door.jpg',
-    'appointed-times' => 'images/print/18-booths-full-moon.jpg',
+    'appointed-times' => 'images/print/18-dwelling-in-booths.jpg',
     'miscellaneous-commands' => 'images/print/19-fringes-remembered.jpg',
     'closing-remarks' => 'images/print/23-repent-and-be-baptized.jpg',
     'about-the-author' => 'images/print/author-portrait.jpg',
