@@ -1083,7 +1083,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'worship'               => 'images/print/22-temple-worship.jpg',
     'the-fear-of-the-lord'  => 'images/print/23-sinai-fear.jpg',
     'time-tested-tradition' => 'images/print/33-ttt-cover.jpg',
-    'she-laughs-at-the-last-day' => 'images/print/33x-last-day-laughter.jpg',
+    'return-on-the-full-moon' => 'images/print/33x-last-day-laughter.jpg',
     'path-to-salvation'     => 'images/print/24-tabernacle-path.jpg',
     'the-four-winds'        => 'images/print/34-four-horsemen.jpg',
     'mountain'              => 'images/print/39-colossus-mountain.jpg',
@@ -1096,6 +1096,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'jacob-israel-and-ephraim' => 'images/print/45-jabbok.jpg',
     'butter'                => 'images/print/47-butter-churn.jpg',
     'the-other-white-meat'  => 'images/print/48-prodigal-trough.jpg',
+    'uncommon-sanctification-justification-and-cleanliness' => 'images/print/48w-washed-sanctified-justified.jpg',
+    'the-end-of-the-law'    => 'images/print/48x-end-of-the-law.jpg',
     'about-the-author'      => 'images/print/50-author-portrait.jpg',
     'shadow'                => 'images/print/17-shadow-rock.jpg',
     'noah-uncovered'        => 'images/print/27-noah-uncovered.jpg',
@@ -1110,6 +1112,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'daniel-unsealed'       => 'images/print/36-daniel-sealed.jpg',
     'the-pearl'             => 'images/print/31-merchant-pearl.jpg',
     'the-fall-of-babylon'   => 'images/print/35-fall-of-babylon.jpg',
+    'glossary'              => 'images/print/49-glossary-symbols.jpg',
   }.freeze
 
   # Fill the trimmed page as fully as the aspect allows, centered — drawn on
@@ -1235,7 +1238,7 @@ def ink_chapter_title node, title, opts = {}
     end
     # Drop the chapter title to about the middle of the page; the epigraph stays
     # above it in the top half. (Guard so a long epigraph never pushes it upward.)
-    # The Glossary, Textual and Translation Notes, and Scripture Index start at
+    # The Glossary and Scripture Index start at
     # the top like the reference sections they are. "How to Use This Book"
     # instead hangs from the FOOT of
     # its page (author's ruling, 2026-07-06) — whitespace above, last line on
@@ -1243,7 +1246,7 @@ def ink_chapter_title node, title, opts = {}
     # measured drop.
     if node.id == 'how-to-use'
       move_down HOW_TO_USE_SINK
-    elsif !(node.id == 'glossary' || node.id == 'textual-and-translation-notes' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')
+    elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')
       mid = bounds.height / 2.0
       mid += CHNUM_BAND if chnum   # the kicker inks above the title; keep the title at mid
       move_cursor_to mid if cursor > mid
