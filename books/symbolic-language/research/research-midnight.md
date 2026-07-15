@@ -207,6 +207,44 @@ denotes the night's half. The analogy earns its place because the calendar
 texts (keseh day 1; the 14th at the dark) put the events at exactly those
 stations, and Amos speaks the noon-inversion in his own words.
 
+## Addendum 2 (author, same day): the fork on the midnight cry — and its resolution
+
+The fork: which midnight carries Matthew 25:6's cry? Either station has a
+case.
+
+- **The dark-moon reading — Egypt's cry mirrored.** Egypt's midnight
+  produced __“a great cry”__ (Ex 11:6; 12:30), and the parable's midnight
+  produces __“a cry”__ — the SAME Greek word: Matthew 25:6's kraugē (G2906,
+  tag-verified) is the LXX's word for Egypt's midnight cry (kraugē megalē;
+  local lxx.txt is Brenton's English, Greek wording flagged as external).
+  A return patterned on Passover would strike at the month's midnight — the
+  moonless night, where lamps are not ornament but survival, which is
+  exactly the night on which the virgins' oil crisis bites.
+- **The full-moon reading — the shofar's station.** The keseh texts put the
+  Husband's homecoming and the trumpet at the full moon; the announced
+  midnight is the full moon's alone.
+
+**The parable's own vocabulary resolves it: the bride goes out to MEET
+him.** __“Go ye out to meet him”__ is apantēsis (G529) — the very word of
+the gathering, __“caught up… to meet the Lord in the air”__ (1
+Thessalonians 4:17, same tag); the Hebrew Matthew reads liqrat (H7125), to
+meet face-to-face. Meeting is FACING — and facing is the full moon's own
+geometry: the mirror reflects only what it faces (the tohar study's
+enōpion), and fulness is the one phase that faces the Bridegroom-light
+whole. The bride facing the bridegroom IS the full-moon configuration; a
+dark-moon meeting is a contradiction in the symbol's own terms.
+
+**And the Egypt-mirror is not lost — the blood moon carries it.** A lunar
+eclipse is possible ONLY at fulness, at exact opposition — and at
+mid-eclipse the darkened moon stands on the midnight meridian of the land
+beneath it. So one and the same night holds both faces: the bride meets
+her Bridegroom at the announced midnight of the full moon, while over the
+house of darkness the whole moon turns to blood (Revelation 6:12, holē) —
+Egypt's kraugē sounding again under a witness not absent but darkened.
+1 Thessalonians 5:2-4 already divides the night exactly this way: a thief
+to the children of darkness, no surprise to the children of light. One
+midnight, one phase, two houses.
+
 ## Tiered verse lists
 
 **Tier 1 — definitional:** Ex 11:4; 12:29, 42; Matt 25:6 (HG ba-chatsi
