@@ -124,6 +124,25 @@ against covenant-men who will not know. Stated as structure, not proof:
   her by function: "the DUMB ASS (aphonon hypozygion — the voiceless
   under-yoke) speaking with man's voice forbad the madness of the prophet."
   The submissive bearer sees what the prophet-for-hire cannot.
+  **The vineyard inversion (author, 2026-07-16 — the counterfeit half of
+  the Tower chapter's colt):** the blocking happens "in a path of the
+  VINEYARDS, a WALL (gader, H1447) being on this side, and a wall on that
+  side" (Num 22:24) — gader is Isaiah 5:5's own vineyard-wall word: the
+  donkey is pinned between the walls of the vineyard that is Israel. Two
+  riders, one vineyard, opposite errands: Balaam, the prophet FOR HIRE who
+  "loved the WAGES (misthos) of unrighteousness" (2 Pet 2:15 — the
+  yesh-sachar counterfeit, Issachar's dark twin), rides his athon INTO the
+  vineyard to CURSE it and is stopped between its walls by the
+  sword-bearing malak only the bearer sees — and the hireling's mouth is
+  forced to bless: "there shall come a STAR out of Jacob, and a SCEPTRE
+  shall rise out of Israel" (Num 24:17). The King's colt, bound at the
+  vineyard's tower (Gen 49:11's soreq = Isa 5:2's soreq), is loosed at
+  the Name and ridden in by the Lamb who redeemed it, to bless — the
+  prisoners freed by covenant blood (Zech 9:11). The rider who came to
+  curse for wages prophesies the Rider who comes to redeem; both on
+  donkeys, both in the vineyard. Placed: the Tower chapter carries the
+  true pole (The Tower in the Vineyard); the Balaam pole is held here
+  for the author's use.
 - **1 Kgs 13 — the old prophet's ass** stands by the slain man of God, the
   lion beside it: "the lion had not eaten the carcase, nor torn the ass"
   (13:28) — judgment measured to the man, the beast of burden untouched —
