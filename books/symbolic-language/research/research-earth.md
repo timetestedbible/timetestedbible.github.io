@@ -422,3 +422,82 @@ Ps 2:2; Gen 2:19 (beasts from adamah — the cipher-forbidding text); Ex
 Deut 1:10; 10:22; 28:62 (stars = mortal nation); Gen 22:17 + Jer 33:22
 (figures interchangeable); Ps 78:27; John 8:6; Matt 27:51; 2 Pet 3:5-10;
 Jer 10:11 (arqa/ar'a double spelling); 1 Kgs 20:10; Zech 9:3.
+
+## Addendum (author's synthesis, 2026-07-16): the two reservoirs — sea and adamah
+
+Author's proposal: **adamah is a parallel to the sea — the dead men over
+against the living men.** Tested against the sweeps; it holds, with one
+refinement, and one verse states it outright.
+
+### The verse that says it
+
+**Rev 20:13** — "And the SEA gave up the dead which were in it; and
+DEATH and HELL (hades) delivered up the dead which were in them: and
+they were judged every man according to their works." Two reservoirs
+emptied side by side at the same judgment. Hebrew Revelation renders it
+"the sea EMPTIED OUT (vayyareq) the dead that were in it, and death and
+SHEOL gave up the dead" — yam H3220 and Sheol H7585 as the two holders
+of mankind, discharged together.
+
+### The structure
+
+- **The sea holds the living mass** — peoples, multitudes, nations,
+  tongues (Rev 17:15); the net takes its catch from it ALIVE, of every
+  kind (the Net study's verdict).
+- **The adamah holds the dead** — man returns to it (Gen 3:19; Ps 146:4
+  "he returneth to his ADAMAH; in that very day his thoughts perish");
+  the sleepers sleep in the admat-aphar (Dan 12:2); the graves open into
+  the admat yisrael (Ezek 37:12); she opens her mouth to receive blood
+  and bodies (Gen 4:11; Num 16:30-32).
+- **The face vs the mouth** — the text's own anatomy keeps the two
+  states straight: the LIVING walk the FACE of the adamah (Gen 6:1 "men
+  began to multiply on the face of the adamah"; the 34-verse penei
+  census), and the DEAD pass through her MOUTH into her interior (Gen
+  4:11; Num 16:30 patsetah ha'adamah et piha; Korah "went down ALIVE
+  into sheol" through it). Death is the passage from her face into her
+  mouth; resurrection is the passage back out.
+- **Two gatherings at the end** — the net draws the living from the sea;
+  the voice calls the sleepers from the ground: John 5:28-29 "all that
+  are in the GRAVES shall hear his voice, and shall come forth" (with
+  Isa 26:19; Dan 12:2; Job 19:25 the Redeemer standing AL-APHAR — on
+  the dust that holds his people). Hos 13:14 names the ransom from the
+  second reservoir: "I will ransom them from the power of SHEOL (KJV
+  the grave); I will redeem them from DEATH."
+- **1 Cor 15:47** — "the first man is of the earth, EARTHY (choikos, of
+  dust): the second man is the Lord from heaven."
+
+### What it unlocks in Revelation (via the Hebrew Revelation's adamah)
+
+- **Rev 13:1 vs 13:11** — the first beast rises from the SEA (a power
+  out of the living nations); the second "out of the ADAMAH" (Heb Rev) —
+  a power out of the realm of the dead. Its whole program is counterfeit
+  resurrection: it makes the earth worship the beast "whose deadly wound
+  was HEALED" (13:12), gives breath to an image "that the image of the
+  beast should both SPEAK" (13:15), and speaks as a dragon. Isa 29:4
+  supplies the mark of the voice from that reservoir: "thy voice shall
+  be, as of one that hath a FAMILIAR SPIRIT, out of the ground, and thy
+  speech shall WHISPER OUT OF THE DUST" — the voice from the dust is
+  Scripture's signature of necromantic counterfeit. A sea-beast rules
+  the living; an adamah-beast traffics in the dead.
+- **Heb Rev 14:3-4** — the 144,000 "redeemed from the ADAMAH… being
+  FIRSTFRUITS" — redeemed out of the dead men's reservoir; firstfruits
+  is the resurrection day (1 Cor 15:20 "Christ… the firstfruits of them
+  that SLEPT").
+- **Rev 21:1, 4 (Heb)** — "a new ADAMAH, for the first ERETS had
+  expired, and the sea was no more"… "and there shall be NO MORE DEATH."
+  Both reservoirs are abolished together: no unrooted living mass, no
+  ground full of sleepers.
+
+### Refinement (no-overfitting duty)
+
+Adamah is not ONLY the dead: the covenant refrain (94 verses) has the
+living walking her face, eating her fruit, prolonging days UPON her.
+The precise formulation: **the sea and the adamah are the two reservoirs
+of mankind — the sea holds the living in their restless mass; the adamah
+holds the dead in their stillness — and every man passes at death from
+the face of the ground into her mouth, until the voice calls the
+sleepers out.** "Dead men vs living men" is the polarity of the
+CONTENTS; the ground itself remains mankind's ledger (the main study's
+verdict stands beneath this one). Noted nuance: Rev 20:13 shows the sea
+also surrenders dead at the end — the parallel discharge, not a leak in
+the split: each reservoir yields what it held.
