@@ -364,11 +364,13 @@ against covenant-men who will not know. Stated as structure, not proof:
   Coin chapter as a section, or carry its own chapter with the wild/tame
   fork and the King's mount? The limmud find (Jer 2:24) also offers the
   Disciple chapter a dark twin ("disciple of the wilderness").
-- The tower, UPGRADED (2026-07-15): Hebrew Luke 19:30 reads migdol
-  (H4024) where the Greek has "village" — joining Hebrew Matthew's
-  mivtsar (fortress) and Hebrew Mark's migdal. All three Hebrew synoptics
-  tie the colt at a tower/stronghold: a three-witness pattern awaiting
-  its sweep against the tower study (sym-tower). See Addendum 2.
+- The tower, RESOLVED NEGATIVE (2026-07-15): all three Hebrew synoptics
+  read tower/fortress for the Greek's "village" at the colt scene — but
+  the systematic survey showed Shem Tov and Vat. Ebr. 100 render EVERY
+  village as tower (the Vulgate's castellum read classically), so the
+  reading is translation habit, not tradition. Hebrew Mark is weakly
+  selective (2-vs-1) — insufficient. Closed unless new manuscript
+  evidence reopens it. See Addendum 2.
 - Isa 32:20 — "blessed are ye that sow beside all waters, that send forth
   thither the feet of the ox and the ass" — sits directly after the Spirit
   poured out (32:15): clean and unclean laborers sent forth (not yoked
@@ -496,13 +498,20 @@ frees and judges) in miniature.
   witnesses read the promptness as the owner's instant release.
 - **Hebrew Luke has no immediacy clause** (faithful to the Greek, which
   lacks euthys) — but it pays for the absence three times over:
-  1. **The colt stands at the TOWER.** HG Luke 19:30 reads מגדול
-     (migdol, tagged H4024) where the Greek has kōmē, "village" — and
-     with HG Matthew's mivtsar (fortress) and HG Mark's migdal, ALL
-     THREE Hebrew synoptics now site the tied colt at a
-     tower/stronghold. The open question below is upgraded: this is a
-     three-witness pattern, not a curiosity. (H4024 Migdol is also the
-     Exodus camp before the sea, Exod 14:2 — noted only.)
+  1. **The colt stands "at the tower" — but the reading DISSOLVED under
+     the systematic check (2026-07-15).** HG Luke 19:30 reads migdol,
+     HG Matthew mivtsar, HG Mark migdal, where the Greek has kōmē,
+     "village." Village-to-tower is indeed unnatural FROM GREEK — but
+     the Vulgate renders kōmē as castellum (Jerome's regular village
+     word, classically "fort"), and the rendering survey shows Shem Tov
+     Matthew and Vat. Ebr. 100 Luke write tower for EVERY village
+     (Matt 9:35; 10:11; 14:15; Luke 9:56; 10:38 — Martha's village;
+     17:12; 24:13 — Emmaus). Their colt-tower is translator habit
+     (castellum read classically), not a preserved reading. Hebrew Mark
+     alone shows possible selectivity (arim, "towns," at 6:6, 36;
+     migdal at 11:2; ch. 8's village references paraphrased away) — a
+     2-vs-1 sample in a free text, too thin to build on. VERDICT: the
+     tower is a Latin-mediated rendering artifact; no claim stands.
   2. **The answer is wage-grammar.** HG Luke 19:31: say __“you have done
      as our lord DESIRES (chafets) his PE'ULAH (work).”__ Pe'ulah
      (H6468) is precisely the word Scripture pairs with sachar in the
