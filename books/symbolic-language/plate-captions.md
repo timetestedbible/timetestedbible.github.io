@@ -55,6 +55,9 @@ caps on the plaque; citation beneath at reduced size. Consumed by
 | 46x-horn-of-oil | SAMUEL ANOINTS DAVID | 1 SAMUEL 16:13 |
 | 47-butter-churn | CURDS AND HONEY HE SHALL EAT | ISAIAH 7:15 |
 | 48-prodigal-trough | NO MAN GAVE UNTO HIM | LUKE 15:16 |
+| 48w-washed-sanctified-justified | YE ARE WASHED, SANCTIFIED, JUSTIFIED | 1 CORINTHIANS 6:11 |
+| 48x-end-of-the-law | CHRIST IS THE END OF THE LAW | ROMANS 10:4 |
+| 49-glossary-symbols | I HAVE USED SIMILITUDES | HOSEA 12:10 |
 
 <!-- AUTHOR-SET (dictated verbatim 2026-07-11 — do not overwrite):
      01-five-loaves, 05-herald, 43-wedding-garment, 44-covenant-bow, 45-jabbok, 47-butter-churn -->
