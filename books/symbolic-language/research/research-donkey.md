@@ -510,8 +510,21 @@ frees and judges) in miniature.
      (castellum read classically), not a preserved reading. Hebrew Mark
      alone shows possible selectivity (arim, "towns," at 6:6, 36;
      migdal at 11:2; ch. 8's village references paraphrased away) — a
-     2-vs-1 sample in a free text, too thin to build on. VERDICT: the
-     tower is a Latin-mediated rendering artifact; no claim stands.
+     2-vs-1 sample in a free text, too thin to build on. The Vulgate is
+     no rescue (author's follow-up, same day): Jerome renders kōmē as
+     castellum SYSTEMATICALLY — Bethany (John 11:1), Emmaus (Luke
+     24:13), Bethlehem (John 7:42), Martha's village, the Galilean
+     circuits — late Latin's ordinary village-word; a witness that
+     calls every village a castle cannot testify that this one was
+     special. VERDICT: the manuscript tower is a rendering artifact at
+     every level; no claim stands on the versions.
+     WHAT SURVIVES, textually: the chapter supplies its own tower —
+     Matt 21:33 __“built a TOWER”__ in the vineyard, quoting Isa 5:2
+     letter-for-letter (Shem Tov: u-vayin migdal betocho), thirty
+     verses after the colt; and Judah's oracle binds the colt TO THE
+     VINE (Gen 49:11). The colt at the vine, the vine with its tower —
+     one chapter, both from the same two source-oracles. That is the
+     defensible route to the tower, needing no manuscript.
   2. **The answer is wage-grammar.** HG Luke 19:31: say __“you have done
      as our lord DESIRES (chafets) his PE'ULAH (work).”__ Pe'ulah
      (H6468) is precisely the word Scripture pairs with sachar in the
