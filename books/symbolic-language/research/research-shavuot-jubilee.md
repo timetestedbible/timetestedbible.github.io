@@ -179,3 +179,23 @@ skeleton). Sample copy restructured accordingly: two forms → intensive
 plural → the unit question (70×7 days / 70×7 years / 70×70 / 70
 jubilees) → the feast defines the unit (Lev 23:15-16 ∥ 25:8-10) →
 Daniel's own guards (10:2-3 sevens-of-days; 9:2 seventy years).
+
+## Addendum 4: the three values and the word-order hint (author's synthesis, 2026-07-16)
+
+One skeleton (שבעים), three values: (a) SYMBOLIC — the Feast-of-Weeks
+template, 49+1, the jubilee-shape; (b) NUMERIC — seventy (~90
+occurrences); (c) plain PLURAL — sevens/weeks. The disambiguating hint
+is WORD ORDER, verified across the corpus:
+- Numeral BEFORE the skeleton = plain counted weeks: Deut 16:9
+  (shiv'ah shavuot, "SEVEN weeks shalt thou number"); Dan 10:2-3
+  (sheloshah shavuim yamim, numeral first + scale named).
+- Skeleton BEFORE the numeral (inverted) = the Sevens as counted noun:
+  Dan 9:25 (shavuim shiv'ah… v'shavuim shishim u'shnayim — "Sevens
+  seven… Sevens sixty-and-two"); Dan 9:26 (ha-shavuim shishim
+  u'shnayim, with the written article).
+- Skeleton DOUBLED = ambiguous by construction: Dan 9:24 (shavuim
+  shivim) reads seventy Sevens / Sevens seventy / seventy seventy — it
+  can carry one or ALL meanings at once (the book's multi-hearing
+  doctrine), and the rest of Scripture arbitrates: Jeremiah's seventy
+  years behind the question (Dan 9:2), the feast's jubilee-template
+  within the word.
