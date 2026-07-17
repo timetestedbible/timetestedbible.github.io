@@ -199,3 +199,15 @@ is WORD ORDER, verified across the corpus:
   doctrine), and the rest of Scripture arbitrates: Jeremiah's seventy
   years behind the question (Dan 9:2), the feast's jubilee-template
   within the word.
+
+## Addendum 5: doubling as Scripture's amplification signal (author, 2026-07-16)
+
+Repeated words are Scripture's own perfection-marker, and the KJV
+translators rendered them so: shalom shalom = "PERFECT peace" (Isa
+26:3); tzedek tzedek = "ALTOGETHER just" (Deut 16:20). So Dan 9:24's
+doubled skeleton (shavuim shivim — seventy seventy) reads not as two
+stray forms but as an amplification: the count of completions,
+complete. This stacks with the intensive plural (Addendum 2) — two
+independent amplifiers on one phrase: the plural of majesty in the
+form, the doubling in the syntax. The maximal reading (seventy
+jubilees / seventy-seventy) is therefore not strained but SIGNALED.
