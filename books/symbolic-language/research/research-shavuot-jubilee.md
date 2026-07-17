@@ -247,12 +247,13 @@ from to the selfsame day (Ex 12:41)."
 
 ## Addendum 8: the Masoretes' own order encodes the hint (author, 2026-07-17)
 
-Capstone: the argument does not depend on lifting the points. The
+Capstone (author: do not frame the Masoretes as hostile — the preserved order means they KNEW): the argument does not depend on lifting the points. The
 Masoretic text itself writes שָׁבֻעִים שִׁבְעִים — the Sevens FIRST,
 seventy second — the noun-first inversion that plain counted weeks
 never receive (numeral leads at Deut 16:9 and Dan 10:2-3). So even the
-received, pointed text — the hostile witness whose vowels chose
-"weeks" — preserves the grammatical signal that these are the marked,
+received, pointed text — whose keepers chose "weeks" yet kept the
+order that says more, which means they knew something was here —
+preserves the grammatical signal that these are the marked,
 feast-shaped Sevens and not merely 490 calendar-years of weeks. Only
 the KJV's English reversal ("Seventy weeks") erased the signal.
 Offered chapter sentence (pending ruling), for the scales section
