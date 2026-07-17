@@ -225,3 +225,22 @@ measure for measure. Two witnesses, two arithmetics of one
 skeleton-family. So Dan 9:24's doubled pair holds every arithmetic the
 letters allow: seventy Sevens / Sevens seventy / seventy-seventy
 amplified / seventy TIMES seventy (4,900 — ch. 36's second count).
+
+## Addendum 7: nechtak anchors the 4,900 at the covenant of the pieces (2026-07-17)
+
+Dan 9:24's opening verb nechtak (H2852, hapax) = cut AND divided (the
+slicing word; chatikhah = a slice; "decide" is the same buried knife in
+English). Both faces point at one scene: the only covenant Scripture
+ratifies BY DIVIDING — Gen 15:10 ("divided them in the midst… each
+piece against another"), sealed between the pieces (15:17), cut the
+same day (15:18, karat). "Upon thy people" = the people constituted by
+that cut. Scripture already counts from that covenant with day-
+precision: Ex 12:41 — 430 years "even the selfsame day." So the 70×70
+= 4,900 hearing runs from the Abrahamic cutting (1876 BC per ch. 36) on
+Scripture's own counting precedent. Symmetry: the count opens from a
+covenant of halved pieces and closes with a halved seven (chatzi
+ha-shavua, 9:27). Author's claim supported at structure grade.
+Offered chapter sentence (pending ruling): "The count's own first verb
+says where it starts: nechtak, cut — divided — the word of the covenant
+of the pieces (Gen 15:10, 17), the cutting Scripture already counts
+from to the selfsame day (Ex 12:41)."
