@@ -244,3 +244,20 @@ Offered chapter sentence (pending ruling): "The count's own first verb
 says where it starts: nechtak, cut — divided — the word of the covenant
 of the pieces (Gen 15:10, 17), the cutting Scripture already counts
 from to the selfsame day (Ex 12:41)."
+
+## Addendum 8: the Masoretes' own order encodes the hint (author, 2026-07-17)
+
+Capstone: the argument does not depend on lifting the points. The
+Masoretic text itself writes שָׁבֻעִים שִׁבְעִים — the Sevens FIRST,
+seventy second — the noun-first inversion that plain counted weeks
+never receive (numeral leads at Deut 16:9 and Dan 10:2-3). So even the
+received, pointed text — the hostile witness whose vowels chose
+"weeks" — preserves the grammatical signal that these are the marked,
+feast-shaped Sevens and not merely 490 calendar-years of weeks. Only
+the KJV's English reversal ("Seventy weeks") erased the signal.
+Offered chapter sentence (pending ruling), for the scales section
+after the inversion sentence: "The hint survives the pointing itself:
+the Masoretes wrote the Sevens first and still pointed them 'weeks' —
+so even the received text, on its own grammar, marks these as no
+calendar weeks; the King James's 'Seventy weeks' smoothed the order
+and hid the signal."
