@@ -165,3 +165,17 @@ the bride is given. Copy drafted at the bottom of the Dan 9:26 sample
   — its own letters); Daniel's masculine plural shares seventy's
   skeleton instead. The copy teaches: two forms, the intensive plural,
   the seventy-skeleton, then the four-occurrence singular.
+
+## Addendum 3: author's ruling on scope (2026-07-16)
+
+The singular/wedding-week material is a RED HERRING for the count
+argument — it belongs, if anywhere, with Dan 9:27's Marriage Covenant
+section (ch. 36), not with the 9:24-26 unit question. The argument to
+carry: the Feast of WEEKS assigns the plural Sevens a symbolic meaning
+that parallels the Jubilee — the unit of Daniel's count is the
+feast-shaped seven-of-sevens (49 crowned by 50), so seventy Sevens =
+seventy jubilees (with 70×70 = 4,900 standing beside it from the same
+skeleton). Sample copy restructured accordingly: two forms → intensive
+plural → the unit question (70×7 days / 70×7 years / 70×70 / 70
+jubilees) → the feast defines the unit (Lev 23:15-16 ∥ 25:8-10) →
+Daniel's own guards (10:2-3 sevens-of-days; 9:2 seventy years).
