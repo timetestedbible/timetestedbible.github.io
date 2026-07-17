@@ -261,3 +261,33 @@ the Masoretes wrote the Sevens first and still pointed them 'weeks' —
 so even the received text, on its own grammar, marks these as no
 calendar weeks; the King James's 'Seventy weeks' smoothed the order
 and hid the signal."
+
+## Addendum 9: the goals of 9:24 are jubilee-work (author, 2026-07-17)
+
+The six goals map onto Lev 25's own mechanics — the count's unit and
+purpose agree:
+1. shut up (kala, the prison-word) the transgression ↔ Isa 61:1's
+   jubilee opens the prison: the captives out, the transgression in.
+2. end sins ↔ manumission — the slave of sin (John 8:34) departs free
+   at jubilee (Lev 25:41).
+3. atone for lawlessness ↔ THE JUBILEE TRUMPET SOUNDS ON THE DAY OF
+   ATONEMENT (Lev 25:9) — kaphar is the fiftieth year's only door;
+   atonement = buying back (Lev 25:48, the kinsman-redeemer).
+4. righteousness of the ages ↔ every man returned to the possession of
+   his fathers (Lev 25:41) — permanent restoration.
+5. seal — complete — vision and prophet ↔ the fiftieth completing the
+   seven sevens.
+6. anoint the holy of holies ↔ "the LORD hath ANOINTED me… to proclaim
+   LIBERTY (deror)" (Isa 61:1-2; Luke 4 "this day fulfilled") — the
+   Anointed proclaims the Jubilee.
+Drafted chapter paragraph (pending ruling), for after the 9:24 table:
+"The goals themselves are jubilee-work. The transgression is shut up
+while the jubilee opens the prison (Isaiah 61:1); sins end as a slave's
+service ends (John 8:34; Leviticus 25:41); the atonement is the
+jubilee's own gate — the trumpet of the fiftieth year sounds 'in the
+day of atonement' (Leviticus 25:9) — and its economics, the kinsman
+buying back what was sold; righteousness of the ages is every man
+restored to his possession; and the count closes on an anointing,
+because proclaiming the Jubilee is the Anointed One's own commission:
+'the LORD hath anointed me… to proclaim liberty to the captives'
+(Isaiah 61:1). A count measured in jubilees, given to do jubilee-work."
