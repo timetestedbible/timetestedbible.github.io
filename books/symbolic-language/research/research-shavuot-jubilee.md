@@ -146,3 +146,22 @@ midst of the week" = the bridegroom's week suspended between espousal
 and supper; Gen 29:27's terms stand as promise — fulfil the week, and
 the bride is given. Copy drafted at the bottom of the Dan 9:26 sample
 (awaiting author approval with the table).
+
+## Addendum 2: the skeleton census and the intensive plural (author, 2026-07-16)
+
+- One word, TWO forms (author's frame): singular and plural. The plural
+  carries Hebrew's intensive capacity — the plural of majesty (the
+  Elohim-form): not many sevens but THE Seven at its fullest, the
+  complete cycle. This is the grammatical warrant for hearing the bare
+  plural as the jubilee-shape rather than a tally.
+- Skeleton census (WLC-verified): consonantal שבעים = the number
+  SEVENTY in ~90 verses (H7657); pointed as "weeks" (masc pl) ONLY in
+  Dan 9:24-26 + 10:2-3; pointed as the dual "two weeks" once (Lev
+  12:5). One skeleton, three pointings; the vowels decide and context
+  chooses the vowels. Daniel's context is Jeremiah's seventy years —
+  and Dan 9:24 opens with the skeleton twice: shavuim shivim, unpointed
+  "seventy seventy" (ch. 36's existing claim, now census-grounded).
+- The feast's plural is the FEMININE form (shavuot, skeleton שבעת/שבעות
+  — its own letters); Daniel's masculine plural shares seventy's
+  skeleton instead. The copy teaches: two forms, the intensive plural,
+  the seventy-skeleton, then the four-occurrence singular.
