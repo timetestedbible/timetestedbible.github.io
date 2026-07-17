@@ -211,3 +211,17 @@ complete. This stacks with the intensive plural (Addendum 2) — two
 independent amplifiers on one phrase: the plural of majesty in the
 form, the doubling in the syntax. The maximal reading (seventy
 jubilees / seventy-seventy) is therefore not strained but SIGNALED.
+
+## Addendum 6: the doubling also multiplies — Matt 18:22 (2026-07-16)
+
+The doubled figure has a multiplicative hearing witnessed by the Lord's
+own answer on forgiveness: Greek Matt 18:22 hebdomekontakis hepta =
+"seventy TIMES seven" (490 — the received count of the prophecy given
+"to make an end of sins"; the forgiveness-measure quotes the
+atonement-count). The Hebrew Matthew (Shem Tov) reads עד שבעים ושבעה —
+"seventy AND seven" — Lamech's vengeance-count (Gen 4:24, shiv'im
+v'shiv'ah) answered in forgiveness: vengeance's number overtaken
+measure for measure. Two witnesses, two arithmetics of one
+skeleton-family. So Dan 9:24's doubled pair holds every arithmetic the
+letters allow: seventy Sevens / Sevens seventy / seventy-seventy
+amplified / seventy TIMES seventy (4,900 — ch. 36's second count).
