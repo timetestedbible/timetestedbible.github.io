@@ -119,3 +119,30 @@ bridal week (Gen 29:27; Dan 9:27). +
    same word, singular, as 9:27's covenant week — available weld.
 4. Glossary: new entry per above after blind-test protocol; the
    preamble's entry count must be updated in the same edit.
+
+## Addendum: the singular corpus — four occurrences, two scenes (2026-07-16)
+
+Exact count, WLC-verified: the singular shavua occurs FOUR times in all
+of Scripture — Gen 29:27, 29:28 (Jacob's bridal week: "fulfil her WEEK…
+and he gave him Rachel"), and Dan 9:27 twice (shavua echad; chatzi
+ha-shavua). Two scenes: a wedding and this covenant. The bridal-week
+custom is independently attested at Samson's wedding ("the seven days
+of the feast," Judg 14:12) — written with the plain numeral (shiv'at),
+which sharpens the lexical point: the custom did not require this word;
+the text CHOSE it in exactly two scenes.
+
+Counter-forms for ordinary week-counts: dual shevu'ayim ("two weeks,"
+Lev 12:5 — consonantally identical to the plural שבעים; the dual is the
+Masoretes' pointing); plural + scale-marker (shavuim yamim, Dan
+10:2-3); feast-plural shavuot (Deut 16:9). Spelling note: Genesis
+writes the singular defective (שבע — the bare skeleton of "seven"
+itself); Daniel plene (שבוע).
+
+The weld with ch. 36's Marriage Covenant section: Dan 9:27's covenant-
+seven wears the wedding-seven's word, and the covenant runs the
+wedding's stages already in the chapter (cup cut, Luke 22:20;
+abstention, Luke 22:18; departure to prepare, John 14:2-3). "In the
+midst of the week" = the bridegroom's week suspended between espousal
+and supper; Gen 29:27's terms stand as promise — fulfil the week, and
+the bride is given. Copy drafted at the bottom of the Dan 9:26 sample
+(awaiting author approval with the table).
