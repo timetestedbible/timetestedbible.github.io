@@ -292,3 +292,58 @@ restored to his possession; and the count closes on an anointing,
 because proclaiming the Jubilee is the Anointed One's own commission:
 'the LORD hath anointed me… to proclaim liberty to the captives'
 (Isaiah 61:1). A count measured in jubilees, given to do jubilee-work."
+
+## Blind-test results (2026-07-17): DIVERGENT, unanimous
+
+Protocol run per house rules: 3 no-repo consensus agents + 3 skeptical
+graders (consensus lens, lexical lens, doctrinal-consequence lens).
+All three graders: VERDICT: Divergent. Every citation passed all three
+independent checks. Badge: verdict:divergent[].
+
+Corrections and upgrades from the graders, to carry:
+1. EZEK 45:21 IS NOT AN ANOMALY — WLC reads chag shevu'ot YAMIM: the
+   one literal-week plural in Scripture outside Dan 10 carries the
+   same yamim marker. Every BARE plural in the corpus is the
+   feast-count; both plural genders take yamim when literal — which
+   also neutralizes the masculine/feminine objection (the marking, not
+   the gender, disambiguates). The rule is cleaner than this notebook
+   first claimed.
+2. YAMIM CAUTION — X + yamim is also the 'full X' idiom (shenatayim
+   yamim = 'two FULL years,' Gen 41:1; chodesh yamim, Gen 29:14), so
+   'Daniel marks the scale' over-claims as a grammar RULE; state it as
+   the bare-vs-marked CONTRAST (which mainstream commentary itself
+   uses). Entry text adjusted accordingly.
+3. CITATION UPGRADE — the liberty leg should stand on Luke 4:18-19 /
+   Isa 61 (LXX renders Lev 25:10's deror with APHESIS, the very word
+   of 'release to the captives' Jesus reads at Nazareth), not on the
+   homiletic 2 Cor 3:17.
+4. SECOND-TEMPLE PRECEDENT — 11QMelchizedek reads Dan 9's climax
+   through Lev 25's deror and Isa 61; the ancient weeks-of-years
+   tradition itself counts 490 as ten jubilees. The jubilee-shape is
+   an ancient reading; the book's divergence is the SCALE, not the
+   shape.
+5. REGISTER CAVEAT — noun-first enumeration is a known Late-Biblical-
+   Hebrew style; the word-order hint is mitigated-not-eliminated by
+   Daniel's own numeral-first usage at 10:2-3. The entry correctly
+   does not stake itself on word order.
+6. DATA BUG — the repo's wlc.txt is corrupted at Lev 25:8 (sheva
+   truncated); KJV tags carry the true reading. Fix the source file
+   and regenerate bibles/*.gz when convenient.
+7. Grader 3's establish-vs-permit line adopted: the distributional
+   proof ESTABLISHES the symbolic office (bare plural = the
+   feast-count, never calendar weeks); the arithmetic displacement
+   (3,430 / 4,900) is PERMITTED and lives in ch. 36, outside the
+   glossary text — a reader keeping 490 can still take the entry whole.
+
+FINAL ENTRY TEXT (approved verdicts; awaiting glossary insertion):
+[[sym-shavuot]]Weeks, the Sevens (Shavuot, Feast of Weeks) verdict:divergent[]::
+The jubilee-shaped count — seven sevens crowned by a fiftieth of
+liberty — which the Feast of Weeks rehearses in days each spring
+(fifty days from firstfruits) and the jubilee runs in years. The bare
+plural in prophecy carries this count: Scripture's literal-week
+plurals are marked with “days” (Dan 10:2-3; Ezek 45:21), while the
+prophecy's Sevens stand bare. Distinct from the singular
+sym:sym-week[Week]: one seven, whose flagship is the bridal week
+(Gen 29:27; Dan 9:27). +
+[.seeref]__(Lev 23:15-16; 25:8-10; Deut 16:9-10; Jer 5:24; Dan 9:24;
+10:2-3; Luke 4:18-19; Acts 2:1) · see Daniel Unsealed__
