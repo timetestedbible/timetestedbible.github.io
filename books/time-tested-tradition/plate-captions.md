@@ -25,6 +25,7 @@ no plates; About the Author carries the unplaqued portrait.
 | 10-sabbath-quarters | A SIGN BETWEEN ME AND YOU | EXODUS 31:13 |
 | 11-star-court | THE STAR OF YOUR GOD | ACTS 7:43 |
 | 12-darkness-at-noon | DARKNESS OVER THE LAND AT NOON | AMOS 8:9 |
+| 12x-jonah | A GREAT FISH TO SWALLOW UP JONAH | JONAH 1:17 |
 | 13-herods-eclipse | THE ECLIPSE BEFORE HEROD DIED | JOSEPHUS, ANTIQUITIES 17.6.4 |
 | 14-before-pilate | PILATE WASHES HIS HANDS | MATTHEW 27:24 |
 | 15-backs-to-the-temple | BACKS TO THE TEMPLE, FACES EASTWARD | EZEKIEL 8:16 |
