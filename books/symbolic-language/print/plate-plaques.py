@@ -196,6 +196,17 @@ def compose(stem, inscription, citation, size_ratio=None, print_toned=False):
             print(f'SKIP (no print plate): {stem}')
             return None
         plate = Image.open(base).convert('RGB')       # toned, bleed-aspect
+        # Print plates regenerated from the 6x9 masters arrive at TRIM aspect;
+        # cover-crop the height to the 6.25x9.25 BLEED aspect so the art runs
+        # edge to edge on the prepress canvas (2026-07-17: four plates had
+        # shipped trim-aspect and showed white bands beside the trim).
+        bleed_aspect = 6.25 / 9.25
+        bw, bh = plate.size
+        if abs(bw / bh - bleed_aspect) > 0.002:
+            target_h = round(bw / bleed_aspect)
+            if target_h <= bh:
+                top = (bh - target_h) // 2
+                plate = plate.crop((0, top, bw, top + target_h))
         tier, lut = print_tone(master)
         colors = (tuple(lut[c] for c in HIGHLIGHT), tuple(lut[c] for c in INK))
     else:
