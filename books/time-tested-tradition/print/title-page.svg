@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Title page for the 6x9 trade edition (432pt x 648pt), mirroring the series
-     cover lockup at 72pt/in: TIME in tall italic caps with an underline, the
-     title completing down the stack (TESTED / TRADITION) bracketed by a
-     closing rule, the calendar subtitle and author beneath the frame, and the
-     watchman cover's verse as the foot-line. Lines are stretched with
-     textLength so the block shares one width; tall caps come from a
-     non-uniform scale with y pre-divided by the factor.
-     All ink is pure black (#000000) - BookBaby rejects color/gray interiors. -->
+<!-- Title page for the 6x9 trade edition (432pt x 648pt), mapped at height
+     ratio (648/2850) from the actual jacket lockup in
+     books/time-tested-tradition/cover/cover-jacket-sun-moon.svg:
+     TIME (underlined) / TESTED / TRADITION / rule / Renewed Biblical
+     Calendar (italic) / SECOND EDITION / gap / DANIEL LARIMER at the foot.
+     The verse sits in the gap the cover fills with art (author's ruling).
+     All ink pure black (#000000) - BookBaby rejects color/gray interiors. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="432" height="648" viewBox="0 0 432 648">
   <rect width="432" height="648" fill="#ffffff"/>
 
-  <g font-family="Noto Serif" fill="#000000" text-anchor="middle">
-    <!-- TIME — baseline 216 (y = 216/1.18); identical metrics to MEAT's page -->
-    <text x="216" y="183.05" font-size="73.4" font-style="italic" font-weight="bold"
-          transform="scale(1,1.18)" textLength="241.2" lengthAdjust="spacingAndGlyphs">TIME</text>
-    <!-- underline / top of the frame -->
-    <rect x="95.4" y="226" width="241.2" height="3"/>
-    <!-- the title completes down the stack — same size and pitch as MEAT's -->
-    <text x="216" y="220.2" font-size="37.4" transform="scale(1,1.22)" textLength="234" lengthAdjust="spacingAndGlyphs">TESTED</text>
-    <text x="216" y="255.6" font-size="37.4" transform="scale(1,1.22)" textLength="234" lengthAdjust="spacingAndGlyphs">TRADITION</text>
-    <!-- closing rule — same 10pt clearance under the last stack line as MEAT -->
-    <rect x="95.4" y="322" width="241.2" height="3"/>
-    <!-- author directly beneath the frame, nothing between — the cover's order -->
-    <text x="216" y="357" font-size="15.8" letter-spacing="1.8">DANIEL LARIMER</text>
+  <g font-family="Noto Serif" font-weight="bold" fill="#000000" text-anchor="middle">
+    <!-- TIME - cover baseline 747/2850 -> 169.9; tall caps 1.18 -->
+    <text x="216" y="144.0" font-size="82" font-style="italic"
+          transform="scale(1,1.18)" textLength="269.3" lengthAdjust="spacingAndGlyphs">TIME</text>
+    <rect x="81.4" y="180.4" width="269.3" height="3"/>
+    <!-- stack - cover 167.1(x1.1) -> 41.8pt, tall caps 1.22 -->
+    <text x="216" y="190.5" font-size="41.8" transform="scale(1,1.22)" textLength="261.2" lengthAdjust="spacingAndGlyphs">TESTED</text>
+    <text x="216" y="230.2" font-size="41.8" transform="scale(1,1.22)" textLength="261.2" lengthAdjust="spacingAndGlyphs">TRADITION</text>
+    <rect x="81.4" y="289.2" width="269.3" height="3"/>
+    <!-- subtitle beneath the rule, stretched as on the jacket -->
+    <text x="216" y="322.4" font-size="20" font-style="italic" font-weight="normal"
+          textLength="261.2" lengthAdjust="spacingAndGlyphs">Renewed Biblical Calendar</text>
+    <!-- edition -->
+    <text x="216" y="349.7" font-size="9.6" font-weight="normal" letter-spacing="2.5">SECOND EDITION</text>
+    <!-- author at the panel foot, as on the jacket -->
+    <text x="216" y="588" font-size="11.8" letter-spacing="2.95">DANIEL LARIMER</text>
   </g>
 
-  <!-- the cover's italic foot-tagline slot carries the subtitle; epigraph below -->
+  <!-- the verse, in the gap the jacket fills with art -->
   <g font-family="Noto Serif" font-style="italic" fill="#000000" text-anchor="middle">
-    <text x="216" y="524" font-size="13">The Renewed Biblical Calendar</text>
-    <text x="216" y="566" font-size="11.5">The one who states his case first seems right,</text>
-    <text x="216" y="584" font-size="11.5">until the other comes and examines him.</text>
-    <text x="216" y="608" font-size="11.5">&#8212; Proverbs 18:17</text>
+    <text x="216" y="466" font-size="11.5">The one who states his case first seems right,</text>
+    <text x="216" y="484" font-size="11.5">until the other comes and examines him.</text>
+    <text x="216" y="508" font-size="11.5">&#8212; Proverbs 18:17</text>
   </g>
 </svg>
