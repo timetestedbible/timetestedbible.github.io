@@ -213,7 +213,10 @@ main_entries -= back_entries
 # print-edition attribute, which build_target sets only for media=prepress.
 main_entries.each do |c|
   if (part = PARTS[c[:slug]])
-    doc << "\n= #{part}\n"
+    # The ebook gets no standalone part page (author, 2026-07-18): print folds
+    # the part into a kicker above the chapter title, so the ebook rides a
+    # [.part-kicker] line inside the part's first chapter instead (below).
+    doc << "\nifndef::ebook-edition[]\n= #{part}\nendif::[]\n"
     warn "  = #{part}"
   end
   case c[:edition]
@@ -254,6 +257,7 @@ main_entries.each do |c|
   # epigraphs are injected as ebook-only blocks; the PDF passes never set
   # ebook-edition, so its pagination is untouched.
   ebook_front = +''
+  ebook_front << "[.part-kicker]\n#{part.upcase}\n\n" if part
   if (plate = TradePdfConverter::CHAPTER_PLATES[c[:slug]])
     color  = plate.sub 'images/print/', 'images/masters/'
     master = [color, plate].find { |f| File.exist? File.join(SRC, f) }
@@ -484,7 +488,7 @@ if WANT_EPUB
       'ebook-edition'     => '',
       'print-edition'     => '',   # the ebook carries the print edition's content
       'docfile'           => File.join(SRC, 'book.adoc'),  # synthetic (doc is a string); gives epub3 a docdir to resolve media against
-      'imagesdir'         => '.',  # relative — epub3's media copier joins it to docdir; an absolute dir gets double-joined
+      'imagesdir'         => '',   # empty, NOT '.': a '.' imagesdir packages media at EPUB/./images/… with "./" hrefs, which Apple Books renders as dead images (2026-07-18); absolute dirs double-join
       'front-cover-image' => 'cover/front-cover-summit-meat.jpg',
       'epub3-stylesdir'   => File.join(DIR, 'epub-styles'),  # stock gem styles + list-marker fix (see epub3.scss tail)
       'uuid'              => 'urn:isbn:9781736521168',

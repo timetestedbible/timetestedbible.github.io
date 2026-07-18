@@ -1251,3 +1251,7 @@ ul{list-style-position:outside;}
 p.glossrunin{text-indent:-0.9em;margin-left:0.9em;margin-top:0;margin-bottom:0.45em;}
 .glossrunin .verdict-badge{float:none !important;margin-left:0.3em;}
 .glossentry{margin-bottom:0.35em;}
+
+/* Ebook part kicker (2026-07-18): the part title rides the first chapter of
+   its part — small caps over a hairline — replacing the standalone part page. */
+p.part-kicker{text-align:center;font-variant:small-caps;letter-spacing:0.12em;font-size:0.95em;color:#555555;border-bottom:1px solid #999999;padding-bottom:0.4em;margin:0 15% 1.2em 15%;}
