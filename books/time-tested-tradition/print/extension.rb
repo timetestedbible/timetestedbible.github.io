@@ -517,6 +517,27 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # shifts by a paragraph or two, exactly like a floated figure in any print book;
   # lead-in prose should reference the table, not colon into it.
   def convert_table node
+    # The 26-row Jonah parallels table earns exactly one page (author's spec
+    # 2026-07-18 — "a 1 page table"): scope the table metrics down for that
+    # table alone. Wrapped before the scratch return so dry-run measurements
+    # and the real render see the same geometry.
+    if (node.has_role? 'parallels-table') && !@sx_parallels_metrics
+      @sx_parallels_metrics = true
+      saved_size = theme.table_font_size
+      saved_pad = theme.table_cell_padding
+      saved_cap = theme.table_caption_font_size
+      theme.table_font_size = 7.5
+      theme.table_cell_padding = [0.75, 4, 0.75, 4]
+      theme.table_caption_font_size = 8
+      begin
+        return convert_table node
+      ensure
+        theme.table_font_size = saved_size
+        theme.table_cell_padding = saved_pad
+        theme.table_caption_font_size = saved_cap
+        @sx_parallels_metrics = false
+      end
+    end
     # Data tables breathe: a small stand-off above every prevalence-table
     # (author's ruling 2026-07-08 — "table needs some breathing room above"),
     # skipped when the table already opens a page. Applied before the scratch
