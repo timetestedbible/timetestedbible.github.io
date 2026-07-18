@@ -1244,3 +1244,10 @@ nav[hidden~="hidden"] {
 li>span.principal,dd>span.principal{display:inline;text-align:left;}
 ol{list-style-position:outside;}
 ul{list-style-position:outside;}
+
+/* Run-in glossary (author's ruling 2026-07-17): term, badge, and definition
+   share the first line — the badge sits beside the term (override the web
+   renderer's inline float), and turnover lines hang, dictionary style. */
+p.glossrunin{text-indent:-0.9em;margin-left:0.9em;margin-top:0;margin-bottom:0.45em;}
+.glossrunin .verdict-badge{float:none !important;margin-left:0.3em;}
+.glossentry{margin-bottom:0.35em;}
