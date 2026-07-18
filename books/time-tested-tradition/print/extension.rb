@@ -918,6 +918,24 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
 
   GLOSS_HANG = 13.5   # ~0.19in hanging indent for glossary entry turnovers
 
+  # Lists breathe (author, 2026-07-18): prose paragraphs carry no bottom
+  # margin (indent-based book style), which left lists jammed against the
+  # sentence introducing them. Top-level lists get air above and extra below;
+  # nested lists are untouched.
+  def convert_olist node
+    top_level = node.parent.context != :list_item
+    move_down 5 if top_level && !scratch? && !at_page_top?
+    super
+    move_down 3 if top_level && !scratch?
+  end
+
+  def convert_ulist node
+    top_level = node.parent.context != :list_item
+    move_down 5 if top_level && !scratch? && !at_page_top?
+    super
+    move_down 3 if top_level && !scratch?
+  end
+
   def convert_paragraph node
     # Run-in glossary entry (mirrors MEAT's latest layout, author 2026-07-18):
     # bold term and definition in one paragraph — build.rb writes the source —
