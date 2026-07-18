@@ -883,6 +883,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     super
   end
 
+  GLOSS_HANG = 13.5   # ~0.19in hanging indent for glossary entry turnovers
+
   def convert_dlist node
     badge = node.attr 'verdictbadge'
     node.items.each do |terms, _dd|
@@ -921,6 +923,14 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   end
 
   def convert_paragraph node
+    # Run-in glossary entry (author's ruling 2026-07-17): bold term, badge,
+    # and definition in one paragraph — build.rb writes the source — inked
+    # with hanging turnover lines and no first-line indent.
+    if node.role? && (node.roles.include? 'glossrunin')
+      add_dest_for_block node if node.id
+      ink_prose (sx_append_chapter_pages node.content), hanging_indent: GLOSS_HANG, margin_bottom: 4, hyphenate: true
+      return
+    end
     # [.nohyph] role: suppress hyphenation for this paragraph (the gem guards
     # every hyphenation call with `defined? @hyphenator`) — used where a break
     # would split a brand name ("Bit-Shares" on the About page).

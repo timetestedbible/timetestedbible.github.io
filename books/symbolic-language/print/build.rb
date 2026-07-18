@@ -237,6 +237,15 @@ main_entries.each do |c|
       # more useful ", p. N" after each see-link instead (extension.rb), and
       # the epub keeps live links (print, screen, and epub all assemble here).
       blk = blk.gsub(/\[\.chnum\]#([^#]*)#/, '')
+      # Run-in entries (author's ruling 2026-07-17): the dlist term joins the
+      # definition's first line — dictionary convention — with the badge
+      # beside the term. The [[sym-…]] anchor becomes the paragraph's block
+      # id and the [.glossrunin] role hangs the turnover lines (extension.rb).
+      if blk =~ /\A\[\[(sym-[^\]]+)\]\]([^\n]+?)::[ \t]*(.*)\z/m
+        anchor, term, rest = $1, $2, $3
+        term = term.sub(/\A(.+?)(\s+\[\.verdict\]#[A-Z]+#)?\z/) { "*#{$1}*#{$2}" }
+        blk = "[[#{anchor}]]\n[.glossrunin]\n#{term} #{rest}"
+      end
       "[.glossentry]\n--\n#{blk}\n--"
     }.join("\n\n")
   end
