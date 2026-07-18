@@ -671,6 +671,16 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     # then the collected catalog is inked at index density (9pt — reference
     # apparatus conventionally runs 1.5-2pt below body — on the glossary's
     # tight leading).
+    if node.id == 'bibliography'
+      saved_size = @theme.base_font_size
+      @theme.base_font_size = 9.5
+      begin
+        super
+      ensure
+        @theme.base_font_size = saved_size
+      end
+      return
+    end
     if node.id == 'scripture-index'
       saved_size, saved_lh = @theme.base_font_size, @theme.base_line_height
       @theme.base_font_size = 9
@@ -808,6 +818,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   def convert_quote_or_verse node
     saved = @theme.prose_text_indent
     @theme.prose_text_indent = 0
+    # Quote air cut 33% (matching MEAT; author, 2026-07-18): below-gap =
+    # padding-bottom + the following block margin, scoped to 7pt for quotes
+    # only (tables and figures keep the global 10pt).
+    saved_bm = @theme.block_margin_bottom
+    @theme.block_margin_bottom = 7
     prev_in_quote = @in_quote
     @in_quote = true
     begin
@@ -819,6 +834,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     ensure
       @in_quote = prev_in_quote
       @theme.prose_text_indent = saved
+      @theme.block_margin_bottom = saved_bm
       normalize_page_bottom unless scratch?
     end
   end
@@ -1238,7 +1254,7 @@ def ink_chapter_title node, title, opts = {}
     # measured drop.
     if node.id == 'preface'
       move_down PREFACE_SINK
-    elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')
+    elsif !(node.id == 'preface' || node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')   # preface starts at the top too (matching MEAT)
       mid = bounds.height / 2.0
       mid += CHNUM_BAND if chnum   # the kicker inks above the title; keep the title at mid
       move_cursor_to mid if cursor > mid
