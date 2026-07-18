@@ -158,7 +158,9 @@ role:
   copyright:
     font-size: 9
     font-color: '000000'
-    line-height: 1.5
+    # 0.95 x Gentium's 1.465em metrics = ~12.5pt leading on 9pt type; the old
+    # 1.5 multiplied the font's natural height to ~2.2em — double-spaced.
+    line-height: 0.95
   copyright-title:
     font-size: 12
     font-style: italic
