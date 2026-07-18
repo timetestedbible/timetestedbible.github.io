@@ -701,9 +701,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   def sx_stats_line entries
     refs = extra_refs = cites = 0
     books = {}
+    extra_books = {}
     chapters = {}
     entries.each do |book, verses|
       if SX_EXTRA.include? book
+        extra_books[book] = true
         extra_refs += verses.size
         next
       end
@@ -717,7 +719,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     fmt = ->(n) { n.to_s.gsub(/(\d)(?=(\d{3})+\z)/, '\1,') }
     %(This book cites #{fmt[refs]} passages from #{books.size} of the 66 books of Scripture #{SX_EMDASH} ) +
       %(#{fmt[cites]} citations in all, drawn from #{fmt[chapters.size]} chapters of the Bible) +
-      (extra_refs > 0 ? %(, besides #{fmt[extra_refs]} #{extra_refs == 1 ? 'passage' : 'passages'} from books outside the canon.) : '.')
+      (extra_refs > 0 ? %(, besides #{fmt[extra_refs]} #{extra_refs == 1 ? 'passage' : 'passages'} from #{extra_books.size} #{extra_books.size == 1 ? 'book' : 'books'} outside the canon.) : '.')
   end
 
   # Ink the collected scripture index: books in canonical order as bold heads,
@@ -1084,6 +1086,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'the-fear-of-the-lord'  => 'images/print/23-sinai-fear.jpg',
     'time-tested-tradition' => 'images/print/33-ttt-cover.jpg',
     'return-on-the-full-moon' => 'images/print/33x-last-day-laughter.jpg',
+    'clouds-of-heaven'      => 'images/print/33y-clouds-of-heaven.jpg',
     'path-to-salvation'     => 'images/print/24-tabernacle-path.jpg',
     'the-four-winds'        => 'images/print/34-four-horsemen.jpg',
     'mountain'              => 'images/print/39-colossus-mountain.jpg',

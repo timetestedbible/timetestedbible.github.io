@@ -1,0 +1,541 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21.628055555555555in" height="9.5in" viewBox="0 0 6488.4 2850.0" font-family="Noto Serif, Georgia, serif">
+<!-- DUST JACKET (BookBaby US-Trade-DustJacket template, 484pp): flap 3.625 | back 6.375 | spine 1.378 | front 6.375 | flap 3.625; bleed 0.125in -->
+<style>
+@font-face { font-family: "Noto Serif"; src: url("file:///Users/dlarimer/.gem/gems/asciidoctor-pdf-2.3.24/data/fonts/notoserif-regular-subset.ttf"); }
+@font-face { font-family: "Noto Serif"; font-style: italic; src: url("file:///Users/dlarimer/.gem/gems/asciidoctor-pdf-2.3.24/data/fonts/notoserif-italic-subset.ttf"); }
+</style>
+<defs>
+  <filter id="softshadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="7" result="blur"/>
+    <feOffset in="blur" dx="2" dy="4" result="offsetBlur"/>
+    <feFlood flood-color="#000" flood-opacity="1" result="shadowColor"/>
+    <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow"/>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <filter id="lightshadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+    <feOffset in="blur" dx="1" dy="3" result="offsetBlur"/>
+    <feFlood flood-color="#fff2d2" flood-opacity="0.96" result="shadowColor"/>
+    <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow"/>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <filter id="backshadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
+    <feOffset in="blur" dx="3" dy="5" result="offsetBlur"/>
+    <feFlood flood-color="#000" flood-opacity="0.96" result="shadowColor"/>
+    <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow"/>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <linearGradient id="backfill" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#0a0e1c"/><stop offset="100%" stop-color="#101830"/>
+  </linearGradient>
+  <linearGradient id="flapveil" gradientUnits="userSpaceOnUse" x1="5415" y1="0" x2="6420" y2="0">
+    <stop offset="0%" stop-color="#0b0d0b" stop-opacity="0.34"/>
+    <stop offset="56%" stop-color="#0b0d0b" stop-opacity="0.50"/>
+    <stop offset="100%" stop-color="#0b0d0b" stop-opacity="0.70"/>
+  </linearGradient>
+</defs>
+<g id="layer-basefill"><rect width="6488.4" height="2850.0" fill="url(#backfill)"/></g>
+<g id="layer-background">
+  <image xlink:href="../../../output/imagegen/meat-vineyard-cover/11-vineyard-night-scarlet-cord-tower-local-render-source.jpg"
+         x="0" y="0" width="6488.4" height="2850.0" preserveAspectRatio="none"/>
+</g>
+<g id="layer-front-title" font-family="Noto Serif" font-weight="bold" text-anchor="middle" style="filter:url(#softshadow)">
+  <g id="title-lockup" transform="translate(4407.2 900) scale(1.1) translate(-4407.2 -1440)">
+    <text x="4407.2" y="1102.8" font-size="327.7" transform="scale(1,1.18)"
+          fill="#eda820" font-style="italic" textLength="1076.4" lengthAdjust="spacingAndGlyphs"
+          stroke="#171108" stroke-width="12" stroke-opacity="0.96"
+          stroke-linejoin="round" paint-order="stroke fill">MEAT</text>
+    <rect x="3869.0" y="1346.3" width="1076.4" height="13.5" fill="#eda820"
+          stroke="#171108" stroke-width="7" paint-order="stroke fill"/>
+    <text x="4407.2" y="1258.9" font-size="167.1" transform="scale(1,1.22)"
+          fill="#f2ead6" textLength="1044.3" lengthAdjust="spacingAndGlyphs"
+          stroke="#171108" stroke-width="10" stroke-opacity="0.96"
+          stroke-linejoin="round" paint-order="stroke fill">THE BIBLE’S</text>
+    <text x="4407.2" y="1417.0" font-size="167.1" transform="scale(1,1.22)"
+          fill="#eda820" textLength="1044.3" lengthAdjust="spacingAndGlyphs"
+          stroke="#171108" stroke-width="10" stroke-opacity="0.96"
+          stroke-linejoin="round" paint-order="stroke fill">SYMBOLIC</text>
+    <text x="4407.2" y="1575.0" font-size="167.1" transform="scale(1,1.22)"
+          fill="#f2ead6" textLength="1044.3" lengthAdjust="spacingAndGlyphs"
+          stroke="#171108" stroke-width="10" stroke-opacity="0.96"
+          stroke-linejoin="round" paint-order="stroke fill">LANGUAGE</text>
+    <rect x="3869.0" y="1966.5" width="1076.4" height="13.5" fill="#eda820"
+          stroke="#171108" stroke-width="7" paint-order="stroke fill"/>
+  </g>
+  <text x="4407.2" y="1580.7" font-size="70.7" fill="#eda820" letter-spacing="8.0"
+        stroke="#171108" stroke-width="6" stroke-opacity="0.96"
+        stroke-linejoin="round" paint-order="stroke fill">DANIEL LARIMER</text>
+  <text x="4407.2" y="2586.0" font-size="51.4" fill="#f2ead6"
+        font-style="italic" font-weight="normal" letter-spacing="6.4"
+        stroke="#171108" stroke-width="5" stroke-opacity="0.96"
+        stroke-linejoin="round" paint-order="stroke fill">Over 140 symbols revealed</text>
+</g>
+<g id="layer-spine" style="filter:url(#softshadow)">
+  <text x="3244.2" y="1429.2" font-size="90.0" font-family="Noto Serif" letter-spacing="5.4" text-anchor="middle" dominant-baseline="central" transform="rotate(90 3244.2 1429.2)"><tspan fill="#f2ead6" font-style="italic" font-weight="bold">MEAT</tspan><tspan fill="#f2ead6"> THE BIBLE’S SYMBOLIC LANGUAGE</tspan></text>
+  <text x="3244.2" y="2569.2" font-size="34.5" fill="#f2ead6" font-family="Noto Serif" text-anchor="middle" letter-spacing="2.4">DANIEL</text>
+  <text x="3244.2" y="2629.2" font-size="34.5" fill="#f2ead6" font-family="Noto Serif" text-anchor="middle" letter-spacing="2.4">LARIMER</text>
+</g>
+<g id="layer-back-copy" fill="#f7f0df" font-family="Noto Serif" font-weight="600"
+   stroke="#17120d" stroke-width="3.4" stroke-opacity="0.94" stroke-linejoin="round"
+   paint-order="stroke fill" style="filter:url(#backshadow)">
+  <g font-size="55.0" text-anchor="middle">
+    <text x="2043.8" y="340.0" textLength="1440.0" lengthAdjust="spacing">Transform how you read Scripture by learning to follow</text>
+    <text x="2043.8" y="420.0">its symbols, connect its witnesses, and move from</text>
+    <text x="2043.8" y="500.0" textLength="1440.0" lengthAdjust="spacing"><tspan fill="#eda820">spiritual milk</tspan> to the <tspan fill="#eda820">meat</tspan> that strengthens your walk.</text>
+  </g>
+
+  <g font-size="61.0" text-anchor="middle" font-style="italic">
+    <text x="2043.8" y="840.0">I fed you with <tspan fill="#eda820">milk</tspan> and not with <tspan fill="#eda820">meat</tspan>;</text>
+    <text x="2043.8" y="937.0">for until now you were not able to receive it,</text>
+    <text x="2043.8" y="1034.0">and even now you are still not able.</text>
+    <text x="2043.8" y="1115.0" font-size="46.0" font-style="normal">1 Corinthians 3:2</text>
+  </g>
+
+  <g font-size="61.0" text-anchor="middle" font-style="italic">
+    <text x="2043.8" y="1390.0">Know ye not this parable?</text>
+    <text x="2043.8" y="1498.0">and how then will ye know all parables?</text>
+    <text x="2043.8" y="1585.0" font-size="46.0" font-style="normal">Mark 4:13</text>
+  </g>
+
+  <g font-size="61.0" text-anchor="middle" font-style="italic">
+    <text x="2043.8" y="1850.0">For everyone who partakes only of <tspan fill="#eda820">milk</tspan></text>
+    <text x="2043.8" y="1940.0">is unskilled in the word of righteousness,</text>
+    <text x="2043.8" y="2030.0">for he is a babe.</text>
+    <text x="2043.8" y="2111.0" font-size="46.0" font-style="normal">Hebrews 5:13</text>
+  </g>
+</g>
+<g id="layer-barcode">
+  <rect x="2362.5" y="2344.2" width="600.0" height="360.0" fill="#f2ead6" rx="18.0"/>
+  <text x="2662.5" y="2407.2" text-anchor="middle" font-family="Noto Serif" font-size="34.5" fill="#000000">ISBN 978-1-7365211-6-8</text>
+  <rect x="2477.2" y="2434.2" width="3.9" height="210.0" fill="#000000"/>
+  <rect x="2485.1" y="2434.2" width="3.9" height="210.0" fill="#000000"/>
+  <rect x="2492.8" y="2434.2" width="11.7" height="186.0" fill="#000000"/>
+  <rect x="2508.4" y="2434.2" width="7.8" height="186.0" fill="#000000"/>
+  <rect x="2528.0" y="2434.2" width="3.9" height="186.0" fill="#000000"/>
+  <rect x="2539.7" y="2434.2" width="3.9" height="186.0" fill="#000000"/>
+  <rect x="2547.5" y="2434.2" width="7.8" height="186.0" fill="#000000"/>
+  <rect x="2563.1" y="2434.2" width="7.8" height="186.0" fill="#000000"/>
+  <rect x="2574.8" y="2434.2" width="11.7" height="186.0" fill="#000000"/>
+  <rect x="2590.4" y="2434.2" width="7.8" height="186.0" fill="#000000"/>
+  <rect x="2602.1" y="2434.2" width="3.9" height="186.0" fill="#000000"/>
+  <rect x="2621.6" y="2434.2" width="3.9" height="186.0" fill="#000000"/>
+  <rect x="2629.3" y="2434.2" width="3.9" height="186.0" fill="#000000"/>
+  <rect x="2637.2" y="2434.2" width="15.6" height="186.0" fill="#000000"/>
+  <rect x="2656.7" y="2434.2" width="3.9" height="210.0" fill="#000000"/>
+  <rect x="2664.5" y="2434.2" width="3.9" height="210.0" fill="#000000"/>
+  <rect x="2672.2" y="2434.2" width="3.9" height="186.0" fill="#000000"/>
+  <rect x="2684.0" y="2434.2" width="11.7" height="186.0" fill="#000000"/>
+  <rect x="2699.6" y="2434.2" width="7.8" height="186.0" fill="#000000"/>
+  <rect x="2711.2" y="2434.2" width="7.8" height="186.0" fill="#000000"/>
+  <rect x="2726.9" y="2434.2" width="7.8" height="186.0" fill="#000000"/>
+  <rect x="2742.5" y="2434.2" width="7.8" height="186.0" fill="#000000"/>
+  <rect x="2754.2" y="2434.2" width="7.8" height="186.0" fill="#000000"/>
+  <rect x="2769.8" y="2434.2" width="7.8" height="186.0" fill="#000000"/>
+  <rect x="2781.4" y="2434.2" width="3.9" height="186.0" fill="#000000"/>
+  <rect x="2789.2" y="2434.2" width="3.9" height="186.0" fill="#000000"/>
+  <rect x="2808.8" y="2434.2" width="3.9" height="186.0" fill="#000000"/>
+  <rect x="2820.5" y="2434.2" width="3.9" height="186.0" fill="#000000"/>
+  <rect x="2836.1" y="2434.2" width="3.9" height="210.0" fill="#000000"/>
+  <rect x="2843.8" y="2434.2" width="3.9" height="210.0" fill="#000000"/>
+  <text x="2662.5" y="2683.2" text-anchor="middle" font-family="Noto Serif" font-size="31.5" letter-spacing="6.0" fill="#000000">9 781736 521168</text>
+</g>
+<g id="layer-flap-veil">
+  <rect x="5415.0" y="700.0" width="1005.0" height="1910.0" rx="38.0" fill="url(#flapveil)"/>
+</g>
+<g id="layer-flap-front" fill="#f7f0df" font-family="Noto Serif" font-size="45.0" font-weight="600"
+   stroke="#16110c" stroke-width="2.2" stroke-opacity="0.92" stroke-linejoin="round"
+   paint-order="stroke fill" style="filter:url(#softshadow)">
+<g id="layer-flap-appicon" stroke="none">
+  <defs><radialGradient id="ttbmoon" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fffef0"/><stop offset="70%" stop-color="#f5f5dc"/><stop offset="100%" stop-color="#e8e4c8"/></radialGradient><linearGradient id="ttbbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a3a5c"/><stop offset="100%" stop-color="#0d2840"/></linearGradient></defs>
+  <rect x="5667.2" y="180.0" width="480.0" height="480.0" fill="url(#ttbbg)" rx="75.0"/>
+  <circle cx="5907.2" cy="420.0" r="187.5" fill="#f5f5dc" opacity="0.1"/>
+  <circle cx="5907.2" cy="420.0" r="168.8" fill="#f5f5dc" opacity="0.1"/>
+  <circle cx="5907.2" cy="420.0" r="150.0" fill="url(#ttbmoon)"/>
+  <circle cx="5845.3" cy="367.5" r="28.1" fill="#d8d4b8" opacity="0.4"/>
+  <circle cx="5957.8" cy="442.5" r="37.5" fill="#d8d4b8" opacity="0.35"/>
+  <circle cx="5873.4" cy="480.0" r="23.4" fill="#d8d4b8" opacity="0.3"/>
+  <circle cx="5929.7" cy="348.8" r="16.9" fill="#d8d4b8" opacity="0.25"/>
+  <circle cx="5985.9" cy="386.2" r="14.1" fill="#d8d4b8" opacity="0.3"/>
+  <circle cx="5835.9" cy="442.5" r="18.8" fill="#d8d4b8" opacity="0.25"/>
+</g>
+  <text x="5907.2" y="780.0" text-anchor="middle" fill="#eda820" letter-spacing="9.0" font-size="60.0">TIMETESTED.BIBLE</text>
+  <text x="5479.7" y="942.0">The book ends; the study doesn’t.</text>
+  <text x="5479.7" y="1044.0" textLength="855.0" lengthAdjust="spacing">An interactive edition of this book</text>
+  <text x="5479.7" y="1116.0" textLength="855.0" lengthAdjust="spacing">lives at TimeTested.Bible — every</text>
+  <text x="5479.7" y="1188.0" textLength="855.0" lengthAdjust="spacing">quote and citation linked straight to</text>
+  <text x="5479.7" y="1260.0" textLength="855.0" lengthAdjust="spacing">the Scriptures, with complete</text>
+  <text x="5479.7" y="1332.0" textLength="855.0" lengthAdjust="spacing">interlinear tools to help you move</text>
+  <text x="5479.7" y="1404.0">from <tspan fill="#eda820" font-style="italic">milk</tspan> to <tspan fill="#eda820" font-style="italic">meat</tspan>.</text>
+  <text x="5479.7" y="1506.0" textLength="855.0" lengthAdjust="spacing">Pull every reference by key word, by the</text>
+  <text x="5479.7" y="1578.0" textLength="855.0" lengthAdjust="spacing">Hebrew or Greek beneath the English,</text>
+  <text x="5479.7" y="1650.0" textLength="855.0" lengthAdjust="spacing">and by concept — what once took a</text>
+  <text x="5479.7" y="1722.0" textLength="855.0" lengthAdjust="spacing">lifetime of concordance work now takes</text>
+  <text x="5479.7" y="1794.0">minutes.</text>
+  <text x="5479.7" y="1896.0" textLength="855.0" lengthAdjust="spacing">Download the ebook free, and have</text>
+  <text x="5479.7" y="1968.0" textLength="855.0" lengthAdjust="spacing">your friends and family <tspan fill="#eda820" font-style="italic">meet</tspan> the</text>
+  <text x="5479.7" y="2040.0">Bible’s symbolic language.</text>
+  <text x="5907.2" y="2142.0" text-anchor="middle" font-style="italic">Test everything; hold to what is good.</text>
+</g>
+<g id="layer-flap-qr">
+  <rect x="5773.2" y="2238.0" width="267.9" height="267.9" fill="#f2ead6" rx="18.0"/>
+  <rect x="5802.2" y="2267.0" width="50.7" height="50.7" fill="#101830" rx="12.7"/>
+  <rect x="5809.4" y="2274.2" width="36.2" height="36.2" fill="#f2ead6" rx="9.1"/>
+  <rect x="5816.6" y="2281.4" width="21.7" height="21.7" fill="#101830" rx="6.5"/>
+  <rect x="5961.5" y="2267.0" width="50.7" height="50.7" fill="#101830" rx="12.7"/>
+  <rect x="5968.7" y="2274.2" width="36.2" height="36.2" fill="#f2ead6" rx="9.1"/>
+  <rect x="5976.0" y="2281.4" width="21.7" height="21.7" fill="#101830" rx="6.5"/>
+  <rect x="5802.2" y="2426.3" width="50.7" height="50.7" fill="#101830" rx="12.7"/>
+  <rect x="5809.4" y="2433.5" width="36.2" height="36.2" fill="#f2ead6" rx="9.1"/>
+  <rect x="5816.6" y="2440.8" width="21.7" height="21.7" fill="#101830" rx="6.5"/>
+  <circle cx="5863.7" cy="2270.6" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2270.6" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2270.6" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2270.6" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2270.6" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2270.6" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2270.6" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2270.6" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2277.8" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2277.8" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2277.8" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2277.8" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2277.8" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2277.8" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2277.8" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2277.8" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2277.8" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2285.1" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2285.1" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2285.1" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2285.1" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2292.3" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2292.3" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2292.3" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2292.3" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2292.3" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2292.3" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2299.6" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2306.8" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2306.8" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2306.8" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2306.8" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2306.8" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2306.8" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2306.8" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2306.8" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2314.0" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2314.0" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2314.0" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2314.0" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2314.0" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2314.0" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2314.0" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2321.3" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2321.3" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2321.3" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2321.3" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2321.3" r="3.0" fill="#101830"/>
+  <circle cx="5827.5" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5849.2" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5972.3" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5986.8" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="6001.3" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2328.5" r="3.0" fill="#101830"/>
+  <circle cx="5805.8" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5813.0" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5820.3" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5834.8" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5842.0" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5856.5" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5957.9" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5986.8" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5994.1" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="6001.3" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2335.8" r="3.0" fill="#101830"/>
+  <circle cx="5813.0" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5827.5" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5834.8" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5849.2" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5957.9" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5986.8" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2343.0" r="3.0" fill="#101830"/>
+  <circle cx="5805.8" cy="2350.2" r="3.0" fill="#101830"/>
+  <circle cx="5820.3" cy="2350.2" r="3.0" fill="#101830"/>
+  <circle cx="5827.5" cy="2350.2" r="3.0" fill="#101830"/>
+  <circle cx="5842.0" cy="2350.2" r="3.0" fill="#101830"/>
+  <circle cx="5856.5" cy="2350.2" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2350.2" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2350.2" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2350.2" r="3.0" fill="#101830"/>
+  <circle cx="5972.3" cy="2350.2" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2350.2" r="3.0" fill="#101830"/>
+  <circle cx="5813.0" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5820.3" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5834.8" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5842.0" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5849.2" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5965.1" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5972.3" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5994.1" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2357.5" r="3.0" fill="#101830"/>
+  <circle cx="5805.8" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5856.5" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5957.9" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5994.1" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2364.7" r="3.0" fill="#101830"/>
+  <circle cx="5813.0" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5820.3" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5834.8" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5842.0" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5849.2" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5965.1" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5994.1" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="6001.3" cy="2372.0" r="3.0" fill="#101830"/>
+  <circle cx="5805.8" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="5813.0" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="5820.3" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="6001.3" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2379.2" r="3.0" fill="#101830"/>
+  <circle cx="5827.5" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5834.8" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5849.2" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5856.5" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5986.8" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="6001.3" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2386.4" r="3.0" fill="#101830"/>
+  <circle cx="5827.5" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2393.7" r="3.0" fill="#101830"/>
+  <circle cx="5805.8" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5834.8" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5849.2" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5856.5" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5986.8" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5994.1" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2400.9" r="3.0" fill="#101830"/>
+  <circle cx="5820.3" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="5834.8" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="5856.5" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="5972.3" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="5986.8" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="6001.3" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2408.2" r="3.0" fill="#101830"/>
+  <circle cx="5805.8" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5827.5" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5849.2" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5856.5" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5957.9" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5965.1" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5972.3" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5986.8" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="6001.3" cy="2415.4" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2422.7" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2422.7" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2422.7" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2422.7" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2422.7" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2422.7" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2422.7" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2429.9" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2429.9" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2429.9" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2429.9" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2429.9" r="3.0" fill="#101830"/>
+  <circle cx="5965.1" cy="2429.9" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2429.9" r="3.0" fill="#101830"/>
+  <circle cx="5994.1" cy="2429.9" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2437.1" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2437.1" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2437.1" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2437.1" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2437.1" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2437.1" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2437.1" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2437.1" r="3.0" fill="#101830"/>
+  <circle cx="5994.1" cy="2437.1" r="3.0" fill="#101830"/>
+  <circle cx="6001.3" cy="2437.1" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5921.6" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5957.9" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5965.1" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5972.3" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5994.1" cy="2444.4" r="3.0" fill="#101830"/>
+  <circle cx="5863.7" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5878.2" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5885.4" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5907.2" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5965.1" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5986.8" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5994.1" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="6001.3" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2451.6" r="3.0" fill="#101830"/>
+  <circle cx="5892.7" cy="2458.9" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2458.9" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2458.9" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2458.9" r="3.0" fill="#101830"/>
+  <circle cx="5950.6" cy="2458.9" r="3.0" fill="#101830"/>
+  <circle cx="5957.9" cy="2458.9" r="3.0" fill="#101830"/>
+  <circle cx="5972.3" cy="2458.9" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2458.9" r="3.0" fill="#101830"/>
+  <circle cx="5986.8" cy="2458.9" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2458.9" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2466.1" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2466.1" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2466.1" r="3.0" fill="#101830"/>
+  <circle cx="5943.4" cy="2466.1" r="3.0" fill="#101830"/>
+  <circle cx="5965.1" cy="2466.1" r="3.0" fill="#101830"/>
+  <circle cx="5972.3" cy="2466.1" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2466.1" r="3.0" fill="#101830"/>
+  <circle cx="5994.1" cy="2466.1" r="3.0" fill="#101830"/>
+  <circle cx="6001.3" cy="2466.1" r="3.0" fill="#101830"/>
+  <circle cx="6008.5" cy="2466.1" r="3.0" fill="#101830"/>
+  <circle cx="5871.0" cy="2473.3" r="3.0" fill="#101830"/>
+  <circle cx="5899.9" cy="2473.3" r="3.0" fill="#101830"/>
+  <circle cx="5914.4" cy="2473.3" r="3.0" fill="#101830"/>
+  <circle cx="5928.9" cy="2473.3" r="3.0" fill="#101830"/>
+  <circle cx="5936.1" cy="2473.3" r="3.0" fill="#101830"/>
+  <circle cx="5965.1" cy="2473.3" r="3.0" fill="#101830"/>
+  <circle cx="5972.3" cy="2473.3" r="3.0" fill="#101830"/>
+  <circle cx="5979.6" cy="2473.3" r="3.0" fill="#101830"/>
+</g>
+<g id="layer-flap-ttt" fill="#f7f0df" font-family="Noto Serif" font-weight="600"
+   stroke="#16110c" stroke-width="2.2" stroke-opacity="0.92" stroke-linejoin="round"
+   paint-order="stroke fill" style="filter:url(#softshadow)">
+  <image xlink:href="../../../output/imagegen/ttt-cover-concepts/01i-white-messenger-shifted-right-raised-footer.png" x="356.2" y="174.0" width="450.0" height="675.0"/>
+  <rect x="356.2" y="174.0" width="450.0" height="675.0" fill="none" stroke="#f2ead6" stroke-opacity="0.55" stroke-width="2.4"/>
+  <text x="581.2" y="972.2" text-anchor="middle" font-weight="bold" letter-spacing="6.0" font-size="60.0">TIME TESTED TRADITION</text>
+  <text x="581.2" y="1062.2" text-anchor="middle" font-style="italic" fill="#eda820" font-size="46.5">The Renewed Biblical Calendar</text>
+  <text x="581.2" y="1143.2" text-anchor="middle" font-style="italic" font-size="39.0" fill-opacity="0.9">by Daniel Larimer</text>
+  <text x="153.8" y="1263.2" font-size="45.0" textLength="855.0" lengthAdjust="spacing"><tspan font-style="italic">Time Tested Tradition</tspan> does a deep dive</text>
+  <text x="153.8" y="1335.2" font-size="45.0" textLength="855.0" lengthAdjust="spacing">into history, testing every primary</text>
+  <text x="153.8" y="1407.2" font-size="45.0" textLength="855.0" lengthAdjust="spacing">source and calendar theory against the</text>
+  <text x="153.8" y="1479.2" font-size="45.0" textLength="855.0" lengthAdjust="spacing">sun, moon, and stars to prove the year</text>
+  <text x="153.8" y="1551.2" font-size="45.0" textLength="855.0" lengthAdjust="spacing">of the cross and timing of the appointed</text>
+  <text x="153.8" y="1623.2" font-size="45.0" textLength="855.0" lengthAdjust="spacing">feasts of the LORD. This is must read</text>
+  <text x="153.8" y="1695.2" font-size="45.0" textLength="855.0" lengthAdjust="spacing"><tspan fill="#eda820" font-style="italic">meat</tspan> for those interested in testing</text>
+  <text x="153.8" y="1767.2" font-size="45.0" textLength="855.0" lengthAdjust="spacing">the tradition we have inherited from</text>
+  <text x="153.8" y="1839.2" font-size="45.0">our fathers.</text>
+  <text x="581.2" y="2241.2" text-anchor="middle" font-style="italic" font-size="46.5">Read it free at TimeTested.Bible.</text>
+</g>
+</svg>
