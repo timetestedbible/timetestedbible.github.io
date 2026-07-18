@@ -686,6 +686,18 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
       end
       return
     end
+    # Bibliography as 1pt-down back matter (author, 2026-07-17): body at 9.5pt
+    # on the reading leading; themed heading sizes stay.
+    if node.id == 'bibliography'
+      saved_size = @theme.base_font_size
+      @theme.base_font_size = 9.5
+      begin
+        super
+      ensure
+        @theme.base_font_size = saved_size
+      end
+      return
+    end
     super
   end
 
@@ -810,6 +822,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   def convert_quote_or_verse node
     saved = @theme.prose_text_indent
     @theme.prose_text_indent = 0
+    # Quote air cut 33% (author, 2026-07-17): the below-gap = padding-bottom +
+    # the block margin that follows, so scope the block margin to 7pt for
+    # quotes only (the global 10pt stays for tables and figures).
+    saved_bm = @theme.block_margin_bottom
+    @theme.block_margin_bottom = 7
     prev_in_quote = @in_quote
     @in_quote = true
     begin
@@ -821,6 +838,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     ensure
       @in_quote = prev_in_quote
       @theme.prose_text_indent = saved
+      @theme.block_margin_bottom = saved_bm
       normalize_page_bottom unless scratch?
     end
   end
@@ -1249,7 +1267,7 @@ def ink_chapter_title node, title, opts = {}
     # measured drop.
     if node.id == 'how-to-use'
       move_down HOW_TO_USE_SINK
-    elsif !(node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')
+    elsif !(node.id == 'preface' || node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')   # preface starts at the top too (author, 2026-07-17)
       mid = bounds.height / 2.0
       mid += CHNUM_BAND if chnum   # the kicker inks above the title; keep the title at mid
       move_cursor_to mid if cursor > mid
@@ -1267,6 +1285,7 @@ def ink_chapter_title node, title, opts = {}
     @disable_running_content[:header].add page_number unless scratch?
     super
   end
+
 end
 
 # Printed chapter numbers (author's ruling 2026-07-13: "number the books

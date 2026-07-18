@@ -100,7 +100,7 @@ quote:
   font-size: $base-font-size      # same size as regular text
   border-width: 0
   border-left-width: 0            # THE key for the left vertical bar (separate from border-width)
-  padding: [12, 30, 3, 30]        # [t,r,b,l] — top 12 ≈ bottom (3 + block margin 10), so the gap above a quote matches the gap after its citation
+  padding: [8, 30, 2, 30]         # [t,r,b,l] — top 8 ≈ bottom (2 + quote-scoped block margin 7, extension.rb); air cut 33% (author, 2026-07-17)
   cite:
     font-size: 8.5
     font-style: normal
