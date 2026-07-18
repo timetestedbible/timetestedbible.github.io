@@ -209,6 +209,15 @@ main_entries.each do |c|
       # shows them); no built book prints chapter numbers, so strip them here
       # (print, screen, and epub all assemble from this doc).
       blk = blk.gsub(/\[\.chnum\]#([^#]*)#/, '')
+      # Run-in entries (mirrors MEAT's latest layout, author 2026-07-18): the
+      # dlist term joins the definition's first line — dictionary convention.
+      # The [[sym-…]] anchor becomes the paragraph's block id; [.glossrunin]
+      # hangs the turnover lines (extension.rb).
+      if blk =~ /\A\[\[(sym-[^\]]+)\]\]([^\n]+?)::[ \t]*(.*)\z/m
+        anchor, term, rest = $1, $2, $3
+        term = term.sub(/\A(.+?)(\s+\[\.verdict\]#[A-Z]+#)?\z/) { "*#{$1}*#{$2}" }
+        blk = "[[#{anchor}]]\n[.glossrunin]\n#{term} #{rest}"
+      end
       "[.glossentry]\n--\n#{blk}\n--"
     }.join("\n\n")
   end
