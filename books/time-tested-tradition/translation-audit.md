@@ -7,20 +7,27 @@ Gratis limits and required notices: books/copyright-policies/.
 
 | version | status | block quotes | verses (blocks) | verses (inline) | total | gratis limit | headroom |
 |---|---|---|---|---|---|---|---|
-| KJV | public domain (US) | 213 | 321 | 60 | 381 | — | — |
-| AKJV | public domain | 67 | 156 | 0 | 156 | — | — |
-| ESV | © Crossway | 30 | 58 | 0 | 58 | 500 | 442 (OK) |
-| ASV | public domain | 33 | 55 | 0 | 55 | — | — |
+| KJV | public domain (US) | 217 | 343 | 178 | 521 | — | — |
+| AKJV | public domain | 65 | 156 | 0 | 156 | — | — |
+| ASV | public domain | 40 | 68 | 1 | 69 | — | — |
+| ESV | © Crossway | 30 | 55 | 0 | 55 | 500 | 445 (OK) |
 | JPS | public domain (1917) | 30 | 44 | 0 | 44 | — | — |
-| own-rendering | author’s own rendering | 24 | 41 | 2 | 43 | — | — |
-| NIV | © Biblica/Zondervan | 13 | 38 | 0 | 38 | 500 | 462 (OK) |
+| own-rendering | author’s own rendering | 24 | 40 | 2 | 42 | — | — |
 | NASB | © Lockman | 13 | 22 | 0 | 22 | 1000 | 978 (OK) |
 | Darby | public domain | 13 | 21 | 0 | 21 | — | — |
+| NKJV | © Thomas Nelson | 7 | 19 | 1 | 20 | 500 | 480 (OK) |
 | LXX | public domain (Brenton 1851) | 6 | 19 | 0 | 19 | — | — |
-| NKJV | © Thomas Nelson | 4 | 15 | 0 | 15 | 500 | 485 (OK) |
 | DRB | public domain | 6 | 14 | 0 | 14 | — | — |
 | BSB | public domain (CC0, Bible Hub) | 5 | 12 | 0 | 12 | — | — |
 | LXX-Brenton | public domain (Brenton 1851) | 5 | 6 | 0 | 6 | — | — |
+| UNIDENTIFIED-MODERN | UNKNOWN — identify & label | 3 | 5 | 0 | 5 | — | — |
 | AMP | © Lockman | 1 | 3 | 0 | 3 | 1000 | 997 (OK) |
 | Smith | public domain | 2 | 2 | 0 | 2 | — | — |
-| NLT | © Tyndale | 1 | 1 | 0 | 1 | 500 | 499 (OK) |
+
+## Unidentified quotes (3) — need version labels
+
+| file | citation | opening words |
+|---|---|---|
+| 07x-lucifers-declared-plan.adoc | Isaiah 14:13 — the seat heard twice | i will raise my covered lunar seat above… |
+| 07x-lucifers-declared-plan.adoc | Isaiah 14:14 — spoken once, heard twice | i will ascend upon the high places of… |
+| 07x-lucifers-declared-plan.adoc | Isaiah 14:12-14 — read through the symbols | how art thou fallen from heaven shining one… |
