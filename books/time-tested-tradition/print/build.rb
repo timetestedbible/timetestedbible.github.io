@@ -155,7 +155,14 @@ doc << "\nifndef::ebook-edition[]\ntoc::[]\nendif::[]\n"
 # author's ruling 2026-07-05) while the Contents and PDF outline keep the
 # part/chapter hierarchy.
 PARTS = {
-  # TTT 2nd edition: part grouping awaits the author (see conversion report).
+  # Author's grouping (2026-07-18): evidence rules, the proactive case, the
+  # sabbath tests, the year of the cross, then what the evidence demands.
+  'introduction'           => 'Part One — The Rules of Evidence',
+  'sun-moon-and-stars'     => 'Part Two — The Case for the Biblical Calendar',
+  'when-is-the-sabbath'    => 'Part Three — Testing the Sabbath',
+  '32-ad-resurrection'     => 'Part Four — The Year of the Cross',
+  'the-path-to-salvation'  => 'Part Five — Salvation and Obedience',
+  'glossary'               => 'Part Six — Reference',
 }
 
 # Back matter, rendered AFTER the generated Scripture Index: the Bibliography
