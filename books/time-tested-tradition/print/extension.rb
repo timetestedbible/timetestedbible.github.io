@@ -817,6 +817,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # the gray PDF derives from prepress, so it inherits the swap.
   def convert_image node
     flush_table_float unless scratch?
+    # Inline figures breathe: a stand-off above any block image that starts
+    # mid-page (author's ruling 2026-07-18 — the long-day map crowded the
+    # paragraph above it). Applied in scratch too so measurements match.
+    # Own-page images and plates open at a page top and are unaffected.
+    move_down 8 unless at_page_top?
     if (node.document.attr 'media') == 'prepress' && (target = node.attr 'target')&.end_with?('.svg') && !target.end_with?('-print.svg')
       print_target = target.sub(/\.svg$/, '-print.svg')
       dir = node.document.attr 'imagesdir'
@@ -1155,6 +1160,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'herod-regal-vs-defacto' => 'images/print/15x1-two-reckonings.jpg',
     'herods-appointment-and-battle-of-actium' => 'images/print/15x2-crowned-in-rome.jpg',
     'stability-of-astronomy' => 'images/print/15x4-steadfast-heavens.jpg',
+    'sign-of-jonah' => 'images/print/12x-jonah.jpg',
     'the-path-to-salvation' => 'images/print/16-thief-beside-him.jpg',
     'commands-to-follow' => 'images/print/17-taught-at-the-door.jpg',
     'appointed-times' => 'images/print/18-dwelling-in-booths.jpg',
