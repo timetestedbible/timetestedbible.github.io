@@ -100,6 +100,12 @@ def split_front_matter(raw)
 end
 
 chapters = Dir.glob(File.join(SRC, '[0-9]*-*.adoc')).sort
+# Assembly order: the front-matter `order` field (fractional inserts), falling
+# back to the filename prefix — chapters resequence without file renames.
+chapters = chapters.sort_by do |path|
+  fm, = split_front_matter(File.read(path))
+  (fm['order'] || File.basename(path)[/\A[\d.]+/].to_f).to_f
+end
 abort "No chapter files (NN-name.adoc) in #{SRC}" if chapters.empty?
 
 doc = +<<~ADOC
@@ -161,8 +167,9 @@ PARTS = {
   'sun-moon-and-stars'     => 'Part Two — The Case for the Biblical Calendar',
   'when-is-the-sabbath'    => 'Part Three — Testing the Sabbath',
   '32-ad-resurrection'     => 'Part Four — The Year of the Cross',
-  'the-path-to-salvation'  => 'Part Five — Salvation and Obedience',
-  'glossary'               => 'Part Six — Reference',
+  'herod-the-great'        => 'Part Five — The Reign of Herod the Great',
+  'the-path-to-salvation'  => 'Part Six — Salvation and Obedience',
+  'glossary'               => 'Part Seven — Reference',
 }
 
 # Back matter, rendered AFTER the generated Scripture Index: the Bibliography
