@@ -235,6 +235,39 @@ after the sabbath [day] → seven sabbaths [units] complete → morrow after the
 seventh sabbath [the unit's closing day]); Matt 28:1 (late of the sabbaths
 [day closing] → dawning into one of the sabbaths [the next unit's day one]).
 
+## The cube puzzle (author, 2026-07-19) — the argument stripped of vocabulary
+
+Author's abstraction device: state the omer constraints with no religious
+words, and the lunar structure falls out for any blind solver. An OBJECT is
+seven stacked cubes, six white then a black seventh (the week). BUCKETS hold
+30 cubes with a blue cube at the bottom (month; renewed-moon day). White
+fronts purple; black AND blue fronts pink (Ezek 46:1 — gate opens on the
+sabbath and the new-moon day; shut the six working days). Cube 14 red (Lev
+23:5 passover), cube 15 yellow AND black (Lev 23:6-7 — the convocation lands
+on a weekly sabbath), the cube after the black one green (Lev 23:11 — the
+sheaf, morrow after the sabbath), green-to-green fifty counting only object
+cubes (Lev 23:15-16), 30-cube capacity from Rev 11:2-3 (42 months = 1,260
+days). Cube 15 black in EVERY bucket + indivisible objects forces objects at
+2-8/9-15/16-22/23-29 per bucket; air gaps exist ONLY at bucket seams (the
+blue slot-1 cube and the sometimes-empty slot 30); a gapless continuous
+stack contradicts (29 and 30 are not multiples of 7). Resolves uniquely,
+without contradiction — the lunar sabbath.
+
+Author reports blind-AI convergence (Grok, Gemini, Claude, GPT each conclude
+lunar sabbath from the scriptures alone). For PRINT: let the READER be the
+blind solver — do not name AI vendors in the book (the Google-AI citation
+was removed from TTT for exactly this aging problem).
+
+**OPEN — needs author ruling before the puzzle enters a chapter:** as
+written ("begin the count on the green cube"), object #1 is I.16-22, the
+seventh object ends III.8, and the second green lands III.9. The shipped
+checksum sections (MEAT 31 / TTT 12, and the 2026-07-08 count ruling below)
+open the count the day AFTER the sheaf, exclude the sheaf's broken week, and
+land Pentecost III.16. Same fifty, different landing. Either the chapters
+move to the count-on-green reading (III.9), or the puzzle's counting clause
+becomes "begin counting with the cube after the green one — the first
+complete object from there" (III.16).
+
 ## The count mechanism (author's ruling, 2026-07-08)
 
 The numbering begins the day AFTER the wave sheaf (sheaf 16/1; count opens
