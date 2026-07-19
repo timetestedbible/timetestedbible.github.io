@@ -169,7 +169,7 @@ PARTS = {
   '32-ad-resurrection'     => 'Part Four — The Year of the Cross',
   'herod-the-great'        => 'Part Five — The Reign of Herod the Great',
   'the-path-to-salvation'  => 'Part Six — Salvation and Obedience',
-  'glossary'               => 'Part Seven — Reference',
+  'evidence-outline'       => 'Part Seven — Reference',
 }
 
 # Back matter, rendered AFTER the generated Scripture Index: the Bibliography
@@ -185,7 +185,7 @@ main_entries -= back_entries
 # every print chapter carries a number (author's ruling 2026-07-18, matching
 # MEAT's 2026-07-14 rule). Unnumbered: digital-only chapters, 00- openers,
 # and back matter.
-NUMBER_EXEMPT_SLUGS = %w[bibliography further-studies about-the-author].freeze
+NUMBER_EXEMPT_SLUGS = %w[bibliography further-studies about-the-author glossary].freeze
 $chapter_numbers = {}
 main_entries.each do |c|
   next if NUMBER_EXEMPT_SLUGS.include?(c[:slug]) || c[:edition] == 'digital' || c[:file].start_with?('00')
@@ -443,9 +443,14 @@ if WANT_EPUB
   # would dead-end inside an e-reader).
   aboard = (main_entries + back_entries).reject { |c| c[:edition] == 'digital' }
                                         .map { |c| c[:slug] }
-  epub_doc.gsub!(%r{link:/books/time-tested-tradition/([a-z0-9-]+)/\[([^\]]*)\]}) do
-    slug, text = $1, $2
-    aboard.include?(slug) ? "<<#{slug},#{text}>>" : %(https://timetested.bible/books/time-tested-tradition/#{slug}/[#{text}])
+  epub_doc.gsub!(%r{link:/books/time-tested-tradition/([a-z0-9-]+)/(?:#([a-z0-9-]+))?\[([^\]]*)\]}) do
+    slug, fragment, text = $1, $2, $3
+    if aboard.include? slug
+      "<<#{fragment || slug},#{text}>>"
+    else
+      suffix = fragment ? %(##{fragment}) : ''
+      %(https://timetested.bible/books/time-tested-tradition/#{slug}/#{suffix}[#{text}])
+    end
   end
 
   # Glossary verdict badges: restore the macro form (the [.verdict] rewrite
@@ -476,5 +481,25 @@ if WANT_EPUB
       'epub3-stylesdir'   => File.join(DIR, 'epub-styles'),  # stock gem styles + list-marker fix (see epub3.scss tail)
       'uuid'              => 'urn:isbn:9781736521175',
     }
+
+  # asciidoctor-epub3 only packages its stock font set. Add the monochrome
+  # Noto Emoji face used by the Evidence Outline and declare it in the OPF so
+  # the icons do not depend on whichever emoji font an e-reader happens to
+  # provide. Noto Emoji is OFL-licensed alongside the other bundled Noto fonts.
+  require 'zip'
+  emoji_font_name = 'NotoEmoji-VariableFont_wght.ttf'
+  emoji_font_path = File.join(FONTS, emoji_font_name)
+  Zip::File.open(epub_out) do |archive|
+    archive.get_output_stream("EPUB/fonts/#{emoji_font_name}") do |stream|
+      stream.write File.binread(emoji_font_path)
+    end
+    opf_path = 'EPUB/package.opf'
+    opf = archive.read opf_path
+    unless opf.include? %(href="fonts/#{emoji_font_name}")
+      declaration = %(    <item id="item_noto-emoji" href="fonts/#{emoji_font_name}" media-type="application/vnd.ms-opentype"/>\n)
+      opf = opf.sub('  </manifest>', %(#{declaration}  </manifest>))
+      archive.get_output_stream(opf_path) { |stream| stream.write opf }
+    end
+  end
   warn "Wrote: #{epub_out}  (epub3, print-edition content)"
 end
