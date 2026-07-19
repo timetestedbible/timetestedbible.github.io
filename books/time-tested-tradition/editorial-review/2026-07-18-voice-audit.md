@@ -1,4 +1,6 @@
-# TTT 2nd ed. — voice & formatting audit, working checklist
+# TTT 2nd ed. — print-chapter prose & formatting audit, working checklist
+
+Scope: chapters that print in the PDF only. Digital-only chapters (19x1-19x4) are out of scope.
 
 Five parallel auditors, calibrated on the reworked house voice (01-introduction,
 00-preface, 15x4-stability-of-astronomy), graded every chapter 2026-07-18. This is the
@@ -79,8 +81,6 @@ AI-listicle / research-wiki).
       exception); Romans 7 fixed.
 - [ ] **17 Commands (light)** — "Hypocrites!" one-word beat; catechism Q&A runs.
 - [ ] **20 Closing (light)** — "boils down" opener; three-quote stack.
-- [ ] **19x1 First Fruits & New Wine (digital)** — wholesale YHWH violations of the
-      2026-07-13 ruling; same content duplicated in ch. 18.
 
 ## Objective — remaining open items
 
