@@ -124,6 +124,117 @@ omer argument stands on.
 
 ---
 
+## The block divided into days — added witnesses (2026-07-19)
+
+Author asked for the strongest case that the sabbath is a block of seven days —
+a sabbaton — divided into days, six of labor crowned by the rest. Beyond the
+core above (Lev 23:15 = Deut 16:9; temimot; Lev 25:8; dis tou sabbatou; mia
+sabbatōn), these are new; all citations verified against the repo texts
+(kjv_strongs, lxx, greek_nt, wlc, hg-chapters).
+
+1. **The temple hymnal numbers the days AS days of the sabbath (LXX psalm
+   titles, pre-Christian).** LXX Ps 23(24):1 "on the first day of the week"
+   (Greek title: tēs mias sabbatōn), Ps 47(48):1 "on the second day of the
+   week" (deutera sabbatou), Ps 93(94):1 "for the fourth day of the week"
+   (tetradi sabbatōn), Ps 92(93):1 "for the day before the Sabbath"
+   (prosabbatou) — Brenton's English in bibles/lxx.txt renders "week"; the
+   Greek word under every title is *sabbaton*. Israel's liturgy assigned each
+   day a number INSIDE the sabbath-unit centuries before the Gospels wrote
+   "mia sabbatōn." Mark 15:42 uses the same system: the sixth day is the
+   *prosabbaton*, the fore-sabbath. The days have no names of their own —
+   only positions in the block.
+
+2. **A day's name stretching over its block is native feast grammar (Ezek
+   45:21).** "Ye shall have the passover, a feast of seven{H7620} days" — the
+   consonants are שבעות ימים (WLC verified): the passover, a feast of a
+   *shavua* of days. One day's sacrifice names the whole seven; Luke 22:1
+   makes the same move in Greek ("the feast of unleavened bread, which is
+   called the Passover"). Answers the objection "sabbath is just the day's
+   name": naming a seven-day block by its marked day is how the calendar
+   vocabulary already works — Passover names the week it opens, Sabbath the
+   week it crowns.
+
+3. **The priestly courses reckon service in sabbath-blocks.** The divisions
+   "enter in on the sabbath" and "go forth on the sabbath" (2 Kgs 11:5, 7, 9;
+   2 Chr 23:4, 8) — a week-long tour of duty bounded by the word *sabbath*,
+   service running sabbath-to-sabbath. Acts 17:2 measures duration the same
+   way: Paul reasoned "three sabbath days" — three weeks.
+
+4. **The seventh is rest from YOUR work, not from work absolutely.** The rest
+   is defined as ceasing from "*thy* pleasure… *thine own* ways… *thine own*
+   words" (Isa 58:13); "he that is entered into his rest hath ceased from his
+   *own* works" (Heb 4:10). Meanwhile the LORD's house works hardest on day
+   seven: the burnt offering doubles "on the sabbath day" (Num 28:9-10), the
+   shewbread is set in order "every sabbath" (Lev 24:8; prepared, 1 Chr 9:32),
+   circumcision proceeds "that the law of Moses should not be broken" (John
+   7:22-23), and "the priests in the temple profane the sabbath, and are
+   blameless" (Matt 12:5); "My Father worketh hitherto, and I work" (John
+   5:17) — and Gen 2:2 puts God's own finishing, blessing, and hallowing ON
+   the seventh day. The block gives six days to man's work and the seventh to
+   the LORD's.
+
+5. **The block is GIVEN, objective, enforced from heaven.** "See, for that
+   the LORD hath *given you* the sabbath, therefore he giveth you on the
+   sixth day the bread of two days" (Ex 16:29) — the manna schedule marks the
+   whole unit (double on six, none on seven), not a personal one-in-seven
+   count. Ezek 46:1 names the block by its parts: "the six working days" +
+   the sabbath (+ the renewed-moon day as a third kind, outside both).
+
+6. **The units nest: sabbath sits in the unit-slot between day and month.**
+   "In the sabbaths and in the new moons" (Ezek 46:3), "neither new moon nor
+   sabbath" (2 Kgs 4:23), "the new moon… and the sabbath" (Amos 8:5), "an
+   holyday, or of the new moon, or of the sabbath" (Col 2:16) — feast/moon/
+   sabbath = year/month/week, the standing triad of reckonings. TTT ch. 10's
+   sentence states the nesting: months divide into weeks called sabbaths,
+   which subdivide into days. Lev 23:39 pins Tabernacles' two shabbaton
+   rest-days to the 15th and the 22nd — the very month-dates the lunar
+   structure marks as sabbaths.
+
+7. **Second witness from the Hebrew Gospels:** HG Matt 28:1 renders mia
+   sabbatōn as ביום הראשון מהשבוע — "on the first day of the *shavua*"
+   (H7620) — the Hebrew translator read the Greek "one of the sabbaths" as
+   week-unit language, not as a reference to the rest-day.
+
+Seed chapters: MEAT ch. 32 (The Sabbath — the equation, the scaling, the
+checksum) and TTT ch. 10 (When Is the Sabbath — manna 8/15/22, First Fruits
+16th, the nesting sentence, Ezek 46:1 gate logic). Items 1, 2, 3, 4, 7 are in
+neither chapter as written.
+
+### How Scripture distinguishes sabbath-week from sabbath-day (2026-07-19)
+
+Grammar, not separate words — four markers, verified:
+
+1. **The genitive names the day: yom ha-shabbat.** Ex 20:8 "Remember the
+   sabbath day" is Hebrew "the day of the sabbath" — redundant if shabbat
+   named only a day; exact if shabbat is the unit that HAS a day (also Ex
+   31:15b; Num 28:9; Deut 5:12). Ezek 46:1 runs the two double-duty words in
+   identical grammar side by side: "on the *day of the sabbath*… on the *day
+   of the chodesh*" — chodesh = month + its marked day one; shabbat = week +
+   its marked day seven; both disambiguated by prefixing *yom*.
+2. **Greek inherits it.** The rest day is "the *day* of the sabbaths" — tē
+   hēmera tōn sabbatōn (Luke 4:16; Acts 13:14; 16:13); the other days are
+   numbered INTO the unit (mia sabbatōn; prōtē sabbatou, Mark 16:9);
+   frequency runs "twice *in* the sabbath" (Luke 18:12). The unit is the
+   possessor; every day, the seventh included, is a member.
+3. **The intensive doubling marks the resting member: shabbat shabbaton**
+   (H7676+H7677) — Ex 31:15; 35:2; Lev 23:3; Atonement Lev 16:31; 23:32; the
+   land's seventh year Lev 25:4. Counting contexts never double the word.
+4. **Counting vs conduct.** Numerals/counts take the unit (seven sabbaths
+   temimot, Lev 23:15; sabbaths of years, Lev 25:8; her sabbaths = seventy
+   years, 2 Chr 36:21; three sabbath days, Acts 17:2); conduct verbs take the
+   day (kindle no fire, Ex 35:3; bake/seethe beforehand, Ex 16:23; the
+   doubled offering, Num 28:9).
+5. **The unchosen synonym proves intent.** Hebrew owns a bare-seven word,
+   shavua (Gen 29:27 "fulfil her week"; Deut 16:9; Daniel's sevens). Lev
+   23:15 counting the same span as *shabbatot* is therefore a choice: a
+   shavua is any seven; a shabbat is the seven structured by rest — which is
+   why only the shabbat-count can be commanded *temimot*, complete.
+
+Where both senses share a sentence, the markers steer: Lev 23:15-16 (morrow
+after the sabbath [day] → seven sabbaths [units] complete → morrow after the
+seventh sabbath [the unit's closing day]); Matt 28:1 (late of the sabbaths
+[day closing] → dawning into one of the sabbaths [the next unit's day one]).
+
 ## The count mechanism (author's ruling, 2026-07-08)
 
 The numbering begins the day AFTER the wave sheaf (sheaf 16/1; count opens
