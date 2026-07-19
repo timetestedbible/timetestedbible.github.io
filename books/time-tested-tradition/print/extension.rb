@@ -1226,6 +1226,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'lucifers-declared-plan' => 'images/print/07x-lucifer-moon.jpg',
     'when-does-the-year-start' => 'images/print/08-abib-sheaf.jpg',
     'how-to-observe-the-signs' => 'images/print/09-watchman-tower.jpg',
+    'the-sabbath' => 'images/print/09x-quails-came-up.jpg',
     'when-is-the-sabbath' => 'images/print/10-sabbath-quarters.jpg',
     'the-day-of-saturn' => 'images/print/11-star-court.jpg',
     '32-ad-resurrection' => 'images/print/12-darkness-at-noon.jpg',

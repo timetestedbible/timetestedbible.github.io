@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="21.785in" height="9.5in" viewBox="0 0 6535.5 2850"
+     font-family="Noto Serif, Georgia, serif">
+  <!-- Latest 568-page US Trade dust-jacket geometry:
+       bleed 0.125 | flap 3.625 | back 6.375 | spine 1.535 | front 6.375 | flap 3.625 | bleed 0.125 -->
+  <defs>
+    <filter id="softshadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur"/>
+      <feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>
+      <feFlood flood-color="#000" flood-opacity="0.9" result="shadowColor"/>
+      <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="ttbmoon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffef0"/>
+      <stop offset="70%" stop-color="#f5f5dc"/>
+      <stop offset="100%" stop-color="#e8e4c8"/>
+    </radialGradient>
+    <linearGradient id="ttbbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a3a5c"/>
+      <stop offset="100%" stop-color="#0d2840"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="6535.5" height="2850" fill="#071323"/>
+  <!-- Untouched 4x panorama with a feathered, local NASA/AI Moon patch. -->
+  <image xlink:href="ttt-sun-moon-panorama-4x-natural-moon.png"
+         x="-11" y="-42.75" width="6731.565" height="2935.5" preserveAspectRatio="none"/>
+
+  <!-- Front-cover title, centered in the 6.375-inch front panel. -->
+  <g transform="translate(3554.25 37.5)">
+    <g font-family="Noto Serif" font-weight="bold" text-anchor="middle"
+       transform="translate(0 -480)" style="filter:url(#softshadow)">
+      <g id="title-lockup" transform="translate(900 1250) scale(1.1) translate(-900 -1250)">
+        <text x="900" y="1195" font-size="327.7" font-style="italic" fill="#eda820"
+              textLength="1076.4" lengthAdjust="spacingAndGlyphs"
+              transform="translate(0 1195) scale(1 1.18) translate(0 -1195)"
+              stroke="#171108" stroke-width="12" stroke-opacity="0.96"
+              stroke-linejoin="round" paint-order="stroke fill">TIME</text>
+        <rect x="361.8" y="1245" width="1076.4" height="13" fill="#eda820"
+              stroke="#171108" stroke-width="7" paint-order="stroke fill"/>
+        <text x="900" y="1445" font-size="167.1" fill="#f2ead6"
+              textLength="1044.3" lengthAdjust="spacingAndGlyphs"
+              transform="translate(0 1445) scale(1 1.22) translate(0 -1445)"
+              stroke="#171108" stroke-width="10" stroke-opacity="0.96"
+              stroke-linejoin="round" paint-order="stroke fill">TESTED</text>
+        <text x="900" y="1639" font-size="167.1" fill="#eda820"
+              textLength="1044.3" lengthAdjust="spacingAndGlyphs"
+              transform="translate(0 1639) scale(1 1.22) translate(0 -1639)"
+              stroke="#171108" stroke-width="10" stroke-opacity="0.96"
+              stroke-linejoin="round" paint-order="stroke fill">TRADITION</text>
+        <rect x="361.8" y="1680" width="1076.4" height="13" fill="#eda820"
+              stroke="#171108" stroke-width="7" paint-order="stroke fill"/>
+      </g>
+      <text x="900" y="1860" font-size="88" font-style="italic" font-weight="normal" fill="#f2ead6"
+            textLength="1148.4" lengthAdjust="spacingAndGlyphs" stroke="#171108" stroke-width="6"
+            stroke-opacity="0.96" stroke-linejoin="round" paint-order="stroke fill">Renewed Biblical Calendar</text>
+      <text x="900" y="1980" font-size="42" fill="#f2ead6" letter-spacing="11"
+            stroke="#171108" stroke-width="6" stroke-opacity="0.96"
+            stroke-linejoin="round" paint-order="stroke fill">SECOND EDITION</text>
+    </g>
+    <text x="900" y="2549" font-family="Noto Serif" font-size="52" font-weight="bold"
+          text-anchor="middle" letter-spacing="13" fill="#f2ead6"
+          stroke="#171108" stroke-width="5" stroke-opacity="0.96" stroke-linejoin="round"
+          paint-order="stroke fill" style="filter:url(#softshadow)">DANIEL LARIMER</text>
+  </g>
+
+  <!-- Shared TimeTested.Bible cover-lockup spine branding. -->
+  <g id="layer-spine" font-family="Noto Serif" text-anchor="middle" style="filter:url(#softshadow)">
+    <g id="spine-brand-moon" transform="translate(3267.75 290) scale(1.1)" stroke="none">
+      <circle r="91.5" fill="#f5f5dc" opacity="0.12"/>
+      <circle r="82.4" fill="#f5f5dc" opacity="0.14"/>
+      <circle r="73.2" fill="url(#ttbmoon)"/>
+      <circle cx="-30.2" cy="-25.6" r="13.7" fill="#d8d4b8" opacity="0.40"/>
+      <circle cx="24.7" cy="11" r="18.3" fill="#d8d4b8" opacity="0.35"/>
+      <circle cx="-16.5" cy="29.3" r="11.4" fill="#d8d4b8" opacity="0.30"/>
+      <circle cx="11" cy="-34.8" r="8.2" fill="#d8d4b8" opacity="0.25"/>
+      <circle cx="38.4" cy="-16.5" r="6.9" fill="#d8d4b8" opacity="0.30"/>
+      <circle cx="-34.8" cy="11" r="9.2" fill="#d8d4b8" opacity="0.25"/>
+    </g>
+    <g id="spine-title-lockup" transform="translate(3244.5 1072) rotate(90) scale(1.1)"
+       font-weight="bold">
+      <text id="spine-title-line-one" x="-250" y="68" font-size="257"
+            font-style="italic" fill="#eda820">TIME</text>
+      <g id="spine-title-line-two">
+        <text x="378" y="-45" font-size="95" fill="#f2ead6"
+              textLength="430" lengthAdjust="spacingAndGlyphs">TESTED</text>
+        <text x="378" y="68" font-size="95" fill="#eda820"
+              textLength="430" lengthAdjust="spacingAndGlyphs">TRADITION</text>
+      </g>
+    </g>
+    <g font-size="60" fill="#f2ead6" font-weight="bold" font-style="normal" letter-spacing="4.5">
+      <text x="3267.75" y="2520">DANIEL</text>
+      <text x="3267.75" y="2600">LARIMER</text>
+    </g>
+  </g>
+
+  <!-- Back cover: brief sales promise followed by three witnesses. -->
+  <g id="layer-back-copy" fill="#f7f0df" font-family="Noto Serif" text-anchor="middle"
+     stroke="#16110c" stroke-width="2.4" stroke-opacity="0.92" stroke-linejoin="round"
+     paint-order="stroke fill" style="filter:url(#softshadow)">
+    <g font-size="52" font-weight="600">
+      <text x="2081.25" y="350"><tspan font-style="italic">Time Tested Tradition</tspan> tests every major calendar claim</text>
+      <text x="2081.25" y="424">against Scripture, primary historical sources, and the</text>
+      <text x="2081.25" y="498">measurable testimony of the sun, moon, and stars.</text>
+      <text x="2081.25" y="572">Follow the evidence for yourself and discover why the</text>
+      <text x="2081.25" y="646">year of the cross was 32 AD—and why Saturday</text>
+      <text x="2081.25" y="720">cannot possibly be the biblical Sabbath.</text>
+    </g>
+
+    <text x="2081.25" y="1000" font-size="58" font-style="italic" font-weight="600">Do you know the ordinances of the heavens?</text>
+    <text x="2081.25" y="1068" font-size="58" font-style="italic" font-weight="600">Can you establish their rule on the earth?</text>
+    <text x="2081.25" y="1136" font-size="42" font-weight="600">Job 38:33</text>
+
+    <text x="2081.25" y="1390" font-size="58" font-style="italic" font-weight="600">For there is a proper time and procedure</text>
+    <text x="2081.25" y="1458" font-size="58" font-style="italic" font-weight="600">for every matter.</text>
+    <text x="2081.25" y="1526" font-size="42" font-weight="600">Ecclesiastes 8:6</text>
+
+    <text x="2081.25" y="1780" font-size="58" font-style="italic" font-weight="600">The one who states his case first seems right,</text>
+    <text x="2081.25" y="1848" font-size="58" font-style="italic" font-weight="600">until the other comes and examines him.</text>
+    <text x="2081.25" y="1916" font-size="42" font-weight="600">Proverbs 18:17</text>
+
+    <text x="2081.25" y="2180" font-size="58" font-style="italic" font-weight="600">Surely our fathers have inherited lies.</text>
+  <text x="2081.25" y="2248" font-size="42" font-weight="600">Jeremiah 16:19</text>
+  </g>
+
+  <!-- Bookland EAN-13 for the second edition. -->
+  <image id="layer-barcode" xlink:href="ttt-isbn-9781736521175-barcode.svg"
+         x="2362.5" y="2344.2" width="600" height="360"/>
+
+  <!-- Left inside flap: companion-book promotion for MEAT. -->
+  <g id="layer-left-flap-meat" fill="#f7f0df" font-family="Noto Serif" font-weight="600"
+     stroke="#16110c" stroke-width="2.2" stroke-opacity="0.92" stroke-linejoin="round"
+    paint-order="stroke fill" style="filter:url(#softshadow)" transform="translate(0 100)">
+    <image xlink:href="companion-meat-front.png"
+           x="282" y="174" width="598.5" height="897.75" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="282" y="174" width="598.5" height="897.75" fill="none"
+          stroke="#f2ead6" stroke-opacity="0.55" stroke-width="2.4"/>
+    <text x="153.75" y="1200" font-size="45" textLength="855" lengthAdjust="spacing">Transform how you read Scripture by</text>
+    <text x="153.75" y="1272" font-size="45" textLength="855" lengthAdjust="spacing">learning to follow its symbols, connect</text>
+    <text x="153.75" y="1344" font-size="45" textLength="855" lengthAdjust="spacing">its witnesses, and move from spiritual</text>
+    <text x="153.75" y="1416" font-size="45" textLength="855" lengthAdjust="spacing"><tspan fill="#eda820" font-style="italic">milk</tspan> to the <tspan fill="#eda820" font-style="italic">meat</tspan> that strengthens</text>
+    <text x="153.75" y="1488" font-size="45" textLength="855" lengthAdjust="spacing">your walk. More than 140 symbols</text>
+    <text x="153.75" y="1560" font-size="45" textLength="855" lengthAdjust="spacing">reveal the Bible’s connected language</text>
+    <text x="153.75" y="1632" font-size="45" textLength="855" lengthAdjust="spacing">across its stories, parables, prophecies,</text>
+    <text x="153.75" y="1704" font-size="45">and promises.</text>
+    <text x="581.25" y="2410" text-anchor="middle" font-style="italic" font-size="46.5">Read it free at TimeTested.Bible.</text>
+  </g>
+
+  <!-- Right inside flap: interactive-edition invitation and QR code. -->
+  <g id="layer-right-flap-site" fill="#f7f0df" font-family="Noto Serif" font-size="45" font-weight="600"
+     stroke="#16110c" stroke-width="2.2" stroke-opacity="0.92" stroke-linejoin="round"
+     paint-order="stroke fill" style="filter:url(#softshadow)" transform="translate(0 100)">
+    <g id="layer-right-flap-appicon" stroke="none">
+      <circle cx="5954.25" cy="420" r="187.5" fill="#f5f5dc" opacity="0.1"/>
+      <circle cx="5954.25" cy="420" r="168.8" fill="#f5f5dc" opacity="0.1"/>
+      <circle cx="5954.25" cy="420" r="150" fill="url(#ttbmoon)"/>
+      <circle cx="5892.35" cy="367.5" r="28.1" fill="#d8d4b8" opacity="0.4"/>
+      <circle cx="6004.85" cy="442.5" r="37.5" fill="#d8d4b8" opacity="0.35"/>
+      <circle cx="5920.45" cy="480" r="23.4" fill="#d8d4b8" opacity="0.3"/>
+      <circle cx="5976.75" cy="348.8" r="16.9" fill="#d8d4b8" opacity="0.25"/>
+      <circle cx="6032.95" cy="386.2" r="14.1" fill="#d8d4b8" opacity="0.3"/>
+      <circle cx="5882.95" cy="442.5" r="18.8" fill="#d8d4b8" opacity="0.25"/>
+    </g>
+
+    <text x="5954.25" y="780" text-anchor="middle" fill="#eda820" letter-spacing="9" font-size="60">TIMETESTED.BIBLE</text>
+    <text x="5526.75" y="942">The book ends; the study doesn’t.</text>
+
+    <text x="5526.75" y="1044" textLength="855" lengthAdjust="spacing">An interactive edition of this book</text>
+    <text x="5526.75" y="1116" textLength="855" lengthAdjust="spacing">lives at TimeTested.Bible — every</text>
+    <text x="5526.75" y="1188" textLength="855" lengthAdjust="spacing">source, calendar claim, and Scripture</text>
+    <text x="5526.75" y="1260">linked for immediate verification.</text>
+
+    <text x="5526.75" y="1362" textLength="855" lengthAdjust="spacing">Compare translations, inspect the Hebrew</text>
+    <text x="5526.75" y="1434" textLength="855" lengthAdjust="spacing">and Greek beneath the English, and trace</text>
+    <text x="5526.75" y="1506" textLength="855" lengthAdjust="spacing">each historical witness behind the</text>
+    <text x="5526.75" y="1578">renewed biblical calendar.</text>
+
+    <text x="5526.75" y="1680" textLength="855" lengthAdjust="spacing">Download the ebook free, and test the</text>
+    <text x="5526.75" y="1752">tradition for yourself.</text>
+    <text x="5954.25" y="1872" text-anchor="middle" font-style="italic">Test everything; hold to what is good.</text>
+  </g>
+
+  <image xlink:href="ttt-timetested-bible-qr.png"
+         x="5820.3" y="2338" width="268" height="268"/>
+</svg>

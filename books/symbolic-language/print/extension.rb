@@ -1184,8 +1184,9 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     # Plaqued twins (print/plate-plaques.py, from committed masters + captions):
     # prepress reads the print-toned plaqued set (images/plated-print/), screen
     # the color plaqued set (images/plated/). Fall back to the unplaqued
-    # images/print/ plate when no plaqued twin exists — 50-author-portrait
-    # carries no plaque by design. The web site's plate usage is untouched.
+    # images/print/ plate when no plaqued twin exists — 33-ttt-cover and
+    # 50-author-portrait carry no plaque by design. The web site's plate usage
+    # is untouched.
     plaqued_dir = @media == 'screen' ? 'images/plated/' : 'images/plated-print/'
     plaqued = target.sub 'images/print/', plaqued_dir
     if ::File.readable?(::File.join dir, plaqued)

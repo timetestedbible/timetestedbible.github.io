@@ -3,6 +3,10 @@
 Book by Daniel Larimer, print via BookBaby (hardcover, ISBN 978-1-7365211-6-8) + web at
 timetested.bible (this repo IS the deployment — GitHub Pages serves it directly).
 
+Naming convention (author's ruling 2026-07-18): use “Jesus” in ordinary prose and
+quotations. Reserve _Yeshua_ only for passages where the Hebrew _yeshuah_ / salvation
+wordplay is itself being explained.
+
 ## Layout
 
 - `NN-*.adoc` — chapters. Front matter: `title`, `slug`, `permalink`, `order` (drives
@@ -114,8 +118,9 @@ Discipline (hard-won — violating this has silently destroyed edits):
 - **No Hebrew script in body text** (author's ruling 2026-07-13): readers can do nothing
   with it, and RTL runs garble the print text flow. Use italic transliteration
   (_ki-tov sachrah_) and letter-name prose ("spelled with aleph"); figures/images may
-  still SHOW letters. EXACTLY TWO exceptions (author): the moon/throne spelling argument
-  (כסא/כסה, chs. 30-31) and the vowel-point demonstration (חלב, chs. 1 and 25). No others.
+  still SHOW letters. EXACTLY THREE exceptions (author): the moon/throne spelling argument
+  (כסא/כסה, chs. 30-31), the vowel-point demonstration (חלב, chs. 1 and 25), and Daniel
+  Unsealed's seventy-seventy display (שבעים שבעים — granted 2026-07-19). No others.
 - **anomia = "lawlessness"** in every quote (KJV "iniquity"); check the Strong's tag —
   2 Tim 2:19 is adikia and keeps "iniquity."
 - **Translation choice is per-quote** (KJV/ASV/NKJV — whichever renders the key word

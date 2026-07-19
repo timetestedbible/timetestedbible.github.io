@@ -287,15 +287,17 @@ lunar sabbath from the scriptures alone). For PRINT: let the READER be the
 blind solver — do not name AI vendors in the book (the Google-AI citation
 was removed from TTT for exactly this aging problem).
 
-**OPEN — needs author ruling before the puzzle enters a chapter:** as
-written ("begin the count on the green cube"), object #1 is I.16-22, the
-seventh object ends III.8, and the second green lands III.9. The shipped
-checksum sections (MEAT 31 / TTT 12, and the 2026-07-08 count ruling below)
-open the count the day AFTER the sheaf, exclude the sheaf's broken week, and
-land Pentecost III.16. Same fifty, different landing. Either the chapters
-move to the count-on-green reading (III.9), or the puzzle's counting clause
-becomes "begin counting with the cube after the green one — the first
-complete object from there" (III.16).
+**RESOLVED (author's ruling 2026-07-19): the cube puzzle does NOT go in the
+book.** It remains a private teaching device / notebook record. The only
+discrepancy was internal to the puzzle's phrasing: "begin the count ON the
+green cube" makes the sheaf's own week (I.16-22) object #1 and lands the
+second green at III.9, while the shipped chapters open the numbering the day
+AFTER the sheaf, exclude the broken week, and land Pentecost III.16. The
+chapters are internally consistent and match the author's three-point frame
+(sabbath = week; count from First Fruits, the morrow after the sabbath;
+land III.16) — nothing in the book needed reconciling. If the puzzle is
+ever used outside the book, the one-clause fix is "begin counting with the
+cube after the green one — the first complete object from there."
 
 ## The count mechanism (author's ruling, 2026-07-08)
 

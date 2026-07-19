@@ -43,11 +43,33 @@
     <stop offset="56%" stop-color="#0b0d0b" stop-opacity="0.50"/>
     <stop offset="100%" stop-color="#0b0d0b" stop-opacity="0.70"/>
   </linearGradient>
+  <filter id="towerpatchfeather" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="30"/>
+  </filter>
+  <filter id="artifactpatchfeather" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="20"/>
+  </filter>
+  <mask id="towershofarmask" maskUnits="userSpaceOnUse" x="0" y="0" width="6488.4" height="2850">
+    <rect width="6488.4" height="2850" fill="black"/>
+    <ellipse cx="5288" cy="215" rx="238" ry="185" fill="white" filter="url(#towerpatchfeather)"/>
+  </mask>
+  <mask id="floatingstonemask" maskUnits="userSpaceOnUse" x="0" y="0" width="6488.4" height="2850">
+    <rect width="6488.4" height="2850" fill="black"/>
+    <ellipse cx="5190" cy="908" rx="215" ry="72" fill="white" filter="url(#artifactpatchfeather)"/>
+  </mask>
 </defs>
 <g id="layer-basefill"><rect width="6488.4" height="2850.0" fill="url(#backfill)"/></g>
 <g id="layer-background">
-  <image xlink:href="../../../output/imagegen/meat-vineyard-cover/14-vineyard-night-brambles-behind-lamb-local-render-source.jpg"
+  <image xlink:href="../../../output/imagegen/meat-vineyard-cover/15-vineyard-night-final-upscayl-high-fidelity-4x.png"
          x="0" y="0" width="6488.4" height="2850.0" preserveAspectRatio="none"/>
+  <!-- Localized cleanup: replace only the floating stone artifact above the right gate post. -->
+  <image xlink:href="../../../output/imagegen/meat-vineyard-cover/18-floating-stone-removed-localized-edit-patch-render-source.jpg"
+         x="4441.769" y="301.178" width="1452.117" height="1376.812" preserveAspectRatio="none"
+         mask="url(#floatingstonemask)"/>
+  <!-- Localized tower edit: keep the rest of the upscaled panorama untouched. -->
+  <image xlink:href="../../../output/imagegen/meat-vineyard-cover/19-tower-shofar-left-localized-edit-patch-render-source.jpg"
+         x="4868.863" y="0" width="1366.698" height="1290.761" preserveAspectRatio="none"
+         mask="url(#towershofarmask)"/>
 </g>
 <g id="layer-front-title" font-family="Noto Serif" font-weight="bold" text-anchor="middle" style="filter:url(#softshadow)">
   <g id="title-lockup" transform="translate(4407.2 900) scale(1.1) translate(-4407.2 -1440)">
@@ -148,9 +170,6 @@
   <rect x="2836.1" y="2434.2" width="3.9" height="210.0" fill="#000000"/>
   <rect x="2843.8" y="2434.2" width="3.9" height="210.0" fill="#000000"/>
   <text x="2662.5" y="2683.2" text-anchor="middle" font-family="Noto Serif" font-size="31.5" letter-spacing="6.0" fill="#000000">9 781736 521168</text>
-</g>
-<g id="layer-flap-veil">
-  <rect x="5415.0" y="700.0" width="1005.0" height="1910.0" rx="38.0" fill="url(#flapveil)"/>
 </g>
 <g id="layer-flap-front" fill="#f7f0df" font-family="Noto Serif" font-size="45.0" font-weight="600"
    stroke="#16110c" stroke-width="2.2" stroke-opacity="0.92" stroke-linejoin="round"
@@ -522,7 +541,7 @@
 <g id="layer-flap-ttt" fill="#f7f0df" font-family="Noto Serif" font-weight="600"
    stroke="#16110c" stroke-width="2.2" stroke-opacity="0.92" stroke-linejoin="round"
    paint-order="stroke fill" style="filter:url(#softshadow)">
-  <image xlink:href="../../../output/imagegen/ttt-cover-concepts/01i-white-messenger-shifted-right-raised-footer.png" x="356.2" y="174.0" width="450.0" height="675.0"/>
+  <image xlink:href="companion-ttt-front.png" x="356.2" y="174.0" width="450.0" height="675.0"/>
   <rect x="356.2" y="174.0" width="450.0" height="675.0" fill="none" stroke="#f2ead6" stroke-opacity="0.55" stroke-width="2.4"/>
   <text x="581.2" y="972.2" text-anchor="middle" font-weight="bold" letter-spacing="6.0" font-size="60.0">TIME TESTED TRADITION</text>
   <text x="581.2" y="1062.2" text-anchor="middle" font-style="italic" fill="#eda820" font-size="46.5">The Renewed Biblical Calendar</text>

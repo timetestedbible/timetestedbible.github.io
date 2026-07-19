@@ -22,6 +22,7 @@ no plates; About the Author carries the unplaqued portrait.
 | 07x-lucifer-moon | MY THRONE ABOVE THE STARS OF GOD | ISAIAH 14:13 |
 | 08-abib-sheaf | THE MONTH OF THE ABIB | EXODUS 13:4 |
 | 09-watchman-tower | SIGNS READ FROM THE TOWER | GENESIS 1:14 |
+| 09x-quails-came-up | AT EVEN THE QUAILS CAME UP | EXODUS 16:13 |
 | 10-sabbath-quarters | A SIGN BETWEEN ME AND YOU | EXODUS 31:13 |
 | 11-star-court | THE STAR OF YOUR GOD | ACTS 7:43 |
 | 12-darkness-at-noon | DARKNESS OVER THE LAND AT NOON | AMOS 8:9 |
@@ -31,7 +32,7 @@ no plates; About the Author carries the unplaqued portrait.
 | 15-backs-to-the-temple | BACKS TO THE TEMPLE, FACES EASTWARD | EZEKIEL 8:16 |
 | 15x1-two-reckonings | TWO RECKONINGS OF ONE REIGN | JOSEPHUS, ANTIQUITIES |
 | 15x2-crowned-in-rome | HEROD CROWNED KING OF JUDEA, 39 BC | JOSEPHUS, ANTIQUITIES 14.14 |
-| 15x4-steadfast-heavens | THE ORDINANCES OF THE MOON AND STARS | JEREMIAH 31:35 |
+| 15x4-steadfast-heavens | SUN OVER GIBEON, MOON OVER AJALON | JOSHUA 10:12 |
 | 16-thief-beside-him | REMEMBER ME IN YOUR KINGDOM | LUKE 23:42 |
 | 17-taught-at-the-door | TEACH THEM DILIGENTLY UNTO THY CHILDREN | DEUTERONOMY 6:7 |
 | 18-dwelling-in-booths | DWELLING IN BOOTHS SEVEN DAYS | LEVITICUS 23:42 |

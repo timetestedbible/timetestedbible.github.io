@@ -3,7 +3,8 @@
 One row per chapter plate (`images/masters/<stem>.jpg`). Inscription ≤ 7 words, set in
 caps on the plaque; citation beneath at reduced size. Consumed by
 `print/plate-plaques.py`, which composites onto derived copies in `images/plated/`
-(gitignored) — masters stay pristine. `50-author-portrait` carries no plaque.
+(gitignored) — masters stay pristine. `33-ttt-cover` and `50-author-portrait`
+carry no plaque because they are not part of the Rembrandt-etching plate series.
 
 | stem | inscription | citation |
 |------|-------------|----------|
@@ -38,7 +39,6 @@ caps on the plaque; citation beneath at reduced size. Consumed by
 | 29-joseph-dream | THE SUN, THE MOON, AND ELEVEN STARS | GENESIS 37:9 |
 | 30-lucifer-moon | MY THRONE ABOVE THE STARS OF GOD | ISAIAH 14:13 |
 | 31-merchant-pearl | ONE PEARL OF GREAT PRICE | MATTHEW 13:46 |
-| 33-ttt-cover | PROVE ALL THINGS; HOLD FAST THE GOOD | 1 THESSALONIANS 5:21 |
 | 33x-last-day-laughter | SHE LAUGHETH AT THE LAST DAY | PROVERBS 31:25 |
 | 34-four-horsemen | THE FOUR WINDS OF THE HEAVENS | ZECHARIAH 6:5 |
 | 35-fall-of-babylon | THUS SHALL BABYLON BE THROWN DOWN | REVELATION 18:21 |

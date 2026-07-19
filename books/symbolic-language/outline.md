@@ -1642,22 +1642,22 @@ printed order — annotate/reorder freely; chapters are movable blocks).
 
 - **The Path to Salvation**  ⟶ overturns: Keeping the law is works-based salvation
   - Opening — The Law Still Stands
-    - Ported from Time Tested Tradition; keeps Yeshua/𐤉𐤄𐤅𐤄
+    - Ported from Time Tested Tradition; standardizes Jesus/the LORD
     - Church teaches law-keeping = works-based salvation
     - Not saved by works; willful lawbreaking condemns
     - Matt 5:17: fulfill = establish, not destroy
     - Not one jot passes till all fulfilled
-    - Everything Yeshua taught is Old Testament
+    - Everything Jesus taught is Old Testament
   - Sin, Truth, and the Law
     - What is sin? Only law defines it
     - Rom 7:7; 1 John 3:4: sin = lawlessness
     - Bible defines own terms; survives translation drift
     - Psalm 119:142: thy law is truth
     - ⚡ So Hebrews 10:26 'truth' = law of Moses
-    - Denying the law = denying Yeshua (Matt 10:33)
+    - Denying the law = denying Jesus (Matt 10:33)
     - Way, truth, life: law made flesh
-  - Yeshua the High Priest
-    - Heb 4:14-16: Yeshua our great High Priest
+  - Jesus the High Priest
+    - Heb 4:14-16: Jesus our great High Priest
     - His blood covers unintentional, repented sins
     - Priesthood's terms defined by Torah itself
     - ⚡ Numbers 15: willful sinner cut from atonement

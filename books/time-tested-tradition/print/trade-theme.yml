@@ -1,8 +1,9 @@
 # Asciidoctor PDF theme — "The Bible's Symbolic Language"
 # Trade paperback, 6in x 9in. Use with:  -a pdf-theme=trade -a pdf-themesdir=<this dir>
 #
-# BookBaby requires a PURE BLACK interior — every ink value here is '000000'
-# (quoted so YAML keeps it a hex string, not the integer 0). No gray, no color.
+# The interior remains black-only. Body text is pure black; Evidence Outline
+# emoji use neutral gray for hierarchy, and the deliverable grayscale pass
+# converts every value to a single neutral channel with no color ink.
 extends: default
 
 # Body face: Gentium Book Plus (SIL, OFL, bundled in ./fonts) — a text face designed
@@ -29,6 +30,11 @@ font:
       bold: NotoSansPhoenician-Regular.ttf
       italic: NotoSansPhoenician-Regular.ttf
       bold_italic: NotoSansPhoenician-Regular.ttf
+    Noto Emoji:
+      normal: NotoEmoji-VariableFont_wght.ttf
+      bold: NotoEmoji-VariableFont_wght.ttf
+      italic: NotoEmoji-VariableFont_wght.ttf
+      bold_italic: NotoEmoji-VariableFont_wght.ttf
   fallbacks:
     # Gentium first: catches glyphs missing from the M+ 1mn symbol face (its
     # gem subsets lack even the curly apostrophe U+2019 — "whale's belly"
@@ -37,6 +43,7 @@ font:
     - Gentium Book Plus
     - Noto Serif Hebrew
     - Noto Sans Phoenician
+    - Noto Emoji
 
 page:
   size: [6in, 9in]
@@ -108,6 +115,26 @@ quote:
 # Roles applied by the build script's transforms.
 # (Alignment comes from the built-in text-center/text-right roles; these add styling.)
 role:
+  # Evidence Outline — monochrome symbols and compact reference-apparatus lines.
+  # The nested list density itself is scoped in TradePdfConverter#convert_open
+  # so ordinary prose lists retain their reading rhythm.
+  atlas-icon:
+    font-family: Noto Emoji
+    font-style: normal
+    font-size: 0.9em
+    font-color: '666666'
+  atlas-guide:
+    font-size: 9.2
+    line-height: 0.86
+    font-color: '000000'
+  atlas-key:
+    font-size: 8.5
+    line-height: 0.8
+    font-color: '000000'
+  atlas-conclusion:
+    font-size: 9.2
+    font-style: bold
+    font-color: '000000'
   epigraph:
     font-style: italic
     font-color: '000000'

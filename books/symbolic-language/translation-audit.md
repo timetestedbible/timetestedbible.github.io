@@ -7,10 +7,11 @@ Gratis limits and required notices: books/copyright-policies/.
 
 | version | status | block quotes | verses (blocks) | verses (inline) | total | gratis limit | headroom |
 |---|---|---|---|---|---|---|---|
-| KJV | public domain (US) | 547 | 773 | 1786 | 2559 | — | — |
-| own-rendering | author’s own rendering | 73 | 140 | 37 | 177 | — | — |
-| NKJV | © Thomas Nelson | 27 | 60 | 16 | 76 | 500 | 424 (OK) |
-| ASV | public domain | 8 | 14 | 3 | 17 | — | — |
-| AMP | © Lockman | 1 | 3 | 0 | 3 | 1000 | 997 (OK) |
+| KJV | public domain (US) | 521 | 729 | 1830 | 2559 | — | — |
+| own-rendering | author’s own rendering | 46 | 81 | 39 | 120 | — | — |
+| NKJV | © Thomas Nelson | 24 | 56 | 17 | 73 | 500 | 427 (OK) |
+| ASV | public domain | 10 | 17 | 3 | 20 | — | — |
 | ESV | © Crossway | 1 | 3 | 0 | 3 | 500 | 497 (OK) |
+| AMP | © Lockman | 1 | 3 | 0 | 3 | 1000 | 997 (OK) |
+| YLT | public domain | 0 | 0 | 1 | 1 | — | — |
 | BSB | public domain (CC0, Bible Hub) | 1 | 1 | 0 | 1 | — | — |

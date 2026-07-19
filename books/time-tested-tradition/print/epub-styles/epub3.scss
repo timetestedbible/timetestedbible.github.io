@@ -4,6 +4,13 @@
 @import "colors";
 @import url("epub3-fonts.css");
 
+@font-face {
+  font-family: "Noto Emoji";
+  src: url("../fonts/NotoEmoji-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+}
+
 /* @page only applies to EPUB2 readers; not supported by EPUB3 readers such as Kindle and Gitden */
 @page {
   /* sets minimum margin permitted */
@@ -1244,3 +1251,15 @@ nav[hidden~="hidden"] {
 li>span.principal,dd>span.principal{display:inline;text-align:left;}
 ol{list-style-position:outside;}
 ul{list-style-position:outside;}
+
+/* Evidence Outline: semantic nested lists that remain readable when an
+   ebook reader changes type size, margins, or orientation. */
+.evidence-outline{font-size:.92em;line-height:1.45;text-align:left;margin:.8em 0 1.1em;}
+.evidence-outline ul{list-style-type:none;margin:.15em 0;padding-left:1.1em;}
+.evidence-outline>div>div>ul{padding-left:0;}
+.evidence-outline ul ul{border-left:1px solid $table-border;margin-left:.25em;padding-left:.85em;}
+.evidence-outline li{margin:.18em 0;}
+.atlas-icon{display:inline-block;width:1.35em;color:#777;font-family:"Noto Emoji","Apple Color Emoji","Segoe UI Emoji",sans-serif;font-style:normal;font-weight:400;text-align:center;}
+.atlas-guide{font-size:.92em;line-height:1.5;text-align:left;margin:.5em 0;}
+.atlas-key{font-size:.82em;line-height:1.55;text-align:left;text-indent:0;margin:.5em 0;}
+.atlas-conclusion{border-top:2px solid $table-border;border-bottom:2px solid $table-border;margin:.8em 0 1.2em;padding:.45em 0;text-align:center;}

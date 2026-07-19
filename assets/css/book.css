@@ -5,6 +5,14 @@
    existing is affected.
    =========================================================================== */
 
+@font-face {
+  font-family: "TTT Noto Emoji";
+  src: url("/books/time-tested-tradition/print/fonts/NotoEmoji-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 .book-chapter-content,
 .book-index-content {
   max-width: 720px;
@@ -128,6 +136,66 @@
 }
 .book-chapter-body h2 { font-size: 1.5rem; }
 .book-chapter-body h3 { font-size: 1.2rem; color: var(--accent-gold); }
+
+/* ---- Evidence Outline ----
+   Native headings, rules, links, and three-level lists: no fixed canvas, so
+   the same source reflows on phones, wide web readers, and ebooks. */
+.book-chapter-body .evidence-outline {
+  margin: 0.8em 0 1.2em;
+  font-size: 0.92em;
+  line-height: 1.52;
+  text-align: left;
+}
+.book-chapter-body .evidence-outline .ulist { margin: 0.25em 0; }
+.book-chapter-body .evidence-outline ul {
+  margin: 0;
+  padding-left: 1.25em;
+  list-style: none;
+}
+.book-chapter-body .evidence-outline > .content > .ulist > ul { padding-left: 0; }
+.book-chapter-body .evidence-outline ul ul {
+  margin: 0.22em 0 0.38em 0.35em;
+  padding-left: 1em;
+  border-left: 1px solid var(--border-subtle);
+}
+.book-chapter-body .evidence-outline li { margin: 0.2em 0; }
+.book-chapter-body .evidence-outline li > p,
+.book-chapter-body .evidence-outline li > .paragraph p { margin: 0; }
+.book-chapter-body .evidence-outline > .content > .ulist > ul > li > p,
+.book-chapter-body .evidence-outline > .content > .ulist > ul > li > .paragraph p {
+  font-weight: 600;
+  padding-top: 0.35em;
+}
+.book-chapter-body .evidence-outline strong { color: var(--text-primary); }
+.book-chapter-body .atlas-icon {
+  display: inline-block;
+  width: 1.35em;
+  color: #777;
+  font-family: "TTT Noto Emoji", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+}
+.book-chapter-body .atlas-guide {
+  margin: 0.55em 0;
+  font-size: 0.92em;
+  line-height: 1.5;
+}
+.book-chapter-body .atlas-key {
+  margin: 0.55em 0;
+  font-size: 0.82em;
+  line-height: 1.65;
+  text-align: left;
+  text-indent: 0;
+}
+.book-chapter-body .atlas-conclusion {
+  margin: 0.9em 0 1.4em;
+  padding: 0.55em 0;
+  border-top: 2px solid var(--border-strong);
+  border-bottom: 2px solid var(--border-strong);
+  text-align: center;
+}
+.book-chapter-body .atlas-conclusion p { margin: 0; }
 
 /* ---- Quote blocks (Asciidoctor .quoteblock) ----
    Asciidoctor renders .attribution as a SIBLING after <blockquote>, not a
