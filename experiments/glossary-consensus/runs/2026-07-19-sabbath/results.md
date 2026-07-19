@@ -71,10 +71,10 @@ ha-shabbat as disambiguating genitive. Different referent → Divergent.
    three Saturdays; not probative for the unit-sense. Removed from the
    counting list in BOTH chapters (MEAT 31 / TTT 12) and the audio twin;
    research file annotated.
-2. **2 Chr 36:21 softened** — what the land collects is seventy rest-YEARS
-   (resting members), not seventy units. Chapter clause now reads "seventy
-   years of rest for the broken sevens, the seventh of every unkept unit
-   collected in full" (all three files).
+2. **2 Chr 36:21 softened, then CUT (author's ruling)** — what the land
+   collects is seventy rest-YEARS (resting members), not seventy units;
+   the softened clause "lacks all relevance," so the passage was removed
+   entirely from both chapters, the audio twin, and the MEAT seeref.
 3. **LXX psalm-title numbering** — the chapters cite MT numbers (24/48/94/93);
    the repo's bibles/lxx.txt uses LXX numbering (23/47/93/92), so in-repo
    verification must look one psalm lower. Both numberings recorded in the

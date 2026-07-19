@@ -61,7 +61,11 @@ found the full signet — name, office, domain — written in this command alone
   cite TTT for the mechanics rather than re-deriving here.
 - **2 Chr 36:21 / Lev 26:34-35**: the land repaid in sabbath-units — seventy
   years for seventy broken sevens: the unit is real enough to be owed and
-  collected.
+  collected. (RETIRED as a chapter witness, author 2026-07-19: the grading
+  run showed what the land enjoys is seventy rest-YEARS — the resting
+  members — which is neutral between the unit- and day-readings; the
+  softened form lacked relevance, so the passage was cut from both chapters
+  and the glossary seeref rather than kept hedged.)
 
 ## Glossary candidate
 
@@ -200,6 +204,25 @@ Seed chapters: MEAT ch. 32 (The Sabbath — the equation, the scaling, the
 checksum) and TTT ch. 10 (When Is the Sabbath — manna 8/15/22, First Fruits
 16th, the nesting sentence, Ezek 46:1 gate logic). Items 1, 2, 3, 4, 7 are in
 neither chapter as written.
+
+### Seven times laid down, always as 6+1 (author's count, 2026-07-19)
+
+Scripture lays the six-and-one down SEVEN times (final form after the
+author asked "is there a 7th?" — creation heads the count): Gen 2:2-3
+(creation — the 6+1 before the name exists; the root שבת stands there as
+the VERB, vayishbot/shavat; the noun first appears at the manna, Ex 16:23),
+then the Law's six noun-formulas: Ex 16:26 (manna), Ex 20:9-10
+(commandment), Ex 31:15 (covenant sign), Ex 35:2 (Sinai assembly), Lev 23:3
+(appointed times), Deut 5:13-14 (commandment repeated). All verified
+(kjv_strongs, H7676 in each formula). Two more texts state the 6+1 with the
+verb only (Ex 23:12; 34:21) — outside the count. Echoes kept in the
+chapters: Lev 25:3-4 runs the identical formula over the YEARS ("six years…
+the seventh a sabbath of rest unto the land"), and Luke 13:14 has the ruler
+of the synagogue recite the 6+1 against Jesus — a hostile witness. Ezek
+46:1's "six working days" + day-of-the-sabbath already lives in the grammar
+section. Chapter line: "A day could be named by itself; a whole is defined
+by giving all its parts, and every definition the sabbath receives gives
+all seven."
 
 ### How Scripture distinguishes sabbath-week from sabbath-day (2026-07-19)
 
