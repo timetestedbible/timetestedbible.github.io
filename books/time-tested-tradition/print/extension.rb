@@ -812,6 +812,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
 
   def convert_floating_title node
     flush_table_float force: true unless scratch?
+    # [discrete] headings bypass the section keep-with-next machinery (theme
+    # min-height-after applies only to real sections), so they could ink alone
+    # at a page bottom — the orphaned "Herod's Death" case (author,
+    # 2026-07-18). Keep the heading with at least two body lines: start the
+    # fresh page when less than ~90pt remains. No scratch guard, so dry-run
+    # measurements see the same geometry.
+    advance_page if cursor < 90 && !at_page_top?
     super
   end
 

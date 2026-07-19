@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="600" viewBox="0 0 1120 600">
+  <!-- The two candidate eclipses for Herod's death, redrawn in clean grayscale
+       from the catalog data (NASA/GSFC lunar eclipse catalog, F. Espenak).
+       Geometry computed from the published elements: umbra radius = 100 units,
+       moon radius = 37; path offset d from the umbral magnitude
+       (d = u + m - 2m*UMag), penumbra radius from the penumbral magnitude;
+       contact positions s = sqrt(R^2 - d^2). Path inclined 12 degrees,
+       ascending eastward, south of center (negative gamma). -->
+  <rect x="0" y="0" width="1120" height="600" fill="#FFFFFF"/>
+
+  <!-- ================= LEFT PANEL: 4 BC partial ================= -->
+  <g>
+    <rect x="14" y="14" width="532" height="540" fill="none" stroke="#000000" stroke-width="1.5"/>
+    <text x="34" y="52" font-family="Gentium Book Plus, serif" font-size="26" font-weight="bold" fill="#000000">Partial</text>
+    <text x="526" y="52" text-anchor="end" font-family="Gentium Book Plus, serif" font-size="26" font-weight="bold" fill="#000000">4 BC &#183; March 13</text>
+    <text x="34" y="76" font-family="Gentium Book Plus, serif" font-size="15" fill="#000000">Saros 71</text>
+    <text x="526" y="76" text-anchor="end" font-family="Gentium Book Plus, serif" font-size="15" fill="#000000">greatest eclipse 03:37 TD</text>
+
+    <!-- shadow: center (280,268); penumbra 176, umbra 100 -->
+    <circle cx="280" cy="268" r="176" fill="#E4E4E4"/>
+    <circle cx="280" cy="268" r="100" fill="#8E8E8E"/>
+    <path d="M 272 268 L 288 268 M 280 260 L 280 276" stroke="#000000" stroke-width="1.2" fill="none"/>
+
+    <!-- path: d=110.5 south of center, dir 12deg ascending right
+         F = (280,268) + 110.5*(0.208,0.978) = (303.0, 376.1) -->
+    <line x1="90" y1="421.4" x2="516" y2="330.8" stroke="#000000" stroke-width="1" stroke-dasharray="7,5"/>
+    <!-- moons r=37 at s = -181, -81, 0, +81, +181 along dir (0.978,-0.208) from F -->
+    <circle cx="126.0" cy="413.7" r="37" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="1.6"/>
+    <circle cx="223.8" cy="392.9" r="37" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="1.6"/>
+    <circle cx="303.0" cy="376.1" r="37" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="2.4"/>
+    <circle cx="382.2" cy="359.3" r="37" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="1.6"/>
+    <circle cx="480.0" cy="338.5" r="37" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="1.6"/>
+
+    <!-- stats -->
+    <text x="34" y="496" font-family="Gentium Book Plus, serif" font-size="17" fill="#000000">Par. = 138m</text>
+    <text x="34" y="522" font-family="Gentium Book Plus, serif" font-size="17" fill="#000000">Gam. = &#8722;0.8000</text>
+    <text x="526" y="496" text-anchor="end" font-family="Gentium Book Plus, serif" font-size="17" fill="#000000">U. Mag. = 0.3577</text>
+    <text x="526" y="522" text-anchor="end" font-family="Gentium Book Plus, serif" font-size="17" fill="#000000">P. Mag. = 1.4228</text>
+    <text x="34" y="120" font-family="Gentium Book Plus, serif" font-size="15" font-style="italic" fill="#000000">A third of the moon grazes the shadow&#8217;s southern edge.</text>
+  </g>
+
+  <!-- ================= RIGHT PANEL: 1 BC total ================= -->
+  <g>
+    <rect x="574" y="14" width="532" height="540" fill="none" stroke="#000000" stroke-width="1.5"/>
+    <text x="594" y="52" font-family="Gentium Book Plus, serif" font-size="26" font-weight="bold" fill="#000000">Total</text>
+    <text x="1086" y="52" text-anchor="end" font-family="Gentium Book Plus, serif" font-size="26" font-weight="bold" fill="#000000">1 BC &#183; January 10</text>
+    <text x="594" y="76" font-family="Gentium Book Plus, serif" font-size="15" fill="#000000">Saros 63</text>
+    <text x="1086" y="76" text-anchor="end" font-family="Gentium Book Plus, serif" font-size="15" fill="#000000">greatest eclipse 02:05 TD</text>
+
+    <!-- shadow: center (840,268); penumbra 173, umbra 100 -->
+    <circle cx="840" cy="268" r="173" fill="#E4E4E4"/>
+    <circle cx="840" cy="268" r="100" fill="#8E8E8E"/>
+    <path d="M 832 268 L 848 268 M 840 260 L 840 276" stroke="#000000" stroke-width="1.2" fill="none"/>
+
+    <!-- path: d=5.1 south of center, F = (841.1, 273.0) -->
+    <line x1="620" y1="320.0" x2="1062" y2="226.0" stroke="#000000" stroke-width="1" stroke-dasharray="7,5"/>
+    <!-- moons r=37 at s = -205, -137, 0, +137, +205 -->
+    <circle cx="640.6" cy="315.6" r="37" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="1.6"/>
+    <circle cx="707.1" cy="301.5" r="37" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="1.6"/>
+    <circle cx="841.1" cy="273.0" r="37" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="2.4"/>
+    <circle cx="975.1" cy="244.5" r="37" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="1.6"/>
+    <circle cx="1041.6" cy="230.4" r="37" fill="#FFFFFF" fill-opacity="0" stroke="#000000" stroke-width="1.6"/>
+
+    <!-- stats -->
+    <text x="594" y="470" font-family="Gentium Book Plus, serif" font-size="17" fill="#000000">Tot. = 99m</text>
+    <text x="594" y="496" font-family="Gentium Book Plus, serif" font-size="17" fill="#000000">Par. = 214m</text>
+    <text x="594" y="522" font-family="Gentium Book Plus, serif" font-size="17" fill="#000000">Gam. = &#8722;0.0445</text>
+    <text x="1086" y="496" text-anchor="end" font-family="Gentium Book Plus, serif" font-size="17" fill="#000000">U. Mag. = 1.7825</text>
+    <text x="1086" y="522" text-anchor="end" font-family="Gentium Book Plus, serif" font-size="17" fill="#000000">P. Mag. = 2.7699</text>
+    <text x="594" y="120" font-family="Gentium Book Plus, serif" font-size="15" font-style="italic" fill="#000000">The moon passes almost centrally &#8212; 99 minutes of totality.</text>
+  </g>
+
+  <text x="560" y="586" text-anchor="middle" font-family="Gentium Book Plus, serif" font-size="13" fill="#000000">Redrawn from the elements of the NASA/GSFC lunar eclipse catalog (F. Espenak): dates, durations, magnitudes, and path geometry as published.</text>
+</svg>
