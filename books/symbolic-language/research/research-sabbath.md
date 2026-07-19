@@ -295,9 +295,11 @@ second green at III.9, while the shipped chapters open the numbering the day
 AFTER the sheaf, exclude the broken week, and land Pentecost III.16. The
 chapters are internally consistent and match the author's three-point frame
 (sabbath = week; count from First Fruits, the morrow after the sabbath;
-land III.16) — nothing in the book needed reconciling. If the puzzle is
-ever used outside the book, the one-clause fix is "begin counting with the
-cube after the green one — the first complete object from there."
+land III.16) — nothing in the book needed reconciling. The author's own
+counting, stated 2026-07-19 and canonical: "begin counting the week AFTER
+the week starting with the green cube" — first counted sabbath I.23-29,
+seven complete through III.9-15, the morrow of the seventh is III.16 —
+exactly as both chapters stand.
 
 ## The count mechanism (author's ruling, 2026-07-08)
 
