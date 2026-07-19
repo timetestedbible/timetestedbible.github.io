@@ -20,13 +20,15 @@ AI-listicle / research-wiki).
 
 ## Subjective — voice reworks, worst first (author checks off / rules)
 
-- [ ] **18 Appointed Times (C)** — structural decision first: what is this chapter now
-      that the proof chapters precede it? Its back half (~400 lines, First Statute →
-      Sabbath Changes) re-argues chs. 02/03/07/10 in web-summary register; the New
-      Wine section duplicates 19x1 verbatim (and carries YHWH + inline Hebrew/Greek
-      against edition rules); backwards "later chapters will prove" handoffs
-      throughout; Google-AI quote (second copy). Likely shape: a practical
-      keep-the-feasts chapter only.
+- [ ] **18 Appointed Times (C)** — RULED (2026-07-18): the chapter describes the
+      feasts to obey, independent of the calendar case — the earlier chapters
+      establish when things begin; this one establishes the feasts. Rework to that
+      shape: keep the feast-by-feast material in house prose; cut or fold the back
+      half (~400 lines, First Statute → Sabbath Changes) that re-argues chs.
+      02/03/07/10; the New Wine section duplicates 19x1 verbatim (and carries YHWH +
+      inline Hebrew/Greek against edition rules); backwards "later chapters will
+      prove" handoffs throughout; Google-AI quote (second copy). (Yom-meanings
+      passage already folded to prose, same day.)
 - [ ] **14 Passion Week, back half (C)** — burial/spices material is essay-generator
       register: duration step-table ("30–60 minutes"), Shroud of Turin paragraph
       (author call: keep or cut), "In approaching… we set aside preconceived notions"
