@@ -339,10 +339,14 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     elsif node.type == :link && (target = node.target).to_s.start_with?('/books/time-tested-tradition/')
       # Site-internal chapter links (footnotes, glossary "see" lines) are meaningless
       # as URLs on paper — and media=prepress reveals them as bracketed paths after
-      # the link text. Convert them to internal PDF cross-references instead:
-      # build.rb anchors every chapter with its slug ([#slug]).
-      slug = target.split('/').reject(&:empty?).last
-      %(<a anchor="#{derive_anchor_from_id slug}">#{node.text}</a>).gsub ']', '&#93;'
+      # the link text. Convert them to internal PDF cross-references instead.
+      # A URL fragment names an evidence-outline paragraph anchor; otherwise the
+      # chapter slug is the destination. This lets the same source remain a
+      # normal web link while print receives a live internal jump and folio.
+      path, fragment = target.split '#', 2
+      slug = path.split('/').reject(&:empty?).last
+      dest = fragment && !fragment.empty? ? fragment : slug
+      %(<a anchor="#{derive_anchor_from_id dest}">#{node.text}</a>).gsub ']', '&#93;'
     else
       super
     end
@@ -434,7 +438,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # Glossary descriptions (dlist items — see traverse_list_item) also get their
   # chapter-link page suffixes appended here, on the way to the page.
   def ink_prose string, opts = {}
-    string = sx_append_chapter_pages string if @sx_in_dlist_desc && !@fn_flushing
+    string = sx_append_chapter_pages string if (@sx_in_dlist_desc || @sx_in_evidence_atlas) && !@fn_flushing
     return super if @fn_flushing || !@fn_doc
     fresh = string.scan(/_footnotedef_(\d+)/).flatten.map(&:to_i).uniq.reject { |i| @fn_seen[i] }
     return super if fresh.empty?
@@ -538,11 +542,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
         @sx_parallels_metrics = false
       end
     end
-    # Data tables breathe: a small stand-off above every prevalence-table
-    # (author's ruling 2026-07-08 — "table needs some breathing room above"),
-    # skipped when the table already opens a page. Applied before the scratch
-    # return so dry-run measurements see the same geometry as the real render.
-    move_down 5 if (node.has_role? 'prevalence-table') && !at_page_top?
+    # Tables breathe: a small stand-off above every table that starts mid-page
+    # (author's rulings 2026-07-08 and 2026-07-18 — "need some white space
+    # padding above table"). Applied before the scratch return so dry-run
+    # measurements see the same geometry as the real render.
+    move_down 6 unless at_page_top?
     return super if scratch?
     if @float_now                           # the real (floated) render
       start_page = page_number
@@ -881,6 +885,52 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   # verso). Short remainders and turn-crossing breaks push the entry whole to
   # the next page, as before.
   def convert_open node
+    if node.role? && node.roles.include?('evidence-outline')
+      saved_size = @theme.base_font_size
+      saved_lh = @theme.base_line_height
+      saved_indent = @theme.list_indent
+      saved_spacing = @theme.list_item_spacing
+      saved_margin = @theme.block_margin_bottom
+      saved_disc_marker = @theme.ulist_marker_disc_content
+      saved_circle_marker = @theme.ulist_marker_circle_content
+      saved_square_marker = @theme.ulist_marker_square_content
+      saved_marker_family = @theme.ulist_marker_font_family
+      saved_marker_color = @theme.ulist_marker_font_color
+      saved_marker_size = @theme.ulist_marker_font_size
+      previous_atlas = @sx_in_evidence_atlas
+      @theme.base_font_size = 8.7
+      @theme.base_line_height = 0.78
+      @theme.list_indent = 13
+      @theme.list_item_spacing = 0.75
+      @theme.block_margin_bottom = 3
+      # The outline uses an embedded monochrome emoji face for reliable,
+      # semantic markers in print. Its deepest items already begin with an
+      # explicit evidence-type emoji, so that level intentionally has no
+      # second, redundant list marker.
+      @theme.ulist_marker_disc_content = '🔹'
+      @theme.ulist_marker_circle_content = '▪'
+      @theme.ulist_marker_square_content = ''
+      @theme.ulist_marker_font_family = 'Noto Emoji'
+      @theme.ulist_marker_font_color = '777777'
+      @theme.ulist_marker_font_size = 7.5
+      @sx_in_evidence_atlas = true
+      begin
+        return super
+      ensure
+        @theme.base_font_size = saved_size
+        @theme.base_line_height = saved_lh
+        @theme.list_indent = saved_indent
+        @theme.list_item_spacing = saved_spacing
+        @theme.block_margin_bottom = saved_margin
+        @theme.ulist_marker_disc_content = saved_disc_marker
+        @theme.ulist_marker_circle_content = saved_circle_marker
+        @theme.ulist_marker_square_content = saved_square_marker
+        @theme.ulist_marker_font_family = saved_marker_family
+        @theme.ulist_marker_font_color = saved_marker_color
+        @theme.ulist_marker_font_size = saved_marker_size
+        @sx_in_evidence_atlas = previous_atlas
+      end
+    end
     if node.role == 'glossentry' && !scratch?
       # keep_together: measure the whole entry from a scratch page TOP. A plain
       # dry run starts at the live cursor, so any entry that overflowed the
@@ -963,6 +1013,17 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   end
 
   def convert_paragraph node
+    # The atlas legend is a hard-broken key, not prose. Suppress the book's
+    # first-line paragraph indent so all eight symbols share one left edge.
+    if node.role? && node.roles.include?('atlas-key')
+      saved_indent = @theme.prose_text_indent
+      @theme.prose_text_indent = 0
+      begin
+        return super
+      ensure
+        @theme.prose_text_indent = saved_indent
+      end
+    end
     # Run-in glossary entry (mirrors MEAT's latest layout, author 2026-07-18):
     # bold term and definition in one paragraph — build.rb writes the source —
     # inked with hanging turnovers, no first-line indent, and the see-line
@@ -996,6 +1057,13 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     unless scratch?
       start_page = page_number
       start_cursor = cursor
+      # Stable evidence-outline destinations live on the first paragraph beneath
+      # the relevant heading. Record their actual rendered folio after the
+      # paragraph balancer has decided whether to advance the page. The next
+      # build pass uses this map to append "p. N" to the grouped atlas link.
+      if node.id && @sx_folios_out && (folio = start_page - sx_folio_offset) >= 1
+        @sx_folios_out[derive_anchor_from_id node.id] = folio
+      end
     end
     result = super
     unless scratch?
@@ -1299,7 +1367,7 @@ def ink_chapter_title node, title, opts = {}
     # measured drop.
     if node.id == 'preface'
       move_down PREFACE_SINK
-    elsif !(node.id == 'preface' || node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')   # preface starts at the top too (matching MEAT)
+    elsif !(node.id == 'preface' || node.id == 'evidence-outline' || node.id == 'glossary' || node.id == 'scripture-index' || node.id == 'bibliography' || node.id == 'further-studies' || node.id == 'about-the-author')   # front/reference sections start at the top
       mid = bounds.height / 2.0
       mid += CHNUM_BAND if chnum   # the kicker inks above the title; keep the title at mid
       move_cursor_to mid if cursor > mid
