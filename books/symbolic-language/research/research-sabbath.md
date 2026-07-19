@@ -157,8 +157,9 @@ sabbatōn), these are new; all citations verified against the repo texts
 3. **The priestly courses reckon service in sabbath-blocks.** The divisions
    "enter in on the sabbath" and "go forth on the sabbath" (2 Kgs 11:5, 7, 9;
    2 Chr 23:4, 8) — a week-long tour of duty bounded by the word *sabbath*,
-   service running sabbath-to-sabbath. Acts 17:2 measures duration the same
-   way: Paul reasoned "three sabbath days" — three weeks.
+   service running sabbath-to-sabbath. (Acts 17:2 "three sabbath days" was
+   DOWNGRADED by the 2026-07-19 grading run: "three Saturdays" reads equally
+   well, so it is not probative — removed from both chapters.)
 
 4. **The seventh is rest from YOUR work, not from work absolutely.** The rest
    is defined as ceasing from "*thy* pleasure… *thine own* ways… *thine own*
@@ -242,16 +243,21 @@ words, and the lunar structure falls out for any blind solver. An OBJECT is
 seven stacked cubes, six white then a black seventh (the week). BUCKETS hold
 30 cubes with a blue cube at the bottom (month; renewed-moon day). White
 fronts purple; black AND blue fronts pink (Ezek 46:1 — gate opens on the
-sabbath and the new-moon day; shut the six working days). Cube 14 red (Lev
-23:5 passover), cube 15 yellow AND black (Lev 23:6-7 — the convocation lands
-on a weekly sabbath), the cube after the black one green (Lev 23:11 — the
-sheaf, morrow after the sabbath), green-to-green fifty counting only object
-cubes (Lev 23:15-16), 30-cube capacity from Rev 11:2-3 (42 months = 1,260
-days). Cube 15 black in EVERY bucket + indivisible objects forces objects at
-2-8/9-15/16-22/23-29 per bucket; air gaps exist ONLY at bucket seams (the
-blue slot-1 cube and the sometimes-empty slot 30); a gapless continuous
-stack contradicts (29 and 30 are not multiples of 7). Resolves uniquely,
-without contradiction — the lunar sabbath.
+sabbath and the new-moon day; shut the six working days). The paints are
+stated for the BOTTOM bucket only (author's refinement 2026-07-19): cube 14
+of the bottom bucket red (Lev 23:5 passover), cube 15 of the bottom bucket
+yellow AND black (Lev 23:6-7 — the convocation lands on a weekly sabbath).
+Black-15 in every other bucket is never stated — it is IMPLIED: each
+bucket's bottom blue cube plus indivisible objects force the identical
+packing (2-8/9-15/16-22/23-29) in every bucket, exactly as Scripture states
+the 15th-sabbath in dated narratives (Ex 16, Josh 5) and the structure
+implies it for all months. The cube after the black one green (Lev 23:11 —
+the sheaf, morrow after the sabbath), green-to-green fifty counting only
+object cubes (Lev 23:15-16), 30-cube capacity from Rev 11:2-3 (42 months =
+1,260 days). Air gaps exist ONLY at bucket seams (the blue slot-1 cube and
+the sometimes-empty slot 30); a gapless continuous stack contradicts (29 and
+30 are not multiples of 7). Resolves uniquely, without contradiction — the
+lunar sabbath.
 
 Author reports blind-AI convergence (Grok, Gemini, Claude, GPT each conclude
 lunar sabbath from the scriptures alone). For PRINT: let the READER be the
