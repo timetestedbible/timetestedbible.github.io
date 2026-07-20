@@ -1906,6 +1906,24 @@ const ReaderView = {
       if (typeof this.linkifyClassicsRefs === 'function') this.linkifyClassicsRefs(body);
       if (typeof this.linkifyReaderLinks === 'function') this.linkifyReaderLinks(body);
 
+      // Glossary sym links (both books use MEAT's glossary): hover/tap popups,
+      // and desktop clicks stay in-app instead of a full page reload
+      [body, epiEl].forEach(root => {
+        if (!root) return;
+        if (window.GlossaryPopup) window.GlossaryPopup.attach(root);
+        root.querySelectorAll('a.symbol[href*="/glossary/#sym-"]').forEach(a => {
+          if (a.dataset.spaBound) return;
+          a.dataset.spaBound = '1';
+          a.addEventListener('click', (e) => {
+            if (window.matchMedia && window.matchMedia('(hover: none)').matches) return; // touch: first tap previews, second follows the href
+            const m = (a.getAttribute('href') || '').match(/\/books\/([a-z0-9-]+)\/([a-z0-9-]+)\/#(sym-[a-z0-9-]+)/);
+            if (!m) return;
+            e.preventDefault();
+            AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params: { contentType: 'books', bookSlug: m[1], chapterSlug: m[2], section: m[3] } });
+          });
+        });
+      });
+
       const scrollRoot = container.closest('#bible-explorer-text') || container;
       if (typeof this.setupScrollSpy === 'function') this.setupScrollSpy(scrollRoot);
       if (section && typeof this.scrollToSection === 'function') {

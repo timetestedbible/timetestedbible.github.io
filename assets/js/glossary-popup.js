@@ -8,11 +8,6 @@
  * dismisses .symbol-tooltip elements.
  */
 (function () {
-  if (/\/glossary\/?$/.test(location.pathname)) return; // on the glossary itself, anchors just jump
-
-  var links = document.querySelectorAll('a.symbol[href*="/glossary/#sym-"]');
-  if (!links.length) return;
-
   var data = null, pending = null, hideTimer = null;
 
   function load() {
@@ -83,9 +78,11 @@
 
   var touchOnly = window.matchMedia && window.matchMedia('(hover: none)').matches;
 
-  links.forEach(function (a) {
+  function bind(a) {
+    if (a.dataset.glossaryBound) return; // idempotent — attach() may re-scan
     var key = keyOf(a);
     if (!key) return;
+    a.dataset.glossaryBound = '1';
 
     if (!touchOnly) {
       a.addEventListener('mouseenter', function () {
@@ -101,10 +98,22 @@
       ev.preventDefault();    // first tap previews
       load().then(function (d) { if (d[key]) show(a, d[key], key); else location.href = a.href; });
     });
-  });
+  }
+
+  // Attach popups to every glossary sym link under root. The SPA reader calls
+  // this after injecting a book chapter body; the auto-run below covers the
+  // statically rendered page.
+  function attach(root) {
+    if (/\/glossary\/?$/.test(location.pathname)) return; // on the glossary itself, anchors just jump
+    (root || document).querySelectorAll('a.symbol[href*="/glossary/#sym-"]').forEach(bind);
+  }
+
+  attach(document);
 
   document.addEventListener('touchstart', function (e) {
     if (!e.target.closest('.symbol-tooltip, a.symbol')) hide();
   }, { passive: true });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+
+  window.GlossaryPopup = { attach: attach };
 })();
