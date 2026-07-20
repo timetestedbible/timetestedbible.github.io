@@ -1273,3 +1273,7 @@ body a:link, body a:visited{color:#B8860B !important;-webkit-text-fill-color:#B8
    never defined — readers fell back to left. */
 .text-right{text-align:right !important;}
 p.citation{margin-top:0.2em;}
+
+/* Symbol popup asides (2026-07-19): hidden in flow — Books lifts them into
+   noteref popups; readers that ignore epub:type simply never show them. */
+aside.symdef{display:none;}

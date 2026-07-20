@@ -521,5 +521,43 @@ if WANT_EPUB
     end
   end
   warn '  ~ cover href repaired (imagesdir-"" jacket bug in asciidoctor-epub3 2.3.0)'
+
+  # Symbol popups (author, 2026-07-19): Apple Books renders epub:type=noteref
+  # anchors as popup notes — better than jumping to the glossary. Every symbol
+  # xref becomes a noteref onto a local aside carrying the glossary's one-line
+  # definition. No visible [n] marker: the symbol word itself is the reference,
+  # and the popup links on to the full glossary entry.
+  esc = ->(s) { s.gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;') }
+  sym_defs = {}
+  glossary_body = (main_entries.find { |c| c[:slug] == 'glossary' } || {})[:body].to_s
+  glossary_body.scan(/^\[\[(sym-[a-z0-9-]+)\]\](.+?)::\s*(.+)$/) do |key, term, defn|
+    term = term.sub(/\s*verdict:\w+\[\]\s*/, '').gsub(/[_*]/, '').strip
+    d = defn.sub(/\s*\+\s*\z/, '')
+           .gsub(/sym:(?:sym-)?[a-z0-9-]+\[([^\]]*)\]/) { Regexp.last_match(1) }
+           .gsub(/[_*#]/, '')
+    sym_defs[key] = [esc.call(term), esc.call(d)]
+  end
+  popup_chunks = 0
+  Zip::File.open(epub_out) do |zip|
+    zip.entries.select { |e| e.name =~ %r{\AEPUB/[^/]+\.xhtml\z} }.each do |entry|
+      html = entry.get_input_stream.read.force_encoding('UTF-8')
+      used = html.scan(/href="glossary\.xhtml#(sym-[a-z0-9-]+)"/).flatten.uniq
+                 .select { |k| sym_defs.key? k }
+      next if used.empty?
+      html = html.sub('<html ', '<html xmlns:epub="http://www.idpf.org/2007/ops" ') unless html.include? 'xmlns:epub'
+      html = html.gsub(/<a ([^>]*?)href="glossary\.xhtml#(sym-[a-z0-9-]+)"([^>]*?)>/) do
+        pre, key, post = Regexp.last_match.captures
+        sym_defs.key?(key) ? %(<a #{pre}href="#symdef-#{key}"#{post} epub:type="noteref">) : Regexp.last_match(0)
+      end
+      asides = used.map { |k|
+        t, d = sym_defs[k]
+        %(<aside epub:type="footnote" id="symdef-#{k}" class="symdef"><p><strong>#{t}.</strong> #{d} <a href="glossary.xhtml##{k}">Glossary&#160;&#8594;</a></p></aside>)
+      }.join("\n")
+      html = html.sub(%r{</body>}) { "#{asides}\n</body>" }
+      zip.get_output_stream(entry.name) { |os| os.write html }
+      popup_chunks += 1
+    end
+  end
+  warn "  ~ symbol popups injected (#{sym_defs.size} definitions across #{popup_chunks} chapters)"
   warn "Wrote: #{epub_out}  (epub3, print-edition content)"
 end
