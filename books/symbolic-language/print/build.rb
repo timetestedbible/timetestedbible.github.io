@@ -274,11 +274,13 @@ main_entries.each do |c|
       ebook_front << "[.chapter-plate]\nimage::#{twin}[#{c[:title]}]\n\n"
     end
   end
-  ebook_front << "[.part-kicker]\n#{part.upcase}\n\n" if part
-  ebook_front << "[.chapter-title-echo]\n#{c[:title]}\n\n"
+  # Print order: epigraph above the kicker and title (extension.rb renders
+  # them above the chapter title in the PDFs) — the ebook opening matches.
   (epigraph_map[c[:slug]] || []).each do |e|
     ebook_front << "[quote]\n____\n_#{e['quote']}_\n\n[.text-right.citation]\n— #{e['ref']}\n____\n\n"
   end
+  ebook_front << "[.part-kicker]\n#{part.upcase}\n\n" if part
+  ebook_front << "[.chapter-title-echo]\n#{c[:title]}\n\n"
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n"
   doc << "ifdef::ebook-edition[]\n\n#{ebook_front}\nendif::[]\n\n" unless ebook_front.empty?
   doc << body << "\n"
