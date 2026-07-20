@@ -1259,6 +1259,6 @@ p.part-kicker{text-align:center;font-variant:small-caps;letter-spacing:0.12em;fo
 /* Chapter plates (2026-07-19): the art page stands alone immediately before
    its chapter — break rules isolate it from the preceding text so paginated
    spreads pair art (verso) with the chapter opening (recto). */
-figure.chapter-plate{page-break-before:always;break-before:page;margin:0;text-align:center;}
+figure.chapter-plate{page-break-before:left;break-before:verso;margin:0;text-align:center;}
 figure.chapter-plate img{max-width:100%;max-height:98vh;margin:0 auto;}
-.chapter-plate{page-break-before:always;break-before:page;}
+.chapter-plate{page-break-before:left;break-before:verso;}
