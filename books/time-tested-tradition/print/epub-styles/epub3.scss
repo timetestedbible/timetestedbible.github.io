@@ -1290,3 +1290,8 @@ p.citation{margin-top:0.2em;}
    popups; readers that ignore epub:type never show them. */
 aside.symdef{display:none;line-height:1.5;}
 aside.symdef p{line-height:1.5 !important;margin:0.35em 0 !important;font-size:1em;text-align:left;}
+
+/* Figures assume white paper: transparent PNGs lose their black linework and
+   labels against dark reader themes (2026-07-20). Back every content image
+   with white regardless of theme. */
+img{background-color:#FFFFFF;}
