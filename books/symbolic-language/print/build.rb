@@ -389,9 +389,13 @@ build_target = lambda do |media, out|
 # bump block quotes into phantom gaps. If markers oscillate (a band on page N
 # pushing its own marker to N+1 and back), fall back to the old max-union
 # reserve, which cannot flip-flop, and grow it until safe.
-RESERVE_CACHE = File.join(DIR, ENV['NO_PLATES'] ? '.fn-reserve-noplates.json' : '.fn-reserve.json')
+# One cache per media: prepress and screen paginate differently (screen keeps
+# the digital-only chapters), so seeding one from the other's settled reserve
+# plants bands on the wrong pages — and a band landing on a plate page leaves
+# no room for the caption, which raises an uncaught CannotFit mid-pass.
+reserve_cache = File.join(DIR, ".fn-reserve-#{media}#{'-noplates' if ENV['NO_PLATES']}.json")
 reserve = begin
-  JSON.parse(File.read(RESERVE_CACHE)).transform_keys(&:to_i)
+  JSON.parse(File.read(reserve_cache)).transform_keys(&:to_i)
 rescue StandardError
   {}
 end
@@ -439,7 +443,7 @@ loop do
   reserve = detected.dup
 end
 warn "  footnote layout settled after #{passes} passes: #{fmt.call reserve}"
-File.write(RESERVE_CACHE, JSON.generate(reserve)) rescue nil
+File.write(reserve_cache, JSON.generate(reserve)) rescue nil
 render.call reserve, true
 
   warn "Wrote: #{out}  (media=#{media})"
@@ -502,7 +506,9 @@ if WANT_EPUB
       'print-edition'     => '',   # the ebook carries the print edition's content
       'docfile'           => File.join(SRC, 'book.adoc'),  # synthetic (doc is a string); gives epub3 a docdir to resolve media against
       'imagesdir'         => '',   # empty, NOT '.': a '.' imagesdir packages media at EPUB/./images/… with "./" hrefs, which Apple Books renders as dead images (2026-07-18); absolute dirs double-join
-      'front-cover-image' => 'cover/front-cover-vineyard-moon-epub.jpg',
+      # Package the lossless 1800x2700 cover master; the submission edition
+      # must not add JPEG artifacts to the cover typography or night scene.
+      'front-cover-image' => 'cover/front-cover-vineyard-moon-epub-base.png',
       'epub3-stylesdir'   => File.join(DIR, 'epub-styles'),  # stock gem styles + list-marker fix (see epub3.scss tail)
       # Apple Books dedupes imports by identifier and keeps serving the first
       # cached copy — review builds need a fresh id per build or nothing you
