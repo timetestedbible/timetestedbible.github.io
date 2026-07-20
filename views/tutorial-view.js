@@ -15,7 +15,7 @@ const TutorialView = {
         <!-- 1. HERO: The two books + value prop -->
         <section class="hero-section" style="margin-top: 30px;">
           <div class="hero-card">
-            <h1 class="hero-headline">"Test everything. Hold fast what is good."</h1>
+            <h1 class="hero-headline">Test everything. Hold fast what is good.</h1>
             <cite class="hero-cite"><a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'1Thessalonians',chapter:5}})">— 1 Thessalonians 5:21</a></cite>
 
             <div class="hero-books">
