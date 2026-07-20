@@ -268,7 +268,7 @@ main_entries.each do |c|
       # stores charge delivery by the MB). The epub branch generates twins.
       twin = plate.sub 'images/print/', 'images/ebook/'
       $ebook_image_jobs[twin] = master
-      plate_front << "image::#{twin}[#{c[:title]}]\n\n"
+      plate_front << "[.chapter-plate]\nimage::#{twin}[#{c[:title]}]\n\n"
     end
   end
   ebook_front = +''
