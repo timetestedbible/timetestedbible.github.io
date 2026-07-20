@@ -239,6 +239,10 @@ main_entries.each do |c|
   # (the COLOR master — the print pipeline uses the grayscale twin) and the
   # epigraphs are injected as ebook-only blocks; the PDF passes never set
   # ebook-edition, so its pagination is untouched.
+  # Ebook chapter opening (ported from MEAT, 2026-07-20): the reflow engine
+  # has no verso/recto identity, so the opening page joins art and title —
+  # the auto chapter header is hidden by CSS (header.chapter-header) and the
+  # plate, epigraphs, part kicker, and echoed title flow together at the top.
   ebook_front = +''
   if (plate = TradePdfConverter::CHAPTER_PLATES[c[:slug]])
     color  = plate.sub 'images/print/', 'images/masters/'
@@ -248,12 +252,14 @@ main_entries.each do |c|
       # stores charge delivery by the MB). The epub branch generates twins.
       twin = plate.sub 'images/print/', 'images/ebook/'
       $ebook_image_jobs[twin] = master
-      ebook_front << "image::#{twin}[#{c[:title]}]\n\n"
+      ebook_front << "[.chapter-plate]\nimage::#{twin}[#{c[:title]}]\n\n"
     end
   end
   (epigraph_map[c[:slug]] || []).each do |e|
-    ebook_front << "[quote]\n____\n_#{e['quote']}_\n#{NBSP}#{NBSP}— #{e['ref']}\n____\n\n"
+    ebook_front << "[quote]\n____\n_#{e['quote']}_\n\n[.text-right.citation]\n— #{e['ref']}\n____\n\n"
   end
+  ebook_front << "[.part-kicker]\n#{part.upcase}\n\n" if part
+  ebook_front << "[.chapter-title-echo]\n#{c[:title]}\n\n"
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n"
   doc << "ifdef::ebook-edition[]\n\n#{ebook_front}\nendif::[]\n\n" unless ebook_front.empty?
   doc << body << "\n"
@@ -476,10 +482,14 @@ if WANT_EPUB
       'ebook-edition'     => '',
       'print-edition'     => '',   # the ebook carries the print edition's content
       'docfile'           => File.join(SRC, 'book.adoc'),  # synthetic (doc is a string); gives epub3 a docdir to resolve media against
-      'imagesdir'         => '.',  # relative — epub3's media copier joins it to docdir; an absolute dir gets double-joined
-      # TODO 2nd-ed cover art: 'front-cover-image' => 'cover/<front-cover>.jpg',
+      'imagesdir'         => '',   # empty, NOT '.': a '.' imagesdir packages media at EPUB/./images/… with "./" hrefs, which Apple Books renders as dead images (2026-07-18)
+      'front-cover-image' => 'cover/ttt-front-second-edition-epub.jpg',
       'epub3-stylesdir'   => File.join(DIR, 'epub-styles'),  # stock gem styles + list-marker fix (see epub3.scss tail)
-      'uuid'              => 'urn:isbn:9781736521175',
+      # Apple Books dedupes imports by identifier — review builds need a fresh
+      # id per build (2026-07-19). Pass EPUB_ISBN=<digits> for the release
+      # build once the ebook's own ISBN is assigned (the print ISBN must not
+      # ride in the epub).
+      'uuid'              => (ENV['EPUB_ISBN'] ? %(urn:isbn:#{ENV['EPUB_ISBN']}) : %(urn:uuid:ttt-review-#{Time.now.to_i})),
     }
 
   # asciidoctor-epub3 only packages its stock font set. Add the monochrome
@@ -501,5 +511,55 @@ if WANT_EPUB
       archive.get_output_stream(opf_path) { |stream| stream.write opf }
     end
   end
+  # asciidoctor-epub3 2.3.0: an empty imagesdir slips past its '.' check and
+  # prefixes the packaged cover href as '/jacket/…' — an absolute path readers
+  # drop, rendering the cover page as a broken '?'. Repair the package in place.
+  Zip::File.open(epub_out) do |zip|
+    zip.entries.select { |e| e.name.include? '//jacket/' }
+       .each { |e| zip.rename e.name, (e.name.sub '//jacket/', '/jacket/') }
+    %w[EPUB/package.opf EPUB/front-cover.xhtml].each do |n2|
+      next unless (entry = zip.find_entry n2)
+      body = entry.get_input_stream.read
+      zip.get_output_stream(n2) { |os| os.write(body.gsub('"/jacket/', '"jacket/')) }
+    end
+  end
+  warn '  ~ cover href repaired (imagesdir-"" jacket bug in asciidoctor-epub3 2.3.0)'
+
+  # Symbol popups (ported from MEAT, 2026-07-20): Apple Books renders
+  # epub:type=noteref anchors as popup notes. Every symbol xref becomes a
+  # noteref onto a local aside carrying the glossary's one-line definition —
+  # no visible marker; the popup links on to the full glossary entry.
+  esc = ->(str) { str.gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;') }
+  sym_defs = {}
+  glossary_body = ((main_entries + back_entries).find { |c| c[:slug] == 'glossary' } || {})[:body].to_s
+  glossary_body.scan(/^\[\[(sym-[a-z0-9-]+)\]\](.+?)::\s*(.+)$/) do |key, term, defn|
+    term = term.sub(/\s*verdict:\w+\[\]\s*/, '').gsub(/[_*]/, '').strip
+    d = defn.sub(/\s*\+\s*\z/, '')
+           .gsub(/sym:(?:sym-)?[a-z0-9-]+\[([^\]]*)\]/) { Regexp.last_match(1) }
+           .gsub(/[_*#]/, '')
+    sym_defs[key] = [esc.call(term), esc.call(d)]
+  end
+  popup_chunks = 0
+  Zip::File.open(epub_out) do |zip|
+    zip.entries.select { |e| e.name =~ %r{\AEPUB/[^/]+\.xhtml\z} }.each do |entry|
+      html = entry.get_input_stream.read.force_encoding('UTF-8')
+      used = html.scan(/href="glossary\.xhtml#(sym-[a-z0-9-]+)"/).flatten.uniq
+                 .select { |k| sym_defs.key? k }
+      next if used.empty?
+      html = html.sub('<html ', '<html xmlns:epub="http://www.idpf.org/2007/ops" ') unless html.include? 'xmlns:epub'
+      html = html.gsub(/<a ([^>]*?)href="glossary\.xhtml#(sym-[a-z0-9-]+)"([^>]*?)>/) do
+        pre, key, post = Regexp.last_match.captures
+        sym_defs.key?(key) ? %(<a #{pre}href="#symdef-#{key}"#{post} epub:type="noteref">) : Regexp.last_match(0)
+      end
+      asides = used.map { |k|
+        t, d = sym_defs[k]
+        %(<aside epub:type="footnote" id="symdef-#{k}" class="symdef"><p style="line-height:1.6;margin:0.4em 0;"><strong>#{t}.</strong> #{d} <a style="color:#B8860B;" href="glossary.xhtml##{k}">Glossary&#160;&#8594;</a></p></aside>)
+      }.join("\n")
+      html = html.sub(%r{</body>}) { "#{asides}\n</body>" }
+      zip.get_output_stream(entry.name) { |os| os.write html }
+      popup_chunks += 1
+    end
+  end
+  warn "  ~ symbol popups injected (#{sym_defs.size} definitions across #{popup_chunks} chapters)"
   warn "Wrote: #{epub_out}  (epub3, print-edition content)"
 end
