@@ -505,7 +505,7 @@ if WANT_EPUB
       # Apple Books dedupes imports by identifier and keeps serving the first
       # cached copy — review builds need a fresh id per build or nothing you
       # change ever shows (2026-07-19). EPUB_RELEASE=1 restores the ISBN.
-      'uuid'              => (ENV['EPUB_RELEASE'] ? 'urn:isbn:9781736521168' : %(urn:uuid:meat-review-#{Time.now.to_i})),
+      'uuid'              => (ENV['EPUB_RELEASE'] ? 'urn:isbn:9781736521182' : %(urn:uuid:meat-review-#{Time.now.to_i})),
     }
   # asciidoctor-epub3 2.3.0: an empty imagesdir slips past its '.' check and
   # prefixes the packaged cover href as '/jacket/…' — an absolute path readers
@@ -551,7 +551,7 @@ if WANT_EPUB
       end
       asides = used.map { |k|
         t, d = sym_defs[k]
-        %(<aside epub:type="footnote" id="symdef-#{k}" class="symdef"><p><strong>#{t}.</strong> #{d} <a href="glossary.xhtml##{k}">Glossary&#160;&#8594;</a></p></aside>)
+        %(<aside epub:type="footnote" id="symdef-#{k}" class="symdef"><p style="line-height:1.6;margin:0.4em 0;"><strong>#{t}.</strong> #{d} <a style="color:#B8860B;" href="glossary.xhtml##{k}">Glossary&#160;&#8594;</a></p></aside>)
       }.join("\n")
       html = html.sub(%r{</body>}) { "#{asides}\n</body>" }
       zip.get_output_stream(entry.name) { |os| os.write html }

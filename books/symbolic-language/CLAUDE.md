@@ -1,7 +1,8 @@
 # MEAT — The Bible's Symbolic Language: agent orientation
 
-Book by Daniel Larimer, print via BookBaby (hardcover, ISBN 978-1-7365211-6-8) + web at
-timetested.bible (this repo IS the deployment — GitHub Pages serves it directly).
+Book by Daniel Larimer, print via BookBaby (hardcover, ISBN 978-1-7365211-6-8; epub,
+ISBN 978-1-7365211-8-2) + web at timetested.bible (this repo IS the deployment —
+GitHub Pages serves it directly).
 
 Naming convention (author's ruling 2026-07-18): use “Jesus” in ordinary prose and
 quotations. Reserve _Yeshua_ only for passages where the Hebrew _yeshuah_ / salvation
