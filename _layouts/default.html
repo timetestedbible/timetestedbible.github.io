@@ -1312,6 +1312,17 @@
       }
     }
     
+    // Track a book file download (per book, per format) with GoatCounter
+    function trackBookFile(book, format) {
+      if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+        goatcounter.count({
+          path: '/download/' + book + '-' + format,
+          title: 'Book download: ' + book + ' ' + format.toUpperCase(),
+          event: true
+        });
+      }
+    }
+
     // Track desktop app download click
     function trackDesktopDownload() {
       if (typeof goatcounter !== 'undefined' && goatcounter.count) {

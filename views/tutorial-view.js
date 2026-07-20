@@ -37,8 +37,8 @@ const TutorialView = {
                 <span class="book-soon">Hardcover coming soon</span>
                 <p class="book-downloads">Read free:
                   <a href="/books/symbolic-language" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'symbolic-language'}})">Web</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf">PDF</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.epub">EPUB</a>
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('meat','pdf')">PDF</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('meat','epub')">EPUB</a>
                 </p>
               </div>
               <div class="hero-book-col ttt">
@@ -62,8 +62,8 @@ const TutorialView = {
                 <span class="book-soon">Second-edition hardcover coming soon</span>
                 <p class="book-downloads">Read free:
                   <a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">Web</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf">PDF</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.epub">EPUB</a>
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','pdf')">PDF</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','epub')">EPUB</a>
                 </p>
               </div>
             </div>
