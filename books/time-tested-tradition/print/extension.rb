@@ -726,7 +726,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
 
   SX_HEAD_SIZE       = 9.5     # book heads a touch above the 9pt entries
   SX_TURNOVER_INDENT = 10.8    # ~0.15in hang for wrapped locator lines
-  SX_COLUMNS         = 3       # measured: only ~1% of entries wrap at 3 cols / 9pt
+  SX_COLUMNS         = 4       # 4 dense columns (author, 2026-07-20, matching MEAT)
   SX_COLUMN_GAP      = 14      # comfortable gutter (columns land ~100pt each)
   SX_EXTRA           = ['1 Enoch', '2 Esdras'].freeze   # cited outside the 66-book canon
 
