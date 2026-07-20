@@ -1379,13 +1379,15 @@
 }
 
 .b3d-pages {
-  /* page block: inset so the boards overhang, striped like stacked leaves */
-  top: 4px;
-  bottom: 4px;
-  width: calc(var(--d) - 7px);
-  right: calc((var(--d) - 7px) / -2);
+  /* page block: spans the FULL board depth (a visible depth gap reads as a
+     hollow shell); only top/bottom keep the slight board-overhang inset */
+  top: 3px;
+  bottom: 3px;
+  width: var(--d);
+  right: calc(var(--d) / -2);
   transform: rotateY(90deg);
   background: repeating-linear-gradient(90deg, #f6f1e3 0 2px, #cfc7b2 2px 3px);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.28);
 }
 
 .hero-book-col.meat .b3d-front { background-image: url('/assets/img/covers/meat-front-web.jpg'); }
@@ -1451,3 +1453,19 @@
   .hero-book-col { --w: 136px; }
   .hero-book-col .book-actions { flex-direction: column; gap: 6px; }
 }
+
+/* standalone availability pill + download links under each book */
+.hero-book-col > .book-soon { margin-top: 10px; }
+
+.book-downloads {
+  margin: 10px 0 0;
+  font-size: 0.8em;
+  color: var(--text-secondary);
+}
+
+.book-downloads a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.book-downloads a:hover { text-decoration: underline; }

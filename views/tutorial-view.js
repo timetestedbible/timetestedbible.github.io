@@ -33,8 +33,12 @@ const TutorialView = {
                   <button class="hero-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'symbolic-language'}})">
                     Read Free
                   </button>
-                  <span class="book-soon">Hardcover coming soon</span>
                 </div>
+                <span class="book-soon">Hardcover coming soon</span>
+                <p class="book-downloads">Download:
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/the-bibles-symbolic-language.epub">EPUB</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/the-bibles-symbolic-language.pdf">PDF</a>
+                </p>
               </div>
               <div class="hero-book-col ttt">
                 <a href="#" class="book3d right" aria-label="Time Tested Tradition — The Renewed Biblical Calendar. Read it free."
@@ -51,9 +55,14 @@ const TutorialView = {
                     Read Free
                   </button>
                   <a class="hero-btn secondary" href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
-                    Buy Hardcover
+                    Buy Legacy Softcover
                   </a>
                 </div>
+                <span class="book-soon">Second-edition hardcover coming soon</span>
+                <p class="book-downloads">Download:
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.epub">EPUB</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf">PDF</a>
+                </p>
               </div>
             </div>
 
