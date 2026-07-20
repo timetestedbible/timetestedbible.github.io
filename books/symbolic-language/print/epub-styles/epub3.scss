@@ -1264,3 +1264,6 @@ figure.chapter-plate{margin:0 0 0.8em 0;text-align:center;}
 figure.chapter-plate img{max-width:100%;max-height:58vh;margin:0 auto;}
 header.chapter-header{display:none;}
 p.chapter-title-echo{font-size:1.55em;font-weight:bold;text-align:center;margin:0.5em 0 0.9em 0;line-height:1.2;}
+
+/* Links in gold, not the reader's default blue (author, 2026-07-19). */
+body a:link, body a:visited{color:#B8860B;border-bottom-color:#B8860B;}
