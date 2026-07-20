@@ -35,9 +35,10 @@ const TutorialView = {
                   </button>
                 </div>
                 <span class="book-soon">Hardcover coming soon</span>
-                <p class="book-downloads">Download:
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.epub">EPUB</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf">PDF</a>
+                <p class="book-downloads">Read free:
+                  <a href="/books/symbolic-language" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'symbolic-language'}})">Web</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf">PDF</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.epub">EPUB</a>
                 </p>
               </div>
               <div class="hero-book-col ttt">
@@ -59,9 +60,10 @@ const TutorialView = {
                   </a>
                 </div>
                 <span class="book-soon">Second-edition hardcover coming soon</span>
-                <p class="book-downloads">Download:
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.epub">EPUB</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf">PDF</a>
+                <p class="book-downloads">Read free:
+                  <a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">Web</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf">PDF</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.epub">EPUB</a>
                 </p>
               </div>
             </div>
