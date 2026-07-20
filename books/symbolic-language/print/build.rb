@@ -140,7 +140,7 @@ end
 # the 00- openers, the Further Studies pointer page, and back matter.
 # extension.rb reads the map for CHAPTER N kickers and numbered Contents
 # entries; scripture-index.json carries the same numbers to the web.
-NUMBER_EXEMPT_SLUGS = %w[bibliography further-studies about-the-author glossary ancient-symbols].freeze
+NUMBER_EXEMPT_SLUGS = %w[bibliography further-studies about-the-author glossary].freeze
 $chapter_numbers = {}
 main_entries.each do |c|
   next if NUMBER_EXEMPT_SLUGS.include?(c[:slug]) || c[:edition] == 'digital' || c[:file].start_with?('00')
@@ -193,7 +193,7 @@ PARTS = {
   'sun-moon-and-stars' => 'Part Four — The Calendar',
   'the-four-winds'     => 'Part Five — The Prophecy',
   'mountain'           => 'Part Six — Symbol Studies',
-  'ancient-symbols'    => 'Part Seven — Reference',
+  'glossary'           => 'Part Seven — Reference',
 }
 
 # Back matter, rendered AFTER the generated Scripture Index: the Bibliography
