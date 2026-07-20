@@ -36,8 +36,8 @@ const TutorialView = {
                 </div>
                 <span class="book-soon">Hardcover coming soon</span>
                 <p class="book-downloads">Download:
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/the-bibles-symbolic-language.epub">EPUB</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/the-bibles-symbolic-language.pdf">PDF</a>
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.epub">EPUB</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf">PDF</a>
                 </p>
               </div>
               <div class="hero-book-col ttt">
