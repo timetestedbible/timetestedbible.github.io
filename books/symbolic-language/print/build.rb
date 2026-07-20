@@ -140,7 +140,7 @@ end
 # the 00- openers, the Further Studies pointer page, and back matter.
 # extension.rb reads the map for CHAPTER N kickers and numbered Contents
 # entries; scripture-index.json carries the same numbers to the web.
-NUMBER_EXEMPT_SLUGS = %w[bibliography further-studies about-the-author glossary].freeze
+NUMBER_EXEMPT_SLUGS = %w[bibliography further-studies about-the-author glossary ancient-symbols].freeze
 $chapter_numbers = {}
 main_entries.each do |c|
   next if NUMBER_EXEMPT_SLUGS.include?(c[:slug]) || c[:edition] == 'digital' || c[:file].start_with?('00')
@@ -193,7 +193,7 @@ PARTS = {
   'sun-moon-and-stars' => 'Part Four — The Calendar',
   'the-four-winds'     => 'Part Five — The Prophecy',
   'mountain'           => 'Part Six — Symbol Studies',
-  'glossary'           => 'Part Seven — Reference',
+  'ancient-symbols'    => 'Part Seven — Reference',
 }
 
 # Back matter, rendered AFTER the generated Scripture Index: the Bibliography
@@ -234,7 +234,7 @@ main_entries.each do |c|
       # verdict:divergent[] / verdict:novel[] (rendered as a floated span on
       # the web). For print, rewrite the macro as an inline role span on the
       # term line; the theme's `verdict` role sets the small-caps badge look.
-      blk = blk.sub(/ verdict:(divergent|novel|word)\[\]/) { %(   [.verdict]##{$1.upcase}#) }
+      blk = blk.sub(/ verdict:(ancient|divergent|novel|word)\[\]/) { %(   [.verdict]##{$1.upcase}#) }
       # see-line chapter numbers stay stripped in the built editions even now
       # that chapters print numbered ($chapter_numbers): the PDF appends the
       # more useful ", p. N" after each see-link instead (extension.rb), and
