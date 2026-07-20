@@ -256,10 +256,13 @@ main_entries.each do |c|
   # (the COLOR master — the print pipeline uses the grayscale twin) and the
   # epigraphs are injected as ebook-only blocks; the PDF passes never set
   # ebook-edition, so its pagination is untouched.
-  # The plate rides BEFORE the chapter heading (author, 2026-07-19): emitted
-  # ahead of the `==`, it becomes the closing page of the preceding chunk, so
-  # readers meet the art page first and the title after — print fashion.
-  plate_front = +''
+  # Ebook chapter opening (author, 2026-07-19, after Apple Books testing):
+  # the reflow engine paginates via columns with no verso/recto identity, so
+  # print-style facing pages cannot be forced. Instead the opening page joins
+  # art and title: the auto chapter header is hidden by CSS
+  # (header.chapter-header), and the plate, part kicker, echoed title, and
+  # epigraphs flow together at the chunk top — adjacent at every font size.
+  ebook_front = +''
   if (plate = TradePdfConverter::CHAPTER_PLATES[c[:slug]])
     color  = plate.sub 'images/print/', 'images/masters/'
     master = [color, plate].find { |f| File.exist? File.join(SRC, f) }
@@ -268,15 +271,14 @@ main_entries.each do |c|
       # stores charge delivery by the MB). The epub branch generates twins.
       twin = plate.sub 'images/print/', 'images/ebook/'
       $ebook_image_jobs[twin] = master
-      plate_front << "[.chapter-plate]\nimage::#{twin}[#{c[:title]}]\n\n"
+      ebook_front << "[.chapter-plate]\nimage::#{twin}[#{c[:title]}]\n\n"
     end
   end
-  ebook_front = +''
   ebook_front << "[.part-kicker]\n#{part.upcase}\n\n" if part
+  ebook_front << "[.chapter-title-echo]\n#{c[:title]}\n\n"
   (epigraph_map[c[:slug]] || []).each do |e|
     ebook_front << "[quote]\n____\n_#{e['quote']}_\n#{NBSP}#{NBSP}— #{e['ref']}\n____\n\n"
   end
-  doc << "\nifdef::ebook-edition[]\n\n#{plate_front}endif::[]\n\n" unless plate_front.empty?
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n"
   doc << "ifdef::ebook-edition[]\n\n#{ebook_front}\nendif::[]\n\n" unless ebook_front.empty?
   doc << body << "\n"
@@ -299,15 +301,19 @@ back_entries.each do |c|
   when 'print'   then doc << "\nifdef::print-edition[]\n"
   end
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n"
-  # Same ebook-only plate injection as the main chapters (the author portrait).
+  # Same ebook-only opening as the main chapters: hidden auto-header, so the
+  # plate (where one exists — the author portrait) and echoed title flow.
+  back_front = +''
   if (plate = TradePdfConverter::CHAPTER_PLATES[c[:slug]])
     master = [plate.sub('images/print/', 'images/masters/'), plate].find { |f| File.exist? File.join(SRC, f) }
     if master
       twin = plate.sub 'images/print/', 'images/ebook/'
       $ebook_image_jobs[twin] = master
-      doc << "ifdef::ebook-edition[]\n\nimage::#{twin}[#{c[:title]}]\n\nendif::[]\n\n"
+      back_front << "[.chapter-plate]\nimage::#{twin}[#{c[:title]}]\n\n"
     end
   end
+  back_front << "[.chapter-title-echo]\n#{c[:title]}\n\n"
+  doc << "ifdef::ebook-edition[]\n\n#{back_front}\nendif::[]\n\n"
   doc << c[:body] << "\n"
   doc << "\nendif::[]\n" if c[:edition]
   warn "  + #{c[:title]}  (#{c[:file]}, back matter#{c[:edition] ? ", #{c[:edition]}-only" : ''})"
