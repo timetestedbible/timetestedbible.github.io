@@ -193,7 +193,7 @@ PARTS = {
   'sun-moon-and-stars' => 'Part Four — The Calendar',
   'the-four-winds'     => 'Part Five — The Prophecy',
   'mountain'           => 'Part Six — Symbol Studies',
-  'the-end-of-the-law' => 'Part Seven — Reference',
+  'glossary'           => 'Part Seven — Reference',
 }
 
 # Back matter, rendered AFTER the generated Scripture Index: the Bibliography
@@ -489,7 +489,7 @@ if WANT_EPUB
       'print-edition'     => '',   # the ebook carries the print edition's content
       'docfile'           => File.join(SRC, 'book.adoc'),  # synthetic (doc is a string); gives epub3 a docdir to resolve media against
       'imagesdir'         => '',   # empty, NOT '.': a '.' imagesdir packages media at EPUB/./images/… with "./" hrefs, which Apple Books renders as dead images (2026-07-18); absolute dirs double-join
-      'front-cover-image' => 'cover/front-cover-summit-meat.jpg',
+      'front-cover-image' => 'cover/front-cover-vineyard-moon-epub.jpg',
       'epub3-stylesdir'   => File.join(DIR, 'epub-styles'),  # stock gem styles + list-marker fix (see epub3.scss tail)
       'uuid'              => 'urn:isbn:9781736521168',
     }
