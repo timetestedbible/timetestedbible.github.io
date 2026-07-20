@@ -357,6 +357,8 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   def init_pdf doc
     super
     @fn_doc = doc
+    @fn_parity_bases = {}  # :recto/:verso => pristine theme margin (first-seen)
+    @fn_base_margins = {}  # physical page => unreserved recto/verso margin
     @fn_queue = {}        # page_number => [footnote, ...]
     @fn_seen = {}         # footnote index => already queued
     @fn_flushing = false
@@ -372,8 +374,15 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   def init_page doc, _self
     super
     return if @fn_flushing
-    @fn_base_margin ||= page_margin.dup
-    m = @fn_base_margin
+    # Base = the pristine theme margin for this page's parity, captured from the
+    # first page of each side (long before any footnote can have shortened one).
+    # Per-parity, not a single frozen value, so reserves keep the mirrored gutter
+    # in prepress; per-parity, not page_margin.dup per page, because in screen
+    # media core init_page does NOT re-assert margins — a bottom shortened by a
+    # footnote pull would carry into the new page's recorded "base" and ratchet
+    # every following page shorter until nothing fits.
+    m = ((@fn_parity_bases ||= {})[page_side] ||= page_margin.dup)
+    (@fn_base_margins ||= {})[page_number] = m
     reserve = (defined?($fn_reserve_pages) && $fn_reserve_pages) ? $fn_reserve_pages : {}
     extra = reserve[page_number]
     target = extra ? [m[0], m[1], m[2] + fn_band_height(extra), m[3]] : m
@@ -457,14 +466,14 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
 
   # Draw each page's queued notes into its reserved band, above the running footer.
   def flush_page_footnotes
-    return unless @fn_queue && !@fn_queue.empty? && @fn_base_margin
+    return unless @fn_queue && !@fn_queue.empty? && @fn_base_margins
     @fn_flushing = true
     spacing = @theme.footnotes_item_spacing || 2
-    m = @fn_base_margin
     reserve = (defined?($fn_reserve_pages) && $fn_reserve_pages) ? $fn_reserve_pages : {}
     @fn_queue.each do |pg, fns|
       next if fns.empty?
       go_to_page pg
+      next unless (m = @fn_base_margins[pg])
       pw    = page.dimensions[2] - page.dimensions[0]
       left  = m[3]
       width = pw - m[3] - m[1]
@@ -504,8 +513,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
   def normalize_page_bottom
     return unless @page_bottom_shortened
     @page_bottom_shortened = false
-    return unless @fn_base_margin
-    m = @fn_base_margin
+    return unless @fn_base_margins && (m = @fn_base_margins[page_number])
     reserve = (defined?($fn_reserve_pages) && $fn_reserve_pages) ? $fn_reserve_pages : {}
     extra = reserve[page_number]
     target = extra ? [m[0], m[1], m[2] + fn_band_height(extra), m[3]] : m
