@@ -277,7 +277,7 @@ main_entries.each do |c|
   ebook_front << "[.part-kicker]\n#{part.upcase}\n\n" if part
   ebook_front << "[.chapter-title-echo]\n#{c[:title]}\n\n"
   (epigraph_map[c[:slug]] || []).each do |e|
-    ebook_front << "[quote]\n____\n_#{e['quote']}_\n#{NBSP}#{NBSP}— #{e['ref']}\n____\n\n"
+    ebook_front << "[quote]\n____\n_#{e['quote']}_\n\n[.text-right.citation]\n— #{e['ref']}\n____\n\n"
   end
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n"
   doc << "ifdef::ebook-edition[]\n\n#{ebook_front}\nendif::[]\n\n" unless ebook_front.empty?

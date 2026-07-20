@@ -1266,4 +1266,10 @@ header.chapter-header{display:none;}
 p.chapter-title-echo{font-size:1.55em;font-weight:bold;text-align:center;margin:0.5em 0 0.9em 0;line-height:1.2;}
 
 /* Links in gold, not the reader's default blue (author, 2026-07-19). */
-body a:link, body a:visited{color:#B8860B;border-bottom-color:#B8860B;}
+body a:link, body a:visited{color:#B8860B !important;-webkit-text-fill-color:#B8860B;border-bottom-color:#B8860B;}
+
+/* Quote citations right-aligned (author, 2026-07-19): the citation
+   treeprocessor emits p.text-right.citation, which the stock stylesheet
+   never defined — readers fell back to left. */
+.text-right{text-align:right !important;}
+p.citation{margin-top:0.2em;}
