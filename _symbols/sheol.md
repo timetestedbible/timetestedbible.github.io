@@ -20,15 +20,15 @@ record_version: 1
 record_type: symbol
 term: Sheol (the grave, “hell”)
 definition: >-
-  The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous
-  and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is
-  made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.”
-  Distinct from Gehenna, the judgment.
+  The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing
+  righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence
+  until it is made to give them back; then it is itself destroyed — “O grave, I will be thy
+  destruction.” It is distinct from Gehenna, the judgment.
 meaning: >-
-  The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing righteous
-  and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence until it is
-  made to give them back; then it is itself destroyed — “O grave, I will be thy destruction.”
-  Distinct from Gehenna, the judgment.
+  The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing
+  righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in silence
+  until it is made to give them back; then it is itself destroyed — “O grave, I will be thy
+  destruction.” It is distinct from Gehenna, the judgment.
 definition_status: approved
 definition_meta:
   authority: book-glossary
@@ -75,7 +75,7 @@ definitions:
       The demanding place — from sha'al, to demand: mortality's claim on all flesh, swallowing
       righteous and wicked alike, personified with a mouth, gates, and bars. Its dead sleep in
       silence until it is made to give them back; then it is itself destroyed — “O grave, I will be
-      thy destruction.” Distinct from Gehenna, the judgment.
+      thy destruction.” It is distinct from Gehenna, the judgment.
     status: approved
     authority: book-glossary
     source: books/symbolic-language/49-glossary.adoc#sym-sheol

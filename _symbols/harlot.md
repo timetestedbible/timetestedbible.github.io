@@ -21,13 +21,15 @@ record_version: 1
 record_type: symbol
 term: Harlot
 definition: >-
-  A covenant city or people unfaithful to its Husband while retaining the outward form of covenant.
-  In Revelation, the Harlot is the great city that rules over kings — spiritually named Sodom,
-  Egypt, and Babylon, but literally Jerusalem, where Jesus and the prophets were killed.
+  A covenant city or people unfaithful to its Husband while retaining the outward form of
+  covenant. In Revelation, the Harlot is the great city that rules over kings — spiritually named
+  Sodom and Egypt, branded on her forehead with the name of the beast she rides, Babylon —
+  literally Jerusalem, where Jesus and the prophets were killed.
 meaning: >-
-  A covenant city or people unfaithful to its Husband while retaining the outward form of covenant.
-  In Revelation, the Harlot is the great city that rules over kings — spiritually named Sodom,
-  Egypt, and Babylon, but literally Jerusalem, where Jesus and the prophets were killed.
+  A covenant city or people unfaithful to its Husband while retaining the outward form of
+  covenant. In Revelation, the Harlot is the great city that rules over kings — spiritually named
+  Sodom and Egypt, branded on her forehead with the name of the beast she rides, Babylon —
+  literally Jerusalem, where Jesus and the prophets were killed.
 definition_status: approved
 definition_meta:
   authority: book-glossary
@@ -70,8 +72,8 @@ definitions:
     text: >-
       A covenant city or people unfaithful to its Husband while retaining the outward form of
       covenant. In Revelation, the Harlot is the great city that rules over kings — spiritually
-      named Sodom, Egypt, and Babylon, but literally Jerusalem, where Jesus and the prophets were
-      killed.
+      named Sodom and Egypt, branded on her forehead with the name of the beast she rides, Babylon —
+      literally Jerusalem, where Jesus and the prophets were killed.
     status: approved
     authority: book-glossary
     source: books/symbolic-language/49-glossary.adoc#sym-harlot

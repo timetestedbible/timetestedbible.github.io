@@ -14,13 +14,17 @@ words:
   - assembly of the wicked
   - synagogue of satan
 definition: >-
-  A counterfeit congregation claiming covenant standing while gathered against the covenant's Lord.
-  Korah's company; the brood of vipers and children of the Devil, the father of lies; the assembly
-  surrounding the Messiah; and those who say they are Jews but are not display the pattern.
+  A counterfeit congregation claiming covenant standing while gathered against the covenant's
+  Lord. Korah's company; the brood of vipers and children of the Devil, the father of lies; the
+  assembly surrounding the Messiah; and those who say they are Jews but are not display the
+  pattern. This is a spiritual identity defined by allegiance and rejection of Messiah, never by
+  ancestry.
 meaning: >-
-  A counterfeit congregation claiming covenant standing while gathered against the covenant's Lord.
-  Korah's company; the brood of vipers and children of the Devil, the father of lies; the assembly
-  surrounding the Messiah; and those who say they are Jews but are not display the pattern.
+  A counterfeit congregation claiming covenant standing while gathered against the covenant's
+  Lord. Korah's company; the brood of vipers and children of the Devil, the father of lies; the
+  assembly surrounding the Messiah; and those who say they are Jews but are not display the
+  pattern. This is a spiritual identity defined by allegiance and rejection of Messiah, never by
+  ancestry.
 definition_status: approved
 definition_meta:
   authority: book-glossary
@@ -66,7 +70,8 @@ definitions:
       A counterfeit congregation claiming covenant standing while gathered against the covenant's
       Lord. Korah's company; the brood of vipers and children of the Devil, the father of lies; the
       assembly surrounding the Messiah; and those who say they are Jews but are not display the
-      pattern.
+      pattern. This is a spiritual identity defined by allegiance and rejection of Messiah, never by
+      ancestry.
     status: approved
     authority: book-glossary
     source: books/symbolic-language/49-glossary.adoc#sym-assembly

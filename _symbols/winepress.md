@@ -13,15 +13,15 @@ description: >-
 words:
   - winepress
 definition: >-
-  The vineyard's reckoning — where the fruit a people has borne is pressed out and rendered to the
-  Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good;
-  the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine,
-  when the vintage is wickedness.
+  The vineyard's reckoning — where the fruit that a people has borne is pressed out and rendered
+  to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are
+  good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for
+  wine, when the vintage is wickedness.
 meaning: >-
-  The vineyard's reckoning — where the fruit a people has borne is pressed out and rendered to the
-  Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good;
-  the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine,
-  when the vintage is wickedness.
+  The vineyard's reckoning — where the fruit that a people has borne is pressed out and rendered
+  to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are
+  good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for
+  wine, when the vintage is wickedness.
 definition_status: approved
 definition_meta:
   authority: book-glossary
@@ -62,10 +62,10 @@ provenance:
 definitions:
   bible_symbolic:
     text: >-
-      The vineyard's reckoning — where the fruit a people has borne is pressed out and rendered to
-      the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are
-      good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood
-      for wine, when the vintage is wickedness.
+      The vineyard's reckoning — where the fruit that a people has borne is pressed out and rendered
+      to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes
+      are good; the growers themselves trodden — “the great winepress of the wrath of God” — and
+      blood for wine, when the vintage is wickedness.
     status: approved
     authority: book-glossary
     source: books/symbolic-language/49-glossary.adoc#sym-winepress

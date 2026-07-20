@@ -11,11 +11,13 @@ description: >-
 words:
   - sign
 definition: >-
-  A prophecy given in advance — often a prophet's lived story — whose fulfillment testifies; not a
-  wonder performed on demand.
+  A marked witness by which God makes His word known: either a prophetic word, scene, or lived
+  similitude given in advance, whose fulfillment testifies; or a visible covenant token that bears
+  continuing witness to an established word. Neither sense requires a wonder performed on demand.
 meaning: >-
-  A prophecy given in advance — often a prophet's lived story — whose fulfillment testifies; not a
-  wonder performed on demand.
+  A marked witness by which God makes His word known: either a prophetic word, scene, or lived
+  similitude given in advance, whose fulfillment testifies; or a visible covenant token that bears
+  continuing witness to an established word. Neither sense requires a wonder performed on demand.
 definition_status: approved
 definition_meta:
   authority: book-glossary
@@ -49,8 +51,10 @@ provenance:
 definitions:
   bible_symbolic:
     text: >-
-      A prophecy given in advance — often a prophet's lived story — whose fulfillment testifies; not
-      a wonder performed on demand.
+      A marked witness by which God makes His word known: either a prophetic word, scene, or lived
+      similitude given in advance, whose fulfillment testifies; or a visible covenant token that
+      bears continuing witness to an established word. Neither sense requires a wonder performed on
+      demand.
     status: approved
     authority: book-glossary
     source: books/symbolic-language/49-glossary.adoc#sym-sign

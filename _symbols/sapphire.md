@@ -11,11 +11,13 @@ description: >-
 words:
   - sapphire
 definition: >-
-  The full moon in its enthroned and bridal form — the clear sapphire likeness at the place of God's
-  throne, identified with Issachar.
+  The full moon in its enthroned and bridal form — the clear sapphire likeness at the place of
+  God's throne, whose rare “clearness” (tohar, Exodus 24:10) is the very word for the throne-glory
+  that can be made to cease (Psalm 89:44): a brightness worn, not owned. Identified with Issachar.
 meaning: >-
-  The full moon in its enthroned and bridal form — the clear sapphire likeness at the place of God's
-  throne, identified with Issachar.
+  The full moon in its enthroned and bridal form — the clear sapphire likeness at the place of
+  God's throne, whose rare “clearness” (tohar, Exodus 24:10) is the very word for the throne-glory
+  that can be made to cease (Psalm 89:44): a brightness worn, not owned. Identified with Issachar.
 definition_status: approved
 definition_meta:
   authority: book-glossary
@@ -59,7 +61,9 @@ definitions:
   bible_symbolic:
     text: >-
       The full moon in its enthroned and bridal form — the clear sapphire likeness at the place of
-      God's throne, identified with Issachar.
+      God's throne, whose rare “clearness” (tohar, Exodus 24:10) is the very word for the
+      throne-glory that can be made to cease (Psalm 89:44): a brightness worn, not owned. Identified
+      with Issachar.
     status: approved
     authority: book-glossary
     source: books/symbolic-language/49-glossary.adoc#sym-sapphire

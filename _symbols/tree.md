@@ -15,8 +15,14 @@ words:
 record_version: 1
 record_type: symbol
 term: Tree
-definition: A nation or people.
-meaning: A nation or people.
+definition: >-
+  A rooted covenant life known by its fruit, growing in scale from one planted seed or person into
+  a house, lineage, people, or nation. The mature branches are members and may shelter others; the
+  fruit becomes seed for further growth.
+meaning: >-
+  A rooted covenant life known by its fruit, growing in scale from one planted seed or person into
+  a house, lineage, people, or nation. The mature branches are members and may shelter others; the
+  fruit becomes seed for further growth.
 definition_status: approved
 definition_meta:
   authority: book-glossary
@@ -47,7 +53,10 @@ provenance:
   definition_checked_against: books/symbolic-language/49-glossary.adoc
 definitions:
   bible_symbolic:
-    text: A nation or people.
+    text: >-
+      A rooted covenant life known by its fruit, growing in scale from one planted seed or person
+      into a house, lineage, people, or nation. The mature branches are members and may shelter
+      others; the fruit becomes seed for further growth.
     status: approved
     authority: book-glossary
     source: books/symbolic-language/49-glossary.adoc#sym-tree

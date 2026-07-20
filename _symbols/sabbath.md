@@ -12,13 +12,19 @@ description: >-
 words:
   - sabbath
 definition: >-
-  A complete seven crowned by rest — the seven-day week, the land's seventh year, or seven sevens
-  leading to Jubilee. The rest is the completing member of the whole unit, most commonly 6 days
-  followed by 1 day of rest.
+  A complete seven crowned by rest — the week itself, and the unit at every scale the law counts:
+  the land's seventh year, the seven sevens to Jubilee. Hebrew counts "seven sabbaths" (shabbatot)
+  where Deuteronomy counts the same span as "seven weeks" (shavuot); Greek calls the week the
+  sabbath — "twice in the sabbath" (dis tou sabbatou) is twice a week, and every "first day of the
+  week" is "one of the sabbaths" (mia sabbatōn). The rest is the completing member of the whole
+  unit.
 meaning: >-
-  A complete seven crowned by rest — the seven-day week, the land's seventh year, or seven sevens
-  leading to Jubilee. The rest is the completing member of the whole unit, most commonly 6 days
-  followed by 1 day of rest.
+  A complete seven crowned by rest — the week itself, and the unit at every scale the law counts:
+  the land's seventh year, the seven sevens to Jubilee. Hebrew counts "seven sabbaths" (shabbatot)
+  where Deuteronomy counts the same span as "seven weeks" (shavuot); Greek calls the week the
+  sabbath — "twice in the sabbath" (dis tou sabbatou) is twice a week, and every "first day of the
+  week" is "one of the sabbaths" (mia sabbatōn). The rest is the completing member of the whole
+  unit.
 definition_status: approved
 definition_meta:
   authority: book-glossary
@@ -58,9 +64,12 @@ provenance:
 definitions:
   bible_symbolic:
     text: >-
-      A complete seven crowned by rest — the seven-day week, the land's seventh year, or seven
-      sevens leading to Jubilee. The rest is the completing member of the whole unit, most commonly
-      6 days followed by 1 day of rest.
+      A complete seven crowned by rest — the week itself, and the unit at every scale the law
+      counts: the land's seventh year, the seven sevens to Jubilee. Hebrew counts "seven sabbaths"
+      (shabbatot) where Deuteronomy counts the same span as "seven weeks" (shavuot); Greek calls the
+      week the sabbath — "twice in the sabbath" (dis tou sabbatou) is twice a week, and every "first
+      day of the week" is "one of the sabbaths" (mia sabbatōn). The rest is the completing member of
+      the whole unit.
     status: approved
     authority: book-glossary
     source: books/symbolic-language/49-glossary.adoc#sym-sabbath

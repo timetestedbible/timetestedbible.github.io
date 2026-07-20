@@ -8,8 +8,14 @@ title: Seed — Symbol Research
 description: "A Scripture-first study of Seed: The word of God, sown in the hearts of men."
 words:
   - seed
-definition: The word of God, sown in the hearts of men.
-meaning: The word of God, sown in the hearts of men.
+definition: >-
+  A generative word or life planted to reproduce after its kind. In the sower it is God's word; in
+  the wheat and tares it is children; the promised Seed is Messiah; and one planted person may
+  grow into a house, people, or nation-tree.
+meaning: >-
+  A generative word or life planted to reproduce after its kind. In the sower it is God's word; in
+  the wheat and tares it is children; the promised Seed is Messiah; and one planted person may
+  grow into a house, people, or nation-tree.
 definition_status: approved
 definition_meta:
   authority: book-glossary
@@ -38,7 +44,10 @@ provenance:
   definition_checked_against: books/symbolic-language/49-glossary.adoc
 definitions:
   bible_symbolic:
-    text: The word of God, sown in the hearts of men.
+    text: >-
+      A generative word or life planted to reproduce after its kind. In the sower it is God's word;
+      in the wheat and tares it is children; the promised Seed is Messiah; and one planted person
+      may grow into a house, people, or nation-tree.
     status: approved
     authority: book-glossary
     source: books/symbolic-language/49-glossary.adoc#sym-seed

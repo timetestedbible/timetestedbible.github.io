@@ -10,8 +10,12 @@ description: >-
   and departing from evil.
 words:
   - fear of the lord
-definition: Reverent awe expressed as keeping the commandments and departing from evil.
-meaning: Reverent awe expressed as keeping the commandments and departing from evil.
+definition: >-
+  Reverent awe that produces obedience: it turns a person from evil and toward the LORD's
+  commandments.
+meaning: >-
+  Reverent awe that produces obedience: it turns a person from evil and toward the LORD's
+  commandments.
 definition_status: approved
 definition_meta:
   authority: book-glossary
@@ -40,7 +44,9 @@ provenance:
   definition_checked_against: books/symbolic-language/49-glossary.adoc
 definitions:
   bible_symbolic:
-    text: Reverent awe expressed as keeping the commandments and departing from evil.
+    text: >-
+      Reverent awe that produces obedience: it turns a person from evil and toward the LORD's
+      commandments.
     status: approved
     authority: book-glossary
     source: books/symbolic-language/49-glossary.adoc#sym-fear
