@@ -3705,7 +3705,7 @@ The inscription (OGIS 532, found at Gangra/Germanicopolis in Paphlagonia, modern
 
 Augustus’ 12th consulship was in 5 BC, so “third year after” places the oath in 2 BC (specifically early March 2 BC). (4 BC = 1 year after, 3 BC = 2 year after, 2 BC = 3 year after).
 Therefore Joseph and Mary would almost certainly have made the journey in the early spring of 2 BC — exactly the period when a late-pregnancy Mary could still travel and when Jesus was born shortly afterwards in the spring of 2 BC, matching the revised chronology perfectly. The lack of room in the inn is easily explained by the Passover Crowd.
-This would put John’s birth 6 months earlier, in the fall of 3 BC. If you add 30 years to that John would start his ministry in fall of 28 BC, perfectly aligned with the most straightforward understanding of what Tiberius’ 15th year would have meant to people when Luke wrote his gospel.
+This would put John’s birth 6 months earlier, in the fall of 3 BC. If you add 30 years to that John would start his ministry in fall of 28 AD, perfectly aligned with the most straightforward understanding of what Tiberius’ 15th year would have meant to people when Luke wrote his gospel.
 There is no other documented registry until 6 AD which makes this detail with the strongest possible primary evidence a second fully independent witness to the timing of the start of John’s ministry.
 All of that said, there is one mystery that remains unexplained:
 

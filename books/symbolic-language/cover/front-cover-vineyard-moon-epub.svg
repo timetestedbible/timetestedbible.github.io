@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1800" height="2700" viewBox="0 0 1900 2850"
+     font-family="Noto Serif, Georgia, serif">
+  <!--
+    EPUB cover: exact 2:3 portrait crop of the active vineyard-moon jacket.
+    The base PNG is rendered directly from the corrected jacket source so its
+    localized tower-shofar and right-gate-post masks are baked into the image.
+  -->
+  <defs>
+    <clipPath id="epub-cover-clip"><rect width="1900" height="2850"/></clipPath>
+    <filter id="epub-cover-shadow" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
+      <feOffset in="blur" dx="2" dy="4" result="offsetBlur"/>
+      <feFlood flood-color="#000" flood-opacity="0.96" result="shadowColor"/>
+      <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#epub-cover-clip)">
+    <image xlink:href="front-cover-vineyard-moon-epub-base.png"
+           x="0" y="0" width="1900" height="2850" preserveAspectRatio="none"/>
+
+    <text x="950" y="2760" text-anchor="middle" font-size="49"
+          fill="#f7f0df" font-style="italic" letter-spacing="4"
+          stroke="#17120d" stroke-width="3.4" stroke-opacity="0.94"
+          stroke-linejoin="round" paint-order="stroke fill"
+          style="filter:url(#epub-cover-shadow)">Over 160 symbols and words revealed</text>
+  </g>
+</svg>

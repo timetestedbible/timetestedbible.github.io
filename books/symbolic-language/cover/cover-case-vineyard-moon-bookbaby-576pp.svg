@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="15.285in" height="10.5in" viewBox="0 0 4585.5 3150">
+  <!--
+    HARDCOVER CASE (BookBaby US-Trade-Hard-Cover (3), 576pp):
+    wrap 0.625in | back 6.25in | spine 1.535in | front 6.25in | wrap 0.625in.
+    The selected vineyard panorama and typography are mapped from the matching
+    576-page dust jacket so the case and jacket remain visually consistent.
+  -->
+  <defs>
+    <clipPath id="case-page-clip"><rect width="4585.5" height="3150"/></clipPath>
+    <linearGradient id="case-bottom-outpaint-fade" gradientUnits="userSpaceOnUse"
+                    x1="0" y1="2860" x2="0" y2="3150">
+      <stop offset="0" stop-color="black"/>
+      <stop offset="35.35%" stop-color="white"/>
+      <stop offset="100%" stop-color="white"/>
+    </linearGradient>
+    <mask id="case-bottom-outpaint-mask" maskUnits="userSpaceOnUse"
+          x="0" y="2860" width="4585.5" height="290">
+      <rect x="0" y="2860" width="4585.5" height="290"
+            fill="url(#case-bottom-outpaint-fade)"/>
+    </mask>
+  </defs>
+
+  <g id="case-continuous-background" clip-path="url(#case-page-clip)">
+    <svg x="0" y="187.5" width="4585.5" height="2775"
+         viewBox="934.160135 37.5 4667.17973 2775" preserveAspectRatio="none">
+      <image xlink:href="../../../output/imagegen/meat-vineyard-cover/cover-jacket-vineyard-moon-bookbaby-v2-background-native.png"
+             x="0" y="0" width="6535.5" height="2850" preserveAspectRatio="none"/>
+    </svg>
+
+    <!-- Mirror neighboring sky into the taller top case-wrap bleed. -->
+    <g transform="translate(0 375) scale(1 -1)">
+      <svg x="0" y="187.5" width="4585.5" height="187.5"
+           viewBox="934.160135 37.5 4667.17973 187.5" preserveAspectRatio="none">
+        <image xlink:href="../../../output/imagegen/meat-vineyard-cover/cover-jacket-vineyard-moon-bookbaby-v2-background-native.png"
+               x="0" y="0" width="6535.5" height="2850" preserveAspectRatio="none"/>
+      </svg>
+    </g>
+    <!--
+      Focused generative outpaint of the lower edge: continuous ground and
+      torch-cast shadows, with no reflected or duplicated animal feet. The top
+      0.342in overlaps the original through a vertical feather; the lower
+      0.625in supplies the case-wrap extension required by the template.
+    -->
+    <svg id="bottom-generated-outpaint" x="0" y="2860" width="4585.5" height="290"
+         viewBox="0 943.25 1514 95.75" preserveAspectRatio="none"
+         mask="url(#case-bottom-outpaint-mask)">
+      <image xlink:href="../../../output/imagegen/meat-vineyard-cover/20-case-bottom-outpaint-render-source.jpg"
+             x="0" y="0" width="1514" height="1039" preserveAspectRatio="none"/>
+    </svg>
+  </g>
+
+  <!-- Map each typographic panel to the exact case dimensions independently. -->
+  <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-back-copy"
+       transform="translate(-915.441176 150) scale(.980392157 1)"/>
+  <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-spine"
+       transform="translate(-975 150)"/>
+  <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-front-title"
+       transform="translate(-906.411765 150) scale(.980392157 1)"/>
+</svg>
