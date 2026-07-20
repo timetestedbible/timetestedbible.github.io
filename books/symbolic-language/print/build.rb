@@ -256,8 +256,10 @@ main_entries.each do |c|
   # (the COLOR master — the print pipeline uses the grayscale twin) and the
   # epigraphs are injected as ebook-only blocks; the PDF passes never set
   # ebook-edition, so its pagination is untouched.
-  ebook_front = +''
-  ebook_front << "[.part-kicker]\n#{part.upcase}\n\n" if part
+  # The plate rides BEFORE the chapter heading (author, 2026-07-19): emitted
+  # ahead of the `==`, it becomes the closing page of the preceding chunk, so
+  # readers meet the art page first and the title after — print fashion.
+  plate_front = +''
   if (plate = TradePdfConverter::CHAPTER_PLATES[c[:slug]])
     color  = plate.sub 'images/print/', 'images/masters/'
     master = [color, plate].find { |f| File.exist? File.join(SRC, f) }
@@ -266,12 +268,15 @@ main_entries.each do |c|
       # stores charge delivery by the MB). The epub branch generates twins.
       twin = plate.sub 'images/print/', 'images/ebook/'
       $ebook_image_jobs[twin] = master
-      ebook_front << "image::#{twin}[#{c[:title]}]\n\n"
+      plate_front << "image::#{twin}[#{c[:title]}]\n\n"
     end
   end
+  ebook_front = +''
+  ebook_front << "[.part-kicker]\n#{part.upcase}\n\n" if part
   (epigraph_map[c[:slug]] || []).each do |e|
     ebook_front << "[quote]\n____\n_#{e['quote']}_\n#{NBSP}#{NBSP}— #{e['ref']}\n____\n\n"
   end
+  doc << "\nifdef::ebook-edition[]\n\n#{plate_front}endif::[]\n\n" unless plate_front.empty?
   doc << "\n[##{c[:slug]}]\n== #{c[:title]}\n\n"
   doc << "ifdef::ebook-edition[]\n\n#{ebook_front}\nendif::[]\n\n" unless ebook_front.empty?
   doc << body << "\n"
@@ -493,5 +498,19 @@ if WANT_EPUB
       'epub3-stylesdir'   => File.join(DIR, 'epub-styles'),  # stock gem styles + list-marker fix (see epub3.scss tail)
       'uuid'              => 'urn:isbn:9781736521168',
     }
+  # asciidoctor-epub3 2.3.0: an empty imagesdir slips past its '.' check and
+  # prefixes the packaged cover href as '/jacket/…' — an absolute path readers
+  # drop, rendering the cover page as a broken '?'. Repair the package in place.
+  require 'zip'
+  Zip::File.open(epub_out) do |zip|
+    zip.entries.select { |e| e.name.include? '//jacket/' }
+       .each { |e| zip.rename e.name, (e.name.sub '//jacket/', '/jacket/') }
+    %w[EPUB/package.opf EPUB/front-cover.xhtml].each do |n|
+      next unless (entry = zip.find_entry n)
+      body = entry.get_input_stream.read
+      zip.get_output_stream(n) { |os| os.write(body.gsub('"/jacket/', '"jacket/')) }
+    end
+  end
+  warn '  ~ cover href repaired (imagesdir-"" jacket bug in asciidoctor-epub3 2.3.0)'
   warn "Wrote: #{epub_out}  (epub3, print-edition content)"
 end
