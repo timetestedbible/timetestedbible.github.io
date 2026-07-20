@@ -502,7 +502,10 @@ if WANT_EPUB
       'imagesdir'         => '',   # empty, NOT '.': a '.' imagesdir packages media at EPUB/./images/… with "./" hrefs, which Apple Books renders as dead images (2026-07-18); absolute dirs double-join
       'front-cover-image' => 'cover/front-cover-vineyard-moon-epub.jpg',
       'epub3-stylesdir'   => File.join(DIR, 'epub-styles'),  # stock gem styles + list-marker fix (see epub3.scss tail)
-      'uuid'              => 'urn:isbn:9781736521168',
+      # Apple Books dedupes imports by identifier and keeps serving the first
+      # cached copy — review builds need a fresh id per build or nothing you
+      # change ever shows (2026-07-19). EPUB_RELEASE=1 restores the ISBN.
+      'uuid'              => (ENV['EPUB_RELEASE'] ? 'urn:isbn:9781736521168' : %(urn:uuid:meat-review-#{Time.now.to_i})),
     }
   # asciidoctor-epub3 2.3.0: an empty imagesdir slips past its '.' check and
   # prefixes the packaged cover href as '/jacket/…' — an absolute path readers
