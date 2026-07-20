@@ -1276,4 +1276,5 @@ p.citation{margin-top:0.2em;}
 
 /* Symbol popup asides (2026-07-19): hidden in flow — Books lifts them into
    noteref popups; readers that ignore epub:type simply never show them. */
-aside.symdef{display:none;}
+aside.symdef{display:none;line-height:1.5;}
+aside.symdef p{line-height:1.5 !important;margin:0.35em 0 !important;font-size:1em;text-align:left;}
