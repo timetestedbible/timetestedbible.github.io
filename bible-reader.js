@@ -2021,13 +2021,26 @@ function buildLinksTabHTML(book, chapter, verse, bookRefs, vstudy, hasCrossRefs)
     });
   }
 
-  // Book references (Time Tested Tradition)
+  // Book references (Time Tested Tradition + MEAT via the live print indexes;
+  // legacy static TTT map while those load)
   if (bookRefs && bookRefs.length > 0) {
     const seen = new Set();
     for (const ref of bookRefs) {
-      const dedupKey = `${ref.chapter}-${ref.title}`;
+      const dedupKey = ref.bookSlug ? `${ref.bookSlug}-${ref.chapterSlug}` : `${ref.chapter}-${ref.title}`;
       if (seen.has(dedupKey)) continue;
       seen.add(dedupKey);
+      if (ref.bookSlug) {
+        items.push({
+          type: 'book',
+          label: ref.title || ref.chapterSlug,
+          score: BASE_WEIGHT.book * (ref.quoted ? 1.2 : 1),
+          html: `<a href="#" class="verse-link-card card-book" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'${ref.bookSlug}',chapterSlug:'${ref.chapterSlug}',section:'${ref.anchor || ''}'}}); return false;">
+            <span class="verse-link-type-tag">${ref.tag || 'book'}</span>
+            <span class="verse-link-title">${ref.title}</span>
+          </a>`,
+        });
+        continue;
+      }
       const rank = getBookChapterRank(ref.chapter) || 1;
       items.push({
         type: 'book',
@@ -6340,13 +6353,16 @@ function showBookRefPopup(book, chapter, verse, event) {
   // Group by chapter to avoid duplicates
   const seen = new Set();
   for (const ref of bookRefs) {
-    const key = `${ref.chapter}-${ref.title}`;
+    const key = ref.bookSlug ? `${ref.bookSlug}-${ref.chapterSlug}` : `${ref.chapter}-${ref.title}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    
-    const url = getChapterUrl(ref.chapter, ref.anchor);
+
+    const url = ref.bookSlug
+      ? `/books/${ref.bookSlug}/${ref.chapterSlug}/${ref.anchor ? '#' + ref.anchor : ''}`
+      : getChapterUrl(ref.chapter, ref.anchor);
+    const tag = ref.bookSlug ? (ref.tag || 'book') : `Chapter ${parseInt(ref.chapter)}`;
     html += `<a href="${url}" class="book-ref-link" onclick="closeBookRefPopup()">
-      <span class="book-ref-chapter">Chapter ${parseInt(ref.chapter)}</span>
+      <span class="book-ref-chapter">${tag}</span>
       <span class="book-ref-title">${ref.title}</span>
     </a>`;
   }

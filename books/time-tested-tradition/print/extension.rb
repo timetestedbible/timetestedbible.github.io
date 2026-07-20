@@ -430,6 +430,11 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     entries = sx_folio_entries
     return if entries.empty?
     data = {}
+    # Printed-chapter-number -> web chapter slug, so the site's Bible reader
+    # can turn each entry's 'ch' into a /books/<book>/<slug> link.
+    if defined?($chapter_numbers) && $chapter_numbers && !$chapter_numbers.empty?
+      data['__chapters'] = $chapter_numbers.each_with_object({}) { |(slug, n), h| h[n.to_s] = slug }
+    end
     entries.each do |book, verses|
       verses.each { |vd, locs| data[%(#{book} #{vd})] = locs.map { |f, (q, ch)| { 'p' => f, 'q' => q, 'ch' => ch } } }
     end

@@ -1888,6 +1888,17 @@ const ReaderView = {
 
       body.innerHTML = html;
 
+      // Scripture quote blocks get ref-… ids (from their attribution line) so
+      // the Bible reader's book links can land on the exact quote
+      body.querySelectorAll('.quoteblock').forEach(qb => {
+        if (qb.id) return;
+        const att = qb.querySelector('.attribution');
+        const m = att && att.textContent.match(/(\d?\s*[A-Za-z]+)\s+(\d+):(\d+)/);
+        if (!m) return;
+        const id = `ref-${m[1].trim().toLowerCase().replace(/\s+/g, '')}-${m[2]}-${m[3]}`;
+        if (!body.querySelector(`#${id}`)) qb.id = id;
+      });
+
       // Reuse the site's content enhancers
       if (epiEl && epiEl.innerHTML) this.linkifyScriptureRefs(epiEl);
       this.linkifyScriptureRefs(body);
