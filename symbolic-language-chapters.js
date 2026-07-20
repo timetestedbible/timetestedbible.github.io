@@ -286,4 +286,6 @@ const SymbolicLanguageBook = {
 if (typeof window !== 'undefined') {
   window.SYMBOLIC_LANGUAGE_BOOK = SYMBOLIC_LANGUAGE_BOOK;
   window.SymbolicLanguageBook = SymbolicLanguageBook;
+  window.BOOKS_BY_SLUG = window.BOOKS_BY_SLUG || {};
+  window.BOOKS_BY_SLUG['symbolic-language'] = SymbolicLanguageBook;
 }

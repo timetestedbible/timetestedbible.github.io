@@ -37,6 +37,11 @@ exclude:
   - books/symbolic-language/print
   - books/symbolic-language/draft-meat-intro.md
   - books/symbolic-language/reflow-sentences.rb
+  - books/time-tested-tradition/CLAUDE.md
+  - books/time-tested-tradition/CONVERSION-SPEC.md
+  - books/time-tested-tradition/print
+  - books/time-tested-tradition/editorial-review
+  - books/time-tested-tradition/cover/README.md
   # Frozen experiment chapters have book front matter and would otherwise
   # compete with the live chapters' permalinks. The dashboard generator copies
   # them with SHA-256 hashes in data/meat-tester-sources/*.json for public audit.
@@ -119,6 +124,15 @@ defaults:
       layout: "book-chapter"
       book: "MEAT The Bible's Symbolic Language"
       book_slug: "symbolic-language"
+      og_type: "article"
+      author: "Time Tested Bible"
+  # "Time Tested Tradition" (second edition) book — AsciiDoc chapters
+  - scope:
+      path: "books/time-tested-tradition"
+    values:
+      layout: "book-chapter"
+      book: "Time Tested Tradition"
+      book_slug: "time-tested-tradition"
       og_type: "article"
       author: "Time Tested Bible"
       og_image: "https://timetested.bible/icons/og-image.png"

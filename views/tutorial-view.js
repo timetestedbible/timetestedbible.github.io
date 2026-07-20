@@ -42,8 +42,8 @@ const TutorialView = {
                 </p>
               </div>
               <div class="hero-book-col ttt">
-                <a href="#" class="book3d right" aria-label="Time Tested Tradition — The Renewed Biblical Calendar. Read it free."
-                   onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
+                <a href="/books/time-tested-tradition" class="book3d right" aria-label="Time Tested Tradition — The Renewed Biblical Calendar. Read it free."
+                   onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'time-tested-tradition'}})">
                   <span class="b3d-face b3d-front" aria-hidden="true"></span>
                   <span class="b3d-face b3d-spine" aria-hidden="true"></span>
                   <span class="b3d-face b3d-pages" aria-hidden="true"></span>
@@ -52,7 +52,7 @@ const TutorialView = {
                 <span class="book-shadow" aria-hidden="true"></span>
                 <p class="book-caption"><strong>Time Tested Tradition</strong><span class="book-tagline">The Renewed Biblical Calendar</span></p>
                 <div class="book-actions">
-                  <button class="hero-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
+                  <button class="hero-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'time-tested-tradition'}})">
                     Read Free
                   </button>
                   <a class="hero-btn secondary" href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
@@ -61,7 +61,7 @@ const TutorialView = {
                 </div>
                 <span class="book-soon">Second-edition hardcover coming soon</span>
                 <p class="book-downloads">Read free:
-                  <a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">Web</a> ·
+                  <a href="/books/time-tested-tradition" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'time-tested-tradition'}})">Web</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','pdf')">PDF</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','epub')">EPUB</a>
                 </p>

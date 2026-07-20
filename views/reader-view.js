@@ -1796,7 +1796,9 @@ const ReaderView = {
       BibleView.syncSelectorVisibility(bookState);
     }
 
-    const book = (typeof SymbolicLanguageBook !== 'undefined') ? SymbolicLanguageBook.book : null;
+    const bookHelper = (typeof window !== 'undefined' && window.BOOKS_BY_SLUG && window.BOOKS_BY_SLUG[bookSlug])
+      || ((typeof SymbolicLanguageBook !== 'undefined') ? SymbolicLanguageBook : null);
+    const book = bookHelper ? bookHelper.book : null;
     const bookTitle = book ? book.title : 'Book';
     const textArea = container.querySelector('#bible-explorer-text');
     const titleEl = container.querySelector('#bible-chapter-title');
@@ -1807,7 +1809,7 @@ const ReaderView = {
     if (!chapterSlug) {
       if (titleEl) titleEl.textContent = bookTitle;
       const items = (book ? book.chapters : []).map(c =>
-        `<li class="book-toc-item"><a href="${SymbolicLanguageBook.chapterPath(c.slug)}"
+        `<li class="book-toc-item"><a href="${bookHelper.chapterPath(c.slug)}"
             onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'${bookSlug || book.slug}',chapterSlug:'${c.slug}'}})">
             <span class="book-toc-title">${c.title}</span>
             ${c.summary ? `<span class="book-toc-desc">${c.summary}</span>` : ''}
@@ -1821,11 +1823,11 @@ const ReaderView = {
       return;
     }
 
-    const chapter = (typeof SymbolicLanguageBook !== 'undefined') ? SymbolicLanguageBook.getChapter(chapterSlug) : null;
+    const chapter = bookHelper ? bookHelper.getChapter(chapterSlug) : null;
     const chapterTitle = chapter ? chapter.title : 'Chapter';
     if (titleEl) titleEl.textContent = chapterTitle;
 
-    const nav = (typeof SymbolicLanguageBook !== 'undefined') ? SymbolicLanguageBook.getPrevNext(chapterSlug) : { prev: null, next: null };
+    const nav = bookHelper ? bookHelper.getPrevNext(chapterSlug) : { prev: null, next: null };
     const navBtn = (ch, dir) => ch
       ? `<button class="book-nav-btn book-nav-${dir}" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'${bookSlug}',chapterSlug:'${ch.slug}'}})">${dir === 'prev' ? '← ' : ''}${ch.title}${dir === 'next' ? ' →' : ''}</button>`
       : '<span></span>';
