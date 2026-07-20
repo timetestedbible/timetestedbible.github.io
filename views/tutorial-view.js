@@ -12,11 +12,51 @@ const TutorialView = {
   render(state, derived, container) {
     container.innerHTML = `
       <div class="tutorial-view">
-        <!-- 1. HERO: Value Prop -->
+        <!-- 1. HERO: The two books + value prop -->
         <section class="hero-section" style="margin-top: 30px;">
           <div class="hero-card">
             <h1 class="hero-headline">"Test everything. Hold fast what is good."</h1>
             <cite class="hero-cite"><a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'1Thessalonians',chapter:5}})">— 1 Thessalonians 5:21</a></cite>
+
+            <div class="hero-books">
+              <div class="hero-book-col meat">
+                <a href="/books/symbolic-language" class="book3d left" aria-label="MEAT — The Bible's Symbolic Language. Read it free."
+                   onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'symbolic-language'}})">
+                  <span class="b3d-face b3d-front" aria-hidden="true"></span>
+                  <span class="b3d-face b3d-spine" aria-hidden="true"></span>
+                  <span class="b3d-face b3d-pages" aria-hidden="true"></span>
+                  <span class="b3d-face b3d-back" aria-hidden="true"></span>
+                </a>
+                <span class="book-shadow" aria-hidden="true"></span>
+                <p class="book-caption"><strong>MEAT</strong><span class="book-tagline">The Bible's Symbolic Language</span></p>
+                <div class="book-actions">
+                  <button class="hero-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'symbolic-language'}})">
+                    Read Free
+                  </button>
+                  <span class="book-soon">Hardcover coming soon</span>
+                </div>
+              </div>
+              <div class="hero-book-col ttt">
+                <a href="#" class="book3d right" aria-label="Time Tested Tradition — The Renewed Biblical Calendar. Read it free."
+                   onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
+                  <span class="b3d-face b3d-front" aria-hidden="true"></span>
+                  <span class="b3d-face b3d-spine" aria-hidden="true"></span>
+                  <span class="b3d-face b3d-pages" aria-hidden="true"></span>
+                  <span class="b3d-face b3d-back" aria-hidden="true"></span>
+                </a>
+                <span class="book-shadow" aria-hidden="true"></span>
+                <p class="book-caption"><strong>Time Tested Tradition</strong><span class="book-tagline">The Renewed Biblical Calendar</span></p>
+                <div class="book-actions">
+                  <button class="hero-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
+                    Read Free
+                  </button>
+                  <a class="hero-btn secondary" href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
+                    Buy Hardcover
+                  </a>
+                </div>
+              </div>
+            </div>
+
             <p class="hero-description">
               Deep Bible study tools with enhanced Strong's/BDB lexicon, interlinear Hebrew and Greek, 
               and flexible calendar profiles that let you test any theory against 2,000+ years of history.
@@ -96,36 +136,6 @@ const TutorialView = {
 
         <!-- 3. INSTALL OPTIONS: PWA + Desktop side by side -->
         ${this.renderInstallOptions()}
-
-        <!-- 4. THE BOOK: Go Deeper -->
-        <section class="book-section">
-          <h2 class="section-title">Go Deeper — Read the Research</h2>
-          <div class="book-card">
-            <div class="book-cover">
-              <img src="/assets/img/TimeTestedBookFront.jpg" alt="Time-Tested Tradition Book Cover" class="book-cover-img">
-            </div>
-            <div class="book-info">
-              <h3>A Time-Tested Tradition</h3>
-              <p class="book-author">The Renewed Biblical Calendar — by Daniel Larimer</p>
-              <p class="book-description">
-                The calendar methodology is backed by a full-length book examining scriptural evidence, 
-                historical records, and astronomical data. Free to read online or download as a PDF. 
-                Physical copies now available.
-              </p>
-              <div class="book-actions">
-                <a href="https://store.bookbaby.com/book/time-tested-tradition" class="book-btn primary" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
-                  <span>📕</span> Buy Physical Copy
-                </a>
-                <button class="book-btn secondary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested'}})">
-                  <span>📖</span> Read Online
-                </button>
-                <a href="/media/time-tested-tradition.pdf" class="book-btn secondary" download onclick="trackBookDownload()">
-                  <span>⬇️</span> Download PDF
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
 
         <!-- 5. HOW WE STUDY: Methodology -->
         <section class="principles-section">

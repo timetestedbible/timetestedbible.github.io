@@ -1304,3 +1304,150 @@
     font-size: 0.95em;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HERO: the two hardcovers in 3D (CSS box built from the real jacket art —
+   front + spine images cut from the production cover files; fore-edge and
+   boards are synthesized). Left book +30°, right book -30°, facing in.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.hero-books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 22px clamp(36px, 7vw, 96px);
+  margin: 38px auto 30px;
+}
+
+.hero-book-col {
+  /* --w drives every dimension; --d is board depth = true spine width ratio */
+  --w: clamp(150px, 20vw, 230px);
+  --d: calc(var(--w) * 0.241);   /* MEAT: 1.535in spine on a 6.375in board */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-book-col.ttt { --d: calc(var(--w) * 0.191); }  /* TTT: 1.220in spine */
+
+.book3d {
+  display: block;
+  position: relative;
+  width: var(--w);
+  height: calc(var(--w) * 1.5);
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* perspective() on the book itself (not the row): each book projects from its
+   own vantage, so the ±30° reads at full strength instead of self-cancelling
+   toward the row's shared vanishing point */
+.book3d.left  { transform: perspective(950px) rotateY(30deg); }
+.book3d.right { transform: perspective(950px) rotateY(-30deg); }
+.book3d.left:hover,  .book3d.left:focus-visible  { transform: perspective(950px) rotateY(21deg) translateY(-6px); }
+.book3d.right:hover, .book3d.right:focus-visible { transform: perspective(950px) rotateY(-21deg) translateY(-6px); }
+
+.b3d-face {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+}
+
+.b3d-front {
+  inset: 0;
+  transform: translateZ(calc(var(--d) / 2));
+  border-radius: 2px 5px 5px 2px;
+  /* hinge groove along the spine edge sells the hardcover */
+  box-shadow: inset 7px 0 9px -6px rgba(0, 0, 0, 0.55),
+              inset -2px 0 4px -2px rgba(255, 255, 255, 0.12);
+}
+
+.b3d-back {
+  inset: 0;
+  transform: rotateY(180deg) translateZ(calc(var(--d) / 2));
+  border-radius: 5px 2px 2px 5px;
+  background: #101c30;
+}
+
+.b3d-spine {
+  top: 0;
+  bottom: 0;
+  width: var(--d);
+  left: calc(var(--d) / -2);
+  transform: rotateY(-90deg);
+}
+
+.b3d-pages {
+  /* page block: inset so the boards overhang, striped like stacked leaves */
+  top: 4px;
+  bottom: 4px;
+  width: calc(var(--d) - 7px);
+  right: calc((var(--d) - 7px) / -2);
+  transform: rotateY(90deg);
+  background: repeating-linear-gradient(90deg, #f6f1e3 0 2px, #cfc7b2 2px 3px);
+}
+
+.hero-book-col.meat .b3d-front { background-image: url('/assets/img/covers/meat-front-web.jpg'); }
+.hero-book-col.meat .b3d-spine { background-image: url('/assets/img/covers/meat-spine-web.jpg'); }
+.hero-book-col.ttt  .b3d-front { background-image: url('/assets/img/covers/ttt-front-web.jpg'); }
+.hero-book-col.ttt  .b3d-spine { background-image: url('/assets/img/covers/ttt-spine-web.jpg'); }
+
+.book-shadow {
+  width: calc(var(--w) * 1.25);
+  height: 16px;
+  margin-top: 12px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.15) 45%, transparent 72%);
+  filter: blur(2px);
+}
+
+.book-caption {
+  margin: 12px 0 0;
+  text-align: center;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.book-caption strong {
+  display: block;
+  font-size: 1.05em;
+  letter-spacing: 0.02em;
+}
+
+.book-tagline {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.85em;
+}
+
+.hero-book-col .book-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.hero-book-col .book-actions .hero-btn {
+  padding: 9px 16px;
+  font-size: 0.87em;
+}
+
+.book-soon {
+  color: var(--text-secondary);
+  font-size: 0.8em;
+  border: 1px dashed var(--border-subtle);
+  padding: 8px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  /* counter the global full-width hero-btn rule inside the book columns */
+  .hero-book-col .book-actions .hero-btn { width: auto; }
+}
+
+@media (max-width: 480px) {
+  .hero-books { gap: 26px 18px; }
+  .hero-book-col { --w: 136px; }
+  .hero-book-col .book-actions { flex-direction: column; gap: 6px; }
+}
