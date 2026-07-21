@@ -7,6 +7,16 @@ const TIME_TESTED_TRADITION_BOOK = {
   slug: 'time-tested-tradition',
   title: 'Time Tested Tradition',
   basePath: '/books/time-tested-tradition',
+  cover: '/assets/img/covers/ttt-front-web.jpg',
+  tagline: 'The Renewed Biblical Calendar',
+  purchase: [
+    { label: 'Buy Legacy Softcover', href: 'https://store.bookbaby.com/book/time-tested-tradition' },
+    { soon: 'Second-edition hardcover coming soon' }
+  ],
+  downloads: [
+    { label: 'PDF', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf', track: 'ttt-2e', fmt: 'pdf' },
+    { label: 'EPUB', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.epub', track: 'ttt-2e', fmt: 'epub' }
+  ],
   chapters: [
     {
       slug: "preface",

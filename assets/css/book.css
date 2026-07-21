@@ -419,3 +419,55 @@ body.theme-light .book-chapter-body { color: var(--text-primary); }
 /* Display couplets (centered Hebrew + transliteration) breathe wider */
 .book-chapter-body p.breath,
 .book-chapter-body .paragraph.breath { margin-top: 1.6em; }
+
+/* ── Book landing (TOC) header: cover + purchase/download actions ── */
+.book-index-hero {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  margin: 10px 0 30px;
+}
+
+.book-index-cover {
+  width: 150px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 3px 6px 6px 3px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 4px 0 8px -5px rgba(0, 0, 0, 0.5);
+}
+
+.book-index-hero-info { min-width: 0; }
+
+.book-index-hero .book-index-title {
+  margin: 0 0 2px;
+  text-align: left;
+}
+
+.book-index-tagline {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0 0 16px;
+}
+
+.book-index-hero .book-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.book-index-hero .book-downloads {
+  margin: 12px 0 0;
+  font-size: 0.85em;
+  color: var(--text-secondary);
+}
+
+.book-index-hero .book-downloads a { color: var(--accent-primary); text-decoration: none; }
+.book-index-hero .book-downloads a:hover { text-decoration: underline; }
+
+@media (max-width: 560px) {
+  .book-index-hero { flex-direction: column; text-align: center; }
+  .book-index-hero .book-index-title { text-align: center; }
+  .book-index-hero .book-actions { justify-content: center; }
+  .book-index-cover { width: 130px; }
+}

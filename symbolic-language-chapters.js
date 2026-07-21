@@ -7,6 +7,15 @@ const SYMBOLIC_LANGUAGE_BOOK = {
   slug: 'symbolic-language',
   title: "MEAT The Bible's Symbolic Language",
   basePath: '/books/symbolic-language',
+  cover: '/assets/img/covers/meat-front-web.jpg',
+  tagline: "The Bible's Symbolic Language",
+  purchase: [
+    { soon: 'Hardcover coming soon' }
+  ],
+  downloads: [
+    { label: 'PDF', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf', track: 'meat', fmt: 'pdf' },
+    { label: 'EPUB', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.epub', track: 'meat', fmt: 'epub' }
+  ],
   chapters: [
     {
       slug: 'how-to-use',

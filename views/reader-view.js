@@ -1814,9 +1814,27 @@ const ReaderView = {
             <span class="book-toc-title">${c.title}</span>
             ${c.summary ? `<span class="book-toc-desc">${c.summary}</span>` : ''}
           </a></li>`).join('');
+      const purchase = (book && book.purchase ? book.purchase : []).map(p => p.soon
+        ? `<span class="book-soon">${p.soon}</span>`
+        : `<a class="hero-btn secondary" href="${p.href}" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">${p.label}</a>`
+      ).join('');
+      const downloads = (book && book.downloads ? book.downloads : []).map(d =>
+        `<a href="${d.href}" onclick="if(typeof trackBookFile==='function')trackBookFile('${d.track}','${d.fmt}')">${d.label}</a>`
+      ).join(' · ');
+      const header = (book && book.cover)
+        ? `<div class="book-index-hero">
+            <img class="book-index-cover" src="${book.cover}" alt="${bookTitle} — front cover" width="640" height="960">
+            <div class="book-index-hero-info">
+              <h1 class="book-index-title">${bookTitle}</h1>
+              ${book.tagline ? `<p class="book-index-tagline">${book.tagline}</p>` : ''}
+              <div class="book-actions">${purchase}</div>
+              ${downloads ? `<p class="book-downloads">Download: ${downloads}</p>` : ''}
+            </div>
+          </div>`
+        : `<header class="book-index-header"><h1 class="book-index-title">${bookTitle}</h1></header>`;
       textArea.innerHTML = `
         <div class="book-index-content">
-          <header class="book-index-header"><h1 class="book-index-title">${bookTitle}</h1></header>
+          ${header}
           <ol class="book-index-toc">${items}</ol>
         </div>`;
       this.hideChapterNav(container);
