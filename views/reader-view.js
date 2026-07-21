@@ -1809,10 +1809,12 @@ const ReaderView = {
     // No chapter → show the table of contents
     if (!chapterSlug) {
       if (titleEl) titleEl.textContent = bookTitle;
+      let bonusMarked = false;
       const items = (book ? book.chapters : []).map(c =>
-        `<li class="book-toc-item${c.plate ? ' has-plate' : ''}"><a href="${bookHelper.chapterPath(c.slug)}"
+        `${c.bonus && !bonusMarked && (bonusMarked = true) ? '<li class="book-toc-divider">Bonus Web Chapters</li>' : ''}<li class="book-toc-item${c.plate ? ' has-plate' : ''}"><a href="${bookHelper.chapterPath(c.slug)}"
             onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'${bookSlug || book.slug}',chapterSlug:'${c.slug}'}})">
-            ${c.plate ? `<img class="book-toc-thumb" src="${c.plate}-160.webp" alt="" loading="lazy" width="160" height="240">` : ''}
+            ${c.num ? `<span class="book-toc-num">${c.num}</span>` : ''}
+            ${c.plate ? `<img class="book-toc-thumb" src="${c.plate}-320.webp" srcset="${c.plate}-160.webp 160w, ${c.plate}-320.webp 320w" sizes="(max-width: 640px) 80px, 124px" alt="" loading="lazy" width="320" height="480">` : ''}
             <span class="book-toc-text">
               <span class="book-toc-title">${c.title}</span>
               ${c.summary ? `<span class="book-toc-desc">${c.summary}</span>` : ''}

@@ -493,11 +493,37 @@ body.theme-light .book-chapter-body { color: var(--text-primary); }
 }
 
 .book-toc-thumb {
-  width: 76px;
+  width: 124px;
   height: auto;
   flex-shrink: 0;
-  border-radius: 3px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 640px) {
+  .book-toc-thumb { width: 80px; }
 }
 
 .book-toc-text { min-width: 0; }
+
+.book-toc-divider {
+  list-style: none;
+  margin: 34px 0 14px;
+  color: var(--accent-gold);
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-size: 1.05em;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 6px;
+}
+
+.book-toc-item { position: relative; }
+
+.book-toc-num {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  color: var(--text-secondary);
+  font-size: 0.88em;
+  font-variant-numeric: tabular-nums;
+}
