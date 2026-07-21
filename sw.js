@@ -212,18 +212,31 @@ const ASSETS_TO_CACHE = [
   ...CSS_ASSETS
 ];
 
-function cacheUrl(cache, url) {
-  return fetch(url)
-    .then((response) => {
-      if (response.ok) {
-        return cache.put(url, response);
-      } else {
-        console.warn(`Failed to cache (${response.status}):`, url);
-      }
-    })
-    .catch((err) => {
-      console.warn('Failed to cache asset:', url, err.message);
-    });
+// Cache one URL into the new version's cache. When the previous version's
+// cache holds the same URL, revalidate with a conditional request instead of
+// re-downloading: a 304 costs headers only and the cached body is carried
+// over. A deploy therefore transfers only the files that actually changed.
+async function cacheUrl(cache, url, prevCache) {
+  try {
+    const prev = prevCache ? await prevCache.match(url) : null;
+    const etag = prev && prev.headers.get('ETag');
+    const lastMod = prev && prev.headers.get('Last-Modified');
+    if (prev && (etag || lastMod)) {
+      const headers = {};
+      if (etag) headers['If-None-Match'] = etag;
+      if (lastMod) headers['If-Modified-Since'] = lastMod;
+      const response = await fetch(url, { headers });
+      if (response.status === 304) return cache.put(url, prev.clone());
+      if (response.ok) return cache.put(url, response);
+      console.warn(`Failed to cache (${response.status}):`, url);
+      return;
+    }
+    const response = await fetch(url);
+    if (response.ok) return cache.put(url, response);
+    console.warn(`Failed to cache (${response.status}):`, url);
+  } catch (err) {
+    console.warn('Failed to cache asset:', url, err.message);
+  }
 }
 
 // Install event - cache assets + dynamic content manifest
@@ -231,8 +244,15 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(async (cache) => {
-        console.log('Caching app assets');
-        await Promise.all(ASSETS_TO_CACHE.map(url => cacheUrl(cache, url)));
+        // Previous version's cache: unchanged files are revalidated (304) and
+        // carried over instead of re-downloaded.
+        const prevName = (await caches.keys())
+          .filter(name => name !== CACHE_NAME && name.startsWith('timetested-bible-v'))
+          .sort()
+          .pop();
+        const prevCache = prevName ? await caches.open(prevName) : null;
+        console.log('Caching app assets' + (prevName ? ` (reusing unchanged from ${prevName})` : ''));
+        await Promise.all(ASSETS_TO_CACHE.map(url => cacheUrl(cache, url, prevCache)));
 
         // Cache dynamic content from Jekyll-generated manifest
         try {
@@ -241,7 +261,7 @@ self.addEventListener('install', (event) => {
             await cache.put('/content-manifest.json', manifestResponse.clone());
             const contentUrls = await manifestResponse.json();
             console.log(`Caching ${contentUrls.length} content items from manifest`);
-            await Promise.all(contentUrls.map(url => cacheUrl(cache, url)));
+            await Promise.all(contentUrls.map(url => cacheUrl(cache, url, prevCache)));
           }
         } catch (err) {
           console.warn('Content manifest not available:', err.message);
