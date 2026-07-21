@@ -12,6 +12,8 @@ const TIME_TESTED_TRADITION_BOOK = {
   offer: {
     label: 'Pre-order Second Edition — $7',
     note: 'Hardcover + extra content · ships after Aug 7, before Sept 1',
+    price: '$7',
+    was: '$49.49',
     href: '/preorder/',   // offer page; Stripe checkout links live there
     until: '2026-08-08T05:00:00Z'  // midnight Aug 8, America/Chicago
   },

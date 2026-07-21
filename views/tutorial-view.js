@@ -15,7 +15,8 @@ const TutorialView = {
     const book = (typeof window !== 'undefined') ? window[globalName] : null;
     const offer = book && book.offer;
     if (!offer || !offer.href || Date.now() >= Date.parse(offer.until)) return fallbackHtml;
-    return `<a class="hero-btn primary book-offer-btn" href="${offer.href}"
+    const price = offer.price ? `<p class="preorder-price">${offer.price} <s>${offer.was}</s></p>` : '';
+    return `${price}<a class="hero-btn primary book-offer-btn" href="${offer.href}"
         onclick="if(typeof trackPreorder==='function')trackPreorder('${book.slug}')">${offer.label}</a>`;
   },
 
@@ -25,11 +26,10 @@ const TutorialView = {
   render(state, derived, container) {
     container.innerHTML = `
       <div class="tutorial-view">
-        <!-- 1. HERO: The two books + value prop -->
+        <!-- 1. HERO: The two books + limited offer -->
         <section class="hero-section" style="margin-top: 30px;">
           <div class="hero-card">
-            <h1 class="hero-headline">Test everything. Hold fast what is good.</h1>
-            <cite class="hero-cite"><a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'1Thessalonians',chapter:5}})">— 1 Thessalonians 5:21</a></cite>
+            <p class="part-kicker preorder-kicker">Limited Launch Offer &middot; 75% Below Cost &middot; Ends August 7</p>
 
             <div class="hero-books">
               <div class="hero-book-col meat">
@@ -93,7 +93,13 @@ const TutorialView = {
           </div>
         </section>
 
-        <!-- 2. WHY DIG DEEPER -->
+        <!-- 2. THE VERSE -->
+        <section class="verse-banner">
+          <h1 class="hero-headline">Test everything. Hold fast what is good.</h1>
+          <cite class="hero-cite"><a href="#" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'bible',translation:getDefaultTranslation(),book:'1Thessalonians',chapter:5}})">— 1 Thessalonians 5:21</a></cite>
+        </section>
+
+        <!-- 3. WHY DIG DEEPER -->
         <section class="why-deeper-section">
           <h2 class="section-title">Why a Study Tool?</h2>
           <p class="section-intro">Scripture is intentionally written in parables, dark sayings, and symbolic language — not plainly. The deeper meaning is there for those willing to search it out.</p>
