@@ -26,9 +26,9 @@ const SYMBOLIC_LANGUAGE_BOOK = {
   ],
   chapters: [
     {
-      slug: 'how-to-use',
-      title: 'How to Use This Book',
-      summary: 'A few conventions for reading: symbols the Bible defines are set in a distinct style and collected in the Glossary; Scripture is quoted from the KJV unless noted; and in the free digital editions every symbol links to its glossary entry.'
+      slug: 'preface',
+      title: 'Preface',
+      summary: "How years of studies, articles, and videos led to a repeatable way of recovering the Bible's shared symbolic vocabulary—and why the book must introduce an interconnected language one word at a time. Closes with the book's few conventions: symbols and the Glossary, translations, the Scripture Index, and the free digital editions."
     },
     {
       slug: 'introduction',
