@@ -16,8 +16,7 @@ const TutorialView = {
     const offer = book && book.offer;
     if (!offer || !offer.href || Date.now() >= Date.parse(offer.until)) return fallbackHtml;
     return `<a class="hero-btn primary book-offer-btn" href="${offer.href}"
-        onclick="if(typeof trackPreorder==='function')trackPreorder('${book.slug}')">${offer.label}</a>
-      <p class="book-offer-note">${offer.note}</p>`;
+        onclick="if(typeof trackPreorder==='function')trackPreorder('${book.slug}')">${offer.label}</a>`;
   },
 
   /**
@@ -43,11 +42,6 @@ const TutorialView = {
                 </a>
                 <span class="book-shadow" aria-hidden="true"></span>
                 <p class="book-caption"><strong>MEAT</strong><span class="book-tagline">The Bible's Symbolic Language</span></p>
-                <div class="book-actions">
-                  <button class="hero-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'meat-bibles-symbolic-language'}})">
-                    Read Free
-                  </button>
-                </div>
                 ${this.renderBookOffer('SYMBOLIC_LANGUAGE_BOOK', '<span class="book-soon">Hardcover — August 1</span>')}
                 <p class="book-downloads">Read free:
                   <a href="/books/meat-bibles-symbolic-language" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'meat-bibles-symbolic-language'}})">Web</a> ·
@@ -65,20 +59,13 @@ const TutorialView = {
                 </a>
                 <span class="book-shadow" aria-hidden="true"></span>
                 <p class="book-caption"><strong>Time Tested Tradition</strong><span class="book-tagline">The Renewed Biblical Calendar</span></p>
-                <div class="book-actions">
-                  <button class="hero-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'time-tested-tradition'}})">
-                    Read Free
-                  </button>
-                  <a class="hero-btn secondary" href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
-                    Buy First Edition (Legacy)
-                  </a>
-                </div>
                 ${this.renderBookOffer('TIME_TESTED_TRADITION_BOOK', '<span class="book-soon">Second-edition hardcover — August 1</span>')}
                 <p class="book-downloads">Read free:
                   <a href="/books/time-tested-tradition" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'time-tested-tradition'}})">Web</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','pdf')">PDF</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','epub')">EPUB</a>
                 </p>
+                <p class="book-downloads"><a href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">First Edition (Legacy) softcover</a></p>
               </div>
             </div>
 

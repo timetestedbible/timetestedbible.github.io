@@ -1821,10 +1821,18 @@ const ReaderView = {
              onclick="if(typeof trackPreorder==='function')trackPreorder('${book.slug}')">${book.offer.label}</a>
            <p class="book-offer-note">${book.offer.note}</p>`
         : '';
-      const purchase = (book && book.purchase ? book.purchase : []).map(p => p.soon
-        ? `<span class="book-soon">${p.soon}</span>`
-        : `<a class="hero-btn secondary" href="${p.href}" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">${p.label}</a>`
-      ).join('');
+      // One action while the offer runs: purchase entries demote to text links
+      const purchase = offerLive
+        ? ''
+        : (book && book.purchase ? book.purchase : []).map(p => p.soon
+            ? `<span class="book-soon">${p.soon}</span>`
+            : `<a class="hero-btn secondary" href="${p.href}" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">${p.label}</a>`
+          ).join('');
+      const purchaseLinks = offerLive
+        ? (book && book.purchase ? book.purchase : []).filter(p => !p.soon).map(p =>
+            `<a href="${p.href}" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">${p.label}</a>`
+          ).join(' · ')
+        : '';
       const downloads = (book && book.downloads ? book.downloads : []).map(d =>
         `<a href="${d.href}" onclick="if(typeof trackBookFile==='function')trackBookFile('${d.track}','${d.fmt}')">${d.label}</a>`
       ).join(' · ');
@@ -1836,6 +1844,7 @@ const ReaderView = {
               ${book.tagline ? `<p class="book-index-tagline">${book.tagline}</p>` : ''}
               <div class="book-actions">${offer}${purchase}</div>
               ${downloads ? `<p class="book-downloads">Download: ${downloads}</p>` : ''}
+              ${purchaseLinks ? `<p class="book-downloads">${purchaseLinks}</p>` : ''}
             </div>
           </div>`
         : `<header class="book-index-header"><h1 class="book-index-title">${bookTitle}</h1></header>`;
