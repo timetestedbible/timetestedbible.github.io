@@ -3,10 +3,16 @@
 The complete Time Tested Bible study app, offline, on your computer.
 
 ## What's new in this release
-<!-- Fill in per release. Example: -->
-- Second edition of *Time Tested Tradition* included.
-- New chapter: **Lucifer's Declared Plan** (Isaiah 14).
-- *When Does the Year Start?* expanded with the Revelation 12 sign.
+- **Two complete books.** *MEAT — The Bible's Symbolic Language* (all 53 chapters, including
+  the new **Ancient Symbols** chapter and the 168-entry Glossary) and the full second edition
+  of *TIME Tested Tradition* (with the new **Sabbath** chapter and the Evidence Outline).
+- **Chapter plates.** Every chapter opens with its engraved plate, and the book contents
+  pages show the art beside each chapter summary, with part breaks and chapter numbers.
+- **Bible cross-references into both books.** Tap a verse and the Links tab shows every
+  chapter — in either book — that quotes or discusses it, landing on the exact quote.
+- **Glossary popups.** Symbol words in both books preview their glossary definition on
+  hover or tap.
+- **Automatic content updates.** The app now checks GitHub Releases and downloads new book/app content automatically when a new version is published — no reinstall needed.
 
 ---
 
