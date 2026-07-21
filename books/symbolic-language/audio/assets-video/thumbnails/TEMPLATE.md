@@ -99,8 +99,9 @@ read from the print chapter's front matter (`../NN-*.adoc`).
 4. **Book-cover icon** — top-right corner (author, 2026-07-10; moved up
    from bottom-right so it rides open sky instead of the art's ground
    detail, matching the video overlay corner). Source:
-   `books/symbolic-language/cover/front-cover-summit-meat.jpg` (the actual
-   front-cover face, 1800x2700 — not a PDF crop, not a plate fallback).
+   `books/symbolic-language/cover/front-cover-vineyard-moon-epub-base.png`
+   (the current lossless vineyard front-cover face, 1800x2700 — not a PDF
+   crop and not the separate summit-art fallback used for missing beds).
    Scale to height 168 (width ~112), 3 px cream border, pasted at
    (1280 - w - 26, 26) over a Gaussian-blurred (r=7) black
    rectangle shadow, alpha 160, offset +4 grow. Same corner every chapter —

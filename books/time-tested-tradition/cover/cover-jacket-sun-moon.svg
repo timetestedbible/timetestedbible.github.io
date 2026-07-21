@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="21.785in" height="9.5in" viewBox="0 0 6535.5 2850"
+     width="21.47in" height="9.5in" viewBox="0 0 6441 2850"
      font-family="Noto Serif, Georgia, serif">
-  <!-- Latest 568-page US Trade dust-jacket geometry:
-       bleed 0.125 | flap 3.625 | back 6.375 | spine 1.535 | front 6.375 | flap 3.625 | bleed 0.125 -->
+  <!-- Current 440-page BookBaby US Trade dust-jacket geometry:
+       bleed 0.125 | flap 3.625 | back 6.375 | spine 1.220 | front 6.375 | flap 3.625 | bleed 0.125 -->
   <defs>
     <filter id="softshadow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur"/>
@@ -25,13 +25,15 @@
     </linearGradient>
   </defs>
 
-  <rect width="6535.5" height="2850" fill="#071323"/>
-  <!-- Untouched 4x panorama with a feathered, local NASA/AI Moon patch. -->
-  <image xlink:href="ttt-sun-moon-panorama-4x-natural-moon.png"
-         x="-11" y="-42.75" width="6731.565" height="2935.5" preserveAspectRatio="none"/>
+  <g id="layer-background">
+    <rect width="6441" height="2850" fill="#071323"/>
+    <!-- Untouched 4x panorama with a feathered, local NASA/AI Moon patch. -->
+    <image xlink:href="ttt-sun-moon-panorama-4x-natural-moon.png"
+           x="-10.840946" y="-42.75" width="6634.23" height="2935.5" preserveAspectRatio="none"/>
+  </g>
 
   <!-- Front-cover title, centered in the 6.375-inch front panel. -->
-  <g transform="translate(3554.25 37.5)">
+  <g id="layer-front-title" transform="translate(3459.75 37.5)">
     <g font-family="Noto Serif" font-weight="bold" text-anchor="middle"
        transform="translate(0 -480)" style="filter:url(#softshadow)">
       <g id="title-lockup" transform="translate(900 1250) scale(1.1) translate(-900 -1250)">
@@ -69,7 +71,7 @@
   </g>
 
   <!-- Shared TimeTested.Bible cover-lockup spine branding. -->
-  <g id="layer-spine" font-family="Noto Serif" text-anchor="middle" style="filter:url(#softshadow)">
+  <g id="layer-spine" transform="translate(-47.25 0)" font-family="Noto Serif" text-anchor="middle" style="filter:url(#softshadow)">
     <g id="spine-brand-moon" transform="translate(3267.75 290) scale(1.1)" stroke="none">
       <circle r="91.5" fill="#f5f5dc" opacity="0.12"/>
       <circle r="82.4" fill="#f5f5dc" opacity="0.14"/>
@@ -128,8 +130,10 @@
   </g>
 
   <!-- Bookland EAN-13 for the second edition. -->
-  <image id="layer-barcode" xlink:href="ttt-isbn-9781736521175-barcode.svg"
-         x="2362.5" y="2344.2" width="600" height="360"/>
+  <!-- Use the validated native-size PNG on whole-pixel coordinates so a
+       flattened 300-DPI export preserves the EAN modules without antialiasing. -->
+  <image id="layer-barcode" xlink:href="ttt-isbn-9781736521199-barcode.png"
+         x="2333" y="2344" width="600" height="360"/>
 
   <!-- Left inside flap: companion-book promotion for MEAT. -->
   <g id="layer-left-flap-meat" fill="#f7f0df" font-family="Noto Serif" font-weight="600"
@@ -153,7 +157,7 @@
   <!-- Right inside flap: interactive-edition invitation and QR code. -->
   <g id="layer-right-flap-site" fill="#f7f0df" font-family="Noto Serif" font-size="45" font-weight="600"
      stroke="#16110c" stroke-width="2.2" stroke-opacity="0.92" stroke-linejoin="round"
-     paint-order="stroke fill" style="filter:url(#softshadow)" transform="translate(0 100)">
+     paint-order="stroke fill" style="filter:url(#softshadow)" transform="translate(-94.5 100)">
     <g id="layer-right-flap-appicon" stroke="none">
       <circle cx="5954.25" cy="420" r="187.5" fill="#f5f5dc" opacity="0.1"/>
       <circle cx="5954.25" cy="420" r="168.8" fill="#f5f5dc" opacity="0.1"/>
@@ -185,5 +189,5 @@
   </g>
 
   <image xlink:href="ttt-timetested-bible-qr.png"
-         x="5820.3" y="2338" width="268" height="268"/>
+         x="5725.8" y="2338" width="268" height="268"/>
 </svg>

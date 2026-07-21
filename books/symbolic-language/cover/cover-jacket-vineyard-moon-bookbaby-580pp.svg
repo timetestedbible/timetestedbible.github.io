@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="21.863333333in" height="9.5in" viewBox="0 0 6559 2850">
+  <!--
+    DUST JACKET (BookBaby US-Trade-DustJacket (6), 580pp):
+    bleed 0.125in | flap 3.625in | back 6.375in | spine 1.613333in |
+    front 6.375in | flap 3.625in | bleed 0.125in.
+
+    BookBaby's 580-page proof adds 23.5px (0.078333in at 300 dpi)
+    entirely to the spine. The approved 576-page panels remain undistorted:
+    the back stays fixed, the spine center moves 11.75px, and the complete
+    front/right-flap artwork moves 23.5px away from the new front fold.
+  -->
+  <defs>
+    <clipPath id="left-panel-clip">
+      <rect x="0" y="0" width="3037.5" height="2850"/>
+    </clipPath>
+    <clipPath id="spine-panel-clip">
+      <rect x="3037.5" y="0" width="484" height="2850"/>
+    </clipPath>
+    <clipPath id="right-panel-clip">
+      <rect x="3521.5" y="0" width="3037.5" height="2850"/>
+    </clipPath>
+  </defs>
+
+  <!-- Preserve both finished cover panels; extend only the center strip. -->
+  <g clip-path="url(#left-panel-clip)">
+    <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-basefill"/>
+    <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-background"/>
+  </g>
+  <g clip-path="url(#spine-panel-clip)">
+    <g transform="translate(3037.5 0) scale(1.051031487514 1) translate(-3037.5 0)">
+      <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-basefill"/>
+      <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-background"/>
+    </g>
+  </g>
+  <g clip-path="url(#right-panel-clip)">
+    <g transform="translate(23.5 0)">
+      <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-basefill"/>
+      <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-background"/>
+    </g>
+  </g>
+
+  <!-- Left/back content remains fixed. -->
+  <g id="layer-back-copy">
+    <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-back-copy"/>
+  </g>
+  <g id="layer-barcode">
+    <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-barcode"/>
+  </g>
+  <g id="layer-flap-ttt">
+    <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-flap-ttt"/>
+  </g>
+
+  <!-- Recenter the spine content in the wider spine. -->
+  <g id="layer-spine" transform="translate(11.75 0)">
+    <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-spine"/>
+  </g>
+
+  <!-- Move the complete front and right flap with their unchanged panels. -->
+  <g id="layer-front-title" transform="translate(23.5 0)">
+    <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-front-title"/>
+  </g>
+  <g id="layer-flap-front" transform="translate(23.5 0)">
+    <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-flap-front"/>
+  </g>
+  <g id="layer-flap-qr" transform="translate(23.5 0)">
+    <use xlink:href="cover-jacket-vineyard-moon-bookbaby-v2.svg#layer-flap-qr"/>
+  </g>
+</svg>

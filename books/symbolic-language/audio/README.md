@@ -6,44 +6,83 @@ source of truth, and every meaning-level edit lands there first.
 
 Every chapter opens with the book title, then its chapter number and name:
 `MEAT The Bible's Symbolic Language. [beat] Chapter [number]: [name].`
-The separately ordered `16x` study uses `Bonus Study` in place of a chapter
-number.
+Separately ordered studies (`16x`, `31x`, `31y`, and similar files) use
+`Bonus Study` in place of a chapter number.
 
-## The audio IS the book read aloud — additive transitions only
+## The audio is a faithful spoken edition
 
-The script cannot deviate from the book or it isn't the book. Exactly two
-kinds of change are permitted when transforming a print chapter:
+The print chapter remains the authority, but fidelity is measured at the level
+that matters: the audio carries the same claims, evidence, qualifications, and
+conclusions in the same order. It need not preserve every sentence boundary or
+print-dependent phrase.
 
-1. **Additions** — teacher lead-ins ("Let's read Matthew 22.", "Hear Job:",
-   "Listen to what Moses records:") and small connective words where print
-   punctuation is unspeakable ("There were 22,273 of them…", "It is the
-   register of which the psalm says…").
-2. **Splits** — a sentence may divide at its own punctuation (a semicolon,
-   a mid-sentence colon, the second dash of a chain) into two spoken
-   sentences, keeping the book's words in the book's order. A split half
-   may open with the book's own conjunction ("And a kingdom stamps its
-   money.").
+The narration may:
 
-No vocabulary substitutions, no restructuring, no paraphrase. Scripture
-quote text is verbatim, always.
+1. add orientation, evidence lead-ins, memory cues, and short recaps;
+2. split or lightly recast a sentence so it can be understood on one hearing;
+3. replace visual or deictic language ("above," "the following table," "see
+   chapter 9") with an audible location or relationship;
+4. name an ambiguous pronoun or repeat a key noun after a long quotation; and
+5. narrate tables, typography, and original-language evidence in linear form.
+
+The narration may not introduce a new claim, omit contrary evidence, rearrange
+the reasoning, soften a qualification, or turn a suggestion into a conclusion.
+Scripture quotation text is verbatim. If a recovered or alternate rendering is
+needed, the narrator identifies it before the quotation rather than silently
+changing the verse.
+
+## Listening first principles
+
+1. **Give the listener a map.** Open with the question or tension, not the
+   chapter's conclusion. At every major turn, say where the argument is going.
+2. **Carry one inference at a time.** Break nested print sentences at their
+   logical seams. Use explicit words such as "first," "now compare," and
+   "this establishes" only when they reveal the actual structure.
+3. **Use an evidence envelope.** The narrator names why a passage is being
+   heard and gives its location; the Scripture voice reads it; the narrator
+   returns by echoing the decisive phrase and explaining its consequence.
+4. **Keep the witness locatable.** Major and block quotations receive a complete
+   book, chapter, and verse citation before the voice switch. Exact citations
+   for inline material remain in the transcript and in
+   `COMPANION-REFERENCES.md`; narration uses natural attribution without
+   reading a parenthetical after every sentence.
+5. **Repair visual dependence.** No "as you can see," unexplained "above" or
+   "below," page number, bare table, or cold heading may carry part of the case.
+6. **Protect working memory.** After a dense chain of witnesses, restate the one
+   equation they established before adding another symbol or language term.
+7. **Switch voices deliberately.** The narrator owns explanation, citations,
+   and inline quotations. The Scripture voice owns cited block quotations only.
+   Neither voice begins cold, and the narrator does not interrupt a block.
+8. **Prefer scenes to coordinates in the prose.** "At the tribute trap" helps
+   memory better than a bare address; the full address still precedes the block.
+9. **Pronounce once, then use the meaning.** Hebrew and Greek survive only when
+   the inference depends on them. Spell letters only when the letter pattern is
+   itself evidence.
+10. **Close the loop.** End by stating what the chapter demonstrated, not by
+    adding a new premise, and hand the listener one clear question for the next
+    chapter when the sequence depends on it.
 
 ## Sync process
 
-- Each audio file's front matter carries `audio-of:` (the source file) and
-  `synced-to:` (the git hash of the source version it mirrors).
+- Each audio file's front matter carries `audio-of:` (the source file),
+  `synced-to:` (the nearest git revision), and `source-digest:` (a hash of the
+  title, order, and chapter body; web-only metadata is excluded).
 - When a source chapter changes, update its audio twin in the same sitting and
-  bump `synced-to`. Drift check: `git log -1 --format=%h -- <source>` vs the
-  recorded hash.
+  refresh both synchronization fields.
+- Run `python3 audio/audit.py`. It checks missing studies, digests, Scripture
+  block order and wording, content drift, voice cues, and print-only markup.
 
 ## Annotation conventions (tool-agnostic; map to SSML at render time)
 
-- `[beat]` — short breath, ~300ms. Replaces most em-dashes.
-- `[pause]` — ~700ms. After every block quote, before a section's closing line.
-- `[long pause]` — ~1.2s. Section transitions.
+- `[beat]` — short breath, ~200ms. Replaces only punctuation that needs help.
+- `[pause]` — ~450ms. After every block quote, before a section's closing line.
+- `[long pause]` — ~800ms. Section transitions.
 - `*word*` — vocal stress (the print edition's emphasis carries over).
-- Block quotes = scripture voice: measured, slightly slower, a half-register
-  shift. The intro sentence names the speaker; the quote is never followed by a
-  spoken reference.
+- Blocks marked `[quote.scripture]` use the Scripture voice: measured, slightly
+  slower, a half-register shift. Historical and modern block quotations remain
+  in the narrator's voice. The narrator gives the complete biblical citation
+  and the reason for hearing the passage before the switch. The return names
+  the phrase now under discussion.
 - Section headings are never spoken as bare fragments (author, 2026-07-10:
   "The Mint." heard cold doesn't tell a story). Each becomes a natural
   storytelling transition sentence that CARRIES the heading's words —
@@ -55,27 +94,29 @@ quote text is verbatim, always.
   audio opens with the chapter number and title, then the opening prose.
   The epigraph still belongs to the print page.
 
-## Citation principles — the heart of the transform
+## Citation principles — locatable without constant interruption
 
-1. **Never read book-chapter-and-verse.** The print page can carry
-   "(Deuteronomy 6:25)"; the ear cannot. No colons, no verse numbers, ever.
-2. **Attribution replaces citation.** "Paul writes to Timothy:", "Moses
-   records:", "Hear Ezekiel:", "John saw…", "the psalmist sings…". If the
-   speaker is already obvious, no attribution at all.
-3. **Recall-references for established equations.** Once the book has proven an
+1. **Speak complete block citations before the quotation.** The renderer turns
+   `John 14:6` into "John chapter 14, verse 6" and ranges into natural speech.
+   The narrator speaks the location; the Scripture voice speaks only Scripture.
+2. **Use attribution for inline quotations.** "Paul writes to Timothy," "Moses
+   records," "John saw," and "the psalmist sings" keep the listener oriented.
+   Do not bolt a spoken parenthesis onto the end of every sentence. The complete
+   inline citation remains in the transcript and companion reference list.
+3. **Use recall references for established equations.** Once the book has proven an
    equation, later uses are memory work, not lookup work: "recall — sin *is*
    lawlessness"; "remember, the law is the *truth*"; "and love, we know, is the
    keeping."
-4. **Scene-references over addresses.** "at the tribute trap", "when Korah
+4. **Prefer scene references inside the explanation.** "At the tribute trap," "when Korah
    challenged Moses", "the night Israel left Egypt" — the scene locates the
-   text better than its coordinates.
-5. **Cite-only parentheticals dissolve.** A fragment quoted with a bare
+   text in memory; the citation locates it on the page.
+5. **Cite-only parentheticals do not enter the prose.** A fragment quoted with a bare
    reference either gains a speaker ("as Jesus said, …") or stands on its own
    authority. Multi-cite lists compress to a count: "(Rev 7:4; 15:2)" → "twice
-   in Revelation."
-6. **Book names survive only when the witness matters.** "the Hebrew Matthew",
-   "the Greek", "Deuteronomy states it as law" — the source is the point, so it
-   stays; otherwise it goes.
+   in Revelation," with the exact list preserved in the transcript.
+6. **Name translations only when the wording matters.** The default translation
+   need not be announced repeatedly. Say "the New King James reads" or "from
+   the Hebrew Matthew" when the argument depends on that witness.
 7. **Chapter cross-references become relative.** "the link:…[Name] chapter" →
    "the chapter on the Name" / "as we saw two chapters back" / "a later chapter
    takes this up." No links, no page numbers.
@@ -89,41 +130,35 @@ quote text is verbatim, always.
 11. **The print sentence wins when it already reads aloud well.** This is a
     narration pass, not a rewrite — same argument, same order, same doctrine.
 
-## Recovered words are spoken, not explained
+## Recovered words are announced, not silently substituted
 
-Where print keeps a KJV word and defines it in the following line (2 Tim 2:19
-"iniquity" = adikia), audio speaks the recovered rendering directly
-("unrighteousness") — the ear cannot see footnotes, and a spoken
-quote-then-correction is clunky. anomia is always "lawlessness" (inherited
-from print); OT avon keeps "iniquity."
+Where the argument depends on a recovered rendering, the narrator prepares the
+listener: "The King James says *iniquity*; the Greek word here is *adikia*,
+unrighteousness." The Scripture voice then reads the exact translation named in
+the citation marker. This keeps the evidence honest while avoiding a confusing
+quote-then-correction after the handoff.
 
 ## Heavy punctuation splits at the book's own seams
 
-Print's mid-sentence colons, em-dash chains, and semicolon stacks read as
-slammed stops or run-ons in TTS. Split them into spoken sentences AT the
-existing punctuation, words unchanged: "Ore is not spent; it is refined." →
-"Ore is not spent. It is refined." Sweep patterns inside narrator prose:
-`[a-z]: [a-z]`, paired ` — … — `, stacked `; `. A single em-dash speaks
-fine and stays. (This is the additive rule applied to punctuation — never
-reword to smooth a seam.)
+Print's mid-sentence colons, em-dash chains, and semicolon stacks can become
+slammed stops or run-ons in TTS. Split them at logical seams, and lightly recast
+only when a punctuation-only split would leave an orphaned phrase. Preserve the
+inference and its order. A single em-dash often speaks well and may stay.
 
 ## Teacher lead-ins before block quotes
 
-The print edition removed command language; the EAR needs it. Every block
-quote gets a directive lead-in that guides the listener — "Let's read
-Matthew 22.", "Consider Ezra:", "Listen to what Moses records:", "Hear
-Isaiah:" — varied naturally. The renderer's citation weave (render.py
+The print edition can rely on typography; the ear needs an invitation. Every
+block quote gets a lead-in that says why this witness comes next — "Moses now
+defines the term," "Jesus answers the question," "The second witness is
+Isaiah." A neutral "Let's read" is acceptable when no stronger relationship is
+available, but repeated generic commands are an editorial warning. The
+renderer’s citation weave (render.py
 `weave_citation`) cooperates:
 
-- Lead-in carries book + chapter ("Let's read Luke 15.") — the weave
-  detects it (punctuation- and "chapter"-word-insensitive) and adds nothing.
+- A lead-in that already carries the full reference is left alone.
 - Otherwise the reference joins the lead-in as natural English — never a
-  dash splice (an em-dash synthesizes as a jarring pause), and the book
-  name is always spoken with the chapter (a bare "chapter 13" is ambiguous
-  by ear: of the book being read, or of THIS book?). "Hear Job:" becomes
-  "Hear Job 34:"; "…Listen:" becomes "Listen to Zechariah 13:"; anything
-  else joins with "in" — "Moses continues in Exodus 13:". (Author,
-  2026-07-10.)
+  dash splice. "Hear Job:" becomes "Hear Job chapter 34, verse 3";
+  "Jesus answers:" becomes "Jesus answers in John chapter 14, verse 6."
 
 Never hand-write the weave's own "— Book N:" form; write natural speech and
 let the renderer fold the reference in.

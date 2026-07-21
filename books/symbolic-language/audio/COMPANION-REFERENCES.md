@@ -1,0 +1,2776 @@
+# MEAT — audiobook Scripture-reference companion
+
+Block-quotation locations are spoken in the audiobook. This list also preserves the exact references attached to inline quotations and evidence clusters in the print edition.
+
+## 1. Introduction
+
+- John 6:59
+- John 6:53, 56
+- John 6:60, 66
+- John 6:52
+- Matthew 13:34
+- Mark 4:13; Psalm 78:2-3; Matthew 13:35
+- Acts 17:11
+- Deuteronomy 19:15
+- John 1:29
+- 2 Thessalonians 2:7
+- 1 Thessalonians 4:15
+- 1 Peter 2:9
+- Genesis 1:28
+- Genesis 3:1
+- Isaiah 40:8
+- John 4:31-32
+- John 4:34
+- Matthew 12:50
+- Luke 8:21
+- 2 Timothy 3:16
+- Psalm 40:8
+- 1 Peter 2:2
+- Hebrews 5:13; 1 Corinthians 3:2
+- Isaiah 28:9
+- Proverbs 30:33
+- Isaiah 7:15
+- Hebrews 5:14
+- Job 34:3
+- Psalm 34:8
+- 1 Thessalonians 5:21, NKJV
+- 1 Peter 2:2-3
+- Hebrews 6:5
+- John 7:17
+- 2 Timothy 4:3
+- Ephesians 4:14
+- Leviticus 3:16-17
+- Ezekiel 34:3
+- Hebrews 5:12
+- Leviticus 3:17
+- Deuteronomy 8:3; Matthew 4:4
+- Isaiah 55:10
+- John 6:35
+- John 6:51; John 1:14
+- John 6:55
+- Isaiah 52:7
+- Mark 1:15
+- Romans 10:16
+- 1 Corinthians 2:2
+- 1 Corinthians 3:2
+- 1 Corinthians 2:6
+- Hebrews 6:1-2
+- John 6:63
+- John 6:68
+
+## 2. The Parables of the Kingdom
+
+- Mark 4:13
+- Psalm 78:2-3; Matthew 13:35
+- 2 Samuel 12:5
+- 2 Samuel 12:7
+- Isaiah 5:7
+- Ezekiel 17:2, 12
+- Matthew 13:3
+- Isaiah 55:10-11
+- Deuteronomy 32:2
+- Jeremiah 4:3-4
+- Hosea 10:12
+- Genesis 3:18
+- Genesis 3:17, 19
+- Hosea 10:1-2
+- Hosea 10:8
+- Isaiah 5:6
+- Isaiah 5:8
+- Isaiah 5:11-12
+- Ezekiel 36:26
+- Genesis 2:7
+- Genesis 3:23
+- Amos 6:12
+- Ezekiel 36:9
+- 2 Corinthians 3:3
+- 1 Corinthians 3:9
+- Isaiah 40:6
+- Genesis 15:11
+- Genesis 40:17-19
+- Isa 55:10-11; Deut 32:2
+- Luke 8:11
+- Jer 4:3-4; Hos 10:12; Ezek 36:9, 26; Gen 2:7
+- Matt 13:19
+- Gen 15:11; 40:17-19
+- Gen 3:17-19; Hos 10:1-8; Isa 5:6-12
+- Matt 13:22
+- Daniel 12:4
+- Genesis 3:15
+- Job 31:40
+- Isaiah 5:2
+- Joel 3:13
+- Hosea 6:11
+- Jeremiah 51:33
+- Malachi 4:1
+- Malachi 3:18
+- Psalm 1:4
+- Matthew 13:30, 38-40
+- Matthew 13:31-32
+- Isaiah 51:2
+- Deuteronomy 7:7
+- Ezekiel 17:22-23
+- Ezekiel 17:24
+- Daniel 4:12, 22
+- Daniel 2:35
+- Isaiah 11:1, 10
+- Zechariah 6:12
+- Ezekiel 31:6
+- Matthew 13:33
+- Exodus 12:15
+- Leviticus 2:11
+- Amos 4:5
+- Hosea 7:4
+- Matthew 16:12
+- 1 Corinthians 5:7
+- Genesis 18:6
+- Matthew 13:44
+- Exodus 19:5
+- Psalm 135:4
+- Psalm 83:3
+- Matthew 19:21-22
+- Matthew 19:27
+- Luke 14:33
+- 2 Corinthians 8:9
+- 1 John 2:2
+- Zechariah 13:9
+- Job 23:10
+- Matthew 13:45-46
+- Proverbs 3:15
+- Job 28:18
+- Proverbs 31:10
+- Proverbs 2:4
+- Proverbs 1:5-6
+- 1 Thessalonians 5:21, NKJV
+- Matthew 13:47-48
+- Habakkuk 1:14-15
+- Jeremiah 16:16
+- Ezekiel 47:10
+- Leviticus 11:9-10
+- Matthew 13:49
+- Matthew 13:2
+- John 6:14
+- John 6:9
+- Matthew 14:20
+- Judges 7:13-14
+- Deuteronomy 19:15
+- Mark 6:7
+- John 6:26
+- John 6:55, 60, 66
+- John 6:63, 68
+- Matthew 13:51
+- Matthew 13:52
+
+## 3. Signs and Similitudes
+
+- 1 Corinthians 10:11
+- so too 1 Corinthians 10:6
+- 1 Corinthians 10:4
+- Romans 5:14
+- Galatians 4:22-24
+- Psalm 19:1-3; so Romans 1:20
+- Psalm 78:2
+- Matthew 13:35
+- 1 Samuel 10:2-6
+- 1 Samuel 10:9
+- Ezekiel 24:24
+- Isaiah 8:18
+- Isaiah 20:3
+- Luke 2:12
+- Luke 2:34
+- Revelation 12:1, NKJV
+- Revelation 12:3
+- Isaiah 7:14
+- Genesis 9:12-13 — a chapter of its own ahead
+- Genesis 17:11; Romans 4:11
+- Exodus 12:13
+- Deuteronomy 6:8
+- Exodus 31:13, 17; Ezekiel 20:12
+- Deuteronomy 18:21-22
+- Deuteronomy 13:1-3
+- Deut 13:4
+- Hosea 12:10
+- Hosea 1:2
+- Hosea 1:6, 9
+- Hosea 3:1
+- Hosea 3:2
+- Hebrews 10:1
+- Hebrews 8:5
+- Matthew 24:37
+- Luke 17:28, 30
+- John 3:14
+- John 6:32
+- the __“miracle”__ of John 6:14 is the Greek _sēmeion_
+- John 2:19-21
+- 1 Corinthians 5:7
+- John 19:36; Exodus 12:46
+- Matthew 11:14
+- 1 Peter 3:21
+- Luke 24:27
+- John 5:46
+- Ecclesiastes 1:9
+- Psalm 84:11
+- Ecclesiastes 3:15
+- Genesis 22:2
+- Hebrews 11:17
+- 2 Chronicles 3:1
+- Genesis 22:4
+- Genesis 22:6
+- John 19:17
+- Genesis 22:8
+- John 1:29
+- Genesis 22:13
+- Genesis 22:14
+- Hebrews 11:19
+- Genesis 40:13, 19-22 — as two would hang beside another condemned man, Luke 23:39-43
+- Acts 7:13
+- Joshua 2:12
+- Joshua 2:18
+- Joshua 6:25
+- Matthew 1:5
+- Hosea 11:1
+- Matthew 2:15
+- 1 Corinthians 10:2, a crossing that the sym:sym-sea[Sea & Waters] chapter will read
+- Matthew 4:2
+- Deuteronomy 8:3; 6:16; 6:13
+
+## 4. The Sign of Jonah
+
+- Matthew 12:39-40
+- Luke 11:30
+- Genesis 8:8
+- Matthew 3:16
+- Matthew 12:40
+- Ezekiel 5:5
+- Ezekiel 38:12, KJV
+- Jonah 2:3, NKJV
+- Revelation 17:15; the full case study waits in Part Six
+- Jonah 1:2
+- Jonah 1:3
+- John 13:27, 30
+- Jonah 1:4
+- Jonah 1:7
+- Jonah 1:12
+- Jonah 1:5
+- Jonah 1:6
+- Mark 4:38
+- Matt 26:40
+- Matt 26:46
+- Jonah 1:8
+- John 18:33
+- John 19:9
+- Jonah 1:9
+- Jonah 1:10
+- John 19:8
+- Jonah 1:11
+- Matthew 27:22
+- Jonah 1:13
+- John 19:12
+- Jonah 1:14
+- Matthew 27:24
+- Jonah 1:15
+- Acts 2:23
+- John 10:18
+- John 11:48
+- Ezekiel 27:2-32
+- John 11:50
+- Jonah 1:16
+- Matthew 27:54
+- Jonah 1:17
+- James 1:6
+- Daniel 7:17, 23
+- Jeremiah 51:34
+- Ezekiel 29:3
+- Ezekiel 32:2
+- John 19:15
+- Revelation 11:8
+- Matthew 23:37
+- Daniel 8:20-21
+- Daniel 2:40
+- Acts 4:27-28
+- Jonah 2:2
+- Jonah 2:6
+- Jonah 2:1
+- Revelation 17:9-10; the full case study waits in Part Six
+- Psalm 16:10; Acts 2:27
+- Jonah 2:5
+- Jonah 2:9
+- Matthew 1:21
+- Jonah 2:10
+- Jeremiah 51:44
+- Jeremiah 51:64
+- Acts 2:24
+- Romans 6:4
+- Micah 7:19
+- Jonah 3:5
+- Matthew 12:41
+- Jonah 1:2; 3:2; 4:11
+- Revelation 17:18; 18:21; 11:8
+- Jonah 3:3
+- Jonah 3:4
+- 2 Peter 3:8; so too Psalm 90:4
+- 1 Thessalonians 4:16
+- 1 Corinthians 6:2
+- Jonah 4:1
+- Jonah 4:2
+- Acts 13:45
+- Acts 13:46
+- Romans 10:19; Deuteronomy 32:21
+- Romans 11:11
+- Luke 15:28
+- Luke 24:13, 21
+- Isaiah 28:10
+
+## 5. Gospel
+
+- 1 Corinthians 15:1-4, NKJV
+- Revelation 14:6
+- Matthew 4:23; 9:35
+- Mark 1:14-15
+- Isaiah 52:7
+- Romans 10:15
+- Nahum 1:15
+- Luke 4:18
+- Luke 4:21
+- Matthew 4:17
+- Matthew 4:23
+- Mark 1:15
+- Luke 18:34
+- Hebrews 4:2
+- Exodus 19:6
+- Galatians 3:8
+- Revelation 14:6-7
+- Psalm 51:10
+- 2 Chronicles 24:4
+- Jeremiah 31:31-33
+- Romans 11:17-23
+- Matthew 5:17
+- Matthew 5:21-22
+- Romans 3:31
+- Isaiah 2:3
+- Micah 4:2 says the same
+- Romans 10:16
+- 2 Thessalonians 1:8
+- 1 Peter 4:17
+- John 19:30
+- 1 Corinthians 15:3-4
+- Romans 1:1-4
+- Galatians 1:8
+- Matthew 24:14
+- Matt 28:19-20
+- Isa 8:16
+- Matthew 23:2-3 — the Hebrew Matthew
+- Matt 15:2
+- Matt 15:6
+
+## 6. Love, Knowing, Faith, and Belief
+
+- 1 John 5:3
+- John 14:15
+- 2 John 4-6
+- Psalm 119:142
+- Deuteronomy 6:5; 10:12-13
+- 1 Corinthians 13:3
+- 1 John 4:8-10
+- Matthew 22:37-40, NKJV
+- 1 Corinthians 13:1-3, NKJV
+- Matthew 7:22-23, NKJV
+- 1 Samuel 15:22
+- Romans 13:10
+- 1 Timothy 1:5, NKJV
+- 1 Corinthians 13:8, 10, 12, NKJV
+- James 1:23-25
+- Numbers 12:8
+- Genesis 29:30
+- Genesis 29:31
+- Luke 14:26
+- Matthew 10:37
+- Proverbs 1:29
+- Hosea 9:15
+- Proverbs 27:6
+- Genesis 27:41, KJV
+- Malachi 1:3, KJV
+- Leviticus 19:17
+- Leviticus 19:18, _natar_
+- Exodus 20:5-6
+- Matthew 7:23
+- 1 John 3:4
+- 1 John 2:3-4
+- Amos 3:2
+- Titus 1:16
+- Hosea 4:6
+- Jeremiah 22:16
+- Genesis 4:1
+- Ephesians 5:23
+- Ephesians 5:24
+- John 10:27
+- John 10:5
+- John 10:3
+- Revelation 2:17
+- Ephesians 1:13
+- Romans 10:17
+- James 2:17
+- James 2:19
+- Hebrews 11:8
+- Habakkuk 2:4
+- Exodus 17:12
+- James 2:22
+- Hebrews 11:1
+- Romans 8:24-25
+- 2 Corinthians 4:18
+- 2 Corinthians 5:7
+- Hebrews 11:7
+- Acts 24:15
+- Titus 1:2
+- Hebrews 11:10, 16
+- Titus 2:13
+- Matthew 5:16
+- Romans 4:4-5
+- Luke 17:10
+- Ephesians 2:8-10
+- Exodus 18:20
+- Psalm 111:7
+- Revelation 2:26
+- Romans 10:16
+- John 3:36, ASV
+- Mark 1:27
+- John 12:42-43
+- Hebrews 3:18-19
+- Genesis 15:6
+- James 2:21
+- John 20:29
+- Hos 2:20
+- Jer 22:16
+- Ex 17:12
+- Matt 24:46
+- Rev 2:10
+- Romans 10:13
+
+## 7. The Way, The Truth, and The Life
+
+- John 14:6
+- Revelation 21:2-3
+- Genesis 18:19
+- 2 Peter 2:21
+- Matthew 7:13-14
+- Acts 24:14
+- Psalm 119:142
+- John 17:17
+- John 1:4
+- Matthew 5:16
+- Proverbs 3:18
+- Deuteronomy 4:6
+- Matthew 7:14
+- Isaiah 35:8-9
+- Daniel 7:23
+- Proverbs 28:15
+- Zephaniah 3:3
+- Jeremiah 50:17
+- Isaiah 5:29
+- Isaiah 11:9
+- Deuteronomy 30:11, 14
+- Isaiah 40:3
+- Isaiah 33:8
+- Matthew 22:9-10
+- Luke 14:23
+- Matthew 22:11
+- John 10:9
+- Deuteronomy 11:20
+- Exodus 12:13
+- Proverbs 6:23
+- Genesis 3:24
+- Genesis 2:15
+- Ephesians 6:17
+- Hebrews 4:12
+- Hebrews 10:19-20
+- Romans 12:1
+- John 11:25
+
+## 8. The Name
+
+- John 14:13
+- Matthew 7:22-23, NKJV
+- Deuteronomy 13:1-2
+- Deuteronomy 13:3, NKJV
+- Deuteronomy 13:4, NKJV
+- 2 Samuel 6:2
+- 2 Samuel 7:2
+- 2 Samuel 7:13
+- 1 Kings 8:20-21
+- Hebrews 9:4
+- Deuteronomy 8:3
+- Exodus 16:4
+- Deuteronomy 4:13
+- Deuteronomy 10:5
+- Numbers 17:5
+- Numbers 17:8
+- Numbers 17:10
+- 2 Samuel 7:11
+- John 2:19, 21
+- 1 Peter 2:5
+- Hebrews 3:6
+- Zechariah 6:12-13
+- Isaiah 4:1
+- Ephesians 5:23-24
+- 1 Peter 3:5-6
+- Ezekiel 16:8
+- Numbers 15:38-40
+- 1 John 2:3-4
+- Colossians 3:17
+- 1 John 5:14
+- Proverbs 28:9
+- Matthew 6:9-12
+- Ezekiel 36:20, 23
+- Deuteronomy 15:2
+- Luke 11:4
+- Luke 22:31-32
+- Hebrews 7:25
+- Exodus 20:7
+- Deuteronomy 28:58
+- Genesis 11:4
+- Genesis 12:2
+- Revelation 13:17
+- Revelation 14:1
+- Revelation 14:12
+- Acts 4:12
+- Isaiah 8:16
+
+## 9. The Disciple
+
+- Isaiah 8:16
+- Isaiah 54:13
+- John 6:45
+- Luke 14:26
+- Luke 14:27
+- Luke 14:33
+- John 8:31
+- John 13:35
+- 1 John 5:3
+- John 15:8
+- John 8:30-31
+- James 2:19
+- John 3:36, ASV
+- Matthew 28:19
+- Romans 6:4
+- Galatians 3:27
+- Jeremiah 31:33
+- Luke 6:40
+- Exodus 23:21
+- John 17:11
+- John 15:10
+- John 8:46
+- Matthew 5:17
+- 1 John 2:6
+- Luke 6:39
+- Mark 2:18
+- Matthew 23:2-3
+- Matthew 15:3, 9
+- Matthew 15:14
+- Micah 6:16
+- 2 Chronicles 17:4
+- Deuteronomy 13:4
+- Matthew 7:22, NKJV
+- Matthew 7:23, NKJV
+- Revelation 14:1
+- Revelation 3:12
+
+## 10. The Seal
+
+- Genesis 38:18
+- Genesis 41:42
+- Esther 8:8
+- 2 Timothy 2:19
+- Numbers 16:5
+- Deuteronomy 6:25
+- 1 John 5:17
+- Exodus 28:36, 38
+- Revelation 14:1
+- Revelation 22:4
+- Exodus 13:9
+- Deuteronomy 6:8
+- Isaiah 8:16
+- Exodus 31:13, 17
+- Ezekiel 9:2
+- Ezekiel 9:4, 6
+- Revelation 7:3
+- Revelation 9:4
+- Ephesians 1:13
+- 2 Corinthians 1:22
+- Ephesians 4:30
+- Job 38:14
+- Ezekiel 36:27
+- John 6:27
+- Revelation 13:16
+- Jeremiah 22:24
+- Haggai 2:23
+- Song of Solomon 8:6
+- Song of Solomon 4:12
+
+## 11. The Coin
+
+- Luke 15:8-10, NKJV
+- Luke 15:23-24, 32
+- Matthew 10:6
+- Proverbs 6:23
+- Matthew 22:15-21, NKJV
+- Daniel 7:23
+- Genesis 1:27
+- Romans 12:1
+- Matthew 13:38
+- Matthew 13:44
+- Job 23:10
+- Zechariah 13:9
+- Proverbs 23:23
+- Proverbs 2:3-6
+- Revelation 3:18
+- Matthew 17:24-27, ASV
+- Matthew 4:19
+- Leviticus 27:2-8
+- Exodus 30:12, 15
+- Job 34:19
+- Exodus 30:16
+- Exodus 38:25-27
+- 1 Peter 2:5
+- Numbers 33:3
+- 1 Corinthians 15:20
+- Exodus 13:2
+- Revelation 12:5
+- Colossians 1:15
+- Exodus 13:13
+- Exodus 13:9
+- Numbers 3:40
+- Numbers 3:43-50
+- Deuteronomy 30:14
+- Romans 10:9
+- Leviticus 16:6
+- Revelation 7:4
+- Revelation 14:4
+- Revelation 13:16-18
+- Acts 17:29
+- Exodus 30:15
+- Revelation 13:8
+- Psalm 87:6
+- Revelation 9:4
+- Revelation 16:2
+- Isaiah 55:1
+- Genesis 11:4
+- Acts 4:12
+- Revelation 13:18
+- Luke 14:28
+- Revelation 2:17
+- Acts 26:10
+- Acts 1:26
+- Genesis 15:6
+- Leviticus 25:50-52
+- 1 Kings 10:14
+- Deuteronomy 17:17
+- Ezra 2:13
+- Revelation 15:2
+- Matthew 7:14
+- Hosea 3:2
+
+## 12. Marriage and Divorce
+
+- Leviticus 20:10
+- Deuteronomy 22:22-24
+- John 8:5
+- Matthew 5:18
+- Matthew 5:32
+- Matthew 15:19
+- Mark 10:11; Luke 16:18
+- Matthew 1:18-19
+- Matthew 19:4-6
+- Ezekiel 16:8
+- Malachi 2:14
+- Proverbs 2:17
+- 1 Corinthians 6:16-17
+- Deuteronomy 24:1
+- Leviticus 18:6
+- Deuteronomy 24:2
+- Deuteronomy 24:4
+- Deuteronomy 22:19, 29
+- Exodus 21:10
+- Matthew 19:8
+- Malachi 2:16
+- Exodus 34:15-16
+- Jeremiah 3:9
+- 2 Chronicles 21:11
+- Revelation 17:2
+- Deuteronomy 7:3-4
+- Ezra 9:2
+- Ezra 10:3
+- Nehemiah 13:26
+- Malachi 2:11-12
+- 1 Corinthians 7:10
+- 1 Corinthians 7:12
+- 1 Corinthians 7:12, 14
+- 1 Corinthians 7:13-14
+- 1 Corinthians 7:16
+- 1 Corinthians 7:39
+- 1 Corinthians 7:15
+- Esther 1:12
+- Esther 1:15
+- Esther 1:17
+- Esther 1:19
+- 1 Samuel 15:28
+- Matthew 21:43
+- 1 Kings 11:11
+- Esther 2:17
+- Esther 4:16
+- Jeremiah 3:8
+- Isaiah 50:1
+- Jeremiah 3:1
+- Romans 7:2-4
+- Jeremiah 31:31-32
+- Hosea 3:2
+- Hosea 2:19-20
+- Isaiah 54:4-7
+- John 8:4-5
+- John 8:11
+- Deuteronomy 22:22; Leviticus 20:10
+- Revelation 19:2
+- Revelation 18:8
+- Leviticus 21:9
+- Revelation 19:7-8, ASV
+- Ephesians 5:31-32
+- 2 Corinthians 11:2
+- Jeremiah 3:14
+
+## 13. Wings
+
+- Luke 8:44, NKJV
+- Luke 8:44
+- Matthew 9:20
+- Daniel 9:27
+- Exodus 19:4
+- Numbers 15:38-39
+- Deuteronomy 22:12
+- Deuteronomy 8:11
+- Psalm 103:18
+- Genesis 8:1
+- Exodus 2:24
+- James 1:25
+- Isaiah 30:20-21
+- Matthew 23:5
+- Malachi 4:2
+- Matthew 9:21
+- Matthew 14:36
+- 1 Kings 8:6
+- Exodus 25:20
+- Exodus 25:21
+- Exodus 25:22
+- Isaiah 6:2
+- Psalm 91:4
+- Psalm 17:8
+- Exodus 19:4-5
+- Deuteronomy 32:12
+- Revelation 12:14
+- Ezekiel 16:8
+- Ruth 3:9
+- Deuteronomy 22:30
+- Matthew 23:37
+- Matthew 23:38
+- Isaiah 8:8
+- Ezekiel 17:3, 7
+- 1 Samuel 15:27-28
+- 1 Samuel 24:4-5
+- 1 Samuel 24:11
+- Jeremiah 2:34
+- Lamentations 1:9
+- Haggai 2:12-13
+- Ezekiel 5:3
+- Isaiah 11:12
+- Isaiah 24:16
+- Ezekiel 7:2
+- Job 38:13
+- Leviticus 19:9-10
+- Deuteronomy 24:19
+- Ruth 2:3
+
+## 14. Orphans, Widows, and the Fatherless
+
+- James 1:27
+- Isaiah 50:1
+- Lamentations 1:1
+- Lamentations 5:3
+- Revelation 18:7
+- Isaiah 47:1
+- Isaiah 47:8-9
+- Revelation 18:8
+- Isaiah 54:5
+- Deuteronomy 10:18
+- Deuteronomy 24:19
+- Ephesians 2:19
+- Ephesians 2:12
+- Leviticus 19:34
+- Exodus 12:48
+- Hebrews 11:13-16
+- Philippians 3:20
+- Leviticus 25:23
+- Psalm 119:19
+- Leviticus 19:10
+- Zechariah 7:10
+- Luke 6:20
+- Psalm 37:11
+- Matthew 5:5
+- Isaiah 61:1
+- Luke 4:18
+- Matthew 5:3
+- Isaiah 66:2
+- Zephaniah 3:12
+- 1 Samuel 2:8
+- James 2:5
+- Matthew 11:5
+- Proverbs 13:7
+- Revelation 2:9
+- Revelation 3:17
+- Revelation 3:18
+- Luke 12:21
+- Luke 6:24
+- 2 Corinthians 8:9
+- Mark 10:23
+- Mark 10:24
+- Genesis 13:2
+- Matthew 19:26
+- Deuteronomy 15:11
+- Psalm 113:7
+- Deuteronomy 8:3
+- Ephesians 2:10; Revelation 19:8
+- Amos 8:11
+- John 21:17
+- Matthew 24:45
+- Matthew 28:20
+- John 6:51
+- John 6:63
+- John 6:66
+
+## 15. The Remnant
+
+- Luke 13:23-24
+- Ecclesiastes 7:28
+- Jeremiah 3:14
+- 1 Kings 19:18
+- Romans 11:5
+- Romans 9:27
+- Zechariah 13:8-9
+- Isaiah 17:5-6, ASV
+- Leviticus 19:9-10; Deuteronomy 24:19-22
+- Matthew 13:38
+- Isaiah 13:12
+- Ezekiel 22:18
+- Micah 5:7-8
+- Deuteronomy 7:7
+- Job 1:15-19
+- 1 Kings 22:6-8
+- 1 Kings 18:22
+- 1 John 1:9
+- 1 John 1:8
+- Ruth 1:21
+- Ruth 2:10
+- Ruth 1:5
+- Ruth 2:11
+- Matthew 1:5
+- Matthew 5:20
+- Matthew 19:24
+- 1 Peter 3:20
+- Judges 7:2
+- Matthew 7:14
+- Luke 12:32
+- Luke 13:24
+- Revelation 14:12
+- Revelation 20:4
+- Joel 2:32
+- Isaiah 1:9
+
+## 16. Heaven and Hell
+
+- Matthew 6:10
+- Psalm 115:16
+- Isaiah 66:1
+- Genesis 19:24
+- Genesis 1:16-18
+- Deuteronomy 28:12
+- Exodus 34:5
+- John 3:13
+- Genesis 11:4
+- Isaiah 14:13
+- Acts 2:34
+- Daniel 12:2
+- Job 14:13, 15
+- Acts 13:36
+- 1 Thessalonians 4:16
+- Revelation 21:2-3
+- Jeremiah 31:31
+- Hebrews 12:27
+- Ephesians 6:12; Revelation 12:9
+- Revelation 21:1
+- Matthew 5:5
+- Genesis 37:35
+- Job 14:13
+- Psalm 16:10
+- Acts 2:27-31
+- Proverbs 27:20
+- Isaiah 5:14
+- Isaiah 38:10; Matthew 16:18
+- Job 17:16
+- Psalm 18:5
+- Ecclesiastes 9:5
+- Psalm 6:5
+- Psalm 115:17
+- Psalm 146:4
+- 1 Samuel 2:6
+- Hosea 13:14
+- Revelation 20:13
+- Revelation 1:18
+- Matthew 16:18
+- Matthew 10:28
+- Deuteronomy 4:24
+- Hebrews 12:29
+- Exodus 33:20
+- Deuteronomy 32:22, KJV
+- Psalm 139:8
+- Exodus 3:2
+- Daniel 3:22-27
+- Malachi 3:3
+- Zechariah 13:9
+- 1 Corinthians 3:15
+- Psalm 66:12
+- Zechariah 3:2
+- Genesis 3:24
+- Exodus 21:24
+- Deuteronomy 25:3
+- Genesis 2:7
+- Ezekiel 18:4
+- 1 Timothy 6:16
+- Romans 2:7
+- Revelation 20:13-14
+- Revelation 6:8
+- Exodus 21:10
+- Numbers 14:24
+- Jeremiah 51:39
+- Obadiah 16
+- Revelation 21:4
+- Matthew 25:46
+- John 15:6
+- Hebrews 9:12
+- Jude 7
+- Revelation 19:3; Isaiah 34:10
+- Psalm 68:2
+- Luke 16
+- Luke 16:29, 31
+- Romans 6:23
+- Deuteronomy 30:19
+
+## Bonus study. The Weeping and the Gnashing
+
+- Luke 13:28
+- Psalm 112:10
+- Psalm 37:12
+- Job 16:9
+- Psalm 35:16
+- Lamentations 2:16
+- Acts 7:54-56
+- Matthew 8:12
+- Matthew 13:41-42
+- Matthew 13:49-50
+- Matthew 22:13
+- Matthew 24:51
+- Matthew 25:30
+- Luke 13:26-28
+
+## 17. Shadow
+
+- Colossians 2:16-17
+- Numbers 14:9
+- Ecclesiastes 7:12
+- Psalm 91:1
+- Psalm 36:7
+- Psalm 17:8
+- Psalm 57:1
+- Psalm 63:7
+- Numbers 15:38-39
+- Psalm 121:5
+- Isaiah 25:4
+- Isaiah 32:2
+- Isaiah 4:6
+- Isaiah 49:2
+- Isaiah 51:16
+- Song of Solomon 2:3
+- Hosea 14:7
+- Lamentations 4:20
+- Psalm 121:5-6
+- Deuteronomy 4:24; Hebrews 12:29
+- Isaiah 33:14-15
+- Exodus 33:22
+- Psalm 98:1
+- Psalm 84:11
+- Psalm 91:1, 4
+- Hebrews 9:5
+- Malachi 4:2
+- Judges 9:15
+- Ezekiel 31:6
+- Ezekiel 31:12
+- Daniel 4:12
+- Ezekiel 17:23
+- Mark 4:32
+- Isaiah 30:2-3
+- Hosea 4:13
+- Exodus 40:35
+- Matthew 17:5
+- Acts 5:15
+- Luke 1:35
+- Genesis 1:26
+- Colossians 2:17
+- Hebrews 10:1
+- Colossians 2:21
+- Isaiah 32:1-2
+- Psalm 23:4
+- Amos 5:8
+- Psalm 107:14
+- Isaiah 9:2; Matthew 4:16
+- 1 Chronicles 29:15; Psalm 144:4
+- James 1:17
+
+## 18. Justice and Judgment
+
+- Genesis 18:19
+- Jeremiah 22:3
+- Isaiah 56:1
+- Psalm 89:14
+- Psalm 97:2
+- Deuteronomy 6:25
+- Psalm 119:172
+- Deuteronomy 4:8
+- Deuteronomy 4:1
+- Psalm 119:13
+- Psalm 119:160
+- Psalm 119:106
+- Habakkuk 1:4
+- Zechariah 7:9-10
+- Deuteronomy 10:18
+- Isaiah 1:17
+- Isaiah 1:23
+- Jeremiah 5:28
+- Job 29:12-16
+- Jeremiah 22:15-16
+- Ezekiel 18:5-9
+- Matthew 23:23
+- Isaiah 42:1-4
+- Matthew 12:18-20
+- Jeremiah 23:5
+- Isaiah 9:7
+- 1 Kings 10:9
+- 2 Samuel 8:15
+- Judges 2:16
+- Judges 3:10
+- Nehemiah 9:27
+- 1 Samuel 8:5, 20
+- Isaiah 33:22
+- Exodus 18:16
+- Ezekiel 20:35-37
+- Ezekiel 20:33
+- Ezekiel 20:38
+- Psalm 43:1; so also 26:1; 35:24
+- Psalm 96:11-13
+- Daniel 7:22
+- Revelation 20:4
+- Matthew 19:28
+- Genesis 18:25
+- Ecclesiastes 12:13
+- Ecclesiastes 12:14
+- James 2:12
+- Proverbs 21:3
+- Micah 6:8
+- Jeremiah 9:24
+- Isaiah 59:8, 14
+- Malachi 2:17
+
+## 19. Liberty
+
+- Leviticus 25:10
+- Ezekiel 46:17
+- Deuteronomy 15:1-2; Exodus 21:2
+- Isaiah 61:1
+- Isaiah 61:2
+- Deuteronomy 31:10
+- Luke 4:21
+- Psalm 84:3
+- Proverbs 26:2
+- John 8:32-34
+- John 8:36
+- Leviticus 25:55
+- Leviticus 25:42
+- Exodus 8:1
+- Romans 6:18
+- Romans 6:22
+- 1 Peter 2:16
+- Romans 6:16
+- James 1:25
+- James 2:12
+- Galatians 5:1
+- John 8:31-32
+- 2 Corinthians 3:17
+- Romans 8:21
+- Exodus 21:5-6
+- Exodus 19:5
+- Deuteronomy 6:4
+- 1 Samuel 15:22
+- Deuteronomy 6:9
+- Psalm 40:6-8
+- Isaiah 50:5
+- John 8:35
+- 2 Peter 2:19
+- Galatians 5:13
+- Jeremiah 34:8-16
+- Jeremiah 34:17
+
+## 20. The Fool and the Wise
+
+- Matthew 5:22
+- Psalm 14:1
+- Proverbs 1:7
+- Proverbs 12:15
+- Matthew 7:24-26
+- Psalm 111:10
+- Deuteronomy 4:6
+- Psalm 45:14-15
+- 2 Corinthians 11:2
+- Joel 1:8
+- Deuteronomy 22:23-24
+- 1 Kings 11:31
+- Amos 5:2; Jeremiah 31:4
+- Jeremiah 31:21
+- Jeremiah 31:31
+- Matthew 25:3-4
+- Proverbs 13:9; 24:20
+- Proverbs 6:23
+- Psalm 141:5
+- Exodus 25:6
+- Exodus 27:20
+- Exodus 30:22-33
+- Proverbs 21:20
+- Acts 8:17
+- Acts 8:18-20
+- John 3:34
+- Acts 10:44
+- Matthew 25:9
+- Acts 8:20
+- Proverbs 23:23
+- Psalm 119:142
+- Job 28:28
+- Psalm 119:151, 172
+- John 12:50
+- 1 John 2:4
+- Proverbs 7:1-3
+- Psalm 119:11
+- Jeremiah 31:33
+- Isaiah 55:1
+- Isaiah 55:2-3
+- Proverbs 27:5-9
+- Ezekiel 36:27
+- John 16:13
+- Philippians 2:13
+- Galatians 5:22
+- Zechariah 4:6-9
+- Zechariah 4:11-14
+- Matthew 5:16
+- Proverbs 31:18
+- Jeremiah 11:16
+- Luke 22:39
+- Luke 22:44
+- Luke 22:42
+- Matthew 25:12
+
+## 21. Light and Darkness, Day and Night
+
+- Proverbs 6:23
+- Psalm 119:105
+- Isaiah 8:20
+- Matthew 5:14-16
+- Matthew 5:15
+- Isaiah 58:10
+- Psalm 27:1
+- John 3:19-20
+- 1 John 1:5-6
+- Proverbs 4:18-19
+- Isaiah 50:11
+- Genesis 1:4-5
+- John 9:4
+- John 12:35
+- John 11:10
+- Exodus 10:22-23
+- 1 Thessalonians 5:5-6
+- 1 Thessalonians 5:7
+- Romans 13:12
+- Matthew 22:13
+- Genesis 1:4
+
+## 22. Worship
+
+- Revelation 14:7
+- 2 Chronicles 29:28
+- 2 Chronicles 29:30
+- 2 Chronicles 20:18-19
+- Genesis 23:7
+- 2 Samuel 14:33
+- Esther 3:2
+- Psalm 2:12
+- 1 Kings 19:18
+- Hosea 13:2
+- Job 31:26-28
+- Genesis 22:5
+- 1 Samuel 15:22
+- Exodus 20:5
+- Daniel 3:18
+- Romans 1:25
+- Romans 1:23; Deuteronomy 4:16-18
+- Deuteronomy 4:19
+- Revelation 13:3-4
+- Matthew 4:9
+- Matthew 4:10
+- Romans 12:1
+- Deuteronomy 6:13
+- 2 Kings 17:36
+- Psalm 96:9
+- Revelation 15:4
+- Matthew 15:9
+- Isaiah 29:13
+- 1 Samuel 1:3
+- Deuteronomy 26:10
+- John 12:20
+- Acts 8:27
+- Acts 24:11
+- Acts 24:14
+- Isaiah 66:23
+- Zechariah 14:16-17
+- Exodus 20:11
+- Revelation 13:4
+- Revelation 13:15
+- Revelation 22:9
+
+## 23. The Fear of the Lord
+
+- Ecclesiastes 12:13
+- Deuteronomy 10:12-13
+- Deuteronomy 6:24
+- Proverbs 8:13
+- Proverbs 16:6
+- Job 28:28
+- Deuteronomy 6:13
+- Matthew 4:10
+- Proverbs 9:10
+- Psalm 111:10
+- Matthew 10:28
+- Isaiah 8:13
+- Psalm 19:9
+- Isaiah 33:6
+- Proverbs 14:27
+- Psalm 25:14
+- Jeremiah 32:40
+- Proverbs 29:25
+- 1 Samuel 15:24
+- John 12:42-43
+- Galatians 1:10
+- Exodus 1:17
+- Genesis 20:11
+- Hebrews 13:6; Psalm 118:6
+- Isaiah 51:12
+- Isaiah 40:6-8
+- Revelation 14:7
+- Revelation 14:12
+
+## 24. Grace, Mercy, and the Gift of God
+
+- Romans 5:8
+- Genesis 6:8
+- John 1:17
+- Psalm 119:142
+- Titus 2:11-12
+- Romans 6:14
+- Romans 6:15
+- Romans 6:16
+- Jude 4
+- Deuteronomy 7:9
+- Psalm 103:17-18
+- Isaiah 49:15
+- Proverbs 28:13
+- Isaiah 55:7
+- Ezekiel 33:15-16
+- Psalm 51:4
+- Luke 19:8
+- Matthew 18:23-27, 32-35
+- Colossians 2:14
+- Matthew 5:7
+- Matthew 6:15
+- James 2:13
+- Matthew 23:23
+- Micah 6:8
+- Romans 6:23
+- Luke 17:9-10, NKJV
+- Romans 4:4
+- Isaiah 40:10
+- Revelation 22:12
+- Romans 2:13
+- Romans 3:31
+- Ephesians 2:8-10, ESV
+- Hebrews 4:14-16
+- Numbers 15:28-30, AMP
+- Hebrews 10:26-29, NKJV
+- Revelation 2:5
+- John 5:14; 8:11
+- Romans 7:19, 22-25, NKJV
+- Luke 18:13
+- Romans 10:9, BSB
+- John 6:38
+- Matthew 7:21
+
+## Bonus study. The End of the Law
+
+- Romans 10:4
+- 1 Timothy 1:5, 8, NKJV
+- Romans 13:10
+- 1 Timothy 1:7-8
+- 1 Timothy 1:9-10
+- Romans 6:22
+- Romans 10:3
+- Romans 3:31
+- Romans 8:2; 7:22
+- Romans 13:1-7
+- Ephesians 6:1-8
+- Acts 5:29
+- Galatians 1:14
+- Colossians 2:8
+- Colossians 2:22
+- Titus 1:14
+- Romans 7:12
+- Romans 7:14
+- Romans 7:22
+- Mark 7:9
+- Romans 4:4-5
+- Luke 17:10
+- Hebrews 11:8
+- James 2:22
+- Ephesians 2:9-10
+- Romans 9:11
+- 2 Timothy 1:9
+- Titus 3:5, 8
+- 1 Corinthians 7:19
+- Galatians 5:2-4
+- Acts 16:3
+- Galatians 2:12, 14
+- Romans 6:14-16
+- Romans 7:4
+- Romans 7:7
+- Romans 7:12, 14, 22
+- Romans 8:3-4
+- Galatians 5:18
+- Galatians 5:19-21
+- Galatians 5:14
+- Galatians 5:23
+- Galatians 3:13
+- Galatians 3:10
+- Galatians 3:21
+- Galatians 3:24-25
+- 2 Corinthians 3:9
+- 2 Corinthians 3:3
+- Romans 7:13
+- Hebrews 7:12
+- Hebrews 7:16-18
+- Hebrews 9:1-10
+- Hebrews 8:10
+- Ephesians 2:15
+- Ephesians 2:11-19
+- Ephesians 6:2
+- Colossians 2:13-14
+- Colossians 2:20-22
+- Colossians 2:16
+- Colossians 2:17
+- Galatians 4:8-10
+- Romans 14:2, 21
+- Acts 15:1
+- Acts 15:20-21
+- Acts 16:3; 20:16; 21:21-24
+
+## 25. What Is the Point?
+
+- Matthew 5:18
+- Psalm 40:6
+- Hebrews 10:5
+- Hebrews 10:7
+- John 9:22
+- John 12:42-43
+- Deuteronomy 4:2
+- Proverbs 30:6
+- Jeremiah 16:19
+- 1 Peter 1:18
+- Mark 7:13
+- Leviticus 3:17
+
+## 26. Spoken Once, Heard Twice
+
+- Jeremiah 1:11-12
+- Psalm 62:11
+- Isaiah 5:7
+- Proverbs 6:27-29
+- Zechariah 5:7-8
+- Jeremiah 50:37
+- Jeremiah 51:30
+- Nahum 3:13
+- Genesis 3:15
+- Matthew 1:20
+- Luke 1:35
+- Hebrews 12:29
+- Isaiah 66:7-8
+- Revelation 12:9
+- Revelation 12:5
+- Revelation 12:17
+
+## 27. Noah Uncovered
+
+- Genesis 8:13
+- Exodus 40:2
+- 2 Chronicles 29:17; Ezekiel 45:18
+- Ezra 7:9
+- Genesis 9:28
+- Luke 17:26
+- Genesis 8:13 — the letters read again
+- Genesis 8:13 — the letters heard a third time
+- 1 Chronicles 18:17
+- Acts 3:21
+- Matthew 19:28
+- Ezra 2:64
+- Revelation 6:12, literal Greek
+- Zechariah 14:7
+- Ezekiel 45:18
+- Genesis 6:9
+- 1 Thessalonians 4:17
+- Colossians 3:4
+- Genesis 1:14, _le'otot_
+- Genesis 9:12, 13, 17
+- Romans 4:11
+- Psalm 7:12
+- Isaiah 34:4
+- Isaiah 34:5
+- Hosea 11:8; Deuteronomy 29:23
+- Joshua 7:2; Judges 4:5
+- Luke 17:26, 28
+- Revelation 6:16
+- Revelation 7:9, 14
+- Genesis 1:14
+
+## 28. Behold the Hand, Behold the Nail
+
+- Exodus 26:32
+- Deuteronomy 4:34
+- Genesis 47:23
+- Zechariah 12:10
+- John 19:37
+- Isaiah 53:1
+- John 20:25
+- John 20:27
+- Isaiah 49:16
+- Exodus 12:46
+- Psalm 34:20
+- John 19:33, 36
+- Hebrews 10:20
+- Matthew 27:51
+- Zechariah 10:4
+- Isaiah 22:23
+- Revelation 3:7
+- Genesis 1:14
+
+## 29. Sun, Moon, and Stars
+
+- Psalm 104:19
+- Nahum 1:15
+- Genesis 1:16 — rendered from the Hebrew
+- Psalm 136:8-9
+- Jeremiah 31:35
+- Genesis 27:15
+- Genesis 29:16
+- 1 Samuel 16:11
+- Ezekiel 34:23
+- Genesis 1:16-18
+- Genesis 1:14
+- Genesis 37:9-10
+- Psalm 84:11
+- Psalm 84:9
+- Genesis 15:1
+- Exodus 33:22
+- James 1:17
+- Matthew 24:30
+- Genesis 1:17
+- Genesis 1:14-18
+- Deuteronomy 4:19
+- John 5:19
+- John 8:12
+- Psalm 89:36-37
+- Genesis 2:18
+- Revelation 1:5
+- John 9:4
+- Romans 13:12
+- John 1:5
+- Psalm 111:10
+- John 9:5
+- 2 Peter 1:19
+- 1 Thessalonians 5:5
+- Matthew 4:15-16
+- Psalm 136:9
+- Daniel 12:3
+- Matthew 5:14
+- 2 Corinthians 4:6
+- Colossians 1:27
+- 2 Corinthians 4:7
+- Proverbs 6:23
+- Matthew 5:16
+- Revelation 20:6
+- Revelation 20:4
+- Revelation 12:1 — rendered from the Hebrew text
+- Genesis 1:14-16
+- Isaiah 11:10
+- Genesis 1:5
+- Job 38:32
+- 1 Corinthians 10:4
+- Matthew 16:18
+- Psalm 40:2
+- Isaiah 30:26
+- 1 Chronicles 12:32
+- Matthew 13:43
+- Malachi 4:2
+- 1 Corinthians 11:3
+- 1 Corinthians 15:41
+- Hebrews 1:3
+- 1 Kings 22:19
+- Job 38:7
+- Daniel 7:9-10, NKJV
+- Matthew 19:28
+- Revelation 4:4
+- Isaiah 24:23 — rendered from the Hebrew
+- Revelation 1:20
+- Psalm 89:5-7
+- Revelation 4:6-7
+- Ezekiel 1:18
+- Zechariah 4:10
+- Revelation 5:6
+- Matthew 6:22, NKJV
+- Matthew 25:4
+- Proverbs 22:9
+- Proverbs 23:6
+- Matthew 6:23
+- Matthew 20:15
+- Revelation 1:14
+- 1 Kings 10:18-20
+- 1 Kings 4:29
+- Daniel 7:9
+- Hebrews 8:2
+- Genesis 1:8
+- Exodus 25:40; Hebrews 8:5
+- Romans 1:20
+- Psalm 19:1-4
+- Isaiah 40:22
+- Psalm 19:4-5
+- Genesis 28:17
+- Psalm 78:23
+- Revelation 4:1
+- Ezekiel 46:1
+- Revelation 21:12
+- Numbers 2:3
+- Ezekiel 48:31
+- Revelation 21:13
+- Hebrews 8:5
+- Numbers 2
+- Genesis 49; Deuteronomy 33; 1 Chronicles 12
+- Jude 13 — from the Greek
+- Jude 13 — the Hebrew text
+- Isaiah 57:20
+- Jude 14
+- 1 Enoch 18:14-16 — the book Jude quotes by name
+- Hebrews 7:2
+- Psalm 110:4
+- Revelation 4:3
+- Isaiah 53:5
+- Amos 5:26
+- Acts 7:43
+- Leviticus 17:7
+- Isaiah 13:21
+- Luke 17:2
+
+## 30. Lucifer's Declared Plan
+
+- Amos 4:13
+- Isaiah 14:4
+- Isaiah 14:12-15
+- Job 30:30
+- Leviticus 23:2
+- Jonah 1:5; 1 Samuel 24:3; Isaiah 14:15
+- Ezekiel 7:22; Psalm 83:3
+- Psalm 48:2
+- Job 20:26
+- Isaiah 14:12-14 — first hearing from the consonants
+- Proverbs 7:20, ASV
+- Psalm 81:3, NKJV
+- Job 26:9, ASV
+- Psalm 89:36-37
+- Psalm 104:2
+- Isaiah 14:13 — the seat heard twice
+- Genesis 1:16
+- Psalm 84:11
+- Isaiah 15:1; Hosea 4:5
+- Isaiah 14:14 — spoken once, heard twice
+- Daniel 12:3
+- Daniel 2:35, 44
+- Genesis 1:14; Psalm 104:19
+- Isaiah 5:20
+- Psalm 19:1-6
+- 2 Corinthians 11:14
+- Isaiah 14:12-14 — read through the symbols
+- Daniel 7:25
+- Isaiah 14:15
+- Amos 8:9-10
+- Matthew 27:45
+- Luke 23:44-45, ASV
+
+## 31. The Pearls of Wisdom
+
+- Matthew 13:45-46
+- Matthew 13:44
+- Matthew 13:38; Exodus 19:5; Job 23:10; Zechariah 13:9
+- Matthew 13:37
+- Genesis 1:8, 14-18
+- 1 Corinthians 11:3; Ephesians 5:22-24
+- Proverbs 3:15, KJV — “pearls” restored
+- Proverbs 31:10 — MEAT rendering
+- Proverbs 8:35, Wisdom speaking
+- Proverbs 18:22
+- Matthew 13:46
+- Proverbs 3:14
+- Proverbs 31:18
+- Matthew 13:45
+- Proverbs 3:13-20 — MEAT rendering
+- Proverbs 3:13 — MEAT rendering
+- Proverbs 3:14 — MEAT rendering
+- Job 37:21-22
+- Song of Solomon 5:11, 14
+- 1 Kings 6:20-22; 7:49
+- Revelation 21:18, 23
+- Proverbs 3:15 — MEAT rendering
+- Proverbs 3:16 — MEAT rendering
+- Proverbs 3:17 — MEAT rendering
+- Proverbs 3:18 — MEAT rendering
+- Exodus 17:12
+- Revelation 22:2
+- Proverbs 3:19, KJV
+- Psalm 8:3
+- Proverbs 8:27
+- Proverbs 3:20 — MEAT rendering
+- Genesis 7:11
+- Psalm 89:37
+- Deuteronomy 33:13-14
+- Proverbs 31:10-31 — MEAT rendering
+- Proverbs 31:11 — MEAT rendering
+- Proverbs 31:12, KJV
+- Proverbs 31:13 — MEAT rendering
+- Job 36:32, YLT
+- Proverbs 31:14 — MEAT rendering
+- Deuteronomy 8:3
+- Psalm 119:105
+- Psalm 19:1-6
+- Proverbs 31:15 — MEAT rendering
+- Matthew 24:45, KJV
+- Proverbs 31:16, KJV — “palms” restored
+- Matthew 13:38; Isaiah 5:7
+- Proverbs 31:17, KJV
+- Daniel 10:5-6, KJV
+- Daniel 10:18-19
+- Proverbs 31:18 — MEAT rendering
+- Genesis 1:4
+- Proverbs 31:19 — MEAT rendering
+- Proverbs 31:20 — MEAT rendering
+- Psalm 72:12
+- Psalm 72:5
+- Proverbs 31:21 — MEAT rendering
+- Proverbs 31:22 — MEAT rendering
+- Proverbs 31:23, KJV
+- Psalm 19:5-6, KJV
+- Proverbs 31:24, KJV
+- Daniel 10:5
+- Revelation 1:13
+- Revelation 19:8, NKJV
+- Proverbs 31:25 — MEAT rendering
+- John 6:39-40, 44, 54
+- John 11:24
+- John 12:48
+- Proverbs 31:28-29
+- Proverbs 31:26, KJV
+- Proverbs 31:27 — MEAT rendering
+- Job 31:26
+- Proverbs 31:28 — MEAT rendering
+- Proverbs 31:29 — MEAT rendering
+- Proverbs 31:30 — MEAT rendering
+- Proverbs 31:31 — MEAT rendering
+- Revelation 19:8; 21:21
+- Song of Solomon 6:9-10
+- Job 28:16, 18
+- Lamentations 4:7-8, KJV — “pearls” restored
+- Isaiah 5:20
+- Exodus 24:10 — “clearness” clarified
+- Ezekiel 1:26, KJV
+- Leviticus 12:4, 6
+- Psalm 89:44, KJV
+- Job 37:18 and 21, KJV
+- Revelation 4:6
+- James 1:23-25
+- 2 Corinthians 3:18
+- John 1:14
+- Song of Solomon 5:10, 14; 6:9-10
+- Isaiah 54:5, 11
+- Revelation 21:9, 19, 21
+- Revelation 21:21
+- Psalm 104:19; Genesis 1:14
+- Genesis 37:9-10
+- Psalm 19:5
+- Psalm 81:3, NKJV
+- Proverbs 7:20
+- Job 26:9
+- Daniel 7:9, NKJV
+- Ezekiel 1:26-28
+- Psalm 104:2
+- Psalm 97:2
+- Ezekiel 46:1
+- Amos knew the third kind too: __“When will the *new moon* be gone, that we may sell corn?”__ Amos 8:5
+- John 10:1-2
+- Ezekiel 46:12
+- Job 38:32
+- Isaiah 33:6
+- Proverbs 25:2
+- Matthew 7:6
+- Revelation 11:2
+- Daniel 8:13
+- Luke 21:24
+
+## Bonus study. Return on the Full Moon
+
+- Proverbs 7:19-20, ASV
+- Psalm 81:3, NKJV
+- 1 Corinthians 15:52
+- 1 Thessalonians 4:16
+- Isaiah 30:26, KJV
+- Song of Solomon 6:10
+- Zechariah 14:6-7, NKJV
+- Ezra 2:64
+- Matthew 24:27, KJV
+- Luke 11:36
+- Joshua 10:12-13, KJV
+- Habakkuk 2:20, KJV
+- Habakkuk 3:11, KJV
+- Revelation 8:1-2, KJV
+- Joshua 10:13
+- Joshua 10:11; Revelation 16:21
+- Joshua 10:16-18; Revelation 6:15-17
+- Joshua 6:10, 20-24
+- Joel 2:30-31, KJV
+- Revelation 6:12 — literal Greek
+- Revelation 9:2
+- Revelation 18:9, 18
+- Amos 5:18-20; Joel 2:2; Zephaniah 1:15
+- Proverbs 31:25 — MEAT rendering
+- John 6:39-40, 44, 54
+- John 11:24
+- John 12:48
+- Psalm 2:4
+- Psalm 37:13
+- Luke 6:21-23
+- Proverbs 31:28-29
+- Psalm 30:5
+- 1 Thessalonians 4:16-17
+
+## Bonus study. Clouds of Heaven
+
+- Genesis 9:13, 16
+- Psalm 104:3
+- Isaiah 19:1
+- Exodus 40:36-37; Numbers 9:17-23
+- Ezekiel 1:4-5
+- Ezekiel 1:13-14
+- Ezekiel 10:20
+- 1 Chronicles 28:18
+- Ezekiel 10:1
+- Ezekiel 1:26
+- Ezekiel 1:27-28
+- Psalm 89:36-37
+- Psalm 104:2-3
+- Daniel 7:9; Ezekiel 1:26-28
+- Job 26:9, ASV
+- Revelation 4:2-3
+- Daniel 7:13-14
+- Matthew 26:64
+- Acts 1:9, 11
+- Revelation 14:14
+- Revelation 6:2
+- Revelation 19:11
+- Zechariah 6:3, 5
+
+## 32. The Sabbath
+
+- Leviticus 23:15
+- Deuteronomy 16:9
+- Genesis 29:27
+- Ezekiel 45:21
+- Luke 22:1
+- Leviticus 25:4
+- Leviticus 25:8
+- Mark 15:42
+- Luke 18:12
+- Matthew 28:1; Mark 16:2; Luke 24:1; John 20:1; Acts 20:7; 1 Corinthians 16:2
+- Matthew 28:1
+- Ezekiel 46:1
+- Exodus 20:8
+- Luke 4:16; Acts 13:14; 16:13
+- Exodus 31:15; 35:2; Leviticus 23:3
+- Leviticus 16:31
+- Exodus 35:3
+- Exodus 16:23
+- Numbers 28:9
+- Exodus 20:9-10
+- Genesis 2:2-3
+- Exodus 16:26
+- Exodus 20:9-10; Deuteronomy 5:13-14
+- Exodus 31:15
+- Exodus 35:2
+- Leviticus 23:3
+- Leviticus 25:3-4
+- Luke 13:14
+- Exodus 16:29
+- 2 Kings 11:5, 7, 9
+- Numbers 28:9-10
+- Leviticus 24:8; 1 Chronicles 9:32
+- John 7:23
+- Matthew 12:5
+- Isaiah 58:13
+- Hebrews 4:10
+- Genesis 2:2
+- John 5:17
+- Matthew 12:12
+- 2 Peter 3:8
+- Hebrews 4:9
+- Hebrews 4:11
+- Ezekiel 46:1-3
+- 2 Kings 4:23
+- Amos 8:5
+- Isaiah 66:23
+- Colossians 2:16
+- Leviticus 23:39
+- Leviticus 23:11
+- Joshua 5:11
+
+## 33. Time Tested Tradition
+
+- John 8:44
+- Matthew 16:6, 12
+- Mark 7:13
+- Titus 1:14
+- Colossians 2:8
+- Revelation 2:9
+- Genesis 1:14
+
+## 34. The Four Winds
+
+- Zechariah 6:5
+- Psalm 104:4
+- Zechariah 1:11
+- Mark 4:39
+- Revelation 6:4
+- Revelation 6:8
+- Ezekiel 14:21
+- Matthew 24:6-7
+- Jeremiah 49:36
+- Matthew 24:31
+- Daniel 7:2-3 — a scene the sym:sym-sea[Sea] study in Part Six takes up in full
+- Ezekiel 37:9
+- Isaiah 11:12
+- Exodus 14:21
+- Exodus 10:13
+- Jonah 4:8
+- Hosea 13:15
+- Acts 2:2
+- John 3:8
+- Psalm 18:10
+- Psalm 104:3-4
+- Exodus 19:4
+- Genesis 1:2
+- Genesis 2:10
+- Numbers 15:39
+- Revelation 12:17
+- Revelation 7:1-3
+- Revelation 6:12
+
+## 35. The Fall of Babylon
+
+- Revelation 15:2-3
+- Exodus 15:1
+- Revelation 16:6
+- Revelation 17:15
+- Revelation 11:6
+- Revelation 18:23
+- Exodus 4:2-3
+- Numbers 17:2
+- Numbers 17:8
+- Exodus 7:12
+- Revelation 17:5, 9, 18
+- Isaiah 1:21
+- Revelation 11:8
+- Revelation 14:1
+- Revelation 14:11
+- Jeremiah 50:12
+- Isaiah 13:19
+- Daniel 2:34-35, 38, 44-45
+- Deuteronomy 11:24; Zechariah 14:8
+- Exodus 4:4
+- Isaiah 9:15
+- Revelation 12:4
+- Daniel 8:10
+- Isaiah 9:16
+- Revelation 9:19
+- Deuteronomy 28:44
+- Deuteronomy 28:13
+- Exodus 4:21
+- Revelation 20:2
+- Jeremiah 1:11-12
+- Exodus 25:33
+- Proverbs 6:23
+- Luke 8:11
+- Exodus 8:1
+- Revelation 18:4
+- Jeremiah 51:45
+- Jeremiah 50:9
+- Jeremiah 50:41
+- Jeremiah 51:48
+- Jeremiah 1:14
+- Jeremiah 4:7
+- Jeremiah 6:22-26
+- Job 24:16
+- Exodus 15:5
+- Exodus 15:10
+- Nehemiah 9:11
+- Jeremiah 51:63-64
+- Revelation 18:21
+- Jeremiah 51:25
+- Revelation 18:22
+- Mark 11:23
+- Luke 17:6
+- Revelation 8:3-4
+- Revelation 8:8
+- Acts 2:24
+- Romans 6:4
+- Micah 7:19
+- Matthew 18:6
+- Revelation 17:18
+- Jonah 1:2; 3:2; 4:11
+- Jeremiah 51:34
+- Revelation 17:5
+- Isaiah 1:10
+- Ezekiel 16:46
+- Exodus 20:2
+- Galatians 4:25
+- Ezekiel 23:19
+- Revelation 18:24
+- Matthew 23:35
+- Luke 13:33
+- Matthew 23:37
+
+## 36. Daniel Unsealed
+
+- Daniel 12:9-10
+- Jeremiah 25:11-12
+- Jeremiah 25:13
+- Daniel 9:2
+- Daniel 9:24 — the letters read again
+- Isaiah 61:1
+- John 8:34
+- Leviticus 25:41
+- Leviticus 25:9
+- Isaiah 37:30
+- 2 Kings 20:5
+- Exodus 12:40-41
+- Genesis 15:10, 17
+- Leviticus 23:15-16
+- Leviticus 25:8, 10
+- Daniel 10:2-3
+- Deuteronomy 16:9
+- Isaiah 26:3
+- Deuteronomy 16:20
+- Matthew 18:22
+- Genesis 4:24
+- Leviticus 25:10
+- 2 Corinthians 3:17
+- Daniel 9:25
+- Daniel 9:25 — the letters read again
+- Isaiah 60:10
+- Daniel 9:26
+- Daniel 9:26 — the letters read again
+- Genesis 5:24
+- Luke 24:3
+- 2 Kings 2:17
+- Genesis 49:10, _v'lo_
+- 2 Thessalonians 2:1
+- 1 Thessalonians 4:17
+- John 14:3
+- Judges 17:3; Ephesians 5:26
+- Daniel 4:13
+- Ezra 1:1
+- Judges 17:3
+- Hebrews 12:22-23
+- Daniel 9:27
+- Luke 22:20
+- Luke 22:18
+- John 14:2-3
+- Matthew 24:40
+- Daniel 12:11-12
+- Daniel 12:11-12 — the letters read again
+- Matthew 24:15-16
+
+## 37. Clouds
+
+- Jeremiah 10:13
+- Job 36:27-28
+- Zechariah 6:5
+- Isaiah 19:1
+- Deuteronomy 33:26
+- Psalm 68:4
+- Psalm 68:17
+- 2 Samuel 22:11
+- Nahum 1:3
+- Jeremiah 4:13
+- Exodus 13:21
+- Exodus 14:19-20
+- Psalm 99:7
+- Exodus 19:9
+- Exodus 40:36-37
+- 1 Kings 8:10-11
+- Daniel 7:13
+- Matthew 26:64; Luke 21:27; Revelation 1:7
+- Acts 1:9, 11
+- Revelation 11:12
+- Revelation 14:14-16
+- Luke 9:34-35
+- 2 Kings 2:11
+- Deuteronomy 32:2; Isaiah 55:10-11
+- Deuteronomy 11:14
+- Hosea 6:3
+- Joel 2:23
+- James 5:7
+- Zechariah 10:1
+- Isaiah 5:6
+- Amos 8:11
+- Ecclesiastes 11:3
+- Jude 12
+- 2 Peter 2:17
+- Proverbs 25:14
+- 1 Kings 18:44
+- Hebrews 12:1
+- Isaiah 60:8
+- Ezekiel 38:9, 16
+- 1 Thessalonians 4:17
+- Isaiah 4:5-6
+- Exodus 14:20
+- 1 Corinthians 15:52
+
+## 38. The Moment
+
+- Revelation 18:7
+- Isaiah 47:9
+- Exodus 33:5
+- Numbers 16:21
+- Numbers 16:45
+- Job 34:20
+- 1 Corinthians 15:52
+- Jeremiah 4:20
+- Jeremiah 51:8
+- Revelation 18:10
+- Malachi 3:1
+- Proverbs 29:1
+- 1 Thessalonians 5:3
+- Isaiah 47:8-9
+- 1 Thessalonians 5:2; 2 Peter 3:10
+- Luke 21:34
+- Isaiah 54:7-8
+- Psalm 30:5
+- 2 Corinthians 4:17
+- Matthew 4:8
+- Luke 4:5
+- Jeremiah 51:25
+- Revelation 11:15
+- Revelation 11:18
+- Daniel 2:35
+- Daniel 2:44
+- Daniel 7:14
+- Luke 4:6
+- Habakkuk 2:3
+- Isaiah 47:1
+- Revelation 18:10, 17, 19
+
+## 39. Mountain
+
+- Revelation 17:9-10
+- Daniel 2:35 (NKJV)
+- Daniel 2:44-45 (NKJV)
+- Daniel 2:38-39 (NKJV)
+- 1 Corinthians 10:4
+- Isaiah 51:1-2
+- 1 Peter 2:4-5
+- Isaiah 28:16
+- Ephesians 2:20
+- Isaiah 2:2-3
+- Jeremiah 51:25
+- Revelation 8:8-9
+- Revelation 8:8
+- Matthew 17:20
+- Matthew 21:21
+- Mark 11:23
+- Psalm 46:2-3
+- Psalm 46
+- Joel 2:2
+- Matthew 24:15-16
+- Luke 21:20-21
+- Jeremiah 50:6
+- Isaiah 40:4
+- Jeremiah 16:16
+- Revelation 6:14-16
+- Revelation 16:19-20
+- Matthew 4:8
+
+## 40. Sea & Waters
+
+- Revelation 17:1
+- Revelation 17:15
+- Revelation 17:9-10
+- Isaiah 17:12-13
+- Psalm 65:7
+- Psalm 98:7
+- Luke 21:25
+- Haggai 2:6-7
+- Isaiah 57:20
+- Jude 13
+- James 1:6
+- Daniel 7:2-3
+- Daniel 7:17
+- Zechariah 6:5
+- Revelation 13:1
+- Psalm 104:25-26
+- Revelation 8:8-9
+- Revelation 16:3
+- Isaiah 8:7
+- Isaiah 8:8
+- Jeremiah 46:7-8
+- Jeremiah 47:2
+- Jeremiah 6:23
+- Jeremiah 50:42
+- Revelation 12:15-16
+- Daniel 9:26
+- Jude 14
+- Revelation 19:14
+- Habakkuk 3:8
+- Matthew 1:21
+- Jonah 2:9
+- Exodus 15:4-5
+- Jeremiah 51:63-64; Revelation 18:21
+- Exodus 1:22
+- Exodus 7:21
+- Revelation 8:8
+- Revelation 16:6
+- Revelation 14:20
+- Ezekiel 32:6
+- Revelation 15:2-3
+- Revelation 18:4; Jeremiah 51:45
+- Acts 7:36
+- Revelation 11:5-6
+- Revelation 11:6
+- Jeremiah 5:14
+- Exodus 4:8
+- Exodus 4:3
+- Exodus 4:4
+- Matthew 3:7; 12:34
+- Exodus 7:12
+- Daniel 2:44, from the mountain chapter
+- 1 Corinthians 10:1-2
+- Micah 7:19
+- Micah 7:15
+- Psalm 114:3-5
+- Jeremiah 51:25
+- Jeremiah 51:13
+- Jeremiah 51:42
+- Jeremiah 51:36
+- Isaiah 21:1
+- Ezekiel 26:3
+- Ezekiel 26:16
+- Ezekiel 27:3
+- Ezekiel 28:2
+- Isaiah 23:4
+- Isaiah 23:11
+- Habakkuk 1:14
+- Matthew 4:18-19
+- Matthew 13:47-48
+- Jeremiah 16:16
+- Isaiah 60:5
+- Deuteronomy 33:19
+- Psalm 89:9-10
+- Psalm 87:4
+- Isaiah 51:9-10
+- Job 9:8
+- Mark 4:39-41
+- Mark 4:39
+- Matthew 14:26
+- Psalm 77:19-20
+- Mark 6:48
+- Job 9:8, 11
+- Isaiah 55:9
+- Isaiah 43:16
+- Mark 4:1
+- Mark 5:9
+- Mark 5:13
+- Genesis 1:9-10
+- Genesis 1:6-7
+- Jeremiah 10:13; 51:16
+- Jeremiah 10:13
+- 1 Kings 18:44
+- Revelation 4:6
+- Revelation 15:2
+- Revelation 19:6
+- 1 Kings 7:23
+- 1 Kings 7:26
+- 1 Kings 7:25
+- 2 Chronicles 4:6
+- Exodus 38:8
+- Psalm 89:37
+- Job 37:18
+- 2 Kings 25:13
+- Daniel 2:35
+- Revelation 21:1
+- Habakkuk 2:14
+- Genesis 22:17
+- Hosea 1:10
+- Revelation 20:8
+- Jeremiah 5:22-23
+- Matthew 7:26-27
+- Matthew 7:25
+- Isaiah 48:18-19
+- Genesis 10:5
+- Isaiah 41:1
+- Isaiah 49:1
+- Isaiah 42:4; so too 51:5; 60:9
+- __“thy word is sym:sym-truth[truth],”__ John 17:17
+- Isaiah 24:15
+- Psalm 97:1
+- Isaiah 11:11
+- Isaiah 66:19
+- Revelation 16:20
+- so also __“every sym:sym-mountain[mountain] and sym:sym-island[island] were moved out of their places,”__ Revelation 6:14
+- Job 22:30 — the unpointed consonants, _iy_, are the very letters that name the isles
+- __“the fountain of sym:sym-living-2[living waters],”__ Jeremiah 2:13; __“rivers of sym:sym-living-2[living water],”__ John 7:38
+- Ezekiel 47:8-9
+
+## Bonus study. The Ship
+
+- Ezekiel 27:2-4
+- Ezekiel 27:5-7
+- Ezekiel 27:8-10
+- Ezekiel 27:12-24
+- Ezekiel 27:26-27
+- Ezekiel 27:32
+- Revelation 18:18
+- Revelation 18:21
+- Jeremiah 51:63-64
+- Job 9:8
+- Matthew 14:25
+- Matthew 14:29-30
+- Mark 4:36-41
+- Mark 4:1
+- Psalm 29:10
+- Matthew 13:47
+- Acts 27–28
+- Acts 27:22
+- Isaiah 23:3, 8
+- Isaiah 23:11
+- Isaiah 23:1, 14
+- Isaiah 23:15-17
+- Revelation 18:9-19
+- Genesis 6:18
+- Genesis 7:1
+- Genesis 6:19-20; 7:14-18
+- Jonah 1:4
+- Jonah 1:7, 12-16
+- John 11:48
+- John 11:50
+- John 19:15
+
+## Bonus study. The Tower
+
+- Proverbs 18:10
+- Psalm 61:3
+- Micah 4:8
+- Habakkuk 2:1
+- Exodus 13:21
+- Isaiah 4:5-6
+- Ephesians 5:23, 25
+- Ephesians 5:29
+- Proverbs 18:11
+- Genesis 11:1, 4
+- Genesis 11:7
+- Genesis 11:8
+- Genesis 12:2
+- Luke 14:28-30
+- Luke 14:26-27, 33
+- Matthew 13:20-21, NKJV
+- Isaiah 5:2, 7
+- 2 Samuel 7:13
+- Genesis 49:11
+- Isaiah 5:2
+- Exodus 13:13
+- Mark 11:3
+- Zechariah 9:11
+- Matthew 21:33
+- Matthew 21:45
+- Matthew 23:38
+- Isaiah 30:25
+- Luke 13:4-5
+- John 9:7
+- Luke 19:44
+
+## 41. Trees
+
+- Revelation 7:3
+- Daniel 4:22
+- Hosea 10:1
+- Ezekiel 31:3
+- Romans 11
+- Isaiah 51:2
+- Ezekiel 17:22-23
+- Matthew 13:31-32
+- Psalm 80:8
+- Jeremiah 11:16
+- Hosea 9:10
+- Joel 1:7
+- Ezekiel 31:3, 18
+- Matthew 21:19
+- Luke 13:6
+- Romans 11:17
+- Matthew 7:17
+- Matthew 7:19
+- Luke 3:9
+- Daniel 4:23, though a stump is left for regrowth
+- Ezekiel 17; Daniel 4
+- Ezekiel 17:24
+- Psalm 92:12
+- Daniel 4:12
+- Daniel 7
+- Daniel 4
+- Zechariah 4:14; Revelation 11:4
+- Psalm 1:3
+- Isaiah 61:3
+- Luke 6:43-45
+- Daniel 7:17
+- Daniel 8:20-21
+- Daniel 7:3
+- Daniel 4:16
+- Daniel 4:33
+- Psalm 49:20
+- Acts 10:12
+- Acts 10:13-15
+- Acts 10:28; 11:4-18
+- Acts 10:28
+- Matthew 15:26-27
+- Mark 7:28
+- Psalm 22:16
+- Ezekiel 31:9
+- Ezekiel 31:18
+- Isaiah 65:3
+- Isaiah 1:29
+- Isaiah 1:30
+- Isaiah 66:17
+- Isaiah 66:18-19
+- Isaiah 66:15-16
+- Isaiah 66:18
+
+## Bonus study. The Parable of the Vineyard
+
+- Matthew 21:23
+- Matthew 21:33
+- Isaiah 5:1-2
+- Isaiah 5:7
+- Isaiah 5:5
+- Isaiah 60:18
+- Isaiah 26:1
+- Zechariah 2:4-5
+- Isaiah 5:2
+- Proverbs 18:10
+- Genesis 11:4
+- 2 Samuel 7:13
+- Isaiah 5:2, ASV
+- Isaiah 5:2, 7 — _qavah_ both times
+- Hosea 9:10
+- Micah 7:1-2
+- Isaiah 65:8
+- Proverbs 3:9-10
+- Joel 2:24
+- Numbers 18:27
+- Genesis 49:11
+- Judges 9:27
+- Isaiah 16:10
+- Joel 3:13
+- Jeremiah 25:30
+- Jeremiah 25:15
+- Lamentations 1:15
+- Isaiah 63:2-3
+- Revelation 14:18-20
+- Revelation 19:13, 15
+- Matthew 21:34-37
+- John 9:7
+- Isaiah 8:6-7
+- Luke 13:4-5
+- Luke 13:3, 5
+- Luke 13:11, 16
+- Matthew 21:39
+- Hebrews 13:12
+- Revelation 14:20
+- Luke 19:43-44
+- Luke 21:24
+- Revelation 14:20; 19:15
+- Matthew 21:41
+- Matthew 21:42
+- Matthew 21:45
+- Proverbs 18:11
+- Ezekiel 13:10-11
+- Isaiah 28:15-17
+- Amos 7:7-8
+- Isaiah 8:8
+- Isaiah 28:17
+- Ezekiel 13:13
+- Ephesians 2:14
+- Ephesians 2:12
+- Ephesians 2:19
+- 1 Peter 2:4-5
+- 1 Peter 2:6, from Isaiah 28:16
+- 1 Peter 2:7, from Psalm 118:22
+- Ephesians 2:20-21
+- Revelation 21:12, 14
+- Matthew 21:44
+- Daniel 2:35
+- Matthew 21:43
+
+## 42. Grass
+
+- Isaiah 40:6-8
+- Psalm 103:15-16
+- Psalm 90:5-6
+- 1 Peter 1:24
+- Luke 8:11
+- John 12:24, ASV
+- Joel 3:13
+- Micah 4:12-13
+- Matthew 13:39
+- Revelation 14:15
+- John 4:35
+- Matthew 9:37
+- Psalm 1:4
+- Isaiah 17:13
+- Matthew 3:12
+- Matthew 13:38
+- Matthew 13:30
+- Amos 9:9, ASV
+- Luke 22:31-32
+- Leviticus 23:10
+- 1 Corinthians 15:20
+- Judges 7:13; John 6:9
+- Deuteronomy 8:3
+- Exodus 12:15; Leviticus 2:11; Matthew 16:12; 1 Corinthians 5:6-7
+- 1 Corinthians 5:8
+- Matthew 13:9
+- Mark 4:13
+
+## 43. Garments & Armor
+
+- Matthew 22:2
+- Matthew 22:11
+- Matthew 22:12
+- 1 Corinthians 9:9
+- Mark 4:39
+- Mark 1:25
+- Matthew 22:14
+- Revelation 19:8, NKJV
+- Ephesians 2:10
+- Deuteronomy 6:25
+- Psalm 119:172
+- 1 John 3:7
+- Deuteronomy 32:4
+- Psalm 145:17
+- Isaiah 59:16-18
+- Isaiah 61:10
+- Luke 15:22
+- Ezekiel 16:8
+- Numbers 15:39
+- Ezekiel 16:9-10
+- Revelation 19:8
+- Genesis 3:21
+- Isaiah 64:6
+- Isaiah 1:16-18
+- Revelation 7:14
+- Zechariah 3:4
+- Revelation 22:14
+- John 13:8
+- John 13:10
+- Galatians 3:27
+- John 13:14
+- Genesis 3:7
+- Proverbs 14:12
+- Proverbs 21:2
+- Matthew 21:19; Mark 11:13-14
+- Revelation 3:4
+- Jude 23
+- Revelation 16:15
+- Romans 13:14
+- Colossians 3:10-12
+- Job 29:14
+- Isaiah 59:17
+- Ephesians 6:14-17
+- Revelation 3:17
+- Isaiah 47:3
+- 2 Corinthians 5:3
+- Isaiah 59:16-17
+- Ephesians 6:11
+- Psalm 140:7
+- 1 Corinthians 11:3
+- Exodus 28:36-38
+- Deuteronomy 6:8
+- Revelation 22:4
+- Revelation 13:16
+- 1 Samuel 17:38-39
+- 1 Samuel 17:37
+- Matthew 23:4
+- Matthew 11:30
+- 1 John 5:3
+- Romans 13:12
+- Ephesians 6:17
+
+## 44. The Bow
+
+- Genesis 9:13
+- Genesis 9:15
+- Jeremiah 49:35
+- Isaiah 22:3, where the KJV hides the word as “archers”
+- Revelation 6:2
+- 1 Samuel 18:3-4
+- 2 Samuel 1:18
+- 2 Samuel 1:22
+- Habakkuk 3:9
+- Habakkuk 3:8
+- Zechariah 9:13
+- Genesis 11:4
+- Genesis 11:9
+- Genesis 14:1, 9
+- Genesis 10:10
+- Genesis 14:10
+- Genesis 11:3
+- Genesis 14:13
+- Hosea 2:18
+- Hosea 2:19
+- Jeremiah 51:56
+- Psalm 46:9
+- Hosea 1:5
+- Psalm 78:57
+- Hosea 7:16
+- Genesis 12:2
+- Genesis 9:16
+- Ezekiel 1:28
+- Revelation 4:3
+- Revelation 10:1
+- Proverbs 6:23
+- Deuteronomy 32:2
+- Genesis 49:24
+
+## 45. Jacob, Israel, and Ephraim
+
+- Genesis 32:28
+- Ephesians 4:22-24
+- Genesis 35:10
+- Isaiah 41:8
+- Isaiah 44:1
+- Numbers 23:21
+- Hosea 5:3
+- Genesis 25:26
+- Genesis 27:36
+- Jeremiah 17:9
+- Hosea 12:4
+- Isaiah 40:4
+- Genesis 32:27
+- John 1:47
+- Genesis 28:13
+- Genesis 35:10-12
+- Genesis 32:24
+- Genesis 32:26
+- Psalm 30:5
+- Mark 16:2
+- 1 Corinthians 15:20
+- Romans 9:6
+- Romans 2:28-29
+- Genesis 29:35
+- Galatians 6:16
+- Romans 11:17
+- Revelation 2:17
+- Genesis 41:52
+- __“Ephraim is my firstborn,”__ Jeremiah 31:9
+- Genesis 48:19
+- Hosea 7:8
+- Isaiah 7:8
+- Romans 11:25
+- Hosea 11:8
+- Matthew 15:24
+- Ezekiel 37:19
+- Ezekiel 37:22
+- Hosea 1:10
+- 1 Peter 2:10
+- Jeremiah 11:16-17
+- Zechariah 4:3, 12
+- Revelation 11:4
+- Revelation 1:20
+- Proverbs 6:23
+- Isaiah 49:6
+- Deuteronomy 4:6
+
+## 46. The Foreskin
+
+- Jeremiah 4:3-4
+- Colossians 2:11
+- Deuteronomy 10:16
+- Leviticus 26:41
+- Deuteronomy 30:6
+- Jeremiah 6:10
+- Exodus 6:12, 30
+- Leviticus 19:23-24
+- Acts 7:51
+- Genesis 17:14
+- Romans 2:29
+
+## Bonus study. The Anointing
+
+- Exodus 28:41
+- 1 Kings 19:16
+- Exodus 40:9
+- Exodus 30:26-29; 40:9-11
+- 1 Samuel 16:13
+- 1 Samuel 16:14
+- 1 Samuel 24:6
+- Isaiah 45:1
+- Isaiah 45:4-5
+- Psalm 105:9-15
+- Acts 10:38
+- Isaiah 61:1; Luke 4:18
+- 2 Corinthians 1:21-22
+- Mark 6:13; Luke 7:46; John 12:3; James 5:14
+- Luke 4:18; Acts 4:27; 10:38; 2 Corinthians 1:21
+- Exodus 25:6
+- Exodus 27:20
+- Exodus 30:22-33
+- Zechariah 4:6-9
+- Zechariah 4:11-14
+- Ezekiel 36:27
+- John 1:41
+
+## 47. Butter
+
+- Isaiah 7:22
+- Isaiah 7:15
+- Hebrews 5:14
+- Job 29:6
+- 2 Samuel 17:28-29
+- Psalm 55:21
+- Ephesians 6:17
+- Judges 5:25
+- Genesis 18:8
+- Deuteronomy 32:14
+
+## 48. The Other White Meat
+
+- Deuteronomy 14:8
+- Psalm 1:2
+- Proverbs 11:22
+- Psalm 34:8
+- Job 12:11
+- Matthew 23:27 NKJV
+- Romans 2:28-29
+- Psalm 80:8
+- Psalm 80:13
+- Matthew 7:6
+- Isaiah 65:4
+- Mark 5:3, 5, 11
+- Mark 5:13
+- Mark 5:19
+- Luke 15:15-16
+- Luke 15:17
+- Luke 15:22-23
+- 2 Peter 2:22
+- 2 Peter 2:1
+- 2 Peter 2:17
+- 1 Corinthians 12:13
+- Ezekiel 47:11
+- Isaiah 65:3-5
+- Isaiah 66:3
+- Isaiah 66:17
+- Revelation 2:9; 3:9
+- Psalm 119:142
+- Isaiah 66:5
+- Galatians 1:6-7
+- Acts 10:28
+- Hosea 12:10
+- Ezekiel 4:12
+- Ezekiel 4:13
+- Ezekiel 4:14
+- Ezekiel 4:15
+
+## Bonus study. Uncommon Sanctification, Justification, and Cleanliness
+
+- 1 Corinthians 6:11, NKJV
+- Leviticus 10:10
+- Ezekiel 22:26
+- Deuteronomy 25:1
+- Exodus 13:2
+- Numbers 8:17
+- 2 Timothy 2:21
+- Genesis 2:3; Matthew 23:17, 19
+- 1 Timothy 4:5
+- John 10:36; 17:19
+- Isaiah 8:13
+- 1 Peter 3:15
+- Ezekiel 36:23
+- Jeremiah 6:4; Joel 3:9
+- 2 Kings 10:20
+- Isaiah 66:17
+- 1 Thessalonians 4:3-7
+- Hebrews 10:10; 1 Thessalonians 5:23, NKJV
+- Hebrews 10:29, NKJV
+- Leviticus 12:2; 15:18; Numbers 19:11
+- Psalm 51:2, 10
+- Isaiah 1:16-17
+- 1 John 1:7, 9
+- Ephesians 5:26
+- Proverbs 17:15
+- Luke 7:29; Romans 3:4
+- Matthew 11:19
+- Luke 10:29; 16:15
+- Matthew 12:37
+- James 2:21-25
+- Romans 8:33
+- Romans 3:24; 4:4-5; 5:9
+- Romans 4:5-8
+- Romans 3:26
+
+## Bonus study. Ancient Symbols
+
+- Psalm 89:36-37
+- Proverbs 6:23
+- Psalm 119:105
+- Ezekiel 29:3
+- Revelation 11:8
+- Deuteronomy 34:2
+- Midrash Tanchuma, carried by Ramban at Genesis 12:6
+- Deuteronomy 6:25
+- John 14:26

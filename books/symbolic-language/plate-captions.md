@@ -40,7 +40,6 @@ carry no plaque because they are not part of the Rembrandt-etching plate series.
 | 30-lucifer-moon | MY THRONE ABOVE THE STARS OF GOD | ISAIAH 14:13 |
 | 31-merchant-pearl | ONE PEARL OF GREAT PRICE | MATTHEW 13:46 |
 | 33x-last-day-laughter | SHE LAUGHETH AT THE LAST DAY | PROVERBS 31:25 |
-| 48y-ancient-symbols | ASK FOR THE OLD PATHS, WHERE IS THE GOOD WAY | JEREMIAH 6:16 |
 | 34-four-horsemen | THE FOUR WINDS OF THE HEAVENS | ZECHARIAH 6:5 |
 | 35-fall-of-babylon | THUS SHALL BABYLON BE THROWN DOWN | REVELATION 18:21 |
 | 36-daniel-sealed | SHUT UP THE WORDS, SEAL THE BOOK | DANIEL 12:4 |
@@ -58,6 +57,7 @@ carry no plaque because they are not part of the Rembrandt-etching plate series.
 | 48-prodigal-trough | NO MAN GAVE UNTO HIM | LUKE 15:16 |
 | 48w-washed-sanctified-justified | YE ARE WASHED, SANCTIFIED, JUSTIFIED | 1 CORINTHIANS 6:11 |
 | 48x-end-of-the-law | CHRIST IS THE END OF THE LAW | ROMANS 10:4 |
+| 48y-ancient-witnesses | ASK FOR THE OLD PATHS | JEREMIAH 6:16 |
 | 49-glossary-symbols | I HAVE USED SIMILITUDES | HOSEA 12:10 |
 
 <!-- AUTHOR-SET (dictated verbatim 2026-07-11 — do not overwrite):

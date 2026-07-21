@@ -39,7 +39,9 @@ import video  # bed treatment shared with the video pipeline (build_still)
 HERE = os.path.dirname(os.path.abspath(__file__))
 BOOK = os.path.normpath(os.path.join(HERE, '..'))
 MASTERS = os.path.join(BOOK, 'images', 'masters')
-COVER = os.path.join(BOOK, 'cover', 'front-cover-summit-meat.jpg')
+COVER_ICON = os.path.join(
+    BOOK, 'cover', 'front-cover-vineyard-moon-epub-base.png')
+FALLBACK_ART = os.path.join(BOOK, 'cover', 'front-cover-summit-meat.jpg')
 THUMBS = os.path.join(HERE, 'assets-video', 'thumbnails')
 BEDCACHE = os.path.join(HERE, 'out', 'thumb-beds')
 FONTS = '/System/Library/Fonts/Supplemental'
@@ -159,7 +161,7 @@ def bed_source(stem):
     hits = sorted(glob.glob(os.path.join(MASTERS, num + '-*.*')))
     if hits:
         return hits[0], 'plate'
-    return COVER, 'fallback'
+    return FALLBACK_ART, 'fallback'
 
 
 def shift_zoom_black(img, shift, zoom=None):
@@ -325,7 +327,7 @@ def draw_tracked(d, xy, text, f, fill, track):
 def cover_icon(img):
     """Book-cover brand mark, top-right: cover face at height 168, 3 px
     cream border, over a blurred shadow (r=7, alpha 160, offset +4 grow)."""
-    cov = Image.open(COVER).convert('RGB')
+    cov = Image.open(COVER_ICON).convert('RGB')
     ih = 168
     iw = round(cov.width * ih / cov.height)
     cov = cov.resize((iw, ih), Image.LANCZOS)

@@ -10,6 +10,7 @@ never overwritten unless --force is supplied.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import re
 import subprocess
 from pathlib import Path
@@ -17,6 +18,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 BOOK = HERE.parent
+HEBREW_CHAR = re.compile(r"[\u0590-\u05ff]")
 
 NUMBER_WORDS = {
     0: "Zero", 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five",
@@ -79,6 +81,19 @@ def source_hash(path: Path) -> str:
         check=False,
     )
     return result.stdout.strip() or "uncommitted"
+
+
+def source_digest(path: Path) -> str:
+    """Digest only source material that can affect the spoken edition.
+
+    Web-only front matter such as the permalink and description changes often
+    and should not make every audio twin appear stale. The title and order do
+    affect the spoken opener, so they are included with the chapter body.
+    """
+    raw = path.read_text(encoding="utf-8")
+    _, body, title, order = front_matter(raw)
+    payload = f"{title}\n{order}\n{body}".encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()[:16]
 
 
 def choose_audio_branch(lines: list[str]) -> list[str]:
@@ -151,30 +166,74 @@ def clean_inline(text: str, *, citations: bool = True) -> str:
 
 
 def clean_table_cell(text: str) -> str:
-    return clean_inline(text).replace("%", " percent")
+    text = re.sub(r"\s*\+\s*\n\s*", " ", text)
+    text = re.sub(r"\^(\d+)\^", "", text)
+    text = clean_inline(text).replace("%", " percent").replace("·", ",")
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def sentence_cell(text: str) -> str:
+    """Remove punctuation that would collide with narrated table labels."""
+    return text.strip().rstrip(" .:;")
+
+
+def listening_clue(text: str) -> str:
+    text = text.replace("_", "")
+    if HEBREW_CHAR.search(text):
+        return "the alternate pointing or division shown in the transcript"
+    replacements = {
+        "Gen": "Genesis", "Ex": "Exodus", "Deut": "Deuteronomy",
+        "Ps": "Psalm", "Isa": "Isaiah", "Jer": "Jeremiah",
+        "Ezek": "Ezekiel", "Dan": "Daniel", "Zech": "Zechariah",
+        "Matt": "Matthew", "Rev": "Revelation",
+    }
+    for short, full in replacements.items():
+        text = re.sub(rf"\b{short}\b", full, text)
+    return re.sub(r"\bH(\d+)\b", r"Strong's H \1", text)
 
 
 def table_to_narration(caption: str | None, table: list[str]) -> list[str]:
-    rows: list[list[str]] = []
-    for line in table:
-        stripped = line.strip()
-        if not stripped or not stripped.startswith("|"):
-            continue
-        rows.append([clean_table_cell(cell) for cell in stripped[1:].split("|")])
-    if not rows:
+    # In AsciiDoc each pipe starts a new cell; a cell may continue across
+    # physical lines. Parsing the complete stream keeps multi-line rows aligned.
+    cells = [clean_table_cell(cell) for cell in "\n".join(table).split("|")[1:]]
+    if not cells:
         return []
-    headers = rows[0]
-    width = len(headers)
-    cells = [cell for row in rows[1:] for cell in row]
-    body_rows = [cells[index:index + width]
-                 for index in range(0, len(cells), width)
-                 if len(cells[index:index + width]) == width]
+    header_line = next((line for line in table if line.strip().startswith("|")), "")
+    width = max(1, header_line.count("|"))
+    headers = cells[:width]
+    body_cells = cells[width:]
+    body_rows = [body_cells[index:index + width]
+                 for index in range(0, len(body_cells), width)
+                 if len(body_cells[index:index + width]) == width]
     out: list[str] = []
     if caption:
-        out.append(f"The table is titled, {clean_inline(caption)}.")
+        out.append(f"Here is {clean_inline(caption).rstrip('.')}.")
+    word_by_word = [header.lower() for header in headers] == [
+        "log", "masorete", "meat", "prophecy"
+    ]
+    if word_by_word:
+        out.append(
+            "For listening, each line gives the received wording, the textual "
+            "clue when one is supplied, and the proposed reading. The Hebrew "
+            "letter forms remain in the transcript."
+        )
     for row in body_rows:
+        if word_by_word:
+            received = sentence_cell(row[0])
+            clue = listening_clue(sentence_cell(row[2]))
+            proposed = sentence_cell(row[3])
+            parts = (["The received text leaves this term untranslated."]
+                     if received in {"—", "-"} else [f"Received: {received}."])
+            if clue:
+                parts.append(f"Textual clue: {clue}.")
+            parts.append(f"Proposed: {proposed}.")
+            out.append(" ".join(parts))
+            continue
         parts: list[str] = []
         for header, cell in zip(headers, row):
+            cell = sentence_cell(cell)
+            if not cell:
+                continue
             if header.lower() == "rank":
                 parts.append(f"Rank {cell}.")
             elif header.lower().startswith("est."):
@@ -194,11 +253,30 @@ def is_table_caption(lines: list[str], index: int) -> bool:
 
 def chapter_opener(order: str, title: str) -> str:
     number = float(order)
+    closing = "" if title.rstrip().endswith(("?", "!")) else "."
     if number.is_integer():
-        label = f"Chapter {number_words(int(number))}: {title}."
+        label = f"Chapter {number_words(int(number))}: {title}{closing}"
     else:
-        label = f"Bonus Study: {title}."
+        label = f"Bonus Study: {title}{closing}"
     return f"MEAT The Bible's Symbolic Language. [beat] {label}"
+
+
+def heading_transition(heading: str, section_index: int) -> str:
+    """Carry the exact print heading inside a varied spoken transition.
+
+    video.py locates title-card moments by finding the normalized print heading
+    inside this sentence, so the heading words must remain contiguous.
+    """
+    heading = heading.rstrip(".")
+    if heading.endswith("?"):
+        return f"The next question is {heading}"
+    templates = (
+        "The argument now turns to {heading}.",
+        "That brings us to {heading}.",
+        "The next step is {heading}.",
+        "With that in place, consider {heading}.",
+    )
+    return templates[section_index % len(templates)].format(heading=heading)
 
 
 def adapt_body(body: str) -> str:
@@ -207,6 +285,7 @@ def adapt_body(body: str) -> str:
     in_quote = False
     pending_caption: str | None = None
     glossary_entries = 0
+    section_index = 0
     i = 0
     while i < len(lines):
         line = lines[i]
@@ -227,7 +306,11 @@ def adapt_body(body: str) -> str:
             i = end + 1
             continue
         if stripped.startswith("[quote"):
-            out.extend(["Let's read:", "", stripped])
+            previous = next((item for item in reversed(out)
+                             if item and item not in {"[pause]", "[long pause]"}), "")
+            if not previous.rstrip().endswith(":"):
+                out.extend(["Let's read:", ""])
+            out.append(stripped)
             i += 1
             continue
         if stripped == "____":
@@ -244,7 +327,9 @@ def adapt_body(body: str) -> str:
             heading = re.sub(r"^=+\s+", "", stripped)
             heading = clean_inline(heading)
             if heading:
-                out.extend(["[long pause]", "", f"Now consider {heading}.", "", "[long pause]"])
+                transition = heading_transition(heading, section_index)
+                section_index += 1
+                out.extend(["[long pause]", "", transition, "", "[long pause]"])
             i += 1
             continue
         if stripped == "'''":
@@ -252,6 +337,9 @@ def adapt_body(body: str) -> str:
             i += 1
             continue
         if stripped.startswith("image::") or stripped.startswith("//"):
+            i += 1
+            continue
+        if stripped in {"<<<", ">>>"}:
             i += 1
             continue
         if stripped.startswith("[.seeref]"):
@@ -301,6 +389,7 @@ def eligible_sources(names: list[str]) -> list[Path]:
         if source.name.startswith("00-") or source.name in {
             "38x-further-studies.adoc",
             "49-glossary.adoc",
+            "50-bibliography.adoc",
         }:
             continue
         if wanted and source.name not in wanted and source.stem not in wanted:
@@ -322,6 +411,7 @@ def build(source: Path) -> str:
         f'title: "{title}"',
         f"audio-of: {source.name}",
         f"synced-to: {source_hash(source)}",
+        f"source-digest: {source_digest(source)}",
         "---",
         chapter_opener(order, title),
         "",

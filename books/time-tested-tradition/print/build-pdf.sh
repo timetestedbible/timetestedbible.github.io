@@ -16,7 +16,7 @@ ruby "$DIR/build.rb" "$@"
 PRINT_PDF="$DIR/time-tested-tradition-print.pdf"
 GRAY_PDF="$DIR/time-tested-tradition-gray.pdf"
 case "${1:-all}" in
-  screen) ;;  # no print artifact refreshed — leave the gray one alone
+  screen|epub|ebook) ;;  # no print artifact refreshed — leave the gray one alone
   *)
     if command -v gs >/dev/null 2>&1 && [ -f "$PRINT_PDF" ]; then
       gs -q -sDEVICE=pdfwrite -sColorConversionStrategy=Gray \

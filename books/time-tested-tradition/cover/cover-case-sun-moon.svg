@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="14.97in" height="10.5in" viewBox="0 0 4491 3150">
+  <!--
+    HARDCOVER CASE (BookBaby US-Trade-Hard-Cover (4), 440pp):
+    wrap 0.625in | back 6.25in | spine 1.220in | front 6.25in | wrap 0.625in.
+    The panorama and typography are mapped from the matching dust jacket.
+    This is the printed case beneath a dust jacket, so it intentionally has no barcode.
+  -->
+  <defs>
+    <clipPath id="case-page-clip"><rect width="4491" height="3150"/></clipPath>
+  </defs>
+
+  <g id="case-continuous-background" clip-path="url(#case-page-clip)">
+    <!-- Main 9.25-inch cover face, aligned to the dust-jacket panels. -->
+    <svg x="0" y="187.5" width="4491" height="2775"
+         viewBox="933.75 37.5 4573.5 2775" preserveAspectRatio="none">
+      <use xlink:href="cover-jacket-sun-moon.svg#layer-background"/>
+    </svg>
+
+    <!-- Mirror only the neighboring sky/ground texture into the case-wrap folds. -->
+    <g transform="translate(0 375) scale(1 -1)">
+      <svg x="0" y="187.5" width="4491" height="187.5"
+           viewBox="933.75 37.5 4573.5 187.5" preserveAspectRatio="none">
+        <use xlink:href="cover-jacket-sun-moon.svg#layer-background"/>
+      </svg>
+    </g>
+    <g transform="translate(0 5925) scale(1 -1)">
+      <svg x="0" y="2775" width="4491" height="187.5"
+           viewBox="933.75 2625 4573.5 187.5" preserveAspectRatio="none">
+        <use xlink:href="cover-jacket-sun-moon.svg#layer-background"/>
+      </svg>
+    </g>
+  </g>
+
+  <!-- Map the jacket's back/front panels from 6.375 inches to the 6.25-inch case boards. -->
+  <use xlink:href="cover-jacket-sun-moon.svg#layer-back-copy"
+       transform="translate(-915.441176 150) scale(.980392157 1)"/>
+  <use xlink:href="cover-jacket-sun-moon.svg#layer-spine"
+       transform="translate(-975 150)"/>
+  <use xlink:href="cover-jacket-sun-moon.svg#layer-front-title"
+       transform="translate(-908.264706 150) scale(.980392157 1)"/>
+</svg>

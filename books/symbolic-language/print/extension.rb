@@ -1164,6 +1164,7 @@ class TradePdfConverter < Asciidoctor::PDF::Converter
     'the-other-white-meat'  => 'images/print/48-prodigal-trough.jpg',
     'uncommon-sanctification-justification-and-cleanliness' => 'images/print/48w-washed-sanctified-justified.jpg',
     'the-end-of-the-law'    => 'images/print/48x-end-of-the-law.jpg',
+    'ancient-symbols'       => 'images/print/48y-ancient-witnesses.jpg',
     'about-the-author'      => 'images/print/50-author-portrait.jpg',
     'shadow'                => 'images/print/17-shadow-rock.jpg',
     'noah-uncovered'        => 'images/print/27-noah-uncovered.jpg',

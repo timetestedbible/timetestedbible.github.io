@@ -80,7 +80,8 @@ TONE = ('eq=brightness=0.04:gamma=1.18,'
 # cream Georgia Bold beside it — a watermark, not a focal element. The
 # message alternates between the two offers (author, 2026-07-10), swapping
 # at scene boundaries every ~BRAND_PERIOD seconds.
-COVER = os.path.join(HERE, '..', 'cover', 'front-cover-summit-meat.jpg')
+COVER = os.path.join(
+    HERE, '..', 'cover', 'front-cover-vineyard-moon-epub-base.png')
 BRAND_TEXT = 'TimeTested.Bible'
 BRAND_LINES = (('Free eBook Available', BRAND_TEXT),
                ('Hardcover Book', BRAND_TEXT))

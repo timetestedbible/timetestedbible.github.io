@@ -7,9 +7,9 @@ Usage:
                                            [--out out/]
 
 Marker mapping (see README.md):
-  [beat]        -> <break time="0.3s" />
-  [pause]       -> <break time="0.7s" />
-  [long pause]  -> <break time="1.2s" />   (also the chunk boundary)
+  [beat]        -> <break time="0.2s" />
+  [pause]       -> <break time="0.45s" />
+  [long pause]  -> <break time="0.8s" />   (also the chunk boundary)
 
 Chunks split at [long pause] boundaries and re-pack to <= MAX_CHARS.
 Each request passes previous_text/next_text so ElevenLabs keeps prosody
@@ -62,32 +62,98 @@ def _clean(text):
     return text.replace('…', '...').replace('“', '"').replace('”', '"').replace('’', "'")
 
 ORDINALS = {'1': 'First', '2': 'Second', '3': 'Third'}
+ONE_CHAPTER_BOOKS = {'obadiah', 'philemon', 'jude', 'second john', 'third john'}
+TRANSLATION_NOTE = re.compile(
+    r'(?:,\s*|\s*\()(?:KJV|NKJV|ASV|ESV|AMP|BSB)\)?\s*$', re.I)
+
+
+def _natural_list(items):
+    if len(items) < 2:
+        return items[0] if items else ''
+    if len(items) == 2:
+        return f'{items[0]} and {items[1]}'
+    return ', '.join(items[:-1]) + f', and {items[-1]}'
+
+
+def _verse_phrase(raw):
+    """Turn '8, 10, 12' or '13-14' into a phrase TTS reads naturally."""
+    raw = re.sub(r'\s+', ' ', raw.strip())
+    raw = re.sub(r'(?<=\d)\s*-\s*(?=\d)', ' through ', raw)
+    raw = re.sub(r'\s+and\s+', ', ', raw, flags=re.I)
+    items = [item.strip() for item in raw.split(',') if item.strip()]
+    label = 'verse' if len(items) == 1 and ' through ' not in items[0] else 'verses'
+    return f'{label} {_natural_list(items)}'
+
+
+def _book_name(number, book):
+    prefix = ORDINALS.get(number, '')
+    return ((prefix + ' ') if prefix else '') + book.strip()
+
 
 def spoken_citation(ref):
-    """'2 Timothy 2:19' -> ('Second Timothy', '2').
+    """Return a complete, natural citation for the narrator.
 
-    Book+chapter only are spoken; verse numbers and display-only citation
-    notes such as "NKJV" or "rendered from the Hebrew" remain on the video
-    card without entering the narration.
+    Examples:
+      '2 Timothy 2:19'        -> 'Second Timothy chapter 2, verse 19'
+      '2 John 4-6'            -> 'Second John, verses 4 through 6'
+      'Matthew 4:23; 9:35'    -> 'Matthew chapter 4, verse 23, and chapter 9, verse 35'
+
+    Translation and editorial notes remain visible in the script/video but do
+    not interrupt the spoken citation.
     """
-    ref = ref.strip().strip('"')
-    # In Obadiah, Philemon, Jude, and Second/Third John, a bare number is a
-    # verse rather than a chapter. Speak the book alone instead of inventing
-    # a chapter number from the display citation.
-    one_chapter = re.match(
-        r'^\s*((?:2|3)\s+John|Obadiah|Philemon|Jude)\s+\d+', ref, re.I)
-    if one_chapter:
-        name = one_chapter.group(1)
-        if name[0].isdigit():
-            number, book = name.split(None, 1)
-            name = ORDINALS[number] + ' ' + book
-        return name, ''
-    m = re.match(r'^\s*(\d)?\s*([A-Za-z][A-Za-z ]*?)\s+(\d+)(?::[\d,\-\s]+)?',
-                 ref)
-    if not m:
+    core = ref.strip().strip('"')
+    core = core.split(' — ', 1)[0].strip()
+    core = TRANSLATION_NOTE.sub('', core)
+    parts = [part.strip() for part in core.split(';') if part.strip()]
+    if not parts:
         return None
-    num, book, chap = m.groups()
-    return (ORDINALS.get(num, '') + ' ' if num else '') + book.strip(), chap
+
+    one_chapter = re.match(
+        r'^((?:2|3)\s+John|Obadiah|Philemon|Jude)\s+(.+)$', parts[0], re.I)
+    if one_chapter:
+        raw_name, verses = one_chapter.groups()
+        if raw_name[0].isdigit():
+            number, book = raw_name.split(None, 1)
+            name = _book_name(number, book)
+        else:
+            name = raw_name.title()
+        return name, f'{name}, {_verse_phrase(verses)}', core
+
+    first = re.match(
+        r'^(?:(\d)\s+)?([A-Za-z][A-Za-z ]*?)\s+(\d+)(?::(.+))?$', parts[0])
+    if not first:
+        return None
+    number, book, chapter, verses = first.groups()
+    name = _book_name(number, book)
+    if name.lower() in ONE_CHAPTER_BOOKS:
+        spoken = f'{name}, {_verse_phrase(chapter + ((":" + verses) if verses else ""))}'
+    else:
+        spoken = f'{name} chapter {chapter}'
+        if verses:
+            spoken += f', {_verse_phrase(verses)}'
+
+    for part in parts[1:]:
+        same_book = re.match(r'^(\d+)(?::(.+))?$', part)
+        other_book = re.match(
+            r'^(?:(\d)\s+)?([A-Za-z][A-Za-z ]*?)\s+(\d+)(?::(.+))?$', part)
+        if same_book:
+            chapter, verses = same_book.groups()
+            addition = f'chapter {chapter}'
+            if verses:
+                addition += f', {_verse_phrase(verses)}'
+        elif other_book:
+            number, book, chapter, verses = other_book.groups()
+            other_name = _book_name(number, book)
+            if other_name.lower() in ONE_CHAPTER_BOOKS:
+                addition = f'{other_name}, {_verse_phrase(chapter + ((":" + verses) if verses else ""))}'
+            else:
+                addition = f'{other_name} chapter {chapter}'
+                if verses:
+                    addition += f', {_verse_phrase(verses)}'
+        else:
+            continue
+        spoken += f', and {addition}'
+    return name, spoken, core
 
 def weave_citation(intro, ref):
     """Weave the spoken reference into the intro's final clause as natural
@@ -104,47 +170,75 @@ def weave_citation(intro, ref):
     sc = spoken_citation(ref)
     if not sc:
         return intro
-    name, chap = sc
+    name, spoken, core = sc
     tail = intro[-160:]
-    ntail = re.sub(r'[^a-z0-9]', '',
-                   re.sub(r'\bchapters?\b', '', tail, flags=re.I).lower())
-    nref = re.sub(r'[^a-z0-9]', '', name.lower()) + chap
-    if re.search(re.escape(nref) + r'(?!\d)', ntail):
+    tail_lower = tail.lower()
+    digits = re.findall(r'\d+', core)
+    if name.lower() in tail_lower and all(
+            re.search(rf'(?<!\d){re.escape(number)}(?!\d)', tail_lower)
+            for number in digits):
         return intro                    # lead-in already names the reading
     intro = intro.rstrip()
     if not intro.endswith(':'):
-        return intro + f' Hear {name}{(" " + chap) if chap else ""}:'
+        return intro + f' Hear {spoken}:'
     head = intro[:-1].rstrip()
     if head.lower().endswith(name.lower()):
-        return head + f'{(" " + chap) if chap else ""}:'
+        return head + spoken[len(name):] + ':'
     if re.search(r'\blisten$', head, re.I):
-        return head + f' to {name}{(" " + chap) if chap else ""}:'
-    if not chap and re.search(r'\bread$', head, re.I):
-        return head + f' {name}:'
-    return head + f' in {name}{(" " + chap) if chap else ""}:'
+        return head + f' to {spoken}:'
+    if re.search(r"\b(?:hear|read|consider|study)$|\b(?:let us|let's) read$", head, re.I):
+        return head + f' {spoken}:'
+    return head + f' in {spoken}:'
+
+
+def weave_attribution(intro, attribution):
+    """Keep narrator-voiced historical/modern quotations from beginning cold."""
+    attribution = attribution.strip().strip('"')
+    spoken = re.sub(r'\bc\.\s*', 'circa ', attribution, flags=re.I)
+    spoken = re.sub(r'\bAD\b', 'A D', spoken)
+    spoken = spoken.replace('(', ', ').replace(')', '')
+    spoken = re.sub(r'\s+,', ',', spoken)
+    spoken = re.sub(r'\s*,\s*,', ',', spoken)
+    identity = re.split(r'\s*\(|,', attribution, maxsplit=1)[0].strip()
+    tail = intro[-240:]
+    if identity and identity.lower() in tail.lower():
+        return intro
+    if 'asked' in attribution.lower() and re.search(r'\bAI\b', tail):
+        return intro
+    intro = intro.rstrip()
+    if intro.endswith("Let's read:"):
+        prefix = intro[:-len("Let's read:")].rstrip()
+        return (prefix + ' ' if prefix else '') + f'Hear {spoken}:'
+    return intro + f' Hear {spoken}:'
 
 def parse_script(path):
     """Returns ordered segments [(role, text)], role in {'narrator', 'scripture'}.
-    Block quotes (____ fences) are scripture; everything else narrator. Brief
-    inline quotes inside narrator prose stay narrator. A cited quote's citation
-    is spoken (book + chapter) by the narrator right after the quote."""
-    raw = open(path, encoding='utf-8').read()
+    Blocks marked [quote.scripture] use the scripture role; historical, modern,
+    and other block quotations remain narrator. Brief inline quotations also
+    stay narrator. A Scripture block's complete book, chapter, and verse
+    location is spoken by the narrator before the scripture voice begins."""
+    with open(path, encoding='utf-8') as handle:
+        raw = handle.read()
     m = re.match(r'\A---\s*\n.*?\n---\s*\n(.*)\Z', raw, re.S)
     body = m.group(1) if m else raw
-    segs, cur, role, in_quote, pending, ref = [], [], 'narrator', False, 'narrator', None
+    segs, cur, role, in_quote, pending, ref, attribution = \
+        [], [], 'narrator', False, 'narrator', None, None
     for line in body.split('\n'):
-        mq = re.match(r'^\[quote[^,\]]*(?:,([^\]]+))?\]\s*$', line)
+        mq = re.match(r'^\[quote(?P<class>\.[^,\]]+)?(?:,(?P<ref>[^\]]+))?\]\s*$', line)
         if mq:
-            # a citation in the print marker = worth the scripture voice
-            ref = mq.group(1)
-            pending = 'scripture' if ref else 'narrator'
+            classes = mq.group('class') or ''
+            pending = 'scripture' if 'scripture' in classes.split('.') else 'narrator'
+            marker_value = mq.group('ref')
+            ref = marker_value if pending == 'scripture' else None
+            attribution = marker_value if pending == 'narrator' else None
             continue
         if re.match(r'^____\s*$', line):
             if cur and ''.join(cur).strip():
                 segs.append((role, _clean('\n'.join(cur).strip())))
             cur = []
             if in_quote:
-                role, in_quote, pending, ref = 'narrator', False, 'narrator', None
+                role, in_quote, pending, ref, attribution = \
+                    'narrator', False, 'narrator', None, None
             else:
                 # citation-first: weave the spoken reference into the intro's
                 # final clause (weave_citation cooperates with lead-ins that
@@ -152,12 +246,39 @@ def parse_script(path):
                 if pending == 'scripture' and ref and segs and segs[-1][0] == 'narrator':
                     prev_role, prev = segs[-1]
                     segs[-1] = (prev_role, weave_citation(prev, ref))
+                elif pending == 'narrator' and attribution and segs and segs[-1][0] == 'narrator':
+                    prev_role, prev = segs[-1]
+                    segs[-1] = (prev_role, weave_attribution(prev, attribution))
                 role, in_quote = pending, True
             continue
         cur.append(line)
     if cur and ''.join(cur).strip():
         segs.append((role, _clean('\n'.join(cur).strip())))
     return segs
+
+
+def split_long_part(text, limit=MAX_CHARS):
+    """Split an over-limit section at an audible sentence/paragraph seam.
+
+    This is a request boundary, not a section transition, so it adds no pause.
+    previous_text/next_text still carry prosody across the resulting seam.
+    """
+    pieces = []
+    text = text.strip()
+    while len(text) > limit:
+        floor = int(limit * 0.55)
+        candidates = []
+        for match in re.finditer(r'\n\s*\n|[.!?]["\']?(?:\s+|$)|;\s+', text[:limit + 1]):
+            if match.end() >= floor:
+                candidates.append(match.end())
+        cut = max(candidates) if candidates else text.rfind(' ', floor, limit)
+        if cut <= 0:
+            cut = limit
+        pieces.append(text[:cut].strip())
+        text = text[cut:].strip()
+    if text:
+        pieces.append(text)
+    return pieces
 
 def chunk(segs, quote_min=0):
     """[(role, text)] -> [(role, chunk_text)]; same-role runs pack under
@@ -170,13 +291,17 @@ def chunk(segs, quote_min=0):
     for role, text in segs:
         parts = [p.strip() for p in text.split('[long pause]') if p.strip()]
         cur = ''
-        for p in parts:
-            candidate = (cur + '\n' + BREAKS['[long pause]'] + '\n' + p) if cur else p
-            if len(candidate) > MAX_CHARS and cur:
-                chunks.append((role, cur))
-                cur = p
-            else:
-                cur = candidate
+        for part in parts:
+            for index, p in enumerate(split_long_part(part, MAX_CHARS - 200)):
+                if index and cur:
+                    chunks.append((role, cur))
+                    cur = ''
+                candidate = (cur + '\n' + BREAKS['[long pause]'] + '\n' + p) if cur else p
+                if len(apply_breaks(candidate)) > MAX_CHARS and cur:
+                    chunks.append((role, cur))
+                    cur = p
+                else:
+                    cur = candidate
         if cur:
             if chunks and chunks[-1][0] == role and len(chunks[-1][1]) + len(cur) < MAX_CHARS:
                 chunks[-1] = (role, chunks[-1][1] + '\n' + BREAKS['[long pause]'] + '\n' + cur)
@@ -186,7 +311,13 @@ def chunk(segs, quote_min=0):
     for i, (role, c) in enumerate(chunks):
         c = apply_breaks(c)
         if i > 0 and chunks[i-1][0] != role:
-            c = '<break time="0.3s" />\n' + c      # breath at every voice handoff
+            # A short intake before Scripture makes the second voice feel
+            # invited. On the return, the explicit [pause] after each block
+            # normally supplies the longer reset; add one only if absent.
+            if role == 'scripture':
+                c = '<break time="0.25s" />\n' + c
+            elif not c.lstrip().startswith('<break'):
+                c = '<break time="0.55s" />\n' + c
         out.append((role, c))
     return out
 
