@@ -7,6 +7,16 @@ layout: default
 {% assign prevIdx = curIdx | minus: 1 %}
 {% assign nextIdx = curIdx | plus: 1 %}
 <article class="book-chapter-content" role="article" aria-label="{{ page.title }}">
+  {% assign book_plates = site.data.chapter_plates[page.book_slug] %}
+  {% assign plate = book_plates[page.slug] %}
+  {% if plate %}
+  <figure class="book-chapter-plate">
+    <img src="{{ plate }}-480.webp"
+         srcset="{{ plate }}-480.webp 480w, {{ plate }}-900.webp 900w"
+         sizes="(max-width: 540px) 94vw, 480px"
+         alt="{{ page.title }} — chapter plate" width="900" height="1350">
+  </figure>
+  {% endif %}
   {% if page.epigraphs %}
   <div class="book-chapter-epigraphs">
     {% for e in page.epigraphs %}
@@ -40,6 +50,7 @@ layout: default
   // its own header/nav from the chapter registry, so cache only the body.
   var body = document.querySelector('article.book-chapter-content .book-chapter-body');
   var epi = document.querySelector('article.book-chapter-content .book-chapter-epigraphs');
+  var plate = document.querySelector('article.book-chapter-content .book-chapter-plate');
   if (body) {
     window.__jekyllArticle = {
       type: 'book',
@@ -47,6 +58,7 @@ layout: default
       bookSlug: {{ page.book_slug | jsonify }},
       slug: {{ page.slug | jsonify }},
       title: {{ page.title | jsonify }},
+      plateHtml: plate ? plate.innerHTML : '',
       epigraphsHtml: epi ? epi.innerHTML : '',
       html: body.innerHTML
     };

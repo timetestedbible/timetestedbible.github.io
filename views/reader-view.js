@@ -1868,6 +1868,7 @@ const ReaderView = {
 
     textArea.innerHTML = `
       <div class="book-chapter-content">
+        <figure class="book-chapter-plate" id="book-chapter-plate" style="display:none"></figure>
         <div class="book-chapter-epigraphs" id="book-chapter-epigraphs" style="display:none"></div>
         <header class="book-chapter-header">
           <button class="book-chapter-booktitle" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'${bookSlug}'}})">${bookTitle}</button>
@@ -1894,12 +1895,13 @@ const ReaderView = {
     const epiEl = container.querySelector('#book-chapter-epigraphs');
     if (!body) return;
     try {
-      let html, epigraphsHtml = '';
+      let html, epigraphsHtml = '', plateHtml = '';
       // Path 1: cached article from the Jekyll page (initial load)
       if (window.__jekyllArticle && window.__jekyllArticle.type === 'book' &&
           (!window.__jekyllArticle.slug || window.__jekyllArticle.slug === chapterSlug)) {
         html = window.__jekyllArticle.html;
         epigraphsHtml = window.__jekyllArticle.epigraphsHtml || '';
+        plateHtml = window.__jekyllArticle.plateHtml || '';
         delete window.__jekyllArticle;
       } else {
         // Path 2: SPA navigation — fetch the pre-rendered page
@@ -1912,6 +1914,15 @@ const ReaderView = {
         html = article.innerHTML;
         const epiSrc = doc.querySelector('.book-chapter-epigraphs');
         epigraphsHtml = epiSrc ? epiSrc.innerHTML : '';
+        const plateSrc = doc.querySelector('.book-chapter-plate');
+        plateHtml = plateSrc ? plateSrc.innerHTML : '';
+      }
+
+      // Chapter plate sits above the epigraphs, as in the print/epub openings
+      const plateEl = container.querySelector('#book-chapter-plate');
+      if (plateEl) {
+        if (plateHtml) { plateEl.innerHTML = plateHtml; plateEl.style.display = ''; }
+        else { plateEl.innerHTML = ''; plateEl.style.display = 'none'; }
       }
 
       // Chapter epigraphs sit above the title

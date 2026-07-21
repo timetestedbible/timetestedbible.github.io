@@ -471,3 +471,16 @@ body.theme-light .book-chapter-body { color: var(--text-primary); }
   .book-index-hero .book-actions { justify-content: center; }
   .book-index-cover { width: 130px; }
 }
+
+/* ── Chapter plates (web twins of the print/epub chapter art) ── */
+.book-chapter-plate {
+  margin: 6px 0 26px;
+  text-align: center;
+}
+
+.book-chapter-plate img {
+  max-width: min(100%, 480px);
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+}
