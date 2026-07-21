@@ -30,7 +30,7 @@ There are **two builds** of the same app. Pick **one**.
 |---|---|---|
 | **macOS (Apple Silicon)** | `…aarch64.dmg` | `…-arm64.dmg` (Electron) |
 | **macOS (Intel)** | `…x64.dmg` | `…-x64.dmg` (Electron) |
-| **Windows** | `…_x64-setup.exe` / `.msi` | `…Setup.exe` (Electron) |
+| **Windows** | `…_x64-setup.exe` | `…Setup.exe` (Electron) |
 | **Linux** | `.AppImage` / `.deb` | `.AppImage` / `.deb` (Electron) |
 
 *(The "Standard" files are the smaller ones. If unsure, download the Standard build for your
