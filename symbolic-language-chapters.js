@@ -12,7 +12,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
   offer: {
     label: 'Pre-order Hardcover — $7',
     note: 'Offer ends August 7 · ships after the window closes',
-    href: '',   // Stripe Payment Link (set when the account activates)
+    href: '/preorder/',   // offer page; Stripe checkout links live there
     until: '2026-08-08T05:00:00Z'  // midnight Aug 8, America/Chicago
   },
   purchase: [
