@@ -278,7 +278,7 @@ const URLRouter = {
   // ═══════════════════════════════════════════════════════════════════════
   
   // Known view names for URL parsing
-  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'books', 'symbols', 'priestly', 'sabbath-tester', 'meat-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog', 'research', 'multiverse'],
+  VIEW_NAMES: ['calendar', 'reader', 'bible', 'timeline', 'book', 'books', 'symbols', 'priestly', 'sabbath-tester', 'meat-tester', 'settings', 'tutorial', 'help', 'methodology', 'feasts', 'events', 'blog', 'research', 'multiverse', 'preorder'],
   
   /**
    * Parse URL into state
@@ -706,6 +706,11 @@ const URLRouter = {
           if (parts[1]) params.chapterSlug = parts[1].toLowerCase().replace(/\/$/, '');
           params._book = true;
         }
+        break;
+
+      case 'preorder':
+        // /preorder — static Jekyll page; the SPA shell renders around it
+        params.staticPage = true;
         break;
 
       case 'symbols':

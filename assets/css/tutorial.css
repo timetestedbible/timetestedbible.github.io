@@ -1484,3 +1484,71 @@
   font-size: 0.8em;
   color: var(--text-secondary);
 }
+
+/* ── /preorder/ page (static Jekyll page inside the app shell) ── */
+.preorder-kicker {
+  color: var(--accent-gold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  margin: 0 0 6px;
+}
+
+.preorder-deadline {
+  color: var(--accent-gold);
+  font-size: 1.1em;
+  margin: 0 0 18px;
+}
+
+#preorder-countdown { font-variant-numeric: tabular-nums; }
+
+.preorder-price {
+  font-size: 1.6em;
+  color: var(--accent-gold);
+  font-weight: 700;
+  margin: 10px 0 0;
+}
+
+.preorder-price s {
+  color: var(--text-secondary);
+  font-size: 0.6em;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+.preorder-page .book-actions .hero-btn[aria-disabled="true"] {
+  background: var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+  pointer-events: none;
+}
+
+.preorder-ended, .preorder-offline {
+  display: none;
+  color: var(--accent-gold);
+  font-size: 1.1em;
+  margin: 14px 0;
+}
+
+.preorder-steps {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 22px 30px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.preorder-steps ol { margin: 0; padding-left: 22px; }
+.preorder-steps li { margin-bottom: 10px; }
+.preorder-steps a, .preorder-fine a { color: var(--accent-primary); }
+
+.preorder-fine {
+  max-width: 700px;
+  margin: 22px auto 0;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.85em;
+  line-height: 1.6;
+}
