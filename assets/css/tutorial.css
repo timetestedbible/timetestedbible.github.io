@@ -1469,3 +1469,18 @@
 }
 
 .book-downloads a:hover { text-decoration: underline; }
+
+/* limited-time pre-order CTA (hero + book landing) */
+.book-offer-btn {
+  background: linear-gradient(135deg, #eda820 0%, #c98a10 100%) !important;
+  color: #14213a !important;
+  font-weight: 700;
+}
+
+.book-offer-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(237, 168, 32, 0.45); }
+
+.book-offer-note {
+  margin: 8px 0 0;
+  font-size: 0.8em;
+  color: var(--text-secondary);
+}

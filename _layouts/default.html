@@ -1314,6 +1314,17 @@
       }
     }
     
+    // Track a pre-order click (per book) with GoatCounter
+    function trackPreorder(book) {
+      if (typeof goatcounter !== 'undefined' && goatcounter.count) {
+        goatcounter.count({
+          path: '/event/preorder-' + book,
+          title: 'Pre-order click: ' + book,
+          event: true
+        });
+      }
+    }
+
     // Track a book file download (per book, per format) with GoatCounter
     function trackBookFile(book, format) {
       if (typeof goatcounter !== 'undefined' && goatcounter.count) {

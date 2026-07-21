@@ -9,6 +9,12 @@ const SYMBOLIC_LANGUAGE_BOOK = {
   basePath: '/books/meat-bibles-symbolic-language',
   cover: '/assets/img/covers/meat-front-web.jpg',
   tagline: "The Bible's Symbolic Language",
+  offer: {
+    label: 'Pre-order Hardcover — $7',
+    note: 'Offer ends August 7 · ships after the window closes',
+    href: '',   // Stripe Payment Link (set when the account activates)
+    until: '2026-08-08T05:00:00Z'  // midnight Aug 8, America/Chicago
+  },
   purchase: [
     { soon: 'Hardcover — August 1' }
   ],

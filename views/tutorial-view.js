@@ -7,6 +7,20 @@
 
 const TutorialView = {
   /**
+   * A book's limited-time pre-order CTA; falls back to the given pill when the
+   * offer has no link yet or the deadline has passed. Pure local-clock logic —
+   * no network dependency, so it degrades cleanly offline.
+   */
+  renderBookOffer(globalName, fallbackHtml) {
+    const book = (typeof window !== 'undefined') ? window[globalName] : null;
+    const offer = book && book.offer;
+    if (!offer || !offer.href || Date.now() >= Date.parse(offer.until)) return fallbackHtml;
+    return `<a class="hero-btn primary book-offer-btn" href="${offer.href}"
+        onclick="if(typeof trackPreorder==='function')trackPreorder('${book.slug}')">${offer.label}</a>
+      <p class="book-offer-note">${offer.note}</p>`;
+  },
+
+  /**
    * Render the tutorial/about view
    */
   render(state, derived, container) {
@@ -34,7 +48,7 @@ const TutorialView = {
                     Read Free
                   </button>
                 </div>
-                <span class="book-soon">Hardcover — August 1</span>
+                ${this.renderBookOffer('SYMBOLIC_LANGUAGE_BOOK', '<span class="book-soon">Hardcover — August 1</span>')}
                 <p class="book-downloads">Read free:
                   <a href="/books/meat-bibles-symbolic-language" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'meat-bibles-symbolic-language'}})">Web</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('meat','pdf')">PDF</a> ·
@@ -59,7 +73,7 @@ const TutorialView = {
                     Buy Legacy Softcover
                   </a>
                 </div>
-                <span class="book-soon">Second-edition hardcover — August 1</span>
+                ${this.renderBookOffer('TIME_TESTED_TRADITION_BOOK', '<span class="book-soon">Second-edition hardcover — August 1</span>')}
                 <p class="book-downloads">Read free:
                   <a href="/books/time-tested-tradition" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'time-tested-tradition'}})">Web</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','pdf')">PDF</a> ·

@@ -1815,6 +1815,12 @@ const ReaderView = {
             <span class="book-toc-title">${c.title}</span>
             ${c.summary ? `<span class="book-toc-desc">${c.summary}</span>` : ''}
           </a></li>`).join('');
+      const offerLive = book && book.offer && book.offer.href && Date.now() < Date.parse(book.offer.until);
+      const offer = offerLive
+        ? `<a class="hero-btn primary book-offer-btn" href="${book.offer.href}"
+             onclick="if(typeof trackPreorder==='function')trackPreorder('${book.slug}')">${book.offer.label}</a>
+           <p class="book-offer-note">${book.offer.note}</p>`
+        : '';
       const purchase = (book && book.purchase ? book.purchase : []).map(p => p.soon
         ? `<span class="book-soon">${p.soon}</span>`
         : `<a class="hero-btn secondary" href="${p.href}" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">${p.label}</a>`
@@ -1828,7 +1834,7 @@ const ReaderView = {
             <div class="book-index-hero-info">
               <h1 class="book-index-title">${bookTitle}</h1>
               ${book.tagline ? `<p class="book-index-tagline">${book.tagline}</p>` : ''}
-              <div class="book-actions">${purchase}</div>
+              <div class="book-actions">${offer}${purchase}</div>
               ${downloads ? `<p class="book-downloads">Download: ${downloads}</p>` : ''}
             </div>
           </div>`
