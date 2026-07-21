@@ -31,6 +31,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: "How years of studies, articles, and videos led to a repeatable way of recovering the Bible's shared symbolic vocabulary—and why the book must introduce an interconnected language one word at a time. Closes with the book's few conventions: symbols and the Glossary, translations, the Scripture Index, and the free digital editions."
     },
     {
+      part: "Part One \u2014 The Method",
       slug: 'introduction',
       num: 1,
       plate: '/assets/img/plates/meat-bibles-symbolic-language/01-five-loaves',
@@ -59,6 +60,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: "Read through the symbols of sea and city, the only sign Jesus gave opens up: the heart of the earth is Jerusalem, the great fish a devouring kingdom forced to give back what it swallowed, and Jonah a scene-by-scene prophecy of His betrayal, death, resurrection, and the gospel's turn to the nations."
     },
     {
+      part: "Part Two \u2014 The Doctrine",
       slug: 'gospel',
       num: 5,
       plate: '/assets/img/plates/meat-bibles-symbolic-language/05-herald',
@@ -164,6 +166,21 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: "Neither raw terror nor a reverence that asks nothing: Scripture defines the fear of the LORD as keeping the commandments and departing from evil \u2014 'Fear God, and keep his commandments: for this is the whole duty of man.' It is the beginning of wisdom and the root beneath every symbol in this book; its counterfeit is the fear of man, the snare."
     },
     {
+      slug: 'path-to-salvation',
+      num: 24,
+      plate: '/assets/img/plates/meat-bibles-symbolic-language/24-tabernacle-path',
+      title: 'The Path to Salvation',
+      summary: "Borrowed from Time Tested Tradition. Keeping the commandments is not a works-based salvation, yet willful, unrepentant lawbreaking condemns. Salvation comes by confessing Jesus as Lord and the law as good \u2014 and the familiar three-step path cannot even be taken without the law that defines sin, the High Priest it establishes, and the obedience that calling Him Master requires."
+    },
+    {
+      slug: 'the-end-of-the-law',
+      num: 25,
+      plate: '/assets/img/plates/meat-bibles-symbolic-language/48x-end-of-the-law',
+      title: 'The End of the Law',
+      summary: 'A defensive reading of Paul\'s disputed vocabulary: end as purpose, law named by its ruler, work distinguished from obedience, wages from duty, and the curse from the command. Christ is not where the law failed and stopped, but the right-living purpose toward which it points.'
+    },
+    {
+      part: "Part Three \u2014 The Point",
       slug: 'what-is-the-point',
       num: 26,
       plate: '/assets/img/plates/meat-bibles-symbolic-language/25-what-is-the-point',
@@ -185,6 +202,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: "Genesis 8:13 is a ship's log \u2014 a date, a dried earth, a covering removed. Remove the vowel points instead, and the same consonants sustain a second reading from first word to last: the sixth seal of Revelation, written into the flood account millennia before John saw it. One pun is wit; twelve consecutive words reading as history and the end of the age at once is the fingerprint."
     },
     {
+      part: "Part Four \u2014 The Calendar",
       slug: 'sun-moon-and-stars',
       num: 29,
       plate: '/assets/img/plates/meat-bibles-symbolic-language/29-joseph-dream',
@@ -213,6 +231,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: "The companion volume introduced: Time Tested Tradition tests the inherited calendars against every anchor the record affords. With 99.9% certainty the cross fell in AD 32 \u2014 and no known weekly sabbath aligns with Saturday on the known dates. All the receipts, presented for the reader to judge; the sabbaths emerge as a sign governed by the moon \u2014 the full moon. Free at TimeTested.Bible."
     },
     {
+      part: "Part Five \u2014 The Prophecy",
       slug: 'the-four-winds',
       num: 36,
       plate: '/assets/img/plates/meat-bibles-symbolic-language/34-four-horsemen',
@@ -234,13 +253,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: "Daniel was commanded to seal the book to the time of the end \u2014 and a seal implies an unsealing. Unpointed Daniel 9:24 opens with the same word twice \u2014 seventy seventy: seventy jubilees \u2014 and the counts read straight through history, closing together at the end of the times. The seal was never wax; it is the reading tradition laid over the letters."
     },
     {
-      slug: 'path-to-salvation',
-      num: 24,
-      plate: '/assets/img/plates/meat-bibles-symbolic-language/24-tabernacle-path',
-      title: 'The Path to Salvation',
-      summary: "Borrowed from Time Tested Tradition. Keeping the commandments is not a works-based salvation, yet willful, unrepentant lawbreaking condemns. Salvation comes by confessing Jesus as Lord and the law as good \u2014 and the familiar three-step path cannot even be taken without the law that defines sin, the High Priest it establishes, and the obedience that calling Him Master requires."
-    },
-    {
+      part: "Part Six \u2014 Symbol Studies",
       slug: 'mountain',
       num: 39,
       plate: '/assets/img/plates/meat-bibles-symbolic-language/39-colossus-mountain',
@@ -339,13 +352,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: "A compact case study in turning received milk into tested meat. Cleansing removes defilement; sanctification takes what was common under a holy claim and appointed use; justification answers a charge with a judgment. Paul says washed, sanctified, and justified because the three operations are not synonyms."
     },
     {
-      slug: 'the-end-of-the-law',
-      num: 25,
-      plate: '/assets/img/plates/meat-bibles-symbolic-language/48x-end-of-the-law',
-      title: 'The End of the Law',
-      summary: 'A defensive reading of Paul\'s disputed vocabulary: end as purpose, law named by its ruler, work distinguished from obedience, wages from duty, and the curse from the command. Christ is not where the law failed and stopped, but the right-living purpose toward which it points.'
-    },
-    {
+      part: "Part Seven \u2014 Reference",
       slug: 'glossary',
       plate: '/assets/img/plates/meat-bibles-symbolic-language/49-glossary-symbols',
       title: 'Glossary of Symbols',

@@ -32,6 +32,7 @@ const TIME_TESTED_TRADITION_BOOK = {
       summary: "Introduces the second edition and the new material added since the first\u2014Lucifer\u2019s Declared Plan, the Hebrew Revelation 12 sign, and the identical ancient consonants of \u201cfull moon\u201d and \u201cthrone\u201d\u2014and how this evidence strengthens the case for when the month and year begin."
     },
     {
+      part: "Part One \u2014 The Rules of Evidence",
       slug: "introduction",
       num: 1,
       plate: '/assets/img/plates/time-tested-tradition/01-searching-king',
@@ -60,6 +61,7 @@ const TIME_TESTED_TRADITION_BOOK = {
       summary: "Investigates the claim that the Sanhedrin had authority over calendar determination. This chapter examines historical evidence and Scripture to determine whether this authority was legitimate or assumed."
     },
     {
+      part: "Part Two \u2014 The Case for the Biblical Calendar",
       slug: "sun-moon-and-stars",
       num: 5,
       plate: '/assets/img/plates/time-tested-tradition/03x-joseph-dream',
@@ -116,6 +118,7 @@ const TIME_TESTED_TRADITION_BOOK = {
       summary: "A sabbath can be complete \u2014 and only a span can be complete or broken. Leviticus counts 'seven sabbaths' where Deuteronomy counts 'seven weeks,' and Hebrew owns a bare week-word, so the choice teaches: the word names the whole seven \u2014 six days of labor and one of rest as a single unit \u2014 scaling to years, to jubilees, and to the great week whose seventh millennium is the rest that remains."
     },
     {
+      part: "Part Three \u2014 Testing the Sabbath",
       slug: "when-is-the-sabbath",
       num: 13,
       plate: '/assets/img/plates/time-tested-tradition/10-sabbath-quarters',
@@ -130,6 +133,7 @@ const TIME_TESTED_TRADITION_BOOK = {
       summary: "Examines the origin and meaning of Saturday as \\\"Sabbath\\\" and its connection to pagan planetary worship. This chapter traces the historical development of the seven-day planetary week."
     },
     {
+      part: "Part Four \u2014 The Year of the Cross",
       slug: "32-ad-resurrection",
       num: 15,
       plate: '/assets/img/plates/time-tested-tradition/12-darkness-at-noon',
@@ -165,6 +169,7 @@ const TIME_TESTED_TRADITION_BOOK = {
       summary: "The only sign Jesus gave opens scene by scene: the heart of the earth is Jerusalem, the great fish a ruler forced to give back what he swallowed, and the book of Jonah a frame-by-frame prophecy of the betrayal, arrest, death, resurrection, and the gospel's turn to the nations \u2014 with the three days and three nights counted exactly."
     },
     {
+      part: "Part Five \u2014 The Reign of Herod the Great",
       slug: "herod-the-great",
       num: 20,
       plate: '/assets/img/plates/time-tested-tradition/13-herods-eclipse',
@@ -186,6 +191,7 @@ const TIME_TESTED_TRADITION_BOOK = {
       summary: "The timing of Herod's appointment as king by the Roman Senate and the Battle of Actium anchor of his 7th regnal year \u2014 the two chronological studies the print edition carries as one chapter, examined from Josephus' own accounts."
     },
     {
+      part: "Part Six \u2014 Salvation and Obedience",
       slug: "the-path-to-salvation",
       num: 23,
       plate: '/assets/img/plates/time-tested-tradition/16-thief-beside-him',
@@ -214,6 +220,7 @@ const TIME_TESTED_TRADITION_BOOK = {
       summary: "The book's charge in closing: repent, be baptized, profess that His law is good, and seek His word with all your heart \u2014 obedience taught out of love, with the blessings He intends."
     },
     {
+      part: "Part Seven \u2014 Reference",
       slug: "evidence-outline",
       title: "Evidence Outline",
       summary: "Maps the central argument, explains how to read each level of evidence, and links every major claim to its full discussion."
