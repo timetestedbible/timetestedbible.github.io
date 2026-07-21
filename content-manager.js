@@ -125,8 +125,31 @@ const ContentManager = {
       .trim();
     document.body.classList.add(`view-${viewName}`);
 
-    // Static pages (e.g. /research/symbols/) are rendered by Jekyll — skip SPA view rendering
+    // Static pages (e.g. /preorder/) are rendered by Jekyll — skip SPA view rendering.
+    // If the SPA shell was served for this navigation (app-shell service worker),
+    // the real article is missing: fetch and inject it, re-running its scripts.
     if (state.content && state.content.params && state.content.params.staticPage) {
+      if (this.contentArea && !this.contentArea.querySelector('article')) {
+        fetch(window.location.pathname)
+          .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+          .then(html => {
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const remote = doc.getElementById('content-area');
+            if (!remote) return;
+            const loading = document.getElementById('app-loading');
+            Array.from(remote.children).forEach(node => {
+              if (node.id === 'app-loading' || node.tagName === 'NOSCRIPT') return;
+              if (node.tagName === 'SCRIPT') {
+                const s = document.createElement('script');
+                if (node.src) s.src = node.src; else s.textContent = node.textContent;
+                this.contentArea.insertBefore(s, loading);
+              } else {
+                this.contentArea.insertBefore(document.importNode(node, true), loading);
+              }
+            });
+          })
+          .catch(e => console.error('[ContentManager] static page fetch failed:', e));
+      }
       return;
     }
 

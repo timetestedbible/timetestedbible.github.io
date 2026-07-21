@@ -17,8 +17,12 @@ if (!_isLocalDev) {
 importScripts('/version.js');
 const CACHE_NAME = 'timetested-bible-v' + APP_VERSION;
 
+// Static Jekyll pages the SPA cannot render itself (router staticPage passthrough)
+const STATIC_PAGE_PATHS = ['/preorder'];
+
 // Core app files
 const CORE_ASSETS = [
+  '/preorder/',
   '/',
   '/index.html',
   '/version.js',
@@ -283,7 +287,26 @@ self.addEventListener('fetch', (event) => {
   // to make a full navigation request. Serving the SPA shell ensures the client-side
   // router handles the URL without a full page reload. The SPA fetches study/article
   // content via JS fetch() which goes through the sub-resource path below.
+  //
+  // EXCEPTION: static Jekyll pages (router staticPage passthrough) have no JS
+  // renderer — they need their real HTML. Network-first, cached copy offline.
   if (event.request.mode === 'navigate') {
+    const navPath = new URL(event.request.url).pathname;
+    const isStaticPage = STATIC_PAGE_PATHS.some(p => navPath === p || navPath === p + '/');
+    if (isStaticPage) {
+      event.respondWith(
+        fetch(event.request).then((response) => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+          }
+          return response;
+        }).catch(() =>
+          caches.match(event.request).then(cached => cached || caches.match('/'))
+        )
+      );
+      return;
+    }
     event.respondWith(
       caches.match('/').then(cached => cached || fetch('/'))
     );
