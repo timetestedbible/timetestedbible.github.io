@@ -1390,10 +1390,22 @@
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.28);
 }
 
-.hero-book-col.meat .b3d-front { background-image: url('/assets/img/covers/meat-front-web.jpg'); }
-.hero-book-col.meat .b3d-spine { background-image: url('/assets/img/covers/meat-spine-web.jpg'); }
-.hero-book-col.ttt  .b3d-front { background-image: url('/assets/img/covers/ttt-front-web.jpg'); }
-.hero-book-col.ttt  .b3d-spine { background-image: url('/assets/img/covers/ttt-spine-web.jpg'); }
+.hero-book-col.meat .b3d-front {
+  background-image: url('/assets/img/covers/meat-front-web.jpg');
+  background-image: image-set(url('/assets/img/covers/meat-front-web.webp') type('image/webp'), url('/assets/img/covers/meat-front-web.jpg') type('image/jpeg'));
+}
+.hero-book-col.meat .b3d-spine {
+  background-image: url('/assets/img/covers/meat-spine-web.jpg');
+  background-image: image-set(url('/assets/img/covers/meat-spine-web.webp') type('image/webp'), url('/assets/img/covers/meat-spine-web.jpg') type('image/jpeg'));
+}
+.hero-book-col.ttt  .b3d-front {
+  background-image: url('/assets/img/covers/ttt-front-web.jpg');
+  background-image: image-set(url('/assets/img/covers/ttt-front-web.webp') type('image/webp'), url('/assets/img/covers/ttt-front-web.jpg') type('image/jpeg'));
+}
+.hero-book-col.ttt  .b3d-spine {
+  background-image: url('/assets/img/covers/ttt-spine-web.jpg');
+  background-image: image-set(url('/assets/img/covers/ttt-spine-web.webp') type('image/webp'), url('/assets/img/covers/ttt-spine-web.jpg') type('image/jpeg'));
+}
 
 .book-shadow {
   width: calc(var(--w) * 1.25);
@@ -1511,9 +1523,8 @@
 
 .preorder-price s {
   color: var(--text-secondary);
-  font-size: 0.6em;
-  font-weight: 400;
-  margin-left: 8px;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 .preorder-page .book-actions .hero-btn[aria-disabled="true"] {

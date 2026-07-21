@@ -15,7 +15,7 @@ const TutorialView = {
     const book = (typeof window !== 'undefined') ? window[globalName] : null;
     const offer = book && book.offer;
     if (!offer || !offer.href || Date.now() >= Date.parse(offer.until)) return fallbackHtml;
-    const price = offer.price ? `<p class="preorder-price">${offer.price} <s>${offer.was}</s></p>` : '';
+    const price = offer.was ? `<p class="preorder-price"><s>${offer.was}</s></p>` : '';
     return `${price}<a class="hero-btn primary book-offer-btn" href="${offer.href}"
         onclick="if(typeof trackPreorder==='function')trackPreorder('${book.slug}')">${offer.label}</a>`;
   },
