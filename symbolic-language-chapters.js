@@ -10,7 +10,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
   cover: '/assets/img/covers/meat-front-web.jpg',
   tagline: "The Bible's Symbolic Language",
   purchase: [
-    { soon: 'Hardcover coming soon' }
+    { soon: 'Hardcover — August 1' }
   ],
   downloads: [
     { label: 'PDF', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf', track: 'meat', fmt: 'pdf' },

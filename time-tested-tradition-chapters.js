@@ -11,7 +11,7 @@ const TIME_TESTED_TRADITION_BOOK = {
   tagline: 'The Renewed Biblical Calendar',
   purchase: [
     { label: 'Buy Legacy Softcover', href: 'https://store.bookbaby.com/book/time-tested-tradition' },
-    { soon: 'Second-edition hardcover coming soon' }
+    { soon: 'Second-edition hardcover — August 1' }
   ],
   downloads: [
     { label: 'PDF', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf', track: 'ttt-2e', fmt: 'pdf' },

@@ -34,7 +34,7 @@ const TutorialView = {
                     Read Free
                   </button>
                 </div>
-                <span class="book-soon">Hardcover coming soon</span>
+                <span class="book-soon">Hardcover — August 1</span>
                 <p class="book-downloads">Read free:
                   <a href="/books/symbolic-language" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'symbolic-language'}})">Web</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('meat','pdf')">PDF</a> ·
@@ -59,7 +59,7 @@ const TutorialView = {
                     Buy Legacy Softcover
                   </a>
                 </div>
-                <span class="book-soon">Second-edition hardcover coming soon</span>
+                <span class="book-soon">Second-edition hardcover — August 1</span>
                 <p class="book-downloads">Read free:
                   <a href="/books/time-tested-tradition" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'time-tested-tradition'}})">Web</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','pdf')">PDF</a> ·
