@@ -454,7 +454,7 @@ function normalizeReference(ref) {
 // they load (or offline on a cold cache).
 const BOOK_INDEX_SOURCES = [
   { bookSlug: 'time-tested-tradition', tag: 'time tested', url: '/books/time-tested-tradition/scripture-index.json' },
-  { bookSlug: 'symbolic-language', tag: 'meat', url: '/books/symbolic-language/scripture-index.json' },
+  { bookSlug: 'meat-bibles-symbolic-language', tag: 'meat', url: '/books/symbolic-language/scripture-index.json' },
 ];
 let _liveBookIndexes = null;
 

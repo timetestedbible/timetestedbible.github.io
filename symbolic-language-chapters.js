@@ -4,9 +4,9 @@
 // pre-rendered to HTML by Jekyll (jekyll-asciidoc) at build time.
 
 const SYMBOLIC_LANGUAGE_BOOK = {
-  slug: 'symbolic-language',
+  slug: 'meat-bibles-symbolic-language',
   title: "MEAT The Bible's Symbolic Language",
-  basePath: '/books/symbolic-language',
+  basePath: '/books/meat-bibles-symbolic-language',
   cover: '/assets/img/covers/meat-front-web.jpg',
   tagline: "The Bible's Symbolic Language",
   purchase: [
@@ -296,5 +296,9 @@ if (typeof window !== 'undefined') {
   window.SYMBOLIC_LANGUAGE_BOOK = SYMBOLIC_LANGUAGE_BOOK;
   window.SymbolicLanguageBook = SymbolicLanguageBook;
   window.BOOKS_BY_SLUG = window.BOOKS_BY_SLUG || {};
+  window.BOOKS_BY_SLUG['meat-bibles-symbolic-language'] = SymbolicLanguageBook;
+  // Legacy alias: the book lived at /books/symbolic-language/ before the
+  // title-bearing slug; old links resolve through the 404 SPA boot.
   window.BOOKS_BY_SLUG['symbolic-language'] = SymbolicLanguageBook;
+  window.BOOK_SLUG_ALIASES = Object.assign(window.BOOK_SLUG_ALIASES || {}, { 'symbolic-language': 'meat-bibles-symbolic-language' });
 }

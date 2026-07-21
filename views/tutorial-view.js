@@ -20,8 +20,8 @@ const TutorialView = {
 
             <div class="hero-books">
               <div class="hero-book-col meat">
-                <a href="/books/symbolic-language" class="book3d left" aria-label="MEAT — The Bible's Symbolic Language. Read it free."
-                   onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'symbolic-language'}})">
+                <a href="/books/meat-bibles-symbolic-language" class="book3d left" aria-label="MEAT — The Bible's Symbolic Language. Read it free."
+                   onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'meat-bibles-symbolic-language'}})">
                   <span class="b3d-face b3d-front" aria-hidden="true"></span>
                   <span class="b3d-face b3d-spine" aria-hidden="true"></span>
                   <span class="b3d-face b3d-pages" aria-hidden="true"></span>
@@ -30,13 +30,13 @@ const TutorialView = {
                 <span class="book-shadow" aria-hidden="true"></span>
                 <p class="book-caption"><strong>MEAT</strong><span class="book-tagline">The Bible's Symbolic Language</span></p>
                 <div class="book-actions">
-                  <button class="hero-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'symbolic-language'}})">
+                  <button class="hero-btn primary" onclick="AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'meat-bibles-symbolic-language'}})">
                     Read Free
                   </button>
                 </div>
                 <span class="book-soon">Hardcover — August 1</span>
                 <p class="book-downloads">Read free:
-                  <a href="/books/symbolic-language" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'symbolic-language'}})">Web</a> ·
+                  <a href="/books/meat-bibles-symbolic-language" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'meat-bibles-symbolic-language'}})">Web</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('meat','pdf')">PDF</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('meat','epub')">EPUB</a>
                 </p>

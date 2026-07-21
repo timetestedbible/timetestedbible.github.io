@@ -1799,6 +1799,7 @@ const ReaderView = {
     const bookHelper = (typeof window !== 'undefined' && window.BOOKS_BY_SLUG && window.BOOKS_BY_SLUG[bookSlug])
       || ((typeof SymbolicLanguageBook !== 'undefined') ? SymbolicLanguageBook : null);
     const book = bookHelper ? bookHelper.book : null;
+    if (book && book.slug) bookSlug = book.slug;  // canonicalize legacy aliases
     const bookTitle = book ? book.title : 'Book';
     const textArea = container.querySelector('#bible-explorer-text');
     const titleEl = container.querySelector('#bible-chapter-title');
@@ -1923,6 +1924,23 @@ const ReaderView = {
       this.linkifySymbolRefs(body);
       if (typeof this.linkifyClassicsRefs === 'function') this.linkifyClassicsRefs(body);
       if (typeof this.linkifyReaderLinks === 'function') this.linkifyReaderLinks(body);
+
+      // In-book chapter cross-links (link:/books/... in the sources, which may
+      // carry a book's pre-rename slug): stay in-app and canonicalize
+      body.querySelectorAll('a[href^="/books/"]:not(.symbol)').forEach(a => {
+        if (a.dataset.spaBound) return;
+        const m = (a.getAttribute('href') || '').match(/^\/books\/([a-z0-9-]+)\/(?:([a-z0-9-]+)\/?)?(?:#(.+))?$/);
+        if (!m) return;
+        a.dataset.spaBound = '1';
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const slug = (window.BOOK_SLUG_ALIASES && window.BOOK_SLUG_ALIASES[m[1]]) || m[1];
+          const params = { contentType: 'books', bookSlug: slug };
+          if (m[2]) params.chapterSlug = m[2];
+          if (m[3]) params.section = m[3];
+          AppStore.dispatch({ type: 'SET_VIEW', view: 'reader', params });
+        });
+      });
 
       // Glossary sym links (both books use MEAT's glossary): hover/tap popups,
       // and desktop clicks stay in-app instead of a full page reload

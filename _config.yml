@@ -87,7 +87,6 @@ defaults:
       og_title: "Time Tested Bible"
       og_description: "Bible study app with lunar calendar, Strong's concordance, interlinear Hebrew/Greek, word studies, and historical timeline."
       og_image: "https://timetested.bible/icons/og-image.png"
-      og_url: "https://timetested.bible/"
       og_type: "website"
       keywords: "bible study, biblical calendar, hebrew calendar, strongs concordance, interlinear bible, feast days, sabbath calendar, moon phases, biblical timeline, appointed times, torah portions"
       author: "Time Tested Bible"
@@ -123,7 +122,8 @@ defaults:
     values:
       layout: "book-chapter"
       book: "MEAT The Bible's Symbolic Language"
-      book_slug: "symbolic-language"
+      book_slug: "meat-bibles-symbolic-language"
+      og_image: "/assets/img/og/og-book-meat.png"
       og_type: "article"
       author: "Time Tested Bible"
   # "Time Tested Tradition" (second edition) book — AsciiDoc chapters
@@ -133,6 +133,6 @@ defaults:
       layout: "book-chapter"
       book: "Time Tested Tradition"
       book_slug: "time-tested-tradition"
+      og_image: "/assets/img/og/og-book-ttt.png"
       og_type: "article"
       author: "Time Tested Bible"
-      og_image: "https://timetested.bible/icons/og-image.png"

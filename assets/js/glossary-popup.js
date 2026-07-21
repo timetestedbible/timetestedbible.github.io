@@ -1,7 +1,7 @@
 /* Glossary preview popups for the web book.
  *
  * The sym: macro renders glossary terms as <a class="symbol"
- * href="/books/symbolic-language/glossary/#sym-x">. Instead of forcing the
+ * href="/books/meat-bibles-symbolic-language/glossary/#sym-x">. Instead of forcing the
  * reader to jump to the glossary, hovering (desktop) or tapping (touch) shows
  * the entry in a popup; the popup links to the full entry. Reuses the site's
  * .symbol-tooltip styles; the global scroll handler in default.html already
@@ -46,13 +46,13 @@
     t.style.pointerEvents = 'auto'; // the class disables them; the full-entry link must be clickable
     var refs = entry.refs ? '<div class="symbol-tooltip-sentence">(' + esc(entry.refs) + ')</div>' : '';
     var opposite = entry.opposite
-      ? '<div class="symbol-tooltip-sentence"><em>Opposite:</em> <a href="/books/symbolic-language/glossary/#' +
+      ? '<div class="symbol-tooltip-sentence"><em>Opposite:</em> <a href="/books/meat-bibles-symbolic-language/glossary/#' +
         esc(entry.opposite.id) + '">' + esc(entry.opposite.term) + '</a></div>'
       : '';
     var aliases = entry.aliases && entry.aliases.length
       ? '<div class="symbol-tooltip-sentence"><em>Translation aliases:</em><br>' +
         entry.aliases.map(function (item) {
-          return esc(item.label) + ' &rarr; <a href="/books/symbolic-language/glossary/#' +
+          return esc(item.label) + ' &rarr; <a href="/books/meat-bibles-symbolic-language/glossary/#' +
             esc(item.id) + '">' + esc(item.term) + '</a>';
         }).join('<br>') + '</div>'
       : '';

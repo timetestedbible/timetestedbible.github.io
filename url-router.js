@@ -699,6 +699,10 @@ const URLRouter = {
         // /books/{book}            → book table of contents
         if (parts[0]) {
           params.bookSlug = parts[0].toLowerCase().replace(/\/$/, '');
+          // Renamed books: old shared links land here via the 404 SPA boot
+          if (typeof window !== 'undefined' && window.BOOK_SLUG_ALIASES && window.BOOK_SLUG_ALIASES[params.bookSlug]) {
+            params.bookSlug = window.BOOK_SLUG_ALIASES[params.bookSlug];
+          }
           if (parts[1]) params.chapterSlug = parts[1].toLowerCase().replace(/\/$/, '');
           params._book = true;
         }

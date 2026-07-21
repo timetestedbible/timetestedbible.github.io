@@ -24,7 +24,7 @@ Asciidoctor::Extensions.register do
           target: "##{target}", attributes: { 'refid' => target, 'role' => 'symbol' })
       else
         Asciidoctor::Inline.new(parent, :anchor, label, type: :link,
-          target: "/books/symbolic-language/glossary/##{target}", attributes: { 'role' => 'symbol' })
+          target: "/books/meat-bibles-symbolic-language/glossary/##{target}", attributes: { 'role' => 'symbol' })
       end
     end
   end
