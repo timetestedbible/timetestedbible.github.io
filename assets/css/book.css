@@ -484,3 +484,20 @@ body.theme-light .book-chapter-body { color: var(--text-primary); }
   border-radius: 4px;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
 }
+
+/* ── Contents: chapter plate mini icons beside each summary ── */
+.book-toc-item.has-plate a {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.book-toc-thumb {
+  width: 76px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 3px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.book-toc-text { min-width: 0; }

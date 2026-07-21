@@ -1810,10 +1810,13 @@ const ReaderView = {
     if (!chapterSlug) {
       if (titleEl) titleEl.textContent = bookTitle;
       const items = (book ? book.chapters : []).map(c =>
-        `<li class="book-toc-item"><a href="${bookHelper.chapterPath(c.slug)}"
+        `<li class="book-toc-item${c.plate ? ' has-plate' : ''}"><a href="${bookHelper.chapterPath(c.slug)}"
             onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'${bookSlug || book.slug}',chapterSlug:'${c.slug}'}})">
-            <span class="book-toc-title">${c.title}</span>
-            ${c.summary ? `<span class="book-toc-desc">${c.summary}</span>` : ''}
+            ${c.plate ? `<img class="book-toc-thumb" src="${c.plate}-160.webp" alt="" loading="lazy" width="160" height="240">` : ''}
+            <span class="book-toc-text">
+              <span class="book-toc-title">${c.title}</span>
+              ${c.summary ? `<span class="book-toc-desc">${c.summary}</span>` : ''}
+            </span>
           </a></li>`).join('');
       const offerLive = book && book.offer && book.offer.href && Date.now() < Date.parse(book.offer.until);
       const offer = offerLive
