@@ -23,6 +23,18 @@ const DST = path.resolve(__dirname, 'desktop-site');     // staging for the bund
 // docs in data/) aren't referenced in-app, so they're dropped from the bundle.
 const KEEP_BOOK_PDF = 'media/time-tested-tradition.pdf';
 
+// Dev/archive trees that must not ship in the desktop bundle. The experiment
+// archives also carry paths >260 chars once prefixed with the Windows build
+// directory — WiX and NSIS both abort on them (MAX_PATH).
+const DROP_DIRS = [
+  'books/symbolic-language/experiments/',
+  'benchmark/',
+];
+
+// Windows bundling prepends ~100 chars of build path; keep headroom under
+// MAX_PATH (260) and fail loudly here instead of cryptically in makensis.
+const MAX_REL_PATH = 150;
+
 function walk(dir, cb) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
@@ -40,8 +52,16 @@ function main() {
 
   let kept = 0, droppedFiles = 0, droppedBytes = 0, linked = 0, copied = 0;
 
+  const longPaths = [];
   walk(SRC, (srcFile) => {
     const rel = path.relative(SRC, srcFile);
+    // Drop dev/archive trees (never app content; some exceed Windows MAX_PATH).
+    if (DROP_DIRS.some(d => rel.startsWith(d))) {
+      droppedFiles++;
+      droppedBytes += fs.statSync(srcFile).size;
+      return;
+    }
+    if (rel.length > MAX_REL_PATH) longPaths.push(rel);
     // Drop every PDF except the 2nd-edition book PDF (others aren't linked in-app).
     if (/\.pdf$/i.test(rel) && rel !== KEEP_BOOK_PDF) {
       droppedFiles++;
@@ -66,8 +86,13 @@ function main() {
     kept++;
   });
 
+  if (longPaths.length) {
+    console.error(`[desktop-site] ${longPaths.length} paths exceed ${MAX_REL_PATH} chars and will break Windows bundling:`);
+    longPaths.slice(0, 10).forEach(p => console.error(`  ${p.length} ${p}`));
+    process.exit(1);
+  }
   console.log(`[desktop-site] kept ${kept} files (${linked} linked, ${copied} copied), ` +
-    `dropped ${droppedFiles} uncompressed twins = ${(droppedBytes / 1048576).toFixed(0)} MB saved`);
+    `dropped ${droppedFiles} files = ${(droppedBytes / 1048576).toFixed(0)} MB saved`);
   console.log(`[desktop-site] -> ${DST}`);
 }
 
