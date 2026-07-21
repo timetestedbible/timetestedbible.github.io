@@ -63,9 +63,32 @@ permalink: /preorder/
     .fine a, .how a { color: var(--gold); }
     .offline-note { display: none; text-align: center; color: var(--gold); margin: 0 0 20px; }
     .ended { display: none; text-align: center; font-size: 1.2em; color: var(--gold); margin: 20px 0; }
+    .top-nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: linear-gradient(180deg, #0d2840 0%, #1a3a5c 100%);
+      border-bottom: 1px solid rgba(237,168,32,0.2);
+      height: 56px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 16px;
+    }
+    .top-nav .site-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--cream); }
+    .top-nav .site-brand .moon { font-size: 1.4em; }
+    .top-nav .site-brand .name { font-weight: 700; font-size: 1.1em; color: #9ec7e8; }
+    .top-nav nav { display: flex; gap: 22px; }
+    .top-nav nav a { color: #b9cde2; text-decoration: none; font-size: 0.98em; }
+    .top-nav nav a:hover { color: var(--gold); }
+    @media (max-width: 560px) { .top-nav nav { gap: 14px; } .top-nav nav a.hide-sm { display: none; } }
   </style>
 </head>
 <body>
+  <header class="top-nav">
+    <a class="site-brand" href="/"><span class="moon">🌕</span><span class="name">Time Tested Bible</span></a>
+    <nav>
+      <a href="/bible">Bible Study</a>
+      <a href="/timeline" class="hide-sm">Timeline</a>
+      <a href="/calendar" class="hide-sm">Calendar</a>
+      <a href="/blog">Blog</a>
+    </nav>
+  </header>
   <div class="wrap">
     <p class="brand">TimeTested.Bible &middot; Launch Special</p>
     <h1>Both Hardcovers. $7 Each.</h1>
