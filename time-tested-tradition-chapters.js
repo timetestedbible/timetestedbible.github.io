@@ -10,13 +10,13 @@ const TIME_TESTED_TRADITION_BOOK = {
   cover: '/assets/img/covers/ttt-front-web.jpg',
   tagline: 'The Renewed Biblical Calendar',
   offer: {
-    label: 'Pre-order Hardcover — $7',
-    note: 'Offer ends August 7 · ships after the window closes',
+    label: 'Pre-order Second Edition — $7',
+    note: 'Hardcover + extra content · ships after Aug 7, before Sept 1',
     href: '/preorder/',   // offer page; Stripe checkout links live there
     until: '2026-08-08T05:00:00Z'  // midnight Aug 8, America/Chicago
   },
   purchase: [
-    { label: 'Buy Legacy Softcover', href: 'https://store.bookbaby.com/book/time-tested-tradition' },
+    { label: 'Buy First Edition (Legacy)', href: 'https://store.bookbaby.com/book/time-tested-tradition' },
     { soon: 'Second-edition hardcover — August 1' }
   ],
   downloads: [

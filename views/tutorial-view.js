@@ -70,7 +70,7 @@ const TutorialView = {
                     Read Free
                   </button>
                   <a class="hero-btn secondary" href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
-                    Buy Legacy Softcover
+                    Buy First Edition (Legacy)
                   </a>
                 </div>
                 ${this.renderBookOffer('TIME_TESTED_TRADITION_BOOK', '<span class="book-soon">Second-edition hardcover — August 1</span>')}

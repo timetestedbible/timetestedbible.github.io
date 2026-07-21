@@ -11,7 +11,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
   tagline: "The Bible's Symbolic Language",
   offer: {
     label: 'Pre-order Hardcover — $7',
-    note: 'Offer ends August 7 · ships after the window closes',
+    note: 'Offer ends August 7 · ships before September 1',
     href: '/preorder/',   // offer page; Stripe checkout links live there
     until: '2026-08-08T05:00:00Z'  // midnight Aug 8, America/Chicago
   },
