@@ -5,7 +5,7 @@
 
 const TIME_TESTED_TRADITION_BOOK = {
   slug: 'time-tested-tradition',
-  title: 'Time Tested Tradition',
+  title: 'TIME Tested Tradition',
   basePath: '/books/time-tested-tradition',
   cover: '/assets/img/covers/ttt-front-web.jpg',
   tagline: 'The Renewed Biblical Calendar',
