@@ -41,7 +41,7 @@ const TutorialView = {
                   <span class="b3d-face b3d-back" aria-hidden="true"></span>
                 </a>
                 <span class="book-shadow" aria-hidden="true"></span>
-                <p class="book-caption"><strong>MEAT The Bible's Symbolic Language</strong></p>
+                <p class="book-caption"><strong>MEAT</strong><span class="book-tagline">The Bible's Symbolic Language</span></p>
                 ${this.renderBookOffer('SYMBOLIC_LANGUAGE_BOOK', '<span class="book-soon">Hardcover — August 1</span>')}
                 <p class="book-downloads">Read free:
                   <a href="/books/meat-bibles-symbolic-language" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'meat-bibles-symbolic-language'}})">Web</a> ·
@@ -58,7 +58,7 @@ const TutorialView = {
                   <span class="b3d-face b3d-back" aria-hidden="true"></span>
                 </a>
                 <span class="book-shadow" aria-hidden="true"></span>
-                <p class="book-caption"><strong>TIME Tested Tradition</strong><span class="book-tagline">The Renewed Biblical Calendar</span></p>
+                <p class="book-caption"><strong>TIME</strong><span class="book-tagline">Tested Tradition</span></p>
                 ${this.renderBookOffer('TIME_TESTED_TRADITION_BOOK', '<span class="book-soon">Second-edition hardcover — August 1</span>')}
                 <p class="book-downloads">Read free:
                   <a href="/books/time-tested-tradition" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'time-tested-tradition'}})">Web</a> ·
