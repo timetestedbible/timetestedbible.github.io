@@ -537,6 +537,21 @@ if WANT_EPUB
   end
   warn '  ~ cover href repaired (imagesdir-"" jacket bug in asciidoctor-epub3 2.3.0)'
 
+  # Trade convention: the copyright page (the document preamble) reads before
+  # the table of contents, exactly as the print edition orders it.
+  # asciidoctor-epub3 hard-codes the nav directly after the cover; swap it
+  # with the preamble in the spine.
+  Zip::File.open(epub_out) do |zip|
+    opf = zip.read 'EPUB/package.opf'
+    toc_ref = opf[/^\s*<itemref idref="toc"[^>]*>\n/]
+    pre_ref = opf[/^\s*<itemref idref="item__preamble"[^>]*>\n/]
+    if toc_ref && pre_ref && opf.index(toc_ref) < opf.index(pre_ref)
+      opf = opf.sub(toc_ref, '').sub(pre_ref, pre_ref + toc_ref)
+      zip.get_output_stream('EPUB/package.opf') { |os| os.write opf }
+      warn '  ~ spine reordered: copyright page now precedes the toc'
+    end
+  end
+
   # Symbol popups (ported from MEAT, 2026-07-20): Apple Books renders
   # epub:type=noteref anchors as popup notes. Every symbol xref becomes a
   # noteref onto a local aside carrying the glossary's one-line definition —
