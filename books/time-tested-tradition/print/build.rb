@@ -252,7 +252,10 @@ main_entries.each do |c|
       # stores charge delivery by the MB). The epub branch generates twins.
       twin = plate.sub 'images/print/', 'images/ebook/'
       $ebook_image_jobs[twin] = master
-      ebook_front << "[.chapter-plate]\nimage::#{twin}[#{c[:title]}]\n\n"
+      # Use a named, quoted alt attribute: positional image attributes treat
+      # commas in chapter titles as width/height separators, producing invalid
+      # width="..." values in the EPUB XHTML (epubcheck RSC-005).
+      ebook_front << "[.chapter-plate]\nimage::#{twin}[alt=\"#{c[:title]}\"]\n\n"
     end
   end
   (epigraph_map[c[:slug]] || []).each do |e|
@@ -288,7 +291,7 @@ back_entries.each do |c|
     if master
       twin = plate.sub 'images/print/', 'images/ebook/'
       $ebook_image_jobs[twin] = master
-      doc << "ifdef::ebook-edition[]\n\nimage::#{twin}[#{c[:title]}]\n\nendif::[]\n\n"
+      doc << "ifdef::ebook-edition[]\n\nimage::#{twin}[alt=\"#{c[:title]}\"]\n\nendif::[]\n\n"
     end
   end
   doc << c[:body] << "\n"
@@ -453,6 +456,9 @@ if WANT_EPUB
   # would dead-end inside an e-reader).
   aboard = (main_entries + back_entries).reject { |c| c[:edition] == 'digital' }
                                         .map { |c| c[:slug] }
+  # Reader deep-links (e.g. the LXX passages) leave the book: point them at
+  # the live site so the EPUB container stays self-contained (RSC-026).
+  epub_doc.gsub!(%r{link:/reader/}) { 'link:https://timetested.bible/reader/' }
   epub_doc.gsub!(%r{link:/books/time-tested-tradition/([a-z0-9-]+)/(?:#([a-z0-9-]+))?\[([^\]]*)\]}) do
     slug, fragment, text = $1, $2, $3
     if aboard.include? slug
@@ -495,7 +501,7 @@ if WANT_EPUB
       # id per build (2026-07-19). Pass EPUB_ISBN=<digits> for the release
       # build once the ebook's own ISBN is assigned (the print ISBN must not
       # ride in the epub).
-      'uuid'              => (ENV['EPUB_ISBN'] ? %(urn:isbn:#{ENV['EPUB_ISBN']}) : %(urn:uuid:ttt-review-#{Time.now.to_i})),
+      'uuid'              => (ENV['EPUB_ISBN'] ? %(urn:isbn:#{ENV['EPUB_ISBN']}) : begin require 'securerandom'; %(urn:uuid:#{SecureRandom.uuid}) end),
     }
 
   # asciidoctor-epub3 only packages its stock font set. Add the monochrome
