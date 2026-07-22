@@ -573,5 +573,83 @@ if WANT_EPUB
     end
   end
   warn "  ~ symbol popups injected (#{sym_defs.size} definitions across #{popup_chunks} chapters)"
+
+  # Scripture citation popups (author, 2026-07-21): every inline citation —
+  # "(Gen 1:14)", "(John 6:53, 56)", "(Ps 89:36-37)" — becomes a noteref onto
+  # a local aside carrying the full KJV verse text, so the reader checks the
+  # verse without leaving the page. Citations inside quote attributions,
+  # existing links, and other popups are left alone; citations labeled with a
+  # non-KJV version are skipped (the popup would misquote the cited edition).
+  kjv = {}
+  File.foreach(File.expand_path('../../../bibles/kjv_strongs.txt', __dir__)) do |line|
+    ref, text = line.chomp.split("\t", 2)
+    next unless text
+    kjv[ref] = text.gsub(/\{[^}]*\}/, '').squeeze(' ').strip
+  end
+  abbr_to_full = CITE_ABBR.invert            # 'Gen' => 'Genesis', 'Ps' => 'Psalms', …
+  book_names = (CITE_ABBR.keys + CITE_ABBR.values +
+                %w[John Mark Luke Acts Jude Titus Ruth Ezra Joel Amos Jonah 1\ John 2\ John 3\ John Philemon]).uniq
+  book_rx = Regexp.union(book_names.sort_by { |b| -b.length })
+  cite_rx = /\b(#{book_rx.source})\s+(\d+):(\d+(?:[-\u2013]\d+)?(?:,\s*\d+(?:[-\u2013]\d+)?)*)/
+  version_tail_rx = /\A\s*,\s*(?:NKJV|ASV|AKJV|NIV|ESV|YLT|NASB|LXX|Brenton)/
+
+  resolve_book = ->(name) { abbr_to_full[name] || { 'Psalm' => 'Psalms' }[name] || name }
+  verse_span = ->(book, chap, spec) {
+    verses = []
+    spec.split(/,\s*/).each do |part|
+      a, b = part.split(/[-\u2013]/).map(&:to_i)
+      (a..(b || a)).each { |v| verses << v }
+    end
+    verses.uniq.first(5).map { |v| [v, kjv["#{book} #{chap}:#{v}"]] }
+  }
+
+  vref_total = 0
+  Zip::File.open(epub_out) do |zip|
+    zip.entries.select { |e| e.name =~ %r{\AEPUB/[^/]+\.xhtml\z} }.each do |entry|
+      next if entry.name =~ /glossary|bibliography|scripture-index/
+      html = entry.get_input_stream.read.force_encoding('UTF-8')
+      asides = {}
+      depth_a = depth_aside = depth_footer = 0
+      out = html.split(/(<[^>]+>)/).map do |tok|
+        if tok.start_with?('<')
+          case tok
+          when /\A<a[\s>]/       then depth_a += 1
+          when %r{\A</a>}         then depth_a -= 1
+          when /\A<aside[\s>]/   then depth_aside += 1
+          when %r{\A</aside>}     then depth_aside -= 1
+          when /\A<footer[\s>]/  then depth_footer += 1
+          when %r{\A</footer>}    then depth_footer -= 1
+          end
+          tok
+        elsif depth_a.positive? || depth_aside.positive? || depth_footer.positive?
+          tok
+        else
+          tok.gsub(cite_rx) do |m|
+            book_raw, chap, spec = Regexp.last_match.captures
+            after = Regexp.last_match.post_match
+            next m if after =~ version_tail_rx
+            book = resolve_book.call(book_raw)
+            verses = verse_span.call(book, chap, spec)
+            next m if verses.empty? || verses.any? { |_, t| t.nil? }
+            key = "kv-#{book.downcase.gsub(/[^a-z0-9]/, '')}-#{chap}-#{spec.gsub(/[^0-9]+/, '-')}".sub(/-\z/, '')
+            unless asides.key?(key)
+              body = verses.each_with_index.map { |(v, t), i|
+                i.zero? ? esc.call(t) : %(<sup>#{v}</sup>&#160;#{esc.call(t)})
+              }.join(' ')
+              more = spec =~ /[-\u2013]/ && verses.length == 5 ? ' &#8230;' : ''
+              asides[key] = %(<aside epub:type="footnote" id="#{key}" class="versedef"><p style="line-height:1.6;margin:0.4em 0;"><strong>#{esc.call(book)} #{chap}:#{esc.call(spec)} (KJV)</strong><br/>#{body}#{more}</p></aside>)
+            end
+            vref_total += 1
+            %(<a href="##{key}" epub:type="noteref" style="color:inherit;text-decoration:none;border-bottom:1px dotted #B8860B;">#{m}</a>)
+          end
+        end
+      end.join
+      next if asides.empty?
+      out = out.sub('<html ', '<html xmlns:epub="http://www.idpf.org/2007/ops" ') unless out.include? 'xmlns:epub'
+      out = out.sub(%r{</body>}) { "#{asides.values.join("\n")}\n</body>" }
+      zip.get_output_stream(entry.name) { |os| os.write out }
+    end
+  end
+  warn "  ~ scripture citation popups injected (#{vref_total} citations)"
   warn "Wrote: #{epub_out}  (epub3, print-edition content)"
 end

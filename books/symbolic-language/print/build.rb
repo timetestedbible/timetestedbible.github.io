@@ -630,7 +630,9 @@ if WANT_EPUB
             next m if verses.empty? || verses.any? { |_, t| t.nil? }
             key = "kv-#{book.downcase.gsub(/[^a-z0-9]/, '')}-#{chap}-#{spec.gsub(/[^0-9]+/, '-')}".sub(/-\z/, '')
             unless asides.key?(key)
-              body = verses.map { |v, t| %(<sup>#{v}</sup>&#160;#{esc.call(t)}) }.join(' ')
+              body = verses.each_with_index.map { |(v, t), i|
+                i.zero? ? esc.call(t) : %(<sup>#{v}</sup>&#160;#{esc.call(t)})
+              }.join(' ')
               more = spec =~ /[-\u2013]/ && verses.length == 5 ? ' &#8230;' : ''
               asides[key] = %(<aside epub:type="footnote" id="#{key}" class="versedef"><p style="line-height:1.6;margin:0.4em 0;"><strong>#{esc.call(book)} #{chap}:#{esc.call(spec)} (KJV)</strong><br/>#{body}#{more}</p></aside>)
             end
