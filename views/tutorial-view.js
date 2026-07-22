@@ -474,7 +474,7 @@ const TutorialView = {
     const hint = canInstall ? '' : '<span class="install-hint">On iOS, tap Share → "Add to Home Screen." On desktop Chrome/Edge, look for the install icon in the address bar.</span>';
 
     // ── Desktop card: detect OS ──
-    const RELEASE_VERSION = '2.0.0';
+    const RELEASE_VERSION = '2.3.0';
     const RELEASE_URL = 'https://github.com/timetestedbible/timetestedbible.github.io/releases/tag/v' + RELEASE_VERSION;
     const DL_BASE = 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/v' + RELEASE_VERSION;
 
@@ -485,37 +485,22 @@ const TutorialView = {
     let primaryLabel = 'Download Desktop App';
     let primaryNote = '';
 
+    // Primary links are the Standard (Tauri) builds; the release page offers
+    // the Compatibility (Electron) fallbacks. The mac dmg is universal, so no
+    // Apple Silicon vs Intel detection is needed.
     if (/Mac/i.test(platform) || /Macintosh/i.test(ua)) {
       osIcon = this._osIcons.apple;
-      let isAppleSilicon = false;
-      try {
-        const canvas = document.createElement('canvas');
-        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-        if (gl) {
-          const dbg = gl.getExtension('WEBGL_debug_renderer_info');
-          if (dbg) {
-            const r = gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL);
-            isAppleSilicon = /Apple/.test(r) && !/Intel/.test(r);
-          }
-        }
-      } catch (e) {}
-      if (isAppleSilicon) {
-        primaryFile = `Time.Tested.Bible-${RELEASE_VERSION}-arm64.dmg`;
-        primaryLabel = 'Download for Mac';
-        primaryNote = 'Apple Silicon (M1–M4)';
-      } else {
-        primaryFile = `Time.Tested.Bible-${RELEASE_VERSION}.dmg`;
-        primaryLabel = 'Download for Mac';
-        primaryNote = 'Intel Mac';
-      }
+      primaryFile = `Time.Tested.Bible_${RELEASE_VERSION}_universal.dmg`;
+      primaryLabel = 'Download for Mac';
+      primaryNote = 'Apple Silicon & Intel';
     } else if (/Win/i.test(platform)) {
       osIcon = this._osIcons.windows;
-      primaryFile = `Time.Tested.Bible.Setup.${RELEASE_VERSION}.exe`;
+      primaryFile = `Time.Tested.Bible_${RELEASE_VERSION}_x64-setup.exe`;
       primaryLabel = 'Download for Windows';
       primaryNote = '64-bit installer';
     } else if (/Linux/i.test(platform)) {
       osIcon = this._osIcons.linux;
-      primaryFile = `Time.Tested.Bible-${RELEASE_VERSION}.AppImage`;
+      primaryFile = `Time.Tested.Bible_${RELEASE_VERSION}_amd64.AppImage`;
       primaryLabel = 'Download for Linux';
       primaryNote = 'x64 AppImage';
     }
