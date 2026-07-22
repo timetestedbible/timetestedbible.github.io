@@ -73,10 +73,18 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-14, macos-13, windows-latest, ubuntu-22.04]
+        include:
+          # macOS ships ONE universal binary (arm64 + x86_64) — GitHub retired
+          # the macos-13 Intel runners, so Intel is cross-compiled here.
+          - { os: macos-14,       args: '--target universal-apple-darwin' }
+          - { os: windows-latest, args: '' }
+          - { os: ubuntu-22.04,   args: '' }
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+      - name: Rust targets for the universal macOS build
+        if: runner.os == 'macOS'
+        run: rustup target add aarch64-apple-darwin x86_64-apple-darwin
       - name: Fetch prepared site -> desktop-site
         uses: actions/download-artifact@v4
         with:
@@ -96,6 +104,7 @@ jobs:
           projectPath: _dev/desktop-tauri/src-tauri
           tagName: ${{ env.TAG }}
           releaseName: Time Tested Bible ${{ env.TAG }}
+          args: ${{ matrix.args }}
           # GitHub Actions sets CI=true, so the dmg's Finder/AppleScript styling is
           # auto-skipped; native arch per runner.
 
@@ -106,8 +115,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { os: macos-14,       eb: '--mac --arm64' }
-          - { os: macos-13,       eb: '--mac --x64' }
+          # Universal mac build: macos-13 Intel runners are retired.
+          - { os: macos-14,       eb: '--mac --universal' }
           - { os: windows-latest, eb: '--win --x64' }
           - { os: ubuntu-22.04,   eb: '--linux --x64' }
     runs-on: ${{ matrix.os }}
