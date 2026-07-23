@@ -135,6 +135,35 @@ his table, in his kingdom. Jesus quotes the pattern's terms exactly:
 The vow's point is not private asceticism but postponed communion — the
 WITH YOU is the payload.
 
+## Nezer joins hair and vine: the Nazarite vine of Lev 25 (2026-07-23)
+
+Torah calls the unpruned vine a NAZIR: "thou shalt not gather the grapes
+of THY VINE UNDRESSED (nezirekha, H5139)" (Lev 25:5, and again 25:11 for
+the jubilee). Same word as the Nazarite man; same structure: growth left
+uncut because the time is holy. Six years "thou shalt PRUNE (zamar) thy
+vineyard" (25:3); the seventh, the vine goes nazir. So the vow's two
+bans are one symbol twice over — the Nazarite abstains from the vine's
+fruit while wearing the vine's uncut state on his head: a human
+sabbath-year vine. Samson literalizes it; Delilah's shears are pruning
+by a hand not the husbandman's.
+
+The razor-holder taxonomy (research-hair.md) transfers to the vine
+because Jesus transfers it: the night of the vine-vow he says "I am the
+TRUE VINE, and my Father is the HUSBANDMAN: every branch that beareth
+fruit, he purgeth [prunes] it" (John 15:1-2). Only the husbandman's
+knife makes cutting fruitful, as only the sanctuary fire may take the
+Nazarite's hair. Unpruned OUTSIDE holy time is not consecration but
+abandonment (Isa 5:6 — "it shall not be pruned… briers and thorns").
+
+Observation (flagged): the nazir-vine's sabbath fruit is not harvested
+into barns but eaten IN COMMON (Lev 25:6-7 — owner, servant, stranger:
+"the sabbath of the land shall be meat for you"); the vow likewise ends
+in shared drinking — "new WITH YOU in my Father's kingdom."
+
+Guard: netzer, the Branch (Isa 11:1; Nazarene, Matt 2:23), is a
+DIFFERENT root (nun-tsade-resh; tsade, not zayin). The nazar/nezer/nazir
+web stands without it; do not conflate.
+
 ## Verdict
 
 The saying is a Nazarite consecration in the vow's own formula (HG Luke

@@ -142,4 +142,8 @@ Two registers, one structure, each anchored by an explicit in-text
 decode (Ezek 5:5; Micah 1:16; Jer 7:29's nezer; 1 Cor 11:15's "for a
 covering"). The cutting taxonomy is carried by the razor-holder pattern
 across all cases with no forced texts. Ready for the author's placement
-call; pairs naturally with the vine-vow/Nazarite study.
+call; pairs naturally with the vine-vow/Nazarite study — see that
+notebook's 'Nezer joins hair and vine' section: Lev 25:5, 11 calls the
+unpruned sabbath-year vine a NAZIR (H5139), making hair and vine one
+symbol (growth left uncut in holy time), with John 15:1-2 assigning the
+pruning knife to the Father exactly as the razor-holder pattern holds.
