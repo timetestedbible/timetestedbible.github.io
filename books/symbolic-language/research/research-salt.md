@@ -205,6 +205,29 @@ seed; salt whose covenant is annulled is trodden into the very ground
 it failed to keep (becoming the wayside), and the unkept field goes to
 the salt-curse burning.
 
+## The altar recipe (Lev 2 read with the approved symbols)
+
+The bread-offering chapter legislates the offered word end to end:
+unleavened cakes mingled with oil (2:4); no leaven, no honey by fire
+(2:11); salt never lacking, "with ALL thine offerings" (2:13). With the
+glossary's approved definitions (bread = the word; leaven = corrupt
+teaching spreading unseen; oil = proven works) plus the salt candidate:
+the word offered to God must be free of corrupting doctrine, mingled
+with works, and carried in covenant faithfulness — faithfulness the one
+ingredient that may never be lacking. Words ARE offerings by Scripture's
+own equation (Heb 13:15 fruit of lips; Hos 14:2 calves of our lips), and
+Col 4:6 restates Lev 2:13 for disciples (speech seasoned with salt).
+
+- **Amos 4:5** — the inversion done proudly: "offer a sacrifice of
+  thanksgiving WITH LEAVEN… for this liketh you" — leavened worship,
+  loved because it pleases.
+- **Lev 2:12 / Lev 23:17** — leaven and honey may come as FIRSTFRUITS
+  (the two Shavuot wave loaves are "baken with leaven"), just never onto
+  the fire: the firstfruits congregation is presented still carrying
+  leaven; what enters the testing fire must be unleavened and salted.
+- Honey's symbol is not established in the book — its altar ban is
+  recorded here as an open question, not decoded.
+
 ## Verdict
 
 Pattern coherent across both testaments and both poles; the unity
