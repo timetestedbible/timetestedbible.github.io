@@ -175,6 +175,36 @@ Opposite (reciprocal, if an entry is made): tafel — the untempered/
 unsalted word. Related, not opposite: Milk/Meat/Butter (the taste=test
 spine); Fire (the salting agent of persons, Mark 9:49).
 
+## The sower circuit (author's assembly, 2026-07-23)
+
+Land/ground = heart is Luke's own equation (Luke 8:15 "that on the good
+GROUND… in an honest and good HEART"; Matt 13:19 "sown IN HIS HEART";
+see research-earth.md). Assembled with the salt findings:
+
+1. **Salt of the earth** = the faithful preserving the field of hearts
+   as an acceptable offering (every sacrifice salted, Mark 9:49).
+2. **Annulled salt = annulled covenant → trodden.** Isa 28:18 carries
+   the exact pair behind Matt 5:13 (HG: salt "ANNULLED as to its
+   taste"… trodden): "your covenant with death shall be DISANNULLED
+   (kaphar — the atonement verb)… then ye shall be TRODDEN DOWN
+   (mirmas)." Same verbs, same order; mirmas is the vineyard's judgment
+   word (Isa 5:5).
+3. **Trodden salt becomes the wayside.** Luke 8:5 "it was TRODDEN DOWN,
+   and the fowls devoured it" — the wayside is a heart packed hard by
+   feet (Luke 8:12). The savorless disciple, cast onto the ground and
+   trodden under foot of men, becomes the unsowable path-heart.
+4. **Luke 14:35** — savorless salt "neither fit for the LAND (ge), nor
+   the dunghill": useless to the soil even as fertilizer.
+5. **Heb 6:7-8** — two paragraphs after the milk/meat rebuke, the
+   earth-heart bearing thorns is "nigh unto CURSING; whose end is to be
+   BURNED" = Deut 29:23's salt-curse pattern (brimstone, salt, BURNING,
+   nothing sown) applied to a heart.
+
+Circuit: the faithful are salt keeping the earth of hearts fit for
+seed; salt whose covenant is annulled is trodden into the very ground
+it failed to keep (becoming the wayside), and the unkept field goes to
+the salt-curse burning.
+
 ## Verdict
 
 Pattern coherent across both testaments and both poles; the unity
