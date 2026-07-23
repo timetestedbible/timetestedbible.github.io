@@ -136,6 +136,47 @@ from the Head is ever lost.
 Related: Head (authority), Kanaph/skirt (the remnant bound in the hem,
 Ezek 5:3), Crown/nezer, Bramble-thorns (the mock crown).
 
+## The rules of the gate (author's assembly, 2026-07-23)
+
+**The one-door law cuts one way or the other (Lev 17:4, 9):** every
+offering must come "unto the DOOR of the tabernacle of the
+congregation"; offered anywhere else, "that man shall be CUT OFF
+(karet) from among his people." At the gate the consecrated growth is
+cut and offered; away from the gate, the man is cut off. Someone falls
+at the gate either way.
+
+**Completion protocol, exact order (Num 6:13-20):**
+1. "He shall be BROUGHT unto the door" (v13) — presented, not strolling.
+2. Brings burnt (he-lamb), sin (ewe-lamb), peace (ram), unleavened
+   cakes/wafers with oil, minchah AND drink offerings — wine (vv14-15).
+3. Sin first, then burnt (v16): atonement precedes everything.
+4. Peace offering + bread + minchah + DRINK OFFERING (v17): the wine is
+   POURED OUT to God before the Nazarite drinks any — wine poured
+   before wine drunk (cf. 2 Tim 4:6, spendomai).
+5. THEN the shave, at the door itself (v18): the hair into the fire
+   UNDER the peace offering — the grown record of consecrated time
+   becomes fuel beneath the fellowship sacrifice, ascending with it.
+6. Boiled shoulder + cake + wafer placed ON THE NAZARITE'S HANDS and
+   waved (v19) — the priestly ORDINATION gesture (Ex 29:24, the filling
+   of the hands): the lay vower ends the vow in ordination posture.
+7. "And AFTER THAT the Nazarite may drink wine" (v20).
+
+**Broken vow (6:9-12):** defilement → shave day 7 (that hair is NOT
+offered — defiled growth never reaches the fire), doves at the door day
+8, atonement + trespass lamb, re-consecrate — and "the days that were
+before SHALL BE LOST": the prior record falls void; restart from zero.
+
+**The 144,000 as the numbered hairs of the Head.** Hair = the
+consecrated, peculiar-priesthood company (Ex 19:5-6 → 1 Pet 2:9),
+numbered on the Head (Matt 10:30) — and Revelation numbers the sealed:
+144,000 (Rev 7:4), sealed IN THEIR FOREHEADS (7:3; 14:1), "redeemed
+from among men, the FIRSTFRUITS" (14:4) — cut from the head at the
+Door, which is Christ (John 10:9); record offered into the fire under
+the peace offering; hands filled as priests (Rev 5:10; 20:6); after
+that, the new wine (see research-vine-vow-nazarite.md). Real-life
+anchor (anchor, not proof): a typical human scalp carries roughly
+100,000-150,000 hairs — 144,000 is the hair-count of a head.
+
 ## Verdict
 
 Two registers, one structure, each anchored by an explicit in-text
