@@ -86,8 +86,11 @@ og_image: "/assets/img/og/og-preorder.png"
     // Same instant the site's offer machinery uses: midnight Aug 8, America/Chicago
     var DEADLINE = Date.parse('2026-08-08T05:00:00Z');
 
-    // Stripe Payment Link URLs. Empty until the links are live.
-    var LINKS = { meat: '', ttt: '' };
+    // Stripe Payment Link URLs (live 2026-07-23).
+    var LINKS = {
+      meat: 'https://buy.stripe.com/6oUeVc62F75R3jibEUbo400',
+      ttt: 'https://buy.stripe.com/7sYaEW0Ileyj9HGeR6bo401'
+    };
 
     [['buy-meat', 'meat'], ['buy-ttt', 'ttt']].forEach(function (pair) {
       var a = document.getElementById(pair[0]),
