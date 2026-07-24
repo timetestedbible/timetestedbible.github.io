@@ -224,6 +224,27 @@ const SYMBOLIC_LANGUAGE_BOOK = {
       summary: "The office the enemy set his heart to seize has a symbol. The OT's pearls hide under the KJV's 'rubies' \u2014 and the night sky keeps one fulness: keseh, the full moon, the letters under 'throne' and 'time appointed.' Beside the city whose every gate is 'of one pearl,' the merchant's purchase comes into focus: one pearl, one gate \u2014 entry at the King's appointed time."
     },
     {
+      slug: 'return-on-the-full-moon',
+      num: 32,
+      plate: '/assets/img/plates/meat-bibles-symbolic-language/33x-last-day-laughter',
+      title: 'Return on the Full Moon',
+      summary: "The prophets give the Day of the LORD a shape before anyone asks for its date: the Husband comes home at the full moon, the shofar sounds at that phase, the coming shines from east to west while evening remains light, and the whole moon becomes blood. The witnesses agree on the configuration while refusing the year and the day \u2014 and the full-moon bride's laughter at the last day needs no explaining."
+    },
+    {
+      slug: 'clouds-of-heaven',
+      num: 33,
+      plate: '/assets/img/plates/meat-bibles-symbolic-language/33y-clouds-of-heaven',
+      title: 'Clouds of Heaven',
+      summary: "Genesis puts the covenant bow in the cloud. Psalms calls the clouds God's chariot; Isaiah says He rides one; Ezekiel opens the cloud and reveals cherubim, wheels, a throne, its Rider, and the bow. Psalm 89 compares that throne to the moon \u2014 its Hebrew consonants naming the full phase \u2014 and Revelation repeats the enthroned figure on a white cloud and a white horse."
+    },
+    {
+      slug: 'the-sabbath',
+      num: 34,
+      plate: '/assets/img/plates/time-tested-tradition/09x-quails-came-up',
+      title: 'The Sabbath',
+      summary: "A sabbath can be complete (Leviticus 23:15) \u2014 and only a span can be complete or broken. Leviticus counts 'seven sabbaths' where Deuteronomy counts 'seven weeks': the word names the whole seven \u2014 six days of labor and one of rest as a single unit \u2014 which Scripture scales to years, to jubilees, and to the great week whose seventh millennium is the rest that remains."
+    },
+    {
       slug: 'time-tested-tradition',
       num: 35,
       plate: '/assets/img/plates/meat-bibles-symbolic-language/33-ttt-cover',
