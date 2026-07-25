@@ -5,6 +5,14 @@ Full occurrence sweep verified against kjv_strongs.txt: tal H2919, 30
 occurrences; Aramaic tal H2920, 5 (Daniel 4-5). No NT occurrence of dew;
 the NT carries the chain through manna (John 6; Rev 2:17).
 
+## Blind grading (2026-07-25): DIVERGENT (2-1, one Refined)
+
+Consensus (3 no-repo agents): mainstream assigns dew = blessing/grace/
+refreshment, homiletically the Spirit; Deut 32:2 read in passing as
+gentle teaching; the dew-manna-word chain is niche. Graders verified
+every load-bearing citation (17/17) and the sweep; the definition
+survived adversarial reading. Badge: DIVERGENT.
+
 ## Verdict up front: TESTS TRUE, with an explicit self-decode
 
 **Deut 32:2 is Scripture defining the symbol out loud** — the opening of
@@ -50,7 +58,9 @@ every property:
   nor rain these years, BUT ACCORDING TO MY WORD" (1 Kgs 17:1 — Elijah
   binds dew to the prophetic word verbatim); withheld as curse (2 Sam
   1:21 Gilboa; Hag 1:10); restored in blessing (Zech 8:12; Gen 27:28;
-  Deut 33:13, 28). The word-famine of Amos 8:11 ("not a famine of
+  Deut 33:13, 28; and Esau's twin blessing Gen 27:39 — partitive, favor
+  even on Esau, or privative, withheld — either reading sits inside the
+  given/withheld range). The word-famine of Amos 8:11 ("not a famine of
   bread… but of HEARING THE WORDS OF THE LORD") is this figure's
   drought.
 - **The transient pole — same symbol, failure mode:** "your goodness is
