@@ -25,6 +25,11 @@ og_image: "/assets/img/og/og-preorder.png"
       <p class="preorder-ended" id="preorder-ended">The $7 pre-order window has closed.
         Both books remain free to read here, and hardcovers are available at full price.</p>
 
+      <p class="preorder-confirmed" id="preorder-confirmed" style="display:none; background:#e8f5e9; border:1px solid #66bb6a; border-radius:8px; padding:14px 18px; font-weight:600;">
+        &#10003; Your pre-order went through — Stripe has emailed your receipt.
+        <span id="preorder-crosssell"> Want the other book too? Pick it below.</span>
+      </p>
+
       <div class="hero-books" id="preorder-books">
         <div class="hero-book-col meat">
           <a href="#" class="book3d left" id="buy-meat-cover" aria-label="Pre-order MEAT — The Bible's Symbolic Language hardcover for $7">
@@ -58,6 +63,12 @@ og_image: "/assets/img/og/og-preorder.png"
         </div>
       </div>
 
+      <div class="book-actions" style="margin-top:6px;">
+        <a class="hero-btn primary book-offer-btn" id="buy-both" href="#" aria-disabled="true"
+           style="font-size:1.15em; padding:14px 34px;"
+           onclick="if(typeof trackPreorder==='function')trackPreorder('both')">Pre-order BOTH — $14, one checkout</a>
+      </div>
+
       <p class="preorder-offline" id="preorder-offline">You appear to be offline — checkout needs a connection.</p>
     </div>
   </section>
@@ -66,8 +77,8 @@ og_image: "/assets/img/og/og-preorder.png"
     <h2 class="section-title">How It Works</h2>
     <div class="preorder-steps">
       <ol>
-        <li><strong>Pick a book</strong> (or come back and grab both — the $7 price is per checkout, one copy each).</li>
-        <li><strong>Pay $7 through Stripe.</strong> Checkout collects your email and US shipping address — that's everything we need.</li>
+        <li><strong>Pick a book — or take both in one checkout</strong> (the big button above: both hardcovers, $14, one shipping form).</li>
+        <li><strong>Pay through Stripe.</strong> Checkout opens in a new tab and collects your email and US shipping address — that's everything we need. If your bank sends a fraud-check text for the new merchant, approve it and complete the payment again.</li>
         <li><strong>Books ship after August 7, before September 1.</strong> All pre-orders are printed and shipped together once the window closes.</li>
         <li><strong>Read free while you wait.</strong> Both books are free on this site — <a href="/books/meat-bibles-symbolic-language/">read MEAT</a> or <a href="/books/time-tested-tradition/">read Time Tested Tradition</a> online, or download the PDF/EPUB from the home page.</li>
       </ol>
@@ -86,20 +97,37 @@ og_image: "/assets/img/og/og-preorder.png"
     // Same instant the site's offer machinery uses: midnight Aug 8, America/Chicago
     var DEADLINE = Date.parse('2026-08-08T05:00:00Z');
 
-    // Stripe Payment Link URLs (live 2026-07-23).
+    // Stripe Payment Link URLs (live 2026-07-23; bundle 2026-07-24).
     var LINKS = {
       meat: 'https://buy.stripe.com/6oUeVc62F75R3jibEUbo400',
-      ttt: 'https://buy.stripe.com/7sYaEW0Ileyj9HGeR6bo401'
+      ttt: 'https://buy.stripe.com/7sYaEW0Ileyj9HGeR6bo401',
+      both: 'https://buy.stripe.com/6oU14m4YBbm7dXW4csbo402'
     };
 
-    [['buy-meat', 'meat'], ['buy-ttt', 'ttt']].forEach(function (pair) {
+    [['buy-meat', 'meat'], ['buy-ttt', 'ttt'], ['buy-both', 'both']].forEach(function (pair) {
       var a = document.getElementById(pair[0]),
           cover = document.getElementById(pair[0] + '-cover'),
           url = LINKS[pair[1]];
       if (!url) return;
-      if (a) { a.href = url; a.removeAttribute('aria-disabled'); a.textContent = 'Pre-order for $7'; }
-      if (cover) cover.href = url;
+      // New tab: the pre-order page stays open, so there is no "how do I
+      // get back" dead end after Stripe's checkout.
+      if (a) {
+        a.href = url; a.removeAttribute('aria-disabled');
+        a.target = '_blank'; a.rel = 'noopener';
+        if (pair[1] !== 'both') a.textContent = 'Pre-order for $7';
+      }
+      if (cover) { cover.href = url; cover.target = '_blank'; cover.rel = 'noopener'; }
     });
+
+    // Post-checkout confirmation: Stripe redirects back here with ?ordered=
+    var ordered = new URLSearchParams(location.search).get('ordered');
+    if (ordered) {
+      var box = document.getElementById('preorder-confirmed');
+      var xs = document.getElementById('preorder-crosssell');
+      if (box) box.style.display = 'block';
+      if (xs && ordered === 'both') xs.style.display = 'none';
+      if (xs && ordered !== 'both') xs.textContent = ' Want the other book too? Pick it below.';
+    }
 
     function tick() {
       var ms = DEADLINE - Date.now();
