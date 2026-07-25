@@ -9,11 +9,22 @@
 
 const SettingsView = {
   _mapInitialized: false,
-  
+  _profileChangedInSession: false,
+
   /**
    * Close settings and return to previous page
    */
   close() {
+    // If the default calendar profile changed while settings was open,
+    // history.back() would land on the previous page's URL — which, on
+    // calendar URLs, embeds the OLD profile slug and silently reverts the
+    // change (the URL always outranks the saved preference). Rebuild the
+    // URL from current state instead so the new profile survives.
+    if (this._profileChangedInSession) {
+      this._profileChangedInSession = false;
+      AppStore.dispatch({ type: 'SET_VIEW', view: 'calendar' });
+      return;
+    }
     // Use browser back if there's history, otherwise go to calendar
     if (window.history.length > 1) {
       window.history.back();
@@ -296,6 +307,7 @@ const SettingsView = {
     
     try {
       localStorage.setItem('defaultCalendarProfile', profileId);
+      this._profileChangedInSession = true;
       // Update current profile in AppStore
       if (typeof AppStore !== 'undefined') {
         AppStore.dispatch({ type: 'SET_PROFILE', profileId });
