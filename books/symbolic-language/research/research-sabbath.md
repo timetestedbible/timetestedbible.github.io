@@ -6,7 +6,10 @@ Author's proposal, tested: **the symbolic meaning of Sabbath is the full 6+1 uni
 complete, only a span can. Counting sabbaths is counting sevens; the day of rest
 is one-seventh of the sabbath.** Calendar mechanics and the full derivation are in
 _Time Tested Tradition_ — this file is the corpus test. Verses verified against
-kjv_strongs.txt, wlc.txt, greek_nt.txt.
+kjv_strongs.txt, wlc.txt, greek_nt.txt. The exhaustive occurrence-level
+appendix (every H7676/H7677/G4521 tag classified day-sense vs. week-sense,
+totals script-verified) is
+[research-sabbath-occurrences.md](research-sabbath-occurrences.md).
 
 ---
 
