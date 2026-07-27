@@ -603,6 +603,21 @@
   cursor: help;
 }
 
+/* Chronology sensitivity note (±1yr retest of exodus-dated tests) */
+.alt-year-note {
+  font-size: 0.8em;
+  margin-left: 6px;
+  cursor: help;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.alt-year-note.alt-year-pass {
+  color: var(--color-success);
+}
+.alt-year-note.alt-year-fail {
+  color: var(--color-error);
+}
+
 /* ─────────────────────────────────────────────────────────────────────────────
    8. ALTERNATIVE SCORE DETAILS
    ───────────────────────────────────────────────────────────────────────────── */

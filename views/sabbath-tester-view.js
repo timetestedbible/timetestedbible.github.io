@@ -848,6 +848,18 @@ const SabbathTesterView = {
       `;
     }
     
+    if (test.id === 'first-fruits-1406') {
+      return `
+        <details class="test-evidence-accordion">
+          <summary>📖 Why 1406 BC? The chronology window</summary>
+          <div class="test-evidence-content">
+            <p>The conquest year is anchored to the exodus (1446 BC + 40 years in the wilderness). Failing results below are automatically re-tested at 1407 and 1405 BC (the ±1 year window) and annotated: <span class="alt-year-note alt-year-pass">±1yr:✓</span> means an adjacent year would pass; <span class="alt-year-note alt-year-fail">±1yr:✗ all years</span> means the configuration fails across the whole probable window.</p>
+            <p><strong>1407 BC is excluded by the New Testament itself.</strong> The sabbatical cycle counts from the Jordan crossing, and Jesus proclaimed "the acceptable year of the LORD" (Luke 4:18-19) — a Year of Release proclamation made on the Day of Atonement 29 AD under the 1406 BC anchor. Moving the crossing to 1407 BC shifts every sabbath year back one year, forcing that proclamation to Atonement 28 AD — before John the Baptist's ministry had begun (the 15th year of Tiberius, fall 28-29 AD, Luke 3:1), and therefore before Jesus' baptism. The declaration cannot precede the baptism that opened his ministry, so a calendar rescued only by 1407 BC is not rescued at all.</p>
+          </div>
+        </details>
+      `;
+    }
+    
     if (test.id === 'resurrection-33ad') {
       return `
         <details class="test-evidence-accordion">
@@ -939,8 +951,8 @@ const SabbathTesterView = {
         const passing = r.alternateYears.filter(a => a.result === 'pass' || a.result === 'uncertain');
         const detail = r.alternateYears.map(a => `${a.label}: ${a.result}${a.weekday ? ' (' + a.weekday + ')' : ''}`).join('; ');
         altYearsNote = passing.length
-          ? ` <span class="year-uncertainty-icon" title="Chronology sensitivity — ${detail}">±1yr:✓${passing.map(a => a.label).join(',')}</span>`
-          : ` <span class="year-uncertainty-icon" title="Chronology sensitivity — ${detail}">±1yr:✗all</span>`;
+          ? ` <span class="alt-year-note alt-year-pass" title="Chronology sensitivity — ${detail}">±1yr:✓${passing.map(a => a.label).join(',')}</span>`
+          : ` <span class="alt-year-note alt-year-fail" title="Chronology sensitivity — ${detail}">±1yr:✗ all years</span>`;
       }
       
       const jdTooltip = r.jd != null ? `JD: ${r.jd.toFixed(2)}` : '';
