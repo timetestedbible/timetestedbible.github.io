@@ -105,7 +105,30 @@ const SabbathTesterView = {
   _isRendering: false,
   _hasRendered: false, // Track if we've completed rendering
   _testCache: {}, // Cache for test results: { 'testId-profileId': result }
-  _cacheVersion: String(typeof APP_VERSION !== 'undefined' ? APP_VERSION : 0), // Keyed to APP_VERSION from version.js
+  // Cache version: fingerprint of the actual computation inputs (the test
+  // definitions + profile configs), NOT APP_VERSION — site.time changes on
+  // every Jekyll rebuild (every deploy, and every file save under local
+  // `jekyll serve --watch`), which busted the cache constantly. Any change
+  // to tests or profiles re-fingerprints automatically; pure engine-algorithm
+  // changes need a manual bump of the 'v2' prefix.
+  _cv: null,
+  _cacheVersionGet() {
+    if (this._cv) return this._cv;
+    const djb2 = (str) => {
+      let h = 5381;
+      for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) >>> 0;
+      return h.toString(36);
+    };
+    let fp = 'v2';
+    try {
+      fp += ':' + djb2(JSON.stringify(typeof BIBLICAL_TESTS !== 'undefined' ? BIBLICAL_TESTS : []));
+      fp += ':' + djb2(JSON.stringify(this.getSabbathTestProfiles()));
+    } catch (e) {
+      fp += ':' + String(typeof APP_VERSION !== 'undefined' ? APP_VERSION : 0);
+    }
+    this._cv = fp;
+    return fp;
+  },
   
   render(state, derived, container) {
     if (this._isRendering) return; // Prevent re-render loops
@@ -277,7 +300,7 @@ const SabbathTesterView = {
     const cached = this._testCache[cacheKey];
     
     // Check if cache exists and is valid
-    if (cached && cached.version === this._cacheVersion) {
+    if (cached && cached.version === this._cacheVersionGet()) {
       return cached.result;
     }
     
@@ -298,7 +321,7 @@ const SabbathTesterView = {
       const raw = localStorage.getItem('sabbathTesterCacheV2');
       if (!raw) return;
       const saved = JSON.parse(raw);
-      if (saved && saved.version === this._cacheVersion && saved.entries) {
+      if (saved && saved.version === this._cacheVersionGet() && saved.entries) {
         Object.assign(this._testCache, saved.entries);
       }
     } catch (e) { /* corrupt cache — ignore, recompute */ }
@@ -313,7 +336,7 @@ const SabbathTesterView = {
       this._persistTimer = null;
       try {
         localStorage.setItem('sabbathTesterCacheV2', JSON.stringify({
-          version: this._cacheVersion,
+          version: this._cacheVersionGet(),
           entries: this._testCache
         }));
       } catch (e) { /* quota — skip persistence */ }
@@ -329,7 +352,7 @@ const SabbathTesterView = {
     if (result && result.result === 'error') return;
     const cacheKey = this.getCacheKey(testId, profileId);
     this._testCache[cacheKey] = {
-      version: this._cacheVersion,
+      version: this._cacheVersionGet(),
       result: result,
       timestamp: Date.now()
     };
