@@ -24,6 +24,7 @@ const BIBLICAL_TESTS = [
     description: 'Israel arrived in the Wilderness of Sin on the 15th of the Second Month, 1446 BC (Exodus 16:1). Manna first fell on the 16th (the morning after arrival). They gathered manna for 6 days (16th-21st), and the 22nd was explicitly called the Sabbath when no manna fell (Exodus 16:22-26). Therefore, the 22nd of the 2nd month must be the 7th day of the week — which is Saturday for Saturday-Sabbath calendars, and is always true for Lunar Sabbath calendars where the 22nd is inherently the Sabbath.',
     scripture: 'Exodus 16:1-26',
     year: -1445,  // Astronomical year (1446 BC = -1445)
+    alternateYears: [-1446, -1444],  // 1447 BC / 1445 BC — exodus-date ±1 sensitivity
     month: 2,     // Second month (Iyar)
     day: 22,
     expectedWeekPosition: 7,  // 7th day = Sabbath
@@ -35,6 +36,7 @@ const BIBLICAL_TESTS = [
     description: 'The 16th of the First Month, 1406 BC was First Fruits when Israel ate the produce of Canaan for the first time (Joshua 5:10-12). According to Leviticus 23:11, First Fruits is offered "on the day after the Sabbath," which means the 16th must be the 1st day of the week — Sunday for Saturday-Sabbath calendars, and always true for Lunar Sabbath calendars where the 16th is inherently the day after the 15th (Sabbath).',
     scripture: 'Joshua 5:10-12, Leviticus 23:11',
     year: -1405,  // Astronomical year (1406 BC = -1405)
+    alternateYears: [-1406, -1404],  // 1407 BC / 1405 BC — tied to exodus ±1
     month: 1,     // First month (Nisan)
     day: 16,
     expectedWeekPosition: 1,  // 1st day = day after Sabbath
@@ -375,14 +377,7 @@ const SabbathTesterView = {
   /**
    * Run a single biblical test against a profile using LunarCalendarEngine
    */
-  runBiblicalTest(test, profile) {
-    // Check cache first
-    const cached = this.getCachedResult(test.id, profile.id);
-    if (cached !== null) {
-      return cached;
-    }
-    
-    try {
+  _computeTest(test, profile) {
       // Get astronomy engine
       if (typeof getAstroEngine !== 'function') {
         return { result: 'error', error: 'Astronomy engine not available' };
@@ -505,17 +500,41 @@ const SabbathTesterView = {
         yearUncertainty
       };
       
-      // Cache the result
+      return testResult;
+  },
+
+  /**
+   * Run a single biblical test against a profile — cached. For tests that
+   * carry alternateYears (the exodus-chronology window), a FAILING result
+   * is re-tested at each alternate year and annotated, so the results show
+   * whether the failure is specific to the assumed year (e.g. 1446 BC) or
+   * holds across all probable years.
+   */
+  runBiblicalTest(test, profile) {
+    const cached = this.getCachedResult(test.id, profile.id);
+    if (cached !== null) {
+      return cached;
+    }
+    try {
+      const testResult = this._computeTest(test, profile);
+      if (testResult && testResult.result === 'fail' && Array.isArray(test.alternateYears)) {
+        testResult.alternateYears = test.alternateYears.map((y) => {
+          const label = y <= 0 ? `${1 - y} BC` : `${y} AD`;
+          try {
+            const alt = this._computeTest({ ...test, year: y }, profile);
+            return { year: y, label, result: alt.result, weekday: alt.displayWeekdayShort || alt.calculatedWeekdayName || '' };
+          } catch (e) {
+            return { year: y, label, result: 'error', weekday: '' };
+          }
+        });
+      }
       this.cacheResult(test.id, profile.id, testResult);
-      
       return testResult;
     } catch (e) {
       console.error('Error running biblical test:', e);
-      const errorResult = { result: 'error', error: e.message };
-      // NOT cached: cacheResult skips error results so a transient failure
-      // (e.g. astronomy engine still loading) never persists into localStorage.
-      this.cacheResult(test.id, profile.id, errorResult);
-      return errorResult;
+      // NOT cached: transient failures (e.g. astronomy engine still loading)
+      // must never persist into localStorage.
+      return { result: 'error', error: e.message };
     }
   },
   
@@ -914,10 +933,20 @@ const SabbathTesterView = {
         yearUncertaintyIcon = ` <span class="year-uncertainty-icon" title="${tooltipText}">⚠️${r.yearUncertainty.probability}%</span>`;
       }
       
+      // Chronology sensitivity: did a failing test pass in an adjacent year?
+      let altYearsNote = '';
+      if (r.alternateYears && r.alternateYears.length) {
+        const passing = r.alternateYears.filter(a => a.result === 'pass' || a.result === 'uncertain');
+        const detail = r.alternateYears.map(a => `${a.label}: ${a.result}${a.weekday ? ' (' + a.weekday + ')' : ''}`).join('; ');
+        altYearsNote = passing.length
+          ? ` <span class="year-uncertainty-icon" title="Chronology sensitivity — ${detail}">±1yr:✓${passing.map(a => a.label).join(',')}</span>`
+          : ` <span class="year-uncertainty-icon" title="Chronology sensitivity — ${detail}">±1yr:✗all</span>`;
+      }
+      
       const jdTooltip = r.jd != null ? `JD: ${r.jd.toFixed(2)}` : '';
       const profileId = r.profile.id;
       const dateLink = r.gregorianDate ? 
-        `<a class="sabbath-test-date-link" title="${jdTooltip}" onclick="SabbathTesterView.navigateToTestResult('${test.id}', '${profileId}')">${dateStr}</a>${yearUncertaintyIcon}` :
+        `<a class="sabbath-test-date-link" title="${jdTooltip}" onclick="SabbathTesterView.navigateToTestResult('${test.id}', '${profileId}')">${dateStr}</a>${yearUncertaintyIcon}${altYearsNote}` :
         dateStr;
       
       // Calculate alternative score for 30 AD and 33 AD tests
@@ -970,7 +999,7 @@ const SabbathTesterView = {
       // Build compact date link for mobile
       const dateStrCompact = r.gregorianDate ? this.formatAncientDate(r.gregorianDate, false, true) : 'N/A';
       const dateLinkCompact = r.gregorianDate ? 
-        `<a class="sabbath-test-date-link" title="${jdTooltip}" onclick="SabbathTesterView.navigateToTestResult('${test.id}', '${profileId}')">${dateStrCompact}</a>${yearUncertaintyIcon}` :
+        `<a class="sabbath-test-date-link" title="${jdTooltip}" onclick="SabbathTesterView.navigateToTestResult('${test.id}', '${profileId}')">${dateStrCompact}</a>${yearUncertaintyIcon}${altYearsNote}` :
         dateStrCompact;
       
       const jdStr = r.jd != null ? Math.floor(r.jd).toString() : 'N/A';
