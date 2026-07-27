@@ -272,6 +272,7 @@ const SabbathTesterView = {
    * Get cached test result if available
    */
   getCachedResult(testId, profileId) {
+    this._hydrateCache();
     const cacheKey = this.getCacheKey(testId, profileId);
     const cached = this._testCache[cacheKey];
     
@@ -284,16 +285,55 @@ const SabbathTesterView = {
   },
   
   /**
-   * Cache a test result (in-memory only — recomputes each page load
-   * so results always reflect the current engine code)
+   * Load the persisted result cache from localStorage (once per page load).
+   * Keyed to APP_VERSION: results survive page refreshes within a deploy
+   * and recompute after any deploy, so they always reflect current code.
+   */
+  _hydrated: false,
+  _persistTimer: null,
+  _hydrateCache() {
+    if (this._hydrated) return;
+    this._hydrated = true;
+    try {
+      const raw = localStorage.getItem('sabbathTesterCacheV2');
+      if (!raw) return;
+      const saved = JSON.parse(raw);
+      if (saved && saved.version === this._cacheVersion && saved.entries) {
+        Object.assign(this._testCache, saved.entries);
+      }
+    } catch (e) { /* corrupt cache — ignore, recompute */ }
+  },
+  
+  /**
+   * Persist the in-memory cache to localStorage (throttled).
+   */
+  _persistCache() {
+    if (this._persistTimer) return;
+    this._persistTimer = setTimeout(() => {
+      this._persistTimer = null;
+      try {
+        localStorage.setItem('sabbathTesterCacheV2', JSON.stringify({
+          version: this._cacheVersion,
+          entries: this._testCache
+        }));
+      } catch (e) { /* quota — skip persistence */ }
+    }, 500);
+  },
+  
+  /**
+   * Cache a test result — in memory and written through to localStorage,
+   * so a page refresh does not recompute. Error results (e.g. astronomy
+   * engine not yet loaded) are never cached.
    */
   cacheResult(testId, profileId, result) {
+    if (result && result.result === 'error') return;
     const cacheKey = this.getCacheKey(testId, profileId);
     this._testCache[cacheKey] = {
       version: this._cacheVersion,
       result: result,
       timestamp: Date.now()
     };
+    this._persistCache();
   },
   
   /**
@@ -303,6 +343,7 @@ const SabbathTesterView = {
     this._testCache = {};
     try {
       localStorage.removeItem('sabbathTesterCache');
+      localStorage.removeItem('sabbathTesterCacheV2');
     } catch (e) {
       // Ignore
     }
@@ -448,7 +489,8 @@ const SabbathTesterView = {
     } catch (e) {
       console.error('Error running biblical test:', e);
       const errorResult = { result: 'error', error: e.message };
-      // Cache error results too (so we don't retry failed tests)
+      // NOT cached: cacheResult skips error results so a transient failure
+      // (e.g. astronomy engine still loading) never persists into localStorage.
       this.cacheResult(test.id, profile.id, errorResult);
       return errorResult;
     }
