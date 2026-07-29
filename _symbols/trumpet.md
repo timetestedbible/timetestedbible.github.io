@@ -191,7 +191,7 @@ The convergence of five distinct Old Testament trumpet-traditions onto one escha
 | **Coronation** | Trumpet → "God save the King!" (1 Ki 1:34, 39) | "He shall reign for ever and ever" (Rev 11:15) |
 | **Ingathering** | Great trumpet → outcasts gathered to worship (Isa 27:13) | Angels + trumpet → $elect gathered from $four-winds (Mat 24:31) |
 
-Three of the five are already one word in Hebrew: Sinai's ascent-horn, Jericho's wall-breakers, and the Jubilee's proclamation are all the *yovel* (Exo 19:13; Josh 6:4-13; Lev 25:10). Coronation and ingathering are shofar-texts beside them, and the Hebrew witness of the New Testament keeps the shofar at the gathering (Mat 24:31 HG) and at Revelation's seven blasts (Rev 8:2, 6 HG). Reading the seventh trumpet as the meeting point — kingdom transferred, Babylon fallen, debts cancelled, God descended, harvest gathered — is this study's synthesis of that shared vocabulary. The reader should weigh it as a synthesis: the lexical spine (yovel, shofar) is fact; the five-in-one convergence is the reading those facts invite.
+Three of the five are already one word in Hebrew: Sinai's ascent-horn, Jericho's wall-breakers, and the Jubilee's proclamation are all the *yovel* (Exo 19:13; Josh 6:4-13; Lev 25:10). Coronation and ingathering are shofar-texts beside them, and the Hebrew witness of the New Testament keeps the shofar at the gathering (Mat 24:31 HG) and at Revelation's seven blasts (Rev 8:2, 6 HG). Reading the seventh trumpet as the meeting point — kingdom transferred, Babylon fallen, debts cancelled, God descended, harvest gathered — is this study's synthesis of that shared vocabulary: the lexical spine (yovel, shofar) is fact, and the five-in-one convergence is the reading those facts invite.
 
 ---
 
