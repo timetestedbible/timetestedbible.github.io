@@ -56,15 +56,29 @@ repair, the wall daubed with untempered mortar that falls in the storm
   them in its closing line: "the mouth of them that **speak lies**
   shall be stopped." The liars end as the fox's food: ruin feeds the
   ruin-creature, and the false take their portion with the false.
-- **Judg 15:4-5** — Samson catches 300 foxes, ties them **tail to
-  tail**, sets a firebrand between the tails, and looses them into
-  Philistia's standing corn, vineyards, and olives. Read with the
-  repository's own approved decode of Tail — "the prophet that teacheth
-  lies" (Isa 9:15) — the image locks: breach-creatures joined lie to
-  lie, fire between them, burning a nation's harvest, vintage, and oil.
-  Samson turns the spoiler-class loose on the spoilers' own fields. (At
-  the plain level the verse still testifies to the range: what foxes do
-  to a land's produce is destroy it.)
+- **Judg 15:4-5** — the author's decode (2026-07-28): **foxes by the
+  tail — false prophets; fire to the field — the people.** Every term
+  is already in the repository. Samson catches 300 foxes (false
+  prophets, Ezek 13:4) and joins them **tail to tail** — Tail is
+  approved as "the prophet that teacheth lies" (Isa 9:15) — with the
+  Hebrew stating the mechanism exactly: *lappid echad bein-shnei
+  ha-zenavot*, **one torch between two tails** — one fire shared per
+  pair of joined lies. The torch-in-the-mouth-of-a-liar is Scripture's
+  own figure: "as a mad man who casteth **firebrands**, arrows, and
+  death, so is the man that **deceiveth** his neighbour" (Prov
+  26:18-19); "where no wood is, there the **fire** goeth out: so where
+  there is no **talebearer**, the strife ceaseth" (26:20); "the tongue
+  is a **fire**… and it is set on fire of hell" (Jas 3:6). Loosed into
+  the standing grain, the fire runs through the **field** — approved:
+  "the world, sown with the word and reaped at the harvest" — and
+  consumes the people's fruit at every stage: "from the stack to the
+  standing corn, to the vineyard [and] olive" (harvested grain,
+  ripening grain, the vine, the oil — the stored works that should have
+  lit the Way). False prophets bound lie to lie set the people ablaze;
+  and a fox with a burning tail does not survive its own torch — the
+  liars are consumed by the fire they carry. Samson's act turns this
+  whole engine on Philistia: the judge sends the fox-fire into the
+  enemy's field.
 - **Matt 8:20 / Luke 9:58** — "The foxes have **holes** (HG: *chorim*;
   Luke's HG: *me'arot*, dens), and the birds of the air have nests; but
   the Son of man hath not where to lay his head." The fox is *housed*
