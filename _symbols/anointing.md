@@ -89,7 +89,7 @@ definitions:
 
 **To mark a person or thing as God's own and appoint it to a stated office or work. The oil may carry the visible mark; the Spirit may carry the power; the work declares what the appointment is for.**
 
-The fuller book and notebook trail is available in [The Anointing](/books/symbolic-language/the-anointing/), [research-anointing.md](/books/symbolic-language/research/research-anointing.md).
+The fuller book and notebook trail is available in [The Anointing](/books/symbolic-language/the-anointing/), [research-anointing.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-anointing.md).
 
 ## Definitions
 

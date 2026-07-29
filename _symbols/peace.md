@@ -103,7 +103,7 @@ definitions:
 
 **[Covenant](/research/symbols/covenant/) wholeness restored through [righteousness](/research/symbols/righteousness/) — completion, restoration, and repayment rather than merely a truce or feeling. Counterfeit peace announces wholeness over an unkept covenant.**
 
-The fuller book and notebook trail is available in [Gospel](/books/symbolic-language/gospel/), [research-peace.md](/books/symbolic-language/research/research-peace.md), [research-peace-taken.md](/books/symbolic-language/research/research-peace-taken.md).
+The fuller book and notebook trail is available in [Gospel](/books/symbolic-language/gospel/), [research-peace.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-peace.md), [research-peace-taken.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-peace-taken.md).
 
 ## Definitions
 

@@ -85,7 +85,7 @@ definitions:
 
 **Deeds performed under an obligation imposed by law or decree. Context identifies whose law and which duty; fulfilling it may be obedience, but it does not put the lawgiver in debt or earn any benefit.**
 
-The fuller book and notebook trail is available in [The End of the Law](/books/symbolic-language/the-end-of-the-law/), [research-works-of-law.md](/books/symbolic-language/research/research-works-of-law.md).
+The fuller book and notebook trail is available in [The End of the Law](/books/symbolic-language/the-end-of-the-law/), [research-works-of-law.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-works-of-law.md).
 
 ## Definitions
 

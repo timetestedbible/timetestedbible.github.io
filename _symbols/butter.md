@@ -88,7 +88,7 @@ definitions:
 
 **The word worked from [milk](/research/symbols/milk/) into sound judgment — teaching tested until one can refuse evil and choose good. Worked into the walk, it cleanses the feet; its counterfeit is smooth speech concealing war.**
 
-The fuller book and notebook trail is available in [Butter](/books/symbolic-language/butter/), [research-butter.md](/books/symbolic-language/research/research-butter.md).
+The fuller book and notebook trail is available in [Butter](/books/symbolic-language/butter/), [research-butter.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-butter.md).
 
 ## Definitions
 

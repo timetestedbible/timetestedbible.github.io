@@ -81,7 +81,7 @@ definitions:
 
 **The curse-ground's fruitless growth — worldly care and deceitful riches that choke the word, offer false [protection](/research/symbols/shadow/), and end in fire.**
 
-The fuller book and notebook trail is available in [The Parables of the Kingdom](/books/symbolic-language/the-parables-of-the-kingdom/), [research-bramble-thorns.md](/books/symbolic-language/research/research-bramble-thorns.md).
+The fuller book and notebook trail is available in [The Parables of the Kingdom](/books/symbolic-language/the-parables-of-the-kingdom/), [research-bramble-thorns.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-bramble-thorns.md).
 
 ## Definitions
 

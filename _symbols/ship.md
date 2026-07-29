@@ -88,7 +88,7 @@ definitions:
 
 **An organized kingdom, city, or state riding upon the [sea](/research/symbols/sea/) of peoples. Its rulers steer and inhabitants crew it; Christ can rule the waters without a vessel, but when He boards one it comes under its true Head.**
 
-The fuller book and notebook trail is available in [The Ship](/books/symbolic-language/the-ship/), [research-ship.md](/books/symbolic-language/research/research-ship.md).
+The fuller book and notebook trail is available in [The Ship](/books/symbolic-language/the-ship/), [research-ship.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-ship.md).
 
 ## Definitions
 

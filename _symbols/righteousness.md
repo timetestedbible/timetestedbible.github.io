@@ -90,7 +90,7 @@ definitions:
 
 **Right-living. God is Right-Living by definition; for those under His authority, righteousness is His commandments lived out.**
 
-The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/), [The End of the Law](/books/symbolic-language/the-end-of-the-law/), [Garments & Armor](/books/symbolic-language/garments/), [research-righteousness.md](/books/symbolic-language/research/research-righteousness.md).
+The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/), [The End of the Law](/books/symbolic-language/the-end-of-the-law/), [Garments & Armor](/books/symbolic-language/garments/), [research-righteousness.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-righteousness.md).
 
 ## Definitions
 

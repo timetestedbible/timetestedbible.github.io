@@ -96,7 +96,7 @@ definitions:
 
 **Where beginnings and returns come from — the front. Hebrew qedem joins “east” with “before” and “ancient”: Eden is planted eastward; the sanctuary's front door is its east gate; God's glory returns through that gate; and Christ's coming moves from east to [west](/research/symbols/west/). The compass direction is the literal image beneath the symbol.**
 
-The fuller book and notebook trail is available in [The Fall of Babylon](/books/symbolic-language/the-fall-of-babylon/), [research-directions.md](/books/symbolic-language/research/research-directions.md).
+The fuller book and notebook trail is available in [The Fall of Babylon](/books/symbolic-language/the-fall-of-babylon/), [research-directions.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-directions.md).
 
 ## Definitions
 

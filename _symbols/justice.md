@@ -85,7 +85,7 @@ definitions:
 
 **[Righteousness](/research/symbols/righteousness/) applied to right a neighbor who has been wronged — the right [Way](/research/symbols/way/) to live. English translations often render the same Hebrew righteousness word as justice in such contexts.**
 
-The fuller book and notebook trail is available in [Justice and Judgment](/books/symbolic-language/justice-and-judgment/), [research-justice-judgment.md](/books/symbolic-language/research/research-justice-judgment.md).
+The fuller book and notebook trail is available in [Justice and Judgment](/books/symbolic-language/justice-and-judgment/), [research-justice-judgment.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-justice-judgment.md).
 
 ## Definitions
 

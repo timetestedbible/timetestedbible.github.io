@@ -91,7 +91,7 @@ definitions:
 
 **Those bowed and empty-handed before God, able to receive what the self-sufficient refuse. The poor, meek, and needy hear the [gospel](/research/symbols/gospel/) and inherit the kingdom.**
 
-The fuller book and notebook trail is available in [Orphans, Widows & the Fatherless](/books/symbolic-language/orphans-widows-and-the-fatherless/), [research-poor-rich.md](/books/symbolic-language/research/research-poor-rich.md).
+The fuller book and notebook trail is available in [Orphans, Widows & the Fatherless](/books/symbolic-language/orphans-widows-and-the-fatherless/), [research-poor-rich.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-poor-rich.md).
 
 ## Definitions
 

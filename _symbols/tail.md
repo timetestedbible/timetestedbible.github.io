@@ -96,7 +96,7 @@ definitions:
 
 **The prophet that teacheth lies — Isaiah's own decode, with head and tail already defined by the [covenant](/research/symbols/covenant/): obedience makes Israel “the head, and not the tail,” and the curse inverts it. The dragon fells a third of the [stars](/research/symbols/stars/) with its tail — the led destroyed by the misleading — and the trumpet armies' serpent-tails “had heads”: the liar enthroned. Moses is told to seize the serpent exactly there.**
 
-The fuller book and notebook trail is available in [The Fall of Babylon](/books/symbolic-language/the-fall-of-babylon/), [research-tail.md](/books/symbolic-language/research/research-tail.md).
+The fuller book and notebook trail is available in [The Fall of Babylon](/books/symbolic-language/the-fall-of-babylon/), [research-tail.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-tail.md).
 
 ## Definitions
 

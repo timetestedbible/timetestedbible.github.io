@@ -89,7 +89,7 @@ definitions:
 
 **The faithful witness — the reflecting, submissive side of a relationship. It pictures the Son submitting to and reflecting the Father, the wife submitting to her husband, and the Church submitting to Christ as Christ submits to the Father.**
 
-The fuller book and notebook trail is available in [Sun, Moon & Stars](/books/symbolic-language/sun-moon-and-stars/), [research-sun-moon-stars.md](/books/symbolic-language/research/research-sun-moon-stars.md).
+The fuller book and notebook trail is available in [Sun, Moon & Stars](/books/symbolic-language/sun-moon-and-stars/), [research-sun-moon-stars.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-sun-moon-stars.md).
 
 ## Definitions
 

@@ -88,7 +88,7 @@ definitions:
 
 **The act of governing, administering, and discerning right from wrong; also the ruling made or executed. Condemnation is only one aspect, and good judgment follows God's law and statutes.**
 
-The fuller book and notebook trail is available in [Justice and Judgment](/books/symbolic-language/justice-and-judgment/), [research-justice-judgment.md](/books/symbolic-language/research/research-justice-judgment.md).
+The fuller book and notebook trail is available in [Justice and Judgment](/books/symbolic-language/justice-and-judgment/), [research-justice-judgment.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-justice-judgment.md).
 
 ## Definitions
 

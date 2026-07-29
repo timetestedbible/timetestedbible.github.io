@@ -85,7 +85,7 @@ definitions:
 
 **A kingdom's [covenant](/research/symbols/covenant/) and the power joined by it. To break the bow is to unstring the kingdom and end its might.**
 
-The fuller book and notebook trail is available in [The Bow](/books/symbolic-language/the-bow/), [research-bow.md](/books/symbolic-language/research/research-bow.md).
+The fuller book and notebook trail is available in [The Bow](/books/symbolic-language/the-bow/), [research-bow.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-bow.md).
 
 ## Definitions
 

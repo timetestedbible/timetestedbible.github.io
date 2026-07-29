@@ -94,7 +94,7 @@ definitions:
 
 **Obstructing flesh that covers a [covenant](/research/symbols/covenant/) member and prevents its proper work. Heart, ear, lips, and fruit are uncircumcised while flesh blocks humility, hearing, speech, or fruitfulness.**
 
-The fuller book and notebook trail is available in [The Foreskin](/books/symbolic-language/foreskin/), [research-foreskin.md](/books/symbolic-language/research/research-foreskin.md).
+The fuller book and notebook trail is available in [The Foreskin](/books/symbolic-language/foreskin/), [research-foreskin.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-foreskin.md).
 
 ## Definitions
 

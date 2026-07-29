@@ -9,7 +9,7 @@ _Time Tested Tradition_ — this file is the corpus test. Verses verified agains
 kjv_strongs.txt, wlc.txt, greek_nt.txt. The exhaustive occurrence-level
 appendix (every H7676/H7677/G4521 tag classified day-sense vs. week-sense,
 totals script-verified) is
-[research-sabbath-occurrences.md](research-sabbath-occurrences.md).
+[research-sabbath-occurrences.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-sabbath-occurrences.md).
 
 ---
 

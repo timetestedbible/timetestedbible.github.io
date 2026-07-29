@@ -103,7 +103,7 @@ definitions:
 
 **A complete seven crowned by rest — the seven-day week, the land's seventh year, or seven sevens leading to Jubilee. The rest is the completing member of the whole unit, most commonly 6 days followed by 1 day of rest.**
 
-The fuller book and notebook trail is available in [The Sabbath](/books/symbolic-language/the-sabbath/), [research-sabbath.md](/books/symbolic-language/research/research-sabbath.md).
+The fuller book and notebook trail is available in [The Sabbath](/books/symbolic-language/the-sabbath/), [research-sabbath.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-sabbath.md).
 
 ## Definitions
 

@@ -82,7 +82,7 @@ definitions:
 
 **The self-sufficient who believe they need nothing and therefore cannot receive. True wealth is riches toward God: tested [faith](/research/symbols/faith/) and righteous [covering](/research/symbols/garment/).**
 
-The fuller book and notebook trail is available in [Orphans, Widows & the Fatherless](/books/symbolic-language/orphans-widows-and-the-fatherless/), [research-poor-rich.md](/books/symbolic-language/research/research-poor-rich.md).
+The fuller book and notebook trail is available in [Orphans, Widows & the Fatherless](/books/symbolic-language/orphans-widows-and-the-fatherless/), [research-poor-rich.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-poor-rich.md).
 
 ## Definitions
 

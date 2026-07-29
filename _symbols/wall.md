@@ -84,7 +84,7 @@ definitions:
 
 **Salvation — the [covenant](/research/symbols/covenant/)'s enclosure: “thou shalt call thy walls Salvation”; God Himself “a wall of fire round about.” The counterfeit is self-built — wealth's high wall “in his own conceit,” and the whitewashed wall of false peace that the storm flattens.**
 
-The fuller book and notebook trail is available in [The Parable of the Vineyard](/books/symbolic-language/the-parable-of-the-vineyard/), [research-wall.md](/books/symbolic-language/research/research-wall.md).
+The fuller book and notebook trail is available in [The Parable of the Vineyard](/books/symbolic-language/the-parable-of-the-vineyard/), [research-wall.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-wall.md).
 
 ## Definitions
 

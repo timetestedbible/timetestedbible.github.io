@@ -107,7 +107,7 @@ usage_examples:
 
 **The righteous, who rule the [night](/research/symbols/night/) with the Son — “they that be wise shall shine… as the stars for ever”; the twelve stars are the twelve tribes, gathered into the twelve constellations, the Mazzaroth.**
 
-The fuller book and notebook trail is available in [Sun, Moon & Stars](/books/symbolic-language/sun-moon-and-stars/), [research-sun-moon-stars.md](/books/symbolic-language/research/research-sun-moon-stars.md).
+The fuller book and notebook trail is available in [Sun, Moon & Stars](/books/symbolic-language/sun-moon-and-stars/), [research-sun-moon-stars.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-sun-moon-stars.md).
 
 ## Definitions
 

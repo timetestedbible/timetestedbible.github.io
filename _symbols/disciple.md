@@ -91,7 +91,7 @@ definitions:
 
 **One who continues under the Master until His law is sealed within and His teaching bears obedient [fruit](/research/symbols/fruit/). A disciple enters the [Name](/research/symbols/name/), accepts the cost, and is perfected to be as his Master.**
 
-The fuller book and notebook trail is available in [The Disciple](/books/symbolic-language/the-disciple/), [research-disciple.md](/books/symbolic-language/research/research-disciple.md).
+The fuller book and notebook trail is available in [The Disciple](/books/symbolic-language/the-disciple/), [research-disciple.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-disciple.md).
 
 ## Definitions
 

@@ -78,7 +78,7 @@ definitions:
 
 **Favor that moves first and then teaches its recipient to reject ungodliness and live rightly. Counterfeit grace turns favor into permission to remain lawless.**
 
-The fuller book and notebook trail is available in [Grace, Mercy & the Gift](/books/symbolic-language/path-to-salvation/), [research-grace-mercy-gift.md](/books/symbolic-language/research/research-grace-mercy-gift.md).
+The fuller book and notebook trail is available in [Grace, Mercy & the Gift](/books/symbolic-language/path-to-salvation/), [research-grace-mercy-gift.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-grace-mercy-gift.md).
 
 ## Definitions
 

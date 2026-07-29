@@ -90,7 +90,7 @@ definitions:
 
 **A work is a deed, not a synonym for obedience. It becomes obedience when it fulfills a legitimate command and disobedience when it conflicts with God's command; context separately identifies wages, duty, or faith made visible.**
 
-The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/), [The End of the Law](/books/symbolic-language/the-end-of-the-law/), [research-works.md](/books/symbolic-language/research/research-works.md), [research-dead-works.md](/books/symbolic-language/research/research-dead-works.md).
+The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/), [The End of the Law](/books/symbolic-language/the-end-of-the-law/), [research-works.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-works.md), [research-dead-works.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-dead-works.md).
 
 ## Definitions
 

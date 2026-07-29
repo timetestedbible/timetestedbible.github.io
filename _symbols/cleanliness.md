@@ -96,7 +96,7 @@ definitions:
 
 **Clean means free from defilement and fit for permitted contact, approach, or use; to cleanse is to remove that defilement. Uncleanness may be physical, ceremonial, or moral and does not always imply guilt; sanctification concerns holy claim and use, not merely cleanliness.**
 
-The fuller book and notebook trail is available in [Uncommon Sanctification, Justification, and Cleanliness](/books/symbolic-language/uncommon-sanctification-justification-and-cleanliness/), [research-tohar-clearness.md](/books/symbolic-language/research/research-tohar-clearness.md).
+The fuller book and notebook trail is available in [Uncommon Sanctification, Justification, and Cleanliness](/books/symbolic-language/uncommon-sanctification-justification-and-cleanliness/), [research-tohar-clearness.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-tohar-clearness.md).
 
 ## Definitions
 

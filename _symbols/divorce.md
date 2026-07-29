@@ -85,7 +85,7 @@ definitions:
 
 **A [covenant](/research/symbols/covenant/) severed and the wife sent from the house — exile and scattering. Scripture distinguishes treacherous divorce from separation out of a union God never joined.**
 
-The fuller book and notebook trail is available in [Marriage and Divorce](/books/symbolic-language/marriage-and-divorce/), [research-marriage-divorce.md](/books/symbolic-language/research/research-marriage-divorce.md).
+The fuller book and notebook trail is available in [Marriage and Divorce](/books/symbolic-language/marriage-and-divorce/), [research-marriage-divorce.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-marriage-divorce.md).
 
 ## Definitions
 

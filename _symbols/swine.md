@@ -97,7 +97,7 @@ definitions:
 
 **An unclean [Beast](/research/symbols/beast/) — a people or kingdom displaying the outward [covenant](/research/symbols/covenant/) sign without the inward work, like a parted hoof without chewing the cud. Swine trample what is holy and return to uncleanness after washing. Gathered as a religious body, they are the [Synagogue of Satan](/research/symbols/assembly/): those who say they are Jews and are not.**
 
-The fuller book and notebook trail is available in [The Other White Meat](/books/symbolic-language/the-other-white-meat/), [research-swine.md](/books/symbolic-language/research/research-swine.md).
+The fuller book and notebook trail is available in [The Other White Meat](/books/symbolic-language/the-other-white-meat/), [research-swine.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-swine.md).
 
 ## Definitions
 

@@ -86,7 +86,7 @@ definitions:
 
 **A people's works ripened into persons as the vineyard's yield. Pressed grapes produce [covenant](/research/symbols/covenant/) wine or the blood of [judgment](/research/symbols/judgment/) according to whether the vintage is good or wild.**
 
-The fuller book and notebook trail is available in [The Parable of the Vineyard](/books/symbolic-language/the-parable-of-the-vineyard/), [research-grapes.md](/books/symbolic-language/research/research-grapes.md).
+The fuller book and notebook trail is available in [The Parable of the Vineyard](/books/symbolic-language/the-parable-of-the-vineyard/), [research-grapes.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-grapes.md).
 
 ## Definitions
 

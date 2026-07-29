@@ -83,7 +83,7 @@ definitions:
 
 **To un-choose — to repudiate a [covenant](/research/symbols/covenant/) partner or claim in favor of another. Scripture enacts hate through refusal, disfavor, or sending away, not merely through feelings of hostility.**
 
-The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/), [research-hate.md](/books/symbolic-language/research/research-hate.md).
+The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/), [research-hate.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-hate.md).
 
 ## Definitions
 

@@ -87,7 +87,7 @@ definitions:
 
 **The King's jubilee release from bondage to [sin](/research/symbols/sin/) into God's household, inheritance, and faithful service. It changes masters rather than abolishing all authority; liberty is neither a license to sin nor freedom from the law's obligations.**
 
-The fuller book and notebook trail is available in [Liberty](/books/symbolic-language/liberty/), [research-liberty.md](/books/symbolic-language/research/research-liberty.md).
+The fuller book and notebook trail is available in [Liberty](/books/symbolic-language/liberty/), [research-liberty.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-liberty.md).
 
 ## Definitions
 

@@ -77,7 +77,7 @@ definitions:
 
 **The Father, the source of light, from which every lesser light is drawn; the righteous shall shine as the sun in His kingdom.**
 
-The fuller book and notebook trail is available in [Sun, Moon & Stars](/books/symbolic-language/sun-moon-and-stars/), [research-sun-moon-stars.md](/books/symbolic-language/research/research-sun-moon-stars.md).
+The fuller book and notebook trail is available in [Sun, Moon & Stars](/books/symbolic-language/sun-moon-and-stars/), [research-sun-moon-stars.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-sun-moon-stars.md).
 
 ## Definitions
 

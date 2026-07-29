@@ -89,7 +89,7 @@ definitions:
 
 **Receiving God's testimony as [true](/research/symbols/truth/) and governing, then acting upon it. Mere assent can acknowledge a fact; persistent refusal to obey exposes unbelief.**
 
-The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/), [research-faith.md](/books/symbolic-language/research/research-faith.md).
+The fuller book and notebook trail is available in [Love, Knowing, Faith & Belief](/books/symbolic-language/knowing-faith-love-and-belief/), [research-faith.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-faith.md).
 
 ## Definitions
 

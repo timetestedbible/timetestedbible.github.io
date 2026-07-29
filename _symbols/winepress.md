@@ -95,7 +95,7 @@ definitions:
 
 **The vineyard's reckoning — where the [fruit](/research/symbols/fruit/) a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine, when the vintage is wickedness.**
 
-The fuller book and notebook trail is available in [The Parable of the Vineyard](/books/symbolic-language/the-parable-of-the-vineyard/), [research-winepress.md](/books/symbolic-language/research/research-winepress.md).
+The fuller book and notebook trail is available in [The Parable of the Vineyard](/books/symbolic-language/the-parable-of-the-vineyard/), [research-winepress.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-winepress.md).
 
 ## Definitions
 

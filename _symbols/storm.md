@@ -76,7 +76,7 @@ definitions:
 
 **The nations in turmoil — the raging [sea](/research/symbols/sea/), stilled at Christ's word, “Peace, be still”.**
 
-The fuller book and notebook trail is available in [Sea & Waters](/books/symbolic-language/sea-and-waters/), [research-jonah-sign-prevalence.md](/books/symbolic-language/research/research-jonah-sign-prevalence.md).
+The fuller book and notebook trail is available in [Sea & Waters](/books/symbolic-language/sea-and-waters/), [research-jonah-sign-prevalence.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-jonah-sign-prevalence.md).
 
 ## Definitions
 

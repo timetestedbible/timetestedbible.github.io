@@ -115,7 +115,7 @@ provenance:
 
 **The breach-dweller: the false prophet or usurper at home in the ruins he was sent to repair — "thy prophets are like the foxes in the ruins… ye have not gone up into the breaches." He spoils the vineyard at blossom, walks the desolate [mountain](/research/symbols/mountain/) while the true throne endures, and carries [fire](/research/symbols/fire/) tail-to-tail through the [field](/research/symbols/field/); the foxes have holes, and the Son of man nowhere to lay his head.**
 
-The notebook trail is in [research-fox.md](/books/symbolic-language/research/research-fox.md). The word appears 9 times in all of Scripture — Hebrew *shu'al* 6 times, Greek *alōpēx* 3 — and the Greek Septuagint renders the Hebrew with *alōpēx* at every checked site, so both testaments are handling one word. Nine occurrences is a corpus small enough to read in full, and this study reads all of them.
+The notebook trail is in [research-fox.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-fox.md). The word appears 9 times in all of Scripture — Hebrew *shu'al* 6 times, Greek *alōpēx* 3 — and the Greek Septuagint renders the Hebrew with *alōpēx* at every checked site, so both testaments are handling one word. Nine occurrences is a corpus small enough to read in full, and this study reads all of them.
 
 ## Definitions
 
@@ -259,4 +259,4 @@ No reciprocal opposite is assigned; the fox's opposite is a calling, not an imag
 
 ## Conclusion and Status
 
-**The breach-dweller: the false prophet or usurper at home in the ruins he was sent to repair.** Ezekiel states the equation and the reason in consecutive verses; the vineyard, the desolate mountain, the wall, the liars' portion, Samson's torches, and Herod's oracle all keep it; and the two-witness texts show why the foxes come in pairs. The definition is proposed for the glossary from [research-fox.md](/books/symbolic-language/research/research-fox.md) and awaits the author's approval; nothing in the occurrence register stands against it.
+**The breach-dweller: the false prophet or usurper at home in the ruins he was sent to repair.** Ezekiel states the equation and the reason in consecutive verses; the vineyard, the desolate mountain, the wall, the liars' portion, Samson's torches, and Herod's oracle all keep it; and the two-witness texts show why the foxes come in pairs. The definition is proposed for the glossary from [research-fox.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-fox.md) and awaits the author's approval; nothing in the occurrence register stands against it.

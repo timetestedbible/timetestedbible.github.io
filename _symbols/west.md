@@ -96,7 +96,7 @@ definitions:
 
 **Where a course ends — behind, the destination. The Hebrew for west is “sea” (yam): Scripture's compass faces [east](/research/symbols/east/), placing the western sea at the back as the “hinder sea.” The related after/back/end word-family can therefore mark what is last, latter, or westernmost; and east and west together span complete separation.**
 
-The fuller book and notebook trail is available in [The Fall of Babylon](/books/symbolic-language/the-fall-of-babylon/), [research-directions.md](/books/symbolic-language/research/research-directions.md).
+The fuller book and notebook trail is available in [The Fall of Babylon](/books/symbolic-language/the-fall-of-babylon/), [research-directions.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-directions.md).
 
 ## Definitions
 

@@ -106,7 +106,7 @@ definitions:
 
 **The stronghold raised by a [Name](/research/symbols/name/) around its house — refuge, watchtower, and lighthouse in one: high to see danger, giving [light](/research/symbols/light/) to guide the house, and covered to shelter those who come inside. A strong tower is an intact Name protecting its people; an unfinished tower is a Name begun without depth to endure its cost; a fallen tower is a [covenant](/research/symbols/covenant/) stronghold broken, emptied, or judged.**
 
-The fuller book and notebook trail is available in [The Tower](/books/symbolic-language/tower/), [research-tower.md](/books/symbolic-language/research/research-tower.md).
+The fuller book and notebook trail is available in [The Tower](/books/symbolic-language/tower/), [research-tower.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-tower.md).
 
 ## Definitions
 

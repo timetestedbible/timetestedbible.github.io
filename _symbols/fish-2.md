@@ -93,7 +93,7 @@ definitions:
 
 **A great ruler among the [sea](/research/symbols/sea/) of peoples — the personal head who can stand for the kingdom, state, and administration acting through him. Pharaoh stands for Egypt, Nebuchadnezzar for Babylon, and Caesar for Rome: the ruler swallows through the body he heads, and is forced to give back what he swallowed.**
 
-The fuller book and notebook trail is available in [The Sign of Jonah](/books/symbolic-language/sign-of-jonah/), [research-jonah-sign-prevalence.md](/books/symbolic-language/research/research-jonah-sign-prevalence.md).
+The fuller book and notebook trail is available in [The Sign of Jonah](/books/symbolic-language/sign-of-jonah/), [research-jonah-sign-prevalence.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-jonah-sign-prevalence.md).
 
 ## Definitions
 

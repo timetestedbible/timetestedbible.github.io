@@ -83,7 +83,7 @@ definitions:
 
 **[Covenant](/research/symbols/covenant/) loyalty expressed through compassion, forgiveness, and faithful dealing. Mercy received creates an obligation to show mercy, and Scripture joins pardon with confession and forsaking.**
 
-The fuller book and notebook trail is available in [Grace, Mercy & the Gift](/books/symbolic-language/path-to-salvation/), [research-grace-mercy-gift.md](/books/symbolic-language/research/research-grace-mercy-gift.md).
+The fuller book and notebook trail is available in [Grace, Mercy & the Gift](/books/symbolic-language/path-to-salvation/), [research-grace-mercy-gift.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-grace-mercy-gift.md).
 
 ## Definitions
 

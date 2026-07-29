@@ -86,7 +86,7 @@ definitions:
 
 **To bow down and serve — homage in the body, allegiance in the life; the [fear of the LORD](/research/symbols/fear/) made visible, kept at His appointed times, on His terms. Not the song service: Scripture separates worship from singing in single scenes.**
 
-The fuller book and notebook trail is available in [Worship](/books/symbolic-language/worship/), [research-worship.md](/books/symbolic-language/research/research-worship.md).
+The fuller book and notebook trail is available in [Worship](/books/symbolic-language/worship/), [research-worship.md](https://github.com/timetestedbible/timetestedbible.github.io/blob/main/books/symbolic-language/research/research-worship.md).
 
 ## Definitions
 
