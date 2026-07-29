@@ -105,7 +105,7 @@ Sabbaths counted, given ordinals, or bounded for counting (“the morrow of the 
 
 ### Week — distributive idiom (shabbat b'shabbato; shabbat shabbat) — 4 occurrences
 
-The X-b'X-o family (*yom b'yomo*, *chodesh b'chodsho*, *shanah b'shanah*) always distributes over a recurring UNIT.
+The possessive-suffix family (*b'X-o*, "in ITS X") — *yom b'yomo* (14×), *shabbat b'shabbato* (2×), *chodesh b'chodsho* (2×) — where each unit owns its due, delivered inside it. The suffix attaches only to marker-day words; the year uses the bare iterative *shanah b'shanah* (12×) and never takes the suffix (*b'shanato*: 0 occurrences).
 
 | Reference | Form | Note |
 |---|---|---|
@@ -236,10 +236,14 @@ Related forms outside G4521: *prosabbaton* “the day before the sabbath” (Mar
 - **Neh 13:19 — gates shut “before the sabbath.”** Boundary language around the bare form. It tells you the
   observance has an edge; it does not tell you the extent. Nothing in the chapter strains either reading —
   the commerce verses around it (13:15-21) are day-extent by context, and the catalog claims nothing more.
-- **Num 28:10 / Isa 66:23 — *shabbat b'shabbato*.** The distributive suffix idiom is a closed family — *yom
-  b'yomo* (daily), *chodesh b'chodsho* (monthly), *shanah b'shanah* (yearly) — and it always distributes over
-  the recurring unit named. Isa 66:23 sets *shabbat b'shabbato* in direct parallel with *chodesh b'chodsho*:
-  unit beside unit, week beside month.
+- **Num 28:10 / Isa 66:23 — *shabbat b'shabbato*.** The possessive-suffix idiom (*b'X-o*, "in ITS X") is a
+  closed family of exactly three words — *yom b'yomo* (14×), *shabbat b'shabbato* (2×), *chodesh b'chodsho*
+  (2×) — and the suffix never attaches to the year: *shanah b'shanah* (12×) is always bare, and *b'shanato*
+  does not occur. The possessive sits only on words that name a marker-day and its domain; Isa 66:23 sets
+  *shabbat b'shabbato* in direct parallel with *chodesh b'chodsho* — the sabbath owning its week beside the
+  new moon owning its month — while the same *midei* construction takes the bare year-form elsewhere (*midei
+  shanah b'shanah*, 1 Sam 7:16; Zech 14:16). Note honestly: the doubling alone proves possession, not extent —
+  *yom b'yomo* doubles with one sense — and the week-extent rests on the counting statutes above.
 - **2 Kgs 11 / 2 Chr 23 — “them that enter in on the sabbath.”** Guard companies “enter” and “go out of”
   the sabbath, and 2 Chr 23:8 names why: “Jehoiada dismissed not the courses” — the week-long duty shifts
   (cf. 1 Chr 9:25). One enters a span; one does not enter a Saturday with two-thirds of an army still inside it.
