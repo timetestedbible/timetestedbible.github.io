@@ -115,7 +115,11 @@ for (const file of files) {
   pushMissing(errors, key, frontmatter, ['definition', 'meaning', 'definition_meta']);
   const meta = frontmatter.definition_meta || {};
   if (meta.authority !== 'book-glossary') {
-    errors.push(`${key}: definition_meta.authority must be 'book-glossary' during migration`);
+    // 'research' authority is allowed only for draft, website-first records that
+    // are not yet in the printed glossary (they must carry a candidate_definition).
+    if (!(meta.authority === 'research' && meta.status === 'draft')) {
+      errors.push(`${key}: definition_meta.authority must be 'book-glossary' during migration`);
+    }
   }
   if (!['approved', 'draft'].includes(meta.status)) {
     errors.push(`${key}: definition_meta.status must be approved or draft`);
@@ -184,7 +188,11 @@ for (const file of files) {
 
   const glossaryEntry = glossary.get(key);
   if (!glossaryEntry) {
-    errors.push(`${key}: no matching [[sym-${key}]] entry in the book glossary`);
+    if (meta.authority === 'research' && meta.status === 'draft') {
+      warnings.push(`${key}: website-only draft — not yet in the book glossary (awaiting author approval)`);
+    } else {
+      errors.push(`${key}: no matching [[sym-${key}]] entry in the book glossary`);
+    }
   } else if (!sameText(frontmatter.definition, glossaryEntry.definition)) {
     errors.push(
       `${key}: approved definition drifts from the book glossary\n` +

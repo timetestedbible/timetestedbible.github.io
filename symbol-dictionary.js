@@ -1338,6 +1338,22 @@ const SYMBOL_DICTIONARY = {
     link: '/research/symbols/four/'
   },
 
+  'fox': {
+    key: 'fox',
+    name: 'FOX',
+    recordType: 'symbol',
+    aliasOf: null,
+    words: ['fox', 'foxes'],
+    strongs: ['H7776', 'G258'],
+    meaning: 'The breach-dweller — the false prophet at home in the ruins he was sent to repair',
+    sentence: 'The breach-dweller: the false prophet or usurper at home in the ruins he was sent to repair — "thy prophets are like the foxes in the ruins… ye have not gone up into the breaches." He spoils the vineyard at blossom, walks the desolate mountain while the true throne endures, and carries fire tail-to-tail through the field; the foxes have holes, and the Son of man nowhere to lay his head.',
+    opposite: null,
+    rank: 0,
+    category: 'Counterfeit & Deception',
+    subcategory: null,
+    link: '/research/symbols/fox/'
+  },
+
   'fruit': {
     key: 'fruit',
     name: 'FRUIT',
