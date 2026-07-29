@@ -99,6 +99,39 @@ which God holds the waters, Isa 40:12). The fox-prophets work for what
 a hollow hand can hold, and the Gospel saying preserves the name's
 meaning in translation: the foxes have *holes*.
 
+## Two witnesses, one tale (author, 2026-07-28)
+
+The pairing of the foxes is not decoration — it is courtroom
+arithmetic. The law establishes every matter "at the **mouth of two
+witnesses**" (Deut 19:15), so the counterfeit case also comes in
+pairs: two foxes sharing one torch is a false-witness **pair sharing
+one tale**. Scripture stages it twice:
+
+- **Naboth's vineyard** (1 Kgs 21:10, 13) — Jezebel scripts it: "set
+  **two men, sons of Belial**, before him, to bear witness against
+  him, saying, Thou didst blaspheme God and the king." Verse 13
+  delivers the same words verbatim — two witnesses, one rehearsed
+  tale — and the prize is **the vineyard** (21:16). Song 2:15's foxes
+  spoiling the vineyard, with names, a script, and an address.
+- **The trial of Jesus** (Matt 26:60; Mark 14:56, 59) — many false
+  witnesses fail because "their witness **agreed not together**":
+  tails not yet tied. "At the last came **two false witnesses**" whose
+  tale agreed — only then can the fire be carried to the field.
+
+And the mirror-image proves the geometry. True testimony sits at the
+**mouth**: "at the mouth of two witnesses shall the matter be
+established" (Deut 19:15); "I will make my words in thy **mouth
+fire**, and this people wood" (Jer 5:14); the two witnesses of
+Revelation — "**fire proceedeth out of their mouth**, and devoureth
+their enemies" (Rev 11:5). False testimony carries its fire at the
+other end, and Isaiah says which end that is: "the prophet that
+teacheth lies, he is the **tail**" (Isa 9:15). Two true witnesses:
+fire at the mouth. Two false witnesses: one torch between two tails.
+Both pairs carry fire through the field; the difference is which end
+of the witness it burns from. (The English tail/tale pun is a
+teaching hook only — the argument stands on Deut 19:15, 1 Kgs 21, and
+the trial narratives.)
+
 ## Counter-texts weighed
 
 - **Judg 15** — instrumental use: the fox's nature is harnessed for
