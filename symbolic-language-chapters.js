@@ -18,7 +18,7 @@ const SYMBOLIC_LANGUAGE_BOOK = {
     until: '2026-08-08T05:00:00Z'  // midnight Aug 8, America/Chicago
   },
   purchase: [
-    { soon: 'Hardcover — August 1' }
+    { label: 'Buy Hardcover — 50% off with code BREAD', href: 'https://store.bookbaby.com/book/meat-the-bibles-symbolic-language' }
   ],
   downloads: [
     { label: 'PDF', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf', track: 'meat', fmt: 'pdf' },

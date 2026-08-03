@@ -18,8 +18,8 @@ const TIME_TESTED_TRADITION_BOOK = {
     until: '2026-08-08T05:00:00Z'  // midnight Aug 8, America/Chicago
   },
   purchase: [
-    { label: 'Buy First Edition (Legacy)', href: 'https://store.bookbaby.com/book/time-tested-tradition' },
-    { soon: 'Second-edition hardcover — August 1' }
+    { label: 'Buy Hardcover (2nd Edition) — 50% off with code BREAD', href: 'https://store.bookbaby.com/book/time-tested-tradition1' },
+    { label: 'Buy First Edition (Legacy)', href: 'https://store.bookbaby.com/book/time-tested-tradition' }
   ],
   downloads: [
     { label: 'PDF', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf', track: 'ttt-2e', fmt: 'pdf' },

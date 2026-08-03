@@ -42,12 +42,13 @@ const TutorialView = {
                 </a>
                 <span class="book-shadow" aria-hidden="true"></span>
                 <p class="book-caption"><strong>MEAT</strong><span class="book-tagline">The Bible's Symbolic Language</span></p>
-                ${this.renderBookOffer('SYMBOLIC_LANGUAGE_BOOK', '<span class="book-soon">Hardcover — August 1</span>')}
+                ${this.renderBookOffer('SYMBOLIC_LANGUAGE_BOOK', '<a class="hero-btn primary book-offer-btn" href="https://store.bookbaby.com/book/meat-the-bibles-symbolic-language" target="_blank" rel="noopener">Buy Hardcover — 50% off code BREAD</a>')}
                 <p class="book-downloads">Read free:
                   <a href="/books/meat-bibles-symbolic-language" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'meat-bibles-symbolic-language'}})">Web</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('meat','pdf')">PDF</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('meat','epub')">EPUB</a>
                 </p>
+                <p class="book-downloads"><a href="https://store.bookbaby.com/book/meat-the-bibles-symbolic-language" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">Hardcover — 50% off with code BREAD</a></p>
               </div>
               <div class="hero-book-col ttt">
                 <a href="/books/time-tested-tradition" class="book3d right" aria-label="Time Tested Tradition — The Renewed Biblical Calendar. Read it free."
@@ -59,13 +60,13 @@ const TutorialView = {
                 </a>
                 <span class="book-shadow" aria-hidden="true"></span>
                 <p class="book-caption"><strong>TIME</strong><span class="book-tagline">Tested Tradition</span></p>
-                ${this.renderBookOffer('TIME_TESTED_TRADITION_BOOK', '<span class="book-soon">Second-edition hardcover — August 1</span>')}
+                ${this.renderBookOffer('TIME_TESTED_TRADITION_BOOK', '<a class="hero-btn primary book-offer-btn" href="https://store.bookbaby.com/book/time-tested-tradition1" target="_blank" rel="noopener">Buy Hardcover — 50% off code BREAD</a>')}
                 <p class="book-downloads">Read free:
                   <a href="/books/time-tested-tradition" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'time-tested-tradition'}})">Web</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','pdf')">PDF</a> ·
                   <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','epub')">EPUB</a>
                 </p>
-                <p class="book-downloads"><a href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">First Edition (Legacy) softcover</a></p>
+                <p class="book-downloads"><a href="https://store.bookbaby.com/book/time-tested-tradition1" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">Hardcover (2nd Ed.) — 50% off with code BREAD</a> · <a href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">First Edition (Legacy)</a></p>
               </div>
             </div>
 
@@ -349,7 +350,7 @@ const TutorialView = {
             <span>•</span>
             <a href="/media/time-tested-tradition.pdf" download onclick="trackBookDownload()">Download Book PDF</a>
             <span>•</span>
-            <a href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">Buy Physical Copy</a>
+            <a href="https://store.bookbaby.com/book/time-tested-tradition1" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">Buy Physical Copy</a>
           </div>
         </footer>
       </div>

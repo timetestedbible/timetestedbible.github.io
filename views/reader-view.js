@@ -2310,7 +2310,7 @@ const ReaderView = {
               <div class="ttt-hero-actions">
                 <a class="ttt-hero-download ttt-hero-buy"
                    style="background:#1a6b7a;border:1px solid #0f4250;color:#ffffff;"
-                   href="https://store.bookbaby.com/book/time-tested-tradition"
+                   href="https://store.bookbaby.com/book/time-tested-tradition1"
                    target="_blank" rel="noopener"
                    onclick="if(typeof trackBuyBook==='function')trackBuyBook()">
                   <span class="icon">📕</span>
