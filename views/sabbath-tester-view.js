@@ -112,7 +112,7 @@ const SabbathTesterView = {
   // every Jekyll rebuild (every deploy, and every file save under local
   // `jekyll serve --watch`), which busted the cache constantly. Any change
   // to tests or profiles re-fingerprints automatically; pure engine-algorithm
-  // changes need a manual bump of the 'v5' prefix.
+  // changes need a manual bump of the 'v6' prefix.
   _cv: null,
   _cacheVersionGet() {
     if (this._cv) return this._cv;
@@ -155,7 +155,7 @@ const SabbathTesterView = {
           <div id="sabbath-tester-configs-container"></div>
           <div id="sabbath-tester-loading" class="sabbath-test-loading">
             <div id="sabbath-progress-text">Loading tests...</div>
-            <div class="sabbath-engine-build" style="font-size:11px;color:var(--text-secondary);margin-top:4px;">engine build: JDN-v5 (weekday = JD mod 7)</div>
+            <div class="sabbath-engine-build" style="font-size:11px;color:var(--text-secondary);margin-top:4px;">engine build: JDN-v6 (weekday = JD mod 7)</div>
             <div class="sabbath-progress-bar" id="sabbath-progress-bar" style="display:none">
               <div class="sabbath-progress-fill" id="sabbath-progress-fill"></div>
             </div>
@@ -935,9 +935,12 @@ const SabbathTesterView = {
         resultClass = 'result-uncertain';
       }
       
-      const dateStr = r.gregorianDate ? this.formatAncientDate(r.gregorianDate, false) : 'N/A';
-      const weekdayFull = r.displayWeekday || r.calculatedWeekdayName || 'N/A';
-      const weekdayShort = r.displayWeekdayShort || this.getShortWeekday(r.calculatedWeekdayName);
+      // One source of truth per row: derive date, weekday, and JD from r.jd.
+      const ident = this.jdRowIdentity(r.jd);
+      const isLunarMode = r.profile && r.profile.sabbathMode === 'lunar';
+      const dateStr = ident ? ident.dateStr : (r.gregorianDate ? this.formatAncientDate(r.gregorianDate, false) : 'N/A');
+      const weekdayFull = isLunarMode ? (r.displayWeekday || 'N/A') : (ident ? ident.weekdayName : (r.calculatedWeekdayName || 'N/A'));
+      const weekdayShort = isLunarMode ? (r.displayWeekdayShort || 'N/A') : (ident ? ident.weekdayShort : this.getShortWeekday(r.calculatedWeekdayName));
       const profileName = r.profile.name;
       
       let yearUncertaintyIcon = '';
@@ -1010,12 +1013,12 @@ const SabbathTesterView = {
       }
       
       // Build compact date link for mobile
-      const dateStrCompact = r.gregorianDate ? this.formatAncientDate(r.gregorianDate, false, true) : 'N/A';
+      const dateStrCompact = ident ? ident.dateStrCompact : (r.gregorianDate ? this.formatAncientDate(r.gregorianDate, false, true) : 'N/A');
       const dateLinkCompact = r.gregorianDate ? 
         `<a class="sabbath-test-date-link" title="${jdTooltip}" onclick="SabbathTesterView.navigateToTestResult('${test.id}', '${profileId}')">${dateStrCompact}</a>${yearUncertaintyIcon}${altYearsNote}` :
         dateStrCompact;
       
-      const jdStr = r.jd != null ? Math.floor(r.jd).toString() : 'N/A';
+      const jdStr = ident ? ident.jdn.toString() : 'N/A';
       
       html += `
         <tr>
@@ -1088,6 +1091,50 @@ const SabbathTesterView = {
    * @param {boolean} includeWeekday - Whether to include weekday (not used, kept for API compat)
    * @param {boolean} compact - Whether to use compact format for mobile
    */
+
+  /**
+   * Derive the display date and weekday for a result row from its JD alone.
+   * The JD is the row's single source of truth: date label (Julian calendar
+   * before Oct 15 1582, Gregorian after) and weekday (JDN+1 mod 7, anchored
+   * on JDN 0 = Monday) are both pure functions of it, so the three cells of
+   * a row can never contradict each other — even when the underlying result
+   * was cached by an older engine.
+   * The stored jd is the day-START JD (sunset/sunrise); the civil day the
+   * lunar day names is its DAYTIME: floor(jd) + 1 (JD epoch is noon).
+   */
+  jdRowIdentity(jd) {
+    if (jd == null || isNaN(jd)) return null;
+    // Resolve the civil-day JDN. Engine rows store the fractional day-START JD
+    // (sunset ~n+0.14, sunrise ~n-0.36, midnight n-0.5) whose daytime is
+    // floor(jd)+1. Hebcal rows store the integer noon JDN of the day itself.
+    const frac = jd - Math.floor(jd);
+    const jdn = (frac < 0.01 || frac > 0.99) ? Math.round(jd) : Math.floor(jd) + 1;
+    const weekdayNum = ((jdn + 1) % 7 + 7) % 7;
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let year, month, day;
+    if (jdn < 2299161) { // Julian calendar labels before Oct 15, 1582
+      const B = jdn + 1524, C = Math.floor((B - 122.1) / 365.25), D = Math.floor(365.25 * C), E = Math.floor((B - D) / 30.6001);
+      day = B - D - Math.floor(30.6001 * E);
+      month = E < 14 ? E - 1 : E - 13;
+      year = month > 2 ? C - 4716 : C - 4715;
+    } else {
+      const a = jdn + 32044, b = Math.floor((4 * a + 3) / 146097), c = a - Math.floor(146097 * b / 4);
+      const d2 = Math.floor((4 * c + 3) / 1461), e = c - Math.floor(1461 * d2 / 4), m = Math.floor((5 * e + 2) / 153);
+      day = e - Math.floor((153 * m + 2) / 5) + 1;
+      month = m + 3 - 12 * Math.floor(m / 10);
+      year = 100 * b + d2 - 4800 + Math.floor(m / 10);
+    }
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const yearStr = year <= 0 ? `${1 - year} BC` : `${year} AD`;
+    return {
+      jdn,
+      weekdayName: weekdays[weekdayNum],
+      weekdayShort: weekdays[weekdayNum].slice(0, 3),
+      dateStr: `${months[month - 1]} ${day}, ${yearStr}`,
+      dateStrCompact: `${months[month - 1]} ${day}`
+    };
+  },
+
   formatAncientDate(date, includeWeekday = true, compact = false) {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
