@@ -700,7 +700,13 @@ class LunarCalendarEngine {
         // dayStartJD can be before noon for morning mode (sunrise), and since
         // JD epoch is at noon, Math.floor(dayStartJD) would give JDN-1, shifting
         // the weekday off by one day. tempDate has the correct calendar date.
-        const weekday = this.getWeekday(tempDate);
+        //
+        // tempDate is a real JS Date (proleptic-Gregorian labels), so its UTC
+        // weekday IS the physical weekday. Do NOT pass it through getWeekday():
+        // that helper expects Julian-calendar labels for pre-1582 dates and
+        // would shift the weekday by the era's Julian/Gregorian offset
+        // (2 days in the 1st century, era-dependent elsewhere).
+        const weekday = tempDate.getUTCDay();
         const weekdayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         
         days.push({
