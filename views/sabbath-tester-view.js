@@ -155,7 +155,7 @@ const SabbathTesterView = {
           <div id="sabbath-tester-configs-container"></div>
           <div id="sabbath-tester-loading" class="sabbath-test-loading">
             <div id="sabbath-progress-text">Loading tests...</div>
-            <div class="sabbath-engine-build" style="font-size:11px;color:var(--text-secondary);margin-top:4px;">engine build: JDN-v6 (weekday = JD mod 7)</div>
+            <div class="sabbath-engine-build" id="sabbath-diagnostic" style="font-size:11px;color:var(--text-secondary);margin-top:4px;white-space:pre-wrap;font-family:monospace;">engine build: JDN-v6 — collecting diagnostics…</div>
             <div class="sabbath-progress-bar" id="sabbath-progress-bar" style="display:none">
               <div class="sabbath-progress-fill" id="sabbath-progress-fill"></div>
             </div>
@@ -638,6 +638,27 @@ const SabbathTesterView = {
     if (cacheHits > 0 || cacheMisses > 0) {
       console.log(`[SabbathTester] Cache: ${cacheHits} hits, ${cacheMisses} misses (${Math.round(cacheHits / (cacheHits + cacheMisses) * 100)}% hit rate)`);
     }
+
+    // On-page diagnostics — visible without DevTools
+    try {
+      const diag = container.querySelector('#sabbath-diagnostic');
+      if (diag) {
+        const t30 = allResults.find(x => x.test.id === 'passover-30ad');
+        const lines = [
+          'engine build: JDN-v6 | cache: ' + cacheHits + ' hits / ' + cacheMisses + ' fresh | seed: ' + this._cacheVersionGet().slice(0, 24),
+          'engine.jdnToWeekday loaded: ' + (typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function')
+        ];
+        if (t30) {
+          for (const r of t30.results) {
+            const ident = this.jdRowIdentity(r.jd);
+            lines.push('30AD ' + (r.profile && r.profile.id) + ': raw jd=' + r.jd +
+              ' -> ' + (ident ? ident.dateStr + ' / ' + ident.weekdayName + ' / JDN ' + ident.jdn : 'null') +
+              ' | engine said: ' + (r.calculatedWeekdayName || '?'));
+          }
+        }
+        diag.textContent = lines.join('\n');
+      }
+    } catch (e) { /* diagnostics must never break rendering */ }
       
       // Calculate scoreboard
       const scoreboard = {};
