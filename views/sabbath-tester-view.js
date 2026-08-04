@@ -112,7 +112,11 @@ const SabbathTesterView = {
   // every Jekyll rebuild (every deploy, and every file save under local
   // `jekyll serve --watch`), which busted the cache constantly. Any change
   // to tests or profiles re-fingerprints automatically; pure engine-algorithm
-  // changes need a manual bump of the 'v7' prefix.
+  // changes need a manual bump of the seed prefix in the fp assignment below.
+  // The fingerprint also includes the ACTIVE astronomy engine identity, so
+  // results computed by the fallback engine can never satisfy a cache lookup
+  // once the real (Swiss/hybrid) engine is loaded. Only call after
+  // astroEngineReady() resolves — it memoizes on first use.
   _cv: null,
   _cacheVersionGet() {
     if (this._cv) return this._cv;
@@ -121,8 +125,10 @@ const SabbathTesterView = {
       for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) >>> 0;
       return h.toString(36);
     };
-    let fp = 'v2';
+    let fp = 'v8';
     try {
+      const eng = (typeof getAstroEngine === 'function') ? getAstroEngine() : null;
+      fp += ':' + (eng && eng.name ? djb2(String(eng.name) + '|' + String(eng.version || '')) : 'noeng');
       fp += ':' + djb2(JSON.stringify(typeof BIBLICAL_TESTS !== 'undefined' ? BIBLICAL_TESTS : []));
       fp += ':' + djb2(JSON.stringify(this.getSabbathTestProfiles()));
     } catch (e) {
@@ -155,7 +161,7 @@ const SabbathTesterView = {
           <div id="sabbath-tester-configs-container"></div>
           <div id="sabbath-tester-loading" class="sabbath-test-loading">
             <div id="sabbath-progress-text">Loading tests...</div>
-            <div class="sabbath-engine-build" id="sabbath-diagnostic" style="font-size:11px;color:var(--text-secondary);margin-top:4px;white-space:pre-wrap;font-family:monospace;">engine build: JDN-v7 — collecting diagnostics…</div>
+            <div class="sabbath-engine-build" id="sabbath-diagnostic" style="font-size:11px;color:var(--text-secondary);margin-top:4px;white-space:pre-wrap;font-family:monospace;">engine build: JDN-v8 — collecting diagnostics…</div>
             <div class="sabbath-progress-bar" id="sabbath-progress-bar" style="display:none">
               <div class="sabbath-progress-fill" id="sabbath-progress-fill"></div>
             </div>
@@ -172,8 +178,8 @@ const SabbathTesterView = {
     
     // Start rendering tests (async — yields between computations)
     this._isRendering = true;
-    console.log('[SabbathTester] view build: JDN-v7 | cache version:', this._cacheVersionGet(),
-      '| engine has jdnToWeekday:', typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function');
+    console.log('[SabbathTester] view build: JDN-v8 | engine has jdnToWeekday:',
+      typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function');
     this.renderTests(container);
   },
   
@@ -567,7 +573,25 @@ const SabbathTesterView = {
     
     loadingEl.style.display = 'block';
     resultsEl.innerHTML = '';
-    
+
+    // RACE FIX: the app loads Swiss Ephemeris/NASA data in the background and
+    // getAstroEngine() returns a synchronous fallback until then. Computing
+    // (or even fingerprinting the cache) before the selection is final mixes
+    // backends within one run and caches fallback numbers as authoritative.
+    // No calculation starts until all astronomy data is loaded.
+    if (typeof astroEngineReady === 'function') {
+      if (progressText) progressText.textContent = 'Loading astronomy engine\u2026';
+      try { await astroEngineReady(); } catch (e) {}
+      if (!container.querySelector('#sabbath-tester-results')) {
+        this._isRendering = false;
+        return;
+      }
+    }
+    const engineDesc = (typeof getAstroEngine === 'function' && getAstroEngine())
+      ? (getAstroEngine().name + ' v' + getAstroEngine().version) : 'unknown';
+    console.log('[SabbathTester] astronomy engine ready:', engineDesc,
+      '| cache version:', this._cacheVersionGet());
+
     const profiles = this.getSabbathTestProfiles();
     const allResults = [];
     const total = BIBLICAL_TESTS.length * profiles.length;
@@ -645,7 +669,8 @@ const SabbathTesterView = {
       if (diag) {
         const t30 = allResults.find(x => x.test.id === 'passover-30ad');
         const lines = [
-          'engine build: JDN-v7 | cache: ' + cacheHits + ' hits / ' + cacheMisses + ' fresh | seed: ' + this._cacheVersionGet().slice(0, 24),
+          'engine build: JDN-v8 | cache: ' + cacheHits + ' hits / ' + cacheMisses + ' fresh | seed: ' + this._cacheVersionGet().slice(0, 24),
+          'astro engine: ' + engineDesc,
           'engine.jdnToWeekday loaded: ' + (typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function')
         ];
         if (t30) {

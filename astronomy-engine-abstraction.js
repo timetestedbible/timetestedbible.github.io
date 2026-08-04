@@ -1088,7 +1088,21 @@ function selectAstroEngine(engineId) {
 }
 
 // Initialize astronomy engine - Hybrid approach combines Swiss Ephemeris precision with NASA eclipse calibration
-async function initializeAstroEngine() {
+// Memoized: every caller (app init, views awaiting readiness) shares one load.
+let _astroInitPromise = null;
+function initializeAstroEngine() {
+  if (!_astroInitPromise) _astroInitPromise = _initializeAstroEngine();
+  return _astroInitPromise;
+}
+
+// Resolves when the engine selection is FINAL (hybrid/Swiss/NASA or fallback).
+// Until then getAstroEngine() returns the synchronous fallback — callers that
+// cache results MUST await this first or they cache fallback-quality numbers.
+function astroEngineReady() {
+  return initializeAstroEngine();
+}
+
+async function _initializeAstroEngine() {
   // Load Swiss Ephemeris and NASA Eclipse data in parallel
   const [sweLoaded, nasaLoaded] = await Promise.all([
     AstroEngines.swissEphemeris.load().catch(err => {
@@ -1136,3 +1150,4 @@ window.setAstroEngine = setAstroEngine;
 window.updateAstroEngineUI = updateAstroEngineUI;
 window.selectAstroEngine = selectAstroEngine;
 window.initializeAstroEngine = initializeAstroEngine;
+window.astroEngineReady = astroEngineReady;
