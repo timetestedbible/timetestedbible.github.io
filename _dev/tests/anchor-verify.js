@@ -61,6 +61,10 @@ for (const [year, month, day] of [[30, 1, 14], [32, 1, 16], [-1445, 2, 22], [202
       : Math.floor(Date.UTC(y2, m2, day2) / 86400000 + 2440587.5 + 0.5);
     check(`${p.id} y${year} m${month} d${day} label/weekday agree (label ${d.toISOString().slice(0, 10)})`,
       info.weekdayName, NAMES[eng.jdnToWeekday(labelJDN)]);
+    // The stored boundary jd must lie ON the labeled day (within ±12h of its
+    // noon). Catches opening/closing-boundary confusion (the JDN-v6 off-by-one).
+    check(`${p.id} y${year} m${month} d${day} boundary jd on labeled day`,
+      Math.round(info.jd), labelJDN);
   }
 }
 

@@ -112,7 +112,7 @@ const SabbathTesterView = {
   // every Jekyll rebuild (every deploy, and every file save under local
   // `jekyll serve --watch`), which busted the cache constantly. Any change
   // to tests or profiles re-fingerprints automatically; pure engine-algorithm
-  // changes need a manual bump of the 'v6' prefix.
+  // changes need a manual bump of the 'v7' prefix.
   _cv: null,
   _cacheVersionGet() {
     if (this._cv) return this._cv;
@@ -155,7 +155,7 @@ const SabbathTesterView = {
           <div id="sabbath-tester-configs-container"></div>
           <div id="sabbath-tester-loading" class="sabbath-test-loading">
             <div id="sabbath-progress-text">Loading tests...</div>
-            <div class="sabbath-engine-build" id="sabbath-diagnostic" style="font-size:11px;color:var(--text-secondary);margin-top:4px;white-space:pre-wrap;font-family:monospace;">engine build: JDN-v6 — collecting diagnostics…</div>
+            <div class="sabbath-engine-build" id="sabbath-diagnostic" style="font-size:11px;color:var(--text-secondary);margin-top:4px;white-space:pre-wrap;font-family:monospace;">engine build: JDN-v7 — collecting diagnostics…</div>
             <div class="sabbath-progress-bar" id="sabbath-progress-bar" style="display:none">
               <div class="sabbath-progress-fill" id="sabbath-progress-fill"></div>
             </div>
@@ -172,7 +172,7 @@ const SabbathTesterView = {
     
     // Start rendering tests (async — yields between computations)
     this._isRendering = true;
-    console.log('[SabbathTester] view build: JDN-v6 | cache version:', this._cacheVersionGet(),
+    console.log('[SabbathTester] view build: JDN-v7 | cache version:', this._cacheVersionGet(),
       '| engine has jdnToWeekday:', typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function');
     this.renderTests(container);
   },
@@ -645,7 +645,7 @@ const SabbathTesterView = {
       if (diag) {
         const t30 = allResults.find(x => x.test.id === 'passover-30ad');
         const lines = [
-          'engine build: JDN-v6 | cache: ' + cacheHits + ' hits / ' + cacheMisses + ' fresh | seed: ' + this._cacheVersionGet().slice(0, 24),
+          'engine build: JDN-v7 | cache: ' + cacheHits + ' hits / ' + cacheMisses + ' fresh | seed: ' + this._cacheVersionGet().slice(0, 24),
           'engine.jdnToWeekday loaded: ' + (typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function')
         ];
         if (t30) {
@@ -1131,16 +1131,17 @@ const SabbathTesterView = {
    * on JDN 0 = Monday) are both pure functions of it, so the three cells of
    * a row can never contradict each other — even when the underlying result
    * was cached by an older engine.
-   * The stored jd is the day-START JD (sunset/sunrise); the civil day the
-   * lunar day names is its DAYTIME: floor(jd) + 1 (JD epoch is noon).
+   * The stored jd is a boundary lying ON the day's own civil day: evening
+   * mode stores THIS day's sunset (closing boundary, ~+4h after noon at
+   * Jerusalem), morning mode this day's sunrise (~-9h), hebcal rows the
+   * integer noon itself. All are within ±12h of the day's noon, so the
+   * civil-day JDN is Math.round(jd) — nearest noon. (floor(jd)+1 was the
+   * JDN-v6 bug: it treated the sunset as an OPENING boundary and pushed
+   * every evening-mode row one day late.)
    */
   jdRowIdentity(jd) {
     if (jd == null || isNaN(jd)) return null;
-    // Resolve the civil-day JDN. Engine rows store the fractional day-START JD
-    // (sunset ~n+0.14, sunrise ~n-0.36, midnight n-0.5) whose daytime is
-    // floor(jd)+1. Hebcal rows store the integer noon JDN of the day itself.
-    const frac = jd - Math.floor(jd);
-    const jdn = (frac < 0.01 || frac > 0.99) ? Math.round(jd) : Math.floor(jd) + 1;
+    const jdn = Math.round(jd);
     const weekdayNum = ((jdn + 1) % 7 + 7) % 7;
     const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     let year, month, day;

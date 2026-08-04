@@ -680,14 +680,18 @@ class LunarCalendarEngine {
           dayStartJD = approxDayJD;
         }
         
-        // Derive the day's civil identity from ONE source of truth: the JDN of
-        // its DAYTIME portion. JD is a pure day count (no calendar labels to
-        // misread); day-start is sunset (previous evening, JD fraction past
-        // noon) or sunrise/dawn (JD fraction before noon), so in both modes
-        // floor(dayStartJD) + 1 is the JDN of the daytime this lunar day names.
-        // Date label AND weekday both come from this JDN, so they can never
-        // refer to different physical days.
-        const dayJDN = Math.floor(dayStartJD) + 1;
+        // Derive the day's civil identity from the civil day this iteration
+        // targets (tempDate), converted to a JDN by pure arithmetic — no Date
+        // weekday converters. NOTE the boundary semantics: getDayStartTime
+        // returns a boundary ON tempDate's own civil day (evening mode = THIS
+        // day's sunset, i.e. the day's CLOSING boundary; morning mode = this
+        // day's sunrise, its opening boundary). So dayStartJD always lies
+        // within ±12h of this day's noon and Math.round(dayStartJD) === dayJDN
+        // — but tempDate's labels are the primary source, valid at any
+        // longitude. Date label AND weekday both derive from this one JDN, so
+        // they can never refer to different physical days.
+        const dayJDN = this.gregorianCalendarToJDN(
+          tempDate.getUTCFullYear(), tempDate.getUTCMonth(), tempDate.getUTCDate());
         const dayDate = this.jdToDate(dayJDN);
         
         // Determine if this specific day is uncertain
@@ -844,6 +848,22 @@ class LunarCalendarEngine {
     const y = year + 4800 - a;
     const mm = (month + 1) + 12 * a - 3;
     return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
+  }
+
+  /**
+   * Convert proleptic-Gregorian calendar date to Julian Day Number
+   * (Fliegel–Van Flandern; pure integer arithmetic, valid for negative years)
+   * @param {number} year - astronomical year (0 = 1 BC)
+   * @param {number} month - 0-indexed
+   * @param {number} day
+   * @returns {number} Julian Day Number
+   */
+  gregorianCalendarToJDN(year, month, day) {
+    const a = Math.floor((13 - (month + 1)) / 12);
+    const y = year + 4800 - a;
+    const mm = (month + 1) + 12 * a - 3;
+    return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4)
+      - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
   }
 
   /**
