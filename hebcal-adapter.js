@@ -35,11 +35,13 @@
   /**
    * Gregorian/astronomical year to Hebrew year (Nisan-based).
    * Nisan of Hebrew year H falls in spring of Gregorian year G ≈ H - 3760.
+   * G is an ASTRONOMICAL year (0 = 1 BC, -585 = 586 BC) — the same
+   * convention the tests and the lunar engine use — so the formula is
+   * continuous across the era boundary. (The old BC branch added 3761,
+   * which assumed negated no-year-zero BC input; it mapped every BC year
+   * one Hebrew year late — Av 9 of 585 BC instead of 586 BC.)
    */
   function gregorianYearToHebrew(gregYear) {
-    if (gregYear <= 0) {
-      return gregYear + 3761;
-    }
     return gregYear + 3760;
   }
 
