@@ -38,6 +38,29 @@ check('Julian 33-04-03 weekday', NAMES[eng.jdnToWeekday(eng.julianCalendarToJDN(
 // Julian April 28, 32 AD — the solar-eclipse Passover — was a Monday.
 check('Julian 32-04-28 weekday', NAMES[eng.jdnToWeekday(eng.julianCalendarToJDN(32, 3, 28))], 'Monday');
 
+console.log('— Author-ruled month anchors (2026-08-04) —');
+// 30 AD: conjunction Wed Mar 22 ~8pm Jerusalem local (computed: JD 1732096.23).
+// Conjunction AFTER sunset -> dark-moon Day 1 = Mar 23. Crescent (18h) is
+// first VISIBLE the dusk of Mar 23, and the sighting evening opens the day
+// whose daytime is Mar 24 -> crescent Day 1 = Mar 24. With the same rule,
+// 33 AD crescent Nisan 14 lands on Friday Apr 3 — the classical date.
+{
+  const cases = [
+    { phase: 'dark',     year: 30, month: 1, day: 1,  jdn: eng.julianCalendarToJDN(30, 2, 23), name: 'Julian 30-03-23' },
+    { phase: 'crescent', year: 30, month: 1, day: 1,  jdn: eng.julianCalendarToJDN(30, 2, 24), name: 'Julian 30-03-24' },
+    { phase: 'dark',     year: 30, month: 1, day: 14, jdn: eng.julianCalendarToJDN(30, 3, 5),  name: 'Julian 30-04-05' },
+    { phase: 'crescent', year: 30, month: 1, day: 14, jdn: eng.julianCalendarToJDN(30, 3, 6),  name: 'Julian 30-04-06' },
+    { phase: 'crescent', year: 33, month: 1, day: 14, jdn: eng.julianCalendarToJDN(33, 3, 3),  name: 'Julian 33-04-03 (classical Friday)' },
+  ];
+  for (const c of cases) {
+    const e = new LunarCalendarEngine(astro);
+    e.configure({ moonPhase: c.phase, dayStartTime: 'evening', dayStartAngle: 0, yearStartRule: '14daysBefore', crescentThreshold: 18 });
+    const cal = e.generateYear(c.year, { lat: 31.7683, lon: 35.2137 }, {});
+    const info = e.getDayInfo(cal, c.month, c.day);
+    check(`${c.phase} y${c.year} Nisan ${c.day} = ${c.name}`, info ? Math.round(info.jd) : null, c.jdn);
+  }
+}
+
 console.log('— Engine end-to-end: date label and weekday must name the SAME day —');
 // For every profile family and era, the reported weekday must equal the weekday
 // of the reported date-label (read in the label's own calendar).

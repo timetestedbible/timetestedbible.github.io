@@ -518,9 +518,29 @@ class LunarCalendarEngine {
   calculateMonthStart(moonEvent, location) {
     const localDate = this.getLocalDate(moonEvent, location.lon);
     const monthStart = new Date(localDate.getTime());
-    
-    // Use the same day boundary as getDayStartTime (respects dayStartAngle)
-    // so month start is consistent with when each day begins.
+
+    if (this.config.moonPhase === 'crescent') {
+      // The crescent event (conjunction + threshold) marks when the moon
+      // becomes old enough to see — but a crescent is only ever SEEN at
+      // dusk. Day 1 is the day the sighting evening opens: find the first
+      // sunset at/after the event; that sunset begins Day 1, whose daytime
+      // is the civil day AFTER it. (Author ruling 2026-08-04, 30 AD:
+      // conjunction Wed Mar 22 ~8pm local -> crescent visible the evening
+      // of Mar 23 -> Mar 24 is Day 1. The old rule started the month with
+      // the day CONTAINING the event, calling Mar 23 Day 1 — a day on
+      // which no crescent had yet been seen.)
+      const sunsetTs = this.getSunsetTime(localDate, location);
+      if (sunsetTs == null || moonEvent.getTime() > sunsetTs) {
+        // Not old enough by this dusk - first sighting is the next dusk
+        monthStart.setUTCDate(monthStart.getUTCDate() + 1);
+      }
+      // The sighting dusk opens the day whose daytime follows it
+      monthStart.setUTCDate(monthStart.getUTCDate() + 1);
+      return monthStart;
+    }
+
+    // Dark/full moon: Day 1 is the lunar day CONTAINING the event, bounded
+    // by the profile's own day-start (sunset or sunrise per config).
     const dayStartTs = this.getDayStartTime(localDate, location);
     if (dayStartTs != null) {
       if (moonEvent.getTime() > dayStartTs) {
@@ -533,6 +553,22 @@ class LunarCalendarEngine {
     }
     
     return monthStart;
+  }
+
+  /**
+   * True sunset (sun at horizon) for a local civil date — config-independent.
+   * Crescent visibility is tied to dusk regardless of when the profile
+   * starts its day.
+   * @param {Date} date
+   * @param {Object} location - { lat, lon }
+   * @returns {number|null} UTC timestamp of that civil day's sunset
+   */
+  getSunsetTime(date, location) {
+    const observer = this.astro.createObserver(location.lat, location.lon, 0);
+    const noon = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 12, 0, 0));
+    noon.setUTCFullYear(date.getUTCFullYear());
+    const result = this.astro.searchRiseSet('sun', observer, -1, noon, 1);
+    return result ? result.date.getTime() : null;
   }
 
   /**
