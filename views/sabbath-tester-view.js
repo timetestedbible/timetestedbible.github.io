@@ -112,7 +112,7 @@ const SabbathTesterView = {
   // every Jekyll rebuild (every deploy, and every file save under local
   // `jekyll serve --watch`), which busted the cache constantly. Any change
   // to tests or profiles re-fingerprints automatically; pure engine-algorithm
-  // changes need a manual bump of the 'v4' prefix.
+  // changes need a manual bump of the 'v5' prefix.
   _cv: null,
   _cacheVersionGet() {
     if (this._cv) return this._cv;
@@ -155,6 +155,7 @@ const SabbathTesterView = {
           <div id="sabbath-tester-configs-container"></div>
           <div id="sabbath-tester-loading" class="sabbath-test-loading">
             <div id="sabbath-progress-text">Loading tests...</div>
+            <div class="sabbath-engine-build" style="font-size:11px;color:var(--text-secondary);margin-top:4px;">engine build: JDN-v5 (weekday = JD mod 7)</div>
             <div class="sabbath-progress-bar" id="sabbath-progress-bar" style="display:none">
               <div class="sabbath-progress-fill" id="sabbath-progress-fill"></div>
             </div>

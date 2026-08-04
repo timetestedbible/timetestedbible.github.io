@@ -72,6 +72,25 @@
     return { year, month, day };
   }
 
+
+  // Convert a physical (proleptic-Gregorian) Date to the display convention the
+  // engine uses: Julian-calendar labels before Oct 15, 1582. Pure JDN math.
+  function toDisplayDate(gregDate) {
+    const y = gregDate.getUTCFullYear(), mo = gregDate.getUTCMonth() + 1, d = gregDate.getUTCDate();
+    // Gregorian civil date -> JDN
+    const a = Math.floor((14 - mo) / 12), yy = y + 4800 - a, mm = mo + 12 * a - 3;
+    const jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
+    if (jdn >= 2299161) return gregDate; // on/after Oct 15 1582: Gregorian labels
+    // JDN -> Julian-calendar civil date
+    const B = jdn + 1524, C = Math.floor((B - 122.1) / 365.25), D = Math.floor(365.25 * C), E = Math.floor((B - D) / 30.6001);
+    const day = B - D - Math.floor(30.6001 * E);
+    const month = E < 14 ? E - 1 : E - 13;
+    const year = month > 2 ? C - 4716 : C - 4715;
+    const out = new Date(Date.UTC(2000, month - 1, day));
+    out.setUTCFullYear(year);
+    return out;
+  }
+
   function HebcalCalendarAdapter() {
     this.config = {
       moonPhase: 'dark',
@@ -122,8 +141,11 @@
         const rd = hd.abs();
         const jd = rdToJd(rd);
         // Build Date from JD so year is correct for 1-99 AD (hd.greg() uses JS Date which treats year 33 as 1933)
-        const gregorianDate = new Date((jd - 2440587.5) * 86400000);
-        const weekday = hd.getDay();
+        // Label ancient dates in the JULIAN calendar (same convention as the
+        // lunar engine's display dates), and take the weekday from the JD by
+        // pure mod-7 — one law for the whole tester, no Date converters.
+        const gregorianDate = toDisplayDate(new Date((jd - 2440587.5) * 86400000));
+        const weekday = ((Math.round(jd) + 1) % 7 + 7) % 7;
         const weekdayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
         days.push({
