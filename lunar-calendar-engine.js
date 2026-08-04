@@ -680,9 +680,15 @@ class LunarCalendarEngine {
           dayStartJD = approxDayJD;
         }
         
-        // Convert JD to the appropriate calendar (Julian for ancient, Gregorian for modern)
-        // This ensures ancient dates display correctly
-        const dayDate = this.jdToDate(dayStartJD);
+        // Derive the day's civil identity from ONE source of truth: the JDN of
+        // its DAYTIME portion. JD is a pure day count (no calendar labels to
+        // misread); day-start is sunset (previous evening, JD fraction past
+        // noon) or sunrise/dawn (JD fraction before noon), so in both modes
+        // floor(dayStartJD) + 1 is the JDN of the daytime this lunar day names.
+        // Date label AND weekday both come from this JDN, so they can never
+        // refer to different physical days.
+        const dayJDN = Math.floor(dayStartJD) + 1;
+        const dayDate = this.jdToDate(dayJDN);
         
         // Determine if this specific day is uncertain
         // Day 30 with '+' direction is impossible (can't add days past 30)
@@ -696,17 +702,11 @@ class LunarCalendarEngine {
           }
         }
         
-        // Calculate weekday from the calendar date, not the day-start JD.
-        // dayStartJD can be before noon for morning mode (sunrise), and since
-        // JD epoch is at noon, Math.floor(dayStartJD) would give JDN-1, shifting
-        // the weekday off by one day. tempDate has the correct calendar date.
-        //
-        // tempDate is a real JS Date (proleptic-Gregorian labels), so its UTC
-        // weekday IS the physical weekday. Do NOT pass it through getWeekday():
-        // that helper expects Julian-calendar labels for pre-1582 dates and
-        // would shift the weekday by the era's Julian/Gregorian offset
-        // (2 days in the 1st century, era-dependent elsewhere).
-        const weekday = tempDate.getUTCDay();
+        // Weekday by pure modular arithmetic on the day count — no Date
+        // converters, no calendar conventions: (JDN + 1) mod 7 anchored on the
+        // known fact JDN 0 = Monday. Same JDN as the date label above, so the
+        // displayed date and weekday are guaranteed to agree.
+        const weekday = this.jdnToWeekday(dayJDN);
         const weekdayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         
         days.push({
@@ -860,6 +860,10 @@ class LunarCalendarEngine {
 
   /**
    * Get correct weekday for a date (handles Julian calendar for ancient dates)
+   * WARNING: for pre-1582 dates this interprets the Date's Y/M/D fields as a
+   * JULIAN-calendar label (jdToDate output). Passing a native JS Date (whose
+   * fields are proleptic-Gregorian) shifts the result by the era's calendar
+   * offset. Prefer jdnToWeekday(JDN) wherever a JD is available.
    * @param {Date} date 
    * @returns {number} 0 = Sunday, 6 = Saturday
    */
