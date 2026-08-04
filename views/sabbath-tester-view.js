@@ -172,6 +172,8 @@ const SabbathTesterView = {
     
     // Start rendering tests (async — yields between computations)
     this._isRendering = true;
+    console.log('[SabbathTester] view build: JDN-v6 | cache version:', this._cacheVersionGet(),
+      '| engine has jdnToWeekday:', typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function');
     this.renderTests(container);
   },
   
@@ -514,10 +516,16 @@ const SabbathTesterView = {
   runBiblicalTest(test, profile) {
     const cached = this.getCachedResult(test.id, profile.id);
     if (cached !== null) {
+      console.log('[SabbathTester] CACHE HIT', test.id, profile.id, '| stored jd:', cached.jd,
+        '| stored weekday:', cached.calculatedWeekdayName, '| stored date:', cached.gregorianDate);
       return cached;
     }
     try {
       const testResult = this._computeTest(test, profile);
+      console.log('[SabbathTester] FRESH COMPUTE', test.id, profile.id, '| jd:', testResult.jd,
+        '| engine weekday:', testResult.calculatedWeekdayName,
+        '| engine date:', testResult.gregorianDate && testResult.gregorianDate.toISOString ? testResult.gregorianDate.toISOString().slice(0,10) : testResult.gregorianDate,
+        '| result:', testResult.result);
       if (testResult && testResult.result === 'fail' && Array.isArray(test.alternateYears)) {
         testResult.alternateYears = test.alternateYears.map((y) => {
           const label = y <= 0 ? `${1 - y} BC` : `${y} AD`;
@@ -937,6 +945,9 @@ const SabbathTesterView = {
       
       // One source of truth per row: derive date, weekday, and JD from r.jd.
       const ident = this.jdRowIdentity(r.jd);
+      console.log('[SabbathTester] RENDER', test.id, r.profile && r.profile.id, '| raw jd:', r.jd,
+        '| derived:', ident ? (ident.dateStr + ' / ' + ident.weekdayName + ' / JDN ' + ident.jdn) : 'null',
+        '| legacy fields (ignored):', (r.gregorianDate || 'n/a') + ' / ' + (r.calculatedWeekdayName || 'n/a'));
       const isLunarMode = r.profile && r.profile.sabbathMode === 'lunar';
       const dateStr = ident ? ident.dateStr : (r.gregorianDate ? this.formatAncientDate(r.gregorianDate, false) : 'N/A');
       const weekdayFull = isLunarMode ? (r.displayWeekday || 'N/A') : (ident ? ident.weekdayName : (r.calculatedWeekdayName || 'N/A'));
