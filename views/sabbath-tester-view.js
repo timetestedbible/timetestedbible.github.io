@@ -176,6 +176,8 @@ const SabbathTesterView = {
       configContainer.innerHTML = this.buildConfigurationsSectionHTML();
     }
     
+    this._ensureTipHandlers();
+
     // Start rendering tests (async — yields between computations)
     this._isRendering = true;
     console.log('[SabbathTester] view build: JDN-v10 | engine has jdnToWeekday:',
@@ -230,7 +232,7 @@ const SabbathTesterView = {
       const sabbath = sabbathLabels[p.sabbathMode] || p.sabbathMode;
       html += `
         <div class="config-card" data-profile="${p.id}">
-          <div class="config-card-header">${p.name}</div>
+          <div class="config-card-header">${this.profileTipSpan(p)}</div>
           <ul class="config-card-details">
             <li><strong>Month:</strong> ${moon}</li>
             <li><strong>Day start:</strong> ${dayStart}</li>
@@ -250,6 +252,78 @@ const SabbathTesterView = {
   /**
    * Get test profiles from the built-in app profiles
    */
+  /**
+   * One-glance definition of a profile, composed from its actual config so
+   * the text can never drift from what the engine computes.
+   */
+  profileTipText(p) {
+    if (p.calendarBackend === 'hebcal') {
+      return 'The fixed calculated rabbinic calendar (Hillel II molad arithmetic, via Hebcal) projected back in time — arithmetic, not observation. Fixed Saturday sabbath.';
+    }
+    const NOTES = {
+      timeTested: "The book's reconstruction.",
+      ancientTraditional: 'The classical reconstruction behind Friday-crucifixion dating.',
+      traditionalSaturday: 'Same as Ancient Traditional except the year rule: waits for the first month AFTER the equinox.',
+      traditionalLunar: 'Crescent months with the sabbath counted from the month, not a fixed weekday.'
+    };
+    const moon = { full: 'Months begin at the full moon', dark: 'Months begin at the dark moon (conjunction)', crescent: 'Months begin at the first visible crescent' }[p.moonPhase] || '';
+    const day = p.dayStartTime === 'evening'
+      ? (p.dayStartAngle ? 'days begin at dusk (sun ' + p.dayStartAngle + '\u00B0 below horizon)' : 'days begin at sunset')
+      : (p.dayStartAngle ? 'days begin at dawn (sun ' + p.dayStartAngle + '\u00B0 below horizon)' : 'days begin at sunrise');
+    const year = {
+      equinox: 'year starts with the first month after the spring equinox',
+      '1dayBefore': 'year anchored to the equinox (month may begin one day before it)',
+      '14daysBefore': 'year chosen so Passover falls on or after the equinox',
+      virgoFeet: "year begins with the moon under Virgo's feet"
+    }[p.yearStartRule] || '';
+    const sab = p.sabbathMode === 'lunar' ? 'sabbath on lunar days 8/15/22/29' : 'fixed Saturday sabbath';
+    const note = NOTES[p.id] ? NOTES[p.id] + ' ' : '';
+    return note + moon + '; ' + day + '; ' + year + '; ' + sab + '.';
+  },
+
+  /** Profile name wrapped for the shared tooltip (hover or tap). */
+  profileTipSpan(p, label) {
+    const tip = this.profileTipText(p).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+    return '<span class="profile-tip" data-tip="' + tip + '">' + (label || p.name) + '</span>';
+  },
+
+  /** Shared floating tooltip: hover on desktop, tap to toggle on mobile. */
+  _ensureTipHandlers() {
+    if (this._tipHandlersInstalled) return;
+    this._tipHandlersInstalled = true;
+    const pop = document.createElement('div');
+    pop.id = 'profile-tip-pop';
+    pop.style.display = 'none';
+    document.body.appendChild(pop);
+    let sticky = null;
+    const show = (el) => {
+      pop.textContent = el.getAttribute('data-tip') || '';
+      pop.style.display = 'block';
+      const r = el.getBoundingClientRect();
+      pop.style.left = Math.max(8, Math.min(r.left, window.innerWidth - pop.offsetWidth - 8)) + 'px';
+      const below = r.bottom + 8;
+      const top = (below + pop.offsetHeight > window.innerHeight - 8) ? (r.top - pop.offsetHeight - 8) : below;
+      pop.style.top = Math.max(8, top) + 'px';
+    };
+    const hide = () => { pop.style.display = 'none'; sticky = null; };
+    document.addEventListener('mouseover', (e) => {
+      const el = e.target.closest && e.target.closest('.profile-tip');
+      if (el) show(el); else if (!sticky) hide();
+    });
+    // Capture phase + stopPropagation so a tap on the name doesn't also
+    // trigger row handlers (scoreboard rows toggle on click).
+    document.addEventListener('click', (e) => {
+      const el = e.target.closest && e.target.closest('.profile-tip');
+      if (el) {
+        e.stopPropagation();
+        if (sticky === el) hide(); else { sticky = el; show(el); }
+      } else {
+        hide();
+      }
+    }, true);
+    window.addEventListener('scroll', hide, true);
+  },
+
   getSabbathTestProfiles() {
     const allProfiles = window.PROFILES || {};
     const profiles = [];
@@ -827,7 +901,7 @@ const SabbathTesterView = {
       
       html += `
         <tr class="scoreboard-expandable" onclick="SabbathTesterView.toggleScoreboardRow('${rowId}')">
-          <td><span class="expand-arrow">▶</span> ${score.profile.name}</td>
+          <td><span class="expand-arrow">▶</span> ${this.profileTipSpan(score.profile)}</td>
           <td class="${scoreClass}">${pct}%</td>
         </tr>
         <tr class="scoreboard-details" id="${rowId}" style="display: none;">
@@ -1079,7 +1153,7 @@ const SabbathTesterView = {
       
       html += `
         <tr>
-          <td data-label="Profile" class="profile-cell">${profileName}</td>
+          <td data-label="Profile" class="profile-cell">${this.profileTipSpan(r.profile, profileName)}</td>
           <td data-label="Date" class="date-cell-full">${dateLink}</td>
           <td data-label="Date" class="date-cell-compact">${dateLinkCompact}</td>
           <td data-label="Day" class="weekday-cell-full">${weekdayFull}</td>
