@@ -125,7 +125,7 @@ const SabbathTesterView = {
       for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) >>> 0;
       return h.toString(36);
     };
-    let fp = 'v8';
+    let fp = 'v9';
     try {
       const eng = (typeof getAstroEngine === 'function') ? getAstroEngine() : null;
       fp += ':' + (eng && eng.name ? djb2(String(eng.name) + '|' + String(eng.version || '')) : 'noeng');
@@ -161,7 +161,7 @@ const SabbathTesterView = {
           <div id="sabbath-tester-configs-container"></div>
           <div id="sabbath-tester-loading" class="sabbath-test-loading">
             <div id="sabbath-progress-text">Loading tests...</div>
-            <div class="sabbath-engine-build" id="sabbath-diagnostic" style="font-size:11px;color:var(--text-secondary);margin-top:4px;white-space:pre-wrap;font-family:monospace;">engine build: JDN-v8 — collecting diagnostics…</div>
+            <div class="sabbath-engine-build" id="sabbath-diagnostic" style="font-size:11px;color:var(--text-secondary);margin-top:4px;white-space:pre-wrap;font-family:monospace;">engine build: JDN-v9 — collecting diagnostics…</div>
             <div class="sabbath-progress-bar" id="sabbath-progress-bar" style="display:none">
               <div class="sabbath-progress-fill" id="sabbath-progress-fill"></div>
             </div>
@@ -178,7 +178,7 @@ const SabbathTesterView = {
     
     // Start rendering tests (async — yields between computations)
     this._isRendering = true;
-    console.log('[SabbathTester] view build: JDN-v8 | engine has jdnToWeekday:',
+    console.log('[SabbathTester] view build: JDN-v9 | engine has jdnToWeekday:',
       typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function');
     this.renderTests(container);
   },
@@ -669,7 +669,7 @@ const SabbathTesterView = {
       if (diag) {
         const t30 = allResults.find(x => x.test.id === 'passover-30ad');
         const lines = [
-          'engine build: JDN-v8 | cache: ' + cacheHits + ' hits / ' + cacheMisses + ' fresh | seed: ' + this._cacheVersionGet().slice(0, 24),
+          'engine build: JDN-v9 | cache: ' + cacheHits + ' hits / ' + cacheMisses + ' fresh | seed: ' + this._cacheVersionGet().slice(0, 24),
           'astro engine: ' + engineDesc,
           'engine.jdnToWeekday loaded: ' + (typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function')
         ];

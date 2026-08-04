@@ -162,116 +162,22 @@ AstroEngines.swissEphemeris = {
     return this._loadPromise;
   },
   
-  // Julian Day conversion helpers
+  // JD <-> Date conversion is PURE INSTANT ARITHMETIC (Unix epoch = JD
+  // 2440587.5). A JS Date is a physical timestamp; JD is a physical day
+  // count — no calendar enters into it. The previous label-based converters
+  // (Julian-calendar labels before 1582) round-tripped with each other but
+  // shifted every returned instant by the era's Julian-Gregorian offset
+  // (+2 days in the 1st century), so Swiss moon events and equinoxes
+  // disagreed with the true-instant sunsets they were compared against.
+  // Calendar labels are DISPLAY concerns: LunarCalendarEngine.jdToDisplayDate.
   _dateToJD(date) {
-    const y = date.getUTCFullYear();
-    const m = date.getUTCMonth() + 1;
-    const d = date.getUTCDate();
-    const h = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
-    
-    const a = Math.floor((14 - m) / 12);
-    const yy = y + 4800 - a;
-    const mm = m + 12 * a - 3;
-    
-    // Julian calendar for dates before Oct 15, 1582
-    // Gregorian calendar for dates on or after Oct 15, 1582
-    let jdn;
-    if (y < 1582 || (y === 1582 && (m < 10 || (m === 10 && d < 15)))) {
-      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - 32083;
-    } else {
-      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
-    }
-    return jdn + (h - 12) / 24;
+    return date.getTime() / 86400000 + 2440587.5;
   },
-  
+
   _jdToDate(jd) {
-    // Helper to create Date with proper year handling (including negative years)
-    const createDate = (year, month, day, h, min, sec) => {
-      // JavaScript Date.UTC interprets years 0-99 as 1900-1999
-      // We need to use setUTCFullYear for ancient dates
-      const date = new Date(Date.UTC(2000, month - 1, day, h, min, sec));
-      date.setUTCFullYear(year);
-      return date;
-    };
-    
-    // For dates before the Gregorian reform (JD < 2299161), always use the manual
-    // Julian calendar algorithm. The WASM library's julianDayToDate returns proleptic
-    // Gregorian dates, which causes a calendar mismatch with _dateToJD (which uses
-    // Julian for dates before 1582). This ensures consistent round-trip conversion.
-    const useManualAlgorithm = !this._swe || jd < 2299161;
-    
-    if (useManualAlgorithm) {
-      // Manual Julian Day to calendar date conversion
-      const z = Math.floor(jd + 0.5);
-      const f = jd + 0.5 - z;
-      let a = z;
-      if (z >= 2299161) {
-        const alpha = Math.floor((z - 1867216.25) / 36524.25);
-        a = z + 1 + alpha - Math.floor(alpha / 4);
-      }
-      const b = a + 1524;
-      const c = Math.floor((b - 122.1) / 365.25);
-      const d = Math.floor(365.25 * c);
-      const e = Math.floor((b - d) / 30.6001);
-      
-      const day = b - d - Math.floor(30.6001 * e);
-      const month = e < 14 ? e - 1 : e - 13;
-      const year = month > 2 ? c - 4716 : c - 4715;
-      
-      const hours = f * 24;
-      const h = Math.floor(hours);
-      const minutes = (hours - h) * 60;
-      const min = Math.floor(minutes);
-      const sec = Math.floor((minutes - min) * 60);
-      
-      return createDate(year, month, day, h, min, sec);
-    }
-    
-    // Use library's conversion for modern dates (Gregorian era)
-    try {
-      const cal = this._swe.julianDayToDate(jd);
-      // The library might return hours as a decimal or separate hour/minute/second fields
-      let h = 0, min = 0, sec = 0;
-      if (typeof cal.hours === 'number') {
-        h = Math.floor(cal.hours);
-        min = Math.floor((cal.hours % 1) * 60);
-        sec = Math.floor(((cal.hours % 1) * 60 % 1) * 60);
-      } else if (typeof cal.hour === 'number') {
-        h = cal.hour;
-        min = cal.minute || 0;
-        sec = Math.floor(cal.second || 0);
-      }
-      
-      return createDate(cal.year, cal.month, cal.day, h, min, sec);
-    } catch (err) {
-      console.warn('Swiss Ephemeris julianDayToDate failed, using manual conversion:', err);
-      // Fall through to manual calculation
-      const z = Math.floor(jd + 0.5);
-      const f = jd + 0.5 - z;
-      let a = z;
-      if (z >= 2299161) {
-        const alpha = Math.floor((z - 1867216.25) / 36524.25);
-        a = z + 1 + alpha - Math.floor(alpha / 4);
-      }
-      const b = a + 1524;
-      const c = Math.floor((b - 122.1) / 365.25);
-      const d = Math.floor(365.25 * c);
-      const e = Math.floor((b - d) / 30.6001);
-      
-      const day = b - d - Math.floor(30.6001 * e);
-      const month = e < 14 ? e - 1 : e - 13;
-      const year = month > 2 ? c - 4716 : c - 4715;
-      
-      const hours = f * 24;
-      const hh = Math.floor(hours);
-      const minutes = (hours - hh) * 60;
-      const mm = Math.floor(minutes);
-      const ss = Math.floor((minutes - mm) * 60);
-      
-      return createDate(year, month, day, hh, mm, ss);
-    }
+    return new Date((jd - 2440587.5) * 86400000);
   },
-  
+
   // Get Moon-Sun elongation for phase calculations
   _getMoonSunElongation(jd) {
     if (!this._swe || !this._module) return null;
@@ -537,62 +443,22 @@ AstroEngines.nasaEclipse = {
     return this._loadPromise;
   },
   
-  // Julian Day conversion (handles both Julian and Gregorian calendars)
+  // JD <-> Date conversion is PURE INSTANT ARITHMETIC (Unix epoch = JD
+  // 2440587.5). A JS Date is a physical timestamp; JD is a physical day
+  // count — no calendar enters into it. The previous label-based converters
+  // (Julian-calendar labels before 1582) round-tripped with each other but
+  // shifted every returned instant by the era's Julian-Gregorian offset
+  // (+2 days in the 1st century), so Swiss moon events and equinoxes
+  // disagreed with the true-instant sunsets they were compared against.
+  // Calendar labels are DISPLAY concerns: LunarCalendarEngine.jdToDisplayDate.
   _dateToJD(date) {
-    const y = date.getUTCFullYear();
-    const m = date.getUTCMonth() + 1;
-    const d = date.getUTCDate();
-    const h = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
-    
-    const a = Math.floor((14 - m) / 12);
-    const yy = y + 4800 - a;
-    const mm = m + 12 * a - 3;
-    
-    // Julian calendar for dates before Oct 15, 1582
-    // Gregorian calendar for dates on or after Oct 15, 1582
-    let jdn;
-    if (y < 1582 || (y === 1582 && (m < 10 || (m === 10 && d < 15)))) {
-      // Julian calendar
-      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - 32083;
-    } else {
-      // Gregorian calendar
-      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
-    }
-    return jdn + (h - 12) / 24;
+    return date.getTime() / 86400000 + 2440587.5;
   },
-  
+
   _jdToDate(jd) {
-    const createDate = (year, month, day, h, min, sec) => {
-      const date = new Date(Date.UTC(2000, month - 1, day, h, min, sec));
-      date.setUTCFullYear(year);
-      return date;
-    };
-    
-    const z = Math.floor(jd + 0.5);
-    const f = jd + 0.5 - z;
-    let a = z;
-    if (z >= 2299161) {
-      const alpha = Math.floor((z - 1867216.25) / 36524.25);
-      a = z + 1 + alpha - Math.floor(alpha / 4);
-    }
-    const b = a + 1524;
-    const c = Math.floor((b - 122.1) / 365.25);
-    const d = Math.floor(365.25 * c);
-    const e = Math.floor((b - d) / 30.6001);
-    
-    const day = b - d - Math.floor(30.6001 * e);
-    const month = e < 14 ? e - 1 : e - 13;
-    const year = month > 2 ? c - 4716 : c - 4715;
-    
-    const hours = f * 24;
-    const hh = Math.floor(hours);
-    const minutes = (hours - hh) * 60;
-    const mm = Math.floor(minutes);
-    const ss = Math.floor((minutes - mm) * 60);
-    
-    return createDate(year, month, day, hh, mm, ss);
+    return new Date((jd - 2440587.5) * 86400000);
   },
-  
+
   // Find eclipse of given type before or after a JD
   _findEclipse(targetJD, type, direction) {
     if (!this._eclipses) return null;
