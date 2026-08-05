@@ -815,14 +815,16 @@ function getVirgoMethodologyHtml(options = {}) {
         
         <p><strong>Biblical Basis</strong></p>
         <blockquote>"And there appeared a great wonder in heaven; a woman clothed with the sun, and the moon under her feet..."<br>— Revelation 12:1</blockquote>
+        <blockquote>"And there was seen a great sign in the heavens: a certain woman clothed in the sun, and the moon under her feet; and from her head begins the cycle, the first of the twelve stars."<br>— Revelation 12:1, Hebrew text</blockquote>
+        <p>The Hebrew text ranks the woman herself: <em>echad</em> stands twice in the sentence — once counting her, once ranking her <em>first of the twelve</em>. Of the twelve figures of the Mazzaroth exactly one is a woman — Virgo — and the year's circuit begins at her head, the full moon standing at her feet marking the head of the year. The full case is set out in <a href="/books/meat-bibles-symbolic-language/sun-moon-and-stars/" style="color: var(--accent-primary);">📖 MEAT ch. 29 — Sun, Moon, and Stars</a>.</p>
         
         <p><strong>Sources</strong></p>
-        <p>Taught by <a href="https://thecreatorscalendar.com" target="_blank" style="color: var(--accent-primary);">TheCreatorsCalendar.com</a> and <a href="https://www.youtube.com/@MikalShabbat" target="_blank" style="color: var(--accent-primary);">Mikal Shabbat Scriptural Studies</a>.</p>
+        <p>Taught by <a href="https://thecreatorscalendar.com" target="_blank" style="color: var(--accent-primary);">TheCreatorsCalendar.com</a> and <a href="https://www.youtube.com/@MikalShabbat" target="_blank" style="color: var(--accent-primary);">Mikal Shabbat Scriptural Studies</a>; adopted, with first-light day boundaries, as the reckoning of <em>Time Tested Tradition</em>, 2nd edition.</p>
       </div></details>
     
     <div class="settings-warning" style="margin-top: 12px; padding: 10px; background: var(--color-warning-muted); border: 1px solid var(--color-warning-muted); border-radius: 6px;">
-      <p style="margin: 0; color: var(--accent-gold);"><strong>⚠️ Precession Warning</strong></p>
-      <p style="margin: 8px 0 0 0; color: var(--text-primary);">Spica's position is adjusted for precession (~1° per 72 years). In ancient/future dates, the Virgo alignment may occur earlier or later in spring, potentially affecting barley ripeness for Wave Sheaf (Day 16).</p>
+      <p style="margin: 0; color: var(--accent-gold);"><strong>🔭 Precession Note</strong></p>
+      <p style="margin: 8px 0 0 0; color: var(--text-primary);">Spica's position is precession-adjusted (~1° per 72 years), so the rule is computed against the epoch-correct sky for any year. The sign anchors the year to the constellations rather than to the equinox alone, so across long spans its month drifts slowly against the solar seasons (~1 day per 72 years) and can differ from equinox-rule months in a given year — the sign, not the equinox, is what this rule reads.</p>
     </div>`;
   
   return html;

@@ -2504,7 +2504,7 @@ const CalendarView = {
           <summary class="settings-details-toggle">📚 Understanding Year Start Rules</summary>
           <div class="settings-details-content">
             <h4>Renewed Moon after Equinox</h4>
-            <p>The most common interpretation: the new year begins with the first lunar month (full/new moon) that occurs after the spring equinox. This ensures the year always starts in spring.</p>
+            <p>The simplest rule: the new year begins with the first lunar month (full/new moon) that occurs after the spring equinox, so the year always starts in spring.</p>
             
             <h4>Equinox −1 day</h4>
             <p>First new moon on or after the day before the equinox. So if the equinox falls after sunset (on “the next day” in evening reckoning), the conjunction that occurred earlier that same calendar day still counts—no postponement. Matches 119 Ministries’ interpretation for 30 AD (14th = Wednesday April 5).</p>
@@ -2513,7 +2513,7 @@ const CalendarView = {
             <p>Based on the requirement that Passover (Day 14-15) must occur on or after the spring equinox. This can result in a month starting up to 13 days before the equinox.</p>
             
             <h4>Moon Under Virgo's Feet (Rev 12:1)</h4>
-            <p>Based on Revelation 12:1 describing "a woman clothed with the sun, with the moon under her feet." This astronomical sign occurs when the full moon appears below the star Spica in Virgo near the spring equinox.</p>
+            <p>Revelation 12:1 describes "a woman clothed with the sun, and the moon under her feet" — and the Hebrew text adds the ranking: "from her head begins the cycle, the <em>first of the twelve</em>." Virgo is the first of the twelve constellations, and the year begins with the full moon standing under her feet near the spring equinox. This is the reckoning of <em>Time Tested Tradition</em>, 2nd edition — the full case is in <a href="/books/meat-bibles-symbolic-language/sun-moon-and-stars/">MEAT ch. 29, Sun, Moon, and Stars</a>.</p>
           </div>
         </details>
         <div class="yearstart-hebcal-doc" style="display: none;">

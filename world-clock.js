@@ -228,8 +228,8 @@ function getDefaultWorldClockEntries() {
   if (savedLoc) {
     const savedSlug = getClosestCitySlug(savedLoc.lat, savedLoc.lon, Infinity) || 'jerusalem';
     const savedName = savedLoc.city || formatCitySlug(savedSlug);
-    // Add Time-Tested at user's location first
-    addEntry('timeTested', savedSlug, savedName);
+    // Add the site-default profile at user's location first
+    addEntry('timeTested2', savedSlug, savedName);
   }
   
   // All presets in Jerusalem

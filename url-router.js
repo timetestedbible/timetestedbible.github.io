@@ -301,7 +301,7 @@ const URLRouter = {
     const parts = pathname.split('/').filter(Boolean);
     
     // Get saved profile preference (default to timeTested)
-    let defaultProfileId = 'timeTested';
+    let defaultProfileId = 'timeTested2';
     try {
       const savedProfile = localStorage.getItem('defaultCalendarProfile');
       if (savedProfile && window.PROFILES?.[savedProfile]) {
@@ -1293,6 +1293,8 @@ const URLRouter = {
     const mapping = {
       'time-tested': 'timeTested',
       'timetested': 'timeTested',
+      'time-tested-2': 'timeTested2',
+      'timetested2': 'timeTested2',
       'ancient': 'ancientTraditional',
       'ancient-traditional': 'ancientTraditional',
       '119': 'ministries119',
@@ -1313,6 +1315,7 @@ const URLRouter = {
     // Map profile IDs to URL slugs
     const mapping = {
       'timeTested': 'time-tested',
+      'timeTested2': 'time-tested-2',
       'ancientTraditional': 'ancient',
       'ministries119': '119-ministries',
       'ministries119Equinox': '119-equinox',

@@ -1118,7 +1118,7 @@ function showDayDetail(dayObj, month) {
       const appState = typeof AppStore !== 'undefined' ? AppStore.getState() : {};
       const currentLocSlug = (typeof URLRouter !== 'undefined' && URLRouter._getLocationSlug) 
         ? URLRouter._getLocationSlug(appState.context?.location || {}) : 'jerusalem';
-      const isCurrent = entry.profileId === (appState.context?.profileId || 'timeTested') && 
+      const isCurrent = entry.profileId === (appState.context?.profileId || 'timeTested2') && 
                         entry.locationSlug === currentLocSlug;
       
       // Get feast icons for this lunar day/month

@@ -277,7 +277,7 @@ const SabbathTesterView = {
       equinox: 'year starts with the first month after the spring equinox',
       '1dayBefore': 'year anchored to the equinox (month may begin one day before it)',
       '14daysBefore': 'year chosen so Passover falls on or after the equinox',
-      virgoFeet: "year begins with the moon under Virgo's feet"
+      virgoFeet: "year begins with the moon under Virgo's feet (Rev 12:1 Hebrew: Virgo is 'first of the twelve' constellations)"
     }[p.yearStartRule] || '';
     const sab = p.sabbathMode === 'lunar' ? 'sabbath on lunar days 8/15/22/29' : 'fixed Saturday sabbath';
     const note = NOTES[p.id] ? NOTES[p.id] + ' ' : '';

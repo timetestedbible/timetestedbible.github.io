@@ -1262,7 +1262,7 @@ function getTimelineProfile() {
   // Try AppStore first (preferred approach)
   if (typeof AppStore !== 'undefined') {
     const appState = AppStore.getState();
-    const profileId = appState.context?.profileId || 'timeTested';
+    const profileId = appState.context?.profileId || 'timeTested2';
     const profile = window.PROFILES?.[profileId] || {};
     
     // Return profile settings directly - event-resolver expects these field names
@@ -6432,7 +6432,7 @@ function subscribeToProfileChanges() {
   
   // Get initial profile hash
   const state = AppStore.getState();
-  const profileId = state.context?.profileId || 'timeTested';
+  const profileId = state.context?.profileId || 'timeTested2';
   const profiles = window.PROFILES || window.PRESET_PROFILES || {};
   const profile = profiles[profileId];
   if (profile) {
@@ -6443,7 +6443,7 @@ function subscribeToProfileChanges() {
   // Subscribe to state changes
   AppStore.subscribe((state, derived) => {
     // Get current profile
-    const profileId = state.context?.profileId || 'timeTested';
+    const profileId = state.context?.profileId || 'timeTested2';
     const profiles = window.PROFILES || window.PRESET_PROFILES || {};
     const profile = profiles[profileId];
     

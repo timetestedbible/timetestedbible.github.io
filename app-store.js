@@ -23,7 +23,7 @@ const AppStore = {
       selectedLunarDate: null,  // User-selected lunar date { year, month, day } - SOURCE OF TRUTH
       utcTime: { hours: 12, minutes: 0 },  // Time in UTC (internal representation)
       location: { lat: 31.7683, lon: 35.2137 },  // GPS coordinates (source of truth) - Default: Jerusalem
-      profileId: 'timeTested'   // Active profile ID
+      profileId: 'timeTested2'   // Active profile ID (site default: Time-Tested 2nd Ed)
     },
     
     // Content - which view is displayed
@@ -365,7 +365,7 @@ const AppStore = {
     let biblicalDay = day;
     
     // Get the current profile's day start setting
-    const profile = this._profiles[this._state.context.profileId] || this._profiles.timeTested || {};
+    const profile = this._profiles[this._state.context.profileId] || this._profiles.timeTested2 || this._profiles.timeTested || {};
     const dayStartTime = profile.dayStartTime || 'morning';
     
     // Use astronomy functions if available
@@ -1084,7 +1084,7 @@ const AppStore = {
       case 'SET_ASTRO_ENGINE':
         // Update astronomy engine after async load completes (only for lunar-backend profiles)
         if (event.payload) {
-          const profile = this._profiles[s.context.profileId] || this._profiles.timeTested || {};
+          const profile = this._profiles[s.context.profileId] || this._profiles.timeTested2 || this._profiles.timeTested || {};
           if (profile.calendarBackend !== 'hebcal') {
             _engine = new LunarCalendarEngine(event.payload);
             _engine.configure({
