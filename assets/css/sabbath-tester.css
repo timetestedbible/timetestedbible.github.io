@@ -859,10 +859,13 @@
   max-width: min(320px, 82vw);
   padding: 8px 11px;
   border-radius: 6px;
-  background: var(--bg-secondary, #1f1f1f);
-  color: var(--text-primary, #eee);
-  border: 1px solid var(--border-color, #555);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  /* Use tokens that exist in theme-tokens.css (both themes define them);
+     the previous names (--bg-secondary/--text-primary) don't exist here,
+     which rendered a black box with unreadable text on the light theme. */
+  background: var(--color-bg, #fff);
+  color: var(--color-text, #222);
+  border: 1px solid var(--color-border, #888);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   font-size: 0.85rem;
   font-weight: 400;
   line-height: 1.4;
