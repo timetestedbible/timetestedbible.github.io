@@ -294,6 +294,22 @@ const SYMBOL_DICTIONARY = {
     link: '/research/symbols/birth-pains/'
   },
 
+  'blind': {
+    key: 'blind',
+    name: 'BLIND',
+    recordType: 'symbol',
+    aliasOf: null,
+    words: ['blind', 'blindness', 'blinded', 'blindeth'],
+    strongs: ['H5787', 'H5786', 'H5788', 'H5575', 'G5185', 'G5186'],
+    meaning: 'The man whose lamp has gone dark — unable to find the way',
+    sentence: 'The man whose lamp has gone dark: the eye is the lamp of the body, the commandment is the lamp\'s light, and the blind man is the one who can no longer find the way. The condition is morally caused — bribes blind the wise, trusting sightless gods makes men like them, hatred blinds — and judicially sealed on the refuser ("shut their eyes; lest they see… and be healed"), which is why the covenant curse pairs it with groping at noonday. Its terminal case says "we see"; its healing belongs to the LORD alone — the sign by which the Messiah is known.',
+    opposite: null,
+    rank: 0,
+    category: 'Judgment & Consequence',
+    subcategory: null,
+    link: '/research/symbols/blind/'
+  },
+
   'blood': {
     key: 'blood',
     name: 'BLOOD',
