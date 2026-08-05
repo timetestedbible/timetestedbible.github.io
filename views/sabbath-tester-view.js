@@ -263,7 +263,8 @@ const SabbathTesterView = {
       return 'The fixed calculated rabbinic calendar (Hillel II molad arithmetic, via Hebcal) projected back in time — arithmetic, not observation. Fixed Saturday sabbath.';
     }
     const NOTES = {
-      timeTested: "The book's reconstruction.",
+      timeTested: "The book's 1st-edition reconstruction.",
+      timeTested2: "The book's 2nd-edition reconstruction: Creator's Calendar boundaries moved to first light/last light.",
       ancientTraditional: 'The classical reconstruction behind Friday-crucifixion dating.',
       traditionalSaturday: 'Same as Ancient Traditional except the year rule: waits for the first month AFTER the equinox.',
       traditionalLunar: 'Crescent months with the sabbath counted from the month, not a fixed weekday.'
