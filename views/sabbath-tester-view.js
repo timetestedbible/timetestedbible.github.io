@@ -67,13 +67,13 @@ const BIBLICAL_TESTS = [
   },
   {
     id: 'resurrection-33ad',
-    name: 'Resurrection of Jesus (33 AD)',
-    description: 'Alternative crucifixion year theory. The 16th of Nisan 33 AD must be the 1st day of the week — Sunday for Saturday-Sabbath calendars, and always true for Lunar Sabbath calendars.',
-    scripture: 'Matthew 28:1, 1 Corinthians 15:20',
+    name: 'Passover / Crucifixion (33 AD)',
+    description: 'Alternative crucifixion year theory — the classical "Good Friday, April 3, 33 AD." Jesus was crucified on Passover, the 14th of Nisan (John 19:14). For Jesus to rest in the tomb on the Sabbath (15th) and rise on the 1st day of the week (16th), the 14th must be the 6th day of the week — Friday for Saturday-Sabbath calendars, and always true for Lunar Sabbath calendars where the 14th is inherently the day before the 15th (Sabbath).',
+    scripture: 'John 19:14, Matthew 27:62, Mark 15:42',
     year: 33,  // 33 AD
     month: 1,  // First month (Nisan)
-    day: 16,   // First Fruits / Resurrection
-    expectedWeekPosition: 1,  // 1st day = day after Sabbath
+    day: 14,   // Passover / Crucifixion
+    expectedWeekPosition: 6,  // 6th day = day before Sabbath
     location: { lat: 31.7683, lon: 35.2137, name: 'Jerusalem' },
     excludeFromScore: true  // Alternative theory - don't include in main score
   },
@@ -870,7 +870,7 @@ const SabbathTesterView = {
           <p>Each profile carries two scores: <strong>BIBLE</strong> uses only biblical testimony; <strong>HISTORY</strong> is the combined score, adding the extra-biblical temple-fall witnesses (Talmud Ta\u02bcanit 29a). Hover or tap a column heading for details.</p>
           <div class="scoreboard-conclusion">
             <p><strong>Key Finding:</strong> The <span class="result-pass">Lunar Sabbath</span> is compatible with all scored tests. It is also compatible with Rabbinic tradition that both Temples fell "the day after the Sabbath" (Talmud Ta'anit 29a) and Josephus' record that Romans built siege ramps on the Sabbath when the 8th of Av fell on that day.</p>
-            <p>For <span class="result-uncertain">Saturday Sabbath</span> to be compatible, only one specific configuration works: <strong>33 AD crucifixion, Full Moon month start, Sunset day start, and Lamb (early) year start</strong>. This requires assuming 33 AD despite the chronological cautions noted below, and abandons the crescent moon tradition while adopting the full moon start.</p>
+            <p>For <span class="result-uncertain">Saturday Sabbath</span>, the strongest single result is the classical one: the crescent calendar with the Lamb year start places Passover on <strong>Friday, April 3, 33 AD</strong>. But that same configuration fails the Manna Sabbath, the Jordan-crossing First Fruits, and the 32 AD Resurrection tests — and no fixed-Saturday configuration passes those tests together under any year-start rule. The 33 AD Friday stands alone, and it carries the chronological cautions noted below.</p>
           </div>
         </div>
         <table class="sabbath-scoreboard-table">
@@ -1030,9 +1030,9 @@ const SabbathTesterView = {
         <div class="test-interpretation">
           <p><strong>Interpreting the Results Below:</strong></p>
           <ul>
-            <li><strong>Traditional April 3rd Friday</strong> — The popular "April 3, 33 AD" Friday crucifixion date relies on the crescent moon calendar with the Lamb (Passover after equinox) year start rule. However, this assumes the crescent sighting was delayed by one day when astronomical calculations show it would have been clearly visible the evening before.</li>
-            <li><strong>Other Passing Calendars Break Tradition</strong> — Any other calendar configuration that places the 16th on Sunday in 33 AD requires abandoning traditional assumptions: either using equinox-based year start instead of the Lamb rule, adopting full moon month starts instead of crescent, or starting the day at daybreak instead of sunset. Each of these deviates from the rabbinic traditions typically assumed by 33 AD proponents.</li>
-            <li><strong>Most Fail Other Biblical Tests</strong> — Expand the "Alt Score" column to see how each configuration performs on the other biblical tests. All but one configuration that passes 33 AD will fail the Manna Sabbath, Jordan Crossing, or 32 AD Resurrection tests. The only Saturday Sabbath configuration achieving 100% is Full Moon + Sunset + Lamb—which still requires accepting the chronological cautions above.</li>
+            <li><strong>Traditional April 3rd Friday</strong> — The popular "April 3, 33 AD" Friday crucifixion date emerges naturally: the crescent moon calendar with the Lamb (Passover after equinox) year start places Nisan 14 on Friday, April 3, 33 AD — the Ancient Traditional row above passes this test directly.</li>
+            <li><strong>Other Passing Calendars Break Tradition</strong> — Any other configuration that places the 14th on Friday in 33 AD abandons traditional assumptions: a different year-start rule, full moon month starts instead of crescent, or a daybreak day start instead of sunset — each a departure from the rabbinic traditions 33 AD proponents typically assume.</li>
+            <li><strong>Passing 33 AD Does Not Rescue the Rest</strong> — Expand the "Alt Score" column to see how each configuration performs on the other biblical tests. The crescent configuration that lands April 3 on Friday fails the Manna Sabbath, the Jordan-crossing First Fruits, and the 32 AD Resurrection tests — and no fixed-Saturday configuration passes those exodus-era tests under any year-start rule. The 33 AD Friday stands alone; it cannot carry a Saturday calendar across the rest of Scripture's witnesses.</li>
           </ul>
         </div>
       `;
