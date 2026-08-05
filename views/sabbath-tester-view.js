@@ -87,7 +87,8 @@ const BIBLICAL_TESTS = [
     day: 9,      // 9th of Av per Talmud
     expectedWeekPosition: 1,  // 1st day = day after Sabbath ("post-Shabbat")
     location: { lat: 31.7683, lon: 35.2137, name: 'Jerusalem' },
-    excludeFromScore: true  // Extra-biblical tradition test
+    excludeFromScore: true,  // Extra-biblical tradition test
+    extraBiblical: true  // counts in the HISTORY score, never the BIBLE score
   },
   {
     id: 'temple2-talmud',
@@ -99,7 +100,8 @@ const BIBLICAL_TESTS = [
     day: 9,      // 9th of Av per Talmud
     expectedWeekPosition: 1,  // 1st day = day after Sabbath ("post-Shabbat")
     location: { lat: 31.7683, lon: 35.2137, name: 'Jerusalem' },
-    excludeFromScore: true  // Extra-biblical tradition test
+    excludeFromScore: true,  // Extra-biblical tradition test
+    extraBiblical: true  // counts in the HISTORY score, never the BIBLE score
   }
 ];
 
@@ -770,7 +772,9 @@ const SabbathTesterView = {
           passed: 0,
           failed: 0,
           uncertain: 0,
-          totalScore: 0
+          totalScore: 0,
+          // HISTORY = BIBLE tests + extra-biblical witnesses (temple falls)
+          historyScore: 0
         };
         baseScoreWithout32AD[profile.id] = {
           totalScore: 0,
@@ -784,14 +788,17 @@ const SabbathTesterView = {
           const score = scoreboard[r.profile.id];
           const baseScore = baseScoreWithout32AD[r.profile.id];
           const countsForScore = !test.excludeFromScore;
+          // HISTORY: every BIBLE test plus the extra-biblical temple witnesses
+          const countsForHistory = countsForScore || test.extraBiblical === true;
           const countsForBaseScore = !test.excludeFromScore && test.id !== 'resurrection-32ad';
           
-          if (countsForScore) {
+          if (countsForScore || test.extraBiblical) {
             testResultsByProfile[r.profile.id].push({
               testName: test.name,
               testId: test.id,
               result: r.result,
-              probability: r.probability
+              probability: r.probability,
+              extraBiblical: test.extraBiblical === true
             });
           }
           
@@ -800,6 +807,7 @@ const SabbathTesterView = {
               score.passed++;
               score.totalScore += 1;
             }
+            if (countsForHistory) score.historyScore += 1;
             if (countsForBaseScore) {
               baseScore.totalScore += 1;
               baseScore.testResults.push({ testName: test.name, testId: test.id, result: 'pass' });
@@ -809,6 +817,7 @@ const SabbathTesterView = {
               score.uncertain++;
               score.totalScore += (r.probability || 50) / 100;
             }
+            if (countsForHistory) score.historyScore += (r.probability || 50) / 100;
             if (countsForBaseScore) {
               baseScore.totalScore += (r.probability || 50) / 100;
               baseScore.testResults.push({ testName: test.name, testId: test.id, result: 'uncertain', probability: r.probability });
@@ -828,7 +837,8 @@ const SabbathTesterView = {
       const sortedScores = Object.values(scoreboard).sort((a, b) => {
         if (b.passed !== a.passed) return b.passed - a.passed;
         if (a.failed !== b.failed) return a.failed - b.failed;
-        return b.totalScore - a.totalScore;
+        if (b.totalScore !== a.totalScore) return b.totalScore - a.totalScore;
+        return b.historyScore - a.historyScore;
       });
       
       // Build HTML
@@ -847,12 +857,16 @@ const SabbathTesterView = {
    */
   buildScoreboardHTML(sortedScores, testResultsByProfile, tests) {
     const numTests = tests.filter(t => !t.excludeFromScore).length;
+    const numHistoryTests = numTests + tests.filter(t => t.extraBiblical === true).length;
+    const bibleTip = 'BIBLE score — biblical testimony only: the first Sabbath of Manna (Exodus 16), First Fruits after the Jordan crossing (Joshua 5), and the Resurrection on First Fruits (Matthew 28).';
+    const historyTip = 'HISTORY score — the combined score: every biblical test PLUS the extra-biblical witnesses: both Temples falling &quot;at the conclusion of Shabbat&quot; (Talmud Ta\u02bcanit 29a) — 9 Av 586 BC and 9 Av 70 AD.';
     
     let html = `
       <div class="sabbath-scoreboard">
         <div class="sabbath-scoreboard-title">📊 Summary Scoreboard</div>
         <div class="sabbath-scoreboard-intro">
           <p>This scoreboard tests each calendar configuration against biblical events where both the lunar date and weekday can be determined from Scripture. Tests include the first Sabbath of Manna (Exodus 16), the First Fruits offering after crossing the Jordan (Joshua 5), and the Resurrection on First Fruits (Matthew 28).</p>
+          <p>Each profile carries two scores: <strong>BIBLE</strong> uses only biblical testimony; <strong>HISTORY</strong> is the combined score, adding the extra-biblical temple-fall witnesses (Talmud Ta\u02bcanit 29a). Hover or tap a column heading for details.</p>
           <div class="scoreboard-conclusion">
             <p><strong>Key Finding:</strong> The <span class="result-pass">Lunar Sabbath</span> is compatible with all scored tests. It is also compatible with Rabbinic tradition that both Temples fell "the day after the Sabbath" (Talmud Ta'anit 29a) and Josephus' record that Romans built siege ramps on the Sabbath when the 8th of Av fell on that day.</p>
             <p>For <span class="result-uncertain">Saturday Sabbath</span> to be compatible, only one specific configuration works: <strong>33 AD crucifixion, Full Moon month start, Sunset day start, and Lamb (early) year start</strong>. This requires assuming 33 AD despite the chronological cautions noted below, and abandons the crescent moon tradition while adopting the full moon start.</p>
@@ -862,18 +876,24 @@ const SabbathTesterView = {
           <thead>
             <tr>
               <th>Calendar Profile</th>
-              <th>Score</th>
+              <th><span class="profile-tip" data-tip="${bibleTip}">BIBLE</span></th>
+              <th><span class="profile-tip" data-tip="${historyTip}">HISTORY</span></th>
             </tr>
           </thead>
           <tbody>
     `;
     
+    const scoreClassFor = (pct) => {
+      if (pct >= 90) return 'score-perfect';
+      if (pct >= 70) return 'score-good';
+      if (pct >= 50) return 'score-medium';
+      return 'score-poor';
+    };
     for (const score of sortedScores) {
       const pct = Math.round((score.totalScore / numTests) * 100);
-      let scoreClass = 'score-poor';
-      if (pct >= 90) scoreClass = 'score-perfect';
-      else if (pct >= 70) scoreClass = 'score-good';
-      else if (pct >= 50) scoreClass = 'score-medium';
+      const historyPct = Math.round((score.historyScore / numHistoryTests) * 100);
+      const scoreClass = scoreClassFor(pct);
+      const historyClass = scoreClassFor(historyPct);
       
       const profileTests = testResultsByProfile[score.profile.id] || [];
       const passedTests = profileTests.filter(t => t.result === 'pass');
@@ -881,8 +901,9 @@ const SabbathTesterView = {
       const uncertainTests = profileTests.filter(t => t.result === 'uncertain');
       
       const formatName = (t) => {
-        if (t.testId === 'resurrection-32ad') return 'Resurrection 32 AD';
-        return t.testName.replace(/ \([^)]+\)$/, '');
+        const marker = t.extraBiblical ? '\uD83C\uDFDB\uFE0F ' : '';
+        if (t.testId === 'resurrection-32ad') return marker + 'Resurrection 32 AD';
+        return marker + t.testName.replace(/ \([^)]+\)$/, '');
       };
       
       let testBreakdown = '<div class="score-breakdown">';
@@ -903,9 +924,10 @@ const SabbathTesterView = {
         <tr class="scoreboard-expandable" onclick="SabbathTesterView.toggleScoreboardRow('${rowId}')">
           <td><span class="expand-arrow">▶</span> ${this.profileTipSpan(score.profile)}</td>
           <td class="${scoreClass}">${pct}%</td>
+          <td class="${historyClass}">${historyPct}%</td>
         </tr>
         <tr class="scoreboard-details" id="${rowId}" style="display: none;">
-          <td colspan="2">${testBreakdown}</td>
+          <td colspan="3">${testBreakdown}</td>
         </tr>
       `;
     }
