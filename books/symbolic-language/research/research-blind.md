@@ -44,6 +44,25 @@ vocabulary: "if the light that is in you grows dark, **all your ways
 will be dark**." Scripture's blindness is almost never a shortage of
 light in the sky; it is a dead lamp in the man.
 
+The curse's third word repays a look: "astonishment of heart" is
+*timmahon* (H8541, root *tamah* — stunned, dumbfounded; old English
+"astonied"), not hardness — Scripture keeps three distinct words for
+the judged heart: **hardened** (Pharaoh, *chazaq/kaved/qashah*),
+**fattened** (Isa 6:10, *shamen*), **stunned** (here). The triad is an
+anatomy: madness (*shiga'on*) — reason broken; blindness (*ivvaron*)
+— sight broken; *timmahon* of heart — understanding stunned. And
+*timmahon*'s only other occurrence redeploys the whole triad:
+"I will smite every horse with **astonishment**, and his rider with
+**madness**… and will smite every horse of the people with
+**blindness**" — while "I will **open mine eyes** upon the house of
+Judah" (Zech 12:4): the covenant curse lifted off Israel and dropped
+on her enemies in that day, opened eyes on the other side of the
+ledger. The root *tamah* also stands at the door of the blinding
+oracle — "Stay yourselves, and **wonder**… drunken, but not with
+wine" (Isa 29:9) — one verse before the spirit of deep sleep closes
+the eyes; and Hab 1:5's *tamah* is what Paul quotes at Acts 13:41, in
+the same chapter as Elymas struck blind.
+
 ## The activities that produce blindness (full catalog)
 
 Everything Scripture names as closing the eyes or darkening the eye's
