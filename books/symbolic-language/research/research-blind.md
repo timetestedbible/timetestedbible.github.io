@@ -1,4 +1,4 @@
-# Research: Blind (ivver / typhlos) — the lamp gone dark (2026-08-05)
+# Research: Blind (ivver / typhlos) — eyes closed to the word (2026-08-05)
 
 Complete sweep, verified against kjv_strongs.txt: Hebrew *ivver* H5787
 (adjective, blind), **23 verses**; the verb *avar* H5786 (to blind, put
@@ -13,7 +13,22 @@ that carry the figure without the lexeme are flagged below as such
 Rom 11:7, 25, where the KJV's "blinded/blindness" translates *pōroō/
 pōrōsis*, hardening — a KJV gloss to note, not a *typhlos* occurrence).
 
-## Verdict up front: the covenant curse decodes it
+## Verdict up front: unable to understand the word
+
+**The blind man is a person unable to understand the word of God because
+his eyes have been closed.** The eye is a lamp (Matt 6:22 — *lychnos*,
+HG *ner*) and the commandment is a lamp (Prov 6:23; Ps 119:105) — and
+Scripture welds the two directly: "the commandment of the LORD is pure,
+**enlightening the eyes**" (Ps 19:8); "Open thou mine eyes, that I may
+behold wondrous things **out of thy law**" (Ps 119:18). The blind man
+lacks the eyes to see the commandment. His eyes were closed first by
+his own doings, and at last by God's judgment — the same order as
+Pharaoh's heart, which Pharaoh hardened himself (Ex 8:15, 32; 9:34)
+before the LORD hardened it (Ex 9:12; 10:1, 20, 27). The condition is
+healed only by repentance and faith in Jesus: "when it shall **turn to
+the Lord**, the vail shall be taken away" (2 Cor 3:16).
+
+## The covenant curse films it
 
 **Deuteronomy 28:28–29 is the in-text decode.** The curse gives the
 condition and then describes it in action: "The LORD shall smite thee
@@ -29,27 +44,73 @@ vocabulary: "if the light that is in you grows dark, **all your ways
 will be dark**." Scripture's blindness is almost never a shortage of
 light in the sky; it is a dead lamp in the man.
 
-## What blinds a man (the causes are moral)
+## The activities that produce blindness (full catalog)
 
-- **Bribes.** The verb *avar* has exactly five uses: three for putting
-  out Zedekiah's eyes, and two for this: "the gift **blindeth** the
-  wise" (Ex 23:8); "a gift doth **blind** the eyes of the wise" (Deut
-  16:19). Loving gain darkens the judging eye — the very corruption of
-  Amos 8:5's new-moon merchants.
-- **Trusting sightless gods.** Idols "have eyes, but they see not…
-  **they that make them are like unto them; so is every one that
-  trusteth in them**" (Ps 115:5, 8; 135:16, 18; Isa 44:9, 18 "he hath
-  shut their eyes"). A man becomes what he trusts; trust a blind god,
-  inherit its eyes.
-- **Hatred.** "He that hateth his brother… walketh in darkness…
-  because that darkness hath **blinded** (*typhloō*) his eyes"
-  (1 John 2:11).
-- **The god of this world.** "The god of this world hath **blinded**
-  the minds of them which believe not" (2 Cor 4:4) — but note the
-  order: *them which believe not*; the blinding lands on a prior
-  refusal.
+Everything Scripture names as closing the eyes or darkening the eye's
+light, verse by verse.
 
-## The sealing (judicial blindness)
+**Self-inflicted — the doings that close the eyes:**
+
+- **Taking bribes / loving gain.** "The gift **blindeth** the wise"
+  (Ex 23:8); "a gift doth **blind the eyes** of the wise" (Deut 16:19)
+  — the verb *avar*'s only two ethical uses. Samuel's integrity oath:
+  no bribe "to **blind mine eyes** therewith" (1 Sam 12:3, *alam* —
+  to hide the eyes). The blind watchmen "all look to their own way,
+  every one for **his gain**" (Isa 56:11). The corruption of Amos
+  8:5's new-moon merchants.
+- **Trusting idols.** Idols "have eyes, but they see not… **they that
+  make them are like unto them; so is every one that trusteth in
+  them**" (Ps 115:5, 8; 135:16, 18); of the idol-maker, "he hath
+  **shut their eyes**" (Isa 44:18). A man becomes what he trusts.
+- **An evil eye toward the poor.** "Beware… that **thine eye be evil
+  against thy poor brother**, and thou givest him nought" (Deut 15:9);
+  "he that hasteth to be rich hath an **evil eye**" (Prov 28:22; also
+  23:6) — and Jesus sets the evil eye directly against the lamp: "if
+  thine **eye be evil**, thy whole body shall be full of darkness"
+  (Matt 6:23).
+- **Hatred of a brother.** "That darkness hath **blinded his eyes**"
+  (1 John 2:11, *typhloō*).
+- **Refusing to hear the law.** "He that **turneth away his ear from
+  hearing the law**, even his prayer shall be abomination" (Prov
+  28:9); "they refused to hearken… stopped their ears… made their
+  hearts as an adamant stone, lest they should hear the law" (Zech
+  7:11–12); "which say to the seers, **See not**" (Isa 30:9–10).
+- **Whoredom and wine.** "Whoredom and wine and new wine **take away
+  the heart**" (Hos 4:11) — the organ of understanding.
+- **Fruitlessness.** "He that **lacketh** these things [the graces
+  added to faith] is **blind**… and hath forgotten that he was purged"
+  (2 Pet 1:5–9).
+- **Self-sufficiency.** "Thou sayest, I am rich… and knowest not that
+  thou art… **blind**" (Rev 3:17).
+- **Their own table.** "Let their table become a snare… let their
+  **eyes be darkened**, that they see not" (Ps 69:22–23, quoted of
+  Israel at Rom 11:9–10).
+
+**What keeps and restores the eye's light — the counter-catalog:**
+
+- "The **commandment** of the LORD is pure, **enlightening the eyes**"
+  (Ps 19:8).
+- The **bountiful eye**: "He that hath a bountiful eye shall be
+  blessed; for he **giveth of his bread to the poor**" (Prov 22:9) —
+  and "if thou draw out thy soul to the hungry… then shall thy light
+  rise in the darkness" (Isa 58:10).
+- The man who keeps his sight refuses the bribe: he "despiseth the
+  gain of oppressions… shaketh his hands from holding of bribes…
+  **shutteth his eyes from seeing evil**" (Isa 33:15) — the one
+  righteous eye-shutting in Scripture.
+- The **single eye**: "if therefore thine eye be single, thy whole
+  body shall be full of light" (Matt 6:22 — HG: "if your eyes look
+  **straight ahead**, your body will not grow dark").
+
+## The sealing (God's final judgment — the Pharaoh pattern)
+
+The order is Pharaoh's: he hardened his own heart through five plagues
+(Ex 8:15, 32; 9:34) before the LORD hardened it (Ex 9:12; 10:1, 20,
+27). So with the eyes — the closing is chosen before it is sealed:
+2 Thess 2:10–11, "**because they received not the love of the truth**…
+God shall send them strong delusion"; 2 Cor 4:4, the god of this world
+blinds "them **which believe not**."
+
 
 Isaiah 6:9–10 is the charter — "make the heart of this people fat…
 **shut their eyes**; lest they see with their eyes… and be healed" —
@@ -164,19 +225,31 @@ performs it in every Gospel, and stages its meaning:
 - No occurrence uses blindness positively; none requires a second
   sense.
 
+## Healed only by repentance and faith
+
+The healing texts all run through turning and believing: "To **open
+their eyes**, and to **turn them** from darkness to light… that they
+may receive **forgiveness of sins**… by **faith that is in me**"
+(Acts 26:18 — the risen Jesus commissioning Paul); "when it shall
+**turn to the Lord**, the vail shall be taken away" (2 Cor 3:16 — the
+veil that lies on the reading of Moses, 3:14–15); "Then **opened he
+their understanding**, that they might **understand the scriptures**"
+(Luke 24:45); "anoint thine eyes with **eyesalve**, that thou mayest
+see" (Rev 3:18, to the church that said "we see"); and the healed
+blind man's own arrival: "Lord, I believe. And he **worshipped** him"
+(John 9:38).
+
 ## Candidate definition (pending author approval)
 
-**Blind** — the man whose lamp has gone dark: the eye is the lamp of
-the body, the commandment is the lamp's light, and the blind man is
-the one who can no longer find the way — "if the light that is in you
-grows dark, all your ways will be dark." The condition is morally
-caused (bribes blind the wise; trusting sightless gods makes men like
-them; hatred blinds) and judicially sealed on the refuser ("shut their
-eyes; lest they see… and be healed"), which is why the covenant curse
-pairs it with groping at noonday. Its office-holders are the blind
-watchmen and blind guides who lead into the ditch; its terminal case
-says "we see"; and its healing belongs to the LORD alone — the sign by
-which the Messiah is known, given to those who confess the dark.
+**Blind** — a person unable to understand the word of God because his
+eyes have been closed — first by his own doings (love of bribes, trust
+in idols, an evil eye toward the poor, hatred, refusing to hear the
+law), and at last by God's judgment, who blinds the persistent refuser
+as He hardened Pharaoh's heart. The eye is a lamp and the commandment
+is a lamp — "the commandment of the LORD is pure, enlightening the
+eyes" — and the blind man lacks the eyes to see it. The condition is
+healed only by repentance and faith in Jesus: "when it shall turn to
+the Lord, the vail shall be taken away."
 
 Related: Eye (the lamp of the body), Lamp (the commandment), Way
 (what the lamp lights), Stumble, Watchman, Sleep, Darkness/Noonday
