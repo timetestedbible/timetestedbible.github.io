@@ -117,6 +117,17 @@ light, verse by verse.
   gain of oppressions… shaketh his hands from holding of bribes…
   **shutteth his eyes from seeing evil**" (Isa 33:15) — the one
   righteous eye-shutting in Scripture.
+- **The commandment at the gate of the eyes.** The law is stationed at
+  sight's entry: bound "as **frontlets between thine eyes**" (Deut 6:8;
+  11:18; Ex 13:9 — "that the LORD's law may be in thy mouth"), kept
+  "as the **apple** (*ishon* — the pupil, the aperture light enters by)
+  **of thine eye**" (Prov 7:2), never departing "from thine eyes"
+  (Prov 4:21), the **eyelids** (*af'apayim*, a pair-word) aimed
+  straight ahead (Prov 4:25). And HG Matt 6:22 renders the sound-eye
+  clause in Prov 4:25's exact words — *einecha l'nokach yabitu*, "thine
+  eyes look straight on" — importing Prov 4's two-ways frame: "the
+  path of the just is as the shining light… the way of the wicked is
+  as darkness; they know not at what they stumble" (4:18–19).
 - The **whole eye**. KJV "single" is *haplous*; HG Matthew renders it
   "if your eyes look **straight ahead**" (Matt 6:22), but HG Luke
   11:34 renders it **tamim** — "if your eye is **whole/complete**,
