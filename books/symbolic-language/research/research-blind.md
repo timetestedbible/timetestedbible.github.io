@@ -117,9 +117,21 @@ light, verse by verse.
   gain of oppressions… shaketh his hands from holding of bribes…
   **shutteth his eyes from seeing evil**" (Isa 33:15) — the one
   righteous eye-shutting in Scripture.
-- The **single eye**: "if therefore thine eye be single, thy whole
-  body shall be full of light" (Matt 6:22 — HG: "if your eyes look
-  **straight ahead**, your body will not grow dark").
+- The **whole eye**. KJV "single" is *haplous*; HG Matthew renders it
+  "if your eyes look **straight ahead**" (Matt 6:22), but HG Luke
+  11:34 renders it **tamim** — "if your eye is **whole/complete**,
+  your entire body will be filled with light." *Tamim* is loaded:
+  it is the word of Ps 19:7, "the law of the LORD is **temimah**" —
+  one verse before "the commandment… **enlightening the eyes**" (the
+  whole eye is the eye lit by the whole law) — and it is the
+  unblemished-sacrifice word (Ex 12:5), whose disqualifying blemish
+  list includes **blind** (Lev 22:22; Mal 1:8): the altar's categories
+  applied to the eye. Two structural nods, flagged as nods: HG Luke
+  11:36 — the body full of light "when there is **no murky portion in
+  it at all**, like a lamp" — describes the one moon with no dark
+  part; and HG Luke 11:33 sets the lamp against a **kisui**, a
+  *covering* (the *kasah* root behind the covered-moon reading of
+  *keseh*): the lamp is not for covering but for the lampstand.
 
 ## The sealing (God's final judgment — the Pharaoh pattern)
 

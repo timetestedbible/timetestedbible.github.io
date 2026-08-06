@@ -184,7 +184,7 @@ And the counter-catalog — what keeps and restores the eye's light:
 - "The **commandment** of the LORD is pure, **enlightening the eyes**" (Psalm 19:8).
 - The **bountiful eye**: "he that hath a bountiful eye shall be blessed; for he **giveth of his bread to the poor**" (Proverbs 22:9); "if thou draw out thy soul to the hungry… then shall thy light rise in the darkness" (Isaiah 58:10).
 - Refusing the bribe: the man who keeps his sight "shaketh his hands from holding of bribes… **shutteth his eyes from seeing evil**" (Isaiah 33:15) — Scripture's one righteous eye-shutting.
-- The **single eye**: "if therefore thine eye be single, thy whole body shall be full of light" (Matthew 6:22 — the Hebrew text: "if your eyes look **straight ahead**, your body will not grow dark").
+- The **whole eye**: KJV "single" is *haplous*, and the Hebrew Luke renders it ***tamim*** — "if your eye is **whole**, your entire body will be filled with light" (Luke 11:34; Hebrew Matthew reads "if your eyes look **straight ahead**," 6:22). *Tamim* is the word of Psalm 19:7 — "the law of the LORD is *temimah*" — one verse before "the commandment… **enlightening the eyes**": the whole eye is the eye lit by the whole law. It is also the unblemished-sacrifice word, whose blemish list includes **blind** (Lev 22:22; Mal 1:8) — the altar's categories applied to the eye. And the Hebrew Luke adds the picture: the body full of light "when there is **no murky portion in it at all**, like a lamp" (11:36) — the whole light, carrying no dark part.
 
 ## The Sealing
 
