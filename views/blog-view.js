@@ -21,7 +21,7 @@ const BlogView = {
     
     this._postsPromise = (async () => {
       try {
-        const response = await fetch('/blog/posts.json');
+        const response = await fetch('/blog/posts.json', { cache: 'no-cache' });
         if (!response.ok) throw new Error('Failed to load blog posts');
         this.posts = await response.json();
         return this.posts;

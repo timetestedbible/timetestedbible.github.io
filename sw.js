@@ -333,6 +333,23 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   
+  // LIVING CONTENT: the blog manifest carries every post's full content and
+  // changes between app versions. Network-first so new posts appear on the
+  // next visit without waiting for an APP_VERSION bump; cached copy offline.
+  const subPath = new URL(event.request.url).pathname;
+  if (subPath === '/blog/posts.json') {
+    event.respondWith(
+      fetch(event.request).then((response) => {
+        if (response && response.status === 200) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+        }
+        return response;
+      }).catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
   // Sub-resources: cache-first, no background update.
   // All files in a cache are from the same APP_VERSION (installed atomically).
   // Background updates would create version mismatches (old + new JS in same cache).
