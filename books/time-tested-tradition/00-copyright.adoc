@@ -15,8 +15,16 @@ description: "Copyright, permissions, and credits."
 [.text-left.copyright-title%nonfacing]
 Time Tested Tradition: The Renewed Biblical Calendar
 
+ifndef::draft-edition[]
 [.text-left.copyright]
 Second Edition
+endif::[]
+ifdef::draft-edition[]
+[.text-left.copyright]
+Third Edition — working draft of {draft-date} +
+This free digital edition is the living draft of the next edition: new findings and corrections land here first, dated as above. +
+The stable Second Edition of record is available in hardcover and ePUB at https://store.bookbaby.com/book/time-tested-tradition1[BookBaby].
+endif::[]
 
 [.text-left.copyright]
 {nbsp}
@@ -47,6 +55,7 @@ The interior figures are the author's. The second edition's text was reconstruct
 [.text-left.copyright]
 {nbsp}
 
+ifndef::draft-edition[]
 [.text-left.copyright%unbreakable]
 Published by the author +
 https://TimeTested.Bible[TimeTested.Bible] +
@@ -54,3 +63,9 @@ Hardcover ISBN 978-1-7365211-9-9 +
 ePUB ISBN 978-1-7365211-7-5 +
 Printed in the United States of America +
 10{nbsp}{nbsp}9{nbsp}{nbsp}8{nbsp}{nbsp}7{nbsp}{nbsp}6{nbsp}{nbsp}5{nbsp}{nbsp}4{nbsp}{nbsp}3{nbsp}{nbsp}2{nbsp}{nbsp}1
+endif::[]
+ifdef::draft-edition[]
+[.text-left.copyright%unbreakable]
+Published by the author +
+https://TimeTested.Bible[TimeTested.Bible]
+endif::[]

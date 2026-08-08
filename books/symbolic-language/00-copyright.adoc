@@ -22,9 +22,17 @@ Copyright © 2026 Daniel Larimer
 [.text-left.copyright]
 This work may be freely reproduced and distributed in its complete, unmodified form. All other rights reserved.
 
+ifndef::draft-edition[]
 [.text-left.copyright]
 First Edition +
 Revised July 2026
+endif::[]
+ifdef::draft-edition[]
+[.text-left.copyright]
+Second Edition — working draft of {draft-date} +
+This free digital edition is the living draft of the next edition: new findings and corrections land here first, dated as above. +
+The stable First Edition of record is available in hardcover and ePUB at https://store.bookbaby.com/book/meat-the-bibles-symbolic-language[BookBaby].
+endif::[]
 
 [.text-left.copyright]
 {nbsp}
@@ -50,6 +58,7 @@ _Freely you have received, freely give._
 [.text-left.copyright]
 {nbsp}
 
+ifndef::draft-edition[]
 [.text-left.copyright%unbreakable]
 Published by the author +
 Printed in the United States of America +
@@ -57,3 +66,9 @@ Printed in the United States of America +
 https://TimeTested.Bible[TimeTested.Bible] +
 Hardcover ISBN 978-1-7365211-6-8 +
 ePUB ISBN 978-1-7365211-8-2
+endif::[]
+ifdef::draft-edition[]
+[.text-left.copyright%unbreakable]
+Published by the author +
+https://TimeTested.Bible[TimeTested.Bible]
+endif::[]

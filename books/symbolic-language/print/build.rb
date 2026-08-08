@@ -374,6 +374,12 @@ build_target = lambda do |media, out|
     # The paper edition trims digital-only chapters and long-form proof runs
     # (ifdef/ifndef::print-edition[] in the sources); screen and web keep them.
     attrs['print-edition'] = '' if media == 'prepress'
+    # Free digital outputs are the living draft of the NEXT edition: labeled,
+    # dated, no ISBN (the ISBN belongs to the published edition of record).
+    unless media == 'prepress'
+      attrs['draft-edition'] = ''
+      attrs['draft-date']    = Time.now.strftime('%Y-%m-%d')
+    end
     Asciidoctor.convert doc,
       backend: 'pdf',
       safe: :unsafe,
@@ -506,6 +512,8 @@ if WANT_EPUB
     mkdirs: true,
     attributes: {
       'ebook-edition'     => '',
+      'draft-edition'     => '',   # free epub = living draft of the next edition
+      'draft-date'        => Time.now.strftime('%Y-%m-%d'),
       'print-edition'     => '',   # the ebook carries the print edition's content
       'docfile'           => File.join(SRC, 'book.adoc'),  # synthetic (doc is a string); gives epub3 a docdir to resolve media against
       'imagesdir'         => '',   # empty, NOT '.': a '.' imagesdir packages media at EPUB/./images/… with "./" hrefs, which Apple Books renders as dead images (2026-07-18); absolute dirs double-join
