@@ -29,7 +29,7 @@ const TutorialView = {
         <!-- 1. HERO: The two books + limited offer -->
         <section class="hero-section" style="margin-top: 30px;">
           <div class="hero-card">
-            <p class="part-kicker preorder-kicker">Limited Launch Offer &middot; 75% Below Cost &middot; Ends August 7</p>
+            <p class="part-kicker preorder-kicker">Hardcovers Available Now &middot; 50% Off at BookBaby with Code BREAD</p>
 
             <div class="hero-books">
               <div class="hero-book-col meat">
@@ -43,10 +43,10 @@ const TutorialView = {
                 <span class="book-shadow" aria-hidden="true"></span>
                 <p class="book-caption"><strong>MEAT</strong><span class="book-tagline">The Bible's Symbolic Language</span></p>
                 ${this.renderBookOffer('SYMBOLIC_LANGUAGE_BOOK', '<a class="hero-btn primary book-offer-btn" href="https://store.bookbaby.com/book/meat-the-bibles-symbolic-language" target="_blank" rel="noopener">Buy Hardcover — 50% off code BREAD</a>')}
-                <p class="book-downloads">Read free:
+                <p class="book-downloads">Read free — latest edition (draft):
                   <a href="/books/meat-bibles-symbolic-language" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'meat-bibles-symbolic-language'}})">Web</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('meat','pdf')">PDF</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('meat','epub')">EPUB</a>
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language-second-edition-draft.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('meat-2e-draft','pdf')">PDF</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language-second-edition-draft.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('meat-2e-draft','epub')">EPUB</a>
                 </p>
                 <p class="book-downloads"><a href="https://store.bookbaby.com/book/meat-the-bibles-symbolic-language" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">Hardcover — 50% off with code BREAD</a></p>
               </div>
@@ -61,10 +61,10 @@ const TutorialView = {
                 <span class="book-shadow" aria-hidden="true"></span>
                 <p class="book-caption"><strong>TIME</strong><span class="book-tagline">Tested Tradition</span></p>
                 ${this.renderBookOffer('TIME_TESTED_TRADITION_BOOK', '<a class="hero-btn primary book-offer-btn" href="https://store.bookbaby.com/book/time-tested-tradition1" target="_blank" rel="noopener">Buy Hardcover — 50% off code BREAD</a>')}
-                <p class="book-downloads">Read free:
+                <p class="book-downloads">Read free — latest edition (draft):
                   <a href="/books/time-tested-tradition" onclick="event.preventDefault(); AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'books',bookSlug:'time-tested-tradition'}})">Web</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','pdf')">PDF</a> ·
-                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-second-edition.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-2e','epub')">EPUB</a>
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-third-edition-draft.pdf" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-3e-draft','pdf')">PDF</a> ·
+                  <a href="https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/time-tested-tradition-third-edition-draft.epub" onclick="if(typeof trackBookFile==='function')trackBookFile('ttt-3e-draft','epub')">EPUB</a>
                 </p>
                 <p class="book-downloads"><a href="https://store.bookbaby.com/book/time-tested-tradition1" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">Hardcover (2nd Ed.) — 50% off with code BREAD</a> · <a href="https://store.bookbaby.com/book/time-tested-tradition" target="_blank" rel="noopener" onclick="if(typeof trackBuyBook==='function')trackBuyBook()">First Edition (Legacy)</a></p>
               </div>

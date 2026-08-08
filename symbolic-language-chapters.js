@@ -9,20 +9,13 @@ const SYMBOLIC_LANGUAGE_BOOK = {
   basePath: '/books/meat-bibles-symbolic-language',
   cover: '/assets/img/covers/meat-front-web.webp',
   tagline: "The Bible's Symbolic Language",
-  offer: {
-    label: 'Pre-order Hardcover — $7',
-    note: 'Offer ends August 7 · ships before September 1',
-    price: '$7',
-    was: '$49',
-    href: '/preorder/',   // offer page; Stripe checkout links live there
-    until: '2026-08-08T05:00:00Z'  // midnight Aug 8, America/Chicago
-  },
+  // $7 launch pre-order offer removed — presale closed 2026-08-07
   purchase: [
     { label: 'Buy Hardcover — 50% off with code BREAD', href: 'https://store.bookbaby.com/book/meat-the-bibles-symbolic-language' }
   ],
   downloads: [
-    { label: 'PDF', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.pdf', track: 'meat', fmt: 'pdf' },
-    { label: 'EPUB', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language.epub', track: 'meat', fmt: 'epub' }
+    { label: 'PDF — latest edition (draft)', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language-second-edition-draft.pdf', track: 'meat-2e-draft', fmt: 'pdf' },
+    { label: 'EPUB — latest edition (draft)', href: 'https://github.com/timetestedbible/timetestedbible.github.io/releases/download/digital-editions/meat-the-bibles-symbolic-language-second-edition-draft.epub', track: 'meat-2e-draft', fmt: 'epub' }
   ],
   chapters: [
     {
