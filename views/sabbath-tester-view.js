@@ -66,6 +66,18 @@ const BIBLICAL_TESTS = [
     excludeFromScore: true  // Alternative theory - don't include in main score
   },
   {
+    id: 'passover-31ad',
+    name: 'Passover / Crucifixion (31 AD)',
+    description: 'Alternative crucifixion year theory — 31 AD is the crucifixion year of the Adventist reading of Daniel 9 (decree 457 BC, baptism 27 AD, cut off "in the midst of the week"), traditionally dated Friday, April 27, 31 AD; Wednesday-crucifixion advocates use the same year with April 25. Jesus was crucified on Passover, the 14th of Nisan (John 19:14). For Jesus to rest in the tomb on the Sabbath (15th) and rise on the 1st day of the week (16th), the 14th must be the 6th day of the week — Friday for Saturday-Sabbath calendars, and always true for Lunar Sabbath calendars where the 14th is inherently the day before the 15th (Sabbath).',
+    scripture: 'John 19:14, Matthew 27:62, Mark 15:42',
+    year: 31,  // 31 AD
+    month: 1,  // First month (Nisan)
+    day: 14,   // Passover / Crucifixion
+    expectedWeekPosition: 6,  // 6th day = day before Sabbath
+    location: { lat: 31.7683, lon: 35.2137, name: 'Jerusalem' },
+    excludeFromScore: true  // Alternative theory - don't include in main score
+  },
+  {
     id: 'resurrection-33ad',
     name: 'Passover / Crucifixion (33 AD)',
     description: 'Alternative crucifixion year theory — the classical "Good Friday, April 3, 33 AD." Jesus was crucified on Passover, the 14th of Nisan (John 19:14). For Jesus to rest in the tomb on the Sabbath (15th) and rise on the 1st day of the week (16th), the 14th must be the 6th day of the week — Friday for Saturday-Sabbath calendars, and always true for Lunar Sabbath calendars where the 14th is inherently the day before the 15th (Sabbath).',
@@ -1012,6 +1024,32 @@ const SabbathTesterView = {
       `;
     }
     
+    if (test.id === 'passover-31ad') {
+      return `
+        <details class="test-evidence-accordion">
+          <summary>⚠️ Cautions with 31 AD</summary>
+          <div class="test-evidence-content">
+            <p>31 AD is a popular crucifixion year, but it rests on assumptions that conflict with other evidence:</p>
+            <ul>
+              <li><strong>Requires a Tiberius Co-Regency</strong> — A 27 AD baptism requires counting Tiberius' 15th year (Luke 3:1) from a supposed 12 AD co-regency. Roman historians count his reign from Augustus' death in 14 AD, placing the 15th year in fall 28–29 AD — and from a fall 28–29 start, a 31 AD crucifixion leaves room for only two of the three Passovers John explicitly records (John 2:13, 6:4, 11:55).</li>
+              <li><strong>One Year Short of Daniel's 490</strong> — The decree to restore Jerusalem was issued in Artaxerxes' 7th year, spring 458 BC (Ezra 7:7-9). The 490th year ends spring 32 AD (Daniel 9:24-25); 31 AD is the 489th. The Adventist count instead dates the decree to 457 BC and ends the 490 years in 34 AD, with the cross at the week's midpoint — adjustments a 32 AD crucifixion does not need.</li>
+              <li><strong>No Moon Gives a Friday 14th</strong> — As the table below shows, no month reckoning — crescent, dark, or full moon start, under either year-start rule — places Nisan 14 on a Friday in 31 AD. The traditional "Friday, April 27, 31 AD" is a genuine Friday, but even the latest possible reckoning (crescent month after the equinox) puts the 14th on Wednesday, April 25 — April 27 is that moon's 16th, the 14th of no lunation.</li>
+              <li><strong>No Passover Solar Eclipse</strong> — NASA documents a partial solar eclipse visible in Jerusalem at midday on April 28, 32 AD, matching the darkness at the cross (Matthew 27:45). There is no eclipse alignment for Passover 31 AD.</li>
+            </ul>
+            <p style="margin-top: 15px;"><a href="/reader/timetested/12_32_AD_Resurrection" style="color: var(--accent-primary);">📖 Read the full chapter: 32 AD Resurrection</a></p>
+          </div>
+        </details>
+        <div class="test-interpretation">
+          <p><strong>Interpreting the Results Below:</strong></p>
+          <ul>
+            <li><strong>No Friday in 31 AD</strong> — The four Saturday-Sabbath reckonings land the 14th on Tuesday (March 27, crescent), Sunday (March 25, dark), Wednesday (April 25, crescent with the later year start), and Monday (April 23, dark with the later year start). None reaches Friday, so every fixed-Saturday configuration fails this test — the year itself, not the calendar, is the problem.</li>
+            <li><strong>The Wednesday Theory Gets Its Date</strong> — Wednesday-crucifixion advocates place the cross on April 25, 31 AD, and the crescent calendar with the equinox year start reproduces exactly that: Nisan 14 on Wednesday, April 25. But that reading needs a Thursday "high sabbath" distinct from the weekly Sabbath — a chronology this test does not encode. Like the 30 AD and 33 AD tests, this test requires the tomb rest on the weekly Sabbath (15th) and the resurrection on the 16th, the 1st day of the week.</li>
+            <li><strong>Lunar Calendars Pass by Definition</strong> — On a lunar-week calendar the 14th is inherently the 6th day, whatever year is chosen; passing here says nothing about 31 AD itself. The year-selecting evidence lives in the cautions above.</li>
+          </ul>
+        </div>
+      `;
+    }
+
     if (test.id === 'resurrection-33ad') {
       return `
         <details class="test-evidence-accordion">
@@ -1051,7 +1089,7 @@ const SabbathTesterView = {
       return (order[a.result] || 3) - (order[b.result] || 3);
     });
     
-    const hasAltScore = test.id === 'passover-30ad' || test.id === 'resurrection-33ad';
+    const hasAltScore = test.id === 'passover-30ad' || test.id === 'passover-31ad' || test.id === 'resurrection-33ad';
     
     let html = `
       <table class="sabbath-test-results-table">
