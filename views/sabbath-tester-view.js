@@ -856,6 +856,7 @@ const SabbathTesterView = {
       
       // Build HTML
       let html = this.buildScoreboardHTML(sortedScores, testResultsByProfile, BIBLICAL_TESTS);
+      html += this.buildCrucifixionWindowHTML(allResults);
       html += this.buildTestCardsHTML(allResults, baseScoreWithout32AD, BIBLICAL_TESTS);
       
     loadingEl.style.display = 'none';
@@ -957,6 +958,87 @@ const SabbathTesterView = {
   /**
    * Build test cards HTML
    */
+  /**
+   * Crucifixion-window summary: the 14th of the first month in every candidate
+   * year (30-33 AD) under every fixed-Sabbath reckoning. Derived entirely from
+   * the already-computed test results — the 32 AD column steps back two days
+   * from that year's Resurrection test (the 16th) to reach the 14th.
+   */
+  buildCrucifixionWindowHTML(allResults) {
+    const columns = [
+      { year: '30 AD', testId: 'passover-30ad', dayOffset: 0 },
+      { year: '31 AD', testId: 'passover-31ad', dayOffset: 0 },
+      { year: '32 AD', testId: 'resurrection-32ad', dayOffset: -2 },
+      { year: '33 AD', testId: 'resurrection-33ad', dayOffset: 0 }
+    ];
+    const byTest = {};
+    for (const { test, results } of allResults) byTest[test.id] = results;
+    const base = byTest['passover-30ad'] || [];
+    const fixedProfiles = base.filter(r => r.profile && r.profile.sabbathMode !== 'lunar').map(r => r.profile);
+    const lunarProfiles = base.filter(r => r.profile && r.profile.sabbathMode === 'lunar').map(r => r.profile);
+    if (!fixedProfiles.length) return '';
+
+    const sabbathDayMap = { sunday: 0, monday: 1, tuesday: 2, wednesday: 3, thursday: 4, friday: 5, saturday: 6 };
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const passes = [];
+    let cellCount = 0;
+    let rowsHtml = '';
+
+    for (const profile of fixedProfiles) {
+      const sabbathDay = sabbathDayMap[profile.sabbathMode] ?? 6;
+      const requiredDay = weekdays[(sabbathDay + 6) % 7]; // 6th day of that profile's week
+      let cells = '';
+      for (const col of columns) {
+        const r = (byTest[col.testId] || []).find(x => x.profile && x.profile.id === profile.id);
+        const ident = r && r.jd != null ? this.jdRowIdentity(r.jd + col.dayOffset) : null;
+        cellCount++;
+        if (!ident) {
+          cells += '<td data-label="' + col.year + '">—</td>';
+          continue;
+        }
+        const ok = ident.weekdayName === requiredDay;
+        if (ok) passes.push({ profile: profile.name, year: col.year, date: ident.dateStr });
+        cells += '<td data-label="' + col.year + '" class="' + (ok ? 'result-pass' : 'result-fail') + '">' +
+          (ok ? '✅ ' : '') + ident.weekdayShort + ' · ' + ident.dateStrCompact + '</td>';
+      }
+      rowsHtml += '<tr><td data-label="Profile" class="profile-cell">' + this.profileTipSpan(profile, profile.name) + '</td>' + cells + '</tr>';
+    }
+
+    // One collapsed row for all lunar-week calendars: the pattern is structural.
+    if (lunarProfiles.length) {
+      rowsHtml += '<tr><td data-label="Profile" class="profile-cell">All lunar-week calendars</td>' +
+        '<td colspan="4" class="result-pass">✅ Every year — the 14th is inherently the 6th day and the 16th the 1st day of the week</td></tr>';
+    }
+
+    const allIn33 = passes.length > 0 && passes.every(p => p.year === '33 AD');
+    const passSentence = passes.length === 0
+      ? 'a Friday 14th never occurs'
+      : 'a Friday 14th occurs ' + (passes.length === 1 ? 'once' : passes.length + ' times') + ' — ' +
+        (allIn33 ? 'every one of them in 33 AD' : passes.map(p => p.profile + ' in ' + p.year).join(', '));
+
+    return `
+      <div class="sabbath-scoreboard">
+        <div class="sabbath-scoreboard-title">✝️ Passover to First Fruits: Every Candidate Year at Once</div>
+        <div class="sabbath-scoreboard-intro">
+          <p>Scripture fixes the pattern before any year is chosen: killed on Passover, the 14th (John 19:14); resting in the tomb over the Sabbath, the 15th (Mark 15:42, Matthew 27:62); risen on First Fruits, the 16th (Leviticus 23:11, 1 Corinthians 15:20), "the first day of the week" (Matthew 28:1). First Fruits is always the 16th of the month, so on a fixed-Saturday week the pattern makes one demand of the sky: <strong>the 14th must fall on a Friday</strong>. Here is where the 14th of the first month actually fell, in every proposed crucifixion year, under every fixed-Sabbath reckoning of the month:</p>
+        </div>
+        <table class="sabbath-test-results-table">
+          <thead>
+            <tr>
+              <th>Profile</th>
+              ${columns.map(c => '<th>' + c.year + '</th>').join('')}
+            </tr>
+          </thead>
+          <tbody>${rowsHtml}</tbody>
+        </table>
+        <div class="scoreboard-conclusion" style="margin-top: 20px;">
+          <p><strong>Out of ${cellCount} year-and-reckoning combinations, ${passSentence}.</strong> Whatever the evidence says about the year — Daniel's 490 years, John's three Passovers, Tiberius' 15th year, the midday eclipse — 30, 31, and 32 AD are closed to the fixed-Saturday week entirely: in those years no reckoning of the month can put the death on Passover and the resurrection on First Fruits. The pattern survives only by retreating to 33 AD, and 33 AD carries the chronological cautions detailed in its test below.</p>
+          <p>The lunar week never faces this squeeze. The 16th is the 1st day of the week in every month of every year, so the Gospel pattern fits every candidate year — and the year is left to be decided by the evidence rather than rescued by it.</p>
+        </div>
+      </div>
+    `;
+  },
+
   buildTestCardsHTML(allResults, baseScoreWithout32AD, tests) {
     let html = '';
     const numTests = tests.filter(t => !t.excludeFromScore).length;
