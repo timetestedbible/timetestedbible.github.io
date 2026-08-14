@@ -1,0 +1,126 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "eye",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nEye\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the eye most commonly symbolizes spiritual perception and the moral/spiritual condition of the inner person: the eye is the 'lamp of the body,' so that a 'healthy' or 'single' eye represents an enlightened, undivided, rightly-oriented heart, while a 'bad' or 'evil' eye represents inner darkness, moral corruption, or misdirected desire. The eye functions as the gateway or index of the soul—what and how one 'sees' reveals and shapes one's spiritual state.\",\n  \"primary_basis\": [\n    \"Matthew 6:22-23\",\n    \"Luke 11:34-36\",\n    \"Ephesians 1:18 ('the eyes of your heart enlightened')\",\n    \"Psalm 119:18 ('open my eyes that I may see wondrous things')\",\n    \"Matthew 13:15-16 (seeing eyes vs. blinded eyes as spiritual receptivity)\",\n    \"John 9 (physical blindness/sight as a figure for spiritual blindness/sight)\",\n    \"2 Corinthians 4:4 (the god of this world blinding minds/eyes)\",\n    \"Revelation 3:18 (eye salve so that you may see)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine omniscience, watchfulness, and providential care: the 'eye(s) of the LORD' symbolize God's all-seeing knowledge and protective oversight of the world and his people.\",\n      \"basis\": [\n        \"Proverbs 15:3\",\n        \"2 Chronicles 16:9\",\n        \"Psalm 33:18\",\n        \"Psalm 34:15\",\n        \"Zechariah 4:10\",\n        \"Hebrews 4:13\",\n        \"1 Peter 3:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The eye as the organ and symbol of desire, covetousness, and lust—the entry point of temptation and sin, sometimes demanding radical renunciation ('pluck it out').\",\n      \"basis\": [\n        \"1 John 2:16 ('the lust of the eyes')\",\n        \"Matthew 5:28-29\",\n        \"Genesis 3:6 ('a delight to the eyes')\",\n        \"2 Peter 2:14 ('eyes full of adultery')\",\n        \"Job 31:1 ('a covenant with my eyes')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Semitic-idiom reading of Matthew 6:22-23 favored by many modern scholars: the 'good/single eye' means generosity and the 'evil eye' means stinginess, greed, or envy, connecting the saying to the surrounding teaching on treasure and mammon.\",\n      \"basis\": [\n        \"Matthew 6:22-23 read with Matthew 6:19-24\",\n        \"Matthew 20:15 ('is your eye evil because I am good?')\",\n        \"Proverbs 22:9 ('a bountiful/good eye')\",\n        \"Proverbs 23:6 and 28:22 ('evil eye' as stingy person)\",\n        \"Deuteronomy 15:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Affection, favor, and preciousness: 'the apple of his eye' as a symbol of God's cherished, protected people.\",\n      \"basis\": [\n        \"Deuteronomy 32:10\",\n        \"Psalm 17:8\",\n        \"Zechariah 2:8\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In apocalyptic visions, multiplied eyes (on living creatures, wheels, the Lamb, or horns) symbolize fullness of knowledge, vigilance, and the Spirit's all-seeing presence.\",\n      \"basis\": [\n        \"Ezekiel 1:18\",\n        \"Ezekiel 10:12\",\n        \"Revelation 4:6-8\",\n        \"Revelation 5:6 (the Lamb's seven eyes as the seven spirits of God)\",\n        \"Zechariah 3:9; 4:10\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The eye is a highly polyvalent biblical symbol, but there is a recognizable dominant strand centered on Matthew 6:22-23/Luke 11:34-36: the eye as the lamp of the body signifying spiritual perception and the inner moral condition. This dominant reading itself has an internal scholarly debate (moral/spiritual illumination vs. the Semitic generosity/stinginess idiom), which is noted as a distinct common alternative. The 'eye(s) of the LORD' as omniscience/providence is nearly as well established but applies to God's eye rather than the human eye, so context determines which sense is primary. Related idioms (eye for an eye as retributive justice, eye of the needle, log/speck in the eye) are proverbial usages rather than core symbolic meanings and were not listed as separate readings.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual perception, understanding, and the moral focus or desires of the heart.\",\n  \"primary_basis\": [\n    \"Matthew 6:22-23\",\n    \"Ephesians 1:18\",\n    \"Psalm 119:18\",\n    \"Revelation 3:18\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine omniscience, vigilance, and watchfulness (when referring to the eyes of God).\",\n      \"basis\": [\n        \"2 Chronicles 16:9\",\n        \"Proverbs 15:3\",\n        \"Zechariah 4:10\",\n        \"Revelation 5:6\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Envy, greed, or stinginess (specifically the biblical idiom of an 'evil eye').\",\n      \"basis\": [\n        \"Mark 7:22\",\n        \"Proverbs 28:22\",\n        \"Matthew 20:15\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Strict, proportional justice and retribution.\",\n      \"basis\": [\n        \"Exodus 21:24\",\n        \"Matthew 5:38\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical symbolism, the human eye typically represents the gateway to the soul, moral purity, and spiritual comprehension. By contrast, the 'eyes of the Lord' universally signify God's omniscience, penetrating judgment, and providential care.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Spiritual perception or understanding—the capacity to recognize divine truth, with clear or opened eyes representing faith and insight, and blindness or darkened eyes representing unbelief, ignorance, or moral corruption.\",\n  \"primary_basis\": [\n    \"Matthew 6:22–23 and Luke 11:34–36: the eye as the lamp of the body, linking the condition of the eye with inner light or darkness.\",\n    \"Ephesians 1:18: Paul prays that the “eyes of the heart” may be enlightened.\",\n    \"Psalm 119:18: “Open my eyes” so that the speaker may perceive the wonders of God’s law.\",\n    \"Isaiah 6:9–10, cited in Matthew 13:13–15, John 12:39–40, and Acts 28:26–27: closed eyes signify failure or refusal to understand and turn to God.\",\n    \"2 Corinthians 4:4–6: spiritual blindness contrasts with illumination through the knowledge of Christ.\",\n    \"Revelation 3:17–18: eye salve and restored sight symbolize recognition of one’s true spiritual condition.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God’s omniscience, watchful providence, judgment, or protective attention, especially in references to the eyes of the Lord.\",\n      \"basis\": [\n        \"2 Chronicles 16:9: the Lord’s eyes range throughout the earth.\",\n        \"Proverbs 15:3: the Lord’s eyes observe both evil and good.\",\n        \"Psalm 33:18 and 1 Peter 3:12: God’s eye is upon those who fear him and his eyes attend to the righteous.\",\n        \"Revelation 5:6: the Lamb’s seven eyes symbolize the fullness of divine knowledge and are identified with the seven spirits of God.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral desire directed toward an object—particularly lust, covetousness, or temptation.\",\n      \"basis\": [\n        \"Genesis 3:6: the forbidden fruit is pleasing to the eyes.\",\n        \"Job 31:1: Job makes a covenant with his eyes concerning lust.\",\n        \"Matthew 5:28–29: the offending eye appears in teaching about lust and radical avoidance of sin.\",\n        \"1 John 2:16: the “desire/lust of the eyes” characterizes worldly craving.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Generosity versus stinginess or envy. A “good” or “single” eye can denote generosity, while an “evil eye” can denote greed, miserliness, or begrudging envy.\",\n      \"basis\": [\n        \"Deuteronomy 15:9: an evil eye toward the poor describes withholding generosity.\",\n        \"Proverbs 22:9: a good or generous eye is associated with sharing food.\",\n        \"Proverbs 23:6 and 28:22: an evil eye is associated with stinginess and haste for wealth.\",\n        \"Matthew 6:22–24: many interpreters read the good and bad eye in the immediate context of treasure, wealth, and service to God or Mammon.\",\n        \"Matthew 20:15: the “evil eye” describes envy at another’s generosity.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purity, sincerity, or undivided devotion, especially through the traditional rendering of the “single eye.”\",\n      \"basis\": [\n        \"Matthew 6:22–24: the “single” or healthy eye has traditionally been read as simplicity of intention and undivided allegiance to God.\",\n        \"Luke 11:34–36: a sound eye corresponds to a life filled with light.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Authority, guidance, or leadership, as when a person functions as “eyes” for another or for a community.\",\n      \"basis\": [\n        \"Numbers 10:31: Hobab is asked to serve as “eyes” for Israel in the wilderness.\",\n        \"Job 29:15: Job says he was “eyes to the blind,” describing protective and just leadership.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A symbol of the Holy Spirit in the apocalyptic image of the Lamb’s seven eyes.\",\n      \"basis\": [\n        \"Zechariah 3:9 and 4:10: seven eyes are associated with the Lord’s comprehensive activity throughout the earth.\",\n        \"Revelation 5:6 explicitly identifies the Lamb’s seven eyes with the seven spirits of God sent into all the earth.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning applicable to every biblical occurrence of “eye.” The broadest and most recognizable symbolic use is perception—especially spiritual understanding or blindness—but the referent and literary context substantially change the meaning. References to human eyes, the “evil eye,” God’s eyes, and apocalyptic seven-eyed imagery should therefore be interpreted separately.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"spiritual perception, insight, or understanding (the capacity to receive light/truth or remain in darkness)\",\n  \"primary_basis\": [\n    \"Matthew 6:22-23 (eye as lamp of the body)\",\n    \"Ephesians 1:18 (eyes of the heart enlightened)\",\n    \"Mark 8:18 / Isaiah 6:9-10 (having eyes yet not seeing)\",\n    \"Psalm 119:18 (open my eyes that I may see)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"divine omniscience, watchfulness, or providential care (especially 'the eyes of the Lord')\",\n      \"basis\": [\n        \"Proverbs 15:3\",\n        \"2 Chronicles 16:9\",\n        \"Psalm 33:18 / 34:15\",\n        \"Revelation 5:6 (seven eyes of the Lamb)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"envy, stinginess, or malice (the 'evil eye')\",\n      \"basis\": [\n        \"Matthew 6:23 (unhealthy/evil eye)\",\n        \"Mark 7:22\",\n        \"Proverbs 23:6 / 28:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"lust or covetous desire\",\n      \"basis\": [\n        \"1 John 2:16 (lust of the eyes)\",\n        \"Matthew 5:28-29\",\n        \"2 Peter 2:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"retributive justice (lex talionis)\",\n      \"basis\": [\n        \"Exodus 21:24\",\n        \"Leviticus 24:20\",\n        \"Matthew 5:38\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical usage is strongly context-dependent; no single fixed symbol dominates every occurrence. Spiritual perception is the most frequently taught general association in Christian interpretation and preaching, while divine watchfulness and the evil-eye idiom are also standard. Meanings shift with whether the eye is human, divine, healthy, or evil.\"\n}\n\nBOOK ENTRY\nThe lamp of the body, revealing the light within. A good eye gives; an evil eye withholds; God's fiery eyes — His righteous watchers — range throughout the earth and shine like the stars in heaven.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 6:22-23; Prov 22:9; 23:6; Zech 4:10; Rev 1:14; 5:6) · see Sun, Moon & Stars, ch. 29\n\nAVAILABLE KJV EXCERPTS\nMatthew 6:22 — The light of the body is the eye: if therefore thine eye be single, thy whole body shall be full of light.\nMatthew 6:23 — But if thine eye be evil, thy whole body shall be full of darkness. If therefore the light that is in thee be darkness, how great is that darkness!\nProverbs 22:9 — He that hath a bountiful eye shall be blessed; for he giveth of his bread to the poor.\nProverbs 23:6 — Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats:\nZechariah 4:10 — For who hath despised the day of small things? for they shall rejoice, and shall see the plummet in the hand of Zerubbabel with those seven; they are the eyes of the LORD, which run to and fro through the whole earth.\nRevelation 1:14 —  His head and his hairs were white like wool, as white as snow; and his eyes were as a flame of fire;\nRevelation 5:6 — And I beheld, and, lo, in the midst of the throne and of the four beasts, and in the midst of the elders, stood a Lamb as it had been slain, having seven horns and seven eyes, which are the seven Spirits of God sent forth into all the earth.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "bf7009fdad73993a3cb30bb5f217ea388adf85a7b94dc0e22111bbe20d4d0775",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-26-all-symbols-protocol-13",
+      "request": "runs/2026-07-26-all-symbols-protocol-13/requests/relationship/eye/xai.json"
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "issachar",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nIssachar\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In contemporary Christian teaching, Issachar most commonly symbolizes discernment or 'understanding of the times' — spiritual insight into one's era and knowledge of what God's people ought to do. This is frequently invoked in sermons and popular literature (sometimes as the 'Issachar anointing' or 'sons of Issachar' motif) to call believers to prophetic awareness, wisdom about current events, and strategic timing.\",\n  \"primary_basis\": [\n    \"1 Chronicles 12:32 ('men of Issachar, who had understanding of the times, to know what Israel ought to do')\",\n    \"Genesis 30:17-18 (birth and naming of Issachar, name linked to 'wages/reward/hire')\",\n    \"Genesis 49:14-15 (Jacob's blessing of Issachar)\",\n    \"Deuteronomy 33:18-19 (Moses' blessing of Zebulun and Issachar)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Burden-bearing servitude and hard labor: based on Jacob's blessing depicting Issachar as a strong donkey crouching between burdens who bows his shoulder to bear and becomes a servant to forced labor. Older commentators (e.g., patristic, Reformation, Matthew Henry tradition) often read this as a picture of industrious labor, willingness to serve, or, negatively, of trading freedom and spiritual vigor for comfort and material ease.\",\n      \"basis\": [\n        \"Genesis 49:14-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Reward, wages, or recompense: drawn from the etymology of the name given by Leah ('God has given me my hire/wages'), used homiletically to symbolize God rewarding faithfulness or the fruit of labor.\",\n      \"basis\": [\n        \"Genesis 30:14-18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Devotion to study and scholarship, often paired with Zebulun's commerce: rooted in Jewish rabbinic tradition (Issachar as the tribe of Torah scholars supported by Zebulun's trade), sometimes carried into Christian teaching as a model of ministry-marketplace partnership or contentment in one's tent.\",\n      \"basis\": [\n        \"Genesis 49:13-15\",\n        \"Deuteronomy 33:18-19\",\n        \"1 Chronicles 12:32 (read as scholarly wisdom)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Contentment and rest in a good land: reading 'he saw that rest was good and the land was pleasant' as symbolizing satisfaction with God's inheritance or, in some readings, dangerous complacency.\",\n      \"basis\": [\n        \"Genesis 49:15\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Issachar has recognizable and frequently repeated interpretive traditions, but no single settled symbolic meaning across all eras and streams of Christianity. The 'understanding the times' reading from 1 Chronicles 12:32 is the most prominent in modern (especially evangelical and charismatic) teaching and is arguably dominant today, while historic exegesis centered more on the Genesis 49 donkey/burden imagery (servile labor, industriousness, or trading liberty for ease). The name etymology ('wages/reward') and the rabbinically derived scholar motif also circulate. Because prominence shifts by tradition and era, the consensus is best described as clustered but not fully settled.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual discernment, prophetic insight, and the ability to understand the times in order to provide strategic direction.\",\n  \"primary_basis\": [\n    \"1 Chronicles 12:32\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Hard work, burden-bearing, or willing servitude, often depicted as a strong but docile beast of burden.\",\n      \"basis\": [\n        \"Genesis 49:14-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Reward, wages, or compensation given by God.\",\n      \"basis\": [\n        \"Genesis 30:18\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Contentment in dwelling, hidden wealth, and drawing from the abundance of the sea, often paired in blessing with Zebulun.\",\n      \"basis\": [\n        \"Deuteronomy 33:18-19\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While historical and academic commentaries frequently focus on Jacob's blessing in Genesis describing Issachar as a beast of burden submitting to forced labor, modern popular Christian teaching and prophetic movements overwhelmingly symbolize Issachar based on 1 Chronicles 12:32 as a representing spiritual discernment and timely wisdom (the 'Issachar anointing').\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Discernment of the times or seasons, coupled with wisdom about the appropriate course of action—often called the “Issachar anointing” in modern Christian teaching.\",\n  \"primary_basis\": [\n    \"1 Chronicles 12:32 — the men of Issachar are described as understanding the times and knowing what Israel should do.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Diligent labor, service, and burden-bearing, sometimes with the negative implication of submission to forced labor.\",\n      \"basis\": [\n        \"Genesis 49:14–15 — Jacob portrays Issachar as a strong donkey that accepts a burden and becomes a servant at forced labor.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Reward, recompense, or wages.\",\n      \"basis\": [\n        \"Genesis 30:18 — Leah names Issachar in connection with God giving her a reward or wages; the name is commonly explained from the Hebrew word for wages or recompense.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Agricultural prosperity, settled rest, and enjoyment of a productive land.\",\n      \"basis\": [\n        \"Genesis 49:14–15 — Issachar sees that the resting place is good and the land pleasant.\",\n        \"Deuteronomy 33:18–19 — Issachar is blessed in its tents and associated with abundance from the seas and hidden treasures of the sand.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Loyal participation in Israel’s leadership and warfare.\",\n      \"basis\": [\n        \"Judges 5:15 — Issachar’s leaders join Deborah and Barak.\",\n        \"1 Chronicles 12:32 — Issachar supports David with informed leadership.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Issachar has no single settled symbolic meaning across historic Christian interpretation or biblical scholarship. “Understanding the times” is the most recognizable modern Christian symbolism, but it is chiefly derived from one description in 1 Chronicles 12:32. Older tribal, devotional, and typological interpretations also emphasize labor, service, reward, or prosperity.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"burden-bearer or strong donkey that labors under loads (often linked to industrious service or voluntary servitude)\",\n  \"primary_basis\": [\n    \"Genesis 49:14-15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"men who understand the times and know what Israel ought to do (discernment of seasons/strategy)\",\n      \"basis\": [\n        \"1 Chronicles 12:32\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"rejoicing in tents; calling peoples to the mountain for sacrifice; drawing abundance from seas and sand\",\n      \"basis\": [\n        \"Deuteronomy 33:18-19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"wages/reward/recompense (from the name's etymology)\",\n      \"basis\": [\n        \"Genesis 30:18\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Jacob's oracle in Gen 49 supplies the dominant traditional tribal emblem in Christian exposition of the twelve tribes; the Chronicles notice is widely preached in modern teaching but is not the primary symbolic assignment across historic interpretation. No single meaning is universally fixed.\"\n}\n\nBOOK ENTRY\nThe hireling who owns the field: strong as the donkey to carry, humble enough to bow, settled in tents, discerning the appointed times, rich enough to feed a king, and willing to walk into the valley when Israel must be saved. In the heavenly camp he is Virgo in the east — the place of beginnings and returns — and is identified with sapphire, the full moon.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 30:16-18; 49:14-15; Num 2:3-5; Deut 33:18-19; Judg 5:15; 1 Kgs 4:7, 17; 1 Chr 12:32, 40) · see Sun, Moon, and Stars, ch. 29, and the Issachar symbol study at TimeTested.Bible\n\nAVAILABLE KJV EXCERPTS\nGenesis 30:16 — And Jacob came out of the field in the evening, and Leah went out to meet him, and said, Thou must come in unto me; for surely I have hired thee with my son's mandrakes. And he lay with her that night.\nGenesis 30:17 — And God hearkened unto Leah, and she conceived, and bare Jacob the fifth son.\nGenesis 30:18 — And Leah said, God hath given me my hire, because I have given my maiden to my husband: and she called his name Issachar.\nGenesis 49:14 — Issachar is a strong ass couching down between two burdens:\nGenesis 49:15 — And he saw that rest was good, and the land that it was pleasant; and bowed his shoulder to bear, and became a servant unto tribute.\nNumbers 2:3 — And on the east side toward the rising of the sun shall they of the standard of the camp of Judah pitch throughout their armies: and Nahshon the son of Amminadab shall be captain of the children of Judah.\nNumbers 2:4 — And his host, and those that were numbered of them, were threescore and fourteen thousand and six hundred.\nNumbers 2:5 — And those that do pitch next unto him shall be the tribe of Issachar: and Nethaneel the son of Zuar shall be captain of the children of Issachar.\nDeuteronomy 33:18 — And of Zebulun he said, Rejoice, Zebulun, in thy going out; and, Issachar, in thy tents.\nDeuteronomy 33:19 — They shall call the people unto the mountain; there they shall offer sacrifices of righteousness: for they shall suck of the abundance of the seas, and of treasures hid in the sand.\nJudges 5:15 — And the princes of Issachar were with Deborah; even Issachar, and also Barak: he was sent on foot into the valley. For the divisions of Reuben there were great thoughts of heart.\n1 Kings 4:7 — And Solomon had twelve officers over all Israel, which provided victuals for the king and his household: each man his month in a year made provision.\n1 Kings 4:17 — Jehoshaphat the son of Paruah, in Issachar:\n1 Chronicles 12:32 — And of the children of Issachar, which were men that had understanding of the times, to know what Israel ought to do; the heads of them were two hundred; and all their brethren were at their commandment.\n1 Chronicles 12:40 — Moreover they that were nigh them, even unto Issachar and Zebulun and Naphtali, brought bread on asses, and on camels, and on mules, and on oxen, and meat, meal, cakes of figs, and bunches of raisins, and wine, and oil, and oxen, and sheep abundantly: for there was joy in Israel.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "010217e6b3b8074d07e81e7b4291218491d02c6bc1811ee16c98510066b6d6e6",
+  "cache": {
+    "hit": false
+  }
+}

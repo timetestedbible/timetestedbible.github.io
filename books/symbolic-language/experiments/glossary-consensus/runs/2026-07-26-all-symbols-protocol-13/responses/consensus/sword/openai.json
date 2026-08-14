@@ -1,0 +1,173 @@
+{
+  "id": "resp_0c3c2ad7728d515c006a54780dad6c8193bf8fe04044971c87",
+  "object": "response",
+  "created_at": 1783920653,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920669,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0c3c2ad7728d515c006a54780e436c8193b5b1d468a7ed07a5",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0c3c2ad7728d515c006a54781270108193800bf8a0583c7acf",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The Word of God—God’s powerful, penetrating truth or speech, often portrayed as a spiritual weapon and an instrument of discernment or judgment.\",\"primary_basis\":[\"Ephesians 6:17 explicitly identifies “the sword of the Spirit” as “the word of God.”\",\"Hebrews 4:12 compares the word of God to a sharp two-edged sword that penetrates and judges the heart.\",\"Isaiah 49:2 portrays the servant’s mouth as a sharp sword.\",\"Revelation 1:16; 2:12,16; 19:15,21 depict a sharp sword proceeding from Christ’s mouth, commonly interpreted as his authoritative word of judgment.\"],\"alternatives\":[{\"meaning\":\"Divine judgment or punishment, including God’s judicial action against nations or evildoers.\",\"basis\":[\"Deuteronomy 32:41-42\",\"Isaiah 34:5-6\",\"Ezekiel 21:1-17\",\"Revelation 19:15,21\"],\"prominence\":\"common\"},{\"meaning\":\"War, violence, death, or military destruction in a general sense.\",\"basis\":[\"Leviticus 26:6-8,25\",\"Jeremiah 14:12\",\"Ezekiel 5:12\",\"Revelation 6:4,8\"],\"prominence\":\"common\"},{\"meaning\":\"Conflict, division, or the disruptive consequences of allegiance to Jesus rather than literal warfare.\",\"basis\":[\"Matthew 10:34-36\",\"Luke 12:51-53\"],\"prominence\":\"common\"},{\"meaning\":\"The coercive and punitive authority of civil government.\",\"basis\":[\"Romans 13:4, where the ruler “does not bear the sword in vain”\"],\"prominence\":\"common\"},{\"meaning\":\"Persecution, execution, or martyrdom suffered by believers.\",\"basis\":[\"Romans 8:35\",\"Hebrews 11:34,37\",\"Revelation 13:10\"],\"prominence\":\"minority\"},{\"meaning\":\"Personal anguish or piercing sorrow.\",\"basis\":[\"Luke 2:35, where a sword is said to pierce Mary’s own soul\"],\"prominence\":\"minority\"},{\"meaning\":\"Illicit reliance on armed force, especially when contrasted with Jesus’ way.\",\"basis\":[\"Matthew 26:52\",\"John 18:10-11\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Christian teaching most recognizably uses the sword as a symbol of the Word of God, particularly in discussions of spiritual warfare. Nevertheless, biblical usage is strongly context-dependent: the sword also regularly signifies judgment, warfare, political authority, division, persecution, or sorrow. There is therefore no single settled meaning applicable to every occurrence.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 765,
+    "output_tokens_details": {
+      "reasoning_tokens": 191
+    },
+    "total_tokens": 1082
+  },
+  "user": null,
+  "metadata": {}
+}

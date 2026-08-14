@@ -1,0 +1,105 @@
+{
+  "provider": "anthropic",
+  "stage": "consensus",
+  "term": "stranger",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Remain blind to the author's position.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are the blind consensus definer in an experiment about biblical symbolism.\n\nYou have not been shown the author's book, definition, citations, argument, or\npreferred conclusion. Do not search for or infer that material. Answer from your\nindependent knowledge of published Christian interpretation and biblical studies.\n\nTERM\nStranger\n\nTASK\n\n1. State the primary symbolic meaning most commonly assigned to this term in\n   Christian teaching and biblical interpretation.\n2. Cite the biblical passages normally used to support that meaning.\n3. Identify materially different alternative readings and describe each as\n   dominant, common, minority, rare, or unclear.\n4. If the term has no settled symbolic interpretation, say so directly.\n\nDo not decide whether the common interpretation is true. This stage measures\nrecognizable consensus, not truth.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "primary_meaning": {
+              "type": "string"
+            },
+            "primary_basis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "alternatives": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "meaning": {
+                    "type": "string"
+                  },
+                  "basis": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "prominence": {
+                    "type": "string",
+                    "enum": [
+                      "dominant",
+                      "common",
+                      "minority",
+                      "rare",
+                      "unclear"
+                    ]
+                  }
+                },
+                "required": [
+                  "meaning",
+                  "basis",
+                  "prominence"
+                ]
+              }
+            },
+            "has_settled_consensus": {
+              "type": "boolean"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "primary_meaning",
+            "primary_basis",
+            "alternatives",
+            "has_settled_consensus",
+            "confidence",
+            "notes"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "c5dc98c59f8e0efe34773986fa0cd08db420b183d6e22dea0363a90864e5775c",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/consensus/stranger/anthropic.json"
+    }
+  }
+}

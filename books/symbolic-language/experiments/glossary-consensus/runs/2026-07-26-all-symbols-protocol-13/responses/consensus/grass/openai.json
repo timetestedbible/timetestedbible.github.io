@@ -1,0 +1,173 @@
+{
+  "id": "resp_0c83e002df83f498006a547560b9848194acf2e874e152fc8d",
+  "object": "response",
+  "created_at": 1783919968,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919987,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0c83e002df83f498006a5475625e148194add3cce23a0afba4",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0c83e002df83f498006a54756a840c8194989320e51913494f",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Human life, strength, beauty, and worldly glory are frail, temporary, and quickly pass away, like grass that grows and then withers.\",\"primary_basis\":[\"Isaiah 40:6–8 explicitly compares all flesh to grass and human faithfulness or glory to the flower of grass, contrasting them with the enduring word of God.\",\"Psalm 90:5–6 compares human beings to grass that flourishes in the morning and fades by evening.\",\"Psalm 103:15–16 says human days are like grass and disappear when the wind passes over them.\",\"1 Peter 1:24–25 quotes Isaiah 40 to contrast perishable human glory with the abiding word of the Lord.\",\"James 1:10–11 uses withering grass and its falling flower for the passing away of the rich and their pursuits.\"] ,\"alternatives\":[{\"meaning\":\"Prosperity—especially that of the wicked—is short-lived and will soon be cut down.\",\"basis\":[\"Psalm 37:1–2 compares evildoers to grass that quickly withers.\",\"Psalm 92:7 depicts the wicked springing up like grass before their destruction.\"],\"prominence\":\"common\"},{\"meaning\":\"Life, nourishment, peace, fertility, and divine provision, particularly in pasture imagery.\",\"basis\":[\"Psalm 23:2 portrays green pastures as God's restful provision.\",\"Genesis 1:11–12 presents grass and vegetation as part of God's life-giving creation.\",\"Mark 6:39 mentions the green grass in the setting of Jesus feeding the multitude, sometimes interpreted as pastoral or provision imagery.\"],\"prominence\":\"common\"},{\"meaning\":\"Withered or burned grass signifies drought, judgment, devastation, or the withdrawal of blessing.\",\"basis\":[\"Deuteronomy 11:17 connects lack of rain with the disappearance of grass and produce.\",\"Isaiah 15:6 uses withered grass in an oracle of desolation.\",\"Revelation 8:7 describes grass burned in trumpet judgment, though the image may be read literally or symbolically.\"],\"prominence\":\"common\"},{\"meaning\":\"Grass represents humanity or peoples collectively, rather than merely the brevity of individual life.\",\"basis\":[\"Isaiah 40:7 states directly, “the people are grass.”\",\"The broader context of Isaiah 40 contrasts vulnerable humanity and nations with God's permanence and sovereignty.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is a strong conventional interpretation centered on human mortality, frailty, and transience. Nevertheless, grass is not a fixed symbol in every passage: it may function literally or evoke provision, flourishing, temporary prosperity, drought, or judgment depending on context.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 819,
+    "output_tokens_details": {
+      "reasoning_tokens": 261
+    },
+    "total_tokens": 1136
+  },
+  "user": null,
+  "metadata": {}
+}

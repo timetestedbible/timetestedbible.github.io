@@ -1,0 +1,173 @@
+{
+  "id": "resp_0707e999d90b2360006a54750c3c988196936beb512005078c",
+  "object": "response",
+  "created_at": 1783919884,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919904,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0707e999d90b2360006a54750ccca48196b2cab316202bc41e",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0707e999d90b2360006a54751441908196ac1c5a0c6aabd573",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The four winds most commonly symbolize the four quarters or cardinal directions of the world and, by extension, worldwide extent, totality, or universality.\",\"primary_basis\":[\"Jeremiah 49:36 — four winds are brought from the four quarters of heaven, scattering Elam in every direction.\",\"Ezekiel 37:9 — breath is summoned from the four winds, indicating every direction or the full compass of heaven.\",\"Daniel 8:8; 11:4 — kingdoms or powers are divided toward the four winds of heaven, meaning the various regions of the world.\",\"Zechariah 2:6 — Israel is scattered as the four winds of heaven, expressing widespread dispersion.\",\"Matthew 24:31 and Mark 13:27 — the elect are gathered from the four winds, explicitly extending from one end of heaven or earth to the other.\",\"Revelation 7:1 — four winds are positioned at the four corners of the earth, conveying comprehensive worldwide reach.\"],\"alternatives\":[{\"meaning\":\"Forces or instruments of divine judgment, upheaval, or destruction operating throughout the world.\",\"basis\":[\"Jeremiah 49:36 associates the winds with conquest and scattering.\",\"Daniel 7:2 depicts the four winds stirring the great sea before the emergence of the beasts.\",\"Revelation 7:1-3 portrays the winds as harmful forces restrained until God's servants are sealed.\"],\"prominence\":\"common\"},{\"meaning\":\"Heavenly spirits, angelic powers, or divine agents associated with the four regions of heaven.\",\"basis\":[\"Zechariah 6:5 can be translated as either the 'four spirits' or 'four winds' of heaven and identifies them with the four chariots going out from God's presence.\",\"Revelation 7:1 links four angels with control over the four winds.\"],\"prominence\":\"minority\"},{\"meaning\":\"The life-giving breath or Spirit of God summoned in its fullness.\",\"basis\":[\"Ezekiel 37:9-14 uses the same Hebrew word for wind, breath, and spirit; the breath from the four winds revives the dry bones.\"],\"prominence\":\"common\"},{\"meaning\":\"Specific political kingdoms or historical powers.\",\"basis\":[\"Daniel 8:8 and 11:4 connect the four winds with the territorial division of kingdoms, leading some interpreters to identify them with particular political regions or successor powers.\",\"Daniel 7:2 has sometimes encouraged historical identifications of the winds themselves, although the beasts, rather than the winds, are explicitly interpreted as kingdoms.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus that the number four primarily marks the whole compass of the earth or heavens. The term's more specific function is context-dependent: it can denote worldwide dispersion or gathering, destructive judgment, heavenly agency, or life-giving breath. Thus, the general symbolism is settled, while the identity and action of the winds in individual passages are not always settled.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 939,
+    "output_tokens_details": {
+      "reasoning_tokens": 315
+    },
+    "total_tokens": 1257
+  },
+  "user": null,
+  "metadata": {}
+}

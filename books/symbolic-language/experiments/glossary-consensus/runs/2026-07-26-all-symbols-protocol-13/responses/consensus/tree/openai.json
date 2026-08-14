@@ -1,0 +1,173 @@
+{
+  "id": "resp_05f642b930d95d6a006a5478480cec8193a14e6ca415398e83",
+  "object": "response",
+  "created_at": 1783920712,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920739,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_05f642b930d95d6a006a547848daa48193ac1f7ceaee293a0d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_05f642b930d95d6a006a547852a89c8193af1493850a666a3a",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Life, flourishing, rootedness, and fruitfulness under God. In Christian teaching, a thriving tree commonly represents a person or community sustained by God and producing good fruit; the tree of life intensifies this symbolism into divine or eternal life.\",\"primary_basis\":[\"Genesis 2:9; 3:22–24 — the tree of life in Eden\",\"Psalm 1:1–3 — the righteous person as a tree planted by streams, bearing fruit\",\"Proverbs 3:18; 11:30; 13:12; 15:4 — wisdom and righteousness described as a tree of life\",\"Jeremiah 17:7–8 — the person who trusts in the Lord as a fruitful, well-watered tree\",\"Ezekiel 47:12 — life-giving trees whose fruit is food and leaves bring healing\",\"Matthew 7:17–20; 12:33 — trees and fruit as images of character and conduct\",\"Revelation 2:7; 22:1–2,14 — the tree of life associated with paradise, healing, and eternal life\"],\"alternatives\":[{\"meaning\":\"An individual person, ruler, nation, or empire, especially one characterized by stature, influence, prosperity, or downfall.\",\"basis\":[\"Judges 9:7–15 — trees represent rulers in Jotham’s parable\",\"Psalm 37:35 — the wicked person compared to a flourishing tree\",\"Ezekiel 17:22–24; 31:3–14 — trees symbolize kingdoms and imperial power\",\"Daniel 4:10–27 — the great tree represents Nebuchadnezzar and his kingdom\"],\"prominence\":\"common\"},{\"meaning\":\"God’s kingdom growing from small beginnings into expansive shelter.\",\"basis\":[\"Matthew 13:31–32; Mark 4:30–32; Luke 13:18–19 — the mustard seed becomes a tree in which birds nest\",\"Ezekiel 17:22–24 — God plants a lofty tree that shelters birds\"],\"prominence\":\"common\"},{\"meaning\":\"Moral character revealed by its fruit; a good or bad tree represents a good or corrupt person, teacher, or community.\",\"basis\":[\"Matthew 3:10; 7:15–20; 12:33\",\"Luke 3:9; 6:43–45\",\"Jude 12 — fruitless trees used for condemned teachers\"],\"prominence\":\"common\"},{\"meaning\":\"Israel or the covenant people, often represented by an olive tree or fig tree and subject to cultivation, pruning, judgment, or restoration.\",\"basis\":[\"Hosea 9:10,16 — Israel likened to fruit and a stricken root\",\"Matthew 21:18–22; Mark 11:12–21 — the barren fig tree, commonly read in relation to Israel or its leadership\",\"Luke 13:6–9 — the unfruitful fig tree\",\"Romans 11:16–24 — cultivated and wild olive branches representing covenant inclusion and exclusion\"],\"prominence\":\"common\"},{\"meaning\":\"The cross of Christ, especially when New Testament texts call the instrument of crucifixion a 'tree'; later Christian tradition also contrasts the cross with Eden’s trees.\",\"basis\":[\"Deuteronomy 21:22–23 — one hanged on a tree is under a curse\",\"Acts 5:30; 10:39; 13:29\",\"Galatians 3:13\",\"1 Peter 2:24\"],\"prominence\":\"common\"},{\"meaning\":\"Forbidden knowledge, disobedience, and humanity’s attempt to determine good and evil apart from God, specifically through the tree of the knowledge of good and evil.\",\"basis\":[\"Genesis 2:9,16–17; 3:1–24\"],\"prominence\":\"common\"},{\"meaning\":\"Judgment, barrenness, mortality, or destruction when a tree is fruitless, cut down, uprooted, or withered.\",\"basis\":[\"Isaiah 10:33–34\",\"Daniel 4:14,23\",\"Matthew 3:10; 21:18–22\",\"Luke 13:6–9\",\"Jude 12\"],\"prominence\":\"common\"},{\"meaning\":\"Wisdom or Torah as a source of life and blessing.\",\"basis\":[\"Proverbs 3:18; 11:30; 13:12; 15:4\",\"Psalm 1:1–3, often interpreted in relation to meditation on God’s law\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single settled symbolic meaning for the generic term 'tree.' Its meaning is strongly controlled by context, species, condition, and narrative role. Life and fruitful flourishing are the broadest positive associations, but Scripture also regularly uses trees for persons, kingdoms, Israel, moral character, the cross, forbidden knowledge, and judgment.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1433,
+    "output_tokens_details": {
+      "reasoning_tokens": 414
+    },
+    "total_tokens": 1750
+  },
+  "user": null,
+  "metadata": {}
+}

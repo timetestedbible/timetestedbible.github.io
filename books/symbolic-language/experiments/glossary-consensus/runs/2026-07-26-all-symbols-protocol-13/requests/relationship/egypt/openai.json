@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "egypt",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nEgypt\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, Egypt functions as the standing symbol of bondage and oppression—specifically slavery to sin and to 'the world' as a system opposed to God—from which God delivers his people. The Exodus from Egypt is read typologically as the pattern of salvation: Egypt represents the unredeemed condition (sin, the flesh, worldliness), Pharaoh the enslaving power (often Satan), and deliverance through the Red Sea the believer's redemption in Christ. Hence the common homiletical shorthand: 'Egypt = the world / the life of sin the believer has left behind.'\",\n  \"primary_basis\": [\n    \"Exodus 1-14 (the bondage narrative and deliverance, foundational to the whole typology)\",\n    \"Exodus 20:2 / Deuteronomy 5:6 ('out of the land of Egypt, out of the house of slavery')\",\n    \"Deuteronomy 6:12; 8:14 (Egypt as 'the house of bondage')\",\n    \"Hosea 11:1 ('Out of Egypt I called my son'), applied to Christ in Matthew 2:15\",\n    \"1 Corinthians 10:1-11 (the Exodus events happened 'as examples' / types for believers)\",\n    \"Hebrews 11:24-27 (Moses forsaking Egypt and 'the pleasures of sin')\",\n    \"Revelation 11:8 (the great city 'spiritually called Sodom and Egypt')\",\n    \"Numbers 11:5; 14:3-4 (longing to return to Egypt as the type of desiring the old sinful life)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Egypt as a false object of trust—worldly power, military alliance, and human reliance instead of dependence on God. Prominent in prophetic literature where Judah is condemned for seeking Egyptian help.\",\n      \"basis\": [\n        \"Isaiah 30:1-3; 31:1 ('Woe to those who go down to Egypt for help')\",\n        \"Ezekiel 29:6-7 (Egypt as a 'staff of reed' that breaks)\",\n        \"2 Kings 18:21; Jeremiah 42-44\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Egypt as a place of refuge and providential preservation—God's people repeatedly find shelter or sustenance there (Abraham, Joseph and Jacob's family, Jeroboam, the infant Jesus). This complicates the purely negative reading.\",\n      \"basis\": [\n        \"Genesis 12:10; 45:5-11; 46:3-4 (Joseph narrative: God sends Israel to Egypt to preserve life)\",\n        \"Matthew 2:13-15 (the flight of the holy family to Egypt)\",\n        \"1 Kings 11:40\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Egypt as an object of God's ultimate redemptive purpose—eschatologically converted and blessed alongside Israel, showing God's mercy extends even to the archetypal enemy nation.\",\n      \"basis\": [\n        \"Isaiah 19:18-25 ('Blessed be Egypt my people')\",\n        \"Psalm 87:4 (Rahab/Egypt counted among those who know God)\",\n        \"Zechariah 14:16-19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Egypt in Revelation 11:8 read as a specific cipher for a historical entity—apostate Jerusalem, pagan Rome, or a corrupt end-times world system—depending on preterist, historicist, or futurist frameworks, rather than as generic 'world/sin.'\",\n      \"basis\": [\n        \"Revelation 11:8\",\n        \"Interpretive traditions in commentaries on Revelation (preterist, historicist, futurist, idealist schools)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Allegorical patristic and monastic readings in which Egypt represents the passions, ignorance, or the material realm the soul must flee (e.g., Origen, Gregory of Nyssa's Life of Moses), and 'plundering the Egyptians' as the church's legitimate appropriation of pagan learning (Augustine).\",\n      \"basis\": [\n        \"Gregory of Nyssa, Life of Moses\",\n        \"Origen's homilies on Exodus\",\n        \"Augustine, On Christian Doctrine 2.40 (Exodus 12:35-36 typology)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Egypt is one of the most stable symbols in Christian interpretation: across patristic, Reformation, and modern evangelical usage, it overwhelmingly signifies bondage/sin/the world from which God delivers, grounded in the Exodus typology and reinforced by Revelation 11:8. The alternative readings (false trust, place of refuge, eschatological blessing) are well attested in Scripture itself and in scholarship, but they operate alongside rather than displacing the dominant bondage/world symbolism. Careful biblical-theological treatments note the ambivalence—Egypt is both oppressor and refuge—yet in devotional and homiletical use the negative typology is by far the most recognizable meaning.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Bondage, slavery, the world of sin, and the domain of oppression from which God delivers His people.\",\n  \"primary_basis\": [\n    \"Exodus 1-15\",\n    \"Deuteronomy 5:6\",\n    \"Revelation 11:8\",\n    \"Hebrews 11:26-27\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A place of refuge, sanctuary, and divine provision during times of famine or persecution.\",\n      \"basis\": [\n        \"Genesis 46:1-7\",\n        \"Matthew 2:13-15\",\n        \"1 Kings 11:40\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worldly military might, human strength, and false security that God's people are warned against trusting instead of trusting God.\",\n      \"basis\": [\n        \"Isaiah 31:1\",\n        \"Ezekiel 29:1-16\",\n        \"Jeremiah 42:13-19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A future recipient of God's grace, eschatological redemption, and inclusion among God's people.\",\n      \"basis\": [\n        \"Isaiah 19:19-25\",\n        \"Psalm 68:31\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While the Exodus paradigm cemented Egypt as the ultimate symbol of spiritual bondage and the fallen world in Christian typological interpretation, biblical texts also uniquely portray it as a place of refuge for the Patriarchs and the Holy Family, adding nuance to its symbolic usage.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Bondage to sin and to an oppressive, godless world-system, from which God delivers his people in an exodus. In common Christian typology, Egypt is the realm of slavery, Pharaoh represents enslaving power, and departure from Egypt prefigures salvation and liberation.\",\n  \"primary_basis\": [\n    \"Exodus 1:8–14; 5:1–23 — Israel is oppressed and enslaved in Egypt.\",\n    \"Exodus 12–14 — God liberates Israel from Egypt through Passover and the crossing of the sea.\",\n    \"Exodus 20:2; Deuteronomy 5:6 — Egypt is explicitly called “the house of slavery.”\",\n    \"Micah 6:4 — deliverance from Egypt is recalled as God’s paradigmatic act of redemption.\",\n    \"1 Corinthians 10:1–6 — Paul treats the exodus events as typological examples for Christians.\",\n    \"Hebrews 11:24–27 — Moses’ rejection of Egypt is associated with choosing God and enduring for the promised reward.\",\n    \"Revelation 11:8 — the hostile city is “spiritually” called Egypt, explicitly using Egypt as a symbol of opposition and oppression.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A worldly imperial power characterized by idolatry, pride, and hostility toward God and his people.\",\n      \"basis\": [\n        \"Ezekiel 20:7–8 — Egypt is associated with idols.\",\n        \"Ezekiel 29:3–16; 30:1–19 — Egypt and Pharaoh exemplify proud imperial power brought under judgment.\",\n        \"Revelation 11:8 — Egypt functions as a spiritual name for a city hostile to God’s witnesses.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"False security and misplaced reliance on political, military, or human power instead of God.\",\n      \"basis\": [\n        \"Isaiah 30:1–7 — dependence on Egypt is condemned as a useless refuge.\",\n        \"Isaiah 31:1–3 — those who rely on Egypt’s horses and strength rather than the Lord are rebuked.\",\n        \"Jeremiah 42:13–22 — flight to Egypt for safety is portrayed as disobedient and ultimately disastrous.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Exile or alienation outside the promised land, often contrasted with covenant life and inheritance.\",\n      \"basis\": [\n        \"Genesis 15:13–16 — Abraham’s descendants will live as aliens and be oppressed before returning to the land.\",\n        \"Deuteronomy 17:16 — returning to Egypt represents reversal of the exodus.\",\n        \"Hosea 8:13; 9:3 — “return to Egypt” can signify renewed exile and servitude.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A place of refuge, preservation, or providential shelter during danger and famine.\",\n      \"basis\": [\n        \"Genesis 45:5–11; 50:20 — God uses Joseph’s position in Egypt to preserve life.\",\n        \"Matthew 2:13–15 — Egypt shelters Jesus from Herod before the return that fulfills “Out of Egypt I called my son.”\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A setting of learning, wealth, and cultural power that may be valued yet subordinated to faithfulness to God.\",\n      \"basis\": [\n        \"Acts 7:22 — Moses is educated in all the wisdom of the Egyptians.\",\n        \"Hebrews 11:26 — the treasures of Egypt are contrasted with the greater value of sharing in the Messiah’s reproach.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a settled conventional Christian typology in which Egypt signifies slavery to sin or the oppressive world from which God redeems his people. This is not a universal meaning for every biblical occurrence: many passages refer to the historical nation directly, and other contexts portray Egypt as refuge, false security, imperial pride, or exile.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"bondage/slavery to sin and the world system opposed to God, from which God delivers His people\",\n  \"primary_basis\": [\n    \"Exodus 1–14 (Israel's enslavement under Pharaoh and the exodus deliverance)\",\n    \"Deuteronomy 5:6; 6:12; 8:14; 13:5, 10 (repeated formula of YHWH who brought Israel out of Egypt, the house of bondage)\",\n    \"Hosea 11:1 cited in Matthew 2:15 (typological 'out of Egypt I called my son')\",\n    \"1 Corinthians 10:1–11 (Paul's use of the exodus generation as types for Christian life and warning against returning to sin)\",\n    \"Revelation 11:8 (spiritual 'Egypt' as the place where the Lord was crucified, linking to worldly opposition)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"temporary place of refuge, protection, or material provision\",\n      \"basis\": [\n        \"Genesis 12:10; 37–50 (Abraham and especially Joseph's family preserved in Egypt during famine)\",\n        \"Matthew 2:13–15 (holy family's flight to Egypt to escape Herod)\",\n        \"occasional prophetic or historical notes of Egypt as asylum\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"idolatry, pagan power, and object of divine judgment\",\n      \"basis\": [\n        \"Exodus 12:12; Numbers 33:4 (judgment on the gods of Egypt)\",\n        \"Isaiah 19; Jeremiah 46; Ezekiel 29–32 (oracles against Egypt as proud empire and false security)\",\n        \"Isaiah 31:1–3 (warning against trusting Egypt's horses and chariots rather than YHWH)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the flesh or carnal nature (in some allegorical or puritan traditions)\",\n      \"basis\": [\n        \"extended typology of Pharaoh as the flesh/sin nature and Egypt as its domain (building on Exodus and 1 Cor 10)\",\n        \"occasional homiletic or devotional readings equating return to Egypt with fleshly living\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, medieval, Reformation, and modern evangelical/biblical-studies sources the dominant symbolic register is negative (bondage/world/opposition), grounded in the exodus paradigm; positive or neutral uses (refuge, provision) are secondary and usually limited to specific narratives. No major Christian tradition treats Egypt as a settled positive symbol of the people of God.\"\n}\n\nBOOK ENTRY\nA covenant city in bondage under worldly rule. Revelation applies the spiritual name Egypt to the great city where the Lord was crucified: Jerusalem in bondage and covenant corruption.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: bondage to sin, and the world-system out of which God redeems.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rev 11:8; 18:24; Matt 23:37; Gal 4:25; Isa 1:10) · see The Fall of Babylon, ch. 35\n\nAVAILABLE KJV EXCERPTS\nRevelation 11:8 — And their dead bodies shall lie in the street of the great city, which spiritually is called Sodom and Egypt, where also our Lord was crucified.\nRevelation 18:24 — And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth.\nMatthew 23:37 — O Jerusalem, Jerusalem, thou that killest the prophets, and stonest them which are sent unto thee, how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!\nGalatians 4:25 — For this Agar is mount Sinai in Arabia, and answereth to Jerusalem which now is, and is in bondage with her children.\nIsaiah 1:10 — Hear the word of the LORD, ye rulers of Sodom; give ear unto the law of our God, ye people of Gomorrah.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "9c688c204fb95f6c6aadf4c68e1bec1bc705e91bb8eca14216bf49e09a0fe487",
+  "cache": {
+    "hit": false
+  }
+}

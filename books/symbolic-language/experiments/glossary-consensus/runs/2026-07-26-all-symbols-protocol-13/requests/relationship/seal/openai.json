@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "seal",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSeal (mark in the forehead)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian interpretation, the seal or mark in the forehead symbolizes God's ownership of, identification with, and protection over His faithful people. It marks believers as belonging to God, secures them against divine judgment poured out on the wicked, and is commonly identified with the indwelling Holy Spirit and/or the name of God written on His servants, signifying allegiance, security of salvation, and consecration to God. Its placement on the forehead is widely read as signifying the mind—one's conscious loyalty, thought, and character being given to God (in deliberate contrast to the mark of the beast in Revelation 13).\",\n  \"primary_basis\": [\n    \"Revelation 7:2-4 (the servants of God sealed in their foreheads before judgment)\",\n    \"Revelation 9:4 (those without the seal of God in their foreheads are harmed)\",\n    \"Revelation 14:1 (the Father's name written in the foreheads of the 144,000)\",\n    \"Revelation 22:4 (His name shall be in their foreheads)\",\n    \"Ezekiel 9:4-6 (a mark set on the foreheads of those who sigh over abominations, sparing them from slaughter)\",\n    \"Ephesians 1:13-14 and Ephesians 4:30 (believers sealed with the Holy Spirit)\",\n    \"2 Corinthians 1:21-22 (God has sealed us and given the Spirit as a guarantee)\",\n    \"2 Timothy 2:19 (the seal: 'The Lord knows those who are His')\",\n    \"Exodus 12:7,13 (blood on doorposts as protective mark, often cited as a type)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The seal is specifically the Holy Spirit Himself: sealing is the Spirit's indwelling as a pledge/earnest of redemption, guaranteeing eternal security (emphasis in Reformed/evangelical soteriology, drawing Revelation together with the Pauline sealing texts).\",\n      \"basis\": [\n        \"Ephesians 1:13-14\",\n        \"Ephesians 4:30\",\n        \"2 Corinthians 1:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The seal of God is the seventh-day Sabbath: observance of the Sabbath commandment (which contains God's name, title, and territory like an official seal) is the end-time sign of loyalty to God, in contrast to the mark of the beast (Sunday observance). Distinctive Seventh-day Adventist teaching.\",\n      \"basis\": [\n        \"Exodus 20:8-11 (Sabbath command as containing the elements of a seal)\",\n        \"Ezekiel 20:12,20 (Sabbath as a sign between God and His people)\",\n        \"Exodus 31:13,17\",\n        \"Revelation 7:1-3 read against Revelation 13:16-17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The seal refers to baptism (and/or chrismation/confirmation): in patristic and Eastern Orthodox and Catholic sacramental tradition, 'the seal' (sphragis) is the sacramental sign impressed on the believer, marking them as Christ's own.\",\n      \"basis\": [\n        \"Ephesians 1:13 as read by church fathers (e.g., Cyril of Jerusalem, Chrysostom)\",\n        \"2 Corinthians 1:21-22 linked to anointing\",\n        \"Early liturgical usage of sphragis for baptism/chrismation\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A literal or visible eschatological mark: in some dispensationalist/futurist readings, the sealing of the 144,000 literal Jewish evangelists during a future tribulation is a real (possibly visible) protective mark applied at a specific future time.\",\n      \"basis\": [\n        \"Revelation 7:1-8 read literally/futuristically\",\n        \"Revelation 9:4\",\n        \"Revelation 14:1-5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purely symbolic of settled character or the mind wholly devoted to God: the forehead represents the intellect/will, so the seal denotes a fixed, tested character or complete mental allegiance to God's truth, with no external mark of any kind implied.\",\n      \"basis\": [\n        \"Revelation 14:1 and 22:4 (name in forehead as character/identity)\",\n        \"Deuteronomy 6:8 and 11:18 (God's words as frontlets between the eyes, i.e., in the mind)\",\n        \"Contrast with Revelation 13:16 mark of the beast as allegiance\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus across Catholic, Orthodox, Protestant, and evangelical scholarship on the core meaning: the seal marks God's people as His own, protecting them from eschatological judgment, with the forehead signifying the mind/allegiance. The alternatives differ mainly on the referent or mechanism of the seal (Holy Spirit, baptism, Sabbath, literal future mark) rather than on the basic ownership-and-protection symbolism, which nearly all traditions share. The Ezekiel 9 background and the deliberate antithesis with the mark of the beast (Revelation 13:16-17) are near-universally noted in commentaries (e.g., Beale, Mounce, Osborne, Aune, Caird). The Sabbath-as-seal reading is confessionally distinctive to Seventh-day Adventism and not accepted in wider scholarship; the sacramental (baptismal) reading is historically significant in patristic literature but is a minority framing in modern exegesis of Revelation itself.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Divine ownership, spiritual protection from judgment, and the identifying presence of the Holy Spirit marking believers as God's faithful people.\",\n  \"primary_basis\": [\n    \"Revelation 7:3\",\n    \"Revelation 9:4\",\n    \"Revelation 14:1\",\n    \"Ezekiel 9:4\",\n    \"Ephesians 1:13-14\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A sacramental mark received during Baptism or Chrismation (Confirmation), traditionally administered by tracing the sign of the cross on the forehead.\",\n      \"basis\": [\n        \"2 Corinthians 1:22\",\n        \"Ephesians 4:30\",\n        \"Revelation 7:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sabbath observance as the specific end-time seal of God's law, contrasting with Sunday worship as the Mark of the Beast (Seventh-day Adventist interpretation).\",\n      \"basis\": [\n        \"Exodus 31:13-17\",\n        \"Ezekiel 20:12\",\n        \"Revelation 7:2-3\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A literal, visible mark of physical protection given to a specific group (such as the 144,000 Jewish evangelists) during a future seven-year Tribulation.\",\n      \"basis\": [\n        \"Revelation 7:3-4\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While specific applications vary across sacramental, dispensational, and historicist traditions, the core symbolic consensus firmly identifies the seal of God on the forehead as the divine counterpart to the Mark of the Beast, representing absolute allegiance to and preservation by God.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A sign of belonging to God: divine ownership, authentication, and identification of God’s faithful people, often including God’s spiritual protection and preservation. The forehead location emphasizes openly marked identity and allegiance, in contrast to allegiance to the beast.\",\n  \"primary_basis\": [\n    \"Ezekiel 9:4–6 — a mark is placed on the foreheads of the faithful remnant, distinguishing them for preservation in judgment.\",\n    \"Revelation 7:2–4 — the servants of God are sealed on their foreheads before destructive judgments.\",\n    \"Revelation 9:4 — those having God’s seal are distinguished from those exposed to judgment.\",\n    \"Revelation 14:1 — the 144,000 bear the Lamb’s and the Father’s name on their foreheads, signifying identity and allegiance.\",\n    \"Revelation 22:4 — God’s servants bear his name on their foreheads.\",\n    \"Revelation 13:16–17; 14:9–11 — the contrasting mark of the beast represents rival ownership, worship, and allegiance.\",\n    \"2 Corinthians 1:21–22; Ephesians 1:13–14; 4:30 — Christians are sealed with the Holy Spirit, supporting the broader association of sealing with divine ownership, authentication, and preservation.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The seal specifically denotes the indwelling or gift of the Holy Spirit, rather than merely a general sign of divine ownership.\",\n      \"basis\": [\n        \"2 Corinthians 1:21–22\",\n        \"Ephesians 1:13–14\",\n        \"Ephesians 4:30\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The forehead seal has a sacramental referent, especially baptism, confirmation/chrismation, or the sign of the cross placed on the baptized.\",\n      \"basis\": [\n        \"Early Christian baptismal and liturgical interpretation connected sealing language with initiation and the reception of the Spirit.\",\n        \"2 Corinthians 1:21–22\",\n        \"Ephesians 1:13–14\",\n        \"Revelation 7:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The seal represents God’s name, character, law, or truth impressed upon the mind, with the forehead symbolizing thought, conviction, and conscious allegiance.\",\n      \"basis\": [\n        \"Deuteronomy 6:6–8\",\n        \"Exodus 13:9,16\",\n        \"Revelation 14:1\",\n        \"Revelation 22:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The seal specifically signifies Sabbath observance as the identifying sign of loyalty to God, commonly contrasted with the mark of the beast.\",\n      \"basis\": [\n        \"Exodus 20:8–11\",\n        \"Exodus 31:13–17\",\n        \"Ezekiel 20:12,20\",\n        \"Revelation 7:3\",\n        \"Revelation 14:1,12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The apocalyptic seal is a literal or visibly detectable end-time mark placed upon a particular group, often the 144,000, rather than primarily a spiritual symbol applicable to all believers.\",\n      \"basis\": [\n        \"Revelation 7:3–8\",\n        \"Revelation 14:1\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The seal chiefly denotes election and guaranteed final salvation, implying that those sealed will certainly persevere to the end.\",\n      \"basis\": [\n        \"Ephesians 1:13–14\",\n        \"Ephesians 4:30\",\n        \"Revelation 7:3–4\",\n        \"Revelation 14:1–5\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on the general symbolism of divine ownership, identity, and allegiance, often with protection or preservation. There is no settled consensus on the seal’s precise referent—whether it is specifically the Holy Spirit, a sacramental rite, God’s character or law, Sabbath observance, election, or an end-time mark.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Divine ownership, protection, and identification of God's faithful servants, shielding them from judgment\",\n  \"primary_basis\": [\n    \"Revelation 7:2-3\",\n    \"Revelation 9:4\",\n    \"Revelation 14:1\",\n    \"Ezekiel 9:4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The indwelling Holy Spirit as God's authenticating seal on believers\",\n      \"basis\": [\n        \"Ephesians 1:13-14\",\n        \"Ephesians 4:30\",\n        \"2 Corinthians 1:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Counterfeit mark of the beast signifying allegiance to the Antichrist or worldly system, leading to exclusion from God's people\",\n      \"basis\": [\n        \"Revelation 13:16-17\",\n        \"Revelation 14:9-11\",\n        \"Revelation 20:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal physical mark, brand, or implant to be applied in a future end-times scenario\",\n      \"basis\": [\n        \"Revelation 13:16-17\",\n        \"Revelation 7:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sacramental or ritual sign such as baptism or confirmation marking incorporation into the church\",\n      \"basis\": [\n        \"Ephesians 1:13\",\n        \"traditional liturgical practice\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Consensus exists on the basic contrast between God's protective seal of ownership and the beast's mark of allegiance; differences arise mainly in eschatological schools (preterist, historicist, futurist) regarding literal versus symbolic application and timing.\"\n}\n\nBOOK ENTRY\nThe Name impressed upon its owner, marking covenant identity and allegiance in the forehead. God's seal joins ownership with departure from iniquity; the counterfeit claims the same place.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 28:36-38; 13:9; Ezek 9:4-6; 2 Tim 2:19; Rev 7:3; 14:1; 22:4; 13:16) · see The Seal, ch. 10\n\nAVAILABLE KJV EXCERPTS\nExodus 28:36 — And thou shalt make a plate of pure gold, and grave upon it, like the engravings of a signet, HOLINESS TO THE LORD.\nExodus 28:37 — And thou shalt put it on a blue lace, that it may be upon the mitre; upon the forefront of the mitre it shall be.\nExodus 28:38 — And it shall be upon Aaron's forehead, that Aaron may bear the iniquity of the holy things, which the children of Israel shall hallow in all their holy gifts; and it shall be always upon his forehead, that they may be accepted before the LORD.\nExodus 13:9 — And it shall be for a sign unto thee upon thine hand, and for a memorial between thine eyes, that the LORD'S law may be in thy mouth: for with a strong hand hath the LORD brought thee out of Egypt.\nEzekiel 9:4 — And the LORD said unto him, Go through the midst of the city, through the midst of Jerusalem, and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof.\nEzekiel 9:5 — And to the others he said in mine hearing, Go ye after him through the city, and smite: let not your eye spare, neither have ye pity:\nEzekiel 9:6 — Slay utterly old and young, both maids, and little children, and women: but come not near any man upon whom is the mark; and begin at my sanctuary. Then they began at the ancient men which were before the house.\n2 Timothy 2:19 — Nevertheless the foundation of God standeth sure, having this seal, The Lord knoweth them that are his. And, Let every one that nameth the name of Christ depart from iniquity.\nRevelation 7:3 — Saying, Hurt not the earth, neither the sea, nor the trees, till we have sealed the servants of our God in their foreheads.\nRevelation 14:1 — And I looked, and, lo, a Lamb stood on the mount Sion, and with him an hundred forty and four thousand, having his Father's name written in their foreheads.\nRevelation 22:4 — And they shall see his face; and his name shall be in their foreheads.\nRevelation 13:16 — And he causeth all, both small and great, rich and poor, free and bond, to receive a mark in their right hand, or in their foreheads:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "f9533408f8c86f4f8f7023ab169a0cabad29ec8cad894b3b0237c8010f11c365",
+  "cache": {
+    "hit": false
+  }
+}

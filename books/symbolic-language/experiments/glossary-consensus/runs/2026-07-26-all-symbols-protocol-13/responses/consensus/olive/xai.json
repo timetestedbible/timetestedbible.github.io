@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920416,
+  "completed_at": 1783920443,
+  "id": "158de2a5-6b1b-9fc3-82df-95a3d5a1750d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_158de2a5-6b1b-9fc3-82df-95a3d5a1750d",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for biblical symbolism of \"Olive, vine, fig\". I need to return only a JSON object matching the schema.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Israel (or God's covenant people/nation) in its various aspects\",\n  \"primary_basis\": [\n    \"Jeremiah 11:16 and Romans 11:17-24 (olive tree as Israel, with grafting of Gentiles)\",\n    \"Isaiah 5:1-7, Psalm 80:8-16, Jeremiah 2:21, Hosea 10:1 (vine/vineyard as Israel)\",\n    \"Hosea 9:10, Jeremiah 24, Joel 1:7, Matthew 21:18-19 and 24:32 (fig tree as Israel)\",\n    \"Habakkuk 3:17, Joel 1:7/1:12 (the three trees grouped in contexts of judgment or loss of blessing on the land/people)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Agricultural prosperity, peace, and divine blessing in the land (or their absence under judgment)\",\n      \"basis\": [\n        \"1 Kings 4:25, Micah 4:4, Zechariah 3:10 (sitting under vine and fig tree as peace/security)\",\n        \"Habakkuk 3:17, Haggai 2:19 (failure of olive/vine/fig as lack of blessing)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fruitful, useful plants that refuse worldly kingship (in contrast to the bramble)\",\n      \"basis\": [\n        \"Judges 9:8-15 (Jotham's parable of the trees)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Spiritual fruitfulness, anointing/joy/sweetness (oil of the Spirit, wine of joy, good works or sweetness of figs)\",\n      \"basis\": [\n        \"General associations of olive oil with anointing/Holy Spirit, vine with joy/abiding (John 15), figs with good fruit\",\n        \"Occasional devotional or allegorical readings in Christian teaching\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Distinct aspects of Israel or redemptive history (e.g., national/religious/spiritual; or Judaism/Israel/Church in some prophetic schemes)\",\n      \"basis\": [\n        \"Combinations of the individual tree symbols in some dispensational or typological commentaries\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Each tree independently carries a strong and longstanding identification with Israel across Old and New Testament usage and Christian interpretation; their joint appearance reinforces that association or the related theme of covenant blessing/judgment on the land. No single ultra-precise meaning for the exact trio is exclusive, but the Israel/people-of-God reading is the most widely recognized primary consensus.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_158de2a5-6b1b-9fc3-82df-95a3d5a1750d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 606,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2208,
+    "output_tokens_details": {
+      "reasoning_tokens": 1571
+    },
+    "total_tokens": 2814,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 136920000,
+    "context_details": {
+      "input_tokens": 606,
+      "output_tokens": 2208
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

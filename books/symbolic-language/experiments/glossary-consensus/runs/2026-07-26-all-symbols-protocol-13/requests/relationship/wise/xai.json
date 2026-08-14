@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "wise",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWise\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'wise' primarily denotes the person who fears God and orders life according to His word — practical, moral-spiritual skill in godly living rather than mere intellect. The wise person hears and obeys God's instruction, and this wisdom is repeatedly said to begin with 'the fear of the LORD.' In the New Testament this is sharpened into hearing and doing the words of Christ, and into possessing the 'wisdom from above' that is given by God rather than the wisdom of the world.\",\n  \"primary_basis\": [\n    \"Proverbs 9:10\",\n    \"Proverbs 1:7\",\n    \"Psalm 111:10\",\n    \"Job 28:28\",\n    \"Deuteronomy 4:5-6\",\n    \"Matthew 7:24-27\",\n    \"James 1:5\",\n    \"James 3:13-17\",\n    \"Ephesians 5:15-17\",\n    \"Psalm 90:12\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christological/personified Wisdom: 'Wisdom' as a personified figure (Lady Wisdom) in Proverbs, read by much of the Christian tradition as a type or figure of Christ, who is 'the wisdom of God.'\",\n      \"basis\": [\n        \"Proverbs 8:22-31\",\n        \"Proverbs 1:20-33\",\n        \"1 Corinthians 1:24\",\n        \"1 Corinthians 1:30\",\n        \"Colossians 2:3\",\n        \"Luke 11:49\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological readiness: the 'wise' as those spiritually prepared and watchful for the Lord's return, in contrast to the foolish who are unprepared (wise vs. foolish virgins; the faithful and wise servant).\",\n      \"basis\": [\n        \"Matthew 25:1-13\",\n        \"Matthew 24:45-51\",\n        \"Daniel 12:3\",\n        \"Daniel 12:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Negative/ironic sense: 'wise' as worldly or self-referential wisdom that God rejects — being 'wise in one's own eyes' or wise 'according to the flesh,' which Scripture treats as folly before God.\",\n      \"basis\": [\n        \"Proverbs 3:7\",\n        \"Proverbs 26:12\",\n        \"Isaiah 5:21\",\n        \"Romans 1:22\",\n        \"1 Corinthians 1:18-25\",\n        \"1 Corinthians 3:18-20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wisdom as a charismatic gift or Spirit-endowment: being 'wise' as a special enablement given by the Holy Spirit for leadership, craftsmanship, or discernment (Bezalel, Joseph, Solomon, the gift of the 'word of wisdom').\",\n      \"basis\": [\n        \"Exodus 31:1-6\",\n        \"Genesis 41:38-39\",\n        \"1 Kings 3:9-12\",\n        \"1 Corinthians 12:8\",\n        \"Acts 6:3\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The 'wise men' (Magi) of the nativity read symbolically as the Gentiles or the seeking soul drawn to worship Christ; a homiletical rather than lexical use of 'wise.'\",\n      \"basis\": [\n        \"Matthew 2:1-12\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus that biblical wisdom is fundamentally religious and practical — reverent obedience to God ('the fear of the LORD is the beginning of wisdom') expressed in righteous conduct — rather than intellectual attainment. The main interpretive complexity is that 'wise' carries a deliberate double sense in Scripture: God-given wisdom (praised) versus worldly or self-styled wisdom (condemned), and readers must note which sense a passage intends. The Christological reading of personified Wisdom in Proverbs 8 is historically prominent (patristic and Reformation exegesis) though many modern scholars treat Lady Wisdom as a literary personification of God's attribute rather than a direct reference to Christ.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"One who fears the Lord, possesses divine insight, and practically applies God's truth to live righteously.\",\n  \"primary_basis\": [\n    \"Proverbs 1:7\",\n    \"Proverbs 9:10\",\n    \"Matthew 7:24\",\n    \"James 3:13-17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Worldly or fleshly intellect, characterized by human philosophy, arrogance, and spiritual blindness.\",\n      \"basis\": [\n        \"1 Corinthians 1:18-25\",\n        \"1 Corinthians 3:18-19\",\n        \"Isaiah 5:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A christological symbol or personification of Christ himself (Wisdom incarnate).\",\n      \"basis\": [\n        \"Proverbs 8:22-31\",\n        \"1 Corinthians 1:24\",\n        \"1 Corinthians 1:30\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gentile seekers of truth who recognize and worship the Messiah (the Magi).\",\n      \"basis\": [\n        \"Matthew 2:1-12\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical symbolism, the wise person is primarily contrasted with the fool. True wisdom is depicted not merely as intellectual capacity, but as moral and spiritual alignment with God. The New Testament further introduces a sharp dichotomy between the 'wise of this world' (a negative symbol of human pride) and those made wise by God.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Those who possess God-given spiritual discernment and therefore hear, obey, and faithfully respond to God, often contrasted with the foolish, disobedient, or unprepared.\",\n  \"primary_basis\": [\n    \"Proverbs 1:7; 9:10 — fear of the Lord is the beginning of knowledge and wisdom.\",\n    \"Psalm 111:10 — wisdom begins with fearing the Lord and is expressed in obedience.\",\n    \"Matthew 7:24–27 — the wise builder represents the person who hears Jesus’ words and acts on them.\",\n    \"Matthew 25:1–13 — the wise virgins represent readiness and faithful preparedness for the bridegroom’s coming.\",\n    \"James 3:13–17 — true wisdom is demonstrated by godly conduct and contrasted with earthly wisdom.\",\n    \"Daniel 12:3, 10 — the wise understand and remain faithful amid eschatological testing.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"In eschatological parables, the wise specifically symbolize the prepared and faithful people of God who are ready for Christ’s return, sometimes identified with the faithful church or remnant.\",\n      \"basis\": [\n        \"Matthew 24:45–47\",\n        \"Matthew 25:1–13\",\n        \"Daniel 12:3, 10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The wise may denote faithful teachers, leaders, or interpreters who understand God’s purposes and guide others in righteousness.\",\n      \"basis\": [\n        \"Daniel 11:33, 35; 12:3\",\n        \"Matthew 24:45\",\n        \"Matthew 13:52\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"‘Wise’ can be ironic or negative, referring to those considered wise by worldly standards but who reject God and are exposed as foolish.\",\n      \"basis\": [\n        \"Isaiah 5:21\",\n        \"Jeremiah 8:8–9\",\n        \"Romans 1:22\",\n        \"1 Corinthians 1:18–29; 3:18–20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In some narrative interpretation, wise figures such as the Magi symbolize Gentiles or nations recognizing and worshipping Christ.\",\n      \"basis\": [\n        \"Matthew 2:1–12\",\n        \"Isaiah 60:1–6\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad agreement about the positive biblical association of wisdom with fear of God, discernment, obedience, and preparedness. However, ‘wise’ is ordinarily a moral or spiritual description rather than a fixed symbol with one universal referent; its precise symbolic meaning depends on context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Godly wisdom or spiritual discernment expressed in prudent, obedient living that fears the Lord and builds on His word\",\n  \"primary_basis\": [\n    \"Proverbs 1:7\",\n    \"Proverbs 9:10\",\n    \"Matthew 7:24-27\",\n    \"Matthew 25:1-13\",\n    \"James 3:13-17\",\n    \"1 Corinthians 1:18-31\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ Himself as the wisdom of God\",\n      \"basis\": [\n        \"1 Corinthians 1:24\",\n        \"1 Corinthians 1:30\",\n        \"Colossians 2:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worldly or human wisdom that is folly before God\",\n      \"basis\": [\n        \"1 Corinthians 1:20-25\",\n        \"1 Corinthians 3:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Magi (wise men) as Gentile seekers who recognize and worship Christ\",\n      \"basis\": [\n        \"Matthew 2:1-12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Practical shrewdness or cunning in dealing with a hostile world\",\n      \"basis\": [\n        \"Matthew 10:16\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"“Wise” functions more as a recurring ethical/spiritual attribute than as a concrete object-symbol (e.g., lamb, dove). Across wisdom literature and the Gospels it is consistently tied to fear of the Lord, readiness, and obedience; the main variations are contrastive (godly vs. worldly) or titular (Magi).\"\n}\n\nBOOK ENTRY\nOne who hears God's word and does it, who fears the LORD.\n[.opposite]Opposite: Fool.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 7:24; Ps 111:10) · see The Fool and the Wise, ch. 20\n\nAVAILABLE KJV EXCERPTS\nMatthew 7:24 — Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:\nPsalms 111:10 — The fear of the LORD is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "7c27ef4e0db51548a8ad688612e62c627fd6989f755d6951706c6ca28e9c4cbf",
+  "cache": {
+    "hit": false
+  }
+}

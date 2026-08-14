@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920574,
+  "completed_at": 1783920587,
+  "id": "8c4210c0-ddac-9a61-a5a0-adad74f55da7",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_8c4210c0-ddac-9a61-a5a0-adad74f55da7",
+      "summary": [
+        {
+          "text": "The user wants me to act as a \"blind consensus definer\" for the term \"Sin\" in biblical symbolism, based on Christian teaching and biblical studies. I must not search or infer any specific author's mat...",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Any thought, word, deed, or disposition that transgresses God's law, misses the divine standard (hamartia), or rebels against God, producing guilt and separation from Him\",\n  \"primary_basis\": [\n    \"Romans 3:23\",\n    \"1 John 3:4\",\n    \"Romans 6:23\",\n    \"Isaiah 59:2\",\n    \"Genesis 3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Inherited Adamic condition of guilt and corruption (original sin) transmitted to all humanity\",\n      \"basis\": [\n        \"Romans 5:12-19\",\n        \"Psalm 51:5\",\n        \"Ephesians 2:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A personified cosmic power or enslaving force that dwells in and dominates human nature\",\n      \"basis\": [\n        \"Romans 6:6-23\",\n        \"Romans 7:7-25\",\n        \"John 8:34\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Primarily a relational rupture or spiritual sickness/alienation rather than forensic legal guilt\",\n      \"basis\": [\n        \"Luke 15 (prodigal son)\",\n        \"Eastern Orthodox therapeutic tradition\",\n        \"Isaiah 1:5-6\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian confessions the core denotation of sin as moral failure relative to God's will is settled; differences concern transmission, ontology, and juridical vs. therapeutic emphasis rather than the basic meaning itself.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_8c4210c0-ddac-9a61-a5a0-adad74f55da7",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1250,
+    "output_tokens_details": {
+      "reasoning_tokens": 847
+    },
+    "total_tokens": 1852,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 85120000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1250
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

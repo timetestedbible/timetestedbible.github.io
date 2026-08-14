@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "sapphire",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSapphire\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, sapphire most commonly symbolizes heaven, the throne and glory of God, and divine revelation—its deep blue color being read as pointing the mind upward to heavenly realities and the majestic presence of God.\",\n  \"primary_basis\": [\n    \"Exodus 24:10 (under God's feet a pavement like sapphire, clear as the heaven itself)\",\n    \"Ezekiel 1:26 (above the firmament the likeness of a throne, as the appearance of a sapphire stone)\",\n    \"Ezekiel 10:1 (the likeness of a throne as a sapphire stone above the cherubim)\",\n    \"Exodus 28:18 (sapphire as the second stone in the second row of the high priest's breastplate)\",\n    \"Revelation 21:19 (sapphire as the second foundation stone of the New Jerusalem)\",\n    \"Isaiah 54:11 (foundations laid with sapphires, promise of restored Zion)\",\n    \"Ezekiel 28:13 (sapphire among the stones covering the king of Tyre in Eden)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Heavenly-mindedness, contemplation, and the hope of eternal life: patristic and medieval writers (e.g., Gregory the Great, Bede, and later lapidary traditions commenting on Revelation 21) took the sapphire foundation to signify souls or saints whose minds are fixed on heavenly things.\",\n      \"basis\": [\n        \"Revelation 21:19\",\n        \"Exodus 24:10\",\n        \"Ezekiel 1:26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purity, chastity, and truth/faithfulness: medieval Christian lapidaries and ecclesiastical usage (e.g., sapphire in bishops' rings) associated the stone with purity of life, fidelity, and sincerity.\",\n      \"basis\": [\n        \"Lamentations 4:7 (Nazirites' bodies compared to sapphire, read as purity)\",\n        \"Exodus 28:18 (breastplate stone associated with a tribe and with virtues in typological schemes)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Preciousness and incomparable value of wisdom: sapphire appears in wisdom literature as a standard of worth against which wisdom is measured.\",\n      \"basis\": [\n        \"Job 28:6, 16 (wisdom cannot be valued with precious sapphire)\",\n        \"Song of Solomon 5:14 (the beloved's body as ivory overlaid with sapphires, sometimes allegorized of Christ)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Tribal/apostolic typology: in schemes matching the twelve breastplate stones to the tribes of Israel or the twelve foundation stones to the apostles, sapphire is assigned to a particular tribe (variously Dan, Issachar, or others) or to a particular apostle (often Paul or Andrew in patristic lists); assignments vary widely and no single mapping is agreed.\",\n      \"basis\": [\n        \"Exodus 28:18\",\n        \"Revelation 21:19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Scholarly-critical reading: many biblical scholars hold that the Hebrew 'sappir' actually denotes lapis lazuli rather than modern corundum sapphire; this is a lexical rather than symbolic claim but affects some interpretations.\",\n      \"basis\": [\n        \"Exodus 24:10\",\n        \"Ezekiel 1:26\",\n        \"Job 28:6 (gold flecks suggesting pyrite inclusions in lapis lazuli)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable and fairly stable consensus that sapphire's core biblical association is with the heavenly realm and the throne/glory of God, anchored above all in Exodus 24:10 and Ezekiel 1:26. Secondary moral meanings (purity, contemplation, hope of heaven, fidelity) are widespread in patristic, medieval, and devotional literature but are elaborations of the primary heavenly association rather than rivals to it. Mappings of the stone to specific tribes or apostles are inconsistent across sources and should not be treated as settled. The lapis lazuli identification is broadly accepted in modern scholarship but concerns translation, not symbolism.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Divine glory, the throne of God, and the transcendent purity of heaven\",\n  \"primary_basis\": [\n    \"Exodus 24:10\",\n    \"Ezekiel 1:26\",\n    \"Ezekiel 10:1\",\n    \"Revelation 21:19\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's people, the tribes of Israel, or the Church represented as precious jewels in God's sight\",\n      \"basis\": [\n        \"Exodus 28:18\",\n        \"Isaiah 54:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Truth, divine revelation, and the Law, often linked to ancient traditions that the tablets of the Ten Commandments were made of sapphire\",\n      \"basis\": [\n        \"Exodus 24:10-12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Inestimable worth, beauty, and the supreme value of divine wisdom\",\n      \"basis\": [\n        \"Job 28:16\",\n        \"Song of Solomon 5:14\",\n        \"Lamentations 4:7\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical symbolism and Christian interpretation, sapphire is most strongly linked to theophany. Its association with the pavement beneath God's feet and the appearance of His throne makes it a primary symbol for heaven, divine presence, and transcendent glory.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Heavenly glory and the manifest presence of God, especially the splendor and transcendence of God's throne.\",\n  \"primary_basis\": [\n    \"Exodus 24:10 — beneath the God of Israel is a pavement resembling sapphire, described as clear as the sky.\",\n    \"Ezekiel 1:26 — the divine throne-vision includes a throne appearing like sapphire.\",\n    \"Ezekiel 10:1 — sapphire again characterizes the expanse and throne above the cherubim.\",\n    \"Revelation 21:19 — sapphire forms part of the foundations of the New Jerusalem, reinforcing its association with heavenly glory.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The beauty, preciousness, and restored glory of God's people or holy city.\",\n      \"basis\": [\n        \"Isaiah 54:11 — afflicted Zion is promised foundations laid with sapphires.\",\n        \"Revelation 21:19 — sapphire is among the jeweled foundations of the New Jerusalem.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Truth, faithfulness, purity, or heavenly contemplation, often inferred from sapphire's blue or sky-like appearance.\",\n      \"basis\": [\n        \"Exodus 24:10 — the sapphire pavement is compared with the clarity of the sky.\",\n        \"Later Christian gemstone, liturgical, and devotional traditions develop these qualities more explicitly than the biblical text itself.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A particular tribe of Israel, based on sapphire's place in the high priest's breastpiece.\",\n      \"basis\": [\n        \"Exodus 28:18 and 39:11 — sapphire is listed among the breastpiece stones, each associated collectively with Israel's tribes.\",\n        \"Specific stone-to-tribe assignments vary and are not supplied explicitly in the biblical text.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A particular apostle or apostolic virtue, based on the jeweled foundations of the New Jerusalem.\",\n      \"basis\": [\n        \"Revelation 21:14,19 — the city's foundations bear apostolic names and are adorned with precious stones.\",\n        \"Later interpreters propose differing apostle-to-stone correspondences, with no stable assignment.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable primary association with heaven, divine glory, and God's throne, but no single formally settled Christian symbolism. Interpretations vary by biblical commentary, patristic allegory, medieval lapidary tradition, and modern devotional use. The Hebrew sappir may also denote lapis lazuli or a similar blue stone rather than modern mineralogical sapphire.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Heavenly glory, the firmament, or the throne of God (divine presence and celestial realm)\",\n  \"primary_basis\": [\n    \"Exodus 24:10\",\n    \"Ezekiel 1:26\",\n    \"Ezekiel 10:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"One of the foundation stones of the New Jerusalem (eschatological glory or apostolic foundation)\",\n      \"basis\": [\n        \"Revelation 21:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gem on the high priest’s breastplate (tribal or priestly representation)\",\n      \"basis\": [\n        \"Exodus 28:18\",\n        \"Exodus 39:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purity, truth, or heavenly-mindedness (linked to blue color and contemplative virtue in later Christian gem symbolism)\",\n      \"basis\": [\n        \"patristic and medieval gem traditions\",\n        \"color association with sky/heaven\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Specific apostolic or virtue associations in some medieval lists (e.g., linked to particular apostles or theological virtues)\",\n      \"basis\": [\n        \"later liturgical and lapidary traditions\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The throne/heaven association drawn from the theophany and chariot-throne texts is the most consistently cited symbolic reading in Christian biblical interpretation; other uses are largely catalog or decorative rather than primary symbols.\"\n}\n\nBOOK ENTRY\nThe full moon in its enthroned and bridal form — the clear sapphire likeness at the place of God's throne, whose rare “clearness” (tohar, Exodus 24:10) is the very word for the throne-glory that can be made to cease (Psalm 89:44): a brightness worn, not owned. Identified with Issachar.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the blue of heaven itself — the sky as pavement and throne-likeness, divine glory; no lunar identification.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 24:10; Job 37:18, 21; Ps 89:36-37, 44; Song 5:10, 14; 6:9-10; Isa 54:5, 11; Lam 4:7-8; Ezek 1:26; 10:1; Rev 4:6; 21:9, 19, 21) · see Issachar and The Pearls of Wisdom, ch. 31\n\nAVAILABLE KJV EXCERPTS\nExodus 24:10 — And they saw the God of Israel: and there was under his feet as it were a paved work of a sapphire stone, and as it were the body of heaven in his clearness.\nJob 37:18 — Hast thou with him spread out the sky, which is strong, and as a molten looking glass?\nJob 37:21 — And now men see not the bright light which is in the clouds: but the wind passeth, and cleanseth them.\nPsalms 89:36 — His seed shall endure for ever, and his throne as the sun before me.\nPsalms 89:37 — It shall be established for ever as the moon, and as a faithful witness in heaven. Selah.\nPsalms 89:44 — Thou hast made his glory to cease, and cast his throne down to the ground.\nSong of Solomon 5:10 — My beloved is white and ruddy, the chiefest among ten thousand.\nSong of Solomon 5:14 — His hands are as gold rings set with the beryl: his belly is as bright ivory overlaid with sapphires.\nSong of Solomon 6:9 — My dove, my undefiled is but one; she is the only one of her mother, she is the choice one of her that bare her. The daughters saw her, and blessed her; yea, the queens and the concubines, and they praised her.\nSong of Solomon 6:10 — Who is she that looketh forth as the morning, fair as the moon, clear as the sun, and terrible as an army with banners?\nIsaiah 54:5 — For thy Maker is thine husband; the LORD of hosts is his name; and thy Redeemer the Holy One of Israel; The God of the whole earth shall he be called.\nIsaiah 54:11 — O thou afflicted, tossed with tempest, and not comforted, behold, I will lay thy stones with fair colours, and lay thy foundations with sapphires.\nLamentations 4:7 — Her Nazarites were purer than snow, they were whiter than milk, they were more ruddy in body than rubies, their polishing was of sapphire:\nLamentations 4:8 — Their visage is blacker than a coal; they are not known in the streets: their skin cleaveth to their bones; it is withered, it is become like a stick.\nEzekiel 1:26 — And above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone: and upon the likeness of the throne was the likeness as the appearance of a man above upon it.\nEzekiel 10:1 — Then I looked, and, behold, in the firmament that was above the head of the cherubims there appeared over them as it were a sapphire stone, as the appearance of the likeness of a throne.\nRevelation 4:6 — And before the throne there was a sea of glass like unto crystal: and in the midst of the throne, and round about the throne, were four beasts full of eyes before and behind.\nRevelation 21:9 — And there came unto me one of the seven angels which had the seven vials full of the seven last plagues, and talked with me, saying, Come hither, I will shew thee the bride, the Lamb's wife.\nRevelation 21:19 — And the foundations of the wall of the city were garnished with all manner of precious stones. The first foundation was jasper; the second, sapphire; the third, a chalcedony; the fourth, an emerald;\nRevelation 21:21 — And the twelve gates were twelve pearls; every several gate was of one pearl: and the street of the city was pure gold, as it were transparent glass.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "f8d7e907044e00040036d548e7a5e72c23c5a408ee74dfdae41d0fe77c5bcc76",
+  "cache": {
+    "hit": false
+  }
+}

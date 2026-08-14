@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123373,
+  "completed_at": 1785123398,
+  "id": "16748603-5fb2-9726-9d04-c3d6dcb49018",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_16748603-5fb2-9726-9d04-c3d6dcb49018",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Cedar\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_support\": \"strong\",\n  \"extension_support\": \"strong\",\n  \"core_note\": \"The book's core identification of cedar as 'a towering power of great height and majesty' that signifies stature (not one fixed identity) preserves the consensus's central referent of strength, majesty, and enduring stature while materially narrowing the extension by rejecting any single primary identity (e.g., the righteous as the default) and treating applications to Assyria, the house of David, and the righteous as co-equal. The consensus's primary meaning is thereby broadened in scope but the book's insistence on non-fixed identity excludes the consensus's settled emphasis on righteous flourishing as the most common presentation.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Cedar (esp. of Lebanon) primarily symbolizes strength, majesty, enduring stature, and the flourishing of the righteous under God; the same height/grandeur commonly serves as a counter-image of human pride and worldly power that God fells, with further minority associations to messianic planting, temple purity, and cleansing rites.\",\"book_summary\":\"Cedar is a towering power of great height and majesty; Assyria, the house of David, and the righteous may each bear the figure, so that the cedar signifies stature rather than any one fixed identity.\",\"consensus_core_identification\":\"strength/majesty/enduring stature (prototypically of the righteous)\",\"book_core_identification\":\"towering stature/height/majesty as such (no fixed identity)\",\"core_relation\":\"BOOK_BROADENS\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"Consensus privileges the positive righteous-flourishing sense as primary and treats pride/messianic uses as secondary alternatives; the book refuses any fixed primary identity and places Assyria, Davidic house, and righteous on equal footing under the single category of stature.\",\"material_contradiction\":\"none\",\"rationale\":\"Both identify the same underlying qualities (height, majesty, power) and the same biblical referents (righteous via Ps 92, Assyria via Ezek 31, Davidic/messianic via Ezek 17, lofty things judged via Isa 2). The book simply elevates the shared quality of stature into the sole core and explicitly denies a settled single identity, thereby broadening and re-ranking what the consensus presents as a primary-plus-alternatives structure without replacing the referent or excluding cases.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"Consensus sources regularly anchor the primary sense in Ps 92:12 and treat the pride reading as prophetic counterpoint rather than co-equal, so the book's flat denial of fixed identity may understate that conventional ranking.\",\"confidence\":\"high\"}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_16748603-5fb2-9726-9d04-c3d6dcb49018",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3949,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1411,
+    "output_tokens_details": {
+      "reasoning_tokens": 984
+    },
+    "total_tokens": 5360,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 161464000,
+    "context_details": {
+      "input_tokens": 3949,
+      "output_tokens": 1411
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

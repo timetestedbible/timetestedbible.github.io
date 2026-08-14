@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "rich",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nRich\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'rich' most commonly functions as a symbol of misplaced trust and spiritual danger: the rich person represents self-sufficiency, reliance on worldly possessions rather than God, and the deceptive security of material wealth. To be 'rich' in this symbolic sense is to be spiritually imperiled or even spiritually poor while materially full — wealth as an obstacle to entering the kingdom of God and a rival object of devotion ('mammon').\",\n  \"primary_basis\": [\n    \"Mark 10:17-27 / Matthew 19:16-26 / Luke 18:18-27 (the rich young ruler; 'easier for a camel to go through the eye of a needle than for a rich man to enter the kingdom of God')\",\n    \"Luke 6:24 ('But woe to you who are rich, for you have received your consolation')\",\n    \"Luke 12:16-21 (parable of the rich fool; 'so is the one who lays up treasure for himself and is not rich toward God')\",\n    \"Luke 16:19-31 (the rich man and Lazarus)\",\n    \"Matthew 6:19-24 ('You cannot serve God and mammon')\",\n    \"Matthew 13:22 ('the deceitfulness of riches' choking the word)\",\n    \"1 Timothy 6:9-10, 17-19 (desire to be rich as a snare; charge to the rich not to set hope on uncertain riches)\",\n    \"James 1:10-11; 2:6-7; 5:1-6 (the rich fading away; the rich as oppressors under judgment)\",\n    \"Revelation 3:17 (Laodicea: 'You say, I am rich... not knowing that you are wretched, pitiable, poor, blind, and naked')\",\n    \"Proverbs 30:8-9 (danger that riches lead to denying the Lord)\",\n    \"Deuteronomy 8:17-18 (warning against saying 'my power... has gotten me this wealth')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Riches as a sign of God's blessing and covenant favor — the Old Testament/Deuteronomic strand in which wealth marks divine approval (Abraham, Job, Solomon), sometimes extended by modern prosperity theology into a promise of material blessing for the faithful.\",\n      \"basis\": [\n        \"Deuteronomy 28:1-14\",\n        \"Genesis 13:2; 24:35 (Abraham)\",\n        \"Job 1:1-3; 42:10-17\",\n        \"1 Kings 3:13 (Solomon)\",\n        \"Proverbs 10:22 ('The blessing of the LORD makes rich')\",\n        \"Psalm 112:1-3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'Rich' inverted as a symbol of true spiritual wealth — being 'rich toward God,' 'rich in faith,' or rich in Christ regardless of material condition; the believer's real riches are grace, faith, and inheritance in Christ.\",\n      \"basis\": [\n        \"Luke 12:21 ('rich toward God')\",\n        \"James 2:5 ('chosen the poor... to be rich in faith')\",\n        \"2 Corinthians 8:9 ('though he was rich, yet for your sake he became poor, so that you by his poverty might become rich')\",\n        \"Revelation 2:9 (Smyrna: 'I know your poverty — but you are rich')\",\n        \"Ephesians 1:7-8; 2:7 ('riches of his grace')\",\n        \"Matthew 6:20 (treasure in heaven)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The rich as a class symbol of oppression and structural injustice against the poor, whom God will judge and reverse — emphasized in prophetic literature, Luke's reversal motif, and liberation theology.\",\n      \"basis\": [\n        \"Luke 1:52-53 (Magnificat: 'the rich he has sent away empty')\",\n        \"Amos 4:1; 6:1-7; 8:4-6\",\n        \"Isaiah 5:8\",\n        \"James 5:1-6\",\n        \"Luke 16:19-31\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Wealth as morally neutral — a stewardship reading in which riches symbolize entrusted resources whose meaning depends on how they are held and used, with generosity as the test.\",\n      \"basis\": [\n        \"1 Timothy 6:17-19\",\n        \"Luke 16:1-13 (parable of the shrewd manager; faithful with worldly wealth)\",\n        \"Matthew 25:14-30 (parable of the talents)\",\n        \"2 Corinthians 9:6-11\",\n        \"Acts 4:32-37\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"There is a recognizable dominant strand in New Testament-centered Christian teaching: 'rich' symbolizes the peril of trusting wealth instead of God, and often spiritual poverty masked by material abundance (Rev 3:17 being the classic proof text for the ironic sense). However, the term is genuinely double-sided in the canon: an equally well-attested positive usage treats richness as blessing (OT) or as true spiritual wealth in Christ (Pauline and Lukan inversion). Consensus therefore exists at the level of 'wealth as spiritual danger/misplaced trust' being the default symbolic reading in most sermons, commentaries, and systematic treatments, but interpreters routinely acknowledge the countervailing positive strand, which prevents the consensus from being total. Confidence is medium rather than high because 'rich' is less a fixed symbol (like 'leaven' or 'lamb') and more a moral-theological theme with context-dependent valence.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual wealth, encompassing an abundance of faith, God's grace, salvation, and heavenly treasure.\",\n  \"primary_basis\": [\n    \"Ephesians 2:4\",\n    \"James 2:5\",\n    \"2 Corinthians 8:9\",\n    \"Revelation 2:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Spiritual pride, self-sufficiency, and reliance on worldly security masking true spiritual poverty.\",\n      \"basis\": [\n        \"Revelation 3:17\",\n        \"Luke 12:16-21\",\n        \"1 Timothy 6:17\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The unfathomable depth of God's wisdom, knowledge, and glory.\",\n      \"basis\": [\n        \"Romans 11:33\",\n        \"Colossians 1:27\",\n        \"Ephesians 1:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worldly distractions, the deceitfulness of earthly desires, and spiritual obstacles.\",\n      \"basis\": [\n        \"Matthew 13:22\",\n        \"Mark 10:25\",\n        \"James 5:1-3\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The term operates in a dualistic manner in biblical symbolism: positively, it describes the limitless spiritual blessings of God and the faith of believers; negatively, it symbolizes spiritual bankruptcy masked by material self-sufficiency or arrogance.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Worldly wealth, privilege, and self-sufficiency—often symbolizing attachment to temporal goods and the spiritual danger of trusting possessions rather than God.\",\n  \"primary_basis\": [\n    \"Matthew 6:19–24 — earthly treasure is contrasted with treasure in heaven, and service to God with service to mammon.\",\n    \"Matthew 19:16–24; Mark 10:17–25; Luke 18:18–25 — riches are portrayed as a serious impediment to entering the kingdom.\",\n    \"Luke 6:20–26 — the rich receive a warning in contrast with the blessed poor.\",\n    \"Luke 12:13–21 — the rich fool represents material abundance without being “rich toward God.”\",\n    \"Luke 16:19–31 — the rich man’s luxury and neglect of Lazarus lead to judgment.\",\n    \"1 Timothy 6:9–10, 17–19 — the rich are warned against pride and uncertain riches and instructed to become rich in good works.\",\n    \"James 2:1–7; 5:1–6 — the rich are associated with privilege, exploitation, and impending judgment.\",\n    \"Revelation 3:17–18 — Laodicea’s claim to be rich symbolizes complacent self-sufficiency masking spiritual poverty.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal socioeconomic wealth, without an inherent symbolic referent; many passages simply address people who possess substantial material resources.\",\n      \"basis\": [\n        \"Matthew 27:57 — Joseph of Arimathea is identified as a rich man without making wealth itself a symbolic category.\",\n        \"1 Timothy 6:17–19 — instructions are given directly to materially rich Christians rather than treating “rich” solely as a symbol.\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Divine blessing, abundance, or honorable prosperity, especially where wealth is received with gratitude and faithful stewardship.\",\n      \"basis\": [\n        \"Genesis 13:2; 24:35 — Abraham’s wealth is presented in connection with divine blessing.\",\n        \"1 Chronicles 29:12 — riches and honor are said to come from God.\",\n        \"Proverbs 10:22 — the blessing of the Lord makes rich.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual abundance—richness in faith, grace, good works, or relationship with God, regardless of material status.\",\n      \"basis\": [\n        \"Luke 12:21 — being “rich toward God” contrasts with merely accumulating possessions.\",\n        \"2 Corinthians 8:9 — Christ’s poverty and believers’ enrichment are expressed in theological terms.\",\n        \"Ephesians 1:7; 2:4,7; 3:8,16 — divine grace, mercy, glory, and Christ are described as riches.\",\n        \"James 2:5 — the materially poor may be rich in faith.\",\n        \"Revelation 2:9 — the persecuted church at Smyrna is materially poor yet spiritually rich.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Religious or political elites who possess power and oppress the vulnerable, rather than all materially wealthy people indiscriminately.\",\n      \"basis\": [\n        \"Luke 1:51–53 — the powerful and rich are brought down or sent away empty.\",\n        \"James 2:6–7 — rich persons are depicted as oppressing believers and dragging them into court.\",\n        \"James 5:1–6 — wealthy landowners are condemned for fraud and exploitation.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"“Rich” has no single settled symbolic meaning across Scripture or Christian interpretation. Its sense is strongly contextual. The most recognizable negative symbolism is worldly self-sufficiency and the spiritual peril of wealth, but the Bible also uses riches literally, as a sign of blessing, and metaphorically for divine grace, faith, and good works.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Material wealth as a spiritual hindrance or danger that fosters self-reliance, pride, and worldliness, making entrance into God's kingdom difficult\",\n  \"primary_basis\": [\n    \"Matthew 19:23-24\",\n    \"Mark 10:23-25\",\n    \"Luke 18:24-25\",\n    \"Luke 6:24\",\n    \"Luke 12:16-21\",\n    \"Luke 16:19-31\",\n    \"James 5:1-6\",\n    \"1 Timothy 6:9-10\",\n    \"Revelation 3:17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Spiritual abundance or being rich toward God (in faith, mercy, or good works)\",\n      \"basis\": [\n        \"Luke 12:21\",\n        \"James 2:5\",\n        \"1 Timothy 6:18\",\n        \"Ephesians 2:4\",\n        \"2 Corinthians 8:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Earthly prosperity as a divine blessing and sign of God's favor (especially in Old Testament contexts)\",\n      \"basis\": [\n        \"Deuteronomy 8:18\",\n        \"Deuteronomy 28:1-14\",\n        \"Proverbs 10:22\",\n        \"Psalm 112\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The wealthy as oppressors of the poor who face divine judgment\",\n      \"basis\": [\n        \"Amos 4:1\",\n        \"Amos 6:1-7\",\n        \"James 5:1-6\",\n        \"Luke 16:19-31\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation, particularly of the New Testament, overwhelmingly treats 'the rich' with cautionary symbolism centered on spiritual peril rather than a single rigid typology; positive uses of richness are usually qualified as spiritual or properly stewarded wealth rather than material riches per se.\"\n}\n\nBOOK ENTRY\nThe self-sufficient who believe they need nothing and therefore cannot receive. True wealth is riches toward God: tested faith and righteous covering.\n[.opposite]Opposite: Poor.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rev 3:17-18; Rev 2:9; Prov 13:7; Luke 12:21) · see Orphans, Widows & the Fatherless, ch. 14\n\nAVAILABLE KJV EXCERPTS\nRevelation 3:17 — Because thou sayest, I am rich, and increased with goods, and have need of nothing; and knowest not that thou art wretched, and miserable, and poor, and blind, and naked:\nRevelation 3:18 — I counsel thee to buy of me gold tried in the fire, that thou mayest be rich; and white raiment, that thou mayest be clothed, and that the shame of thy nakedness do not appear; and anoint thine eyes with eyesalve, that thou mayest see.\nRevelation 2:9 — I know thy works, and tribulation, and poverty,(but thou art rich) and I know the blasphemy of them which say they are Jews, and are not, but are the synagogue of Satan.\nProverbs 13:7 — There is that maketh himself rich, yet hath nothing: there is that maketh himself poor, yet hath great riches.\nLuke 12:21 — So is he that layeth up treasure for himself, and is not rich toward God.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "52db96bd623d12a1fb926aaaa14af29d9bf1a0e6aa820848e331dff836141bd2",
+  "cache": {
+    "hit": false
+  }
+}

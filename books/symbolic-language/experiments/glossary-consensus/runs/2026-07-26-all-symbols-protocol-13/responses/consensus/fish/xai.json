@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919858,
+  "completed_at": 1783919883,
+  "id": "a352d7c3-1064-9559-b941-cde28b54274b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_a352d7c3-1064-9559-b941-cde28b54274b",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Fish\" in Christian teaching and biblical interpretation, based on independent knowledge.\n{\n  \"primary_symbolic_meaning\": \"The fish symbolizes Christ or Christianity, often through the Greek acronym ichthys (Iēsous Christos, Theou Yios, Sōtēr) representing Jesus as Savior, with additional ties to themes of abundance and discipleship.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Jesus Christ (as Savior/Son of God, via the ΙΧΘΥΣ/Ichthys acrostic)\",\n  \"primary_basis\": [\n    \"Early Christian use of the Greek acrostic ΙΧΘΥΣ (Iēsous Christos Theou Yios Sōtēr) drawn from New Testament confessions of Jesus' identity (e.g., Matt 16:16; John 20:31; Rom 1:3-4)\",\n    \"Matt 4:19 / Mark 1:17 (call of the disciples as fishers of men, linking fish imagery to Christ and his mission)\",\n    \"John 21:1-14 (post-resurrection miraculous catch of fish associated with the risen Christ)\",\n    \"Matt 14:13-21 / Mark 6:30-44 / Luke 9:10-17 / John 6:1-14 (feeding miracles involving fish)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Believers / Christians / the Church (as the 'catch' of the gospel)\",\n      \"basis\": [\n        \"Matt 4:19 / Mark 1:17 / Luke 5:1-11 (fishers of men; disciples as fishers, people as fish)\",\n        \"John 21:1-14 (large catch of fish as image of mission and the gathered community)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine provision, abundance, or eucharistic nourishment\",\n      \"basis\": [\n        \"Matt 14:13-21 and parallels (multiplication of loaves and fish)\",\n        \"John 6 (Bread of Life discourse following the feeding; fish as part of the meal imagery)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Typological sign of Christ's death, burial, and resurrection (via Jonah)\",\n      \"basis\": [\n        \"Jonah 1–2 (great fish)\",\n        \"Matt 12:39-41 / Matt 16:4 / Luke 11:29-32 (Jesus cites the sign of Jonah)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Baptism / conversion / new life in the waters\",\n      \"basis\": [\n        \"Association of fish with water and the fishers-of-men motif (Matt 4:19 etc.)\",\n        \"Early Christian artistic and catechetical links between fish imagery and baptismal rebirth\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The dominant, widely recognized Christian symbol of the fish is Christ himself via the Ichthys acrostic and early catacomb/art usage; related but secondary meanings (believers, provision, Jonah typology) are also standard in biblical interpretation and preaching. No major competing primary meaning displaces the Christ/Ichthys reading in mainstream Christian teaching.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_a352d7c3-1064-9559-b941-cde28b54274b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2020,
+    "output_tokens_details": {
+      "reasoning_tokens": 1349
+    },
+    "total_tokens": 2622,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 125560000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 2020
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

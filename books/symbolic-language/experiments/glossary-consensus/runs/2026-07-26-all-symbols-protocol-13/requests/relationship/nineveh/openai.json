@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "nineveh",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nNineveh\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, Nineveh functions primarily as the great symbol of repentance and of God's mercy extended even to the most wicked of pagan peoples. The city that repented at Jonah's preaching becomes the paradigm of a sinful people turning to God and being spared, and Jesus himself invokes the 'men of Nineveh' as exemplars of repentance who will condemn an unrepentant generation. Closely bound up with this is Nineveh's role as a sign that God's compassion reaches beyond Israel to the Gentile nations.\",\n  \"primary_basis\": [\n    \"Jonah 1:1-2 (Nineveh, 'that great city,' whose wickedness has come up before God)\",\n    \"Jonah 3:1-10 (the city's repentance in sackcloth and God's relenting from judgment)\",\n    \"Jonah 4:10-11 (God's declared pity on Nineveh's 120,000 inhabitants)\",\n    \"Matthew 12:41 ('The men of Nineveh will rise up at the judgment... for they repented at the preaching of Jonah')\",\n    \"Luke 11:30-32 (Jonah a sign to the Ninevites; their repentance contrasted with 'this generation')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Nineveh as the archetype of the cruel, violent, arrogant pagan empire under God's certain judgment — the 'bloody city' whose destruction demonstrates that no human power escapes divine justice. This is the dominant note in Nahum and Zephaniah and is a fully standard reading alongside the repentance motif.\",\n      \"basis\": [\n        \"Nahum 1:1-8; 2:8-13; 3:1-7 ('Woe to the bloody city, all full of lies and plunder')\",\n        \"Zephaniah 2:13-15 (Nineveh made a desolation, the exultant city that said 'I am, and there is no one else')\",\n        \"Genesis 10:11-12 (Nineveh founded in the line of Nimrod, associating it with Assyrian imperial power)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Nineveh as a type or foreshadowing of the Gentile church / the inclusion of the nations in salvation — a reading prominent in patristic and later typological interpretation (e.g., Jerome, Augustine), where the repentant Gentile city prefigures the Gentiles' reception of the gospel while Israel resists.\",\n      \"basis\": [\n        \"Jonah 3 read typologically\",\n        \"Matthew 12:41 / Luke 11:32 (repentant Gentiles contrasted with unbelieving Israel)\",\n        \"Patristic commentary on Jonah (Jerome's Commentary on Jonah; Augustine, City of God 18.44)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Nineveh as a cautionary symbol of the impermanence of repentance: the city that repented under Jonah later returned to wickedness and was destroyed (Nahum), so Nineveh warns that a single generation's repentance does not secure a people permanently.\",\n      \"basis\": [\n        \"Jonah 3 read together with Nahum 1-3\",\n        \"Tobit 14:4, 8-15 (in traditions using the deuterocanon, Nineveh's later destruction confirmed)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Allegorical/patristic readings of Nineveh as 'the world' or the fallen human city more broadly (sometimes contrasted with Jerusalem/the church), with Jonah's mission read as Christ's mission into the world; found in some patristic and medieval spiritual exegesis but not a standard modern reading.\",\n      \"basis\": [\n        \"Allegorical exegesis of Jonah in patristic and medieval commentary (e.g., readings in the tradition of Origen-influenced spiritual interpretation and Jerome)\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Nineveh in Augustine's discussion as an occasion for reflecting on prophecy and divine relenting — 'Nineveh was overthrown' understood as fulfilled in its moral overthrow (its old sinful self destroyed by repentance) rather than physical destruction; a specific interpretive move rather than a general symbolic meaning.\",\n      \"basis\": [\n        \"Jonah 3:4 with Jonah 3:10\",\n        \"Augustine, City of God 21.24 and related patristic discussion of conditional prophecy\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Nineveh carries a well-recognized dual symbolism in Christian interpretation, and the two strands are not truly in conflict: (1) the repentant city of Jonah, emblem of God's mercy, the efficacy of repentance, and God's concern for the Gentiles — reinforced by Jesus' explicit appeal to the Ninevites; and (2) the wicked, violent imperial city judged and destroyed in Nahum and Zephaniah, emblem of divine justice against arrogant powers. Sermonic, catechetical, and devotional usage overwhelmingly foregrounds the Jonah/repentance meaning (helped by Jesus' citation), which is why it is listed as primary; academic and canonical-context treatments give the Nahum judgment theme roughly equal weight. Both readings are firmly established; disagreement concerns emphasis, not substance.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A symbol of the quintessential wicked and oppressive pagan city, representing both the extreme depths of worldly depravity and the universal scope of God's mercy when its inhabitants repent, as well as the certainty of divine judgment upon arrogant empires.\",\n  \"primary_basis\": [\n    \"Jonah 1:2\",\n    \"Jonah 3:1-10\",\n    \"Nahum 3:1-7\",\n    \"Matthew 12:41\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"An archetype of the repentant sinner and a foreshadowing of Gentile inclusion in God's salvation.\",\n      \"basis\": [\n        \"Matthew 12:41\",\n        \"Luke 11:32\",\n        \"Jonah 3:5-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A symbol of unrestrained imperial cruelty, worldly pride, and the inevitable destruction of the enemies of God's people.\",\n      \"basis\": [\n        \"Nahum 1:1-3\",\n        \"Nahum 3:1-19\",\n        \"Zephaniah 2:13-15\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Nineveh functions as a dual symbol in biblical theology. In the tradition of Jonah and the Synoptic Gospels, it represents the boundless nature of God's grace toward repentant Gentiles. In the prophetic tradition of Nahum and Zephaniah, it stands as the ultimate tyrannical and bloodthirsty empire destined for divine wrath.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Nineveh is most commonly treated as an emblem of a wicked, pagan society that stands under divine judgment but may receive divine mercy through repentance.\",\n  \"primary_basis\": [\n    \"Jonah 1:1-2 — Nineveh's wickedness comes before God.\",\n    \"Jonah 3:4-10 — Nineveh is warned of judgment, repents, and is spared.\",\n    \"Jonah 4:10-11 — God's compassion extends to the people of the pagan city.\",\n    \"Matthew 12:41 and Luke 11:29-32 — Jesus uses the repentant Ninevites to condemn a generation that refuses to repent.\",\n    \"Nahum 1:1-3; 2:13; 3:1-7 — Nineveh represents violent, arrogant imperial power brought under divine judgment.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Nineveh symbolizes oppressive worldly empire or political power destined for divine overthrow.\",\n      \"basis\": [\n        \"Nahum 2:1-13\",\n        \"Nahum 3:1-19\",\n        \"Zephaniah 2:13-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Nineveh represents the Gentile world as the object of God's missionary concern and compassion.\",\n      \"basis\": [\n        \"Jonah 3:1-10\",\n        \"Jonah 4:10-11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The repentant people of Nineveh symbolize responsive Gentiles who contrast with unrepentant Israel or with those who reject Jesus.\",\n      \"basis\": [\n        \"Matthew 12:38-41\",\n        \"Luke 11:29-32\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Nineveh functions broadly as a type of the sinful world, comparable in some preaching to Babylon or other cities opposed to God.\",\n      \"basis\": [\n        \"Jonah 1:2\",\n        \"Nahum 3:1-7\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Nineveh symbolizes an individual's inner sinful nature, the flesh, or a specific ecclesiastical institution.\",\n      \"basis\": [\n        \"Such readings are generally allegorical and lack a standard biblical identification.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic definition of Nineveh across Christian interpretation. Its canonical portrayals differ: Jonah emphasizes pagan wickedness, repentance, mission, and mercy, while Nahum emphasizes imperial violence and irreversible judgment. The broadest recognizable synthesis is therefore a sinful pagan society accountable to God, capable of repentance, and otherwise subject to judgment.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A wicked Gentile city that repents at God's warning and receives mercy, exemplifying repentance, divine compassion for the nations, and a model that will judge unrepentant hearers\",\n  \"primary_basis\": [\n    \"Jonah 3:1-10\",\n    \"Jonah 4:11\",\n    \"Matthew 12:41\",\n    \"Luke 11:32\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A proud, violent city destined for irreversible divine judgment and destruction\",\n      \"basis\": [\n        \"Nahum 1–3\",\n        \"Zephaniah 2:13-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The oppressive Assyrian empire as historical enemy and instrument of chastisement against Israel/Judah\",\n      \"basis\": [\n        \"2 Kings 18–19\",\n        \"Isaiah 10:5-19\",\n        \"Isaiah 37\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation regularly draws on both the Jonah narrative (repentance and mercy) and the Nahum/Zephaniah oracles (judgment); the Jonah usage is the more frequent symbolic exemplar in teaching and preaching, yet the dual biblical portraits prevent a single settled consensus.\"\n}\n\nBOOK ENTRY\nA great city of the sea — Gentile people who repent and rise in judgment against those who reject Jesus.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 12:41) · see The Sign of Jonah, ch. 4\n\nAVAILABLE KJV EXCERPTS\nMatthew 12:41 — The men of Nineveh shall rise in judgment with this generation, and shall condemn it: because they repented at the preaching of Jonas; and, behold, a greater than Jonas is here.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "5c62c0c6c4aab617d1dd90b999cb21066c7182ca451b74a6d3a638883a7731ff",
+  "cache": {
+    "hit": false
+  }
+}

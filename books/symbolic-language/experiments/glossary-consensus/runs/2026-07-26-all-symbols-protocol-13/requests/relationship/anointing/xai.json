@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "anointing",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nAnoint, anointing\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, anointing primarily symbolizes consecration—being set apart by God for a holy office or task—and, closely joined to this, the empowering presence of the Holy Spirit coming upon the person anointed. Kings, priests, and prophets were anointed with oil to mark divine appointment, and the oil is widely read as a type or symbol of the Spirit. This converges in the title 'Messiah/Christ' ('Anointed One'), understood as Jesus being anointed with the Holy Spirit for his saving mission, with believers sharing in that anointing.\",\n  \"primary_basis\": [\n    \"Exodus 30:22-33 (sacred anointing oil consecrating priests and tabernacle)\",\n    \"Exodus 29:7; Leviticus 8:12 (anointing of Aaron as priest)\",\n    \"1 Samuel 10:1 (Saul anointed king)\",\n    \"1 Samuel 16:13 (David anointed and the Spirit of the LORD comes upon him)\",\n    \"1 Kings 19:16 (anointing of a prophet, Elisha)\",\n    \"Isaiah 61:1 ('The Spirit of the Lord GOD is upon me, because the LORD has anointed me')\",\n    \"Luke 4:18 (Jesus applies Isaiah 61 to himself)\",\n    \"Acts 10:38 ('God anointed Jesus of Nazareth with the Holy Spirit and with power')\",\n    \"Acts 4:26-27; Psalm 2:2 (Jesus as God's Anointed)\",\n    \"2 Corinthians 1:21-22 (God has anointed us, sealed us, given the Spirit)\",\n    \"1 John 2:20, 27 (believers have an anointing from the Holy One that teaches them)\",\n    \"Psalm 133:2 (anointing oil on Aaron as image of blessing)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Anointing as a sign and means of healing—oil applied to the sick in prayer, formalized in Roman Catholic and Orthodox traditions as a sacrament (Anointing of the Sick / Holy Unction) and practiced broadly in Protestant churches.\",\n      \"basis\": [\n        \"James 5:14-15\",\n        \"Mark 6:13\",\n        \"Luke 10:34 (oil on wounds)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Anointing as an expression of joy, blessing, honor, and hospitality—festal oil for guests and for gladness, contrasted with mourning.\",\n      \"basis\": [\n        \"Psalm 23:5\",\n        \"Psalm 45:7 / Hebrews 1:9 ('oil of gladness')\",\n        \"Psalm 104:15\",\n        \"Ecclesiastes 9:8\",\n        \"Luke 7:46\",\n        \"Matthew 6:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Anointing for burial and devotion—the anointing of Jesus' body (or in anticipation of his death) as an act of costly love and preparation for burial.\",\n      \"basis\": [\n        \"Mark 14:3-9\",\n        \"John 12:3-8\",\n        \"Luke 23:56-24:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Charismatic/Pentecostal usage of 'the anointing' as a present, sometimes tangible endowment of divine power for ministry, preaching, or miracles, occasionally treated as transferable or yoke-breaking.\",\n      \"basis\": [\n        \"Isaiah 10:27 (KJV, 'the yoke shall be destroyed because of the anointing')\",\n        \"1 John 2:20, 27\",\n        \"Acts 10:38\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Anointing (in 1 John) read specifically as the indwelling word/truth or teaching received at conversion rather than the Spirit per se—a debated exegetical option among commentators.\",\n      \"basis\": [\n        \"1 John 2:20, 27\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, recognizable consensus that anointing symbolizes divine consecration to office (prophet, priest, king) and the bestowal/empowerment of the Holy Spirit, with the oil widely treated as a symbol of the Spirit; this culminates in the meaning of 'Christ/Messiah' as 'the Anointed One.' The alternative readings listed are not so much rivals as distinct biblical uses of anointing (healing, hospitality/joy, burial) that most interpreters hold alongside the primary symbolic meaning. The main genuinely contested area is the charismatic notion of 'the anointing' as a transferable power-substance, which is criticized by many evangelical and mainline interpreters but is widespread in Pentecostal/charismatic contexts.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Consecration, setting apart, and empowerment by the Holy Spirit for a specific divine calling, office, or holy purpose.\",\n  \"primary_basis\": [\n    \"1 Samuel 16:13\",\n    \"Isaiah 61:1\",\n    \"Luke 4:18\",\n    \"Acts 10:38\",\n    \"1 John 2:20\",\n    \"1 John 2:27\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine healing, physical restoration, and spiritual comfort.\",\n      \"basis\": [\n        \"Mark 6:13\",\n        \"James 5:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hospitality, honor, joy, and divine favor.\",\n      \"basis\": [\n        \"Psalm 23:5\",\n        \"Psalm 45:7\",\n        \"Luke 7:46\",\n        \"Hebrews 1:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Preparation for burial and marking for death.\",\n      \"basis\": [\n        \"Mark 14:8\",\n        \"John 12:7\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical theology, anointing is overwhelmingly associated with the Holy Spirit and divine commissioning. This is rooted in the Old Testament practices of anointing prophets, priests, and kings, which ultimately points to Jesus as the Messiah, literally translated as the Anointed One.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Consecration or divine appointment—being set apart, authorized, and empowered by God for a sacred office or service. In Christian interpretation, the anointing oil commonly symbolizes the presence and empowering work of the Holy Spirit, especially in relation to Christ and, derivatively, believers.\",\n  \"primary_basis\": [\n    \"Exodus 28:41; 29:7; 30:22-30; Leviticus 8:10-12 — priests and sacred objects are anointed and consecrated to God.\",\n    \"1 Samuel 10:1,6; 16:13 — kings are anointed for office, with Saul and David receiving the empowering activity of God's Spirit.\",\n    \"1 Kings 19:15-16 — kings and Elisha the prophet are appointed through anointing.\",\n    \"Psalm 2:2; 45:7 — the Lord's anointed is associated with divinely appointed kingship.\",\n    \"Isaiah 61:1; Luke 4:18-21 — anointing by the Spirit signifies appointment and empowerment for the Messiah's mission.\",\n    \"Acts 10:38 — God anoints Jesus with the Holy Spirit and power.\",\n    \"2 Corinthians 1:21-22 — God establishes and anoints believers, closely associated with the gift and seal of the Spirit.\",\n    \"1 John 2:20,27 — believers' anointing is commonly interpreted as the Holy Spirit's abiding presence and instruction.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Messianic kingship: “the Anointed One” is a royal title identifying Jesus as the Christ/Messiah, God's appointed king and deliverer.\",\n      \"basis\": [\n        \"Psalm 2:2\",\n        \"Daniel 9:25-26\",\n        \"Luke 2:11\",\n        \"John 1:41\",\n        \"Acts 4:25-27\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"A literal ritual use of oil for commissioning or consecrating priests, kings, sacred objects, or church members, without requiring oil itself to symbolize only one thing.\",\n      \"basis\": [\n        \"Exodus 30:22-30\",\n        \"Leviticus 8:10-12\",\n        \"1 Samuel 10:1\",\n        \"1 Samuel 16:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Healing and pastoral prayer: anointing the sick with oil represents or accompanies prayer for healing, sometimes understood sacramentally and sometimes as a practical or symbolic act.\",\n      \"basis\": [\n        \"Mark 6:13\",\n        \"James 5:14-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sacramental initiation or strengthening through chrismation/confirmation, understood in many historic churches as the bestowal, sealing, or strengthening of the Holy Spirit.\",\n      \"basis\": [\n        \"Acts 8:14-17\",\n        \"Acts 19:5-6\",\n        \"2 Corinthians 1:21-22\",\n        \"1 John 2:20,27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hospitality, honor, refreshment, grooming, or preparation for burial rather than consecration or spiritual empowerment.\",\n      \"basis\": [\n        \"Psalm 23:5\",\n        \"Luke 7:36-46\",\n        \"Matthew 26:6-13\",\n        \"John 12:1-8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A special, repeatable spiritual endowment for preaching, healing, leadership, music, or another ministry, often described as “the anointing” resting on a person or event.\",\n      \"basis\": [\n        \"Judges 14:6\",\n        \"1 Samuel 16:13\",\n        \"Isaiah 61:1\",\n        \"Acts 10:38\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad consensus around consecration, divine appointment, and Spirit-given empowerment, but the term is multivalent. Some biblical occurrences describe literal applications of oil for healing, hospitality, honor, grooming, or burial and should not automatically be reduced to the primary symbolism.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Consecration and divine empowerment by the Holy Spirit, setting a person apart for sacred office, service, or mission\",\n  \"primary_basis\": [\n    \"1 Samuel 16:13 (David anointed; Spirit of the Lord comes upon him)\",\n    \"Isaiah 61:1 and Luke 4:18 (Spirit of the Lord upon me because he has anointed me)\",\n    \"Acts 10:38 (God anointed Jesus with the Holy Spirit and power)\",\n    \"Exodus 30:22-33; Leviticus 8 (priestly consecration with holy anointing oil)\",\n    \"1 John 2:20, 27 (believers have an anointing from the Holy One)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Physical healing or restorative care (oil as medicinal/sacramental agent)\",\n      \"basis\": [\n        \"James 5:14-15\",\n        \"Mark 6:13\",\n        \"Isaiah 1:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Joy, abundance, or festive blessing (oil of gladness)\",\n      \"basis\": [\n        \"Psalm 23:5\",\n        \"Psalm 45:7 / Hebrews 1:9\",\n        \"Ecclesiastes 9:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Specific identification of Jesus as the Messiah/Christ (the Anointed One) and the fulfillment of royal/priestly office\",\n      \"basis\": [\n        \"Psalm 2:2\",\n        \"Daniel 9:25-26\",\n        \"Acts 4:26-27\",\n        \"Hebrews 1:9\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Hospitality, honor, or refreshment toward a guest\",\n      \"basis\": [\n        \"Luke 7:46\",\n        \"Psalm 23:5\",\n        \"Matthew 6:17\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian interpretation the core symbolic cluster is consecration plus Spirit-empowerment; christological use (Jesus as the Anointed) is especially fixed. Secondary associations with healing, joy, or hospitality are well-attested but context-dependent rather than competing primary meanings. No major confessional tradition treats the term as symbolically unsettled.\"\n}\n\nBOOK ENTRY\nTo mark a person or thing as God's own and appoint it to a stated office or work. The oil may carry the visible mark; the Spirit may carry the power; the work declares what the appointment is for.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly used for the Holy Spirit's empowering presence, often without distinguishing appointment, sign, power, and office.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 28:41; 40:9; 1 Sam 16:13-14; 24:6; Isa 45:1, 4-5; Acts 10:38) · see The Anointing\n\nAVAILABLE KJV EXCERPTS\nExodus 28:41 — And thou shalt put them upon Aaron thy brother, and his sons with him; and shalt anoint them, and consecrate them, and sanctify them, that they may minister unto me in the priest's office.\nExodus 40:9 — And thou shalt take the anointing oil, and anoint the tabernacle, and all that is therein, and shalt hallow it, and all the vessels thereof: and it shall be holy.\n1 Samuel 16:13 — Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and the Spirit of the LORD came upon David from that day forward. So Samuel rose up, and went to Ramah.\n1 Samuel 16:14 — But the Spirit of the LORD departed from Saul, and an evil spirit from the LORD troubled him.\n1 Samuel 24:6 — And he said unto his men, The LORD forbid that I should do this thing unto my master, the LORD'S anointed, to stretch forth mine hand against him, seeing he is the anointed of the LORD.\nIsaiah 45:1 — Thus saith the LORD to his anointed, to Cyrus, whose right hand I have holden, to subdue nations before him; and I will loose the loins of kings, to open before him the two leaved gates; and the gates shall not be shut;\nIsaiah 45:4 — For Jacob my servant's sake, and Israel mine elect, I have even called thee by thy name: I have surnamed thee, though thou hast not known me.\nIsaiah 45:5 — I am the LORD, and there is none else, there is no God beside me: I girded thee, though thou hast not known me:\nActs 10:38 — How God anointed Jesus of Nazareth with the Holy Ghost and with power: who went about doing good, and healing all that were oppressed of the devil; for God was with him.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "f464216c8c42c44cc56b913277efd28b2589ebc9e0727335c8e1f387a04f9955",
+  "cache": {
+    "hit": false
+  }
+}

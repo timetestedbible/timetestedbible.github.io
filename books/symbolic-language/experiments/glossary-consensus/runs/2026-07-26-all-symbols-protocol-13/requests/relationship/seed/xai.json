@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "seed",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSeed\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'seed' most commonly symbolizes the Word of God — the gospel message sown into human hearts, which germinates and bears spiritual fruit depending on the condition of the hearer. This meaning is treated as authoritative because Jesus himself supplies the interpretation within the parable of the sower ('the seed is the word of God').\",\n  \"primary_basis\": [\n    \"Luke 8:11 ('The seed is the word of God')\",\n    \"Matthew 13:3-23 (parable of the sower and Jesus' explanation)\",\n    \"Mark 4:3-20, 26-32 (parable of the sower; the growing seed; the mustard seed)\",\n    \"1 Peter 1:23 (born again 'of incorruptible seed, by the word of God')\",\n    \"Isaiah 55:10-11 (God's word compared to seed/rain that accomplishes its purpose)\",\n    \"James 1:21 (the 'implanted word' able to save souls)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Seed as offspring/descendants, culminating in Christ: the 'seed of the woman' who crushes the serpent (the protoevangelium) and the 'seed of Abraham' through whom all nations are blessed, which Paul identifies as Christ. In much theological and messianic exegesis this is the central symbolic thread of the whole Bible.\",\n      \"basis\": [\n        \"Genesis 3:15\",\n        \"Genesis 12:7; 13:15; 22:17-18\",\n        \"Galatians 3:16, 29\",\n        \"2 Samuel 7:12\",\n        \"Romans 9:7-8\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Seed as a symbol of death and resurrection: a seed must fall into the ground and die to bear fruit, used of Christ's death and of the resurrection body.\",\n      \"basis\": [\n        \"John 12:24\",\n        \"1 Corinthians 15:36-44\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Seed as the principle of sowing and reaping — moral/spiritual consequence: one reaps what one sows, whether to the flesh or the Spirit; also generosity and its harvest.\",\n      \"basis\": [\n        \"Galatians 6:7-8\",\n        \"2 Corinthians 9:6-10\",\n        \"Hosea 10:12\",\n        \"Psalm 126:5-6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Seed as the divine nature or principle of regeneration abiding in the believer ('God's seed abides in him'), sometimes read as the Holy Spirit or the new birth.\",\n      \"basis\": [\n        \"1 John 3:9\",\n        \"1 Peter 1:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Seed as faith itself, even in the smallest quantity ('faith as a grain of mustard seed'), or as the small beginnings of the kingdom of God that grows into something great.\",\n      \"basis\": [\n        \"Matthew 17:20\",\n        \"Matthew 13:31-32\",\n        \"Luke 17:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In prosperity-gospel or 'seed-faith' teaching, seed as money or offerings given to a ministry in expectation of a multiplied financial return.\",\n      \"basis\": [\n        \"2 Corinthians 9:6-10 (as commonly appropriated)\",\n        \"Luke 6:38 (as commonly appropriated)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"'Seed' is one of the richest and most multivalent biblical symbols, and interpreters recognize several legitimate strands rather than a single exclusive meaning. Two strands compete for primacy: (1) seed = the Word of God/gospel, which has the strongest claim to a 'consensus symbolic meaning' because Scripture itself defines it that way (Luke 8:11), and (2) seed = offspring culminating in Christ (Gen 3:15; Gal 3:16), which is arguably the more theologically central usage across the canon and is dominant in biblical-theological and messianic readings. Which is called 'primary' depends on whether one is asking about symbolic usage in parables and devotional teaching (Word of God) or the redemptive-historical storyline (Christ as promised seed). Both are so widely recognized that either could reasonably be listed first; the remaining meanings (death/resurrection, sowing-reaping, regeneration, faith/kingdom growth) are well attested but secondary.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Offspring or descendants, specifically pointing typologically to Jesus Christ as the promised Messiah (the 'seed of the woman' and 'seed of Abraham'), and by extension, believers as spiritual descendants.\",\n  \"primary_basis\": [\n    \"Genesis 3:15\",\n    \"Genesis 22:18\",\n    \"Galatians 3:16\",\n    \"Romans 9:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Word of God or the Gospel message planted in human hearts to produce spiritual fruit.\",\n      \"basis\": [\n        \"Luke 8:11\",\n        \"Mark 4:14\",\n        \"1 Peter 1:23\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"A small but genuine measure of faith that has immense potential for growth and power, akin to a mustard seed.\",\n      \"basis\": [\n        \"Matthew 17:20\",\n        \"Luke 17:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The physical human body that dies, is buried in the earth, and is subsequently resurrected in glory.\",\n      \"basis\": [\n        \"1 Corinthians 15:35-44\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Financial giving, charity, or material offerings sown with the expectation of a spiritual or material harvest.\",\n      \"basis\": [\n        \"2 Corinthians 9:6-10\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The biblical symbolism of a 'seed' is heavily context-dependent, primarily splitting into two dominant tracks: redemptive-historical (seed as the Messianic offspring) and parabolic (seed as the Word of God or faith). Both meanings enjoy universal consensus within their respective exegetical contexts. The financial interpretation is prevalent primarily within certain charismatic or prosperity traditions.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The word or message of God—especially the gospel—which is sown in human hearts and may produce spiritual life and fruit.\",\n  \"primary_basis\": [\n    \"Luke 8:4–15, especially Luke 8:11: “The seed is the word of God.”\",\n    \"Mark 4:1–20, where the sower sows “the word” and differing soils represent differing responses.\",\n    \"Matthew 13:1–23, where the seed is interpreted as “the word of the kingdom.”\",\n    \"1 Peter 1:23–25, which connects imperishable seed with the living and enduring word of God.\",\n    \"James 1:18, 21, which associates new birth and salvation with the implanted word.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Offspring, descendants, or a promised lineage, sometimes interpreted christologically as the Messiah.\",\n      \"basis\": [\n        \"Genesis 3:15, concerning the seed or offspring of the woman.\",\n        \"Genesis 12:7; 13:15–16; 17:7–8, concerning Abraham’s seed.\",\n        \"Galatians 3:16, where Paul applies Abraham’s singular “seed” to Christ.\",\n        \"Romans 9:6–8 and Galatians 3:29, concerning physical and spiritual descendants of Abraham.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The children or subjects produced by a spiritual source: the “good seed” represents the sons or people of the kingdom, contrasted with the sons of the evil one.\",\n      \"basis\": [\n        \"Matthew 13:24–30, 36–43, especially 13:38, where the good seed is explicitly identified as the sons of the kingdom.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The kingdom of God in its initially small but ultimately expansive and fruitful growth.\",\n      \"basis\": [\n        \"Matthew 13:31–32 and Mark 4:30–32, the parable of the mustard seed.\",\n        \"Mark 4:26–29, the seed growing secretly.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Death followed by resurrection or transformation, as a buried seed dies and rises in a new form.\",\n      \"basis\": [\n        \"John 12:24, where a grain of wheat falls into the earth and dies, applied to Jesus’ death and ensuing fruitfulness.\",\n        \"1 Corinthians 15:35–44, where the sowing of seed illustrates bodily resurrection and transformation.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faith that appears very small yet is effective or capable of remarkable results.\",\n      \"basis\": [\n        \"Matthew 17:20, faith like a mustard seed.\",\n        \"Luke 17:6, faith like a mustard seed.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A moral or spiritual principle of sowing and reaping: actions, generosity, or life orientation produce corresponding consequences.\",\n      \"basis\": [\n        \"Galatians 6:7–10, sowing to the flesh or Spirit.\",\n        \"2 Corinthians 9:6–10, seed as generosity that yields a harvest of righteousness.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"“Seed” has no single settled symbolic meaning applicable to every biblical occurrence. Its most recognizable symbolic meaning in general Christian teaching is the word or gospel, because the Synoptic interpretation of the sower states this explicitly. Context can instead make seed signify offspring, people of the kingdom, kingdom growth, resurrection, faith, or actions and their consequences.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The Messiah/Christ as the singular promised offspring who fulfills the covenant promises made to the woman, Abraham, and David\",\n  \"primary_basis\": [\n    \"Genesis 3:15\",\n    \"Genesis 12:7\",\n    \"Genesis 22:18\",\n    \"2 Samuel 7:12-13\",\n    \"Galatians 3:16\",\n    \"Romans 1:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The word/gospel of God sown into human hearts\",\n      \"basis\": [\n        \"Matthew 13:18-23\",\n        \"Mark 4:14\",\n        \"Luke 8:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Physical or spiritual descendants/offspring in general\",\n      \"basis\": [\n        \"Genesis 15:5\",\n        \"Genesis 13:16\",\n        \"Romans 9:7-8\",\n        \"Galatians 3:29\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Christ (or the believer) dying like a grain of wheat in order to produce fruit\",\n      \"basis\": [\n        \"John 12:24\",\n        \"1 Corinthians 15:36-38\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The righteous remnant or the church itself as the product of divine sowing\",\n      \"basis\": [\n        \"Isaiah 6:13\",\n        \"Matthew 13:24-30\",\n        \"1 Corinthians 3:6-9\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Multiple context-dependent meanings are firmly established in Christian biblical interpretation; the messianic/covenantal sense is the most theologically central for the capitalized or absolute use of 'Seed,' while the parable-of-the-sower sense is equally common in teaching on the gospel.\"\n}\n\nBOOK ENTRY\nA generative word or life planted to reproduce after its kind. In the sower it is God's word; in the wheat and tares it is children; the promised Seed is Messiah; and one planted person may grow into a house, people, or nation-tree.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 1:11-12; 3:15; Isa 51:2; Matt 13:19, 31-32, 38; John 12:24; Gal 3:16) · see The Parables of the Kingdom, ch. 2, Trees, ch. 41, and Grass, ch. 42\n\nAVAILABLE KJV EXCERPTS\nGenesis 1:11 — And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so.\nGenesis 1:12 — And the earth brought forth grass, and herb yielding seed after his kind, and the tree yielding fruit, whose seed was in itself, after his kind: and God saw that it was good.\nGenesis 3:15 — And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.\nIsaiah 51:2 — Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him.\nMatthew 13:19 — When any one heareth the word of the kingdom, and understandeth it not, then cometh the wicked one, and catcheth away that which was sown in his heart. This is he which received seed by the way side.\nMatthew 13:31 — Another parable put he forth unto them, saying, The kingdom of heaven is like to a grain of mustard seed, which a man took, and sowed in his field:\nMatthew 13:32 — Which indeed is the least of all seeds: but when it is grown, it is the greatest among herbs, and becometh a tree, so that the birds of the air come and lodge in the branches thereof.\nMatthew 13:38 —  The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one;\nJohn 12:24 — Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit.\nGalatians 3:16 — Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Christ.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "50202958a38729b47a24d2c1b426c1fad87fee5c52e03f027bcf7a4617f520a0",
+  "cache": {
+    "hit": false
+  }
+}

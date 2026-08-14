@@ -23,6 +23,7 @@ const MeatTesterView = {
   PROVIDER_ORDER: ['openai', 'anthropic', 'gemini', 'xai'],
   CLOUD_CATEGORIES: [
     ['DIVERGENT_PERSUADED', 'Divergent · persuaded'],
+    ['DIVERGENT_DISPUTED', 'Divergent · panel disputed'],
     ['DIVERGENT_UNPERSUADED', 'Divergent · unconvinced'],
     ['REFINED', 'Refined'],
     ['MATCH', 'Match'],
@@ -149,6 +150,7 @@ const MeatTesterView = {
                   <option value="ALL">All rulings</option>
                   <option value="CONFLICT">Any judge conflict</option>
                   <option value="DIVERGENT_PERSUADED">Divergent · persuaded</option>
+                  <option value="DIVERGENT_DISPUTED">Divergent · panel disputed</option>
                   <option value="DIVERGENT_UNPERSUADED">Divergent · unconvinced</option>
                   <option value="DIVERGENT_PENDING">Divergent · not yet judged</option>
                   <option value="REFINED">Refines the baseline</option>
@@ -242,6 +244,7 @@ const MeatTesterView = {
       'ALL',
       'CONFLICT',
       'DIVERGENT_PERSUADED',
+      'DIVERGENT_DISPUTED',
       'DIVERGENT_UNPERSUADED',
       'DIVERGENT_PENDING',
       'REFINED',
@@ -290,7 +293,7 @@ const MeatTesterView = {
 
     const target = this.resolveRouteEntry(normalized);
     this._selected = target ? { runId: target.run?.id || '', anchor: target.entry.anchor } : null;
-    this._activeStage = normalized.stage || (target?.untested ? 'relationship' : target?.entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship');
+    this._activeStage = normalized.stage || (target?.untested ? 'relationship' : this.resultStage(target?.entry));
     this.renderDashboard();
 
     const detail = this._container.querySelector('#meat-detail');
@@ -459,6 +462,7 @@ const MeatTesterView = {
   sortEntries(entries) {
     const rulingOrder = [
       'DIVERGENT_PERSUADED',
+      'DIVERGENT_DISPUTED',
       'DIVERGENT_UNPERSUADED',
       'DIVERGENT_PENDING',
       'REFINED',
@@ -507,7 +511,7 @@ const MeatTesterView = {
             ${entry.revisionPending ? '<span class="meat-revision-badge">Revision · rerun needed</span>' : ''}
           </span>
           <strong>${this.escapeHtml(entry.term)}</strong>
-          <span class="meat-result-definition">${this.escapeHtml(entry.definition || 'No definition recorded.')}</span>
+          <span class="meat-result-definition">${this.escapeHtml(this.displayText(entry.definition) || 'No definition recorded.')}</span>
           <span class="meat-judge-dots" aria-label="${this.escapeAttr(this.judgeSummary(entry))}">
             ${entry.judges.map(judge => this.judgeDot(judge, entry)).join('')}
           </span>
@@ -543,7 +547,7 @@ const MeatTesterView = {
 
         <section class="meat-untested-definition">
           <span>Current glossary entry</span>
-          <p>${this.escapeHtml(entry.definition || 'No definition recorded.')}</p>
+          <p>${this.escapeHtml(this.displayText(entry.definition) || 'No definition recorded.')}</p>
           ${chapter}
         </section>
         ${entry.citations ? `<div class="meat-citations"><strong>Cited evidence</strong><span>${this.renderCitationEvidence(entry.citations)}</span></div>` : ''}
@@ -608,9 +612,9 @@ const MeatTesterView = {
         ` : ''}
 
         <div class="meat-comparison">
-          <section><span>Recognizable common reading</span><p>${this.escapeHtml(entry.commonView || this.firstConsensus(entry) || 'No consensus summary recorded.')}</p></section>
+          <section><span>Recognizable common reading</span><p>${this.escapeHtml(this.displayText(entry.commonView || this.firstConsensus(entry)) || 'No consensus summary recorded.')}</p></section>
           <div class="meat-versus" aria-hidden="true">vs.</div>
-          <section><span>MEAT's conclusion</span><p>${this.escapeHtml(entry.definition || 'No book definition recorded.')}</p></section>
+          <section><span>MEAT's conclusion</span><p>${this.escapeHtml(this.displayText(entry.definition) || 'No book definition recorded.')}</p></section>
         </div>
         ${entry.citations ? `<div class="meat-citations"><strong>Cited evidence</strong><span>${this.renderCitationEvidence(entry.citations)}</span></div>` : ''}
 
@@ -952,12 +956,19 @@ const MeatTesterView = {
     return entry.judges.find(judge => judge.consensusMeaning)?.consensusMeaning || '';
   },
 
+  resultStage(entry) {
+    return entry?.relation === 'DIVERGENT' && entry.persuasion !== 'PENDING'
+      ? 'persuasion'
+      : 'relationship';
+  },
+
   judgeSummary(entry) {
-    return entry.judges.map(judge => `${judge.label}: ${this.stageVerdictLabel(this.stageVerdict(judge, entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship'), entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship')}`).join('; ');
+    const stage = this.resultStage(entry);
+    return entry.judges.map(judge => `${judge.label}: ${this.stageVerdictLabel(this.stageVerdict(judge, stage), stage)}`).join('; ');
   },
 
   hasJudgeConflict(entry) {
-    const stage = entry.persuasion && entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship';
+    const stage = this.resultStage(entry);
     const rulings = entry.judges
       .map(judge => this.stageVerdict(judge, stage))
       .filter(ruling => ruling && ruling !== 'PENDING');
@@ -965,7 +976,7 @@ const MeatTesterView = {
   },
 
   judgeDot(judge, entry) {
-    const stage = entry.persuasion !== 'PENDING' ? 'persuasion' : 'relationship';
+    const stage = this.resultStage(entry);
     const verdict = this.stageVerdict(judge, stage);
     return `<span class="meat-judge-dot ${this.stageVerdictClass(verdict)}" title="${this.escapeAttr(`${judge.label}: ${this.stageVerdictLabel(verdict, stage)}`)}"><span>${this.escapeHtml(this.providerInitial(judge.id))}</span></span>`;
   },
@@ -1042,6 +1053,13 @@ const MeatTesterView = {
 
   titleCase(value) {
     return String(value || '').toLowerCase().replace(/_/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase());
+  },
+
+  displayText(value) {
+    return String(value || '')
+      .replace(/\[\.[a-z][a-z0-9_-]*\]/gi, '')
+      .replace(/\s+/g, ' ')
+      .trim();
   },
 
   escapeHtml(value) {

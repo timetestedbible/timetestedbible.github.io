@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "night",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nNight\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'night' primarily symbolizes spiritual darkness—the realm of sin, evil, unbelief, and separation from God—standing in contrast to 'day' and 'light,' which symbolize God, Christ, truth, and salvation. Believers are described as 'children of the day, not of the night,' and the consummated new creation is portrayed as having no night at all.\",\n  \"primary_basis\": [\n    \"Romans 13:12 ('the night is far gone; the day is at hand... cast off the works of darkness')\",\n    \"1 Thessalonians 5:4-8 ('You are all children of light, children of the day. We are not of the night or of the darkness')\",\n    \"John 13:30 (Judas departs to betray Jesus 'and it was night')\",\n    \"John 3:19-21 (people loved darkness rather than light because their deeds were evil)\",\n    \"John 9:4 ('night is coming, when no one can work')\",\n    \"Ephesians 5:8-11 ('at one time you were darkness, but now you are light in the Lord')\",\n    \"Revelation 21:25 and 22:5 ('there will be no night there')\",\n    \"John 11:10 ('if anyone walks in the night, he stumbles')\",\n    \"Luke 22:53 ('this is your hour, and the power of darkness')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Night as the present evil age awaiting Christ's return (eschatological reading): the church lives in the 'night' of this age, watching for the dawn of the day of the Lord.\",\n      \"basis\": [\n        \"Romans 13:11-12\",\n        \"1 Thessalonians 5:1-8\",\n        \"2 Peter 1:19 ('until the day dawns and the morning star rises')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Night as a season of trial, suffering, or divine testing that God brings the believer through, often followed by joy or deliverance at dawn.\",\n      \"basis\": [\n        \"Psalm 30:5 ('weeping may tarry for the night, but joy comes with the morning')\",\n        \"Psalm 42:8\",\n        \"Job 35:10 ('God... who gives songs in the night')\",\n        \"Isaiah 21:11-12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Night as death or the end of one's opportunity to work and serve (a specific application of John 9:4 in preaching and hymnody, e.g., 'Work, for the Night Is Coming').\",\n      \"basis\": [\n        \"John 9:4\",\n        \"Ecclesiastes 9:10 (often paired homiletically)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Night as a privileged time of prayer, divine encounter, and revelation—God meets people at night (Jacob, Samuel, Nicodemus, Paul's visions; Jesus prays through the night).\",\n      \"basis\": [\n        \"Genesis 32:22-30 (Jacob wrestles at night)\",\n        \"Luke 6:12 (Jesus prays all night)\",\n        \"Psalm 63:6; Psalm 119:55\",\n        \"Acts 16:9; Acts 18:9 (night visions)\",\n        \"Exodus 12 (Passover night of deliverance)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The 'dark night of the soul' in Catholic mystical theology (John of the Cross): night as a purifying stage of spiritual desolation through which God draws the soul into deeper union—here night is ultimately positive.\",\n      \"basis\": [\n        \"Developed from texts such as Song of Songs 3:1 and Psalm 139:11-12 rather than a single proof text; primarily a post-biblical mystical tradition\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Night as judgment or the withdrawal of prophetic light from a disobedient people.\",\n      \"basis\": [\n        \"Micah 3:6 ('it shall be night to you, without vision')\",\n        \"Amos 8:9\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broadly settled consensus that night, when used symbolically in Scripture (especially in Johannine and Pauline writings), stands for sin, evil, unbelief, and the godless condition, contrasted with day/light as God's realm. This dominant reading is reinforced by the day/night dualism running from Genesis 1 to Revelation 22. However, the term is genuinely multivalent: significant strands of interpretation treat night as the present age before Christ's return, as trial or suffering, as death/lost opportunity, or (in mystical and devotional traditions) as a positive setting for prayer, deliverance, and purgative union with God. Many biblical uses of 'night' are also simply literal time markers with no symbolic intent, which interpreters generally acknowledge.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual darkness, sin, ignorance of God, divine judgment, and a period of earthly trial or death, often contrasted with the 'day' of salvation and light.\",\n  \"primary_basis\": [\n    \"Romans 13:12\",\n    \"1 Thessalonians 5:5-7\",\n    \"John 9:4\",\n    \"John 13:30\",\n    \"Revelation 21:25\",\n    \"Revelation 22:5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A time of divine revelation, intimate encounter, or spiritual testing, such as night visions or the mystical 'dark night of the soul'.\",\n      \"basis\": [\n        \"Genesis 15:12-17\",\n        \"Acts 16:9\",\n        \"Song of Solomon 3:1\",\n        \"Psalm 16:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Concealment and secrecy, often for clandestine or hidden actions (such as Nicodemus approaching Jesus).\",\n      \"basis\": [\n        \"John 3:2\",\n        \"John 19:39\",\n        \"Matthew 25:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The natural, God-ordained rhythm of rest, peace, and reliance on divine providence.\",\n      \"basis\": [\n        \"Genesis 1:5\",\n        \"Psalm 104:20\",\n        \"Psalm 19:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While 'night' frequently carries a negative symbolic connotation representing evil, ignorance, and separation from God in the New Testament (especially in Johannine and Pauline literature), it also serves neutrally as a time for divine encounters and resting in God's providence in other biblical contexts.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Spiritual and moral darkness: a condition or sphere associated with sin, unbelief, ignorance of God, evil, danger, and separation from divine light. Christian interpretation commonly treats night as the contrasting counterpart to Christ, truth, holiness, and salvation as “light.”\",\n  \"primary_basis\": [\n    \"John 3:19–21 — darkness is associated with evil deeds and avoidance of the light.\",\n    \"John 13:30 — Judas departs to betray Jesus, followed by the symbolically suggestive statement, “And it was night.”\",\n    \"Romans 13:12–13 — “the night” is passing away, so believers must cast off works of darkness and live honorably.\",\n    \"1 Thessalonians 5:4–8 — night and darkness characterize those unprepared for the Day of the Lord, contrasted with believers as children of light and day.\",\n    \"Ephesians 5:8–14 — former darkness and its unfruitful works are contrasted with life in the Lord’s light.\",\n    \"Revelation 21:23–25; 22:5 — the absence of night in the final holy city signifies the removal of darkness under God’s everlasting light.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The present fallen age awaiting the dawn of Christ’s kingdom or return. Here night is primarily eschatological rather than merely individual moral darkness.\",\n      \"basis\": [\n        \"Romans 13:12 — the passing night and approaching day.\",\n        \"1 Thessalonians 5:1–8 — night imagery in teaching about the Day of the Lord.\",\n        \"2 Peter 1:19 — a lamp shines in a dark place until the day dawns.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A season of suffering, grief, fear, testing, or apparent divine absence, often followed by deliverance at morning.\",\n      \"basis\": [\n        \"Psalm 30:5 — weeping remains for the night, but joy comes in the morning.\",\n        \"Psalm 42:8; 77:2–6 — night as the setting of lament, remembrance, and distress.\",\n        \"Psalm 91:5 — the terror of the night.\",\n        \"Job 35:10 — God gives songs in the night.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Death, approaching death, or the end of one’s opportunity to work and respond.\",\n      \"basis\": [\n        \"John 9:4 — night comes when no one can work.\",\n        \"Job 10:21–22 — death described as a land of darkness and deep shadow.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Rest, divine protection, contemplation, revelation, or encounter with God. Night is not intrinsically evil and can be a setting for prayer and revelation.\",\n      \"basis\": [\n        \"Genesis 1:5,14–18 — night belongs to the created order declared good.\",\n        \"Psalm 4:8; 63:6; 121:6 — rest, meditation, and God’s protection by night.\",\n        \"Genesis 28:10–17; 1 Samuel 3:1–10; Daniel 7:1–2 — divine dreams, visions, and calls occur at night.\",\n        \"Luke 6:12 — Jesus spends the night in prayer.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A literal time marker without intended symbolic force.\",\n      \"basis\": [\n        \"Many biblical narratives mention night simply to establish chronology or circumstances; symbolic significance must be determined from each literary context.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a settled broad consensus that night most often symbolizes spiritual darkness, evil, unbelief, or the fallen order when it is used figuratively in Christian interpretation. It does not have one invariant meaning, however: Scripture also uses night literally and, in some contexts, positively for rest, protection, prayer, or revelation.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Spiritual darkness, evil, sin, ignorance, or the absence of God's light and presence (in contrast to day/light)\",\n  \"primary_basis\": [\n    \"Romans 13:12\",\n    \"1 Thessalonians 5:5-7\",\n    \"John 3:19-20\",\n    \"John 9:4\",\n    \"John 11:10\",\n    \"Ephesians 5:8-11\",\n    \"Revelation 21:25; 22:5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A time of divine guidance, protection, or God's presence (e.g., pillar of fire)\",\n      \"basis\": [\n        \"Exodus 13:21-22\",\n        \"Psalm 121:6\",\n        \"Psalm 16:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A season of trial, suffering, weeping, or waiting for deliverance\",\n      \"basis\": [\n        \"Psalm 30:5\",\n        \"Isaiah 21:11-12\",\n        \"Job 7:3-4\",\n        \"Psalm 77:2-6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The present evil age or time before the full dawning of God's kingdom / second coming\",\n      \"basis\": [\n        \"Romans 13:11-12\",\n        \"1 Thessalonians 5:1-8\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Rest, sleep, or natural cessation of work (sometimes extended to death)\",\n      \"basis\": [\n        \"Psalm 4:8\",\n        \"John 9:4\",\n        \"Psalm 127:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian biblical interpretation, night is most consistently and prominently used as a foil to light/day (God, Christ, truth, righteousness). Positive or neutral uses exist but are secondary to the darkness/evil motif in didactic and apocalyptic teaching. No single exhaustive meaning covers every occurrence; context determines valence.\"\n}\n\nBOOK ENTRY\nThe absence of Day and Light — visible obedience — marked by sleep or death and by sinful deeds concealed in darkness. At the largest scale, it is the period from the fall of man until the Kingdom of God begins on earth.\n[.opposite]Opposite: Day.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 1:5; 1 Thess 5:5-7) · see Light and Darkness, ch. 21\n\nAVAILABLE KJV EXCERPTS\nGenesis 1:5 — And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.\n1 Thessalonians 5:5 — Ye are all the children of light, and the children of the day: we are not of the night, nor of darkness.\n1 Thessalonians 5:6 — Therefore let us not sleep, as do others; but let us watch and be sober.\n1 Thessalonians 5:7 — For they that sleep sleep in the night; and they that be drunken are drunken in the night.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "0df25a0d8ed697a924ffdcbd0666994f5072ac91dca1426fdcd1f47a6d1911fc",
+  "cache": {
+    "hit": false
+  }
+}

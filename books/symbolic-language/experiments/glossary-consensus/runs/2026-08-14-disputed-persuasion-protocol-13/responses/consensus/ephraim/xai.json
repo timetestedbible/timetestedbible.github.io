@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919740,
+  "completed_at": 1783919756,
+  "id": "c2f24dcc-f4fc-907b-9672-28923c4c76b3",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_c2f24dcc-f4fc-907b-9672-28923c4c76b3",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Ephraim\" in Christian teaching and biblical interpretation, based on independent knowledge, without looking at any author's material.\nEphraim most commonly symbolizes the northern kingdom of Israel in Christian biblical interpretation, particularly as a figure of unfaithfulness, idolatry, and covenant breach in prophetic literature. This reading draws from passages like Hosea 4–14, where the name stands in for the ten tribes' persistent rebellion against God, and from Genesis 48:19, where Jacob's blessing of Ephraim as a \"multitude of nations\" is sometimes seen as foreshadowing the spread of the gospel among the Gentiles. Alternative views treat Ephraim as a symbol of God's sovereign choice in election (the younger son preferred over Manasseh) or as a type of fruitful, covenant Israel that ultimately receives God's favor; these appear in some typological or dispensational readings but remain less dominant than the national-prophetic sense.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The northern kingdom of Israel (the ten tribes), often as a figure of apostate or idolatrous Israel\",\n  \"primary_basis\": [\n    \"Hosea 4–14 (esp. 4:17; 5:3–14; 6:4; 7:1–11; 11:1–9; 12:1; 13:1–12)\",\n    \"Isaiah 7:2–17; 9:8–21; 11:13; 28:1–3\",\n    \"Jeremiah 7:15; 31:9, 18–20\",\n    \"Ezekiel 37:15–28 (sticks of Judah and Ephraim/Joseph)\",\n    \"Genesis 48:8–20 (rise of the tribe as leading house of Joseph)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Fruitfulness / double fruitfulness (etymological symbol drawn from the name)\",\n      \"basis\": [\n        \"Genesis 41:52\",\n        \"Genesis 49:22 (Joseph as fruitful bough, applied to Ephraim)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine election / preference of the younger over the older (type of sovereign grace)\",\n      \"basis\": [\n        \"Genesis 48:13–20\",\n        \"comparison with Jacob/Esau election themes\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The ‘fullness of the nations’ / Gentile inclusion or ‘lost tribes’ identity (two-house or British-Israel readings of melo ha-goyim)\",\n      \"basis\": [\n        \"Genesis 48:19\",\n        \"occasional links to Romans 11:25\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Church itself (allegorical transfer of northern-Israel imagery)\",\n      \"basis\": [\n        \"Hosea applied typologically to the Church\",\n        \"occasional patristic or later spiritualizing readings\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Standard Christian biblical interpretation and preaching treat ‘Ephraim’ as the conventional prophetic designation for the northern kingdom/Israel, especially in Hosea and related prophets; the other senses appear but are secondary or specialized.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_c2f24dcc-f4fc-907b-9672-28923c4c76b3",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 603,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1461,
+    "output_tokens_details": {
+      "reasoning_tokens": 908
+    },
+    "total_tokens": 2064,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 92040000,
+    "context_details": {
+      "input_tokens": 603,
+      "output_tokens": 1461
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

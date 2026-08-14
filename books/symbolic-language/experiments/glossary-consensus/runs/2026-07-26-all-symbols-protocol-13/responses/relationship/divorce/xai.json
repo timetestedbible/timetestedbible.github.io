@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123491,
+  "completed_at": 1785123529,
+  "id": "9a3fdb7e-e4c6-94b5-a382-64975fa85032",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_9a3fdb7e-e4c6-94b5-a382-64975fa85032",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus and the book's entry on \"Divorce (bill of divorcement)\" and return only a JSON object matching the schema.\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"Both identify the bill of divorcement as God's judicial severance of covenant with unfaithful Israel, resulting in exile/scattering due to spiritual adultery. The book's core is materially equivalent to the consensus's primary symbolic referent.\",\n  \"extension_reasoning\": \"The book preserves the central referent but materially refines the extension by distinguishing 'treacherous divorce' (God's judgment on unfaithful Israel) from 'separation out of a union God never joined' (e.g., Ezra 10 foreign wives). This adds boundary precision and reclassifies some cases as legitimate rather than covenant rupture.\",\n  \"consensus_summary\": \"The bill of divorcement symbolizes God's judicial covenant rupture with unfaithful Israel due to spiritual adultery/idolatry, leading to exile and temporary separation with hope of restoration. Primary texts: Jeremiah 3:8, Isaiah 50:1, Hosea. Literal legal meaning in Deuteronomy and Gospels is dominant but separate from symbolic use.\",\n  \"book_summary\": \"A covenant severed and the wife sent from the house — exile and scattering. Scripture distinguishes treacherous divorce from separation out of a union God never joined. Opposite: Marriage.\",\n  \"script citation_support\": \"strong\",\n  \"rationale\": \"The book's core identification matches the consensus's symbolic Israel-divorce metaphor exactly. The added distinction about treacherous vs. invalid unions refines the boundary conditions without contradicting the central referent, making this REFINED rather than DIVERGENT or NOVEL.\",\n  \" boundary_disagreement\": \"Book foregrounds a legal-moral distinction (treacherous divorce vs. separation from unions God never joined) that consensus treats as secondary or subsumed under the primary Israel metaphor; consensus does not centrally distinguish these categories in the same way.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Symbolically, the bill of divorcement is God’s judicial covenant severance from unfaithful Israel for spiritual adultery/idolatry, enacted as exile, with prophetic hope of restoration; the term is often also treated non-symbolically as Mosaic marriage law.\",\n  \"book_summary\": \"A covenant severed and the wife sent from the house, meaning exile and scattering; Scripture distinguishes treacherous divorce from separation out of a union God never joined (opposite: Marriage).\",\n  \"consensus_core_identification\": \"God’s judicial divorce/covenant rupture of unfaithful Israel (spiritual adultery) expressed as exile.\",\n  \"book_core_identification\": \"Covenant severed and wife sent from the house = exile and scattering, with a moral-legal distinction between treacherous divorce and separation from unions God never joined.\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book reclassifies some puttings-away (e.g., foreign wives per Ezra 10; cf. Mal 2) as non-treacherous separation from unions God never joined, rather than divorce proper; consensus primary meaning does not center this boundary.\",\n  \"material_contradiction\": \"None\",\n  \"rationale\": \"Minimum cores both identify the prophetic marriage metaphor’s severance of covenant (wife sent away) with exile/scattering, matching Jer 3:8 and Isa 50:1. The book preserves that referent but materially refines extension and conditions by foregrounding the treacherous-vs-invalid-union distinction, altering which cases count as the symbol without replacing the central identification.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The added distinction (and Ezra/Mal emphasis) may shift the entry from the settled prophetic-Israel symbol toward marriage-ethics casuistry that consensus treats as a separate, largely non-symbolic dominant reading.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_9a3fdb7e-e4c6-94b5-a382-64975fa85032",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4950,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2141,
+    "output_tokens_details": {
+      "reasoning_tokens": 1706
+    },
+    "total_tokens": 7091,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 225284000,
+    "context_details": {
+      "input_tokens": 4950,
+      "output_tokens": 2141
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

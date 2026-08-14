@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "palm",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nPalm of the hand (kaph)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, the palm of the hand (Hebrew kaph) most commonly symbolizes God's intimate, permanent remembrance and protective care of His people—the place where God 'engraves' His covenant people so they can never be forgotten. Devotionally this is frequently extended typologically to the nail-pierced palms of Christ, read as the literal fulfillment of God inscribing His people on His hands, so the palm becomes a symbol of covenant love, security, and redemptive belonging.\",\n  \"primary_basis\": [\n    \"Isaiah 49:16 ('Behold, I have engraved you on the palms of my hands')\",\n    \"John 20:25–27 (the nail marks in Jesus' hands, commonly linked devotionally to Isaiah 49:16)\",\n    \"Isaiah 62:3 (a crown/diadem in the hand/palm of God, associated imagery of being held)\",\n    \"John 10:28–29 (no one able to snatch believers out of the Father's hand, often paired thematically)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The open or lifted palm as a posture and symbol of prayer, supplication, and worship—spreading or lifting the palms toward heaven.\",\n      \"basis\": [\n        \"Lamentations 2:19; 3:41 ('let us lift up our hearts with our hands/palms')\",\n        \"1 Kings 8:22, 38, 54 (Solomon spreading his palms toward heaven)\",\n        \"Psalm 63:4; Psalm 141:2 (lifting up hands in prayer)\",\n        \"Exodus 9:29, 33 (Moses spreading out his hands/palms to the LORD)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The palm as a symbol of one's deeds, conduct, and moral state—'clean palms' signifying innocence, or the 'work of the hands' signifying what a person has done and its recompense.\",\n      \"basis\": [\n        \"Psalm 24:4 ('clean hands and a pure heart', Hebrew kaph)\",\n        \"Job 16:17; Job 31:7 (no violence/spot cleaving to my palms)\",\n        \"Psalm 18:20, 24 (rewarded according to the cleanness of my hands)\",\n        \"Isaiah 59:3 (palms defiled with blood)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Striking or clapping the palm as a gesture: clapping in joy or praise, clapping in derision, or striking hands as a pledge/surety (the ancient handshake of guarantee, usually treated as a warning against rash suretyship).\",\n      \"basis\": [\n        \"Psalm 47:1; Isaiah 55:12 (clapping hands/trees clapping in joy)\",\n        \"Proverbs 6:1; 17:18; 22:26 (striking hands in pledge/surety)\",\n        \"Job 27:23; Lamentations 2:15 (clapping in scorn or derision)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The hollow of the palm as a measure of smallness or of divine immensity—God measuring the waters in the hollow of His hand, or the small cloud 'like a man's hand' signaling coming blessing.\",\n      \"basis\": [\n        \"Isaiah 40:12 (measured the waters in the hollow of his hand)\",\n        \"1 Kings 18:44 (a little cloud like a man's hand/palm rising from the sea)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The palm/sole (kaph is also used of the sole of the foot) as a symbol of possession and dominion—every place the sole treads being given as territory.\",\n      \"basis\": [\n        \"Joshua 1:3; Deuteronomy 11:24 (every place the sole of your foot treads)\",\n        \"Genesis 8:9 (the dove found no rest for the sole of her foot)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"Kaph is a broad Hebrew term (palm of hand, sole of foot, hollow/curved objects such as pans and spoons) and does not carry a single rigid symbolic code in the way terms like 'lamb' or 'leaven' do. However, within Christian preaching and devotional literature there is a clearly recognizable dominant symbolic use: Isaiah 49:16's engraving on God's palms as an image of unforgettable covenant love and security, very often connected to the nail-scarred hands of Christ. Academic biblical scholarship tends to treat kaph contextually rather than symbolically, so the 'settled consensus' applies to popular/devotional Christian interpretation more than to critical scholarship; hence confidence is rated medium rather than high.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Action, personal agency, power, and in relation to God, intimate protection, remembrance, and sovereign care.\",\n  \"primary_basis\": [\n    \"Isaiah 49:16\",\n    \"Psalm 119:109\",\n    \"Judges 6:13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Prayer, supplication, and surrender to God, derived from the physical gesture of spreading out the palms.\",\n      \"basis\": [\n        \"1 Kings 8:22\",\n        \"Psalm 141:2\",\n        \"Exodus 9:29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral innocence, uprightness, and purity of deeds, usually expressed as having 'clean hands'.\",\n      \"basis\": [\n        \"Psalm 24:4\",\n        \"Job 22:30\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Hebrew word 'kaph' denotes the hollow of the hand or palm. While it is frequently translated simply as 'hand' and shares the broad biblical symbolism of power, possession, and human action with 'yad' (hand), 'kaph' carries distinct nuances in specific idioms. These include the spreading of palms in earnest prayer and the intimate, protective imagery of God inscribing His people on the palms of His hands.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"There is no settled, independent Christian symbolic meaning for Hebrew kaph (“palm,” “hollow of the hand”). When it is treated symbolically, its broadest recurring association is the hand as an image of protective care, sustaining possession, or secure holding—especially God’s care—though the meaning is determined by each passage rather than by kaph itself.\",\n  \"primary_basis\": [\n    \"Isaiah 49:16 — Zion is engraved on the palms of God’s hands, commonly interpreted as continual remembrance and covenant care.\",\n    \"Exodus 33:22 — God covers Moses with his palm/hand, providing protection in the divine presence.\",\n    \"Psalm 139:5 — God lays his hand upon the psalmist, suggesting encompassing presence, care, or restraint.\",\n    \"Isaiah 40:12 — God measures the waters in the hollow of his hand, portraying sovereign power and control over creation.\",\n    \"John 10:28–29 — although Greek and not a lexical use of kaph, being held in the Father’s and Son’s hand is often associated thematically with divine security.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Power, authority, agency, or ability to act. This is a widespread symbolism of “hand” generally, but it is not distinctive to kaph and often rests on other Hebrew hand-terms such as yad or on “right hand” imagery.\",\n      \"basis\": [\n        \"Isaiah 40:12 — creation measured in the hollow of God’s hand.\",\n        \"Exodus 9:3 — the hand of the Lord as active divine power, though the Hebrew term is yad rather than kaph.\",\n        \"Psalm 118:15–16 — the Lord’s right hand as power and victory, again using broader hand imagery.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Remembrance, personal inscription, or belonging to God.\",\n      \"basis\": [\n        \"Isaiah 49:16 — “I have engraved you on the palms of my hands,” interpreted as unfailing remembrance and attachment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Prayer, worship, surrender, or dependence, represented by opened or uplifted palms.\",\n      \"basis\": [\n        \"Psalm 63:4 — lifting the hands in blessing or worship.\",\n        \"Psalm 141:2 — uplifted hands compared with the evening sacrifice.\",\n        \"1 Timothy 2:8 — lifting holy hands in prayer; Greek rather than Hebrew kaph.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Giving, receiving, generosity, or openness, based on the open palm as the bodily means of offering or receiving.\",\n      \"basis\": [\n        \"Deuteronomy 15:8 — opening the hand generously to the poor, although the principal Hebrew hand-term is yad.\",\n        \"Proverbs 31:20 — opening the hand to the poor and extending help to the needy; both kaph and yad occur in the verse.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Human work, deeds, conduct, or responsibility—the “work of one’s hands.” This is common biblical hand imagery but is not specifically tied to the palm.\",\n      \"basis\": [\n        \"Psalm 90:17 — establishing the work of human hands.\",\n        \"Proverbs 31:31 — praise arising from the works of one’s hands.\",\n        \"Ecclesiastes 9:10 — doing whatever one’s hand finds to do.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A letter-symbol interpretation in which the Hebrew letter kaph signifies an open or curved hand and therefore receiving, submission, covering, or crowning.\",\n      \"basis\": [\n        \"The pictorial shape or proposed ancient pictographic background of the Hebrew letter kaph.\",\n        \"Occasional Christian alphabetic, devotional, and messianic symbolism rather than standard contextual exegesis.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Kaph is primarily a lexical term for the palm or hollow of the hand and can also denote similarly shaped objects, such as a spoon or bowl, and sometimes the sole of the foot. Biblical writers use it in several different images. Christian interpretation has a recognizable general symbolism of the hand—care, power, agency, prayer, giving, and possession—but no single symbolic definition of kaph commands a settled consensus.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Intimate, permanent divine care, remembrance, and protection (God holding or engraving His people on the palms of His hands)\",\n  \"primary_basis\": [\n    \"Isaiah 49:15–16 (engraving Zion on the palms)\",\n    \"Isaiah 40:11–12 (gathering lambs in arms / measuring waters in the hollow of the hand, linked in teaching on God’s tender yet sovereign hold)\",\n    \"John 10:28–29 and related NT pastoral imagery of none snatching from the Father’s hand (read back onto kaph passages)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine power, creative measurement, and sovereign control over creation\",\n      \"basis\": [\n        \"Isaiah 40:12 (waters measured in the hollow/kaph of the hand)\",\n        \"Psalm 95:4–5 and similar creation texts emphasizing the hand’s grasp\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human agency, labor, giving/receiving, or violence (the palm as the active surface of the hand)\",\n      \"basis\": [\n        \"General OT usage of kaph for clapping, striking, holding tools or weapons, or open-handed gesture (e.g., Proverbs, Psalms, Job)\",\n        \"Ritual or worship contexts of lifted or open palms\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ’s crucified wounds / marks of sacrifice remembered in the palms\",\n      \"basis\": [\n        \"Typological reading of Isaiah 49:16 together with crucifixion nail-marks (John 20:25–27; Luke 24:39–40)\",\n        \"Devotional and hymnic tradition linking the two\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"No distinct fixed symbol; simply the anatomical palm/hollow with ordinary literal or idiomatic force\",\n      \"basis\": [\n        \"Lexicons and many historical-critical commentaries treating kaph primarily as body-part vocabulary rather than a standing emblem\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In published Christian preaching, devotion, and biblical theology the Isaiah 49:16 image overwhelmingly supplies the dominant symbolic reading of kaph when the term is treated as a symbol rather than a mere body part. Other senses appear regularly but are usually contextual or secondary. No major competing ‘official’ symbol displaces the care/remembrance motif in mainstream teaching.\"\n}\n\nBOOK ENTRY\nThe open hand — the palm that covered Moses in the cleft, that Zion is graven upon beside her walls named Salvation, that the virtuous woman stretches out to the poor, that prayer spreads toward heaven. Often translated “hand,” but Hebrew separates kaph, the hand laid open — to cover, carry, offer — from yad, the hand of power; Isaiah 62:3 holds both in one verse. The palm tree is a symbol of its own.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 33:22; Isa 49:16; 62:3; Prov 31:20; Ps 139:5) · see The Pearl, ch. 31\n\nAVAILABLE KJV EXCERPTS\nExodus 33:22 — And it shall come to pass, while my glory passeth by, that I will put thee in a clift of the rock, and will cover thee with my hand while I pass by:\nIsaiah 49:16 — Behold, I have graven thee upon the palms of my hands; thy walls are continually before me.\nIsaiah 62:3 — Thou shalt also be a crown of glory in the hand of the LORD, and a royal diadem in the hand of thy God.\nProverbs 31:20 — She stretcheth out her hand to the poor; yea, she reacheth forth her hands to the needy.\nPsalms 139:5 — Thou hast beset me behind and before, and laid thine hand upon me.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "1e903a6fa4ce4c453b938eb49cfe31793bad635fbac23c7ea752cbf967eeb763",
+  "cache": {
+    "hit": false
+  }
+}

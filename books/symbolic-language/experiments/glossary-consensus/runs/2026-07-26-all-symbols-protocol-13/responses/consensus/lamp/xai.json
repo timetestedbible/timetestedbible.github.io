@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920163,
+  "completed_at": 1783920177,
+  "id": "c7894bc1-d424-9bd0-9ff7-cf6772795118",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_c7894bc1-d424-9bd0-9ff7-cf6772795118",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Lamp\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The Word of God as a source of spiritual illumination, guidance, and direction for the believer's path\",\n  \"primary_basis\": [\n    \"Psalm 119:105\",\n    \"Proverbs 6:23\",\n    \"2 Samuel 22:29 / Psalm 18:28\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The seven churches (or the Church collectively) as light-bearers before God\",\n      \"basis\": [\n        \"Revelation 1:12-20\",\n        \"Revelation 2:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The human spirit or conscience as searched/illuminated by the Lord\",\n      \"basis\": [\n        \"Proverbs 20:27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faithful readiness, spiritual preparedness, or the believer's testimony (often with oil as the Spirit)\",\n      \"basis\": [\n        \"Matthew 25:1-13 (parable of the ten virgins)\",\n        \"Matthew 5:14-16\",\n        \"Luke 12:35\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"John the Baptist (or a prophetic witness) as a temporary shining light\",\n      \"basis\": [\n        \"John 5:35\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The eye as the lamp of the body (spiritual perception or singleness of heart)\",\n      \"basis\": [\n        \"Matthew 6:22-23\",\n        \"Luke 11:34-36\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Psalm 119:105 is the single most frequently cited and taught symbolic use across confessional lines and popular Christian instruction; other meanings are context-specific and well-attested but secondary in frequency of application as a general symbol for 'lamp'.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_c7894bc1-d424-9bd0-9ff7-cf6772795118",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1403,
+    "output_tokens_details": {
+      "reasoning_tokens": 930
+    },
+    "total_tokens": 2005,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 90460000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1403
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

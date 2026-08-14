@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "year",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nYear\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'year' most commonly carries the symbolic sense of a complete, divinely appointed period of time — above all 'the acceptable year of the Lord,' i.e., the era of God's favor, salvation, and release. This draws on the Jubilee year (a fiftieth-year proclamation of liberty, debt release, and restoration) as a type of messianic redemption, which Jesus applies to his own ministry in the Nazareth synagogue. Thus 'year' symbolizes the full season or epoch of God's saving activity rather than a mere calendar unit.\",\n  \"primary_basis\": [\n    \"Isaiah 61:1-2 ('to proclaim the year of the LORD's favor')\",\n    \"Luke 4:18-19 (Jesus reads Isaiah 61 and declares it fulfilled)\",\n    \"Leviticus 25:8-13 (the Year of Jubilee: liberty, release, restoration)\",\n    \"Isaiah 34:8 and 63:4 ('year of recompense' / 'year of my redeemed')\",\n    \"Genesis 1:14 (heavenly lights appointed for 'seasons, days, and years' — time ordered by God)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The year-day principle in prophetic interpretation: a symbolic 'day' in prophecy stands for a literal year, so prophetic time periods (e.g., 70 weeks = 490 years; 1260 days = 1260 years) are decoded into years. Here 'year' functions as the unit of prophetic fulfillment. This was dominant in historicist Protestant interpretation and remains central in Seventh-day Adventist and some other traditions, though it is a minority view in contemporary mainstream scholarship.\",\n      \"basis\": [\n        \"Numbers 14:34 ('each day for a year')\",\n        \"Ezekiel 4:5-6 ('a day for each year')\",\n        \"Daniel 9:24-27 (the seventy 'weeks' understood as weeks of years)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A 'year' (or the 360-day prophetic year) as the building block of apocalyptic chronology: 'a time, times, and half a time' = three and a half years, equated with 42 months and 1260 days, symbolizing a limited, God-bounded period of tribulation or persecution.\",\n      \"basis\": [\n        \"Daniel 7:25; 12:7\",\n        \"Revelation 11:2-3; 12:6, 14; 13:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Equivalence of vast divine time with human time — 'one day is as a thousand years' — used to argue that a 'year' or 'day' with God does not map onto human chronology, and in some schemes to support millennial or day-age readings.\",\n      \"basis\": [\n        \"Psalm 90:4\",\n        \"2 Peter 3:8\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"'Year' as simply a complete natural cycle ordained by God, marking his faithfulness in the rhythm of seasons and the liturgical/festal calendar, without a distinct symbolic freight beyond ordered time under God's sovereignty.\",\n      \"basis\": [\n        \"Genesis 1:14; 8:22\",\n        \"Exodus 23:14-17 (annual festal cycle)\",\n        \"Psalm 65:11 ('you crown the year with your bounty')\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Unlike terms such as 'lamb' or 'leaven,' 'year' does not have a single fixed symbolic meaning in Christian interpretation. The most recognizable symbolic usage is the 'year of the Lord's favor' (Jubilee/era of salvation), which is widely preached and cited, but much discussion of 'year' occurs within prophetic-chronology debates (year-day principle, prophetic 360-day year), where interpretive traditions diverge sharply (historicist vs. preterist vs. futurist vs. idealist). Any author claiming one settled symbolic meaning for 'year' is selecting from a genuinely contested field.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A divinely appointed era of redemption, grace, and liberation, frequently rooted in the Year of Jubilee and fulfilling the 'acceptable year of the Lord'.\",\n  \"primary_basis\": [\n    \"Isaiah 61:2\",\n    \"Luke 4:19\",\n    \"Leviticus 25:10\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A symbolic unit of prophetic time where one day represents one literal year (the day-year principle).\",\n      \"basis\": [\n        \"Numbers 14:34\",\n        \"Ezekiel 4:6\",\n        \"Daniel 9:24-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A representation of God's eternal nature and perspective on time, where human years are vastly different from divine time (e.g., a thousand years as one day).\",\n      \"basis\": [\n        \"Psalm 90:4\",\n        \"2 Peter 3:8\",\n        \"Psalm 102:27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A specific, often symbolic, long duration of divine administration, judgment, or reign, such as the Millennium.\",\n      \"basis\": [\n        \"Revelation 20:2-7\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolic meaning of 'year' often depends heavily on context. Soteriologically, it represents the era of Christ's grace (Jubilee). Eschatologically, it is frequently debated whether 'years' denote literal timeframes, symbolic epochs of completion, or apply a prophetic day-year calculus.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"“Year” has no single settled biblical symbolic meaning. When used figuratively or typologically, its broadest conventional association is a complete or divinely appointed season—especially a time of favor, judgment, release, or restoration.\",\n  \"primary_basis\": [\n    \"Isaiah 61:1–2 and Luke 4:18–21 — “the year of the Lord’s favor” denotes the appointed era of salvation proclaimed and inaugurated by Christ.\",\n    \"Leviticus 25:8–13 — the Jubilee year provides the principal biblical pattern for release, restoration, liberty, and return.\",\n    \"Isaiah 34:8 and 63:4 — a “year” can mark an appointed period of divine vengeance or recompense.\",\n    \"Ecclesiastes 3:1 — supports the broader concept of divinely appointed times and seasons, though it does not assign a fixed symbolism to “year.”\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A literal calendar or regnal year with no symbolic significance. This is the ordinary meaning in most biblical occurrences.\",\n      \"basis\": [\n        \"Genesis 7:11\",\n        \"2 Kings 18:1\",\n        \"Luke 3:1–2\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"A Jubilee-like era of salvation, liberation, forgiveness, and restoration.\",\n      \"basis\": [\n        \"Leviticus 25:8–13\",\n        \"Isaiah 61:1–2\",\n        \"Luke 4:18–21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An appointed period of divine judgment or recompense.\",\n      \"basis\": [\n        \"Isaiah 34:8\",\n        \"Isaiah 63:4\",\n        \"Jeremiah 11:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In prophetic interpretation, one symbolic day represents one literal year—the “day-year principle.” This is especially prominent in historicist interpretation but is not accepted as a universal rule across Christian traditions.\",\n      \"basis\": [\n        \"Numbers 14:34\",\n        \"Ezekiel 4:5–6\",\n        \"Daniel 9:24–27\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A standardized 360-day “prophetic year,” commonly inferred by correlating apocalyptic periods such as 1,260 days, 42 months, and “time, times, and half a time.”\",\n      \"basis\": [\n        \"Daniel 7:25\",\n        \"Daniel 12:7\",\n        \"Revelation 11:2–3\",\n        \"Revelation 12:6,14\",\n        \"Revelation 13:5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A symbol of completeness simply because a year completes an annual cycle.\",\n      \"basis\": [\n        \"Exodus 23:14–17\",\n        \"Psalm 65:11\"\n      ],\n      \"prominence\": \"unclear\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation does not generally treat “year” as carrying one fixed symbolic value. Its meaning is determined by context: most occurrences are literal, while symbolic uses variously concern an appointed season, Jubilee restoration, judgment, or particular prophetic calculations.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"No single settled symbolic meaning; most often denotes a complete cycle of time or a designated period of divine action (favor, judgment, testing, or release), especially the 'acceptable/favorable year of the Lord' as the messianic era of salvation and grace\",\n  \"primary_basis\": [\n    \"Isaiah 61:1-2\",\n    \"Luke 4:18-19\",\n    \"Leviticus 25:8-13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Periods of testing, judgment, discipline or wandering (e.g., forty years in the wilderness representing a generation under divine scrutiny)\",\n      \"basis\": [\n        \"Numbers 14:33-34\",\n        \"Deuteronomy 8:2\",\n        \"Psalm 95:10\",\n        \"Hebrews 3:8-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Prophetic time-reckoning unit of 360 days, used to equate 42 months / 1260 days with 3.5 years in apocalyptic calculations\",\n      \"basis\": [\n        \"Daniel 7:25\",\n        \"Daniel 12:7\",\n        \"Revelation 11:2-3\",\n        \"Revelation 12:6,14\",\n        \"Revelation 13:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Jubilee year as type of ultimate liberation, debt cancellation, restoration of inheritance and eschatological redemption\",\n      \"basis\": [\n        \"Leviticus 25:8-55\",\n        \"Isaiah 61:1-2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Application of the day-year principle in which observed days of sin or reconnaissance generate corresponding years of consequence (days symbolize years)\",\n      \"basis\": [\n        \"Numbers 14:34\",\n        \"Ezekiel 4:5-6\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Unlike more fixed biblical symbols (e.g., water, rock, lamb), 'year' functions mainly as a temporal measure whose symbolic force is context-dependent. The 'year of the Lord/favor' and Jubilee motifs are widely recognized in both Jewish and Christian teaching; the 360-day prophetic year and day-year principle are standard in historicist and some evangelical eschatology but secondary to the term itself. No single meaning dominates across the whole tradition.\"\n}\n\nBOOK ENTRY\nA turning — shanah, written on the root to change, repeat, return: one complete cycle of time, at whatever scale the count is running — Jeremiah’s seventy “years” close only as seventy jubilees, and a thousand years pass as a day.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Jer 25:11-12; Dan 9:2, 24; Ps 90:4) · see Daniel Unsealed, ch. 36\n\nAVAILABLE KJV EXCERPTS\nJeremiah 25:11 — And this whole land shall be a desolation, and an astonishment; and these nations shall serve the king of Babylon seventy years.\nJeremiah 25:12 — And it shall come to pass, when seventy years are accomplished, that I will punish the king of Babylon, and that nation, saith the LORD, for their iniquity, and the land of the Chaldeans, and will make it perpetual desolations.\nDaniel 9:2 — In the first year of his reign I Daniel understood by books the number of the years, whereof the word of the LORD came to Jeremiah the prophet, that he would accomplish seventy years in the desolations of Jerusalem.\nDaniel 9:24 — Seventy weeks are determined upon thy people and upon thy holy city, to finish the transgression, and to make an end of sins, and to make reconciliation for iniquity, and to bring in everlasting righteousness, and to seal up the vision and prophecy, and to anoint the most Holy.\nPsalms 90:4 — For a thousand years in thy sight are but as yesterday when it is past, and as a watch in the night.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "d981513095c09eefe829a7b582b29178d2ccc33a3b280b35c3da96eb75884d72",
+  "cache": {
+    "hit": false
+  }
+}

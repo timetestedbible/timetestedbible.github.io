@@ -1,0 +1,156 @@
+{
+  "created_at": 1785123052,
+  "completed_at": 1785123075,
+  "id": "5e4ab326-7f28-9952-89e4-058ce55e7f2e",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_5e4ab326-7f28-9952-89e4-058ce55e7f2e",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for the biblical term \"The Lamb\" and return a specific JSON format.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Jesus Christ as the sacrificial Lamb of God whose death atones for sin\",\n  \"primary_basis\": [\n    \"John 1:29, 36 (Lamb of God who takes away the sin of the world)\",\n    \"Revelation 5:6-12; 7:14; 12:11; 13:8 (the slain yet victorious Lamb)\",\n    \"1 Corinthians 5:7 (Christ our Passover lamb)\",\n    \"1 Peter 1:18-19 (redeemed by the precious blood of Christ, a lamb without blemish)\",\n    \"Isaiah 53:7 (suffering servant led like a lamb to the slaughter, read christologically)\",\n    \"Exodus 12 (Passover lamb as typological background)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"General symbol of innocence, meekness, or gentleness (sometimes applied to believers or as a moral quality rather than specifically to Christ's atonement)\",\n      \"basis\": [\n        \"Isaiah 11:6; 65:25 (peaceable kingdom imagery)\",\n        \"Luke 10:3; Matthew 10:16 (disciples sent as lambs among wolves)\",\n        \"Broader pastoral and prophetic lamb imagery\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Passover or temple sacrificial lamb understood primarily in its original Israelite cultic sense, without necessary reference to Jesus\",\n      \"basis\": [\n        \"Exodus 12\",\n        \"Leviticus sacrificial regulations\",\n        \"Historical-critical readings that stop at OT cult\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Apocalyptic or messianic conqueror figure emphasizing victory and judgment more than (or instead of) substitutionary sacrifice\",\n      \"basis\": [\n        \"Revelation's Lamb who opens seals, wages war, and rules (e.g., Rev 6; 17:14)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Literal animal or non-christological metaphor with no fixed doctrinal load\",\n      \"basis\": [\n        \"Ordinary pastoral references in OT narrative and poetry\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In mainstream historic Christian teaching and biblical interpretation, 'the Lamb' (especially capitalized or in titular use) overwhelmingly denotes Jesus Christ in his atoning, paschal role, integrating OT sacrifice typology with NT fulfillment texts. Alternative emphases exist but rarely displace this core identification in confessional or standard exegetical literature.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_5e4ab326-7f28-9952-89e4-058ce55e7f2e",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 603,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1009,
+    "output_tokens_details": {
+      "reasoning_tokens": 413
+    },
+    "total_tokens": 1612,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 70424000,
+    "context_details": {
+      "input_tokens": 603,
+      "output_tokens": 1009
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

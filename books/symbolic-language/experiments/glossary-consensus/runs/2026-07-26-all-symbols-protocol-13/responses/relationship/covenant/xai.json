@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123415,
+  "completed_at": 1785123462,
+  "id": "36848cbe-281d-9b3b-bc83-4f4bee218a13",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_36848cbe-281d-9b3b-bc83-4f4bee218a13",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Covenant\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification matches the consensus: covenant as a solemn, binding, divinely initiated relationship of promise, law, and faithfulness, culminating in the new covenant in Christ. The book's emphasis on the 'binding word' from the head (God) who governs through law, promises, and judgments refines rather than replaces the referent. It preserves the relational category while sharpening the hierarchical, authoritative dimension and explicitly rejecting the contract model that some consensus alternatives treat as primary.\",\n  \"extension_reasoning\": \"The book narrows the scope by centering the covenant on the Ten Commandments as the governing word and by stressing headship and renewal through the heart-written law. It excludes or de-emphasizes purely horizontal contract or treaty readings (common in alternatives) and marital or testament metaphors that appear in consensus alternatives. The extension is tightened around the 17th-century covenant theology framework (head, law, promise, judgment) while retaining the biblical examples (Ex 24, Deut 4/29, Jer 31, Heb 8) that consensus already cites.\",\n  \"scripture_support\": \"strong\",\n  \"final_classification\": \"REFINED\"\n} <|tool_call_begin|>{\"core_relation\": \"REFINED\", \"extension_relation\": \"REFINED\", \"core_reasoning\": \"The book's core identification matches the consensus: covenant as a solemn, binding, divinely initiated relationship of promise, law, and faithfulness, culminating in the new covenant in Christ. The book's emphasis on the 'binding word' from the head (God) who governs through law, promises, and judgments refines rather than replaces the referent. It preserves the relational category while sharpening the hierarchical, authoritative dimension and explicitly rejecting the contract model that some consensus alternatives treat as primary.\", \"extension_reasoning\": \"The book narrows the scope by centering the covenant on the Ten Commandments as the governing word and by stressing headship and renewal through the heart-written law. It excludes or de-emphasizes purely horizontal contract or treaty readings (common in alternatives) and marital or testament metaphors that appear in consensus alternatives. The extension is tightened around 17th-century covenant theology framework (head, law, promise, judgment) while retaining the biblical examples (Ex 24, Deut 4/29, Jer 31, Heb 8) that consensus already cites.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Covenant primarily denotes a divinely initiated solemn binding relationship or commitment between God and his people, ratified by blood or signs, structuring redemptive history and fulfilled in the new covenant in Christ.\",\n  \"book_summary\": \"Covenant is the binding word by which a head establishes and governs a relationship through law, promises, and judgments; parties come under the head’s terms rather than negotiating as equals, and God expressly calls the Ten Commandments his covenant.\",\n  \"consensus_core_identification\": \"divinely initiated solemn binding relationship/commitment between God and people\",\n  \"book_core_identification\": \"binding word of a head that establishes and governs a relationship through law, promises, and judgments\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book excludes negotiated-contract or autonomous-equals models and centers the hierarchical word (explicitly identifying the Decalogue as the covenant); consensus primary keeps the broader relationship while treating treaty/contract forms only as alternatives.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Both locate the same biblical divine-human arrangement; the book preserves that category but materially tightens the identification from ‘relationship/agreement’ to the head’s governing word, reclassifying contractual-equals readings as obscuring and elevating the commandments-as-covenant texts. This is boundary/precision disagreement, not replacement of the referent.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Consensus consistently treats the relationship itself as primary while the book relocates the essence to the word that creates it, which some may regard as shifting the referent rather than merely narrowing it.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_36848cbe-281d-9b3b-bc83-4f4bee218a13",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 5600,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2651,
+    "output_tokens_details": {
+      "reasoning_tokens": 2258
+    },
+    "total_tokens": 8251,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 268884000,
+    "context_details": {
+      "input_tokens": 5600,
+      "output_tokens": 2651
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

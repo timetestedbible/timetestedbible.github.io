@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "jacob",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nJacob\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, Jacob primarily symbolizes the nation of Israel and, by extension, God's chosen covenant people. Because Jacob is renamed 'Israel' after wrestling with God, his name functions throughout Scripture as a synonym for the covenant nation, and his life story is read as the archetype of the flawed sinner ('supplanter/deceiver') transformed by God's grace into a bearer of the covenant promise.\",\n  \"primary_basis\": [\n    \"Genesis 25:26 (born grasping Esau's heel; name meaning 'supplanter/heel-grabber')\",\n    \"Genesis 27 (deception of Isaac to obtain the blessing)\",\n    \"Genesis 28:10-22 (Bethel vision and covenant promise)\",\n    \"Genesis 32:22-32 (wrestling at Peniel; renamed Israel, 'he strives with God')\",\n    \"Genesis 35:9-12 (renaming confirmed and covenant restated)\",\n    \"Hosea 12:2-6 (prophetic use of Jacob's striving as a picture of the nation)\",\n    \"Isaiah 41:8; 44:1-2 (Jacob/Israel used interchangeably for God's chosen servant people)\",\n    \"Malachi 1:2-3 and Romans 9:10-13 ('Jacob I loved, Esau I hated')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Jacob as a paradigm of divine election and sovereign grace: God's choice of the younger over the elder, apart from works, illustrating unconditional election.\",\n      \"basis\": [\n        \"Genesis 25:23\",\n        \"Malachi 1:2-3\",\n        \"Romans 9:10-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jacob as a picture of personal transformation and sanctification: the self-reliant schemer broken and renamed through wrestling with God, applied devotionally to the believer's spiritual struggle.\",\n      \"basis\": [\n        \"Genesis 32:22-32\",\n        \"Hosea 12:3-4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Typological/allegorical reading (patristic and Reformed traditions): Jacob prefigures the Church or the 'spiritual Israel' chosen over the carnal (Esau representing the flesh or the rejected line), sometimes with Jacob's ladder read as a type of Christ.\",\n      \"basis\": [\n        \"Genesis 28:12 with John 1:51\",\n        \"Romans 9:6-13\",\n        \"Galatians 4 (analogous younger/elder typology)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Eschatological reading, especially in dispensationalist circles: 'Jacob' designates ethnic/national Israel destined to pass through end-times distress ('the time of Jacob's trouble') before restoration.\",\n      \"basis\": [\n        \"Jeremiah 30:7\",\n        \"Romans 11:26\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The identification of Jacob with the nation Israel is essentially uncontested, since Scripture itself makes the equation explicit through the renaming narratives and the prophets' interchangeable use of 'Jacob' and 'Israel.' The interpretive variety concerns emphasis rather than referent: election (Romans 9), moral transformation (Peniel), corporate Israel (prophets), or typology of the Church. Specific episodes (Jacob's ladder, the wrestling match) carry their own sub-traditions of symbolism, notably the ladder as a type of Christ via John 1:51. This assessment was made without access to the author's material.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The archetype of the natural, striving human (the supplanter) who is transformed by God's grace into a spiritual overcomer (Israel), as well as a corporate symbol for God's chosen, covenant people elected by grace.\",\n  \"primary_basis\": [\n    \"Genesis 25:26\",\n    \"Genesis 32:24-28\",\n    \"Romans 9:11-13\",\n    \"Hosea 12:3-4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The fleshly, carnal, or weak nature of a believer, frequently contrasted by prophets and expositors with 'Israel', which represents the mature, spiritually victorious nature.\",\n      \"basis\": [\n        \"Isaiah 41:14\",\n        \"Amos 7:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A corporate symbol for the New Testament Church as the spiritual Israel.\",\n      \"basis\": [\n        \"Galatians 6:16\",\n        \"Romans 9:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A typological prefiguring of Christ, particularly in his exile to a far country to serve for and secure a bride (representing the Church).\",\n      \"basis\": [\n        \"Genesis 29:15-20\",\n        \"Ephesians 5:25\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian exposition, Jacob is frequently analyzed through the etymology of his names. 'Jacob' (heel-catcher/supplanter) is universally used to illustrate human scheming, self-reliance, and the flesh, while his renamed identity 'Israel' represents divine transformation, prevailing faith, and spiritual blessing. Romans 9 also universally cements Jacob as the primary biblical symbol of God's sovereign election by grace independent of human merit.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Jacob most commonly signifies Israel: the covenant patriarch whose renamed identity becomes the name and representative embodiment of the people descended from him. Thus biblical references to “Jacob” often denote the nation or covenant people collectively.\",\n  \"primary_basis\": [\n    \"Genesis 28:10–15 — God gives Jacob the Abrahamic covenant promises of land, offspring, and blessing.\",\n    \"Genesis 32:24–30 — after wrestling with God, Jacob is renamed Israel.\",\n    \"Genesis 35:9–12 — the renaming is reaffirmed alongside covenant promises concerning a nation and kings.\",\n    \"Genesis 49:1–28 — Jacob’s sons are presented as the ancestral heads of Israel’s tribes.\",\n    \"Psalm 14:7; 24:6; 46:7,11 — “Jacob” functions as a collective designation for God’s people.\",\n    \"Isaiah 41:8–14; 43:1–7 — “Jacob” and “Israel” are parallel names for the chosen covenant people.\",\n    \"Jeremiah 30:7–10,18 — Jacob denotes the nation in distress and restoration.\",\n    \"Hosea 12:2–6 — the patriarch’s history is applied representatively to the nation.\",\n    \"Romans 9:6–13 — Jacob is associated with Israel, covenant election, and God’s purpose of promise.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Jacob symbolizes the believer transformed by divine grace: initially self-reliant, deceptive, or grasping, but disciplined through suffering and changed through encounter with God.\",\n      \"basis\": [\n        \"Genesis 25:26–34 — Jacob grasps Esau’s heel and acquires the birthright.\",\n        \"Genesis 27:1–36 — Jacob obtains Isaac’s blessing through deception.\",\n        \"Genesis 28:10–22 — God meets Jacob at Bethel while he is fleeing.\",\n        \"Genesis 29–31 — Jacob undergoes prolonged hardship under Laban.\",\n        \"Genesis 32:24–30 — wrestling, wounding, blessing, and renaming provide the central transformation motif.\",\n        \"Genesis 35:1–15 — Jacob returns to Bethel and renews his allegiance to God.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jacob represents the elect or recipients of grace, contrasted with Esau, emphasizing divine choice rather than human merit.\",\n      \"basis\": [\n        \"Genesis 25:21–23 — the elder is foretold to serve the younger before their birth.\",\n        \"Malachi 1:2–3 — God’s love for Jacob and rejection of Esau.\",\n        \"Romans 9:10–13 — Paul uses Jacob and Esau in discussing election and God’s purpose.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jacob’s wrestling with God symbolizes persevering prayer, spiritual struggle, or faith clinging to God for blessing.\",\n      \"basis\": [\n        \"Genesis 32:24–30 — Jacob refuses to release his opponent without a blessing.\",\n        \"Hosea 12:3–6 — Jacob’s wrestling is interpreted in terms of striving, weeping, seeking favor, and returning to God.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jacob’s life symbolizes the pilgrim journey of the Christian, including exile, divine protection, discipline, worship, and eventual homecoming.\",\n      \"basis\": [\n        \"Genesis 28:10–22 — the divine presence accompanies Jacob in exile.\",\n        \"Genesis 31:3; 32:1–2 — God commands and protects Jacob’s return.\",\n        \"Genesis 35:1–15 — Jacob returns to Bethel.\",\n        \"Hebrews 11:9,13,21 — Jacob is included among the patriarchal strangers, pilgrims, and exemplars of faith.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In some Christian typological or supersessionist readings, “Jacob” or “Israel” is extended beyond ethnic Israel to the Church or the spiritually renewed people of God.\",\n      \"basis\": [\n        \"Romans 9:6–8 — Paul distinguishes Israel according to promise from merely physical descent.\",\n        \"Galatians 3:7,26–29 — believers in Christ are called Abraham’s offspring and heirs.\",\n        \"Galatians 6:16 — “the Israel of God,” whose precise referent is disputed.\",\n        \"1 Peter 2:9–10 — covenantal titles are applied to Christian communities.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A sharper allegorical distinction treats “Jacob” as the natural, fleshly, or self-directed person and “Israel” as the same person spiritually transformed by God.\",\n      \"basis\": [\n        \"Genesis 32:28 — the change from Jacob to Israel is treated allegorically as a change in spiritual condition.\",\n        \"Genesis 35:10 — the renaming is reiterated.\",\n        \"Romans 7–8 is sometimes brought into this reading by analogy, although it does not mention Jacob.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Jacob is treated as a direct type of Christ, for example as a beloved son, bridegroom, shepherd, sufferer, or founder of a people.\",\n      \"basis\": [\n        \"Genesis 28–33 and 29:15–30 are sometimes read typologically through broad parallels, but the New Testament does not explicitly identify Jacob himself as a type of Christ.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a settled core identification of Jacob with Israel, grounded both in his renaming and in the Bible’s repeated use of “Jacob” as a collective name for the nation. There is no equally settled consensus on a more detailed allegorical meaning of Jacob’s personality or life; transformation, election, spiritual struggle, and pilgrimage are recurring but context-dependent Christian readings.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"God's elect/covenant people (Israel/the Church as spiritual Israel)\",\n  \"primary_basis\": [\n    \"Genesis 32:28 (renamed Israel)\",\n    \"Romans 9:6-13 (Jacob loved, election of Israel)\",\n    \"Hosea 12:2-4\",\n    \"Isaiah 41:8; 44:1-2 (Jacob/Israel as servant)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"type of the individual believer who struggles with God, is disciplined, and is transformed/prevails\",\n      \"basis\": [\n        \"Genesis 32:24-30\",\n        \"Hosea 12:3-4\",\n        \"Hebrews 11:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"type or foreshadowing of Christ (via Jacob's ladder or the prevailing one)\",\n      \"basis\": [\n        \"John 1:51 (allusion to Genesis 28 ladder)\",\n        \"Genesis 28:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"historical patriarch without strong typological/symbolic overlay (or primarily contrast to Esau as flesh vs spirit)\",\n      \"basis\": [\n        \"Genesis 25–50 narrative\",\n        \"Malachi 1:2-3\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian interpretation Jacob is most consistently taken as representative of the covenant people (interchangeable with 'Israel' in OT prophecy and NT election language). Typological readings of his personal story as the struggling believer are also widespread but secondary to the national/elect-people sense; pure historical readings coexist without displacing the symbolic consensus.\"\n}\n\nBOOK ENTRY\nThe crooked, supplanting covenant man or people before God gives the transformed Name Israel.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 27:36; Jer 17:9) · see Jacob, Israel & Ephraim, ch. 45\n\nAVAILABLE KJV EXCERPTS\nGenesis 27:36 — And he said, Is not he rightly named Jacob? for he hath supplanted me these two times: he took away my birthright; and, behold, now he hath taken away my blessing. And he said, Hast thou not reserved a blessing for me?\nJeremiah 17:9 — The heart is deceitful above all things, and desperately wicked: who can know it?\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "4b52f96df44c5f5376da7c53fe366663bdfc8b0858ddb87c2e62c451c65d015c",
+  "cache": {
+    "hit": false
+  }
+}

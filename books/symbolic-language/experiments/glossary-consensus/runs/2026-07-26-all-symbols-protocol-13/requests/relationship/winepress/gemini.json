@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "winepress",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWinepress\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the winepress functions primarily as a symbol of divine wrath and eschatological judgment: the crushing of grapes and the flow of red juice picture God (or the Messiah) trampling the wicked, whose blood flows out like wine. The image is treated as one of the Bible's most vivid pictures of God's final judgment on the nations.\",\n  \"primary_basis\": [\n    \"Isaiah 63:1-6 ('I have trodden the winepress alone... their blood spattered my garments')\",\n    \"Revelation 14:19-20 ('the great winepress of the wrath of God... blood flowed out of the press')\",\n    \"Revelation 19:15 ('he treads the winepress of the fury of the wrath of God the Almighty')\",\n    \"Joel 3:13 ('Come, tread, for the winepress is full... for their wickedness is great')\",\n    \"Lamentations 1:15 ('the Lord has trodden as in a winepress the virgin daughter of Judah')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christological/passion reading: the winepress as a figure of Christ's suffering — Christ himself crushed like the grape on the cross, or the solitary treader of Isaiah 63 read as the suffering Redeemer. Prominent in patristic and medieval exegesis (Augustine, medieval 'mystic winepress' iconography) and in some hymnody, though modern critical scholarship treats Isaiah 63 as a judgment text.\",\n      \"basis\": [\n        \"Isaiah 63:3 read typologically of Christ ('I have trodden the winepress alone')\",\n        \"Association with Gethsemane (Matthew 26:36; the name meaning 'oil press,' extended by devotional writers to the pressing/crushing of Christ)\",\n        \"Isaiah 53:5,10 combined with the pressing imagery in devotional tradition\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Abundance, blessing, and covenant prosperity: full winepresses as a sign of God's favor and agricultural blessing; empty or failed presses as a sign of curse or lament.\",\n      \"basis\": [\n        \"Proverbs 3:10 ('your vats will overflow with new wine')\",\n        \"Joel 2:24 ('the vats shall overflow with wine and oil')\",\n        \"Deuteronomy 15:14; 16:13 (winepress in contexts of provision and festal joy)\",\n        \"Haggai 2:16 and Isaiah 16:10 (failed presses as judgment/lament, the negative counterpart)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The winepress in the vineyard parables as part of God's careful provision for Israel/the church — an element of the vineyard God prepares, with Israel's failure to produce fruit leading to judgment; the press itself is incidental furniture rather than the central symbol.\",\n      \"basis\": [\n        \"Isaiah 5:1-2 (God hews out a wine vat in his vineyard)\",\n        \"Matthew 21:33 / Mark 12:1 (parable of the tenants: the owner 'dug a winepress')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Oppression, fear, or concealment in narrative settings — e.g., Gideon threshing wheat in a winepress to hide from Midian, sometimes moralized as living under oppression or acting in fear; occasionally the treading of the press is used for toil and exploitation.\",\n      \"basis\": [\n        \"Judges 6:11 (Gideon threshing wheat in the winepress)\",\n        \"Job 24:11 (the oppressed 'tread the winepresses, but suffer thirst')\",\n        \"Nehemiah 13:15 (treading winepresses on the Sabbath)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Allegorical readings of the Psalm titles 'according to the Gittith' (possibly 'upon the winepresses'), used by some patristic writers to read Psalms 8, 81, 84 as winepress psalms about the church or the passion.\",\n      \"basis\": [\n        \"Superscriptions of Psalms 8, 81, 84 (LXX 'for the winepresses'), allegorized by Augustine and others\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a clearly recognizable consensus: across commentaries, dictionaries of biblical imagery, and popular teaching, the winepress is above all the image of God's wrath trodden out in judgment (Isaiah 63; Joel 3; Revelation 14 and 19). The main interpretive divergence concerns Isaiah 63:1-6: historic Christian tradition often read the lone treader as Christ in his passion (giving the winepress a redemptive-suffering sense), while most modern exegesis reads it as the divine warrior executing judgment, with the New Testament (Revelation 19) applying that judgment role to the returning Christ. The 'abundance/blessing' sense is well attested in the literal agricultural texts but is secondary as a symbol. No party disputes that the term carries strong symbolic freight; the debate is over which passages control the symbol, not whether one exists.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The wrath, judgment, and severe punishment of God poured out upon his enemies and the wicked.\",\n  \"primary_basis\": [\n    \"Isaiah 63:2-3\",\n    \"Revelation 14:19-20\",\n    \"Revelation 19:15\",\n    \"Joel 3:13\",\n    \"Lamentations 1:15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The suffering and passion of Jesus Christ, who bore the wrath of God on behalf of humanity (frequently depicted in historical Christian art and theology as the mystic winepress).\",\n      \"basis\": [\n        \"Isaiah 63:3\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Eschatological blessing, joy, and material abundance, particularly when emphasizing overflowing vats of new wine rather than the violent act of treading.\",\n      \"basis\": [\n        \"Proverbs 3:10\",\n        \"Joel 2:24\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The visual correspondence between treading red grapes and the shedding of blood makes the winepress a deeply entrenched and settled symbol for divine vengeance and eschatological judgment in biblical interpretation.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Divine judgment and wrath, especially final or eschatological judgment: the wicked or hostile nations are portrayed as grapes crushed underfoot, with the flowing juice evoking bloodshed.\",\n  \"primary_basis\": [\n    \"Isaiah 63:1–6 — the divine warrior treads the winepress in anger, staining his garments with the blood of the nations.\",\n    \"Joel 3:13 — the overflowing winepress represents the ripeness of the nations’ wickedness and the imminence of judgment.\",\n    \"Revelation 14:19–20 — the earth’s harvest is cast into the “great winepress of the wrath of God,” producing blood.\",\n    \"Revelation 19:15 — Christ treads “the winepress of the fury of the wrath of God Almighty.”\",\n    \"Lamentations 1:15 — Judah’s devastation is compared to a virgin daughter being trodden in a winepress.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Agricultural abundance, joy, and covenant blessing; full winepresses signify prosperity, while empty or silent presses signify deprivation and judgment.\",\n      \"basis\": [\n        \"Proverbs 3:9–10\",\n        \"Joel 2:23–24\",\n        \"Amos 9:13\",\n        \"Isaiah 16:10\",\n        \"Jeremiah 48:33\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s provision for and expectations of his covenant people, particularly within vineyard imagery; the winepress can be one element of a carefully prepared vineyard whose fruit or tenants are judged.\",\n      \"basis\": [\n        \"Isaiah 5:1–7\",\n        \"Matthew 21:33–41\",\n        \"Mark 12:1–9\",\n        \"Luke 20:9–16\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Christ’s Passion or atoning suffering, based especially on traditional Christian and artistic readings of the one who treads the winepress alone.\",\n      \"basis\": [\n        \"Isaiah 63:1–6\",\n        \"Traditional Christological interpretation and Passion imagery\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Suffering, oppression, or severe affliction more generally, using crushing in a press as a metaphor without necessarily specifying eschatological judgment.\",\n      \"basis\": [\n        \"Lamentations 1:15\",\n        \"The broader biblical metaphor of treading or crushing\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable dominant interpretation when the winepress functions as prophetic or apocalyptic symbolism: divine wrath and judgment. The object does not carry that meaning in every passage, however; in wisdom, agricultural, and restoration texts it often signifies prosperity or is simply part of ordinary vineyard imagery.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Divine judgment or the outpouring of God's wrath upon the wicked (often depicted as treading/trampling grapes that yield blood)\",\n  \"primary_basis\": [\n    \"Isaiah 63:1-6\",\n    \"Revelation 14:19-20\",\n    \"Revelation 19:15\",\n    \"Joel 3:13\",\n    \"Lamentations 1:15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ's redemptive suffering and the outpouring of his blood (the 'mystic winepress' motif in which Christ himself is pressed)\",\n      \"basis\": [\n        \"Christological reading of Isaiah 63\",\n        \"Medieval and early-modern Christian iconography and devotion\",\n        \"Eucharistic associations with wine/blood\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Material abundance, blessing, and agricultural prosperity (overflowing winepresses as a sign of covenant favor)\",\n      \"basis\": [\n        \"Proverbs 3:10\",\n        \"Joel 2:24\",\n        \"Deuteronomy 15:14 and similar OT prosperity texts\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Element of the vineyard parable representing Israel or the kingdom (the prepared facilities of the vineyard)\",\n      \"basis\": [\n        \"Matthew 21:33\",\n        \"Mark 12:1\",\n        \"Isaiah 5:1-7 vineyard song\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In prophetic and especially apocalyptic Christian interpretation the winepress is overwhelmingly a stock image of eschatological wrath; the abundance and Christological readings are well-attested but secondary or context-specific.\"\n}\n\nBOOK ENTRY\nThe vineyard's reckoning — where the fruit that a people has borne is pressed out and rendered to the Owner, in one of two vintages: presses that “burst out with new wine” when the grapes are good; the growers themselves trodden — “the great winepress of the wrath of God” — and blood for wine, when the vintage is wickedness.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 5:2, 7; Prov 3:10; Joel 2:24; 3:13; Lam 1:15; Isa 63:3; Rev 14:19-20) · see The Parable of the Vineyard | (Isa 5:2, 7; Prov 3:10; Joel 2:24; 3:13; Lam 1:15; Isa 63:3; Rev 14:19-20) · see The Parable of the Vineyard, in the free digital edition at TimeTested.Bible\n\nAVAILABLE KJV EXCERPTS\nIsaiah 5:2 — And he fenced it, and gathered out the stones thereof, and planted it with the choicest vine, and built a tower in the midst of it, and also made a winepress therein: and he looked that it should bring forth grapes, and it brought forth wild grapes.\nIsaiah 5:7 — For the vineyard of the LORD of hosts is the house of Israel, and the men of Judah his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry.\nProverbs 3:10 — So shall thy barns be filled with plenty, and thy presses shall burst out with new wine.\nJoel 2:24 — And the floors shall be full of wheat, and the fats shall overflow with wine and oil.\nJoel 3:13 — Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.\nLamentations 1:15 — The Lord hath trodden under foot all my mighty men in the midst of me: he hath called an assembly against me to crush my young men: the Lord hath trodden the virgin, the daughter of Judah, as in a winepress.\nIsaiah 63:3 — I have trodden the winepress alone; and of the people there was none with me: for I will tread them in mine anger, and trample them in my fury; and their blood shall be sprinkled upon my garments, and I will stain all my raiment.\nRevelation 14:19 — And the angel thrust in his sickle into the earth, and gathered the vine of the earth, and cast it into the great winepress of the wrath of God.\nRevelation 14:20 — And the winepress was trodden without the city, and blood came out of the winepress, even unto the horse bridles, by the space of a thousand and six hundred furlongs.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "b12352ce185754a08b070e8999aaca4cf944fa9b3bb355cb6df7668f37aee1a9",
+  "cache": {
+    "hit": false
+  }
+}

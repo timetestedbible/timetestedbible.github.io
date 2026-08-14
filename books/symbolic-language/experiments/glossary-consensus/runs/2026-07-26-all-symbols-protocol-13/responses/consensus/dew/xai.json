@@ -1,0 +1,156 @@
+{
+  "created_at": 1785122956,
+  "completed_at": 1785122969,
+  "id": "0e5175a7-ff08-9e1d-a3f1-7beb22c05a6e",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0e5175a7-ff08-9e1d-a3f1-7beb22c05a6e",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for the biblical symbolism of \"Dew\". I must respond only with JSON matching the schema, no surrounding text.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"God's gentle blessing, favor, or spiritual refreshment/revival poured out quietly upon His people\",\n  \"primary_basis\": [\n    \"Hosea 14:5 (I will be like the dew to Israel)\",\n    \"Deuteronomy 33:13/28 (blessing of heaven's dew)\",\n    \"Psalm 133:3 (dew of Hermon as emblem of blessing/unity)\",\n    \"Micah 5:7 (remnant like dew from the Lord)\",\n    \"Zechariah 8:12 (heavens give dew as covenant blessing)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Word of God or true doctrine that gently nourishes\",\n      \"basis\": [\n        \"Deuteronomy 32:2 (doctrine drops as rain, speech distills as dew)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Resurrection life or awakening of the dead\",\n      \"basis\": [\n        \"Isaiah 26:19 (your dead shall live... for your dew is like the dew of herbs)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sign of divine confirmation or miraculous provision (as with Gideon's fleece or manna context)\",\n      \"basis\": [\n        \"Judges 6:36-40\",\n        \"Exodus 16:13-14 (manna appearing with dew)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit's quiet, life-giving influence\",\n      \"basis\": [\n        \"Analogical extension from Hosea 14:5 and refreshment imagery\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, medieval, Reformation, and modern evangelical/conservative commentaries the dominant cluster is blessing/refreshment/favor; secondary readings (Word, resurrection, Spirit) are well-attested but less universal as the primary symbol. No major tradition treats dew as inherently negative.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_0e5175a7-ff08-9e1d-a3f1-7beb22c05a6e",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 821,
+    "output_tokens_details": {
+      "reasoning_tokens": 340
+    },
+    "total_tokens": 1423,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 59124000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 821
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

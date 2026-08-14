@@ -1,0 +1,257 @@
+{
+  "id": "resp_058187309e8f9005006a66dbdeb7288194b49a742b3db6160e",
+  "object": "response",
+  "created_at": 1785125854,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1785125909,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_058187309e8f9005006a66dbdf9ac881948f1dd015a72a0884",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtwVjTm0c04zGi7wHMNjpZW6Q5DZ4PTWEDhj3t0pUAH4XD8JyoGGAegz0V8edGMl8fuGJD3g8_Q2VJv0BSx0gax9SWw_mR73KTCRNSVXrbAsT3cvL_z0-paNZDMfl8AvhEwmIsLN8z7qwpApIKUET0yLRdXlV8L4RcwXrL6hAiDWtPqZoFy-L39IXY5cf4gf6dXaGzz0OwiTxISe3KWUD6gAaL8fydozx-DtQaqVYBRcPRqGVllXx3y_XkQkMqS2dAftnM3TiPJ46Pk4x98rXgzSIBewXquYzUHAiCavm8h-Tbx-KeRI_PX6oFywElwb40oTyA2RElHsWwWzD1jEHcWOcHHJNU4ixTwejl9N38VJlROmOAlQ8CSQTlO7SaI6-knZ65sH7LoPYGZV9gAAIb7T_17sGt51db_Oob_-OV0IPuf9Foxis_RfEZJn_J7bKIbb4228igdLTRim9QT72aERzpw7aPBCKkSAhx_Q8iAQkAF5niIuHSYMLUuFNEPRayOuydllXvgq05QdnJp5FjC61awvwFczubyOfff5HckwyKM9n72mvJ7LV_LO15B45k4md8JsqVJA88L0l-IaGNXUyQzmIQTv7k1XCHmPJx9oVVWZ02OvxiH8U-DcNhSjLCoZWrfKZuQeZGGnq7RYnFEdf8LOPeYhxWoLNNvrGq4ReHY89aA2dN-lgeiWfGSnSPi__4pKSkrNGheajKnoFrykP6akRbLtzLLY5Q8d1fiBDoW-J4isriGMR2L7XjpHqMhR1QqI6-ioZYxgqubiCWQlA4G1xAXpUt0_9b0cyKp38eCbhSmjexXdPu5MJLFOoY3pmzlhzksJRptNIwTjsFDqqszTAC2LQ2_SOL-O4cjs-mE9xNc6r616Oga-EKJCan3Q3l6aHQqHNiJg9WbN-5ntnPmDP_a4E0w0HVfiGwPwYvxjI56xmyFCXnnpIo_CHbNL5rdCFFxBDQIrbFE497EDQvqocKmvwOiSkAxL5MybFAK-L5AuyEY9poN2yfeWZJN-DYA2TH5xWR2RSsOb5mzuTjtnHgYqE5I8nIWNyANVQdJpWWbgyMJRwGHuHlQeI5TdYr_Fhl_vnPXhsi4qI6AqyYrLIs8hCZu8nsIHEOWfAjhg-7udqbGafHtvOYBLWfhSteLg537zHgvM2OwPxcJNZsStN4dLbt4kYAZlJ5el-EmA58hCAcdvPNMT8WKVGSK2p-0PSgVnSP97sX0vgeaZQB0EUJNJN3KVQqku2Xy3Nqfh2NF9n294zx_CC-RUtXZWb4pZRlUIM7T1Rnf7vMzsi9F9-szyFBbjjJoXEDchIOc2Thy3mL-cwLkMvttyntnX9ShGKcUF9s984ro91Q1bAwtfPvtl-1P-Frudf6S_0q8haEdT0jd6lsIlGbtVY5P0xYLV9NBCzt7zww4VxrS4051WM3Fu1ScLyw0Xuj85pMXN2tEqpBQyQc-TY-nnRwcFLC5V_IK3tBL_yJDjUBeyxgDvd9tN5NO-1lI9f0Ewqj9i9GZZtJZgGXADtNQnERexSLpPeso5QcQMj6dcauTefEfSVZ5GK3aIu2phKhIo7h3Kv9GRzJcjhJglFj6oTtfkznTyGAXXvSJUc3iqL5tbSw5OOH_BfdgqK-xraIcmMnmQaK3DqGDrSthka35WtBSlDcCyvowl8L6D1VI1wwQ6UNWGlj9PrYm5mFsbfxLXHDZhLo6sIKoCGjrcMUzowd3gv-IBDPmuikRcF9o5f3CcO7ROb4OYzyeCMNbc-ywaYaEHptKR-48Mfy-O4CWBg93n28tY_YZgygIPh4vXjj3nxEN3kqc5mXtSrDJlIluHRfHSCwBpBQpFkj6boPO3klaNhjpMs51atmkQaRuaFcktZ_DPkqO2YIWS7Tbp-uaAbawp8ShrcvGue5MxwMadQT7XQtzvolIis1i8sUkIq4gQugK3oGlqtowj-e9DXrr8cJPfbtRUtSJeKPyCZGcwatUE6QRqkypg3KZC3292b6XPa3Jj2v3_qaFEN_-jPDvtALQ_Gg8G2y6iNHsiUmIsIx9wZdGkHrlqp8p094vkt02nlY1LFdOV9rIhzNbTeh6hBslxPOKkTYPy6Dd8WYYBJSAecw1BbSKRKjNQTsV2kl9dUmJPX2MuKc9vArYmr-oZDPNRz1nNbVLY5eKXW63qeBFFCJ4C0bbmyDTyWLTFRSYuuLtSLYVTObo-hEo41a_d6kvppQ_YfpN1iZNDwouVry3l59vqttm1S_2W845amdh6lp_p3_FstIzT4dgLlKX8CmLE-yEWMfZcawDSkiEP5UrGGTZrolweK2QGsk4d7PndbzqmoglSzvn4Q5Cw0e_VRolUTGoUWUp0P0enZbKdox3H1I_7x_7rY2eEz9yzNj8L77vKJki1mVVrR9DFePRu5LTVn5QiOEzXeyp8FmCUOLHMmmK0pkeg-lJBUgtTt6vOryWnk5WRhbtogfKkCBQToVoYl2I6KofRwJhfHLd4enFJuivbUtMurSaTa7ENmJQ-6VQYOgVbPnDVXWOnONSlL4KzUCUKL2jrnjASycvrHZ810ZSc6WZrod2ivrdQPAYBvzdIB2kbxdQrDeAvPMaGgc3laZarg5wEJGF_1Wbru2-p_2xNjoiPU4qsTu4M-PJB6w8np55LuQfXIUiXSN9QWoUB-UIXkaa4OG7SCX4V57VGDSwwLZU4syCRK7Y0AIN07o2yDk0Tb9RKyK9Yo4-K2X_5jfn1GueXuAHBfo59RZ_IXjUTRJLg0JIsru5u7L2jr3ZuZH416wQFj8tyosGKEI2w2ZypLLAW_s9LyUyBFiz2XYg_dIYQHbPnBlU4ELZwG7G_vZ-ZVW63kOfRnYv11PPBr4iMIfVelSyqjxww3hMPMBgG9CAUdX6sYWv5kyF5eIS87US5jcwmKqjWpuyqgAe8PozctrwAB3OxT4RSpMTc7k2CoaCzoerykYudgC_QFYTj5kChf8k-k3VImC79Gd9JWwx9s3O0rcWb2rJwJnvR2qTvcxWqIvN3WoIpKYIZe3kLAxFurM7zzO6aTxdHfwSXmHyTNo2YOwOzb_2ZAhL89KQ7YpS5P2ts5eS7bKXWI0BSaObjvJL58AyrvHlFVmFoqZ66XJQ4I8H81SgVBnuoxn4__EFcFW_tekcUz3vehJ8aK684KqpRSwT4Oj1YWe0tZ5AZy8QEvxDpfjtaNjPdkpwfsdNY9MteEuTFQAt9krmJBdL4NvKOICsai3g1f3443TcOshEWrbNJxOSBsLfYHWDz-b7Nwmd3mkzqBUD5mcPpSavtFKZv-e3bHlUHlZVvvX3MPardEFioXMHNdFYuSYqyEuQNc2k6OwSy3tQPSu3kfe2atHOX5E_DxLfWqnOvVev66eaofQMoj6dub4VE1P5ZKc8Mvi6oOwAiRad-rFE7XrmrAWRGBPbv3_a1KN59KJwLi0kkYzyw2kaz3G-jNpL6NcTxUAUKelb2ZV-TILOXl5XhgTT9Wwbp9po-QXPvToaN_97sEQSa2Z1XeaiJoVlMnwwktZ1dDnK4u_DhaogMQNLuGR2IefhYq8uvevJ2Sx67qDO4aptWfvJDO7VRww05DfhGtkvOlVzJinnrBmy2iTDQiLPZgLr8RoO7WDZ6GMu80UF0mPi8N4oB4rrOZwbHJ2qs9k6pgtX_KlyhAnEW9DaZxzo6ALVzWLshep5406qPmjt_GgycyGkiMRFNZRws1sL9r0Nr-HuJ88sLJvTAvJnlpPr4NUpgm8VefP7fa_aJajxEVfQ9W0P5Z2q599__dkxWm_GZs700KzkGuQ7alhIg5qCqaXL-wqujGskykEGYE5LqjYwey03YabAqtj24l3mBUajG4Kjhxd26AIish7SQpaRThISQ0PQTqa01cM292kqvpfBmapW3U99Z628yBGmxgrpNqzpydY_Wcmu5vQ_FKujdxHd_DxxZ7L3lEkUMx29F2OmIqnBUzOrOG5X9F8Ka40BujU_oPW6frlGhMaSOV8jDLMcmE7VlNgjblng3_SaaxvpGnoK60WCGr2zLmdv75fGQFTTsb53eixq9EnMSazA6Jr8x9VBCrlb_pxbTxzNF7XDvOU7oCDFJJj9jUlab7YqJRIswxTRUspSdnmCSHYlaMWYM8X8RJFc-UpeNxTFc-s7_rZMtkLPsEwoRNJprazrzHK1gggDyuhVBh-94BaPCYAgOJzbwGK2qBf-Ue62E6-c62G6ugX07sxUubPjb8eJc32BF8BWoOzuFZzQw_2KdjKs_ZJDkzwhfdT2jAQLu-Y5ot826KygIzvxo5zxqd5SsX_LIKXwIlLNAE3hXhybY7AMmF1sZHj8nOr7ZZAfDSbkvw-HeP8D7onKBQzS6ow3uMmZNgJC84pHWTdToWQSOOgmq8sYbs6s=",
+      "summary": []
+    },
+    {
+      "id": "rs_058187309e8f9005006a66dbeb15d0819481296b8e7f49942c",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtwVwqA7fOqxefTbBvHvIh1x0AyO249S_zXfjW74uLFk964sqNxwomagBEqonpxdSWXNaJROijp-BjQNeNTYiyg47Snv67EOqdc-UlroY1lymrhFara3JKjfZnXz65Kw2lSeOIzY5Ssh4vmQXspC94OLRVCj_mtM2hmss-oXUmhz7oinE6r34GqllYzoI2IrdtXMPeqiW7qEHSeYJbD-2hBauaxw8kcGZWTZgpNVx07pVItQ1eqzg2van3qpAX-OxAmM0BxyGJMALarmm96CH9u9xxe_nMoXU0R7SH-VilvlvOB3wWXB0yFnerSqt22dg9F11W2idssAX-RWlqu-PTfLJ1P-ICMaBtN_V7XnraOE2auvp2J1sYajSIrJErxnUkwQGTA2BwMiN8jfFN05LRZvOoRWBkg-FdjrPNa9c46ZaBUPqnK2OgD_gp6WM5HEuDtOyO0654BEr9twZSUbTdaYT-rwr5iaKlKdO3kxQRftVh6Ptvl6wCEgptLoAinF9lq3KkRi3iWs8R1oHf3Bf4-24tOQoUSEljN4mrjV90kEmtmCuLrpJWqlFH0cwuJCbRj-vzfm8SNdloK-YO3fwloYtKu_FhufFRBZFuB6oZqnA_U9qgXZ-R_J1_XNdDfsR7kE_yg5BzO7xVdUEShuK-JUgvrevnb2z9r4QP3nzQAY0FZv662JF6PkFw3aEG7AvlCsNcmstcb5PBMYQ7oYZmP3_Wp4E2zi5dlyjdpgKtZ_W6BKwxzxnR7saJ7b_iqyke4pFcAJrkDflCbI27c2XRuUVfZr4CcK46jLwuInYzIbVPMQRIzMSR1At4bkjvU-cyy4pvkLDAb-v-EYqPrT0jG4fZxnZRyWY0ccroLixEFi6YQsBS6RDYgHrPU3-gRwbwl4KByTOCVNLixnjmvy0Fum5ceIEaVG70QhA-ZY7xHbGkRf6kQBNgcsann0T65Nbrff92QM8uweJ-9S8DES4d6Hd8pxhtgVqGfCf8jB4JFrJQMnPU0t70FpOpATEIQj4xHZFvMyvtu8ijKqCb0fQqexEXnmcCqIzH6wyOLKtC_bZnuoSqgghW1zjZrudM4KhmDztWfAd2qCelifdxXST391X_r_USrk7thyBeNWp9y0YzVHnEQNHX-ciqQk_MEXt7-yfXmSMSrEexlBveXsmfH7bg6lqRLpqPFrw51zffGkyX363wWQ5LOlYpsI7MTZ02Oy7jVcVcILY5Z92FAq_V5f4Hmvq7BOdtX7-8THkurkrvemwatDYSyQK8E4fHQ4ALd5MX_yPjjamyUPbXb3hYo5pvvgtyJhVh86n8zRFeY1miIQKTpp7Dlsl9FgUYhqU4EZ7ZJzF7co2Qv4urjEe6IjpnOgbjo3ex5rf_qkDs5K-KgdD_qOBWty5xuiCjZviQWg4F-PkKNu_Yi4dbjbuCEmxXWFSLMBI1NmUyr_yGomtEQ_ouu4h4k8lKOFlHagucjuec0KoukjaT8TkD1hKIRPQWp5GzQ9KranqbsRRI9VC8hyVwt3qc-2dtO6FdhIF545IgOPbyEcJ0LFpgxiV37osBjtsQBZhu5tRScfJ_U8QHhU4WDjZDYnM0Y4jVfvWQjx4Z_AgrYNC8mXvcq60QIVHRro5lQHhNibheHXNlku0FuOF9BhATUgFx5adKoa9IcQLdSlh5dYbyeh2aa5WqzL5X1hXz4DjPjMkvad_GC4c2ACHFrKQuQFwwLmWpK4YeUOOXRGvTgzdCKK4-Fnj6jPjt0hKztv2mnHebfBEiefrAf-44dZ8VKDmXXRu7_xPFwGn43M5iphDydM0MnHqQC06rng2FUfyeY1xvAHx-ziezwTFGIt_zgKtuWRyaZJeVpvPTAMrlO6ND_9qpslYIBoo0gBr4vikkY-IOAQIToD-qsjwHyVR8AeWtF69qRKXBzJ6UU4tT-RlqzOKsdEMD6OLl7n4AyZCUZIA29qw64dQfcIEwNupktkd0BatD44vDIsBsJ_3fcJLlHMcanxva61noLg1jlefnXjX_PYUnMpMHxRnpgX7DrLmcptgyTM4Wbx7au0r2UNuhPQoaSWheS1zqbUb23_z55Nz_OV-hKyeTLeb7L8uDi6kLxm5pLwqi8nD2NLQzECfmI7ktk7fcMzORijnR2SVVEQ2LXsen3o2WYLWk3QNSnF8FYzvZP8np-frjjb62scWH4-YiNe7akTrByDzW608BfDmzvPaCzbZFUckuaaXydhTYSraZPZw6a9H8Cr42Rc0nybnRfTXB_5mjLMHDvUqXTcbY-hfiAeEd5e3Y2wT-MSbs0IlZqG973Xe2ghGrfbjmgXtc6gy3gua70U9Y06u6dMveXp3Wz4UqEnsxNDAdxE1YsP2HreMbnycq-sncJt6_q5_sT7bOJ4ouPMta5PUunc44fKS-XpRGz5fEQM4v4Px2XhdjW1CoGNHJq6w5EyK1iH56GOyINLs0i4I8sb6Azx4OvfYWSQZt9wmATz86UmFGXGzcZVC2c91oHwSKN0NBdhcysmOseTLM7tjhyl9A0mG1wDxqvgxVwi3C-OoNlDI7244ZxGG3T7nAhIoTOyk4AJbuCAKBvz9xe_4QS3MkOQlg9TsBki5NBkrDnseeD5S5VPSqhHtncxA5zn7o9jQopm55gGYmTsmKfRJ97BXR7DlE6uQi9VIsiObzpoB_KEhg4S3D87Pu1jkbQ-D1D-20e4Oh99-VPLyw3d814Nu1RZGuqCXrLko-aEF2HEGQQ1KZrL0XMXQOS2F1-MwG9LCuAG0itgXb1Cwa8lTl1YrfdxIzgb-l__ptlRuaKFD5j8P2010jzt_Kx4-ULKTLSnBaqJf27QgOXQCbF_T4m8zcXr2SQ5xjZGb4fs2GKzVxFzjQV6DweAFDztKfMSJErRyaEHpF-TX82_REtl-bh97MjPja_aUGw4X1UX04UpXZD6ZLS5FQvZZC-CP2qBkMznuA-7eyIai49sy1mu51xR_4WrqR98rLY7KWXpPP0oq3NhAyE_bnhKIvMuWmmGngiHSil3YerAi5tX3wPT_z2v5CCsN7zHap3UcGFOHCryrP3uEbH7zkf42nLRtbuMhPVV2orVT70rA8b0PRwW9xL9iKVRdTI07N4HM0QWB35Kj5VIn85ybTCNeMWQh0XFGXRf8Cos07bGhT2FjYn16LNergNsqCF02nw0wzviQekXAuaN2oXeS8WPjGGwq-12ReJp-5eDi_msQXdxrh-lx3X02g_aQFvJ4WnMW5BkBxAo89g0pr7hR15y8D7y-a8gjA2E_HPhAyV2v-IcOzqw5VHVAAfuKeENz98qlWfr64IuvJGah2Fal54QghSVymaRqDCLs7K86LlxqBIjS0ZzeNCE5r121nsUhm_U1byO5ytj6JEzUqzQSmWratNRQ9bmWhVOuIiEJKKuCB0T_mumfN1uADFpM9Llobdl6uAAj2zWUjnmWncrQXDhKEh0qgCrJGoUhUruuj75KRwpFJBEbtaOhLMI4iTpr96gPinueBIKQMstp6nhgyW5kdGKMUaGBylAGVrnoS8WinuR-3ws0HPawpwlBR5i3zcYM48pAvdzR5220wsyyus96z4HGLmtCoRTEDODdtf1hChM6615mqedvYSwTS1pnZVKw7e6yxjVF1PICV4d3ecBnBwZPbP4CZIAu8XUUVXy1IIH3dxpeI7vr_aT0RzY8L4Kg1UJVJeC3Mskmq_PJ3U6u3CO61QWKIDzHeG7hm2GjutRcj_1x5g6fdYcYoZFoSg7YIftz0TuSWmccKdIFw0sI0ovAXa0n7KBZ_Dd1w75_zByTtbD4vx4Hnib9LpKpoKvTgRzXLj15wiWKLusRY08Fck1qIiNLfuqZeq2oZIn_P84bvYwC8U6LLcG4VqPRPVWrMh0ETqEzCdxxE_lDALCNttmYcFODAAmFy0ePhTZD-620AiPk3eYCg55fMyvoMO9XlHTOmV7Oj-euEtr-AQiojaUh34xAKn67dUESXLdkGOQfLdVmvZPjOY-2gE1ChUMjG5k4HD3otcmQ7Efk3RBxfmGF3H3AW8k3ahcJa6C1sYToyiIdkgqpIen8OQe9nU1txOXNo0Blrk41HnfgGrYbdTx4OL59wfag8v2_s59OHly4hUkoPNSgc5ZwJLKkywLRcBYVfwdKDlDMS_0WhV9snDLqnFmdxBe6uzVpCLWb9sFmyEm3pQ6tScYdtVFvr1H9TjJ3HLcE3P4LBJf2eBlhtmjTFPmICf3Hf0u6Wc5M3RgHR7ww0imsJwMa2LQAEB9eWTESZtgsNIyqcWxEUDgesdJwjP2n02ZwyS3nH5GTSaoUPg7u9s2a6gM2Mp7KK_vF-7DqvsuzioGC1zJ8aP_bLC42XZOYXfzOkKrxt-VedJsiVrDbAGM6sIzNuqmAhYswu1tST3hLlprbu80rs847DQ7OF3ar4fn0zpG7VxQAjOsl8bOs-QY3qj_gDPv9x1tKCmyGM05PYEJZgXPLOG4l3WSmOmI4tpL73lxFjhKWPjBb5W7f7j4FE09CEPfJXwl9Yo3DjrwwR0dN8FxCtLDFaydOWTWgDLgliLEA0g2aIzwpwtuCtwUXFhUsuUDMbKYJN8=",
+      "summary": []
+    },
+    {
+      "id": "rs_058187309e8f9005006a66dbf65604819492a68599f02a8d9e",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtwV-pUwTKTZnZL12QXoRY2ZNv4oHqngKzAmQnBECAe7GMLUwnGf5LZiwgEMaawnVtxfNK-89OQ5BUi7dQP9BxDE8tVLHl6aeWoUwcbJkbJRGJHfOTk9C_97Oh01YdKre5sZDbAfNrO2ljG06pgRh0xzKfxnJyWJeCH-kl3WS6-a6N9aQhwiX-dAyu8BI-wni3lsyydqCSCM6cPLAd8g4N1GT7t8CwIYFndRKp3faJblPq9kwI8pji7HARMDsu248-Jzup4npsJX5y4yicey_m7i_EsMcqrVFlvjYVDuWpaTZ6PvP2TVY_GFMjs_5BmMiBGck3V7U3so0kACQYxvScDLnmc4G9CRF0o4vxtM7VEDDP5nAOGC9DutvHBN2BpPoGbg8dSXD3Wb9HJ_gruVh6edDqcs3JxVwnYvXPCz5GGfHbXXAsTuXswJ9lGeAQlDMFeCpqFRKVXSgcwdvSbd3GZjSRW60ofvBjY043DWgyW3PdPrK_32clkJlNGz_eh95z-JppnHWfeNmenRwE4eCvOFbxG5SQX9dXoaDgm-ME3FgjvVcLGHVH6DBZQkJnmkAj1tvRgl4ofw2EyZUeKMZgKIyTI-jy9NQZCX7JryNVa_njRGKp-qMFEFSleGxEQiaGfTu_MyUeqNNsHZUxsYnpf3lv6mWCf7-4mJhPcshNkaQRgkkFQAE9jSWwlcH3-FT1lIJxueYg8mNQaWpfiltz9VWZ4A5htIGt98rF1HgP4GF8OSmhXz6Rgs9RbrQwX9aGVgigANFX6FPUAb65J55Bf6Z9P7LBjrybhOvlIcY-4BVlBb-3VxhLvJNqDPXK-7x2DstbdfGSnSdQ7OjqAkPxJ76hfEcPMPQKW8ygePgn50TvRHcJpg7_tHy1OwNDw7udL4YwiG09VQbo3IdLNwERnEN5SXo-SpRnIMhSanWnG_by1BhcGIVwBHfEkLS68ukpQLIawr8KuW4FzTpYo3772iY8uFA2wHkv_WI2767BXHQwE7Myl0mhHs6INkup84TPudEpB-o87KOeTczj6UYE5QUl27g8UaHcIJ2baD_GwjIpUl1Sew8intwGLT0PhJcR0FM8LiLEm2dBRC36lRrmQTAnpqIXfVIhNR-gpg0-i-WOwRT4sGIfNWAQvqFmQbrOJBJ88EAmIqEqqd6rGfU7CFIrAFzZT3ARr3dvJSC7G21BTG2kGsbQThClkBaPA9XhaKEKbTJu8NJ1ZiBCmlBmYw3HDY93Aoh67RhzGgcoTfIaIA-ErOiWpAtMyvdQdptZ6_rUFIyamvli_jbQjWnVUdrS1B4HPMiHkuxa5daJDoUzYLOG0c37ls23JHNc_FuEuUngji_XexaIKiYf35W7yd4Ee72SvJBVQypY_JbU7SipHR41so8E2Dm7mgv5GWpGDG9Z-2yVV3TNQsidFWfjjqtMvtWEp8GCDCQZNAV_Nht8W8gyqmJ2GAORG6dxWZKlJhlyJq1mqfkuLmr-4IDFZuSlIX-UvWJR3IDM4ZfbzO8XDMhKtUPKRTgMtyTn7bck1xhxM6f9mW-0q7f087efO5w5UYllamd61dOdLaLgUteeS3HX81ct2BncEYTgNfYLfZ6u0myY0mthPPbrGJZVw5GVHV30X0vyNBUW3jI91KNOf43K3fy0F6gl84HyavA8cqlOJBFrKw-AT6cU0oUYMTfqc1JATL9icZAQ4x3SPz4KpuzG1n-xq9HU3eVFq2na1HjE_cnt68xb6WetVNfz84jJ31puduqBGJXizStpTIJY3Ofony_w1iR_G2AaZQJcuP6HHX6GJvHqbdTtKzo0rVYasUd6h9j_ny-B2yLZr_hy8MoWpADK8qRpnEiaB_9-s3coeP4jkzjT3SSKYCUFfceTDlpcXph0TxLcqK9ADIGdk_BM7sBmnaUvZdZ6tOwbKfZY6IB2R5BCw_nBqNvbFtT3lMkL7OELdYF3zX7pfAUTJqJDWSs1WJIFh_HeX5DnwyfjjCb5g7YxMNVY4WSUIW4u4M_dvNRzBXvQ7e96xGLCNdqmbpnMhf56-sMkZOo_PiUH5TPNjNf3MfQnH0i7to7XEp8KE7tfjBcQb-4CP7RZ3RafFjnlwIarVJZldJCKKpxFFuvLEcGk2msDnotaNlZ_bvf8fz3FdIErTzYqAmviT7SAOKXa_3G6DVbbWrjdOQDqy77fvpWH25xBNJTsMu6_WX5Q6EG25qWNPmM37su9xMWKBC1Eck2UMEnBfn7JDIVxA-g_yILlKDM2XH40NkiuuK4xzdcVCx-vkTJsFiJesfPlhoRiyYF88zcTdp1B7g-ZwrFoYeC0BEXFEIYtn2xwWtys2hlhIuOXLdqqsTXJdWOED5KKqv3xbho0wRmSgSttUKSxvGdYT6nSkrcG_qAxt_iS0Oq6fbZOLtjwxWP6wCWHisJ1j2AV1va6EuxV3VO6zQdYjt4zf64j2Kva2dwTrybDomNp8SMal73ijOWlbccLsJ13hAASaP123r2eGDf2j03qMZwvnzNMCJNEGzhSUo9ckiApN559zqnE9Ktarak2KJG86kUdmcpmAREfWOrbNunCkEVUL3beB0f2moVi4rdrYgWdnboPXblxvVdbQLs5mupCqyGCM7PbO56u1YVEz_bE7qMB7XFj5r0w1dLaXTDR7qrt9F8GnHkVVmkdCpCFROWh8jcWOEE4GkEbEL-eFOU5CwHmuThOuOCtXaAGy0G046Obk6pKAhWaW-5bTa60wMpTzHlqhrUrX-1KTvcvYqvOBWFiL38F9VkWLj3KWQaM8-R6cz-8jPf8jlqoR1wUpQE-K8gDTIRlvjtDRi7q0BkiKU8ynx7eE5AUGs451LbLd0V5cWqAgJ5SdnubOJVKg72vy-FnWPgBqiM0tQibrQobDnDsip4sF4_xmzj7HOEuIAW8aIaUDv_S8c4Ned1OcxQphmu5oHPm-U_jFhmRFT-_--1VQv0mputJHfJ0Sid66ahDbZERKsG8F4wU5yjJhVLZj_imfOpAgDrCl_zB2mJKJ44rFtAlNDIWn9nX4QojX-nl0smKoyoP6I1cD16r7B_xNmSgEkiSsq3mXdEpc1RTdQCS_Zlp_tyVy7__ll77WUY-ErHJts--jVTMC3-HgkPdg4XyLWDPJ8C_njdAwfZxKXrwQVy8JY1IfN2WP-igVJiQlxnANdzaRLcxvm4Rz_1Gsjwzr_LdKULdlbBR1cLbP3iHFlq7zpgNKza2kWndsmsBdb60tX9DVSLDq-EVgJBV-AycDEDz09IoejE9Rb90l-p-wWQkRh3HTK58kvi_eQcRarwmBkOk-5Lgq5hMTFTeDnU_RWZBxMtOHXDamf0Oofi0GdXQ1egcaRoeHmphVfMKGxQQAYqNpnMMYKrL70p5AHyNXlohMqjY0ks8NPQyd6vW5pejR8PMBHZFA7_12W9OnK6K7RTV4H7s8d7Lo0GjIPKSQJszBgjH6Yt7CATWrr2eZRh7_w47ypz1xEay_CmUBC-8YxJc7XebK_WkvS1e7gGVSyw9Wf7ZAd",
+      "summary": []
+    },
+    {
+      "id": "msg_058187309e8f9005006a66dbfd5ee881948a3cab112aebd949",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"persuasion\":\"UNPERSUADED\",\"support_scope\":\"NONE\",\"rationale\":\"The strongest counter-reading—sapphire signifies the clear splendor of the heavenly realm and especially the appearance or setting of God's throne—fits the direct sapphire passages with substantially fewer steps. Exodus 24:10 explicitly compares the sapphire pavement with heaven in its clearness, while Ezekiel 1:26 and 10:1 explicitly compare sapphire with the likeness of a throne. Isaiah 54 and Revelation 21 extend precious-stone splendor to the restored bridal city, but neither identifies sapphire with the moon. Psalm 89 associates the Davidic throne separately with both sun and moon, yet never mentions sapphire; its lexical connection between clearness/glory does not establish a lunar referent. The book's full-moon identification depends chiefly on combining distant associations and on the unpointed consonantal resemblance between the Hebrew words for throne and full moon. That is weaker than the counter-reading's direct contextual evidence. The Issachar assignment is also not established by any supplied text.\",\"book_core_identification\":\"Sapphire symbolizes the full moon, specifically in an enthroned and bridal manifestation.\",\"book_secondary_elaborations\":[\"The sapphire likeness is located at the place of God's throne.\",\"The rare word translated “clearness” in Exodus 24:10 is the same word rendered “glory” in Psalm 89:44.\",\"The relevant brightness is received or worn rather than inherently owned.\",\"Sapphire is identified with Issachar.\"],\"unsupported_glossary_assertions\":[\"Sapphire's defining symbolic referent is the full moon.\",\"Sapphire specifically represents the moon in a bridal form.\",\"The shared clearness/glory word proves that sapphire represents borrowed or reflected brightness rather than heavenly or royal splendor more generally.\",\"Sapphire is identified with Issachar.\"],\"chapter_only_objections\":[\"The identification of the pearl of great price with the full moon and the purchased bride is not directly stated in the cited parable.\",\"The claim that Proverbs 3 and Proverbs 31 encode a sustained lunar portrait relies on numerous alternate lexical renderings and remote associations.\",\"The claim that the biblical new-moon day occurs at the astronomical full moon is a chapter-only calendrical conclusion and is highly disputable.\",\"The interpretation of the twelve pearl gates as twelve monthly full moons or appointed times is not stated in Revelation 21.\"],\"strongest_counter_interpretation\":\"Sapphire principally represents the clear, precious splendor of heaven and the visible majesty of God's throne and presence; in Isaiah 54 and Revelation 21 that heavenly splendor adorns restored Zion or the bridal New Jerusalem. It is not a symbol specifically identifying the full moon.\",\"counter_core_identification\":\"Sapphire signifies heavenly and throne-related divine glory, not the full moon.\",\"counter_relation_to_book_core\":\"CONTRADICTS\",\"material_core_denial\":\"The sapphire imagery identifies celestial clarity and throne-glory without identifying the stone itself as the moon; the lunar reading imports an additional referent not supplied by the sapphire passages.\",\"counter_case\":[\"Exodus 24:10 directly interprets the sapphire pavement through its resemblance to the clear body of heaven, naturally accounting for sapphire as celestial splendor.\",\"Ezekiel 1:26 and 10:1 directly call the sapphire-like object the likeness of a throne, making throne-glory the immediate interpretation.\",\"Ezekiel places the sapphire-like throne above the firmament, whereas the chapter itself treats the moon as a luminary placed within the firmament; equating the two blurs a spatial distinction in the vision.\",\"Psalm 89:36-37 compares the enduring Davidic throne with both sun and moon but does not mention sapphire; verse 44 concerns the cessation of the king's glory and cannot by itself turn sapphire into a reflector.\",\"Isaiah 54:5,11 and Revelation 21:9,19 support a bridal-city association, but sapphire appears among multiple foundation stones. The contexts explain it as part of the city's precious heavenly glory without selecting it as the moon.\",\"The supplied texts never assign sapphire to Issachar, and the common interpretive evidence notes that stone-to-tribe assignments vary widely.\"],\"book_explanatory_advantages\":[\"It creatively unifies throne, moon, bride, clarity, and reflected glory across Psalm 89, the Song, Isaiah, Ezekiel, and Revelation.\",\"It notices the juxtaposition of throne and moon in Psalm 89 and the presence of sapphire in both throne visions and the bridal city.\",\"The lexical connection between Exodus 24:10's clearness and Psalm 89:44's glory gives some basis for associating sapphire with displayed brightness.\"],\"counter_explanatory_advantages\":[\"It follows the explicit comparisons made in the principal sapphire texts rather than introducing an unstated lunar identity.\",\"It explains both the pavement beneath God's feet and the throne above the firmament as elements of theophanic splendor without requiring both to be the same astronomical body.\",\"It accommodates the bridal passages as an extension of heavenly glory to restored Zion and the New Jerusalem.\",\"It avoids dependence on Hebrew homography, alternate pointing, and a long chain of pearl, moon, mirror, bride, and throne associations.\",\"It accounts for sapphire's inclusion among several precious stones without requiring a unique lunar role for the second stone.\"],\"evidence_book_core_cannot_explain\":[\"Ezekiel 1:26 places the sapphire-like throne above the firmament, while the chapter's own Genesis premise places the moon among the lights within the firmament; a literal identification of that sapphire likeness with the full moon conflicts with those spatial roles.\",\"Revelation 21:19 presents sapphire as only one member of a twelve-stone foundation series, with no textual marker distinguishing that stone as the moon; the counter-reading explains the whole series uniformly as the bridal city's precious heavenly splendor.\"],\"comparative_winner\":\"COUNTER\",\"decisive_sources\":[\"Exodus 24:10\",\"Ezekiel 1:26\",\"Ezekiel 10:1\",\"Psalm 89:36-37,44\",\"Isaiah 54:5,11\",\"Revelation 21:9,19\"],\"unresolved_objections\":[\"The throne/full-moon consonantal resemblance and Psalm 89's moon-throne juxtaposition may support a secondary lunar wordplay, but they do not overcome the direct contextual meaning of the sapphire passages.\",\"The bridal contexts do establish that sapphire can participate in imagery concerning God's bride, though they do not establish that sapphire itself means the bride or full moon.\",\"The clearness/glory lexical link supports displayed radiance, but it does not uniquely distinguish reflected lunar light from divine, royal, or celestial splendor.\"],\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_persuasion",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "persuasion": {
+            "type": "string",
+            "enum": [
+              "PERSUADED",
+              "UNPERSUADED"
+            ]
+          },
+          "support_scope": {
+            "type": "string",
+            "enum": [
+              "FULL",
+              "CORE_ONLY",
+              "NONE"
+            ],
+            "description": "Support for the exact glossary BOOK ENTRY only, never for the supporting chapter as a whole."
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "book_secondary_elaborations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Secondary assertions actually printed in the glossary BOOK ENTRY; exclude chapter-only claims."
+          },
+          "unsupported_glossary_assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Material assertions actually printed in the BOOK ENTRY that the evidence does not support. Must be empty for FULL and nonempty for CORE_ONLY."
+          },
+          "chapter_only_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Objections to applications or arguments found only in the supporting chapter. Preserved for later chapter review and excluded from the glossary scope ruling."
+          },
+          "strongest_counter_interpretation": {
+            "type": "string"
+          },
+          "counter_core_identification": {
+            "type": "string"
+          },
+          "counter_relation_to_book_core": {
+            "type": "string",
+            "enum": [
+              "CONTRADICTS",
+              "SAME_CORE_BROADER",
+              "SAME_CORE_NARROWER",
+              "EQUIVALENT"
+            ]
+          },
+          "material_core_denial": {
+            "type": "string"
+          },
+          "counter_case": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "book_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counter_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_book_core_cannot_explain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comparative_winner": {
+            "type": "string",
+            "enum": [
+              "BOOK",
+              "COUNTER"
+            ]
+          },
+          "decisive_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "persuasion",
+          "support_scope",
+          "rationale",
+          "book_core_identification",
+          "book_secondary_elaborations",
+          "unsupported_glossary_assertions",
+          "chapter_only_objections",
+          "strongest_counter_interpretation",
+          "counter_core_identification",
+          "counter_relation_to_book_core",
+          "material_core_denial",
+          "counter_case",
+          "book_explanatory_advantages",
+          "counter_explanatory_advantages",
+          "evidence_book_core_cannot_explain",
+          "comparative_winner",
+          "decisive_sources",
+          "unresolved_objections",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 19215,
+    "input_tokens_details": {
+      "cache_write_tokens": 19212,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2791,
+    "output_tokens_details": {
+      "reasoning_tokens": 1422
+    },
+    "total_tokens": 22006
+  },
+  "user": null,
+  "metadata": {}
+}

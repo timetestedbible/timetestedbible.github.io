@@ -1,0 +1,126 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "sun",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSun\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching the sun is most commonly taken as a symbol of God and, especially, of Jesus Christ — his divine glory, righteousness, and light-giving presence. The classic anchor is Malachi's 'Sun of Righteousness,' which patristic and later Christian interpreters overwhelmingly read as a messianic title for Christ, who rises with healing, dispels the darkness of sin, and illumines the world. By extension the sun signifies God's radiant glory, favor, and unfailing constancy.\",\n  \"primary_basis\": [\n    \"Malachi 4:2 (the Sun of Righteousness shall arise with healing in his wings)\",\n    \"Psalm 84:11 (the LORD God is a sun and shield)\",\n    \"Psalm 19:4-6 (the sun as a bridegroom coming out of his chamber; traditionally applied to Christ)\",\n    \"Luke 1:78-79 (the dayspring/sunrise from on high visiting us)\",\n    \"Matthew 17:2 (at the Transfiguration his face shone like the sun)\",\n    \"Revelation 1:16 (his countenance was as the sun shining in its strength)\",\n    \"Revelation 21:23 (the city has no need of the sun, for the glory of God gives it light and the Lamb is its lamp)\",\n    \"John 8:12 (I am the light of the world — thematically linked)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eschatological sign of judgment: the darkening of the sun as a symbol or portent of the Day of the Lord and divine judgment on nations or the cosmos.\",\n      \"basis\": [\n        \"Joel 2:31\",\n        \"Isaiah 13:10\",\n        \"Matthew 24:29\",\n        \"Mark 13:24\",\n        \"Acts 2:20\",\n        \"Revelation 6:12\",\n        \"Revelation 8:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Symbol of governing authority, rulers, or exalted powers in prophetic/apocalyptic imagery (sun, moon, and stars as authorities or as figures such as Jacob in Joseph's dream); in some prophetic-interpretation traditions (e.g., historicist readings of Revelation) darkened sun equals fallen rulers or governments.\",\n      \"basis\": [\n        \"Genesis 37:9-10 (Joseph's dream: sun, moon, and eleven stars)\",\n        \"Revelation 12:1 (woman clothed with the sun)\",\n        \"Isaiah 13:10 and 34:4 as de-creation/judgment on powers\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Symbol of the glorified righteous: believers shining like the sun in the kingdom, reflecting Christ's glory.\",\n      \"basis\": [\n        \"Matthew 13:43 (then shall the righteous shine forth as the sun)\",\n        \"Judges 5:31 (those who love him be as the sun going forth in its might)\",\n        \"Daniel 12:3 (thematically linked)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In Roman Catholic and some Orthodox Marian interpretation, the woman clothed with the sun in Revelation 12 is read of Mary, so the sun's radiance signifies her being clothed with Christ/divine glory; Protestant interpreters more often read the woman as Israel or the Church.\",\n      \"basis\": [\n        \"Revelation 12:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Symbol of constancy, permanence, and covenant faithfulness — the sun's fixed course as a witness to God's enduring promises.\",\n      \"basis\": [\n        \"Psalm 89:36-37 (his throne as the sun before me)\",\n        \"Jeremiah 31:35-36\",\n        \"Psalm 72:5,17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Negative or cautionary sense: the sun as an object of pagan worship that Scripture forbids, or as scorching affliction/trial from which God shelters his people.\",\n      \"basis\": [\n        \"Deuteronomy 4:19\",\n        \"Ezekiel 8:16\",\n        \"Job 31:26-28\",\n        \"Psalm 121:6\",\n        \"Revelation 7:16\",\n        \"Matthew 13:6 (sun scorching the seed = tribulation, per Matthew 13:21)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable and long-standing consensus, going back to the church fathers (e.g., readings of Malachi 4:2 and Psalm 19), that the sun principally symbolizes Christ and the glory/righteousness of God — early Christians even repurposed 'Sol Iustitiae' against pagan sun worship. However, the sun is a polyvalent biblical image: its meaning shifts with context (christological in Malachi/Revelation 1, judicial when darkened in prophetic texts, political-authoritative in dream/apocalyptic symbolism). Any single fixed definition (e.g., 'the sun always means rulers' or 'always means Christ') would overstate the consensus, which is context-dependent with the christological/divine-glory sense as the primary default.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The glory, presence, and righteous revelation of God, most specifically fulfilled in Jesus Christ as the Sun of Righteousness who brings salvation and illumination.\",\n  \"primary_basis\": [\n    \"Malachi 4:2\",\n    \"Psalm 84:11\",\n    \"Revelation 1:16\",\n    \"Revelation 21:23\",\n    \"Matthew 17:2\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Supreme governing authorities, rulers, or empires, often whose fall or judgment is depicted by the sun being darkened.\",\n      \"basis\": [\n        \"Genesis 37:9\",\n        \"Isaiah 13:10\",\n        \"Matthew 24:29\",\n        \"Revelation 6:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Persecution, trials, or the harshness of temporal life that tests faith.\",\n      \"basis\": [\n        \"Matthew 13:6\",\n        \"James 1:11\",\n        \"Psalm 121:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The natural order, timekeeping, and God's general revelation or common grace to all creation.\",\n      \"basis\": [\n        \"Genesis 1:14-16\",\n        \"Psalm 19:1-6\",\n        \"Matthew 5:45\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While the messianic association with Christ as the Sun of Righteousness is the dominant theological and devotional symbol, apocalyptic literature frequently uses the sun to represent cosmic order or governing authorities which are disrupted during divine judgment. Parabolic literature occasionally uses the scorching sun as a negative symbol for persecution.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God or Christ as the source of divine light, glory, righteousness, life, and healing—especially the traditional Christological image of the “sun of righteousness.”\",\n  \"primary_basis\": [\n    \"Malachi 4:2 — the “sun of righteousness” rises with healing; traditionally interpreted by Christians as referring to Christ.\",\n    \"Psalm 84:11 — “the LORD God is a sun and shield,” directly associating the sun with God’s beneficent presence.\",\n    \"Matthew 17:2 — at the Transfiguration, Christ’s face shines like the sun.\",\n    \"Revelation 1:16 — the glorified Christ’s face is like the sun shining at full strength.\",\n    \"Luke 1:78-79 — the dawn or dayspring from on high brings light to those in darkness, commonly read Christologically.\",\n    \"Isaiah 60:19-20 and Revelation 21:23 — God’s glory, and in Revelation the Lamb, supplies the ultimate light that surpasses the created sun.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A ruler, patriarch, or supreme earthly authority.\",\n      \"basis\": [\n        \"Genesis 37:9-10 — Joseph’s sun, moon, and stars are interpreted within the narrative as his father, mother, and brothers.\",\n        \"The sun’s governance of the day in Genesis 1:16 has also supported broader ruler or governing-power symbolism.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The created cosmic order, whose darkening or disruption signifies divine judgment, catastrophe, or the end of the age.\",\n      \"basis\": [\n        \"Isaiah 13:10 — the darkened sun accompanies judgment on Babylon.\",\n        \"Joel 2:10,31 — the sun is darkened in connection with the day of the LORD.\",\n        \"Matthew 24:29; Mark 13:24; Luke 21:25 — solar darkening forms part of eschatological signs.\",\n        \"Revelation 6:12; 8:12; 9:2 — changes to the sun accompany apocalyptic judgment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s universal providence and common blessing upon humanity.\",\n      \"basis\": [\n        \"Matthew 5:45 — God causes the sun to rise on both the evil and the good.\",\n        \"Psalm 19:4-6 — the sun’s course displays the ordered glory of creation.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"An object of forbidden pagan or idolatrous worship rather than a positive symbol.\",\n      \"basis\": [\n        \"Deuteronomy 4:19 and 17:3 — Israel is warned against worshiping the sun.\",\n        \"2 Kings 23:5,11 — solar worship is removed during Josiah’s reforms.\",\n        \"Ezekiel 8:16 — worship of the sun is depicted as an abomination.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Divine splendor, heavenly investiture, or the glory surrounding the covenant people, especially in the woman “clothed with the sun.”\",\n      \"basis\": [\n        \"Revelation 12:1 — the woman clothed with the sun has been variously identified with Israel, the Church, Mary, or the people of God; the sun is commonly taken as heavenly or divine glory.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Christian tradition most recognizably uses the sun as an image of God or Christ’s radiant glory and righteousness, but Scripture assigns it different functions in different contexts. There is therefore no single settled symbolic meaning applicable to every occurrence.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Jesus Christ as the Sun of Righteousness (divine light, glory, and healing presence)\",\n  \"primary_basis\": [\n    \"Malachi 4:2\",\n    \"Psalm 84:11\",\n    \"Revelation 1:16\",\n    \"Matthew 17:2\",\n    \"Psalm 19:4-6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's glory, protective presence, or everlasting light (sometimes overlapping with Christ)\",\n      \"basis\": [\n        \"Psalm 84:11\",\n        \"Isaiah 60:19-20\",\n        \"Revelation 21:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Church, Israel, or Mary (as the woman clothed with the sun)\",\n      \"basis\": [\n        \"Revelation 12:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Apocalyptic judgment or cosmic upheaval (via darkening or scorching of the sun)\",\n      \"basis\": [\n        \"Matthew 24:29\",\n        \"Joel 2:31\",\n        \"Revelation 6:12\",\n        \"Revelation 16:8-9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Idolatry or false worship (condemnation of sun cults)\",\n      \"basis\": [\n        \"Deuteronomy 4:19\",\n        \"2 Kings 23:5\",\n        \"Ezekiel 8:16\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpreters most consistently identify the sun with Christ via Malachi's 'Sun of Righteousness' and related light/glory texts; other readings are context-dependent and do not displace the Christological primacy in traditional teaching and symbolism.\"\n}\n\nBOOK ENTRY\nThe Father, the source of light, from which every lesser light is drawn; the righteous shall shine as the sun in His kingdom.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 84:11; Gen 37:9; Matt 13:43) · see Sun, Moon & Stars, ch. 29\n\nAVAILABLE KJV EXCERPTS\nPsalms 84:11 — For the LORD God is a sun and shield: the LORD will give grace and glory: no good thing will he withhold from them that walk uprightly.\nGenesis 37:9 — And he dreamed yet another dream, and told it his brethren, and said, Behold, I have dreamed a dream more; and, behold, the sun and the moon and the eleven stars made obeisance to me.\nMatthew 13:43 — Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "dd5882e7b899a94d0e98933fa53707f783851705e221e7c37dc74b47360192a7",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/relationship/sun/xai.json"
+    }
+  }
+}

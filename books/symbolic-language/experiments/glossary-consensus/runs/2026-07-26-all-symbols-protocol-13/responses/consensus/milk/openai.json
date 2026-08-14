@@ -1,0 +1,173 @@
+{
+  "id": "resp_074577f1d0d24e45006a54768ec0248190bfe28ea1ef29590c",
+  "object": "response",
+  "created_at": 1783920270,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920285,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_074577f1d0d24e45006a54768f2b588190af66ea239bb0cf4f",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_074577f1d0d24e45006a54769536d881909b763e71428930ac",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Basic spiritual nourishment—especially elementary Christian teaching suited to new or spiritually immature believers.\",\"primary_basis\":[\"1 Corinthians 3:1–2: Paul contrasts feeding the Corinthians with milk rather than solid food because they were not ready for mature teaching.\",\"Hebrews 5:12–14: milk represents elementary instruction, contrasted with solid food for the mature.\",\"1 Peter 2:2–3: believers are to desire pure spiritual milk like newborn infants so that they may grow in salvation.\"],\"alternatives\":[{\"meaning\":\"Abundance, fertility, and covenant blessing, especially in the description of the promised land as flowing with milk and honey.\",\"basis\":[\"Exodus 3:8, 17\",\"Leviticus 20:24\",\"Numbers 13:27\",\"Deuteronomy 6:3\",\"Joshua 5:6\"],\"prominence\":\"common\"},{\"meaning\":\"Divine provision and freely given spiritual satisfaction.\",\"basis\":[\"Isaiah 55:1 invites the thirsty to receive wine and milk without price.\",\"Joel 3:18 depicts the restored land with hills flowing with milk.\"],\"prominence\":\"common\"},{\"meaning\":\"Maternal nurture, comfort, and the sustaining blessings received from God's people or the restored Jerusalem.\",\"basis\":[\"Isaiah 60:16 speaks of receiving the milk of nations and kings.\",\"Isaiah 66:10–13 portrays Jerusalem as a nursing mother whose milk provides satisfaction and comfort.\"],\"prominence\":\"minority\"},{\"meaning\":\"Beauty, sweetness, purity, or erotic attractiveness in poetic descriptions.\",\"basis\":[\"Song of Songs 4:11 associates milk and honey with the beloved's lips.\",\"Song of Songs 5:12 describes the beloved's eyes as washed in milk.\",\"Song of Songs 7:9 compares the beloved's mouth to wine, within related imagery of sensual abundance.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is a strong consensus that milk signifies elementary spiritual teaching or nourishment in the New Testament maturity passages, but no single symbolic meaning governs every biblical occurrence. In 1 Peter 2:2 the image is positive nourishment producing growth, whereas in 1 Corinthians 3 and Hebrews 5 dependence on milk indicates immaturity. Old Testament usage often emphasizes material abundance, blessing, or maternal comfort instead.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 813,
+    "output_tokens_details": {
+      "reasoning_tokens": 328
+    },
+    "total_tokens": 1130
+  },
+  "user": null,
+  "metadata": {}
+}

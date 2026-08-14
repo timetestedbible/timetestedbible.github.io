@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124892,
+  "completed_at": 1785124909,
+  "id": "fe4abf60-9a61-9513-aa5b-5d1d4b0e5152",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_fe4abf60-9a61-9513-aa5b-5d1d4b0e5152",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Tartarus (tartaroō)\".\n{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"All four blind responses converge on the primary meaning that tartaroō describes God casting sinning angels into a place or state of gloomy darkness and chains for temporary confinement until final judgment, drawing on 2 Peter 2:4 and Jude 6 1 Peter 3:19-20, and distinguishing it from both Hades (human dead) and Gehenna (final lake of fire). Alternatives such as conflating Tartarus with hell or treating it as purely metaphorical exist but remain minority or secondary.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"relation\":\"MATCH\",\"consensus_summary\":\"Consensus primary meaning: tartaroō denotes God casting sinning/fallen angels into temporary confinement (place or condition) of gloomy darkness/chains held until judgment; distinct from Hades/Sheol and Gehenna; drawn from 2 Pet 2:4 + Jude 6 (with Enochic/Gen 6 background often noted).\",\"book_summary\":\"To cast sinning angels into Tartarus: confinement in chains of darkness while they await judgment; does not name the grave of the human dead or Gehenna’s destructive verdict.\",\"consensus_core_identification\":\"casting/confining sinning angels in dark restraint pending judgment (distinct from human dead-realm and final hell)\",\"book_core_identification\":\"casting sinning angels into Tartarus for confinement in chains of darkness awaiting judgment (not human grave or Gehenna)\",\"core_relation\":\"EQUIVALENT\",\"extension_relation\":\"SAME_CASES\",\"boundary_disagreement\":\"none\",\"material_contradiction\":\"none\",\"rationale\":\"Minimum cores are identical in referent (sinning angels), action (cast/confine), condition (chains/darkness), purpose (await judgment), and explicit exclusions (not human grave/Hades; not Gehenna). Book wording is simply more compact; no change of category, boundary, or cases.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"Book omits common secondary background (1 Enoch/Gen 6 Watchers vs primeval fall) that consensus notes but does not treat as altering the core identification.\",\"confidence\":\"high\"}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_fe4abf60-9a61-9513-aa5b-5d1d4b0e5152",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4136,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1056,
+    "output_tokens_details": {
+      "reasoning_tokens": 714
+    },
+    "total_tokens": 5192,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 143904000,
+    "context_details": {
+      "input_tokens": 4136,
+      "output_tokens": 1056
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

@@ -1,0 +1,195 @@
+{
+  "id": "resp_0e02cde9a996f346006a547cc03dcc81958d49dca564435579",
+  "object": "response",
+  "created_at": 1783921856,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783921869,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0e02cde9a996f346006a547cc0f7688195bfade694710b0054",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0e02cde9a996f346006a547cc7d7b481959b6dcebd39bdc11e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Living water primarily signifies God’s life-giving gift, especially the Holy Spirit, bringing salvation and eternal life through Christ; the word or gospel is a recognized minority extension.\",\"book_summary\":\"Living water signifies both God’s Spirit and God’s word proceeding outward to impart life.\",\"consensus_core_identification\":\"The Holy Spirit as God’s life-giving saving gift.\",\"book_core_identification\":\"The outgoing Spirit and word of God as joint life-giving agencies.\",\"core_relation\":\"BOOK_BROADENS\",\"extension_relation\":\"PARTIAL_RECLASSIFICATION\",\"boundary_disagreement\":\"The book elevates the word of God from a minority or secondary interpretation to part of the term’s central identification alongside the Spirit. It also emphasizes their outward, life-giving action rather than primarily the gift received by believers.\",\"material_contradiction\":\"There is no direct contradiction because the book retains the consensus’s central identification with the Spirit. The difference is the material addition of God’s word as a co-referent.\",\"rationale\":\"The book preserves the dominant Spirit identification but broadens the core to include the word of God. Since word/gospel imagery already appears among recognized alternatives, the reading is not novel. The change is substantive enough to be REFINED rather than MATCH because it promotes a secondary interpretation into the defining core.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"John 7:38, especially when interpreted by John 7:39, supports the Spirit, while Jeremiah 2:13 identifies God as the fountain of living waters. Neither printed citation directly identifies living water with God’s word, so the book’s added co-referent is not established by these references alone.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3545,
+    "input_tokens_details": {
+      "cache_write_tokens": 3542,
+      "cached_tokens": 0
+    },
+    "output_tokens": 720,
+    "output_tokens_details": {
+      "reasoning_tokens": 360
+    },
+    "total_tokens": 4265
+  },
+  "user": null,
+  "metadata": {}
+}

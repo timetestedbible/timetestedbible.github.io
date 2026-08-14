@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "week",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWeek\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian interpretation the term 'week' (Hebrew shabua, literally 'a seven' or 'heptad') is most commonly treated symbolically as a unit of seven years rather than seven days, especially in Daniel's prophecy of the seventy weeks, where nearly all traditions—dispensationalist, historicist, and most critical scholars alike—read each 'week' as seven years (seventy weeks = 490 years). More broadly, the week functions as a symbol of divine order and completeness rooted in the seven-day creation pattern, culminating in the Sabbath rest.\",\n  \"primary_basis\": [\n    \"Daniel 9:24-27 (the seventy weeks determined upon Daniel's people)\",\n    \"Genesis 29:27-28 ('fulfill her week' = seven years of service for Rachel)\",\n    \"Leviticus 25:8 (seven sabbaths of years, forty-nine years, as background for the week-of-years concept)\",\n    \"Genesis 1:1-2:3 and Exodus 20:8-11 (the creation week establishing the seven-day pattern and Sabbath)\",\n    \"Numbers 14:34 and Ezekiel 4:6 (the day-for-a-year principle often invoked to justify reading weeks as years)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The 'week' of Daniel 9 read as seven literal years with the seventieth week deferred to a future seven-year tribulation period (the dispensationalist 'gap' reading); the week is still seven years, but its placement and eschatological function differ materially from continuous-fulfillment readings.\",\n      \"basis\": [\n        \"Daniel 9:27\",\n        \"Matthew 24:15\",\n        \"Revelation 11:2-3; 12:6, 14; 13:5 (the 1260 days / 42 months / time, times, and half a time correlated with half of Daniel's final week)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The seventy weeks as a symbolic, non-arithmetical figure of completeness (ten jubilees or simply 'fullness of time') rather than an exact 490-year chronology; found among some critical scholars, amillennial interpreters, and idealist readings.\",\n      \"basis\": [\n        \"Daniel 9:24\",\n        \"Leviticus 25:8-10 (jubilee framework)\",\n        \"Matthew 18:22 (seventy times seven as symbolic totality)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The 'cosmic week' or sex-/septa-millennial scheme: the seven days of creation as a template for world history, with each day representing a thousand years and the seventh 'day' the millennial Sabbath rest; prominent among some church fathers (Epistle of Barnabas, Irenaeus, Lactantius, Augustine early on) and revived by some modern premillennialists.\",\n      \"basis\": [\n        \"Genesis 2:2-3\",\n        \"Psalm 90:4\",\n        \"2 Peter 3:8\",\n        \"Hebrews 4:1-11\",\n        \"Revelation 20:1-6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The week as a liturgical/typological symbol of the Christian life and new creation, with the eighth day (Sunday, resurrection day) transcending the old week; common in patristic and liturgical theology rather than prophetic interpretation.\",\n      \"basis\": [\n        \"John 20:1, 19, 26 (appearances on the first day / eighth day)\",\n        \"Genesis 2:2-3\",\n        \"Colossians 2:16-17\",\n        \"Hebrews 4:9-10\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Weeks in Daniel taken as literal seven-day weeks (490 days); occasionally proposed but rejected by virtually all traditions.\",\n      \"basis\": [\n        \"Daniel 10:2-3 ('three full weeks' of literal days, used to argue Daniel could distinguish literal weeks)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is strong cross-traditional agreement that 'week' in prophetic contexts (Daniel 9) symbolizes a heptad of years, and that the week generally carries the symbolism of the number seven—completeness, divine order, and the creation-Sabbath rhythm. The genuine disputes are downstream: how the seventy weeks are computed, whether the seventieth week is past or future, and whether the figure is exact chronology or symbolic totality. 'Week' by itself is less frequently treated as a standalone symbol than 'seven' or 'Sabbath,' so the consensus centers on the week-of-years usage in Daniel and the creation-week pattern.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A period of seven years (a 'heptad' of years) in prophetic literature, and more broadly, a symbol of divine completeness and perfect timing.\",\n  \"primary_basis\": [\n    \"Daniel 9:24-27\",\n    \"Genesis 29:27-28\",\n    \"Leviticus 25:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A symbol of perfection, rest, and the complete cycle of divine creation.\",\n      \"basis\": [\n        \"Genesis 2:1-3\",\n        \"Exodus 20:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An indefinite, qualitative era of church history, divine action, or tribulation rather than a strict mathematical calculation of years.\",\n      \"basis\": [\n        \"Daniel 9:24-27\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A literal period of seven consecutive days.\",\n      \"basis\": [\n        \"Genesis 1\",\n        \"Daniel 10:2-3\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Hebrew word for week, 'shavua', literally means a 'seven' or a 'heptad'. In the context of Daniel's Seventy Weeks, there is a strong consensus across both dispensational and covenantal frameworks that these refer to weeks of years (seven years per week). Broadly, the week is tied to the number seven, representing fullness, completion, and the Sabbath cycle.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"In prophetic Christian interpretation—especially Daniel 9—a “week” is most commonly understood as a heptad (“seven”), usually a symbolic period of seven years rather than seven days. More broadly, its sevenfold structure can signify a complete or divinely appointed cycle.\",\n  \"primary_basis\": [\n    \"Daniel 9:24–27 — the “seventy weeks” and their subdivisions are commonly read as seventy sevens, usually totaling 490 years.\",\n    \"Genesis 29:27–28 — Jacob fulfills Leah’s bridal “week” and then serves another seven years, often cited as evidence that a week/heptad can be associated with seven years.\",\n    \"Leviticus 25:8 — seven sabbaths of years form a larger calendrical unit, supporting the biblical use of grouped seven-year periods.\",\n    \"Numbers 14:34 and Ezekiel 4:4–6 — a day represents a year in particular symbolic actions; these texts are often invoked to support the prophetic day-year reading, though neither directly defines Daniel’s weeks.\",\n    \"Genesis 1:1–2:3 and Exodus 20:8–11 — the seven-day creation and Sabbath pattern underlies the broader association of a week with a complete ordered cycle.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"An ordinary literal period of seven days, with no symbolic conversion.\",\n      \"basis\": [\n        \"Genesis 29:27–28 uses a literal bridal week alongside, but distinct from, seven further years.\",\n        \"Daniel 10:2–3 explicitly refers to “three weeks of days,” commonly understood as ordinary weeks.\",\n        \"Many New Testament references to the first day of the week are straightforward calendrical language, such as Matthew 28:1 and Acts 20:7.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A symbolic sevenfold period expressing completeness or divinely ordered time without requiring a fixed seven-year duration.\",\n      \"basis\": [\n        \"Genesis 1:1–2:3 establishes the completed seven-day creation pattern.\",\n        \"Leviticus 23 and 25 organize sacred time through recurring sevens.\",\n        \"Revelation repeatedly uses seven symbolically for fullness or completeness, although it does not establish a universal symbolic definition of “week.”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Daniel’s seventieth week is a still-future seven-year end-times period, often divided into two three-and-a-half-year halves and associated with tribulation.\",\n      \"basis\": [\n        \"Daniel 9:27 — the final week and its midpoint.\",\n        \"Daniel 7:25 and 12:7,11–12 — related periods interpreted as approximately three and a half years.\",\n        \"Matthew 24:15–21 and Revelation 11:2–3; 12:6,14; 13:5 — correlated with Daniel in dispensational and futurist readings.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Daniel’s weeks are fulfilled continuously in events surrounding the coming and death of Christ and the early covenant era, without a chronological gap before the seventieth week.\",\n      \"basis\": [\n        \"Daniel 9:24–27 — read as a continuous sequence.\",\n        \"Mark 1:15 and Galatians 4:4 — sometimes connected with the fulfillment of appointed messianic time.\",\n        \"Matthew 24:15 — used in differing ways to relate Daniel to first-century and later events.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Daniel’s seventy weeks are schematic or theological rather than an exact chronological code, emphasizing a complete, divinely determined period culminating in restoration and judgment.\",\n      \"basis\": [\n        \"Daniel 9:2,24 — Jeremiah’s seventy years are transformed into “seventy sevens.”\",\n        \"Jeremiah 25:11–12 and 29:10 — the seventy-year background.\",\n        \"Leviticus 25:8–12 and 26:34–35 — sabbatical and jubilee patterns sometimes viewed as shaping Daniel’s symbolic chronology.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single context-independent symbolic meaning of “week” throughout the Bible. Ordinary usage means seven days. In Daniel 9, the broadest interpretive consensus is that the term denotes “sevens” and is usually reckoned as seven-year units, but major Christian traditions disagree about the chronology, fulfillment, and whether the final week is continuous, future, or primarily schematic.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A complete cycle of time patterned on the six days of creation plus the seventh-day Sabbath rest, symbolizing divine order, work completed, and sacred rest\",\n  \"primary_basis\": [\n    \"Genesis 1:1–2:3\",\n    \"Exodus 20:8–11\",\n    \"Exodus 31:12–17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"In apocalyptic prophecy a 'week' (Hebrew shabua) functions as a heptad of years rather than calendar days\",\n      \"basis\": [\n        \"Daniel 9:24–27\",\n        \"common evangelical and historicist readings of the seventy weeks\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The liturgical 'Holy Week' or Passion Week commemorating the final days of Jesus' earthly ministry\",\n      \"basis\": [\n        \"the Gospel passion narratives (esp. Matthew 21–28; Mark 11–16; Luke 19–24; John 12–20)\",\n        \"historic Christian calendar practice\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A general emblem of completeness or fullness (tied to the biblical significance of the number seven)\",\n      \"basis\": [\n        \"recurrent use of seven throughout Scripture (e.g., seven days, seven churches, seven seals)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The creation-week pattern is the foundational and most widely taught symbolic sense across historic Christian tradition; the prophetic-year and liturgical uses are context-specific but well-established secondary readings.\"\n}\n\nBOOK ENTRY\nA unit of seven, not necessarily seven days. Scripture applies a week to days or years according to the scale being counted.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 29:27-28; Lev 23:15-16; 25:8; Dan 9:24-25) · see Daniel Unsealed, ch. 36\n\nAVAILABLE KJV EXCERPTS\nGenesis 29:27 — Fulfil her week, and we will give thee this also for the service which thou shalt serve with me yet seven other years.\nGenesis 29:28 — And Jacob did so, and fulfilled her week: and he gave him Rachel his daughter to wife also.\nLeviticus 23:15 — And ye shall count unto you from the morrow after the sabbath, from the day that ye brought the sheaf of the wave offering; seven sabbaths shall be complete:\nLeviticus 23:16 — Even unto the morrow after the seventh sabbath shall ye number fifty days; and ye shall offer a new meat offering unto the LORD.\nLeviticus 25:8 — And thou shalt number seven sabbaths of years unto thee, seven times seven years; and the space of the seven sabbaths of years shall be unto thee forty and nine years.\nDaniel 9:24 — Seventy weeks are determined upon thy people and upon thy holy city, to finish the transgression, and to make an end of sins, and to make reconciliation for iniquity, and to bring in everlasting righteousness, and to seal up the vision and prophecy, and to anoint the most Holy.\nDaniel 9:25 — Know therefore and understand, that from the going forth of the commandment to restore and to build Jerusalem unto the Messiah the Prince shall be seven weeks, and threescore and two weeks: the street shall be built again, and the wall, even in troublous times.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "547266aa31f6f92f56a9ddc3cae3b5e110ae8e95c4afd9f2e3ab7c8074472be3",
+  "cache": {
+    "hit": false
+  }
+}

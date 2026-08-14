@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124500,
+  "completed_at": 1785124525,
+  "id": "dab01229-8812-9cb9-954c-731ef2ecfafd",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_dab01229-8812-9cb9-954c-731ef2ecfafd",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry on \"Pearl\" and return only a JSON object matching the schema.\n{\n  \"core_relation\": \"DIVERGENT\",\n  \"extension_relation\": \"DIVERGENT\",\n  \"core_reason\": \"Consensus core identifies pearl as Kingdom of Heaven/salvation/supreme spiritual treasure (Matt 13:45-46). Book core identifies pearl as full moon marking appointed month and 12 pearl-gates as corresponding to 12 months/tribes. These are materially different referents; book replaces consensus identification.\",\n  \"extension_reason\": \"Book adds moon/month symbolism and reinterprets Rev 21:21 gates as monthly divisions rather than New Jerusalem glory. Consensus alternatives (Christ/Church/treasure 7:6) are not extended; book presents lunar calendar symbolism absent from all consensus responses.\",\n  \"scripture_support\": \"partial\",\n  \"notes\": \"Book acknowledges common view in note but presents distinct lunar symbolism via moon and months. Rev 21:21 cited but repurposed.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"NOVEL\",\n  \"consensus_summary\": \"Pearl primarily symbolizes the Kingdom of Heaven (or salvation/gospel/Christ) as a treasure of supreme worth for which everything should be sacrificed, per the pearl-of-great-price parable; secondary senses include sacred truth not to be profaned, New Jerusalem glory, or (negatively) worldly luxury.\",\n  \"book_summary\": \"Pearl symbolizes the full moon as one complete light marking an appointed month and east-gate meeting; the twelve pearl-gates of the city correspond to the twelve months and bear the tribes' names.\",\n  \"consensus_core_identification\": \"Kingdom of Heaven / supreme spiritual treasure (salvation or equivalent)\",\n  \"book_core_identification\": \"the full moon (complete appointed monthly light)\",\n  \"core_relation\": \"NO_CONSENSUS\",\n  \"extension_relation\": \"DIFFERENT_REFERENT\",\n  \"boundary_disagreement\": \"Consensus extensions cover kingdom/Christ/church/sacred-truth/luxury cases from Matt 13, Matt 7, Rev 17–18/21; book reassigns the symbol entirely to lunar-calendar and tribal-month referents with no overlap in those cases.\",\n  \"material_contradiction\": \"None directly asserted; the book notes the common kingdom/Church readings separately while advancing an unrelated primary identification.\",\n  \"rationale\": \"Minimum cores differ in kind: consensus (and all listed alternatives) centers on spiritual worth/kingdom imagery from the Gospel parables and related texts; the book centers on full-moon/month/gate calendar symbolism. No consensus response or alternative mentions moon, months, or appointed times, so the book's core is absent rather than a narrowing, broadening, or direct negation of the shared referent.\",\n  \"citation_support\": \"INSUFFICIENT\",\n  \"strongest_objection\": \"The printed references link moons to appointed times and mention pearl gates, but supply no textual equation of 'pearl' itself with the full moon, leaving the identification extrabiblical or reliant on the unprovided chapter.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_dab01229-8812-9cb9-954c-731ef2ecfafd",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3652,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1588,
+    "output_tokens_details": {
+      "reasoning_tokens": 1137
+    },
+    "total_tokens": 5240,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 166144000,
+    "context_details": {
+      "input_tokens": 3652,
+      "output_tokens": 1588
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

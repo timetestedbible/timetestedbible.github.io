@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "iron",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nIron\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"Iron most commonly symbolizes strength, hardness, and unyielding power — especially severe, inflexible rule or judgment. The best-known expression is the messianic 'rod of iron,' denoting Christ's absolute, unbreakable authority over the nations, and more broadly iron connotes irresistible force, harshness, and severity (of rule, oppression, or affliction).\",\n  \"primary_basis\": [\n    \"Psalm 2:9 (he shall break them with a rod of iron)\",\n    \"Revelation 2:26-27 (rule the nations with a rod of iron)\",\n    \"Revelation 12:5 and 19:15 (the child/rider who rules with a rod of iron)\",\n    \"Daniel 2:33, 40-43 (the fourth kingdom strong as iron that breaks and crushes all)\",\n    \"Deuteronomy 28:48 (a yoke of iron upon your neck — oppressive subjugation)\",\n    \"Jeremiah 28:13-14 (yoke of iron symbolizing Babylonian domination)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Affliction, bondage, and testing — the 'iron furnace' of Egypt as a symbol of harsh servitude from which God redeems his people.\",\n      \"basis\": [\n        \"Deuteronomy 4:20\",\n        \"1 Kings 8:51\",\n        \"Jeremiah 11:4\",\n        \"Psalm 105:18 (his soul came into iron / laid in irons)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fourth world empire (traditionally identified as Rome) in Daniel's statue vision — iron legs representing a crushing, militarily dominant kingdom.\",\n      \"basis\": [\n        \"Daniel 2:33, 40-43\",\n        \"Daniel 7:7, 19 (beast with great iron teeth)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mutual sharpening and edification between believers — 'iron sharpens iron.'\",\n      \"basis\": [\n        \"Proverbs 27:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human obstinacy and hardness of heart — a stiff, unbending neck or a hardened, seared conscience.\",\n      \"basis\": [\n        \"Isaiah 48:4 (your neck is an iron sinew)\",\n        \"Jeremiah 6:28 (bronze and iron, all of them corrupt)\",\n        \"1 Timothy 4:2 (conscience seared as with a hot iron)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Human military might and worldly technological power set against God's people (sometimes extended homiletically to reliance on human strength).\",\n      \"basis\": [\n        \"Judges 1:19 and 4:3 (chariots of iron)\",\n        \"Joshua 17:16-18\",\n        \"1 Samuel 13:19-22 (Philistine iron monopoly)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"That which is common or base in contrast to precious metals — a symbol of inferiority or degradation (e.g., silver becoming dross, iron instead of silver).\",\n      \"basis\": [\n        \"Isaiah 60:17 (instead of iron I will bring silver)\",\n        \"Jeremiah 6:28-30 (refining imagery)\",\n        \"Ezekiel 22:18-20 (Israel as dross — bronze, tin, iron, lead in the furnace)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Iron is a multivalent biblical image, but there is broad, recognizable agreement across commentaries, Bible dictionaries (e.g., entries on metals and on the rod of iron), and homiletic tradition that its core symbolic register is strength/hardness/severity — applied positively to Christ's unbreakable messianic rule (Psalm 2; Revelation) and negatively to oppressive kingdoms and yokes (Daniel 2; Deuteronomy 28; Jeremiah 28). Secondary uses (iron furnace as affliction, iron sharpening iron as edification) are context-specific rather than competing definitions. The 'rod of iron' itself has an internal interpretive debate (rule/shepherd vs. shatter, reflecting LXX 'poimaneis'), but both readings still treat iron as denoting inflexible strength.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Strength, unyielding power, severe judgment, and absolute rule (often represented by a rod of iron)\",\n  \"primary_basis\": [\n    \"Psalm 2:9\",\n    \"Revelation 2:27\",\n    \"Revelation 12:5\",\n    \"Revelation 19:15\",\n    \"Daniel 2:40\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Oppression, bondage, and severe affliction (e.g., an iron furnace or yoke of iron)\",\n      \"basis\": [\n        \"Deuteronomy 4:20\",\n        \"Deuteronomy 28:48\",\n        \"Jeremiah 28:13-14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mutual edification and the sharpening of character through fellowship\",\n      \"basis\": [\n        \"Proverbs 27:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Inferiority or baseness when contrasted with precious metals like gold and silver in prophetic visions\",\n      \"basis\": [\n        \"Daniel 2:32-33\",\n        \"Isaiah 60:17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Stubbornness, rebellion, and hardness of heart\",\n      \"basis\": [\n        \"Isaiah 48:4\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Iron consistently represents that which is unbreakable, unyielding, and strong. Depending on the context, this strength can symbolize God's invincible and absolute rule, the harsh oppression of empires, human stubbornness, or the positive sharpening of one's character.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Strength, hardness, and irresistible power—often specifically severe, crushing, or unyielding political or judicial power.\",\n  \"primary_basis\": [\n    \"Daniel 2:40–43 portrays the fourth kingdom as strong as iron, crushing and breaking other powers.\",\n    \"Psalm 2:9 uses a rod of iron for the Messiah’s irresistible rule and judgment.\",\n    \"Revelation 2:27; 12:5; 19:15 adopts the rod-of-iron image for messianic authority.\",\n    \"Jeremiah 1:18 describes God’s fortified servant as an iron pillar.\",\n    \"Micah 4:13 uses horns of iron as an image of divinely given strength to crush enemies.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Oppression, bondage, or severe affliction.\",\n      \"basis\": [\n        \"Deuteronomy 28:48 speaks of an iron yoke imposed in judgment.\",\n        \"Deuteronomy 4:20; 1 Kings 8:51; Jeremiah 11:4 call Egypt an iron furnace, emphasizing harsh enslavement and affliction.\",\n        \"Psalm 107:10,16 associates iron bonds and bars with captivity.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine or messianic judgment and authoritative rule.\",\n      \"basis\": [\n        \"Psalm 2:9 and Revelation 2:27; 12:5; 19:15 use the rod of iron in scenes of royal rule and judgment.\",\n        \"Jeremiah 15:12 invokes iron’s resistance in the context of unavoidable divine judgment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Stubbornness, inflexibility, or moral hardness.\",\n      \"basis\": [\n        \"Isaiah 48:4 describes Israel’s neck as an iron sinew, signifying obstinacy.\",\n        \"Jeremiah 6:28 compares hardened rebels with bronze and iron.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Endurance, fortification, or steadfast resilience.\",\n      \"basis\": [\n        \"Jeremiah 1:18 uses an iron pillar for prophetic firmness under opposition.\",\n        \"Job 40:18 describes Behemoth’s limbs as bars of iron, emphasizing formidable solidity.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Human technology, weaponry, or military superiority rather than a fixed spiritual symbol.\",\n      \"basis\": [\n        \"Judges 1:19 and 4:3,13 mention iron chariots as instruments of military strength.\",\n        \"1 Samuel 13:19–22 associates ironworking with strategic and military advantage.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Iron has no single settled biblical symbolic meaning independent of context. The broadest recognizable association is strength and hardness, but the same physical qualities support several related applications: irresistible rule, judgment, oppression, resilience, and stubbornness. Many biblical occurrences are also literal references to the metal rather than symbols.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"strength, hardness, and crushing or unyielding power (especially of kingdoms, rule, or military force)\",\n  \"primary_basis\": [\n    \"Daniel 2:33-40\",\n    \"Psalm 2:9\",\n    \"Revelation 2:27\",\n    \"Revelation 12:5\",\n    \"Revelation 19:15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"affliction, bondage, or severe oppression\",\n      \"basis\": [\n        \"Deuteronomy 4:20\",\n        \"Deuteronomy 28:48\",\n        \"1 Kings 8:51\",\n        \"Jeremiah 11:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"stubbornness or hardness of heart/will\",\n      \"basis\": [\n        \"Isaiah 48:4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"permanence or indelible record\",\n      \"basis\": [\n        \"Job 19:24\",\n        \"Jeremiah 17:1\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian biblical interpretation the dominant symbolic association of iron is strength and unyielding power, drawn especially from the metal's role in Daniel's statue vision and the repeated 'rod of iron' motif for divine or messianic rule. Other senses (oppression, stubbornness) appear in specific contexts but do not displace the primary reading.\"\n}\n\nBOOK ENTRY\nThe crushing strength of Daniel's fourth kingdom, historically identified here as Rome — the empire ruling when Christ came.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Dan 2:40; 8:20-21) · see The Sign of Jonah, ch. 4\n\nAVAILABLE KJV EXCERPTS\nDaniel 2:40 — And the fourth kingdom shall be strong as iron: forasmuch as iron breaketh in pieces and subdueth all things: and as iron that breaketh all these, shall it break in pieces and bruise.\nDaniel 8:20 — The ram which thou sawest having two horns are the kings of Media and Persia.\nDaniel 8:21 — And the rough goat is the king of Grecia: and the great horn that is between his eyes is the first king.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "1f06fcac0a2eec3eb3bc5673a0df243ef4996ab92c6f3a155ec9e69345087048",
+  "cache": {
+    "hit": false
+  }
+}

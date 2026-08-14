@@ -1,0 +1,156 @@
+{
+  "created_at": 1783845108,
+  "completed_at": 1783845123,
+  "id": "868207b3-ce95-9232-8c34-b2427bb95b35",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_868207b3-ce95-9232-8c34-b2427bb95b35",
+      "summary": [
+        {
+          "text": "The user wants me to act as a \"blind consensus definer\" for the term \"Sign\" in biblical symbolism. I must return only a JSON object matching the schema, with no surrounding text.\n{\n  \"primary_symbolic_meaning\": \"A sign in biblical symbolism most commonly represents a miraculous or prophetic indicator of God's presence, power, or redemptive purpose, pointing beyond itself to spiritual truth or divine intervention.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"A miraculous deed, wonder, or token performed by God or His authorized messengers that authenticates divine authority, reveals God's glory or presence, and is intended to produce faith or obedience\",\n  \"primary_basis\": [\n    \"John 2:11\",\n    \"John 20:30-31\",\n    \"Acts 2:22\",\n    \"Exodus 4:1-9\",\n    \"Exodus 7:3\",\n    \"Mark 16:17-20\",\n    \"Hebrews 2:4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Covenantal tokens or memorials that mark God's promises and the people's identity or obligations (e.g., rainbow, circumcision, Sabbath, blood on doorposts)\",\n      \"basis\": [\n        \"Genesis 9:12-17\",\n        \"Genesis 17:11\",\n        \"Exodus 12:13\",\n        \"Exodus 31:13\",\n        \"Ezekiel 20:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Prophetic or eschatological portents and cosmic indicators of coming judgment, the Day of the Lord, or the return of Christ ('signs of the times')\",\n      \"basis\": [\n        \"Matthew 24:3, 24, 30\",\n        \"Luke 21:11, 25\",\n        \"Joel 2:30-31\",\n        \"Acts 2:19\",\n        \"Revelation 12:1, 15:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Symbolic prophetic actions or enacted parables that convey a message from God\",\n      \"basis\": [\n        \"Isaiah 20:3\",\n        \"Ezekiel 4:1-3\",\n        \"Ezekiel 12:6, 11\",\n        \"Jeremiah 13:1-11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A specific christological pointer, especially the 'sign of Jonah' as prefiguring Jesus' death and resurrection, or the virgin birth as a messianic sign\",\n      \"basis\": [\n        \"Matthew 12:38-40\",\n        \"Matthew 16:4\",\n        \"Luke 11:29-30\",\n        \"Isaiah 7:14\",\n        \"Luke 2:12\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In both Testaments the core semantic range of 'sign' (Heb. ʾôt; Gk. sēmeion) centers on divine authentication and revelation; the miracle/wonder sense is dominant in Christian proclamation and Johannine theology, while covenantal and eschatological uses remain standard and non-contradictory within the broader category. No major Christian tradition redefines the term outside this family of meanings.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_868207b3-ce95-9232-8c34-b2427bb95b35",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1538,
+    "output_tokens_details": {
+      "reasoning_tokens": 867
+    },
+    "total_tokens": 2140,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 98560000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1538
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

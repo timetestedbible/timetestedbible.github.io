@@ -1,0 +1,179 @@
+{
+  "id": "resp_01147047c57ed04b006a5476cd9c50819683a997cb8eba4ad4",
+  "object": "response",
+  "created_at": 1783920333,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920355,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_01147047c57ed04b006a5476ce2d6c81968f7d2715e14479b5",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_01147047c57ed04b006a5476d86fb881969a20569d0959f070",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_01147047c57ed04b006a5476d978b881969a24114c5f4df040",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"There is no settled, specifically Christian symbolic meaning of “new moon.” When treated symbolically, its most common association is renewal or a fresh beginning, especially the recurring renewal of worship and covenantal devotion at the start of each month.\",\"primary_basis\":[\"Numbers 10:10 associates the beginnings of months with trumpet blasts, sacrifices, and remembrance before God.\",\"Numbers 28:11–15 prescribes special offerings at the beginning of each month.\",\"Psalm 81:3 connects the new moon with festal worship.\",\"Isaiah 66:23 uses the recurring movement “from new moon to new moon” to portray continual and universal worship before God.\",\"Ezekiel 46:1, 6–7 includes new-moon observance in its vision of restored worship.\"],\"alternatives\":[{\"meaning\":\"A literal calendrical observance marking the beginning of the lunar month, rather than an independent symbol.\",\"basis\":[\"1 Samuel 20:5, 18, 24–27 describes a new-moon feast.\",\"2 Kings 4:23 treats the new moon as a customary religious occasion.\",\"Numbers 28:11–15 gives concrete cultic regulations for the day.\"],\"prominence\":\"dominant\"},{\"meaning\":\"An element of the Old Testament ceremonial calendar that functions as a shadow fulfilled in Christ, so Christians are not to be judged over its observance.\",\"basis\":[\"Colossians 2:16–17 explicitly calls festivals, new moons, and Sabbaths a shadow of things to come, with the substance belonging to Christ.\"],\"prominence\":\"common\"},{\"meaning\":\"A sign of restored or eschatological worship, particularly the regular worship of all humanity in God’s future order.\",\"basis\":[\"Isaiah 66:23 portrays all flesh worshiping before God from one new moon to another.\",\"Ezekiel 46:1–7 places new-moon worship within a visionary restored temple order.\"],\"prominence\":\"common\"},{\"meaning\":\"A representative of merely external, corrupted, or rejected religious observance when worship is joined to injustice or unfaithfulness.\",\"basis\":[\"Isaiah 1:13–14 says God rejects Israel’s new moons and appointed feasts because of corrupt worship.\",\"Hosea 2:11 announces the ending of new moons as part of judgment.\",\"Amos 8:5 depicts merchants impatiently observing the new moon while practicing exploitation.\"],\"prominence\":\"minority\"},{\"meaning\":\"A prophetic symbol specifically of national Israel’s restoration or of a future reinstituted sacrificial calendar.\",\"basis\":[\"Isaiah 66:23 and Ezekiel 46:1–7 are interpreted this way in some dispensational and restorationist traditions.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Biblical studies generally treats the new moon first as an actual monthly calendrical and cultic observance. “Renewal” is the most recognizable symbolic association, but it is inferred from the lunar cycle and the recurring worship calendar rather than explicitly defined by Scripture. Colossians 2:16–17 supplies the clearest distinctively Christian typological interpretation.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1229,
+    "output_tokens_details": {
+      "reasoning_tokens": 579
+    },
+    "total_tokens": 1547
+  },
+  "user": null,
+  "metadata": {}
+}

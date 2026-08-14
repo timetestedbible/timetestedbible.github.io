@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123333,
+  "completed_at": 1785123363,
+  "id": "4302743a-e3d1-9b7f-a95e-4bb36c408303",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_4302743a-e3d1-9b7f-a95e-4bb36c408303",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry on \"Bread\". I must return only a JSON object matching the specified schema.\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"Consensus primary identification centers on Christ as the Bread of Life and Eucharistic body; book identifies bread as the Word of God (with leaven distinguishing pure vs corrupting doctrine). The book's core is a listed alternative in consensus responses, so it preserves the general category of spiritual nourishment from God while narrowing the referent to Scripture rather than Christ.\",\n  \"extension_reasoning\": \"Book adds the pure-doctrine / corrupting-doctrine distinction via unleavened vs leavened bread (supported by Ex 12: 15, Lev 2:11, Matt 16:12, 1 Cor 5:7-8) and emphasizes the 'word of God' sense (Deut 8:3, Matt 4:4). It excludes or subordinates the christological/Eucharistic primary and the daily-provision sense while retaining the Word-of-God alternative as the sole identification.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"DIVERGENT\",\n  \"consensus_summary\": \"Bread primarily symbolizes Jesus Christ as the Bread of Life and his body in the Eucharist/Lord's Supper, with complementary senses including God's provision, the Word of God, fellowship, and purity (unleavened).\",\n  \"book_summary\": \"Bread symbolizes the word of God; unleavened bread is pure doctrine and leavened bread is corrupting doctrine.\",\n  \"consensus_core_identification\": \"Christ himself (Bread of Life / eucharistic body)\",\n  \"book_core_identification\": \"the word of God / pure vs. corrupting doctrine\",\n  \"core_relation\": \"CONTRADICTS\",\n  \"extension_relation\": \"DIFFERENT_REFERENT\",\n  \"boundary_disagreement\": \"Consensus treats Word-of-God and pure-doctrine readings as secondary or complementary layers under a christological primary; the book elevates Word/doctrine as the sole core and omits Christ/Eucharist entirely.\",\n  \"material_contradiction\": \"Book replaces the consensus primary referent (Christ/body of Christ) with a different referent (word of God/doctrine); both cannot stand as the core identification of the same symbol in the same sense.\",\n  \"rationale\": \"Minimum cores differ: consensus centers on Christ as Bread of Life and eucharistic body (John 6; Last Supper texts), while the book centers exclusively on the word of God with a leaven=doctrine gloss. Word-of-God and unleavened-purity appear only as listed alternatives in the consensus, not as its primary identification; adopting the book therefore requires rejecting/replacing the consensus core rather than merely narrowing its boundary.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The book entirely omits the dominant, cross-traditional christological and eucharistic identification (John 6; institution narratives) that the consensus treats as primary.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_4302743a-e3d1-9b7f-a95e-4bb36c408303",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4505,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1812,
+    "output_tokens_details": {
+      "reasoning_tokens": 1377
+    },
+    "total_tokens": 6317,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 196644000,
+    "context_details": {
+      "input_tokens": 4505,
+      "output_tokens": 1812
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

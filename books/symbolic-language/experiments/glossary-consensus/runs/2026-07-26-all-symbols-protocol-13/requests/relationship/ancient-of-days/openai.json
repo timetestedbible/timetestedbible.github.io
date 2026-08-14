@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "ancient-of-days",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nAncient of Days (attiq yomin)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the Ancient of Days is understood as a symbolic depiction of God (typically God the Father) as the eternal, sovereign Judge — an aged, white-haired figure enthroned in glory, whose 'ancientness' signifies eternal pre-existence, unchanging wisdom, supreme authority, and the right to judge the kingdoms of the world and vindicate the saints.\",\n  \"primary_basis\": [\n    \"Daniel 7:9-10 (the Ancient of Days takes his seat; clothing white as snow, hair like pure wool; thrones set, court sits in judgment, books opened)\",\n    \"Daniel 7:13-14 (one like a son of man comes with the clouds and is presented before the Ancient of Days, receiving everlasting dominion)\",\n    \"Daniel 7:21-22 (the Ancient of Days comes and judgment is given in favor of the saints of the Most High)\",\n    \"Psalm 90:2 and Psalm 102:24-27 (God's eternity, often cited as background for the 'ancient' imagery)\",\n    \"Revelation 1:13-14 (hair white like wool, like snow — cited both to connect the imagery to deity and, in some traditions, to identify the figure with Christ)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Ancient of Days as God the Father specifically, distinct from the Son of Man (Christ) who is presented before him — a proto-Trinitarian reading in which Daniel 7 depicts two divine persons.\",\n      \"basis\": [\n        \"Daniel 7:13-14\",\n        \"Matthew 26:64 and Mark 14:62 (Jesus applying the Son of Man coming with clouds to himself)\",\n        \"Acts 7:55-56\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The Ancient of Days identified with Christ himself (the Son), especially in Eastern Orthodox theology and iconography, on the grounds that Old Testament theophanies are appearances of the pre-incarnate Logos and that Revelation 1:14 applies the white-hair imagery to the risen Christ.\",\n      \"basis\": [\n        \"Revelation 1:13-16\",\n        \"John 1:18 (no one has seen the Father)\",\n        \"Daniel 7:9 read alongside Rev 1:14; supported by patristic and conciliar tradition (e.g., decisions associated with the Quinisext Council and later Russian church debates on icons)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A historical-critical reading: the imagery derives from ancient Near Eastern (especially Ugaritic/Canaanite) depictions of the aged high god El presiding over the divine council, adapted by the author of Daniel to portray Israel's God as cosmic judge.\",\n      \"basis\": [\n        \"Daniel 7:9-10 compared with Ugaritic texts describing El as 'father of years' with grey hair, enthroned in council\",\n        \"Psalm 82:1 (God presiding in the divine council) as comparative background\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Latter-day Saint (Mormon) interpretation identifying the Ancient of Days as Adam, the oldest and 'most ancient' of the human family, who will preside at a great council at Adam-ondi-Ahman before Christ's return.\",\n      \"basis\": [\n        \"Daniel 7:9-14 as read through Doctrine and Covenants 27:11; 116; 138:38 and teachings of Joseph Smith\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Some interpreters (including certain Jehovah's Witness and unitarian readings, and some older Jewish interpretation) stress that the Ancient of Days is simply Jehovah/the one God, with the Son of Man as a subordinate, non-divine figure (Messiah, or collectively the saints/Israel).\",\n      \"basis\": [\n        \"Daniel 7:13-14, 18, 27 (the kingdom given to 'the people of the saints of the Most High,' supporting a collective reading of the son of man)\",\n        \"Daniel 7:22\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The term appears only in Daniel 7 (verses 9, 13, 22). There is broad, recognizable consensus across Catholic, Protestant, Orthodox, and Jewish interpretation that the Ancient of Days represents God as the eternal enthroned Judge; the live interpretive dispute is not over whether the figure is divine but over which divine person is in view (Father vs. Son) and how the imagery relates to its ancient Near Eastern background. Western art and theology overwhelmingly treat the figure as the Father; Eastern iconographic tradition frequently identifies him with Christ. The LDS identification with Adam is a well-documented but confessionally isolated reading. Because the assignment of Daniel 7:22 grammar is ambiguous (whether the Ancient of Days 'comes' or judgment is given 'to'/'for' the saints), a few interpreters blur the distinction between the Ancient of Days and the Son of Man, which fuels the Christological identification.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"God the Father (or Yahweh/God in general), representing eternal existence, supreme sovereignty, and divine judgment.\",\n  \"primary_basis\": [\n    \"Daniel 7:9\",\n    \"Daniel 7:13\",\n    \"Daniel 7:22\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Jesus Christ / God the Son, based on the physical description matching the glorified Christ in Revelation. This is prominent in Eastern Orthodox iconography and patristic tradition.\",\n      \"basis\": [\n        \"Revelation 1:14\",\n        \"Daniel 7:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The undivided Holy Trinity, representing the eternal nature of the entire Godhead rather than a specific divine person.\",\n      \"basis\": [\n        \"Daniel 7:9\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Western Christianity and modern biblical scholarship, the Ancient of Days is almost universally understood as God the Father, who is distinct from and grants authority to the Son of Man. However, Eastern Orthodox tradition historically identifies the Ancient of Days as the pre-incarnate or glorified Jesus Christ, drawing parallels to John's vision in Revelation.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A title or symbolic portrayal of the eternal God—most commonly identified in Christian interpretation as God the Father—seated as the sovereign heavenly king and judge. His great age signifies eternity, primordial authority, wisdom, and unchallengeable dominion rather than physical frailty.\",\n  \"primary_basis\": [\n    \"Daniel 7:9–10: the Ancient of Days takes his throne amid fiery judgment, with white clothing and hair and the heavenly court assembled.\",\n    \"Daniel 7:13–14: one like a son of man comes before the Ancient of Days and receives everlasting dominion, supporting the customary Christian distinction between the Ancient of Days and Christ, the Son of Man.\",\n    \"Daniel 7:21–22: the Ancient of Days comes, renders judgment, and vindicates the saints.\",\n    \"Psalm 90:2 and Isaiah 40:28 are often cited as broader support for God's eternity.\",\n    \"Revelation 1:12–18, especially 1:14, applies imagery resembling Daniel's Ancient of Days to the risen Christ, contributing to Christological interpretations.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Ancient of Days is Christ himself, portrayed in his eternal divine nature and as final judge.\",\n      \"basis\": [\n        \"Revelation 1:14 gives the glorified Christ white hair resembling the figure in Daniel 7:9.\",\n        \"Christ exercises divine judgment and possesses everlasting dominion in passages such as John 5:22–27 and Revelation 19–20.\",\n        \"This identification appears in portions of patristic interpretation and especially in Eastern Christian iconographic and liturgical traditions.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The title refers simply to God as the eternal divine ruler, without assigning the figure specifically to the Father or another Trinitarian person.\",\n      \"basis\": [\n        \"Daniel 7 itself calls the figure the Ancient of Days but does not employ later Christian Trinitarian terminology.\",\n        \"The imagery primarily communicates divine eternity, kingship, and judicial authority.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The figure is a literary or apocalyptic personification of God's eternal kingship and heavenly court rather than a description intended to identify a distinct divine person.\",\n      \"basis\": [\n        \"Daniel 7 uses symbolic throne-room imagery, including beasts, fire, books, and a heavenly tribunal.\",\n        \"Historical-critical interpretation often emphasizes the vision's apocalyptic symbolism and its message of divine judgment over oppressive kingdoms.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus that the Ancient of Days symbolizes the eternal, sovereign God acting as judge. The narrower identification with God the Father is the dominant traditional Christian reading because the Son of Man approaches him in Daniel 7:13, but it is not completely settled: some traditions identify the Ancient of Days with Christ, while others avoid specifying a Trinitarian person.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A title for God (specifically God the Father) as the eternal, sovereign Judge who sits on the throne in heavenly court, receiving dominion and glory, and before whom the Son of Man appears.\",\n  \"primary_basis\": [\n    \"Daniel 7:9\",\n    \"Daniel 7:13\",\n    \"Daniel 7:22\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A title or appearance of Christ (the pre-incarnate or exalted Son) as the eternal Judge\",\n      \"basis\": [\n        \"Daniel 7:9-14 read christologically\",\n        \"Revelation 1:12-16 parallels\",\n        \"some patristic and later Christian interpreters\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A theophany or vision of the Godhead / divine council without strict Trinitarian person distinction\",\n      \"basis\": [\n        \"Daniel 7 throne-room imagery\",\n        \"Second Temple Jewish apocalyptic context\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"An exalted angelic or hypostatic figure distinct from God\",\n      \"basis\": [\n        \"some historical-critical and non-Christian readings of Daniel\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In mainstream Christian interpretation the phrase attiq yomin / Ancient of Days is overwhelmingly treated as a designation of God (Father) in Daniel’s judgment scene; identification with Christ is a frequent secondary christological reading but not the primary consensus default.\"\n}\n\nBOOK ENTRY\nThe venerable One at the origin and advancement of days. Literally, the expression describes one advanced in days; within Daniel's calendar vision, it presents Him seated at the head of the cycle—the day from which the month, year, and age advance. The expression occurs only in Daniel 7:9, 13, and 22.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: a divine title of the eternal God enthroned as Judge — His antiquity and pre-existence, with no calendar office.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Dan 7:9, 13, 22; Ps 93:2; Isa 43:13) · see Clouds of Heaven\n\nAVAILABLE KJV EXCERPTS\nDaniel 7:9 — I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.\nDaniel 7:13 — I saw in the night visions, and, behold, one like the Son of man came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.\nDaniel 7:22 — Until the Ancient of days came, and judgment was given to the saints of the most High; and the time came that the saints possessed the kingdom.\nPsalms 93:2 — Thy throne is established of old: thou art from everlasting.\nIsaiah 43:13 — Yea, before the day was I am he; and there is none that can deliver out of my hand: I will work, and who shall let it?\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "726c7710dedb5fa05929c1cbbb9a2e22e94b719ed0fc8a017781963580a68ecd",
+  "cache": {
+    "hit": false
+  }
+}

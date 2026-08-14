@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124245,
+  "completed_at": 1785124258,
+  "id": "fe9d1c9c-125c-9463-8561-f15f07325c0b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_fe9d1c9c-125c-9463-8561-f15f07325c0b",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry on \"Marriage, bride\". I must respond with JSON only matching the schema.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Mainstream Christian consensus identifies marriage/bride primarily as the covenantal union between Christ (bridegroom) and the Church/people of God (bride), rooted in OT Israel-as-wife-of-YHWH imagery and culminating in eschatological consummation; alternatives (individual soul, New Jerusalem as city, dispensational Israel/Church split, etc.) are secondary refinements.\",\n  \"book_summary\": \"Covenant union of God and His people as a one-flesh bond in which the wife receives the Husband's Name and comes under His covering; opposite is divorce.\",\n  \"consensus_core_identification\": \"Covenantal marriage union of God/Christ with His people (Church/Israel) as bride.\",\n  \"book_core_identification\": \"Covenant union of God and His people as one-flesh bridal bond (Name + covering).\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"None material; book adds one-flesh/Name/covering language and Divorce opposite without excluding consensus cases or adding alien ones.\",\n  \"material_contradiction\": \"None.\",\n  \"rationale\": \"Both reduce to the same central referent (God/Christ–people covenant marriage). Book's extra precision (one-flesh, Name reception, covering) and opposite are compatible elaborations already latent in the shared texts (Gen 2:24; Ezek 16:8; Eph 5; Rev 19), not a narrowed, broadened, or replaced core.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Book's emphasis on 'receives the Husband's Name' and explicit Divorce opposite could be read as slightly more legal/covenantal than some mystical or purely ecclesiological framings, yet still within the consensus envelope.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_fe9d1c9c-125c-9463-8561-f15f07325c0b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4519,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 898,
+    "output_tokens_details": {
+      "reasoning_tokens": 483
+    },
+    "total_tokens": 5417,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 142084000,
+    "context_details": {
+      "input_tokens": 4519,
+      "output_tokens": 898
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

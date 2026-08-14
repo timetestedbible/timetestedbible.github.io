@@ -1,0 +1,173 @@
+{
+  "id": "resp_0c76f726ede7972f006a54754a93c8819094595e96a37d6f8f",
+  "object": "response",
+  "created_at": 1783919946,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919965,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0c76f726ede7972f006a54754b16e48190ae6623d6d2ea9ff8",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0c76f726ede7972f006a5475515c88819091ce7fed8cd8d201",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The grafting image most commonly symbolizes Gentile believers being incorporated by faith into the covenant people of God and sharing in the spiritual blessings rooted in Israel’s patriarchal promises. They are depicted as wild olive branches grafted into a cultivated olive tree, while being warned against pride toward Jewish branches.\",\"primary_basis\":[\"Romans 11:17–24 — the explicit image of wild olive branches grafted into Israel’s olive tree, broken-off branches, and their possible regrafting\",\"Romans 11:11–16, 25–32 — the surrounding argument concerning Gentile inclusion, Israel’s stumbling, and continuing divine mercy toward Israel\",\"Romans 9:6–8; 10:12–13 — the broader context of covenant identity and salvation by faith\",\"Ephesians 2:11–22 — commonly used as a parallel teaching about Gentiles being brought near and incorporated into one people, although it does not use grafting language\",\"Galatians 3:7–9, 26–29 — commonly cited regarding Gentile believers sharing Abrahamic blessing through faith in Christ\"],\"alternatives\":[{\"meaning\":\"A supersessionist or replacement reading: grafting signifies the predominantly Gentile church taking the covenantal place of unbelieving Israel as the new or true Israel.\",\"basis\":[\"Romans 11:17–21, especially the removal of some natural branches and inclusion of wild branches\",\"Matthew 21:43 and 1 Peter 2:9–10 are often brought into this broader interpretation\"],\"prominence\":\"common\"},{\"meaning\":\"An individual-salvation or devotional reading: grafting primarily symbolizes each believer’s personal union with Christ and reception of spiritual life from him.\",\"basis\":[\"Romans 11:17–24, with the olive root understood christologically\",\"John 15:1–6 is often treated as a conceptual parallel, though it uses vine-and-branches imagery rather than grafting\"],\"prominence\":\"common\"},{\"meaning\":\"A future-restoration reading: the regrafting of natural branches symbolizes a future large-scale conversion or restoration of ethnic Israel.\",\"basis\":[\"Romans 11:23–27, especially the claim that God can graft the natural branches in again and that “all Israel will be saved”\"],\"prominence\":\"common\"},{\"meaning\":\"An ecclesial or sacramental reading: grafting denotes formal incorporation into the visible church, sometimes associated particularly with baptism.\",\"basis\":[\"Romans 11:17–24 interpreted alongside Romans 6:3–5, 1 Corinthians 12:13, and traditional baptismal theology\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus on the core image of Gentile inclusion in the blessings and people associated with Israel. There is no settled consensus on the precise identity of the olive tree or root, whether the church replaces Israel or is joined to Israel’s covenantal inheritance, and whether the regrafting of natural branches predicts a distinct future restoration of ethnic Israel.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 322,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 887,
+    "output_tokens_details": {
+      "reasoning_tokens": 263
+    },
+    "total_tokens": 1209
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919659,
+  "completed_at": 1783919689,
+  "id": "1e4df196-fb3f-989b-ac15-eddd820ed4c5",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_1e4df196-fb3f-989b-ac15-eddd820ed4c5",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Divorce (bill of divorcement)\" in Christian teaching and biblical interpretation, based on independent knowledge.\n{\n  \"primary_meaning\": \"Divorce as a symbol of God's judgment on unfaithful Israel and the covenant relationship between God and His people\",\n  \"primary_basis\": [\n    \"Jeremiah 3:8\",\n    \"Isaiah 50:1\",\n    \"Hosea 2\",\n    \"Deuteronomy 24:1-4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A legal safeguard for women in ancient Israelite society\",\n      \"basis\": [\n        \"Deuteronomy 24:1-4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \" meaning\": \"A symbol of the temporary nature of the Mosaic covenant and its eventual replacement by the New Covenant\",\n      \"basis\": [\n        \"Matthew 5:31-32\",\n        \"Matthew 19:3-9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning \": \"A type foreshadowing the spiritual adultery of the church and the need for repentance\",\n      \"basis\": [\n        \"Revelation 2-3\",\n        \"Ephesians 5:22-33\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"The term primarily functions as a prophetic metaphor for God's judgment on Israel's idolatry rather than a fixed symbol in Christian teaching. While Jesus references it to explain Mosaic law, the strongest symbolic use appears in the prophets where it illustrates covenant unfaithfulness and temporary separation with promise of restoration.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Metaphor for God's judgment and temporary putting-away of unfaithful Israel (or Judah) for spiritual adultery/idolatry\",\n  \"primary_basis\": [\n    \"Jeremiah 3:8\",\n    \"Isaiah 50:1\",\n    \"Hosea 1–2 (covenant-marriage divorce theme)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Legal concession permitted by Moses because of the hardness of human hearts, not God's creational ideal for permanent marriage\",\n      \"basis\": [\n        \"Deuteronomy 24:1–4\",\n        \"Matthew 19:3–9\",\n        \"Mark 10:2–12\",\n        \"Matthew 5:31–32\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Illustration of covenant breach and the possibility of restoration after judgment\",\n      \"basis\": [\n        \"Jeremiah 3\",\n        \"Hosea 2–3\",\n        \"Isaiah 50:1 (with restoration oracles)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Type of the supersession or permanent transfer of covenant status from national Israel to the Church as the new bride\",\n      \"basis\": [\n        \"Jeremiah 3:8 applied to NT ecclesiology\",\n        \"occasional appeals to Romans 11 or Ephesians 5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Protective legal instrument requiring formal documentation to limit arbitrary dismissal of wives\",\n      \"basis\": [\n        \"Deuteronomy 24:1–4\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"The bill of divorcement is first a Mosaic legal provision later cited by Jesus; its main symbolic/prophetic use is the husband–wife metaphor for Yahweh and Israel. Beyond that covenant imagery there is no single fixed allegorical meaning in mainstream Christian teaching, and permanence of the 'divorce' remains debated.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_1e4df196-fb3f-989b-ac15-eddd820ed4c5",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 607,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2761,
+    "output_tokens_details": {
+      "reasoning_tokens": 2283
+    },
+    "total_tokens": 3368,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 170120000,
+    "context_details": {
+      "input_tokens": 607,
+      "output_tokens": 2761
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

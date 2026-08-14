@@ -1,0 +1,173 @@
+{
+  "id": "resp_00debf61ad38f25d006a5474aaf7708197811bc7557d2646aa",
+  "object": "response",
+  "created_at": 1783919786,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919811,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_00debf61ad38f25d006a5474ab7a44819789092e59218055e6",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_00debf61ad38f25d006a5474b5024881979d422ecd0b27f02a",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Most commonly, “feet” symbolize a person’s practical walk—conduct, direction, and manner of life. They can therefore represent whether someone follows God’s way, stands securely, or is prepared to carry out a calling. This is a broad contextual association rather than a fixed biblical symbol.\",\"primary_basis\":[\"Psalm 119:59, 101, 105 — turning one’s feet toward God’s testimonies, restraining them from evil, and receiving guidance for one’s path\",\"Proverbs 4:26–27 — keeping one’s feet from evil and making one’s path secure\",\"Psalm 40:2; 66:9 — God setting or preserving the feet, signifying stability and security\",\"Hebrews 12:13 — making straight paths for one’s feet\",\"Ephesians 6:15 — feet fitted with readiness from the gospel of peace\"] ,\"alternatives\":[{\"meaning\":\"Humility, cleansing, and servant ministry, especially through washing another person’s feet.\",\"basis\":[\"John 13:5–17 — Jesus washes the disciples’ feet and presents it as an example of humble service\",\"Luke 7:37–46 — washing and anointing Jesus’ feet expresses penitence, love, and hospitality\",\"1 Timothy 5:10 — washing the saints’ feet as evidence of faithful service\"],\"prominence\":\"common\"},{\"meaning\":\"Subjection, victory, or authority over enemies—placing something under one’s feet signifies dominion.\",\"basis\":[\"Psalm 8:6 — creation placed under humanity’s feet\",\"Psalm 110:1 — enemies made a footstool\",\"1 Corinthians 15:25–27 — all enemies and powers placed under Christ’s feet\",\"Hebrews 2:8 — all things subjected under his feet\"],\"prominence\":\"common\"},{\"meaning\":\"Readiness to proclaim the gospel or the welcome arrival of a messenger.\",\"basis\":[\"Isaiah 52:7 — the beautiful feet of one bringing good news\",\"Romans 10:15 — application of Isaiah’s image to gospel proclamation\",\"Ephesians 6:15 — feet equipped with the readiness of the gospel of peace\"],\"prominence\":\"common\"},{\"meaning\":\"Discipleship, worship, dependence, or submission, represented by sitting or falling at someone’s feet.\",\"basis\":[\"Luke 10:39 — Mary sits at Jesus’ feet to hear his teaching\",\"Luke 8:35 — the healed man sits at Jesus’ feet\",\"Revelation 1:17 — John falls at Christ’s feet\"],\"prominence\":\"common\"},{\"meaning\":\"Rejection and impending judgment, symbolized by shaking dust from the feet.\",\"basis\":[\"Matthew 10:14; Mark 6:11; Luke 10:10–12 — disciples shake dust from their feet when their message is rejected\",\"Acts 13:51 — Paul and Barnabas enact this sign against rejection\"],\"prominence\":\"minority\"},{\"meaning\":\"Human frailty, uncleanness, or the earthly aspect of a person, especially when feet require washing or are made of clay.\",\"basis\":[\"John 13:10 — washed feet remain necessary after bathing\",\"Daniel 2:33–35, 41–45 — feet partly of iron and clay represent the divided and vulnerable final phase of the image’s kingdom\"],\"prominence\":\"minority\"},{\"meaning\":\"In a few passages, “feet” may function as a euphemism for sexual organs or bodily exposure rather than as a theological symbol.\",\"basis\":[\"Isaiah 6:2 — seraphim cover their feet, sometimes interpreted euphemistically\",\"Ruth 3:4–8 and Judges 3:24 — language involving feet has prompted euphemistic readings, though interpretations are disputed\"],\"prominence\":\"rare\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Christian interpretation does not assign one settled symbolic meaning to “feet.” Meaning is strongly controlled by the immediate image or action. “Walk/conduct” is the broadest recurring association, but humility and service, gospel readiness, dominion, discipleship, and judgment are also well-established contextual readings.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1265,
+    "output_tokens_details": {
+      "reasoning_tokens": 412
+    },
+    "total_tokens": 1582
+  },
+  "user": null,
+  "metadata": {}
+}

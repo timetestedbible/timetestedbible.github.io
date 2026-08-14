@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "works",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWorks (good works, evil works)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'works' are understood as a person's deeds or actions viewed as the outward expression and evidence of their inner spiritual state: good works are the visible fruit of genuine faith and of God's grace operating in a person, while evil works are the fruit and evidence of an unregenerate or sinful heart. Works thus function symbolically as 'fruit' revealing the nature of the 'tree' (the person), and as the evidentiary basis by which faith is shown to be living rather than dead. In classic Protestant framing, works are explicitly distinguished from faith as the ground of salvation—people are saved by grace through faith, not by works, yet are saved 'unto' good works, which God prepared beforehand and which testify to salvation already received. Works also carry a forensic sense: they are the recorded evidence brought forward at final judgment.\",\n  \"primary_basis\": [\n    \"Ephesians 2:8-10 (saved by grace through faith, not of works, yet created for good works)\",\n    \"James 2:14-26 (faith without works is dead; faith shown by works)\",\n    \"Matthew 5:16 (let your light shine that others may see your good works)\",\n    \"Matthew 7:16-20 (by their fruits you will know them)\",\n    \"Galatians 5:19-23 (works of the flesh vs. fruit of the Spirit)\",\n    \"Romans 3:28 and Galatians 2:16 (justified by faith apart from works of the law)\",\n    \"Titus 3:5 (not by works of righteousness which we have done)\",\n    \"John 6:28-29 (the work of God is to believe)\",\n    \"Revelation 20:12-13 (the dead judged according to their works)\",\n    \"Revelation 14:13 (their works follow them)\",\n    \"2 Corinthians 5:10 (each receives according to what he has done)\",\n    \"Titus 2:14 (a people zealous for good works)\",\n    \"John 3:19-21 (evil works love darkness; deeds done in God are made manifest)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Roman Catholic and Orthodox reading: good works done in grace are genuinely meritorious and cooperate with grace in justification and salvation, not merely evidential; works are part of a synergistic process of sanctification and final justification (drawing on James 2:24, Matthew 25:31-46, Romans 2:6-7).\",\n      \"basis\": [\n        \"James 2:24\",\n        \"Matthew 25:31-46\",\n        \"Romans 2:6-13\",\n        \"Philippians 2:12-13\",\n        \"Galatians 5:6 (faith working through love)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"New Perspective on Paul (academic reading): the 'works' Paul opposes are specifically 'works of the law'—Jewish covenant boundary markers such as circumcision, food laws, and Sabbath—rather than good deeds or moral effort in general; the faith/works contrast is about covenant membership, not legalistic self-help.\",\n      \"basis\": [\n        \"Romans 3:28-30 in context\",\n        \"Galatians 2:11-16\",\n        \"Second Temple Jewish sources as interpreted by E.P. Sanders, James Dunn, N.T. Wright\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Works as symbolic clothing or garments: righteous deeds pictured as the fine linen with which the saints are clothed, especially in Revelation, so that works symbolize the believer's prepared adornment for the marriage of the Lamb.\",\n      \"basis\": [\n        \"Revelation 19:8 (fine linen is the righteous acts of the saints)\",\n        \"Revelation 3:4-5, 3:18\",\n        \"Isaiah 61:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Radical grace / hyper-grace or some Lutheran-leaning readings: 'works' function symbolically as human self-effort and self-righteousness per se, the antithesis of grace, such that even good works can symbolize 'filthy rags' when relied upon before God.\",\n      \"basis\": [\n        \"Isaiah 64:6 (all our righteousnesses are as filthy rags)\",\n        \"Romans 4:4-5\",\n        \"Philippians 3:4-9\",\n        \"Luke 18:9-14\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Works as building materials tested by fire: the believer's works symbolized as gold, silver, precious stones versus wood, hay, stubble, determining reward (not salvation) at judgment.\",\n      \"basis\": [\n        \"1 Corinthians 3:10-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Esoteric or heterodox symbolic readings that treat 'works' as coded language for something other than deeds (e.g., doctrines, ritual systems, or inner states in Swedenborgian, gnostic, or other allegorical traditions).\",\n      \"basis\": [\n        \"Allegorical interpretive traditions rather than specific proof texts\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus on the core symbolic meaning of 'works' as deeds that reveal and evidence inner spiritual character (fruit of the tree; evidence at judgment). What is contested is not the symbolism but the soteriological role of works—the faith-versus-works debate between Protestant (evidential), Catholic/Orthodox (cooperative/meritorious), and New Perspective (covenant-marker) readings. 'Evil works' are near-universally read as manifestations of the flesh, the sinful nature, or alignment with darkness (John 3:19; Colossians 1:21; Galatians 5:19). The Revelation 19:8 garment symbolism and the 1 Corinthians 3 building-materials image are widely recognized secondary symbolic frames rather than rival definitions.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Outward human actions, moral conduct, and deeds that manifest inward spiritual allegiance, faith, or a sinful nature.\",\n  \"primary_basis\": [\n    \"James 2:14-26\",\n    \"Ephesians 2:8-10\",\n    \"Galatians 5:19-21\",\n    \"Matthew 5:16\",\n    \"Revelation 20:12-13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Specific observances of the Mosaic Law (Torah), such as circumcision, Sabbath-keeping, and dietary restrictions, serving as ethnic boundary markers rather than general moral behavior (associated with the New Perspective on Paul).\",\n      \"basis\": [\n        \"Romans 3:20\",\n        \"Romans 3:28\",\n        \"Galatians 2:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Meritorious actions or religious duties performed in an attempt to earn salvation, justification, or divine favor apart from grace.\",\n      \"basis\": [\n        \"Romans 4:4-5\",\n        \"Ephesians 2:8-9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Specific acts of charity, almsgiving, and care for the vulnerable.\",\n      \"basis\": [\n        \"Matthew 25:31-46\",\n        \"Titus 3:14\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While the fundamental definition of 'works' as human actions is universally recognized, there is significant theological debate regarding the phrase 'works of the law' in Pauline literature, particularly among traditional Protestant, Catholic, and New Perspective scholars.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"“Works” most commonly means a person’s deeds or conduct as the outward expression and moral fruit of inward faith, character, and allegiance. Good works are acts of obedience, love, justice, and mercy; evil works are sinful acts that manifest unbelief or corrupt desire. They are frequently portrayed as evidence by which persons are known and judged, although Christian traditions differ over their precise relation to salvation.\",\n  \"primary_basis\": [\n    \"Matthew 5:16 — good works visibly glorify the Father.\",\n    \"Matthew 7:16–20 — deeds are the “fruit” by which a person is known.\",\n    \"John 3:19–21 — evil deeds belong to darkness, while deeds done in God come to the light.\",\n    \"Romans 2:6–10 — God judges each person according to works.\",\n    \"Ephesians 2:8–10 — salvation is by grace through faith, and believers are created for good works.\",\n    \"Titus 2:14; 3:8 — redeemed believers are to be zealous and devoted to good works.\",\n    \"James 2:14–26 — works complete and demonstrate living faith; faith without works is dead.\",\n    \"Galatians 5:19–23 — the works of the flesh contrast with the fruit of the Spirit.\",\n    \"Revelation 2–3 — Christ repeatedly evaluates the churches by their works.\",\n    \"Revelation 20:12–13 — the dead are judged according to their works.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"In Catholic, Orthodox, and some Protestant accounts, grace-enabled good works are not merely evidence but genuinely cooperate in sanctification and bear upon final judgment and reward, without being independent achievements apart from grace.\",\n      \"basis\": [\n        \"Matthew 25:31–46\",\n        \"Romans 2:6–10\",\n        \"Philippians 2:12–13\",\n        \"James 2:14–26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In much Protestant interpretation, good works function primarily as the necessary fruit and evidence of justifying faith, not as its meritorious cause; evil works similarly disclose an unregenerate or disobedient condition.\",\n      \"basis\": [\n        \"Ephesians 2:8–10\",\n        \"Galatians 5:6\",\n        \"James 2:18\",\n        \"Matthew 7:16–20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Paul’s phrase “works of the law” can refer specifically to deeds required by the Mosaic Torah rather than to all moral action. Many interpreters emphasize circumcision, food laws, and other Jewish covenant markers, while others understand the phrase more broadly as law observance undertaken for justification.\",\n      \"basis\": [\n        \"Romans 3:20,28\",\n        \"Galatians 2:16\",\n        \"Galatians 3:2–10\",\n        \"Philippians 3:4–9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In Johannine passages, the “works” of Jesus can mean his miracles, signs, and mission-deeds that testify to his divine authorization and identity, rather than moral works in general.\",\n      \"basis\": [\n        \"John 5:36\",\n        \"John 10:25,32,37–38\",\n        \"John 14:10–11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In apocalyptic and judgment texts, works may be understood as entries in a heavenly judicial record that disclose allegiance and determine judgment or reward.\",\n      \"basis\": [\n        \"Daniel 7:10\",\n        \"Matthew 16:27\",\n        \"2 Corinthians 5:10\",\n        \"Revelation 20:12–13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"“Works” is sometimes treated as a symbol of self-righteous human effort or attempted salvation by personal achievement. This is influential in some evangelical preaching but is too broad if applied to every biblical occurrence of the word.\",\n      \"basis\": [\n        \"Romans 4:2–5\",\n        \"Romans 9:30–32\",\n        \"Philippians 3:7–9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A fixed allegorical or esoteric meaning in which all references to works encode one particular institution, historical power, or hidden spiritual category.\",\n      \"basis\": [],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad consensus that “works” ordinarily denotes deeds or conduct and often serves figuratively as the visible fruit of faith and character. There is no single settled symbolic interpretation applicable to every occurrence. Meaning depends especially on whether the context concerns good or evil conduct, “works of the law,” Jesus’ signs, sanctification, or final judgment; the relation of works to justification and salvation remains a major confessional difference.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Human deeds/actions (good works as righteous fruit of genuine faith that evidence salvation and glorify God; evil works as sinful deeds of the flesh that reveal unbelief and bring judgment)\",\n  \"primary_basis\": [\n    \"Ephesians 2:8-10\",\n    \"James 2:14-26\",\n    \"Matthew 5:16\",\n    \"Matthew 7:16-20\",\n    \"Matthew 16:27\",\n    \"Galatians 5:19-23\",\n    \"Revelation 20:12-13\",\n    \"Titus 2:7,14; 3:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Works of the Mosaic law as a failed or obsolete basis for justification, contrasted with faith alone\",\n      \"basis\": [\n        \"Romans 3:20-28\",\n        \"Galatians 2:16\",\n        \"Galatians 3:2-11\",\n        \"Philippians 3:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Good works as cooperative with divine grace in the process of justification/salvation (synergistic view)\",\n      \"basis\": [\n        \"James 2:24\",\n        \"Philippians 2:12-13\",\n        \"Matthew 25:31-46\",\n        \"Romans 2:6-7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal moral performance with no deeper symbolic or soteriological freight beyond reward/punishment\",\n      \"basis\": [\n        \"Proverbs 24:12\",\n        \"Ecclesiastes 12:14\",\n        \"2 Corinthians 5:10\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian traditions the core sense of works as moral deeds (good as fruit/evidence of faith; evil as fruit of sin leading to judgment) is stable and widely attested in preaching, creeds, and commentaries. Disagreement exists mainly on the precise soteriological role of good works (evidence only vs. cooperative cause), which is reflected in the alternatives rather than overturning the primary meaning. No major symbolic re-reading (e.g., purely allegorical) has achieved broad currency.\"\n}\n\nBOOK ENTRY\nA work is a deed, not a synonym for obedience. It becomes obedience when it fulfills a legitimate command and disobedience when it conflicts with God's command; context separately identifies wages, duty, or faith made visible.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: human obedience and effort set against faith in Paul's salvation texts, with good works following salvation as evidence.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 18:20; Ps 111:7; Mic 6:16; Luke 17:7-10; Rom 4:4-5; Jas 2:21-22) · see Love, Knowing, Faith & Belief, ch. 6, for faith and works, and The End of the Law for Paul's works, wages, and duty vocabulary\n\nAVAILABLE KJV EXCERPTS\nExodus 18:20 — And thou shalt teach them ordinances and laws, and shalt shew them the way wherein they must walk, and the work that they must do.\nPsalms 111:7 — The works of his hands are verity and judgment; all his commandments are sure.\nMicah 6:16 — For the statutes of Omri are kept, and all the works of the house of Ahab, and ye walk in their counsels; that I should make thee a desolation, and the inhabitants thereof an hissing: therefore ye shall bear the reproach of my people.\nLuke 17:7 — But which of you, having a servant plowing or feeding cattle, will say unto him by and by, when he is come from the field, Go and sit down to meat?\nLuke 17:8 — And will not rather say unto him, Make ready wherewith I may sup, and gird thyself, and serve me, till I have eaten and drunken; and afterward thou shalt eat and drink?\nLuke 17:9 —  Doth he thank that servant because he did the things that were commanded him? I trow not.\nLuke 17:10 — So likewise ye, when ye shall have done all those things which are commanded you, say, We are unprofitable servants: we have done that which was our duty to do.\nRomans 4:4 — Now to him that worketh is the reward not reckoned of grace, but of debt.\nRomans 4:5 — But to him that worketh not, but believeth on him that justifieth the ungodly, his faith is counted for righteousness.\nJames 2:21 — Was not Abraham our father justified by works, when he had offered Isaac his son upon the altar?\nJames 2:22 — Seest thou how faith wrought with his works, and by works was faith made perfect?\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "10aa123a0b987cf723e6561f227cce7700e7882dd6003e4762897e09b6b64922",
+  "cache": {
+    "hit": false
+  }
+}

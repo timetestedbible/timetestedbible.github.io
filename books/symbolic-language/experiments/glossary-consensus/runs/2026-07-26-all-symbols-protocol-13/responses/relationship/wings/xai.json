@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124993,
+  "completed_at": 1785125025,
+  "id": "3c211a7c-5bd8-9b5c-a11c-ddc3c9d8a4e3",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_3c211a7c-5bd8-9b5c-a11c-ddc3c9d8a4e3",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry for \"Wings (kanaph)\".\nThe book's entry centers on the covenant edge (wing, skirt, border, corner) as the primary referent, where the law's reminder is bound and refuge is found, with Ezekiel 16:8 as the key illustration. This directly elevates the garment-corner/covenant sense that appears as a secondary alternative in the consensus responses, while still incorporating the protective-refuge element that forms the consensus primary meaning.\n\nThe core identifications therefore diverge: the consensus treats divine protection via bird wings as the dominant referent, whereas the book identifies the covenant edge as the central symbolic category. This is not a mere wording difference but a reordering of prominence and emphasis. The extension is also narrowed, since the book foregrounds the law-reminder (tzitzit) and covenant-marriage imagery while largely excluding the bird-sheltering and angelic-wing senses that the consensus lists as primary or common.\n\nThe printed Ezekiel 16:8 citation alone provides partial support, as it illustrates the garment-corner sense but does not address the bird-wing or healing senses that dominate the consensus.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Primary consensus meaning of kanaph/wings is divine protective refuge and shelter (bird covering young), with garment-edge/covenant covering, healing, cherubic presence, and swiftness as common secondary senses due to Hebrew polysemy.\",\n  \"book_summary\": \"Wings (kanaph) identified as the covenant edge—wing, skirt, border, corner—where the reminder of the law is bound and refuge is found.\",\n  \"consensus_core_identification\": \"Divine protective refuge/shelter under wings\",\n  \"book_core_identification\": \"Covenant edge (wing/skirt/border/corner) binding law-reminder and refuge\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book centers and unifies the garment-edge/covenant + tzitzit-law sense as the definition itself (with refuge attached), whereas consensus treats pure bird-protection imagery as primary and the edge/covenant reading as a distinct common alternative; angelic, geographic, and pure-swiftness cases fall outside the book's framed core.\",\n  \"material_contradiction\": \"None; both affirm covering/refuge via kanaph, but differ on which semantic pole is definitional.\",\n  \"rationale\": \"Minimum cores share the covering/refuge category and the acknowledged dual sense of kanaph, so the book does not replace the referent. It does, however, materially tighten the primary identification to the covenant-edge pole (law bound at the corner + refuge), reclassifying what consensus lists as secondary into the core while de-emphasizing standalone bird, cherub, or extremity uses. This is boundary refinement, not equivalence or contradiction.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The dominant biblical and Christian-devotional usage remains the bird-protection motif (Pss, Ruth 2:12, Matt 23:37); elevating only the skirt/edge reading risks under-weighting that primary strand.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_3c211a7c-5bd8-9b5c-a11c-ddc3c9d8a4e3",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4230,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1860,
+    "output_tokens_details": {
+      "reasoning_tokens": 1401
+    },
+    "total_tokens": 6090,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 194024000,
+    "context_details": {
+      "input_tokens": 4230,
+      "output_tokens": 1860
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

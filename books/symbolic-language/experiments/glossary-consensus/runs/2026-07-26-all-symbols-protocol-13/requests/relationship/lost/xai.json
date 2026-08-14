@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "lost",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nLost sheep\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the 'lost sheep' symbolizes the sinner who has strayed from God — and by extension straying humanity generally — whom God (or Christ the Good Shepherd) actively seeks out, finds, and joyfully restores. The image emphasizes divine initiative in seeking the lost, the value of each individual person to God, and heaven's joy over repentance.\",\n  \"primary_basis\": [\n    \"Luke 15:3-7 (Parable of the Lost Sheep: the shepherd leaves the ninety-nine to seek the one; 'joy in heaven over one sinner who repents')\",\n    \"Matthew 18:12-14 (parallel parable; 'it is not the will of your Father that one of these little ones should perish')\",\n    \"Isaiah 53:6 ('All we like sheep have gone astray')\",\n    \"Psalm 119:176 ('I have gone astray like a lost sheep; seek your servant')\",\n    \"Ezekiel 34:11-16 (God himself will search for his scattered sheep and bring back the strays)\",\n    \"Jeremiah 50:6 ('My people have been lost sheep; their shepherds have led them astray')\",\n    \"1 Peter 2:25 ('For you were straying like sheep, but have now returned to the Shepherd and Overseer of your souls')\",\n    \"Luke 19:10 ('the Son of Man came to seek and to save the lost')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The 'lost sheep of the house of Israel': a specific reference to the covenant people Israel as strayed from God, defining the initial scope of Jesus' and the disciples' mission to Israel before the Gentile mission.\",\n      \"basis\": [\n        \"Matthew 10:5-6\",\n        \"Matthew 15:24\",\n        \"Jeremiah 50:6\",\n        \"Ezekiel 34\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Patristic/allegorical cosmic reading: the one lost sheep is fallen humanity (or Adam) while the ninety-nine represent the unfallen angels or heavenly hosts; the Incarnation is the shepherd's descent to retrieve the lost sheep. Found in Irenaeus, Gregory of Nyssa, Cyril of Alexandria, Hilary, and others.\",\n      \"basis\": [\n        \"Luke 15:3-7 read allegorically\",\n        \"John 10:11-16\",\n        \"patristic homilies and commentaries (e.g., Irenaeus, Against Heresies; Gregory of Nyssa)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The lost sheep as the lapsed or backslidden believer within the church — pastoral application to restoring erring church members rather than evangelizing outsiders, often tied to the Matthew 18 context of 'little ones' in the community.\",\n      \"basis\": [\n        \"Matthew 18:12-14 in its church-discipline context\",\n        \"James 5:19-20\",\n        \"Galatians 6:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Identification of the 'lost sheep of the house of Israel' with the literal 'lost ten tribes' and, in British-Israelism/Anglo-Israelism and some related movements, with specific modern nations or peoples.\",\n      \"basis\": [\n        \"Matthew 10:6\",\n        \"Matthew 15:24\",\n        \"2 Kings 17 (exile of the northern tribes)\",\n        \"John 10:16 ('other sheep') as used in these traditions\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Sociorhetorical/economic readings in modern scholarship: the parable as a challenge to Pharisaic attitudes toward 'sinners' and table fellowship, focusing on Jesus' defense of eating with outcasts rather than on a doctrine of individual salvation.\",\n      \"basis\": [\n        \"Luke 15:1-2 (narrative frame: Pharisees grumbling about Jesus receiving sinners)\",\n        \"historical-critical parable scholarship (e.g., Jeremias, Bailey)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, recognizable consensus across Catholic, Orthodox, Protestant, and evangelical traditions: the lost sheep represents the straying sinner sought and restored by God/Christ. The main interpretive divergence is scope — whether the referent is any sinner, Israel specifically (in Matthew 10 and 15), erring church members, or (allegorically) all fallen humanity versus the angels. These are variations in emphasis rather than contradictions of the core image of straying and divine seeking. Fringe readings (e.g., identifying lost sheep with specific modern nations) exist but are rejected by mainstream scholarship. The related but distinct phrase 'other sheep' (John 10:16) is sometimes conflated with 'lost sheep' in popular and sectarian usage.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A person or group who has strayed from God, fallen into sin, or become spiritually lost and vulnerable, requiring rescue, repentance, and restoration by the Good Shepherd.\",\n  \"primary_basis\": [\n    \"Luke 15:3-7\",\n    \"Matthew 18:12-14\",\n    \"Isaiah 53:6\",\n    \"Psalm 119:176\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Specifically the ethnic people of Israel who have strayed from their covenant with God and lack faithful spiritual leadership.\",\n      \"basis\": [\n        \"Matthew 10:6\",\n        \"Matthew 15:24\",\n        \"Jeremiah 50:6\",\n        \"Matthew 9:36\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Backslidden Christians or church members who have wandered away from the fellowship of believers but are still sought by God.\",\n      \"basis\": [\n        \"Matthew 18:12-14\",\n        \"James 5:19-20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The marginalized, outcast, and socially vulnerable who are exploited or neglected by corrupt religious and political authorities.\",\n      \"basis\": [\n        \"Ezekiel 34:4-16\",\n        \"Luke 15:1-2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The lost sheep is one of the most universally recognized biblical metaphors, primarily drawn from Jesus parables in Luke 15 and Matthew 18, and deeply rooted in Old Testament prophetic imagery regarding Israel and humanity's propensity to wander.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A person who has wandered from God or is spiritually lost—especially a sinner whom God, represented by the shepherd, compassionately seeks and restores. The image emphasizes both human straying and divine concern for the individual.\",\n  \"primary_basis\": [\n    \"Luke 15:3–7 — the lost sheep represents a sinner who repents, and the shepherd’s joy depicts heavenly joy over restoration.\",\n    \"Matthew 18:12–14 — the wandering sheep illustrates God’s will that none of the “little ones” should perish.\",\n    \"Isaiah 53:6 — humanity is described as sheep who have gone astray.\",\n    \"Ezekiel 34:11–16 — God promises to seek, rescue, and restore his scattered sheep.\",\n    \"1 Peter 2:25 — believers had wandered like sheep but returned to the Shepherd.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"In Matthew 18 specifically, the sheep represents a vulnerable or straying disciple—one of Jesus’ “little ones”—rather than an outsider or generic unbelieving sinner.\",\n      \"basis\": [\n        \"Matthew 18:6,10–14 places the parable within teaching about protecting “little ones.”\",\n        \"The Matthean wording concerns a sheep that wanders and concludes that the Father does not will that one of these little ones perish.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The lost sheep symbolizes scattered or unfaithful Israel, whom God or the Messiah gathers and restores.\",\n      \"basis\": [\n        \"Matthew 10:6 and 15:24 explicitly use “the lost sheep of the house of Israel.”\",\n        \"Jeremiah 50:6 describes Israel as lost sheep led astray by shepherds.\",\n        \"Ezekiel 34 portrays Israel as scattered sheep whom God will seek and shepherd.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The lost sheep represents a believer who has backslidden or departed from the Christian community and needs pastoral recovery.\",\n      \"basis\": [\n        \"Matthew 18:12–17 can be read as addressing restoration and discipline within the disciple community.\",\n        \"James 5:19–20, though not using the sheep image, similarly describes restoring someone who wanders from the truth.\",\n        \"1 Peter 2:25 applies wandering-and-return imagery to those who have come to Christ.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on the general symbolism of spiritual straying followed by divine seeking and restoration. The principal contextual dispute is whether a given passage refers primarily to sinners generally, vulnerable or wandering disciples, or Israel specifically.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A sinner (or spiritually straying person) who has gone astray from God and is sought out and restored by the divine Shepherd (Christ/God), illustrating God's rejoicing over one repentant sinner.\",\n  \"primary_basis\": [\n    \"Luke 15:3-7 (Parable of the Lost Sheep)\",\n    \"Matthew 18:12-14 (parallel parable)\",\n    \"Isaiah 53:6 (all we like sheep have gone astray)\",\n    \"Psalm 119:176\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The people of Israel (the 'lost sheep of the house of Israel') as the primary focus of Jesus' earthly ministry.\",\n      \"basis\": [\n        \"Matthew 10:6\",\n        \"Matthew 15:24\",\n        \"Jeremiah 50:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A backslidden or temporarily straying believer within the church who needs pastoral restoration rather than an unconverted sinner.\",\n      \"basis\": [\n        \"Matthew 18:12-14 (context of church discipline and little ones)\",\n        \"1 Peter 2:25\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Humanity in general as prone to wander, emphasizing total human waywardness and need for grace without specific focus on individual repentance.\",\n      \"basis\": [\n        \"Isaiah 53:6\",\n        \"1 Peter 2:25\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Lukan and Matthean parables supply the dominant symbolic usage across historic Christian teaching (patristic, medieval, Reformation, and modern evangelical/catholic). National-Israel and backslider readings appear regularly but remain secondary applications of the same imagery rather than competing primary meanings.\"\n}\n\nBOOK ENTRY\nThe scattered house of Israel mingled with the nations, sought and regathered; more generally, any unrepentant sinner.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 15:24) · see Jacob, Israel & Ephraim, ch. 45\n\nAVAILABLE KJV EXCERPTS\nMatthew 15:24 — But he answered and said, I am not sent but unto the lost sheep of the house of Israel.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "dbad88e28406ef567841a15280e0cd96a1785a3214df142690b0726a5924560f",
+  "cache": {
+    "hit": false
+  }
+}

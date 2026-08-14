@@ -1,0 +1,264 @@
+{
+  "id": "resp_0b5ae21e78043e4f006a66da2ad9688193af3a3e39636ab068",
+  "object": "response",
+  "created_at": 1785125418,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1785125470,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0b5ae21e78043e4f006a66da2b646c819385886d0eab13bc42",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtpexlSJlqbo8QLKdgls0mjsOpXFsObvTW0Ct_3pYmXr8IMUoSXRSnnZo_kknE9y1JriLp79VptwEuPHYx2sRLVi8MjIukGAbUM8IEuMf754gaCUm7HtMEXUUVTXEPeVN9WV1P61_Fq6q42waCFfIFOxnrWVKMZrZN4rLBly86oZSll5DsnODDNxb9QVF7YkKEqPp0uwyfMoly8T3cTnL_uaIseDxctx7eH2iAgBOwsnLKn_SZ0QI4UtpBYlwGJAPNKJzqQ34r1tLh6l_EtKuO-6-bpV4-qU30By1w_rqoNtjFbHnr_mTPpxeT1QoWQYebVY7BWp9l2sX3GdA_XEilK6eQvrDBvPIss-asmUM33tOzuCmETmZiNnjQofesQXr4vNNaYdWbi_nL0hJJSkGZ3Tg8GxPg_i9sxdLc9mL7IwrSJS4uw57aCmgSrTMIltDHG6uokLRcPztt2_sbvncxI9MONeFWElMHqMnl9OnSFxBzuBWCg2O_450_NU5L5dNXUC8OMoCxF1BWDpeaCb04JBYfUxBvYEa4oJ2mfJwCWE3QoaJ8RzYq1U87ZuKet44mtO81RnPj6o7bJ4vbhBZT33Cxo2YuLILlSiUjJPzr3b9ULUiD7hvaXRyot07kZ6-QZpLA3NYxP9foGuMYNBplkf8TBAdXManSERRZo30vHK_mqLspfwwW6XNKpeIdLEUDXjFgLuu6i5w6CJKprknZNScId6SBeMhpf_Q58UA84n7o1aHIKmzQkkEw6h_Mt4i-MJNclNFq3bBsTzspdI4mP0TgrYR33WiPOMai9UbZsprWn8EUMEORC3wFgPgP2HqzDpk137XLeXfcFc0_R2BYSmurIB-hqMi1CiWs2SvywWz6U0WWO24cZwwuaLBjPYz622VYjieoGV-ttfrEEvBUSptVhMKWCJ3Li-1iAPpgehUAkw5nMdryFTUSC22uFXaXjoIWbGO9fa982Cd1DYLfPza5cu5CGjmj8LOO35C-EjTEOUpnVOzYSsJVmkQKHRYU4RZoxQ6vxP_50Ev3ATK4AtUfe6YEGb0IF9R58kz6rJm2s1EQrNBeZtEdZghFkBFWVhOmKkewtKxwXXZw709dv_eRbiG6Ki41wBZNlLynjrqBxJVm0bED_wiHFnrM7HSP-VZHv5dK4-rEu2idSGVngpWuL8xoyTJ8Pj5dOduse2mQ73BuJoTq6eoA3SWP6a36i2aMb7H5IeKTHr2mkmdM16yldyFIn9xobcJ1sAFopa9_Igl6o-Fm3y0N8VYdrNV4X8B5cKJOD55sOqmzeIfDdpsvw3m_1vIN0rMpHkZYkdXkdtXrVBCnCGxi0A_GZL7fVye-rcSBx1zIhYxmu-IhUBBKFUkTIqu13LNyHtLBXpN5mXpYH3zv7erDelDFqWr-95OeU_5xO-Xed7SlPkd9FAR1arun9w0H7zZCA3VfqbeoL_eYelL1oiHpF_lN1WSuY3v0TNEmaM_KRMTAVjv4H9O7-pCccBppXS5Y3RvVhmDdSSJ-1_W0LlEwniKHKKdM7TaL4QTzibVmOjKKvBixSmrHLKHlE8jayesSmtL0mIk5TTPdHwnitxplbtHMiQSUagVY9MDQe042KRhQafN4EypOdNjekzn4m3T2N64bfkb2qkI3gbUlwRIBaGYpWn-AVuOiXIJX0DklABS3Euo1jSgC7YVEVfdkEAj4C-1axdwaPCRQsJp0q5XRfUYbYY8DWGfvZvJHPgklMHeV8Z2srkUtrMozQ491v3mhb5ad5OLA3uhMLFd6vSboKNXfnZ388u-cUgS2HPxSS5UFWgMzq_rDA5S1xGQ3hOSR3zFqA3oEUmU8UGRXIX8SmCHyeMNh1EaIEE2DFOqsLMJ6zv5vtjeJxBGWK1it1jZ2eL3X99jLyWY8PvMgojWt-aO-OEjoHCHYRDzw47bCLaApp_AVg0nlUvkC1TsQXIpi5TIiqGf7IgkXHmWVmBGlj18mPjDrHCPWbcqAQ4-X7uro8cCpWhFHz6eUrK1R42TC3kwFU-ZdKNxDR6MVhUMvOLa0bEfYTYN-nB8FT_Gu_qR-nXeft_UhZoGsW6Wu41z7vqljnvB-UktIKTLw62PJDJpinVnMEfnubdQlpnRbJbJz1Rb83QCM2GrLhPfQM90CUsZyhpKSPG9sWxDxOEGRsQ7Vu4ZNENGfv92aPFmlIsaWCDMiSuGLGA_howDhlm_M2inE3-Xxe-_7-3wGx6dyG7AUypmNoiyDEMUEqaYCYQEe-kNj7Xuuw-9_T6oCs_S3wxfnyLfnu2zK5yaGvq2t_5ZOSv6lsjHpaqRwadFUMsD8sKmd5FJUE5OSyfYw10BI_Ua24DLWvX4y1ua9SzfqRnK29wL2zWPxjKyE-o00-in1XfWP56m_sSIGvHGgbTfmZVTCX6w6-tRNK4h4z85taznpAM_hk7hcGaum-T7DS5tp82tvTGYkNV-hBuqGXLcKez-13ZL29tsQov9M4nuprNbROXZqay7cYqmvU8-6XdI-LVWDFXc_Vw-5COdsN3Sg9qDI5uy6EtgxgdHp6VIAWDzgVb5hTde2cp8AWTCOF7cbCep_8w9yMjca1GgNx5w7PajYmX2SZdkdyvw5CzWIvPud4dZWY424mUU2W1Lu7P26OMrfDNsbZLRX9UDuLzuUPvq5iJkntUH4RpH_I_EK7C7gtR-qrE5XuX3kEcqGghnUCt3V9hlNYgHB33RTGDyQyp_0ZCg5A1Dmd42SL6nXZz98pKNiAJ3zisabcLQW87fUEA7xump30V62gOtIxJdjOJBAgsjAnkCRjfzEIPbvR25uhgzbP3QDSmJE4m-v-LtPgEJv20JLURTqKxc2UozByjssQ9Hd5E0H7zrfVTnDKt94euL9HAPk3YsjSEPxs4BgPxtp22uiib-JJl-fS8YdazToIgOzWxURUbsnaRzxosSnZW-1JwYhvxLZ3mSQVBXAyCaM-ZPayoguyhUdfPOxGN2vus0OIVXLl9pWCDT2deG4rXmo9oJ9ewSzEgj0CoyVAeJfqNFhmLglDAlyDEakgcQe2mLiCTZj7MUTiDUAyIO5IgeVnpT79ZzAU7cBln-c5U-0kb4O7jG5NWyIXi0kpBBVQm96MHJ_DH6Sp-24HWaB-y9lz7UL4niX2nrvinvxcx4hxQSDB7IJmL_fWC3nk9rawP-TCc3FAAUAERy_P31PlvQ4hmfsSberDJTjv5FcNmo7JwEN5njnLbq48Lvmg2TPXN3mjPMS7eaM0Fxqg3dL_flV-BYUR41ghRAnCKjXFwDrBUEoPavmHCw0IdIvNIXK7TWzbaO1OFG6fCepTJaLqRl37pEAfRQWYRAqh-tyA3KjDXWWbL9jZLJFkKM_5J_uXlqYGTE0rGRLHXa_FoLlzDFEdDn34nEl1nBci46-WHVv-2Oe7Su5ikY3kXbe8ACtppQwR6VSnMYUbB542io7diDnJpBCAfMpyOtebC0jEp6I2qPHsNKZBLJLK2tupYFLUBsDl8XklmN7Y6tTpyQOfNrJPXxs2Y_isd_xct7AjZXJChd844Ema1TRUY71ptGkqMsiEhOg8Xh_T_Q5U3FYgbfMMUr7Ce1DlB95EjE_MDdFKJzs2PsefJF89U0ANbeippM4H8vD9DPWQnspG7yA_EBU3dv9yq8mkWc5oL9TsO2EYlFE1BOuR5XptBVr5s16NKNTWnL1iX3lpi8yc082wz11RN8L0pFn6ZJ_1BCZQ0OBZHJR4I2imWMaXWrk9EtFQWZ9_JcOJbLv0vH-5G17kTFfsdBFRLRema7ea3ZLVGj-PtdoAPre0PL0yJ0zfydbA_KT8IjyoibmQrEeoOviaR5CyRd-eRfLt_ToBz3b9J1CHIhDnrWGEkT9lOMblK3RmxTZXD-gzoO1zBU1Vf7ddlamc7LRW2AXPuBo2JWxiHjmtbX-rbzDI2jmP7ccfEqj1kH41ZNAVO1NFmkq1eRmKDfVCZlBvL3s_Hs3UmG8c9Sig-bFQ7_ORU10-sYrab5ahyn5UjI-HEJP7ZXyjMFNqMWZ1Eu1PCvBGn_-EKCiTvSU6ky0PKre3faYRxUqUjJ3DQoIpUKCQtPB1gYvFdHy5l97HJr82YcrYBCpNwhy0pX9SqiZsCb-VLkke-qCk_hcYHT0TATFMh-Z5xvkxM1Hyar7JWszHZx-ztHPF5JUSV08lNydHw6ikf98qRHCm_Oue6r4c18OZKUyaCZ_Zp2SvhUmqmEDiGBnNzIJ8F0YC6X4Iskzyr6Fr4mdUYb5opc20MIVule8x97sedkiRIDJGBJKj_SwvUjU-nmioCONDshoTqz-d926R0XnO-bt7X-uTjbxk=",
+      "summary": []
+    },
+    {
+      "id": "rs_0b5ae21e78043e4f006a66da3669148193990713803d215ced",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtpelcVM2cqCJiw9fhbnrKDQlmlxljhXiCwm1z5ByGyfOGIvtEGRH8OFrdV1PeXVWl0IXgtUp4P1oFO9RK74XN1XgrxDxsMwR7vbeVJOr1KmWt9v0KHjLHdu1Kdo0rU0hY4nq_6qQ9oQK01r1u3PHhaj5bgjOXCL4-nuWNjZuMjGmMKPWF1oVXf2GkTQ5QISvNBK73LY_lm2D4dzb3k551eVbcfDZS6YwLRT0IKFh2s-Liz5WmuLYt4qAaD7Sllk1loEp3iungYkmdBab89lzf9-CVoBbkvPQMrWgx8ttQIRZLpRzRmxae8Nqt5vrNkSZ77NBgu8zoazp0ikuKw2WlSBMKQr5MZ0IFskyDJrIvRgR62OTnnPVkLehUE7EISAMe-Mn9DTZvLv_cdNwP5RCn8V3fga_AC2KEsug105ac4bQ8WVnmGdVpAQJfgR6-HrBYPORLMfIs4oT0QbU8YbSz9Y2HWpeTfZbHvwE9nOXZjy5RJQo84OR9NVBfRTcsguRwC3eMO7JTBUUsAqBs-7zmO4bhTzZVpYnkETIYYoGkx_xg4z4NUbJpLuG5vhsAoVrEimvVUgeI7FvxWVWllKa6K14QTj9U6xTL0U7nmUMdQQJZMHDz4aV_uErP012mHbvk5RPSPXWEPPcaYGvnx1NkkuSdt5rHVfIrWpAiwJ8ix6p0Ax6A-AFnEYOVxFkt1eNZoI5dGJv5LZ8Pz7UFA4G1MiaHR0ldoNHuagK78WysGOXEEc1nPJGEczm_eVfxwvuP_BKKVotqj44Ev2UTsl-IU-uaUIuOpOq5btC4dG2UG2NjuUFLiJOqtbZn7fiTDk2dq93G_5wIuQaxwN9tH6KYJOXqc-j1v005SSz6yPek1e3fylG0m7tMQlurBWQjUbnQ_Th3xVtGhiprl3iV6nHyF6Jm7FkiPhnCBTZkAF53yQJJfajb-RV8ATMecYzF0zUvHNxACklaN8vFJR6IKr4YbixiZU-u9AXUUl6sNY_h_kt22gk0tomV-AllPuMYFPphPEmjfCzI92QjUHL_YESQ-CaXo24J8GgWVZC-wBKXA7K8-EM-pe_2Loa88j1tYmAo6l-xgOGenYV0b29RgMlSITwhV-M9UWMgcZstWmLChrTz_oG58zgVaGCq1HkgPo9JCLHXQoxMdXGxYRX2U7uBJAtfWzUZpdjahwl5BfFved91F5fpiXevUTk8kDJyQKvaYfMfolM__VtGFhMuqvzIp7GzzWTmZWYZvQT4QnkU9Ss2giUI3vQaAcDlPbzMmFmw6T79xWeP6y-GmEgK--F9UAq1_AtPch4sMvdozAEkQVchht5cz0uHH_PG3C8fXsPfuC_gUan0aKB2BUZPmPTp_pxaIe66GpTdSOgd1I1HFyZpObxycUmn-daNjwk0rRX3QZMklHChsiAzn03L5rQ2VlpnryqgFR9JmwUvwU6j5veQSJTgh1sdUOLKZB8-828jfIeB9JdciD8Sx3GFMC6vExELUfQWL2X7emJeUhBPMlo_7lBuvuVW6G8VXeAT6ztyrUe9eZDzRgSYOingiW1osKRbt4LSYvib24Os6oZMaaWHsOMC2-RfoJVlz5cYV6FErsl7DeMGBhRy2etYMZN87pSV21ktcO9z2K813pWFOIZs2L5j42_zBpZad0FHMu-VlDkM4kaI3a7pf3eQ82NaTdbLoRtjqmRDX6ikpIcnbRirgC67jBzJT74FH3wPFPTH8UbMV-eRKEMs0Arhoke16Bw322Ls3yWkXCuJMGOVmiT3p6T2m377vYN3vVO51w9qjEArR2iGsqjkSOZMGQHs6jji0p19lMGDPnIpdqSHsGr37w2_8JZAZX_lHcKH4yBR1nKq3f7nD7rh0E5UH2T6lEdIxQ4hRn_MkjJNXfMuQBE2ucpSsxPhZa5pnBE1JWOzFlCqbhOwqBVXzSUs39e2cMQH4Ry3U_1yqgkSrL4kRQuX-dn5GRw0QlFuRIrIjpk4cOQBc0SgSs6-SoJXgX4RESNI3ewq6qYfHW8CoB6N1owTURGKlpISV0lIHYPkQ14R16ItaPGzG2M4vogyfusdwjJ6DTQLLc4kR-GpvHF4d1yk4hNCDKFvHUH-piQnF5J7ET9mL7m5KGJVzrZ74SHj8OBSzOHNOz2FlwFanJ33hdilaRFwwnGr1A1y7cu4f6KqhxPWtq7N6eHyPLUhG8q0N99Vqf80MteLQr1FmYVIVBf6etRHG7O05fWwCj8tz8WjcatN8Gy6XDgD_YfB4zAnjLiMpiaeFAqHv2snJyvMMatKbu5_uA7KeClm-VbfbUwMtCvWVfrx_YGQv4xe6YvzvYPUPF4z4-eUDtjyqvx9twqf9SrIttQ_xCX8ViFAlp4kL_7LpnXCi6kWhfL9rKRHFS0VGkpmjLeJ5ZbMXsepjHfU8AWnSTJdzRlMAe27lbaTlKXQcO-5Hng7G4f85WawkF-eZLn2w0H-zXJWgrVoHnS0AFz3Zk3PW4ByyegrbiK1oUqvQ5qIt_a7351mUVH1wvmrvMMaxdtWq6bw1DGjvMBiBclgXuKKa4gBbdhf3AOEx63e4blzELGianwGzCMt0BaPZVxBQZ-WWqA13nAEYewmnJK4I--GkBCX8vpQtR14Cd0uA5M34pDBk2ZPJhHRajnODiPDQCmhRLtin5lhdLNiy9XRMtGjMdnmcox1DT7o5V6e1RezanVCXIRFUiGTwaPW7vC2MOnbukgUa0s6dA9MYNw1ejlGsOkTuuU3vFHdih-377F49bs9RVbz3wd75EsPSd0w96hQxPLCuX5ZS_Ycx8opz2dcx5zlw02h9jm0kVrN2RNxqHoN4UqPDecAvc8XuzdoJODGwqsu717DRGwX2SGlUtd9QgKeR3--W83M5pgvwKwAYqg5JGKOdesZ3_rdhUFClzN8E3cm-oNVZR6_dAE_pMHdnWuLGi-RsvRUDwre7tSBOjbSo6mfZliP07RF92J-6wt0NNGZFTU-71LMOk8KgpNnP7Tv5-Mj3OrDaJOpyydhpnG1TPam-j-LbDSDVwZxkZRp5bSoK1W0nudQw0QXG3yIQEX3pU_GnfGNtmXEVyMUYzDst-ubKVYej4vGD5-uIOrJiKZTD8Sm4tgGI0k5snBP_H2Enr29p62vHhNtf2DlYfX0hQ_fehNOw7_BxJl4oXwrr4M56_44Wlu2j5LMsFvAwUKKU7nqvRNkhDBHjlCK_5EN2d01OLT5StB_OOmjY4IPlE-Gpl8xahpUTKAXMZTLFOqBBXiacHMTJweZ9StA1iv_33txU3va-vPTfgBH45N8PfRvjHh10CMu8v0vg8c35OQ620D43_s_r5Wwuncc73OI5KDNRvg9NFGLqIOd7FDDxaZHDobCW71MrsNRb0UqWyvGuVZMVy7AmhPEEhMf9xfVvPUV_eLYHSxqknBBv0cmCJdXuU64oRbwdDQh1NUkCC_lSBd9Cj79oIRLMA37Vz00Wfxgr0B5RJeW6Gc8U1k0KdajjiQisa_Re3odA9AJmMSWj4Nnlo97jnqwUNsdC8Rgd0-ROlxK8tSrHCXL9ac4wykGEN6E5mxnHofCTQEcuXYHOZM_UG7-7g8sUXcs1iBUcqymeWn73_vSw1SF1N_wdbPX6Bu7f7XLYtV_3cM6AS0nI7wigLAbJrfqq0QU7AuLpAZT5vX-3JrfRxPwsZgQGlaNlGYnUhFdLf3MSrWwiT3waLAaZdL8haBWjyxY2lh_0ijvM_w1aGwANvXivZRpP2rxWaThWOb53Ss8dqnlnpGRo7l0qCWu35Gvv7dB__byLukCA8CEgc7ZquDJRsOgB3vnK893BbD5o0oIgn76Te09j1zhaDMwWJr5XtXWYCzSOZB6DOYE38ri-2BdRzbuaEjf1-FiJFfq99ntcMxUFE1HsaGEDOw7ZbTNXGFBuX46yj8z5FuIlh0BVmvrxqpsrroG6P0wpBF4uIdkVicLa5KZEjTm5PSpR4nDGY2YVMUMWctcgZOQPbha_ONBqizHxvQj7wVc6NTPqSnGEOTpsOM2GW3nQjv9dYF1PnKaPUoTcULZ45XlTiN7LqMHVVIYq-So2ZeGr14B799QywlwSOKMAQX8OAhLWrJS4hmGei7KvGQcFEdlAIXCWESJawxL_pCiNsGcQkR2Gi4vLxEmLMOKidaQIMuSp1rnq3LjVzoXn0DhCeSs7NWA1Ny97hlvFpQzeYUKn7bF-Feh1r_8oO_7mMBQHuU2LY",
+      "summary": []
+    },
+    {
+      "id": "rs_0b5ae21e78043e4f006a66da3f4db48193a70b4a228fc5e790",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtpeW_mQxlVYG6UIb7bEIrpfM2QQhFeNuqGk75UsoDUvX35MG8-X6rKjqQ1ZrG7DzZn46LYfXcTkat7LzpVi6yHgF5h8encLPMOghPSwDv74XIMH7bV21-rJOgDcHolKAIcLYAE-UBvIhOx-Oa3O5tw416kuKyoRpJyenJtkDR1LRanf11CCAH4gdIbHxcIxCzsQ0U3Y3wkxm-EyXbyt9Br4APz24ek079AMRXQH2FWzXVa1QGgTwrNfTvqy5PIrsVfzAKTgbPjeujYqCzBp-5jKjkY7Km9z9HUjQx5mXXFToVzT2JrFeo2bvx_ckd0OudZdLVuTICrBPhv-QYtTtSgcN4WN5cREEea8OPfer4Q-CjUIl5S9UKDc3yYD393j0utbcQ-YkIfQUaelPjUPFUFRMJEUXCQy5f5ZXCvno9KLElwB_C4S7-RjCdvnAkdYUbTU2iMvE_8pXRu95hMyTHiPFn_Yas0-w8Lpbs_I9eKpRa3EpibgWqzxxrDrXaeBzIt03HGDLPc4FdpUNLQsh1NQjASaUqFVYta8DaZtFncHqkajmokk26_PVl-bI__7Wsb977701YvmfTVkp8-Bcbjr_rpUlHlJ_C9FJIh-pV5BwDPhRN8cCZwPrpDRT2Fzk__g1hqyNJiOOVT0pltHBOxc5LNIHCwmsQgtXZTm0rQCoEWAUu51mwOU1_dyWMp_K3mw5GlgFKnf4YQpc8FiXufFnhafBnIxZM2Vht2TDhVSCZ97JFevdD4f80T9P0xxdtTYF8F60KP85h-0ImNEJF64zX3G8KricLIuus1ioPpI_nLnDwr7yL902DWntAr1FFNlfJ8tekD0hK-iF5lSzZGvd3SH0hwam7T9gJ9k9nfv_BhWtUOXkoqpqNubvvsvQ1DwRa4NcWTwlrKEyC-QHKV0Ty5LCyGhqa8Dq9r19US7sDY2r9KbTID6j88WDA3jgMwdcw4HHAsXR4ME3EOmeDXHpNmDn5WDFWWnZlMBebdz4U1hxqWKxfc9KDdtePukdJ30naF-GqqPORCvxhqh1ttfR_7uxZGaHjyQe_yJmyiLjm_7D0cUBKzWQ7bFgJ3fK_oaVd5ZvcrapoOKb2t4GBKGW0GwS-UArBKsvWz0ln7hsA6rU1DDTF1AAbrYFwZ_AIEazR0RUl14ysqKLDII2KdUjfEGsVthhdSATXwVwQFqfG2DYENpiv0ChWSQd4syMhR6yHBeS82_eg16UtGx0K2-3CkBEUvPkYdZm6s5v3u34Mz93Ac-CmgM7_ZZoEeCNDZg_90B0yy4Kl57NWrmKmI-thRvzo6QHjjiOSV2AYASfWinJ2kZAEflOMTXfNHJX5Nlswq1osiRT0b0MYOofBendR4zmM7BYHE3E4S3yPqZ_Yjev-hAqzTfZOf72-S8LScgFmoyZspvoVA_6pnp_5r2eSesjy08RLeR2AJsVoQ6ErFQDcJ3rlaOG9dIhOZZ18aKZyP15YtFA28jM9kAtoc7vxAdJhgRZg0dEP4zT1WGqnh6d0rjfQVYttPeun8DemUXb4qzKIU_xXxADInI7eFEatoDn1akDg5rVHs1Ob5lQNmj_CAqtCfveq0a_-M9MFknLJI1CLEsEB4PW4DFtVzITf0vk1eva8OhuGzctOTbd4Ap0Q3atSK-qhSVqukFAcDKcBiR15FzhC7g8BQQoDz8zvXqSaEardc63C7mnbJM3S_FA8-iKtEq5YAcwjZ3FN7Q8AP3EKM4g8RFQHHANooss_1Til0Tt6AxEk6wZsqh2hOpmZ9G0kAPrK9lj01UwW5wEYLGepfps9aEOmBX-MuOCfTYwnKNJCSJ2vJyObNL5IVxI-4C2PCrdXLcGbjVDVPk203OiB0BTQJDy8LPZP6iosg1i1eJX2E6-BBk9yKdNXR4MlcDCMkJaCPHJPOFAKOYCEBcJ6ZDHGJTHvoDvneBviT8adP0kcYzisLu1GPgSc4_0-tR7gVvhblPVwtS5gldPBu7mgtSSzaiWe3dR-gdKfNeo4WbmqldXChnf1Brpdg8Stk4ji_5JIHNrKG9URY_s6raw3xOLMirhUEVzqDJg8hZemMX0CVU0oUWeoFFfIBr1pKd5U2VIpGwc66dUjiMniLcC79sdHLDbDYyak3vUXmEiOfxiCmlKOX9zb7vibO6cGEF8_tn8RCYw8JoKPAYlw-iIGAPdIPwc8-JpOLMUO8FoOcGtRRCwQJEDGoTn6ZVS2hgrQ63nxyDkmLSkjtd0MLKS0o5rgaRk0y3-KL0U7qpBmPFRbAoQ_9EWK4qP8Njk6FaxPX1lIopagaltRdsLMIhuGuhS78CeL59pBxc_2mKsmmIO0c74G7tQYZ8HqszBqhaIo0YZOq3RPKrAV7KN9Dgrb7MhhTWA0qqI1iA3RDUyE_8N7W9RZhw-vg77aiOpOXjAHcE0xJfZPwMBkMMSjbKzDJNn8Gc89moWjZquZhpxJIL2dcvOYb87zMdGd0St10HvRR1KB9isWu5fdd8xVxPpJz6k6qWozbZAUxsMv-7PkoNHjUTQvxwiYjvDChtxu7O_T4TEOJ_xn8OtUJDlbg5hi-ZcZrX_QgUNgjLTmtMPaFz_vQ4po9B0ewFCG86KU8nyb5KI6rjIvpolIiJHE4-fizZDg5-uuBQ9ut1pJhH6ipMO4knE7IUpAVoRtOYsfteLM_BcCpeH-46V0N0R6wBd9hMZAYZcnpDbDMNndAN0fXRWkptR75M3ogwKjohXngbl-s9Q5gpAimgd1dg5aw93BPzP_HNHtCnSobydsI8L7c7k3411OOaQi9Sp3c8oYL3JACYX8ZaELtndueiY8TJFlDf8Lp-IU8L69odZD8mI42-Udanl1TQ8L2iAMcv11yMZ8f0fe7A7giTwdoxPzfEvSKTcyDraIRSgtZTTXNRO6wiTrkqh3pGoxzSVcaTR5SbVZiSCJOnTNhCGJZ3v1llRu9ZE7bceORQFhDMWyamooGQBJjnlLz-VNKRoyT0INE1mHvNoEYemssu8Hb7rPHVlcMmDJlazGzyDecOf75K4xzClJYmkUq-VI8yaOkwO3wC6bFcIcuYUl34-MYB1HN7VIWaR4Hd1SR-Cu-PMz1qTCzf5Yb_fy2VTfWxNvVSpd31C7FgsLOEOxHJjCeNHBD0YOMTbMB_y9VdYuMZ3Z0vfP8Zlz3QCt8orjFdq6FoeZl76TgPT2Ixphrorn-XheOm2NPMYx4IHBAYkqWYcUDJjjsxRJHefAd_zPtMK__kdGB-kMOWEywW-_nAAXuTme6E-OuHnAw7ZtUiRUAaTJBHY5WctVHmTM18UlpviySJQq4K3MnWQoaD3oZGGrXZkRiYIrezNZOExmFun22lm4cG3h26SKXk5wpSpvBR0WdbBK34T-gDB-8Yb3owyP2N7jvRbiekS0GQp-OCe_WO5l2zaaG5fMH6e8sMPKkj1JNNoIwpXKuXVv9rTRFZ5nQuNBF6n39IfgZML96gGWQvdrLD-8Py4eR2U56SQhoInOV6s7b5fP68fKbSB2At_j4wV71Fls2dgopNJZrAaL8mwW5XZHfa_Yk45gYsss7qlYdkcbQjlXArtjTrcz09MqPFCadKceStqyPWI2W3MRY3hUZ6-L_OIg36v_GpWyvO3miS53PXxaA14tkF9g4AHqQfcg9QzmDYj92fcQvXariCH0BW3fJOj1z5WY6V7O_YKuqceW4DZWgLAqKKPnzUBrcDRC657LgIQ8QUzwZAnF-_QUvBioer5BgnjSmtsfL0Zm3ZKhiqUqgimsqjLvDZS62sDuT_g36Hs1e8tZmK6ZY6vFDrBSQ6fxJPPO3z-q5oKAnymtwxgfooPY9cuRiObhQsiVhutUowqQusD9U0Am-NN5wsKYu4vO1Fg4qBA0wRPislsnNkbE6l3mVsNpXryKGXzPwPGjZKAAK6wfJS-yUXV9xkcxlX3L9_xLPC5kIdY_Ish0VCqUicXVVVkIiAhEZn3enJk4hov5aVLjKNEvrb5lU3QwXzGhuO5PuZpecf1egJ1Dosd01W_7K9JDXqHdYtECWQNW10iY-Qe0Im0l6WnUARgKpVCS0N5kOr1pDdhat-UAeYr0TwMPt5-IokRGWfyd9AZ1oUO28xjmacqjaoOlqHcBTbWf1d3JmN9Mj1eZo08besm7DDVPXN9TOw-510YwmXYbCYKRgAY5l6e_0JG3zCRpKy0xv1DdQzq7eAiaYig9cLSljhQBkizTVD-jA_WhgNWmmcAYAB1bwhTV4nd5GMMEi1AfqxCphl-kLlUI1taH22Fcsv9LXj10MMftK-ucTOYcy8Qo7UnSgqP0oTkU-VB993kXDRZWUW0JUyeKK9rc8yOUN7wRyqnc4fEYkA3ZaK_2B2UvxAqJKedMPjYk6FgrbLoQSYoaXU4u0B9VXqN9wV6D6zWFn7DxNenhhzYf1XVYB0FMgTwhphOYLsnBM9PQU69me5VkDJIHEu92g5RKfNw1LmjWm6JlxkBrEM",
+      "summary": []
+    },
+    {
+      "id": "rs_0b5ae21e78043e4f006a66da49c010819393cba0376915bd83",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtpeVQgQN1rVbLXP0autRZP8RUtsmKdTFde3b93lnqN34ZGJuG2fstFY47kz9FbfayLFJgHc_C1ZFynPjvKuvORlxYcuAfrPd0ZpUGwfBoUEUQJUMQJPNzMDMMUozQ3n2D1ym19v8uWUUMwKQyeNWo9MhToPqctRfVgDCkJ385k5L1N7Co6F5Oj73SOUVBUFiVMFfqsxfncnWsgDtvCm8AscG0LUQyOS6h7s1Q-zGGAuMsO06_-8iaC5Un9tdn96YvfHIQzRiAp9_N-RywuPkT6ii-YxccXqutCLkJ8nwkM9cYJIc1VHlc03vh44VmDZf9KNjGVPizLE1CDajzlS3ekht-oYUS7Y3qhAcn-x9W8avBB716pnpiCZPzNYPEACkEAO9zG4SSOLuTwG3vvbtXw1d96-PgAhIPRPsMPmbXCmk2vs3Z9MG_h_uTyE_YYJb08iqh6DqDYDB9EJk29eidpA1Kr9M8IjrlzHYMSvgcso3WWbIntzX80MUacMBvjsyU44Qralqsg0lwb_NcmD1IB5IewEer2JiHUEJqBthh-gYZjwWc-jQF4WNGlzU7adBBH0aXDEndkXyFh2wMlcCgTCeI5WbAA7CKqDhulBfpxt-qgD9mXoFh5Cczr73JuVs4C1vP7WgY5-8QDNsh4vZlqB7mioctWrjilsT2HSc3VJZwtO5-b-5JFj0d3g1pMPibkVHT7SKZffpJfERG0tT4vY1fuXKVliUAqRKZvbm6HzjZmjDwMWY1qk8cVRLQl3pTbroT3BICS3tH22OSurI8PtJmHR4asNVNdPCiy82Odk4PlqRZ63Da1prYtsgam_JjOo28Du9GH65KgaTLrqecU472mGpXvXl4EVhjdhQu1tRRkxQSrVBhV4iGDc-_Pi6hOgYukqg-iB9TjDYnnlyJdOr2p8yGNTMkqDjkhf7i51DmqI2Gk8Pe5jS4aXXfJTGvRh5QW1Y3huzrg2aX-7A1zfvVnoZZ5T6Zi2ROOEiodKH8T35I-TNNUTQqj1uzNPna7gDHmOdUWdrJVantEfbHzmDB_SdX86D2dPEmJMkzzcvDZBQBYo7gYAPgxvuiAlQxy4DNVtl82F7RRJLhRf0WEO58QR59J-JZRXPTVjhLzNyC_Jlfq8ssL1TXhki4x8AVmyoCfYsF9X6KMMFI-2h_o4esr-QeECTvXVii48_nx7eHiyMJpawbnzUxOpbcHbd75s1iaDef15nhoJ4oYcw-Cym2wUba2Jpsi8GLL6w88tKp_sRSUWhlo9iKv8gmzmLEPjYsKvyXmaRg0zSPAbiU9RcYJ760wRvR70M4GAwpMd_3bZUII6udZNatb2PNLkwDO8M7s_WTHDsGHPprt8zsI0cu10Wzzk4L-y4N8oHVhdavOJLMO-1KVvIU0JC2Qs4bGTEx0t3vpn7Vkfpo0XKMhqpmVVBKlHBQ7vIat2Mt9DK9mfWxIJ5DvS-EaQBzDT17uKKnhtBNU7c7j7HKNP1rvC5j0B37i-IIZ1xlEnP2xVt2J5B7HgaIUEXHGfbVkyXByBO-6VvGDglFmx6eddQWNmZ1B3ONowq0dMka6768XIvnEDchelvukqlMNccnNY0_ITdTRBrs_ZtWM_6_mBdx3D8ZmtKM0ZKsk6lXvNXImHwdGS85gIlGZhn5rslp-rLuRASyeWOYmfKeockIV6dNljQ56dQQ775fSqUSqB4lMwJ3JLS2NLEnqRmZv5Cm7WD4yFNnottEsRtYDvNYAUfqLcR15vWCTJxJB7DHInEZbmXuyJwygFPvRiI2s1yB0jprzEOPffcZ2PS9VqvJ8Ga9_VuoqQGuM0XRLZB7qFwI6z0yBAvPwGIfkWrpYOiAeDhyL1RDqxD6QXuT9mQlyaXUGviQPvxtuTMVNLrQ_OoeUfxQo6mV9KNFRVvOljnGL8PWnjIF-DfDhFHR70eosrZO1qXy2lYFqkEF_GJdF5cWhgb_Y=",
+      "summary": []
+    },
+    {
+      "id": "msg_0b5ae21e78043e4f006a66da4c8cdc8193b96c350233cae5d3",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"persuasion\":\"PERSUADED\",\"support_scope\":\"CORE_ONLY\",\"rationale\":\"The entry’s distinguishing core—dew as an image of the word descending from heaven—is directly grounded in Deuteronomy 32:2 and reinforced by the manna sequence: manna falls with the dew (Numbers 11:9), is exposed when the dew lifts (Exodus 16:14), and is interpreted through the word by which man lives (Deuteronomy 8:3). The broader blessing/provision interpretation accounts naturally for Hosea 14:5, Isaiah 26:19, and withheld dew in 1 Kings 17:1, but it does not contradict the book’s identification: God’s life-giving word is a specific form and vehicle of divine provision. Nor does the broader label explain the speech–dew and manna–word correspondences as precisely. The final rootless-evaporation statement, however, conflates separate images: Scripture portrays dew disappearing and rootless growth withering under the sun, but does not clearly portray the received word itself as evaporating. Therefore the core is persuasive, while that secondary assertion is not fully supported.\",\"book_core_identification\":\"Dew signifies the word or teaching descending quietly from heaven to nourish its recipients.\",\"book_secondary_elaborations\":[\"Dew descends silently at night and is found in the morning.\",\"Manna falls upon the dew and is disclosed when the dew lifts, forming a picture of the heavenly word given as daily bread.\",\"When received without root, the word figured as dew evaporates under the heat of the sun.\"],\"unsupported_glossary_assertions\":[\"“Received without root, it evaporates when the sun grows hot” merges the disappearing-dew motif with the rootless-soil motif. Rootless growth withers under the sun, while dew evaporates; the supplied evidence does not clearly say that the received word itself evaporates.\"],\"chapter_only_objections\":[\"The supporting chapter’s identification of the pearl with the full moon, its calendrical conclusions, and many of its lexical double readings are highly inferential, but none is asserted in the Dew entry and none affects this glossary ruling.\"],\"strongest_counter_interpretation\":\"Dew primarily signifies God’s life-giving blessing, favor, and providential provision; Deuteronomy 32:2 applies that established natural image locally to nourishing speech rather than defining dew uniformly as the word.\",\"counter_core_identification\":\"Dew is God-given life, refreshment, fertility, and provision, with divine teaching as one contextual application.\",\"counter_relation_to_book_core\":\"SAME_CORE_BROADER\",\"material_core_denial\":\"The counter denies that “the word” is dew’s primary or uniform symbolic referent, treating it instead as one expression of the broader blessing-and-provision image; it does not deny that dew can specifically represent divine speech.\",\"counter_case\":[\"Hosea 14:5 explicitly compares God himself to dew and emphasizes flourishing and roots.\",\"Isaiah 26:19 uses dew as an image of revivification or resurrection.\",\"The withholding of dew in 1 Kings 17:1 naturally represents removal of divine provision and blessing.\",\"The agricultural blessing texts cited in the common interpretation make life-giving favor the image’s broadest recurring positive sense.\",\"Deuteronomy 32:2 is grammatically a simile describing how speech distills, which need not establish a universal symbolic equation.\"],\"book_explanatory_advantages\":[\"Deuteronomy 32:2 explicitly joins speech and dew, giving the entry a direct textual anchor rather than a merely thematic association.\",\"Numbers 11:9 and Exodus 16:14 connect dew mechanically with manna’s descent and disclosure.\",\"Deuteronomy 8:3 explicitly interprets manna in relation to every word proceeding from God, completing a coherent dew–manna–word–bread chain.\",\"The book’s identification is more precise than the broad category of blessing for the entry’s particular details of descent, speech, manna, and bread.\"],\"counter_explanatory_advantages\":[\"It accommodates the positive agricultural, restorative, and resurrection uses without reducing each to verbal revelation.\",\"It explains the negative significance of withheld dew straightforwardly as withheld provision.\",\"It better reflects the contextual polyvalence of dew across Scripture.\"],\"evidence_book_core_cannot_explain\":[],\"comparative_winner\":\"BOOK\",\"decisive_sources\":[\"Deuteronomy 32:2\",\"Numbers 11:9\",\"Exodus 16:14\",\"Deuteronomy 8:3\",\"Hosea 14:5\",\"Isaiah 26:19\"],\"unresolved_objections\":[\"The evidence establishes dew as an image of divine speech in Deuteronomy 32:2, but does not prove that this is dew’s exclusive or uniform meaning in every biblical context.\",\"The manna passages say manna falls upon or appears after the dew; identifying the dew itself with the word depends on combining those passages with Deuteronomy 32:2 and 8:3.\",\"The entry’s language of evaporation after rootless reception is an imprecise fusion of distinct biblical metaphors.\"],\"confidence\":\"medium\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_persuasion",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "persuasion": {
+            "type": "string",
+            "enum": [
+              "PERSUADED",
+              "UNPERSUADED"
+            ]
+          },
+          "support_scope": {
+            "type": "string",
+            "enum": [
+              "FULL",
+              "CORE_ONLY",
+              "NONE"
+            ],
+            "description": "Support for the exact glossary BOOK ENTRY only, never for the supporting chapter as a whole."
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "book_secondary_elaborations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Secondary assertions actually printed in the glossary BOOK ENTRY; exclude chapter-only claims."
+          },
+          "unsupported_glossary_assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Material assertions actually printed in the BOOK ENTRY that the evidence does not support. Must be empty for FULL and nonempty for CORE_ONLY."
+          },
+          "chapter_only_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Objections to applications or arguments found only in the supporting chapter. Preserved for later chapter review and excluded from the glossary scope ruling."
+          },
+          "strongest_counter_interpretation": {
+            "type": "string"
+          },
+          "counter_core_identification": {
+            "type": "string"
+          },
+          "counter_relation_to_book_core": {
+            "type": "string",
+            "enum": [
+              "CONTRADICTS",
+              "SAME_CORE_BROADER",
+              "SAME_CORE_NARROWER",
+              "EQUIVALENT"
+            ]
+          },
+          "material_core_denial": {
+            "type": "string"
+          },
+          "counter_case": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "book_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counter_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_book_core_cannot_explain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comparative_winner": {
+            "type": "string",
+            "enum": [
+              "BOOK",
+              "COUNTER"
+            ]
+          },
+          "decisive_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "persuasion",
+          "support_scope",
+          "rationale",
+          "book_core_identification",
+          "book_secondary_elaborations",
+          "unsupported_glossary_assertions",
+          "chapter_only_objections",
+          "strongest_counter_interpretation",
+          "counter_core_identification",
+          "counter_relation_to_book_core",
+          "material_core_denial",
+          "counter_case",
+          "book_explanatory_advantages",
+          "counter_explanatory_advantages",
+          "evidence_book_core_cannot_explain",
+          "comparative_winner",
+          "decisive_sources",
+          "unresolved_objections",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 18814,
+    "input_tokens_details": {
+      "cache_write_tokens": 18811,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2751,
+    "output_tokens_details": {
+      "reasoning_tokens": 1699
+    },
+    "total_tokens": 21565
+  },
+  "user": null,
+  "metadata": {}
+}

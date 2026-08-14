@@ -1,0 +1,173 @@
+{
+  "id": "resp_03cf803017f788c8006a5408b3378081978feaf6e2a2c33ccf",
+  "object": "response",
+  "created_at": 1783892147,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783892167,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_03cf803017f788c8006a5408b3da3081978142985b0ff62283",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_03cf803017f788c8006a5408b8521c8197b49bc00152c6bd28",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Spiritual and moral purity or impurity before God: “unclean” commonly symbolizes sin, defilement, and unfitness for God’s holy presence, while cleansing symbolizes forgiveness, purification, sanctification, and restoration to fellowship with God.\",\"primary_basis\":[\"Leviticus 11–15; 16:19, 30 — ritual distinctions between clean and unclean and purification on the Day of Atonement\",\"Psalm 51:2, 7, 10 — cleansing from sin and the creation of a clean heart\",\"Isaiah 1:16–18; 6:5–7 — washing from evil and removal of guilt or uncleanness\",\"Ezekiel 36:25–27 — clean water, cleansing from uncleanness and idols, and inward renewal\",\"Zechariah 13:1 — a fountain opened for cleansing from sin and impurity\",\"Mark 7:14–23; Matthew 15:10–20 — moral defilement proceeds from the heart rather than from food\",\"John 13:8–10; 15:3 — cleansing associated with Christ and his word\",\"1 Corinthians 6:11 — believers are washed, sanctified, and justified\",\"2 Corinthians 7:1 — cleansing from defilement of body and spirit\",\"Hebrews 9:13–14, 22–23; 10:19–22 — Christ’s blood cleanses the conscience and grants access to God\",\"1 John 1:7, 9 — Christ’s blood cleanses from sin and God forgives and cleanses the repentant\",\"Revelation 7:14; 22:14 — washed robes as imagery of redeemed purity\"] ,\"alternatives\":[{\"meaning\":\"In many Torah passages, clean and unclean primarily denote ritual or cultic status, governing access to sacred space and community worship, not personal wickedness or moral guilt.\",\"basis\":[\"Leviticus 11–15\",\"Numbers 5:1–4\",\"Numbers 19:11–22\",\"Deuteronomy 23:9–14\"],\"prominence\":\"dominant\"},{\"meaning\":\"The distinctions symbolize Israel’s holiness, separateness, and covenant identity, marking boundaries between sacred and ordinary life and between Israel and surrounding peoples.\",\"basis\":[\"Leviticus 10:10\",\"Leviticus 11:44–47\",\"Leviticus 20:24–26\",\"Deuteronomy 14:2–21\"],\"prominence\":\"common\"},{\"meaning\":\"Clean/unclean imagery can signify the removal of ethnic and covenantal barriers, especially the acceptance of Gentiles into God’s people rather than merely a change in dietary rules.\",\"basis\":[\"Acts 10:9–28, 34–35\",\"Acts 11:1–18\",\"Acts 15:7–9\"],\"prominence\":\"common\"},{\"meaning\":\"Cleansing is read sacramentally or baptismally as washing associated with conversion, regeneration, forgiveness, and entry into the church.\",\"basis\":[\"Acts 22:16\",\"1 Corinthians 6:11\",\"Ephesians 5:25–27\",\"Titus 3:5\",\"Hebrews 10:22\",\"1 Peter 3:21\"],\"prominence\":\"common\"},{\"meaning\":\"Purity laws are interpreted chiefly as practical hygiene, disease prevention, or public-health regulation.\",\"basis\":[\"Leviticus 11–15\",\"Deuteronomy 23:12–14\"],\"prominence\":\"minority\"},{\"meaning\":\"Clean and unclean animals or substances are assigned detailed allegorical meanings, such as particular animals representing specific virtues, vices, peoples, or spiritual powers.\",\"basis\":[\"Leviticus 11\",\"Deuteronomy 14:3–21\",\"Acts 10:9–16\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"Christian teaching has a recognizable consensus that cleansing imagery ultimately represents purification from sin and restoration to holiness before God. However, biblical scholarship also strongly emphasizes that “unclean” in the Old Testament often describes a temporary ritual status rather than moral culpability. The intended sense therefore depends on literary and covenantal context.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 324,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1076,
+    "output_tokens_details": {
+      "reasoning_tokens": 207
+    },
+    "total_tokens": 1400
+  },
+  "user": null,
+  "metadata": {}
+}

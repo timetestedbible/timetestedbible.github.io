@@ -1,0 +1,156 @@
+{
+  "created_at": 1785123003,
+  "completed_at": 1785123015,
+  "id": "eb9a6491-6b6b-9160-bfa7-1c62d6a6f9bf",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_eb9a6491-6b6b-9160-bfa7-1c62d6a6f9bf",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for the term \"Grace\" in biblical symbolism. I need to respond with a specific JSON format.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"God's unmerited favor and free gift of salvation/forgiveness extended to undeserving humanity\",\n  \"primary_basis\": [\n    \"Ephesians 2:8-9\",\n    \"Romans 3:24\",\n    \"Romans 5:15-17\",\n    \"Titus 2:11\",\n    \"John 1:16-17\",\n    \"2 Corinthians 12:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine enabling power or strength given to believers for holy living and service (often distinguished as 'sanctifying grace')\",\n      \"basis\": [\n        \"2 Corinthians 12:9\",\n        \"1 Corinthians 15:10\",\n        \"Hebrews 4:16\",\n        \"Acts 4:33\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A quality of beauty, elegance, or gracious demeanor (secular/linguistic sense sometimes read into biblical 'charis')\",\n      \"basis\": [\n        \"Psalm 45:2\",\n        \"Proverbs 1:9\",\n        \"Luke 4:22\",\n        \"Colossians 4:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sacramental or infused grace mediated through the Church and rites (Catholic/Orthodox emphasis)\",\n      \"basis\": [\n        \"John 1:16\",\n        \"Acts 2:38\",\n        \"traditional sacramental theology\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenant loyalty or steadfast love overlapping with Hebrew hesed\",\n      \"basis\": [\n        \"Exodus 34:6\",\n        \"Psalm 86:15\",\n        \"Jonah 4:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across mainstream Christian traditions the core symbolic/theological sense of grace (Greek charis) as God's unmerited favor is highly stable and dominant in biblical interpretation and teaching; secondary nuances (empowering, sacramental, aesthetic) are widely acknowledged but do not displace the primary meaning.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_eb9a6491-6b6b-9160-bfa7-1c62d6a6f9bf",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 686,
+    "output_tokens_details": {
+      "reasoning_tokens": 176
+    },
+    "total_tokens": 1288,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 51024000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 686
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

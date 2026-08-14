@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123775,
+  "completed_at": 1785123801,
+  "id": "4990b345-0a41-974a-be74-d93488ad6b0c",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_4990b345-0a41-974a-be74-d93488ad6b0c",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Fruit\".\nThe book's entry on \"Fruit\" aligns closely with the consensus across the responses, particularly in framing it as the visible outward product of an inner spiritual condition that serves as evidence and basis for judgment. The core identification matches: both see fruit as works or outcomes revealing the source (tree/heart) and tied to moral assessment (Matt 7:17). The book's phrasing is more concise and judgment-focused, but it doesn't contradict or replace the consensus primary meaning—it's a refined emphasis on the same category.\n\n**core_relation**: EQUIVALENT  \n**extension_relation**: BOOK_SUBSET  \n**boundary_disagreement**: The book narrows to \" works\" as the primary referent and explicitly links them to revealing the tree and judgment, while consensus includes broader character/virtues (fruit of the Spirit) and alternatives like converts or offspring; however, these are extensions rather than replacements.  \n**material_contradiction**: None  \n**rationale**: The book's concise definition captures the consensus core (outward produce evidencing inner condition for judgment) without excluding it, using Matt 7:17 and 21:43 to anchor the revealing/judgment aspect. Differences are in specificity and omission of alternatives, not core conflict.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Fruit primarily symbolizes the visible outward product or evidence of inner spiritual condition—character, conduct, virtues, and works (esp. fruit of the Spirit)—by which the source is known and tested.\",\n  \"book_summary\": \"The works produced by a person or people, revealing the tree and supplying the basis for judgment.\",\n  \"consensus_core_identification\": \"outward produce/evidence of the inner source (character, works)\",\n  \"book_core_identification\": \"works that reveal the tree/source and ground judgment\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"none\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Minimum cores are identical: fruit = the produced works/evidence that disclose the nature of the person/tree and furnish the criterion of judgment. Consensus detail on virtues, Spirit, converts, etc., and the book’s brevity are wording or scope-of-presentation differences only, not a shift of referent or boundary.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Book’s exclusive focus on ‘works’ and judgment might be read as excluding pure character traits or non-judgmental senses, yet those remain within the same core produce-of-the-tree category.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_4990b345-0a41-974a-be74-d93488ad6b0c",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4630,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1487,
+    "output_tokens_details": {
+      "reasoning_tokens": 1172
+    },
+    "total_tokens": 6117,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 179644000,
+    "context_details": {
+      "input_tokens": 4630,
+      "output_tokens": 1487
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

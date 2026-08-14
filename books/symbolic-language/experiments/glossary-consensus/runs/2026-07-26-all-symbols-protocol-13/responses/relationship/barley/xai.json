@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123263,
+  "completed_at": 1785123287,
+  "id": "912d0938-9ebf-94e7-aebb-a0d486ddb08c",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_912d0938-9ebf-94e7-aebb-a0d486ddb08c",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Barley\".\nThe book's entry aligns closely with the blind consensus on barley as the firstfruits grain tied to resurrection and humility. It matches the core identification in responses A, B, C, and D—firstfruits symbolism linked to Christ's resurrection, with humility as a supporting theme—while the scripture references reinforce this pairing. The book's phrasing emphasizes the humble aspect as integral to the firstfruits role, which refines but does not contradict the consensus views that often treat these as intertwined meanings. Thus, the relationship is REFINED, as the book preserves the general referent but narrows the extension by prioritizing the firstfruits/resurrection typology with humility as a defining characteristic, excluding purely scarcity or judgment readings as primary. The citations provide strong support for this combined meaning.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Barley lacks one fully settled meaning but clusters around two intertwined associations: the humble/cheap grain of the poor (divine provision through lowly means) and the early/Passover-season firstfruits grain whose wave sheaf typifies Christ’s resurrection.\",\n  \"book_summary\": \"Barley is the firstfruits grain—humble, reaped in spring, and presented before the LORD—whose waved sheaf points to Christ risen as the firstfruits.\",\n  \"consensus_core_identification\": \"humble firstfruits grain linked to lowly provision and/or Christ’s resurrection\",\n  \"book_core_identification\": \"humble firstfruits grain whose waved sheaf points to Christ risen as firstfruits\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"none\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Both reduce to the same dual core (humble early grain + firstfruits/resurrection typology). The book simply states the pair concisely; consensus responses already treat the two threads as primary or closely combined and list the identical supporting texts. No referent is replaced, narrowed, or broadened.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Some consensus strands rank humility/provision ahead of firstfruits typology or treat the latter as only a minority reading, yet both strands remain present and non-contradictory.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_912d0938-9ebf-94e7-aebb-a0d486ddb08c",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4087,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1429,
+    "output_tokens_details": {
+      "reasoning_tokens": 1089
+    },
+    "total_tokens": 5516,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 165304000,
+    "context_details": {
+      "input_tokens": 4087,
+      "output_tokens": 1429
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

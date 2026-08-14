@@ -1,0 +1,195 @@
+{
+  "id": "resp_079185ab2f556580006a54801481f88193bb69268e276d7512",
+  "object": "response",
+  "created_at": 1783922708,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922725,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_079185ab2f556580006a548015f07c819389df41f786514eb2",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_079185ab2f556580006a548020204c8193b188d6c46909b434",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Wind primarily symbolizes the Holy Spirit or Spirit of God, while also having several contextual meanings, including heavenly agents and the four winds.\",\"book_summary\":\"Wind is identified as “Spirit—ruach,” with Zechariah 6:5 connecting the four winds to the four spirits of heaven.\",\"consensus_core_identification\":\"The Holy Spirit or Spirit of God.\",\"book_core_identification\":\"Spirit in the broader ruach sense, including heavenly spirits rather than only the Holy Spirit.\",\"core_relation\":\"BOOK_BROADENS\",\"extension_relation\":\"BOOK_SUPERSET\",\"boundary_disagreement\":\"The consensus makes the Holy Spirit the primary identification and treats other spirits or heavenly agents as secondary contextual senses. The book’s unqualified “Spirit—ruach,” supported by the plural spirits of Zechariah 6:5, extends the identification to spirits beyond the Holy Spirit.\",\"material_contradiction\":\"There is no central contradiction: both identify wind with spirit. The disagreement concerns whether the symbol is primarily restricted to the Holy Spirit or includes a broader class of heavenly spirits.\",\"rationale\":\"The shared minimum core is spirit, so the book does not replace the consensus referent. However, its citation invokes four distinct spirits of heaven, materially broadening the extension beyond the consensus’s primary Holy-Spirit identification. This makes the relationship refined rather than a mere wording match.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"The entry might be read simply as the standard lexical equivalence of ruach with wind/spirit, making it a MATCH. Nevertheless, Zechariah 6:5’s plural heavenly spirits indicates a broader application than the consensus’s primary identification with the Holy Spirit.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3500,
+    "input_tokens_details": {
+      "cache_write_tokens": 3497,
+      "cached_tokens": 0
+    },
+    "output_tokens": 837,
+    "output_tokens_details": {
+      "reasoning_tokens": 478
+    },
+    "total_tokens": 4337
+  },
+  "user": null,
+  "metadata": {}
+}

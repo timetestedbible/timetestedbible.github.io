@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123379,
+  "completed_at": 1785123414,
+  "id": "36e3a355-b392-9260-a7d8-6240558e2aad",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_36e3a355-b392-9260-a7d8-6240558e2aad",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry on \"Chaff\" and return only a JSON object matching the schema.\n{\n  \"core_relation\": \"MATCH\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reason\": \"Both identify chaff as the empty/worthless/wicked husk or people separated from the righteous and destroyed/burned via winnowing judgment.\",\n  \"extension_reason\": \"Book adds precision by 1) equating chaff explicitly to the post-maturation husk (unlike tares, which consensus sometimes confuses with nominal believers) and 2) emphasizing 'empty wicked husk' as the literal residue after grain matures, narrowing the image to distinguish it from wheat-and-tares alternatives.\",\n  \"scripture_support\": 2,\n  \"scripture_support_reason\": \"Printed references (Ps 1:4; Matt 3:12) directly match both core and primary consensus imagery; insufficient alone for full chapter but strong for the core identification.\"\n}turn\n\n{\n  \"core_relation\": \"MATCH\",\n  \"extension_relation\": \" REFINE\",\n  \"core_reason\": \"Both identify chaff as the empty/worthless/wicked husk or people separated from the righteous and destroyed/burned via winnowing judgment.\",\n  \"extension_reason\": \"Book adds precision by 1) equating chaff explicitly to the post-maturation husk ( unlike tares, which consensus sometimes confuses with nominal believers) and 2) emphasizing 'empty wicked husk' as the literal residue after grain matures, narrowing the image to distinguish it from wheat-and-tares alternatives.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Chaff primarily symbolizes the wicked, ungodly, or worthless people separated from the righteous and destroyed (blown away or burned) in judgment, drawn from the winnowing metaphor.\",\n  \"book_summary\": \"The empty wicked husk separated from the grain, driven away, and burned; unlike tares, chaff is what remains after the grain has matured.\",\n  \"consensus_core_identification\": \"the wicked/ungodly as worthless residue under divine judgment\",\n  \"book_core_identification\": \"the empty wicked husk (post-maturation residue) separated, driven away, and burned\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book explicitly distinguishes chaff from tares as the husk left after grain matures, whereas consensus alternatives sometimes blend or associate the image with the wheat-tares parable for nominal believers in the mixed church.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Minimum cores are the same referent (wicked as the worthless separated residue judged via winnowing, anchored in Ps 1:4 and Matt 3:12). Book preserves that category exactly while adding agricultural precision that reclassifies boundary cases away from tares-style applications common in consensus alternatives; this is refinement of extension/precision, not replacement of the central identification.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The tares distinction could be read as implying a stricter post-maturity condition that quietly narrows some ecclesial applications the consensus still tolerates as extensions.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_36e3a355-b392-9260-a7d8-6240558e2aad",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3766,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1962,
+    "output_tokens_details": {
+      "reasoning_tokens": 1586
+    },
+    "total_tokens": 5728,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 190864000,
+    "context_details": {
+      "input_tokens": 3766,
+      "output_tokens": 1962
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

@@ -1,0 +1,201 @@
+{
+  "id": "resp_02ea13323a5f78ef006a547ebdbcc48197ab72c29fc593160e",
+  "object": "response",
+  "created_at": 1783922365,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922389,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_02ea13323a5f78ef006a547ebe46d481979b98b388fdd11e0e",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_02ea13323a5f78ef006a547ec735848197b8026964e0a6fb07",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_02ea13323a5f78ef006a547ecf2c8081978f5fbb778438d966",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Sodom and Gomorrah are broadly understood as paradigms of extreme wickedness and catastrophic divine judgment, with their application to corrupt Jerusalem recognized as one prophetic extension.\",\"book_summary\":\"Sodom and Gomorrah are spiritual names for Jerusalem, whose covenant corruption made her worse than historical Sodom.\",\"consensus_core_identification\":\"A general biblical emblem of grave communal wickedness under divine judgment.\",\"book_core_identification\":\"A spiritual designation specifically identifying Jerusalem.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The consensus permits many applications of the Sodom paradigm, including the historical cities, wicked societies, rejecters of divine messengers, and especially corrupt Jerusalem. The book selects Jerusalem from those recognized applications and elevates it from one prophetic instance to the term’s central identification.\",\"material_contradiction\":\"There is no necessary contradiction: Jerusalem can be spiritually called Sodom because she embodies Sodom-like corruption. The material difference is the book’s restriction of the symbol to Jerusalem rather than treating Jerusalem as one application of a broader wickedness-and-judgment archetype.\",\"rationale\":\"The book’s interpretation is explicitly represented in the consensus alternatives concerning Jerusalem and covenant corruption, so it is neither novel nor wholly opposed to consensus. However, it does not preserve the consensus hierarchy: it replaces the broad primary meaning with one specific prophetic referent. This is best classified as a substantive narrowing rather than a match or divergent replacement.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"The cited texts strongly establish that Jerusalem is addressed or spiritually named as Sodom, but they do not establish that Jerusalem exhausts the term’s biblical symbolism. The broader biblical corpus repeatedly uses historical Sodom and Gomorrah as general examples of wickedness, destruction, and final judgment.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3868,
+    "input_tokens_details": {
+      "cache_write_tokens": 3865,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1338,
+    "output_tokens_details": {
+      "reasoning_tokens": 953
+    },
+    "total_tokens": 5206
+  },
+  "user": null,
+  "metadata": {}
+}

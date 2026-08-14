@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "sanctification",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSanctify, sanctification\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, to 'sanctify' means to set apart as holy for God, and 'sanctification' denotes the process (and in some texts the accomplished state) by which believers are made holy — separated from sin and common use, consecrated to God, and progressively conformed to the moral character of Christ through the work of the Holy Spirit. The dominant systematic formulation, especially in Protestant theology, treats sanctification as the ongoing transformation of the believer's life that follows and is distinct from justification, culminating in glorification.\",\n  \"primary_basis\": [\n    \"Leviticus 11:44-45 ('Be holy, for I am holy')\",\n    \"Exodus 19:5-6 (Israel set apart as a holy nation)\",\n    \"John 17:17-19 ('Sanctify them in the truth; your word is truth')\",\n    \"1 Thessalonians 4:3 ('This is the will of God, your sanctification')\",\n    \"1 Thessalonians 5:23 ('May the God of peace himself sanctify you completely')\",\n    \"Romans 6:19-22 (slaves of righteousness leading to sanctification)\",\n    \"1 Corinthians 1:2 and 1 Corinthians 6:11 ('sanctified in Christ Jesus... you were washed, you were sanctified')\",\n    \"2 Thessalonians 2:13 ('salvation through sanctification by the Spirit')\",\n    \"Hebrews 10:10, 10:14 (sanctified through the offering of Christ's body once for all)\",\n    \"Hebrews 12:14 ('the holiness without which no one will see the Lord')\",\n    \"1 Peter 1:15-16 ('be holy in all your conduct')\",\n    \"Romans 8:29 (conformed to the image of his Son, often cited for the goal of sanctification)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Progressive sanctification: a lifelong, gradual moral and spiritual growth in holiness after conversion, cooperative between the Spirit and the believer, never complete in this life. This is the classic Reformed/Lutheran/broadly evangelical framing.\",\n      \"basis\": [\n        \"2 Corinthians 3:18\",\n        \"Philippians 2:12-13\",\n        \"Romans 6:19\",\n        \"1 Thessalonians 4:3-7\",\n        \"2 Peter 3:18\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Definitive or positional sanctification: a once-for-all setting apart of the believer at conversion, so that Christians are already 'saints' and 'sanctified' regardless of moral progress. Often held alongside, not instead of, progressive sanctification (emphasized by John Murray and much New Testament scholarship on Paul's usage).\",\n      \"basis\": [\n        \"1 Corinthians 1:2\",\n        \"1 Corinthians 6:11\",\n        \"Acts 20:32\",\n        \"Hebrews 10:10\",\n        \"1 Peter 1:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Entire sanctification / Christian perfection: a distinct post-conversion work of grace in which the believer is cleansed from inward sin and enabled to love God perfectly in this life (Wesleyan, Methodist, Holiness, and some Pentecostal traditions).\",\n      \"basis\": [\n        \"1 Thessalonians 5:23-24\",\n        \"Matthew 5:48\",\n        \"1 John 3:6-9\",\n        \"Hebrews 12:14\",\n        \"Deuteronomy 30:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sanctification as infusion of sanctifying grace or deification (theosis): in Roman Catholic and Eastern Orthodox theology, sanctification is not sharply separated from justification but is an ongoing participation in divine life mediated through grace and the sacraments, aimed at union with God.\",\n      \"basis\": [\n        \"2 Peter 1:4 (partakers of the divine nature)\",\n        \"John 15:4-5\",\n        \"1 Corinthians 6:19\",\n        \"Galatians 2:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Cultic/ceremonial consecration: in the Old Testament and some New Testament usage, 'sanctify' simply means to dedicate persons, objects, places, or times (priests, vessels, the tabernacle, the Sabbath) to sacred use, without implying inner moral transformation. Scholars treat this as the root sense from which the moral-spiritual meaning developed.\",\n      \"basis\": [\n        \"Genesis 2:3 (God sanctified the seventh day)\",\n        \"Exodus 29:36-37, 29:44 (consecration of altar and priests)\",\n        \"Exodus 40:9-11\",\n        \"1 Timothy 4:4-5 (food sanctified by word and prayer)\",\n        \"Matthew 23:17-19 (the temple sanctifies the gold)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sanctifying God / hallowing his name: a reverse usage in which humans (or God himself) 'sanctify' God's name by honoring it as holy or vindicating it, rather than God sanctifying people.\",\n      \"basis\": [\n        \"Matthew 6:9 ('hallowed be your name')\",\n        \"Isaiah 8:13\",\n        \"Ezekiel 36:23\",\n        \"1 Peter 3:15\",\n        \"Numbers 20:12\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The core lexical meaning — 'to make or declare holy; to set apart for God' (Hebrew qadash, Greek hagiazo) — is essentially undisputed across traditions and academic scholarship. The recognizable disagreements concern the theology and mechanics of sanctification (progressive vs. definitive vs. entire vs. sacramental/theosis models), not the basic meaning of the term. Because the term is more a doctrinal-lexical concept than a symbol, 'symbolic meaning' here is best understood as its theological sense; there is settled consensus on that sense even though denominations divide over how sanctification occurs and whether it can be completed in this life.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"To be set apart for sacred use, and the ongoing theological process by which a believer is made holy, purified from sin, and transformed into the likeness of Christ by the work of the Holy Spirit (progressive sanctification).\",\n  \"primary_basis\": [\n    \"John 17:17\",\n    \"1 Thessalonians 4:3\",\n    \"1 Thessalonians 5:23\",\n    \"Romans 6:19-22\",\n    \"1 Peter 1:2\",\n    \"Philippians 2:12-13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Definitive or positional sanctification, emphasizing that believers are already perfectly set apart and declared objectively holy in Christ at the moment of salvation, regardless of their ongoing moral progress.\",\n      \"basis\": [\n        \"Hebrews 10:10\",\n        \"1 Corinthians 1:2\",\n        \"1 Corinthians 6:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Entire sanctification or Christian perfection (Wesleyan-Holiness tradition), viewed as a distinct second work of grace where a believer is entirely cleansed from original sin and made perfect in love during this present life.\",\n      \"basis\": [\n        \"1 Thessalonians 5:23\",\n        \"1 John 1:9\",\n        \"Matthew 5:48\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Ritual or ceremonial separation, referring to physical objects, places, animals, or days being consecrated for exclusive use by God rather than internal moral transformation of a person.\",\n      \"basis\": [\n        \"Genesis 2:3\",\n        \"Exodus 29:44\",\n        \"Leviticus 8:10-12\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While there is a strong, settled consensus that sanctification broadly means being 'set apart' or 'made holy,' major Christian traditions differ on the mechanics, timing, and extent of the process (e.g., progressive sanctification in Reformed theology versus entire sanctification in Wesleyan theology).\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Being made holy for God: set apart as belonging to God, cleansed from sin, and transformed toward holy conduct and Christlike character. In much Christian teaching, “sanctification” especially denotes the Holy Spirit’s continuing work of moral and spiritual renewal in believers.\",\n  \"primary_basis\": [\n    \"Leviticus 20:7–8, 26 — God sanctifies his people and sets them apart as holy.\",\n    \"John 17:17–19 — Jesus asks the Father to sanctify his disciples in the truth.\",\n    \"Romans 6:19–22 — freedom from sin bears fruit leading to sanctification and eternal life.\",\n    \"1 Corinthians 6:11 — believers are described as washed, sanctified, and justified.\",\n    \"1 Thessalonians 4:3–7 — sanctification is identified with abstaining from sexual immorality and living in holiness.\",\n    \"1 Thessalonians 5:23–24 — Paul prays that God will sanctify believers completely.\",\n    \"2 Thessalonians 2:13 — sanctification is attributed to the Spirit.\",\n    \"Hebrews 10:10, 14 — sanctification is grounded in Christ’s once-for-all offering.\",\n    \"Hebrews 12:14 — believers are commanded to pursue holiness.\",\n    \"1 Peter 1:15–16 — God’s people are called to be holy because God is holy.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Consecration or dedication: to sanctify is primarily to set a person, place, object, or time apart for God’s possession and service, without necessarily implying an inward moral process.\",\n      \"basis\": [\n        \"Exodus 19:10–14 — the people are consecrated in preparation for meeting God.\",\n        \"Exodus 29:43–44 — the tabernacle, altar, and priests are sanctified.\",\n        \"Genesis 2:3 — God sanctifies the seventh day.\",\n        \"John 10:36 — the Father sanctifies and sends the Son.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Definitive or positional sanctification: believers are sanctified once for all through union with Christ and his sacrifice, so sanctification can describe an accomplished status as well as an ongoing process.\",\n      \"basis\": [\n        \"1 Corinthians 1:2 — Christians are addressed as those already sanctified in Christ.\",\n        \"1 Corinthians 6:11 — sanctification is spoken of as a completed event.\",\n        \"Hebrews 10:10, 14 — believers have been sanctified through Christ’s offering, while also being perfected in an ongoing sense.\",\n        \"Acts 20:32; 26:18 — the sanctified are described as an identifiable people receiving an inheritance.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Entire sanctification or Christian perfection: sanctification may culminate in a distinct work of grace in this life characterized by perfected love or deliverance from willful sin. This is especially associated with Wesleyan and Holiness traditions.\",\n      \"basis\": [\n        \"Matthew 5:48 — the command to be perfect as the heavenly Father is perfect.\",\n        \"1 Thessalonians 5:23–24 — prayer for complete sanctification.\",\n        \"Hebrews 6:1 — exhortation to go on to perfection or maturity.\",\n        \"1 John 4:17–18 — perfected love casts out fear.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sanctification as participation in divine life or theosis: holiness is understood chiefly as transformative communion with God and participation by grace in the divine nature, particularly in Eastern Christian interpretation.\",\n      \"basis\": [\n        \"2 Peter 1:4 — believers become participants in the divine nature.\",\n        \"2 Corinthians 3:18 — believers are transformed into the Lord’s image from glory to glory.\",\n        \"John 17:21–23 — Jesus prays for the disciples’ union with God.\",\n        \"1 John 3:2–3 — seeing Christ is associated with becoming like him and purification.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sacramental sanctification: God communicates sanctifying grace especially through baptism, Eucharist, and the Church’s sacramental life. This reading is prominent in Catholic, Orthodox, and some Anglican and Lutheran traditions.\",\n      \"basis\": [\n        \"Acts 2:38 — baptism is connected with forgiveness and the gift of the Holy Spirit.\",\n        \"Romans 6:3–4 — baptism unites believers with Christ’s death and resurrection.\",\n        \"1 Corinthians 10:16–17 — Eucharistic participation is communion in Christ.\",\n        \"Ephesians 5:25–27 — Christ cleanses and sanctifies the Church through washing with water and the word.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on the core meaning of holiness, belonging to God, and separation from sin. There is no single settled consensus on whether sanctification should be emphasized as an accomplished status, a lifelong process, sacramental transformation, participation in divine life, or a distinct experience of entire sanctification. In Scripture the term is not merely symbolic; it has cultic, relational, ethical, and soteriological uses.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"To set apart as holy unto God or to make holy (ceremonially, positionally, or progressively) by divine action, especially the Holy Spirit's work conforming believers to Christ\",\n  \"primary_basis\": [\n    \"John 17:17-19\",\n    \"1 Thessalonians 4:3-7\",\n    \"Hebrews 10:10-14\",\n    \"1 Corinthians 1:2 and 6:11\",\n    \"Leviticus 20:7-8 and 22:32\",\n    \"1 Peter 1:2 and 15-16\",\n    \"Ephesians 5:25-27\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Positional or definitive sanctification: believers are declared holy and set apart once-for-all at conversion through union with Christ\",\n      \"basis\": [\n        \"Hebrews 10:10\",\n        \"1 Corinthians 1:2\",\n        \"1 Corinthians 6:11\",\n        \"Acts 26:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Progressive or experiential sanctification: the ongoing lifelong process of moral and spiritual growth in holiness\",\n      \"basis\": [\n        \"1 Thessalonians 4:3\",\n        \"2 Corinthians 7:1\",\n        \"Romans 6:19-22\",\n        \"Philippians 2:12-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Entire or instantaneous sanctification as a second definite work of grace (perfect love or eradication of the sinful nature in this life)\",\n      \"basis\": [\n        \"1 Thessalonians 5:23\",\n        \"Hebrews 12:14\",\n        \"Matthew 5:48\",\n        \"1 John 1:7-9 (as interpreted in Holiness tradition)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Ritual or ceremonial consecration of objects, places, or persons for sacred use (primarily Old Testament cultic sense)\",\n      \"basis\": [\n        \"Exodus 29:36-37\",\n        \"Exodus 40:9-13\",\n        \"Leviticus 8:10-12\",\n        \"2 Chronicles 29:5\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Core lexical and theological sense of 'make/set apart as holy' is nearly universal across Christian traditions and biblical scholarship; variation concerns timing, extent, and relation to justification rather than the basic meaning itself.\"\n}\n\nBOOK ENTRY\nTo remove from common status and place under an owner's claim for an appointed purpose; also, to acknowledge and treat as holy. God sanctifies by claiming; people sanctify God and His Name by honoring Him as holy.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: progressive inward renewal by which believers die to sin and grow in righteousness.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 13:2; Num 8:17; Isa 8:13; Ezek 36:23; John 10:36; 17:19; 1 Cor 7:14; 1 Thess 4:3-7; 2 Tim 2:21; Heb 10:10, 29) · see Uncommon Sanctification, Justification, and Cleanliness\n\nAVAILABLE KJV EXCERPTS\nExodus 13:2 — Sanctify unto me all the firstborn, whatsoever openeth the womb among the children of Israel, both of man and of beast: it is mine.\nNumbers 8:17 — For all the firstborn of the children of Israel are mine, both man and beast: on the day that I smote every firstborn in the land of Egypt I sanctified them for myself.\nIsaiah 8:13 — Sanctify the LORD of hosts himself; and let him be your fear, and let him be your dread.\nEzekiel 36:23 — And I will sanctify my great name, which was profaned among the heathen, which ye have profaned in the midst of them; and the heathen shall know that I am the LORD, saith the Lord GOD, when I shall be sanctified in you before their eyes.\nJohn 10:36 — Say ye of him, whom the Father hath sanctified, and sent into the world, Thou blasphemest; because I said, I am the Son of God?\nJohn 17:19 — And for their sakes I sanctify myself, that they also might be sanctified through the truth.\n1 Corinthians 7:14 — For the unbelieving husband is sanctified by the wife, and the unbelieving wife is sanctified by the husband: else were your children unclean; but now are they holy.\n1 Thessalonians 4:3 — For this is the will of God, even your sanctification, that ye should abstain from fornication:\n1 Thessalonians 4:4 — That every one of you should know how to possess his vessel in sanctification and honour;\n1 Thessalonians 4:5 — Not in the lust of concupiscence, even as the Gentiles which know not God:\n1 Thessalonians 4:6 — That no man go beyond and defraud his brother in any matter: because that the Lord is the avenger of all such, as we also have forewarned you and testified.\n1 Thessalonians 4:7 — For God hath not called us unto uncleanness, but unto holiness.\n2 Timothy 2:21 — If a man therefore purge himself from these, he shall be a vessel unto honour, sanctified, and meet for the master's use, and prepared unto every good work.\nHebrews 10:10 — By the which will we are sanctified through the offering of the body of Jesus Christ once for all.\nHebrews 10:29 — Of how much sorer punishment, suppose ye, shall he be thought worthy, who hath trodden under foot the Son of God, and hath counted the blood of the covenant, wherewith he was sanctified, an unholy thing, and hath done despite unto the Spirit of grace?\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "e64308c0b5dd49a4a07351916e7f26f86315a7c97abc27b9eed81f4c22506ed6",
+  "cache": {
+    "hit": false
+  }
+}

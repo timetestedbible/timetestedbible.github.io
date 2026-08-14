@@ -1,0 +1,173 @@
+{
+  "id": "resp_0c78590a41aa32a2006a530eb85da88190bb8646e591a57218",
+  "object": "response",
+  "created_at": 1783828152,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783828171,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0c78590a41aa32a2006a530eb980e4819099b8b8a748fa1165",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0c78590a41aa32a2006a530ec3bb1881908aa7a7aaf20fccd7",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Watchfulness or wakefulness—especially God’s vigilant readiness to fulfill his word. This symbolism rests on the Hebrew wordplay between šāqēd (“almond”) and šōqēd (“watching”), reinforced by the almond tree’s early blossoming.\",\"primary_basis\":[\"Jeremiah 1:11–12: Jeremiah sees an almond branch, and God explains, “I am watching over my word to perform it.”\",\"The almond’s reputation as an early-blooming or “wakeful” tree commonly supports the Jeremiah wordplay in Christian exposition.\"],\"alternatives\":[{\"meaning\":\"Divine election, authenticated priesthood, and fruitful spiritual authority\",\"basis\":[\"Numbers 17:8: Aaron’s staff buds, blossoms, and produces ripe almonds, vindicating God’s choice of Aaron and the Levitical priesthood.\",\"Hebrews 9:4 recalls Aaron’s budded staff in connection with the ark.\"],\"prominence\":\"common\"},{\"meaning\":\"Resurrection, new life, or supernatural fruitfulness arising from death\",\"basis\":[\"Numbers 17:8: the apparently lifeless staff produces buds, blossoms, and almonds.\",\"Christian typological teaching sometimes connects Aaron’s living staff with resurrection life, though the biblical text directly emphasizes divine selection.\"],\"prominence\":\"minority\"},{\"meaning\":\"Old age or whitening hair\",\"basis\":[\"Ecclesiastes 12:5: “the almond tree blossoms” is commonly read as an image of the white or gray hair of old age.\"],\"prominence\":\"common\"},{\"meaning\":\"Light, holiness, or life associated with the sanctuary and menorah\",\"basis\":[\"Exodus 25:31–36 and 37:17–22: the lampstand’s cups are shaped like almond blossoms.\",\"These meanings arise from the lampstand’s broader symbolism rather than from an explicit interpretation of the almond itself.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"The clearest and most widely recognized symbolic association of šāqēd is watchfulness, based explicitly on Jeremiah 1:11–12. Almond imagery is nevertheless context-dependent; it does not carry one fixed meaning in every biblical occurrence.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 322,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 927,
+    "output_tokens_details": {
+      "reasoning_tokens": 463
+    },
+    "total_tokens": 1249
+  },
+  "user": null,
+  "metadata": {}
+}

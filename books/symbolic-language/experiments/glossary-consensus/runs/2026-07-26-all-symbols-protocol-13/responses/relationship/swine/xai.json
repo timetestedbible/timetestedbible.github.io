@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124856,
+  "completed_at": 1785124895,
+  "id": "0387bae3-5add-959b-a63a-eb5668e5f71d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0387bae3-5add-959b-a63a-eb5668e5f71d",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry on \"Swine (pig, boar, sow)\" and return only a JSON object matching the schema.\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_support\": \"strong\",\n  \"extension_support\": \"strong\",\n  \"explanation\": \"Core identification matches: both center on uncleanness/impurity rooted in the Levitical 'parted hoof without chewing cud' imagery. Book refines the referent to a specific people/kingdom (religious hypocrites claiming covenant identity without inward reality) and adds the 'Synagogue of Satan' application, narrowing the extension to false Jews rather than the broader consensus categories (Gentiles, apostates, gluttony, demons). This is refinement of boundary and precision, not replacement of the central referent.\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_support\": \"strong\",\n  \"extension_support\": \"strong\",\n  \"explanation\": \"Core identification matches: both center on 1) uncleanness/impurity rooted in the Levitical 'parted hoof without chewing cud' imagery and 2) the trampling/returning-to-mire motif. Book refines the referent to a specific people/kingdom (religious hypocrites claiming covenant identity without inward reality) and adds the 'Synagogue of Satan' application, narrowing the extension to false Jews rather than the broader consensus categories (Gentiles, apostates, gluttony, demons). This is refinement of boundary and precision, not replacement of the central referent.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Swine primarily symbolize ritual/moral uncleanness and spiritual impurity—the profane who scorn holy things or return to filth—with common extensions to apostates, unreceptive hearers, Gentiles/pagans, and sensual living; minority readings include hypocrisy (cloven hoof without cud), demonic association, and the ravaging boar.\",\n  \"book_summary\": \"Swine are an unclean beast signifying a people or kingdom that bears the outward covenant sign without the inward work (parted hoof without chewing the cud), that tramples what is holy and returns to uncleanness after washing; gathered as a body they are the Synagogue of Satan who say they are Jews and are not.\",\n  \"consensus_core_identification\": \"Uncleanness / spiritual-moral impurity (the unclean or profane person/thing)\",\n  \"book_core_identification\": \"People/kingdom with outward covenant appearance lacking inward reality, identified as the Synagogue of Satan (false Jews)\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Consensus applies swine broadly to the unclean, apostates, mockers, Gentiles, and the sensual; the book confines the chief referent to false covenantal claimants who outwardly look like the people of God but are not, i.e. the Synagogue of Satan.\",\n  \"material_contradiction\": \"None; the book retains uncleanness, trampling of the holy, and return to the mire, and does not deny the consensus category—it specializes the referent.\",\n  \"rationale\": \"Both sides start from Levitical uncleanness and the NT images of trampling pearls and the washed sow returning to mire. Consensus treats general impurity as the settled core, with outward-without-inward hypocrisy only a minority alternative. The book preserves that unclean/hypocrisy mechanism but materially narrows extension and precision to a specific religious body—those who claim Jewish/covenant identity without the inward reality—equated with the Synagogue of Satan. This is boundary refinement of the same category, not replacement of the central referent, hence REFINED with BOOK_NARROWS / BOOK_SUBSET.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Equating swine directly with the Synagogue of Satan (Rev 2:9; 3:9) is an idiosyncratic synthesis not present in the consensus readings; standard symbolism stops at general impurity/hypocrisy rather than that specific corporate identity.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_0387bae3-5add-959b-a63a-eb5668e5f71d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4508,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2353,
+    "output_tokens_details": {
+      "reasoning_tokens": 1789
+    },
+    "total_tokens": 6861,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 222636000,
+    "context_details": {
+      "input_tokens": 4508,
+      "output_tokens": 2353
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

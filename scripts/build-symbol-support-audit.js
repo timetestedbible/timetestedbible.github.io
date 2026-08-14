@@ -130,8 +130,8 @@ function parseGlossary(content) {
       .map(item => stripAsciiDoc(item[1]));
     const citationSource = seeref[0] || '';
     const citations = citationSource.match(/^\((.*?)\)/)?.[1] || '';
-    const chapterLinks = [...block.matchAll(/link:(\/books\/symbolic-language\/([^/]+)\/)\[([^\]]+)\]/g)]
-      .map(item => ({ url: item[1], slug: item[2], title: stripAsciiDoc(item[3]) }));
+    const chapterLinks = [...block.matchAll(/link:(\/books\/(symbolic-language|time-tested-tradition)\/([^/]+)\/(?:#[^\[]+)?)\[([^\]]+)\]/g)]
+      .map(item => ({ url: item[1], book: item[2], slug: item[3], title: stripAsciiDoc(item[4]) }));
     const commonView = block.match(/^\[\.commonview\]__([\s\S]*?)__\s*\+?\s*$/m)?.[1] || '';
     const opposite = block.match(/^\[\.opposite\]__([\s\S]*?)__\s*\+?\s*$/m)?.[1] || '';
     const symbolLinks = [...block.matchAll(/sym:sym-([a-z0-9-]+)\[([^\]]+)\]/g)]
@@ -148,7 +148,7 @@ function parseGlossary(content) {
       seeref: citationSource,
       commonView: stripAsciiDoc(commonView.replace(/^Commonly (?:taught|treated as):?\s*/i, '')),
       opposite: stripAsciiDoc(opposite.replace(/^Opposite:\s*/i, '')),
-      chapterLinks: uniqueBy(chapterLinks, item => item.slug),
+      chapterLinks: uniqueBy(chapterLinks, item => `${item.book}:${item.slug}`),
       symbolLinks: uniqueBy(symbolLinks, item => `${item.key}:${item.label.toLowerCase()}`),
       block
     };

@@ -1,0 +1,257 @@
+{
+  "id": "resp_035a51bdb5ba4ae8006a66dabcb8548190882050f47ab0b6cb",
+  "object": "response",
+  "created_at": 1785125564,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1785125608,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_035a51bdb5ba4ae8006a66dabd74d08190b647388067e2d5e8",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtropUB3IwBtZIwPSP5h7VK0YdaRPR45XDrxWjvoFSfR3TCC17bSGoCS_YlA207-pMEXV-DgiwVavkx_iX-a4Imj2m2vrM7pQP7SGsOp5vtBi40uGx95ttZHWiZmnQm9p8FEFe_e-YmphiXaKGVXhK9QKZdNHER793A4khoL0SDp0ScjXGpIEmsaa-H8_J3IqtOruSPVsVEDE3b7eASIpZfQ76StCo_wiFmsQTtLbl3XhehGpr0Ups6ULed7Ipw3w2fsY1b9JBrKKZfWnLFw8zP4ayZKOsCGgFb3j7HDohMdznSVFAntQmwO6rmG9g1iuQZAA0NV_oVJyhMA5fylz-pd9XbRH_ZFXLON4f3VICmPXOC7232tN6VPgdDWPOe1g0pOsP0esLAza5KbbQoHs453CMdqAVfK7v5danlhA23GH5uwjkYCwujrfi-hQTMYZraKVD8U2ZF2XSkqk7UIi54mahRp2FOHood12VXQs47UIlrefggsWA_zOsT2hmNiRvkla1kHqcySJWZL7OkXKTuE8UdtWMvKsqjwg34JFNfJW023JPOeEpQUBAIuaegso-AtyuMOgXBIZPof6BEYsiXLjdnieHD2fNmcLLFg6FXUndIolGJLrkl5mpCy8Nzkxjt85mJ7qG-b6p9k1q2osG2ADvorKBMTIMsShlY6rK40O9jgqEwzlRStCigRFLzL0JmvPCJzIt1pCJJM54SbqQXVKuS2_bmE9oszDr6XDHYsix8qPKR7WpZmE82oTRoC0s-rJq3vVfRgbEqkbNZQC0VVOF7KiTAfEkUhGZZOfdL-cRHdo_QWz1FuJ76g3r6nSrD8q5YzsbpKFEjj_-yiAY93lu5wreeGc0GtNf29GUGcjR-_ddFssvy1RISZejpW1HIDZVhyWNnfMmKkEYLo6PpFLOX5QbR8obIXf_tGsGMO2LFd8K-e-7MyknRMbwpHVeVrzpCW--bXHnGYBl__vPW9dwQrGGRq7-9XW0YGYGW9bw-vd5_6ytvRHnm_NhSHaMXEAj7Siz4ETzp1ySr8CYcxZ9d1tc58XCbUpYt2D04ELBuh9ssvtK__GH2E5yqfgqsssRrkZ-3xV2v1OWIDuVE_5dsUcHLSvvT-FZ9weBVgBgxC6JFc7JSC8mMOy4cMiAAYzWzVmP6vlmufty8o_c2KiHzxuHoY4npmE9xX3kI9MaOUaOW4HCqN8UsdVOW2-RciNb3vwu6xXDMhQc39kVJGFQVxSx4kaAPPDMSpRTnl6OgX48cLcAcuzbGzazJjFN38CYqCB1D_YinDy2V91L2ImjhpGccsfUg2v32SBzY2DPaKXb3GZKWMcY2RcYdmP_wgkCATWDjWOeow_JlaYo1up1O8ajesm-SQMc7aWNl0HvlyJ2i1y7ik47mWLnOkKTecwGUrEBPhn2Bld8upgSHnEIdlI2zKRCIvGy5QhosqNHrzahDZV459KxXS2KyJoDkwpKWrIj4llVT4-33mMOwD8PwBDQQk0x_SNAhWB05q-IKaLaE1VEg1tTVWUGSUF26XX3W9_f_tNVBI0JVu7v9Ee9oPBKccOALcY53osi12bHCDQFGsF4Z48wdp0t57G9UciEuW1wQjEv-he7Q_a5NP5Ces_L_Vzz66lkgAbwG_b4RQhFHisn3QZ7DFQMqHQjKGQ9iTKBUAp3Se5cQgQ4kJkHcc6q7M35yYaui_JyNDKrDd8Tod0ZMuX2MRpm6NA7xk16ryTcct4PUBk5YC8C_fUeLLjizu3jeK1OQtfHD7XZMnpp2zqtvNfnY9Hjit3G1wngxETz94OiFSbr6gnUZKy2q8QVrKkxX4gWycliD_dV_EXN4ajWaNt9_B93UXlhZ-NOjVgLAMesK__9wxouJ5O1pKIpDRKDwsYQgbTuTYlz9axCHDaHPwJ5Nc7sF5kympPVKaei4mnHaj6NztU9TqkZePevahwiQ3ITO2BGaEDLItzLjm-LRYJ4nF4kv53vk_LjCz85Y1OUjzh5LlNiETTF1Z6ZH4Vk_xyM6GTsgmlQlIrB32J4jCLzNzpwpcepQ4QUsoMgOH13LbsPun45ohR1p3R64V8Qowtz4HKiqidi-YEDKj8GJQaxcQqAnz7viciLPsojdEVyb3sp_QLk6hRreL4_PyxKvM9dimf3T7-Jh992X3giPRijuB1WUbCDuEHjouCLpooy4s36p8EDTyGTrOZr_FcL6LUcYVGefKSfkX-vflYyhR8h4nkyBHnDfYdLqPOqp9dOvZodGWJf1FjwLzD42BUnbqNA4vat2O-lSF4fBdHm9QLgV-El_e3Hjy5ASXxevUHoRPjFxAxWscV2ezC4udSGqZVXOn1QR-iG3etMyKKs-Pyjo51eluzg6HAfeVC5cmHGH-bP1MzaudCNRRBU2-AL9-4uSJNchDWzjrZaGFQEazB3Y-332vi7DsYSw_Q9tiO0cPBe48B0Pdc4RUbBtnkiY5QxnNvKJJBkyImqBB1gZviNomQJNiWBG5oRLP6MvxjVMcXOMkGCSc5DSCUpYACjrM6OIVzw5ALVOdyhtPppuw7cwBXAMkPKfRKRBcobbCsDHTuHJfMrZUKasP1HqmO8Jo-dJ4S2fDwbIK4c8ngW2Ux1K0UkBUw06j8qif3lXTxdLKR89ThTg2WOw2Hjp2re2iXglvFx0l1F1rTPnTHk7rZyaKXbYLL930f8aB8VD0VmSbuQ_M3j8cVxLpR7qRr18S8SyeYMsAqAo_mEivoGTQsH68kRWW-yee13ita0xlxgegftPdqzYoAO0r4rvK87jW-z_WuwrvLaPRkrpevcu0CzPG_R-H1n32fcN11hl_dw_VZheeIUqj-T8VDb2YGp8cnRTkSFf7WokEi1IFrwMmy8TyzB0YUSt1nLyHn9oSM56msvK22b2JzMfOc9c3LqOKbukBMb_HyLdGjp_PJ-R_3y1cu05YMuOtSHvdkeYV2K4opdazL7HvZwXaI9oKiRlswTmeza3BwoSUenf1rRpBJH3Sid6UoMNNDzu10DFB10JH8aFKLqf8dNP9y234_T_mwP0_FcMTkOOevsuaVxwmlSr9v9OekY6Ycl5CeBM4SNCLgeYR0rt-do10pTcReEPIv4YruKz5D5rkzZVcKY2is7P3y8Os1Cjh-NDvL7Bv-s366GGfZY-dRdiXoa7V-yDnp-027PUDCFLyh2on2auFMjs5RE1EfHCrhoG8yktI6D2vVAdU6vGW1JVxrg2ga8kJLvbALSW-44MLdVcbwWBZLfci69Vy8c4du9K6BxHNgWA6whl9OrTVXFOCBM4GqtmatcfPoR7-7uWouQ6KFZYHWVl7QE5Rsy3Q-ji8YPEuqPPegt53l0q8_ODaB2GJH78cXuSzZFdGrCM5K5UBWpYZQtW9UurqFTVYtCxX5CIJm9HyB4oTKPEFAjyU7HVxJz2W-6fjNo1NBQsktPuMYx4djZZL0n2tDK0X7A89KI6WrR5_EOMhkslvXhER_Q1sULRjirLivR5SrBmMrPTrSBXQJwJB-hG7VKzUzeYW9J8nUXQQMf581lZzoSi_ZJZeE5C1mEkTK8zpGjwUR9MiMn2bLK8MBZ-T06ixL63Cs-V88P-xR1qK8qCqWW400eG0-avoCTMsWuEK-1Nlvaet66PsiMGzAqzS8rxXWadMi4BYGRtIqydL780O3Z1jnqUe-AIYLPKE8cq1Zkuvj31nRdU-8HaLIucIdqopOxsAedTWCby3KGmuwWmqy1CX86CFMoFMpAY7v3b2lp7FTUskYdhUf7UFikiJV_lZ192fEw005oItp0XmFHGX5UuwQ_NwZ_6Xk18zCF6JoxxZIUj92vme1Eo2ElbLivfNVOSpCQdREj-Sp_jlK70mN6duOk-OnzgPk3c-WOPIAF5DEaj9Wnezd_V7siiNzGec__eb1Ublto1MRBAj_-_TMb3w3jEeP69sJP9vmVwC1F4Eljv2BTfAf4cZTrveZdW4TQXsXb9qmRtFh2kzYER8KedyIIDt1bYAFLCs-2iPB47p2meVADIYqQBMNEqH_HHpEpdHHIvpBIMAK5PesoAvMxE5OkX2YDi5miojc_OiVMqvJjRGJDOfqT1EnJ7ypfPUip-NB_YqKDBTsvovkPmE8V0sS245-cDIRvmetWT09grvgiAWhTAaWbFXypE23DlHIJHVOSaMnxErxYMGIjqnMcU7BVG-Zl6fQpfq-Yo33HI4ujMhXcToRJ86KREfx-4SJocoML-q-WdoVQ23y-q4g7kPGL_sgYx9b0Hdg-mnIcKSwXyrqzgPGpP_UICv5O6jH1V8INFTkauI_3Nm57Z4-LCidUBU-iGn6w0PFAPqLYH1mHdUu05Zvu5Ayw5Da_mArRcDZc05Swjunzrh0IYt4XsF_j1f9k-jmKU4Qnjqky5DNcH2lH3IIV1duVPmkV_RmH3uUMEI67tDeo8NGA8l4TO_x4N1oUJGv3SAbyRpO-g9P3sV5QhL1yvbGLzUNiAjroH2v2icNRaHHMUIhaDUdaJthiayrtOIovFTZRqjDFL-X36QhAkQA4MWIRJioQ1q",
+      "summary": []
+    },
+    {
+      "id": "rs_035a51bdb5ba4ae8006a66dac78af8819086832907493713ae",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtro1GIJkJ_e70veYykGclp1bFKhmkR46dvcS19Ewj2PYVqiBmPyiB1SChQFdZYsA57ITeVSZ7xSAJQ-uUmRAuk8jnzlaDB8-R0vXoOx91iKItzPeYyp1r00hDmLYBavYJPgVOMqfCGbf-hYFECJ8RXp8ZmTWXvQ6x6v4tod02p-LtC0IkqBd75CptNXOI7RTgT6GLE1qHiWRZ-BRjI5oqvOZ_Bv3BmyPpXS52-vCAzP4OxEISHuaORVIqOZfB0wbu6Q6XsexNT4_IH9pu5X3X7UqdEPqhf7SxRtZaQJM6H_McrZnBS44NSi1bZMx9xfQ_ldC8jUs0sDxNduYuXXVePiI9ueLBMcbo4hNaQ4XIjPuu7i51tTPcPKHdvOZiH9Pn8SCHRiCxLv7dBAOYwvB61crJxO8HF622x-5qS13o8eltbZC46cV1x3N0TI1oyfB05ovCrbr7II7HEcUE7cU_RrtRozn2lGZltqNpYFFmK7tmu_Y61R69Xo6rJOacwc484xY2z9zDmWOtI9seJl8uip72aGPcO9Tgfx0pm9_bZjWRmwsxSWl5cJRN8UZdeNr7xPpC5p8GtiWYUFZQd3hbweZkO4oUBPIq9okQZGF-igPReeo7IAPi7OKq-6_TUvIaHd6vsqaRxHsniYSpSx26mGwN6DB2mztvUgaNwwzUG6U5pka1loUeFL8CnkFNdauS3t2NkVB_0B2--4c_Set9zgwih7ybzW24WTqUmPtOabQD53hjzS3sQvPf2BIlpYOeE7d1OocDAwULih6TrV2p2LGorXJgYW9bDLdPC_TMe2zMJVM3vwotjKIv3rYQOn3leboCgFidjH0mK8XTfeV18XXjmhDNFfmofsAVJUGP8cQsawgMwB5oe4AIGI6GDZPphrbhi8Rm9IE_Pd8ElvaAa7Ida8qqq2rCphUe_q99FlmZrJmBrM7QjfgSGfVW7DzeF56NG9QmCA7tFUPQTcLRluzwCbFWHbmp0YNTZ0Dl4BmI85iR3GTo4BQ4K6YmGv-dB7EPz3Bi1eunR17B1fIczd_9gpF8JE9ELKmmDcKY_ZSPIYGFX6r1iqsP4-MCt2DlKMDCAvOqZ04Dp9mRq44ztwVdWT_e9tZq-ZH2Qav8PJdlPHOQVCF3X1gOPr-f-ahMoj_Vs3MvMPVA4MrAl7eEfr_cpicDwfsAJlPFYWcHPn9884096MTptAO27x2MIhXHcYFuM8s-sMa2WbHaYgbLBtSEPUDxHtyaZEa6BSXoxP2HpJFQCtMzFH_e0ljMLvMEAcm1oFc0EZqb9tTCvskY65cgFU08JKZU2FnMeyra4S3ID0_N554XhnuXe3KsFxJml1HX4YUVGW9l0bEW3crsmOumJ7RgxDMXrTFJDMP44yKyl2qjnenacVqeptBO3LvXt7KsLHsNCEIvahLTDTXzLAhDn5CaWcmc5IN7ACKrsXlNGpIyEC14d_fR4UZDyPJZ-9kxnNstJR00BkftPPG1RMSMh3Q-xFWJhy9F4og26BXiyP1i3GxMFGpS7RwqnnlStb3HpfhjmrYhHdo5plGHlVVpC1qyddim4ZdtUNI3hLBAM6FQPUlpuW64sN-wSnAsnkV--0Sr9786YL9ZIsJxImB4kZzObqgMNlEnoxW51tmvgyf1PLhDlNCb6QxMn2b3y6FOkZF0IFOPIdA4bMlxVXVSDAcw0g-05EKTJSutLa2raCtINN5L2mX2auber3CWM3Jb7rUMjhMsGk7zKAmuDnSuM6zCSfhRgACnfEVTaQ0ztovRjmqT_y64p2Xj7bdY9dfrZi13SrOgxWgs58GkTEgSC9Aj54vRd-H5P3Bwb7XCOFgNLMbhbSCBoQyaC6bwwnmo8e0f0fI64P_ecU8QBwy85b5MGla1UaPAnSmr35mCyHkXGi7S78TUDSQFWO2d8uKFsMnEvx2D5e9-wQF4f_YBk03Sy0VRS_JhTuNrlRaKGQpo0HZplrg1tPR1Y8MrcffBT7I_1UeVBz-KKF1ds5H0yoW7aTDcbu-gct6hRASy-KOAp0Z4sY9rt9xzcAxUoZcJ3wIblBHCyjkX9dSrBJEa17Z5nXYob4uaQcQraK7rHtVu15F3W9ZPhMPryTOw9_-q1n3MhV6V_hAuJFRHHIzg1Wah9rcc9G8D_NLNHmXrPicCWmQ9TQT2-q84n0UyhKks9qGgUU77cjkA7uMu2t6wM3LuRf5KsiDkdf8MzpFSjygM9g9248-sbzVcEH8886mEBUQJWmdO4c0OebBG6VtypuZCs6X8SoBbYlQt7yNKGobfZRY5z8kKVG0basJ9zQjNQlfrIgjNnU8Mj4iSdSxxuxXCTNBHiIHbwtI6Im0i8wGPcIH7rWmrXBg8q-3BofTwgpEsmIiE299c6CFj6HIfAKdOaBFpjwua_l1grxm190g_vgPzAJNejYZcfN8igCq6SpYb6oAL_q4FSSva6xmgqtXIaeaix3hGd5JkxQ-mxmD04E60F25j3bNoui_iNkI1r2ZYBKKm7xwgPuc6ENwSoHrHr_bXauV-n5-0wU4YM_Cl2ofWCH-sZ4tKAdTpRR-fImw3wNC4_BJgQ-PUsYPk74jzWVNf36gkzXoEWZ72mgMaYy7fuBZ-pnikRXO9mKRl03RJ8VHLgmoT40jGihBxyL5USq0WWrxW-g3QVK3ECbvGgAOLIDRkoxjBUIAZbXzhiEEw7pX9aTrWG_g_Kt8XPhIJ0NZumJLHr10dkAqPqTzBQZJ00JFUu3smU7Groz5I_lRwPWlEtiV_-psaW-pNQsAMXD2GVxZJVvmVcXACruZ-q_7eQFhseFQJw534yqMs70rgcazUObIMMiu4BHRj2CJs5bZLfXr1XCpigOSnoyqB_AewjP-FlReL6hYl3ItgJewxuyR_Gh9V03UyQLDQ4F0ivhMK1rZtVjyOg7le47uqOdYgTQN8KIEfvrz51JqJeEgH6XzCLTfpFWwEozS87EdEtd3Ql8iVbRXk-Siu7Z_8-CB_Nr15O_06Hz0z2g3RGhhqkkMgISPwsEMYiiGu2pyJk681ii22GX6PJfUAiq72sJGciW9Cc_nGDerXRFOjzFuzHl-R1TAZzf4UMOzpXLAuG_YEf7IxWOOQ_kSKJthDEt7HrVRU6TAWxWPyW74gSe6D1443yKVGT_hG9K2PbvFpFT2cHWb_wmhDZcamRVgxidY1OYxKISElX8Xk5SseUtjtPzEiRv1YEvv70VgMM7enBJkJMsFt1eklCJz5EczNZubMf4CbSkB4xKx1-D8Byv7DdHKOE1LK8Vq5i6DQx4I-IhMhqY0UscIN75VO-EDPTBcgQ5In3Epjzo2j4VUEwqcli1TYc4HiOWzN0J3VPJN4QwjYrXo3nLBGlOjKICBGD0EBiyDxQ6qnsn68jsjHJS87F45UAs0Bn-FwpMoHDSPafMxQnhxvIKHVf-KIygOmxG_qm5Kcvqz14j-T4nXVnQ1CjUJfHHG8_9EtKVJxfHYN8SzQADfZUuJ5YNK3tET92noQ0hSaShYz2Ld--0XFsTtydxJk1iXoIJPPPbsygk3n1ikDgvLdOYrzlkQgCQdULaikNPCKMlki7tkM2pP5uxQ8f3-ELYn48yRNv4xG4XHxy9wJrMQrRILSeqBg1UpTDbyjikCWsVeJ9QtiKykCGJqXg6o91rVGgtlsznDRsB7f94toMHRYtKVhkKfDW9S2Pg3CsJtRMhSTRWGsDb2nTHtUNySSFqPrXeB6vAhEhdydAjhs5uinDyzi49XnrskUsdSmcEf7cbVoicaqaTJ87k4CKCRdrq5oB4SQt91IOOm55fzv65OsVsOlQ0hA01oNgSK8lYQDqJe6V5GUdPlbVhXVaP7mg5wxZkG6ROP9d0XsThdd3ZbJ51lSxzGIPWutP66JoDhtg-AS0gxBQ0NEbKS6CBKGj5n1VLUD-cwDUi6vexaBXNrjBF9El043qcMdXCVnIR330jSg2MVYq5RPEz7yHl-TvP869qIxudRYVnCuwnvrfy4-hECjLjmBOR6Vhq0O_M4eixMvrLrocGstnF6doI35D8Mo2rDHZPZDgjcRHxEVVnxF8smAJOLqNjmspdlfgRpeJxj6yOIdtVYkp8HVvJaGth4sZmLFvNb3RaPAOJq40PB1ou2UOCPuB7ackI3fCoBeULgiLWDsf_ecKr3BjmDbN5uN9HIC2iJBKs8Okm3ovcjUTU09k0k6Fw1-C8B1GakQjNp2lC_tyiHbZDPIkYBO4gs2um2y8lj07iOnySN9d7iL41O2YXAtCBgB9NZ0Nt76YxpGi8pw0SsBhf5e052sy1uEmjWj4xnf6XIV8H7vxQZtAmqSdl0k3fVQUXpsUMdjBrd__Ct0ij2K55NKtPaB80AFciA8hc4wCuGLF2yTuwur0WC_MLa28EsHc_xufsh993NXxuJrh330hUAIN4HF1GKFc5r87V5AUy1j7chSfQjQhOBYAe2NP6adhdvAJnzhUEkHjl8UL1gUrPtEtDIaOz4dMLPdnMzJDiEE0xaO03SqD8cALl_IrqIIB40k_LSemSnxwKp9IZI2eff7-KHyWCwQENn6jXPA==",
+      "summary": []
+    },
+    {
+      "id": "rs_035a51bdb5ba4ae8006a66dad235788190abea60f358101379",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtro58NGT2bGNd9FxG9j1HFVCgwqrgScnGSLS1fiHpiS7yL3Kizl0ozV5nkquzCA8V0U6F6fFZTZhwyVWFhezJsocCIGovJSIiT8LAVNiuvowWJIrSbGpxoBaQXiezBUdfrTDkpOs5ds_XL8XZFicdf5F2XCTr4avs9azURHDARIdexa2e0CPStPY41fNZ4mLTTHJst5ydZELFM8EbeYiz_TuLkRP3YaoX8gj_zKtP2CMwxXj9tc73_pzUhRPK0NMLGeQQ0e_KbSGZ5tX9VJ_MMU6xNu8JokA7CwilwQnqU6Lg55AuSvrEVO5dhvUDxRqfkghD_4gMJ2AA7uT7rLJP8-4WHVMBmd1Nuqw2xUqO_RonqeZ4k4RU1nQT-kGaCZpn8py6-Whae9JbOAvRtW0F-Wwo4Bg63ozeL_zy7Pe0VV485_uhbYguzJ8Sq7RKFK5hsEJsL3V__c1kRyf0Vw3CWFVDX9H9bq4v3LZiicwgejYNN91WuRUttzBXa0iw5D5-QrAnNaFhuyFSKx3p3DEtM1TISFohke8p2V6Ea9rTHQO4J-g9G98KBBUlTvWqQaj6lPqY6Q1MMAINNAgQZi3Bw89fjS-VPIiyNlvyI4G3PZqIedK_J-pq_r4jR0MD3H53dUAdksWy4Pc5zxgm8H_b4uQrEfsr82nRRp-9muVR0uRgH6OeH_tLtD7ej96EeiG7rkIj4qd8oIY8A39gI2pwvyXrJ87uZw2BrHk5ldh7Z9vO9tfCLHWfP7PEJj7DTF2XEtHsxrUIK6g6NlGvw49riMDZD7AQ8g82PXNug5jWds3gsJlNG6hXA2ZjGCurp7EAVltSAQA00Fd-gADKf_X_Wokuq5jWMVXOSFVIzWR1nMO8G4OyZU0Ew8c8JsHuYEc7rU8hxMeHngECJ5ERth4K1QBqkFam3_DC3GDuagxEzaP96EPzF_7MmFRB1EpvUySI-6wA08FQjmLg5UwM2uEphx955OExWGFOmW2G-j1BvOec_xWdGZJXGNC8fEzdqT7FLHtAmdIFaaES89cji69TFGHNdfZYjM78E2QwMcQDT6XrIpbjl1D-ZGv5QA042k2-_jKsvG82Ywa15-N1y0-LuQ1o5ZD1tlfL06DdwLytg2hfAEJL1C5buZTiavq8JCnhhqjjWQLkx-2ceONmWgEew-TTZis0TpTHdBMteyGFDpXHJj3iLbnZ56mtnNWe6iTg71OFL2jI7_IIKsvCWpOK2GxcQjLgWk0Wre--gL2EQ7x9t9Rh_RPMZ8tQW-TRrMZ8l-1ocKB4LuJJtDpQ5BaD8f8ygM5EIp-2POZUS39f--sB1nS2CicHNsqqViNNSFpxERPnU0HdltgNSOnRxb30Ysd7XE_wqJi1ZRi0vO4uH24o5_KqSScImGqBv1ypT9EwUNVrCRctZFeNf5M3knRxdoTWV9ub-gQ2xZAakNwOXKpKTwCIlT6-1HKshMME5gtUtLvbR0IYEcRmAV2iR7p4YP8VjBtqfY-KDbWdqaW8LzQ7R3xs9YIyX9uGIH7V5OoZpfq0Tqx7Ox9WTyN0kQhThjC-Ol-wo9_Fc590CHIFhckXy5HF87v0j7AHZojapBvV6MoSyQKq9M2LFXIRsyNbx5pffV8tS0kTz1LzFb3jaQWCLW9PGNdLh4XUaS8Rs0dv9pKZGCcUvSPzhOlB_fB7M3zTKmrUm5l1PDlZYAnEOOYPZGfJJjyf5r686-xbu6yLGH_H18Surq09RypWvbCuwaSF4G7qj53q8P9jaw2yD6PBSnnBWHMHFFQp9i7ZFWTlFG7rT0z4oIU4hN5j2ZZHbTWLws7DCeH_2XK6uP9ELpFHxjDRHBhle7egePea_x59yitzc-52y-u37ZFe7jd8AKthUVYA8g8ouD4Ote7n9YIvc9AjPc_pytuGuObH1dh3Z4VNdc9XJGPyQHipTkNYzWpA2eBGIyssgINiNnodYonXRwH7_gr9arUhr5SKCKnfrROLPTRIVnZlFkOzbzlvvWZ24u1IwEd2DFYM1LEu3naNPcqF6CGil3Zto7e0IAb1xzUHFKkPCoLqvlRn09W-OcXpa3BjoUDP_8zGFM1TiaeSw5nsr9pw7tpibouk3vpzEA9KNfeVrAmg6MATboOQSV9HRgNobqKVCDSbo950WxwrKwv8EnLCaXlXa0pzvAwLLiCte01tUOCBmvXCGf6d9M-3_VZBrlIpoKZeU77vk6BdeuVCVcNz9XFUeoAms4dSNiVwVnqM035QxooIKzp7B2Qo3bXnHZaCrB1mq0FgAWsxuF9PALoq4q7aQ6J77icyQe-6fH7FgRdxKEc_lilZbMsTkdu5GtXE0yvcRHiRB7zPYhk3tWfsylnoC8KMtkIVp-n5JTcGIA5MzQgUU6f9RTdSz39ujnKe0m0c7JlWq40L48-AK3QeC-gcb60svF7AIO_qU9XRFV4FpNqBj16MTbNPGOFlAZXBKD9Lc7HERyp0ViY7AAh9XQbFj9lCgrDVieT992e1VJo4LLB6b0bylNp-5UYBAp3TBMsJm7RQBpMXo_nUriwTuY6C4R52OiBa7C9gi0PgzmNd0AdMJXo8TLhUPt8K8HezlWrvk0v6F4tJotmjIh_7qLZqPGbVVWfeUqPyCGUKMA58P9Yw7EPgXFNhd0WdRHVGjdpMD3SMKcnhE0LoqPHRfN9oEkB0VLw2GmrOdzmpWH1nGCZS4EPjitjjbJDBSKmwUacgJmLL6oEn5W_qIDlCCi8DdoqXqIhcS-Grp7vNQ48fv9Xar-6BgIqMYSGM9_7wbqCqA6VSb6frBvEusqOsnAVCVeNyQDBECKaKhRcQoJ3HRbcmra-G55RZBlri66p5T8gBwC2462nmboTePDdIVwJo7hnloz7Qv05fFhetVgOUlKY3uclhsWEA3fu9Ijr_lwq9JJPJcDExHwdYhYnNEjn51DqTrqSHFA3fA7iul1ED5zH3Q0Rwmew-2IjyLHofzmRKtskkJP8J2ss0T7bGtffN5BPAEX0peKxz0ebWhLZ1q-nOOnVYOnEErrprwg96lf7OTb0OfKAox5qMLEKhgSMqPr_S1I8BUQ-Ed32qoECDw_37AgzeWEHQ==",
+      "summary": []
+    },
+    {
+      "id": "msg_035a51bdb5ba4ae8006a66dad8fa9481908002a63a6cf5d256",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\n  \"persuasion\": \"PERSUADED\",\n  \"support_scope\": \"FULL\",\n  \"rationale\": \"The grave/realm-of-the-dead reading has the more immediate narrative appeal: Jonah’s belly is death-like, Jonah invokes Sheol, and Jesus was buried and raised. Nevertheless, the book supplies the stronger explanation of the exact geographical phrase. Ezekiel 5:5 places Jerusalem in the midst of the surrounding nations, Ezekiel 38:12 supplies the related 'navel/center of the land' expression, and the cited historical usage explicitly calls Jerusalem the heart or navel of the earth. Reading Greek gē as 'land' therefore yields Jerusalem as the heart of the land. It also allows the stated three days and three nights to begin with Jesus’ seizure under Jerusalem’s authority rather than requiring 'heart of the earth' to be an otherwise unattested scriptural synonym for a tomb. The counter-reading explains the death-and-resurrection theme well, but it does not establish that the phrase itself means grave or Hades, nor does it answer the duration difficulty as economically.\",\n  \"book_core_identification\": \"In Matthew 12:40, the 'heart of the earth/land' identifies Jerusalem.\",\n  \"book_secondary_elaborations\": [\n    \"Jerusalem is the navel or central point of the land.\",\n    \"Jerusalem is the heart of the land.\"\n  ],\n  \"unsupported_glossary_assertions\": [],\n  \"chapter_only_objections\": [\n    \"The chapter’s identification of the sea as nations and the great fish as Caesar or Rome depends on a large symbolic system not established by the glossary entry itself.\",\n    \"Many of the proposed scene-by-scene Jonah–Passion correspondences may reflect selective typological matching rather than uniquely determined textual correspondences.\",\n    \"The interpretation of Nineveh’s three-day journey as three thousand years is a speculative chapter-only chronological claim.\",\n    \"The claim that Jonah’s entire narrative constitutes a detailed prophecy of the Passion and subsequent Gentile mission goes substantially beyond the glossary definition.\"\n  ],\n  \"strongest_counter_interpretation\": \"The phrase denotes Jesus’ grave or, more broadly, his presence in Sheol/Hades between death and resurrection, corresponding directly to Jonah’s confinement in the fish and his prayer from the 'belly of Sheol.'\",\n  \"counter_core_identification\": \"The 'heart of the earth' is the grave or realm of the dead, not Jerusalem.\",\n  \"counter_relation_to_book_core\": \"CONTRADICTS\",\n  \"material_core_denial\": \"The counter denies that Jerusalem is the phrase’s primary referent and assigns that referent instead to Jesus’ burial or state in the realm of the dead.\",\n  \"counter_case\": [\n    \"Matthew 12:40 directly compares Jonah’s confinement inside the fish with the Son of Man’s confinement in the heart of the earth.\",\n    \"Jonah 2:2 characterizes Jonah’s condition through Sheol language, naturally supporting a death-realm interpretation.\",\n    \"The passion narratives supply an obvious burial-and-resurrection fulfillment, and Acts 2:27-31 connects Christ’s resurrection with not being abandoned in Hades.\",\n    \"The grave reading preserves the most familiar thematic point of the sign: descent toward death followed by deliverance on the third day.\"\n  ],\n  \"book_explanatory_advantages\": [\n    \"It provides positive lexical and geographical evidence for Jerusalem as the center, navel, or heart of the land.\",\n    \"It recognizes that gē can mean 'land,' making 'heart of the land' a natural geographical expression.\",\n    \"It notes the absence of a supplied biblical text that independently calls a grave 'the heart of the earth.'\",\n    \"It offers a coherent three-days-and-three-nights interval beginning with the betrayal-night seizure and ending with the resurrection.\",\n    \"It can retain Jonah’s death-and-deliverance typology without making the glossary phrase itself a synonym for the grave.\"\n  ],\n  \"counter_explanatory_advantages\": [\n    \"It follows the immediate belly-to-enclosed-place comparison with minimal typological machinery.\",\n    \"It integrates Jonah’s Sheol language naturally.\",\n    \"It aligns directly with the undisputed death, burial, and resurrection sequence.\",\n    \"It accords with the dominant historical interpretation.\"\n  ],\n  \"evidence_book_core_cannot_explain\": [],\n  \"comparative_winner\": \"BOOK\",\n  \"decisive_sources\": [\n    \"Matthew 12:40\",\n    \"Ezekiel 5:5\",\n    \"Ezekiel 38:12\",\n    \"Jonah 1:17-2:2\",\n    \"Luke 24:13,21\",\n    \"The chapter’s cited historical descriptions of Jerusalem as the 'heart' or 'navel' of the earth\"\n  ],\n  \"unresolved_objections\": [\n    \"Ezekiel 5:5 says Jerusalem is in the midst of the nations but does not itself use the word 'heart.'\",\n    \"Ezekiel 38:12 describes inhabitants at the navel or center of the land without unambiguously equating that expression with the city of Jerusalem.\",\n    \"The Jerusalem reading requires 'in Jerusalem' to include custody under Jerusalem’s polity even when Jesus was physically outside the city walls.\",\n    \"The immediate Jonah comparison and Jonah’s Sheol language continue to give the grave/realm-of-the-dead reading substantial plausibility.\"\n  ],\n  \"confidence\": \"medium\"\n}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_persuasion",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "persuasion": {
+            "type": "string",
+            "enum": [
+              "PERSUADED",
+              "UNPERSUADED"
+            ]
+          },
+          "support_scope": {
+            "type": "string",
+            "enum": [
+              "FULL",
+              "CORE_ONLY",
+              "NONE"
+            ],
+            "description": "Support for the exact glossary BOOK ENTRY only, never for the supporting chapter as a whole."
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "book_secondary_elaborations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Secondary assertions actually printed in the glossary BOOK ENTRY; exclude chapter-only claims."
+          },
+          "unsupported_glossary_assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Material assertions actually printed in the BOOK ENTRY that the evidence does not support. Must be empty for FULL and nonempty for CORE_ONLY."
+          },
+          "chapter_only_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Objections to applications or arguments found only in the supporting chapter. Preserved for later chapter review and excluded from the glossary scope ruling."
+          },
+          "strongest_counter_interpretation": {
+            "type": "string"
+          },
+          "counter_core_identification": {
+            "type": "string"
+          },
+          "counter_relation_to_book_core": {
+            "type": "string",
+            "enum": [
+              "CONTRADICTS",
+              "SAME_CORE_BROADER",
+              "SAME_CORE_NARROWER",
+              "EQUIVALENT"
+            ]
+          },
+          "material_core_denial": {
+            "type": "string"
+          },
+          "counter_case": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "book_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counter_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_book_core_cannot_explain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comparative_winner": {
+            "type": "string",
+            "enum": [
+              "BOOK",
+              "COUNTER"
+            ]
+          },
+          "decisive_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "persuasion",
+          "support_scope",
+          "rationale",
+          "book_core_identification",
+          "book_secondary_elaborations",
+          "unsupported_glossary_assertions",
+          "chapter_only_objections",
+          "strongest_counter_interpretation",
+          "counter_core_identification",
+          "counter_relation_to_book_core",
+          "material_core_denial",
+          "counter_case",
+          "book_explanatory_advantages",
+          "counter_explanatory_advantages",
+          "evidence_book_core_cannot_explain",
+          "comparative_winner",
+          "decisive_sources",
+          "unresolved_objections",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 17588,
+    "input_tokens_details": {
+      "cache_write_tokens": 17585,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2501,
+    "output_tokens_details": {
+      "reasoning_tokens": 1358
+    },
+    "total_tokens": 20089
+  },
+  "user": null,
+  "metadata": {}
+}

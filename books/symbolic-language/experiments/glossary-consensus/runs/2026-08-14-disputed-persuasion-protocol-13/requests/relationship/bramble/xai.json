@@ -1,0 +1,126 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "bramble",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nBramble (thorns, thistles, briers)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, thorns, thistles, and briers primarily symbolize the curse pronounced on creation because of sin — the painful, frustrating consequences of the Fall, and by extension sin itself, unfruitfulness, and divine judgment. The ground bringing forth thorns after Adam's transgression (Genesis 3:17-18) is treated as the paradigm text, so that thorny growth throughout Scripture is read as a sign of a cursed, unproductive, or judged condition.\",\n  \"primary_basis\": [\n    \"Genesis 3:17-18 (the ground cursed; 'thorns also and thistles shall it bring forth')\",\n    \"Hebrews 6:7-8 (land bearing thorns and briers is 'rejected, and is nigh unto cursing')\",\n    \"Isaiah 5:6 (the unfruitful vineyard given over to briers and thorns)\",\n    \"Isaiah 7:23-25; Isaiah 32:13; Hosea 10:8 (briers and thorns as marks of desolation and judgment)\",\n    \"Matthew 27:29; John 19:2, 5 (the crown of thorns, commonly interpreted as Christ bearing the curse of sin; often linked with Galatians 3:13)\",\n    \"Genesis 22:13 (ram caught in a thicket, sometimes cited typologically)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Worldly cares, riches, and pleasures that choke spiritual life and the word of God — from the Parable of the Sower, where seed falls among thorns. This is the dominant reading within that specific parable and is extremely widespread in preaching.\",\n      \"basis\": [\n        \"Matthew 13:7, 22\",\n        \"Mark 4:7, 18-19\",\n        \"Luke 8:7, 14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wicked, worthless, or fruitless people — false prophets known by their fruits, the ungodly compared to thorns to be burned, and the bramble as the worthless usurper-king in Jotham's fable.\",\n      \"basis\": [\n        \"Judges 9:7-15 (Jotham's fable: the bramble offered kingship, read as Abimelech or as worthless rulership)\",\n        \"Matthew 7:16 ('Do men gather grapes of thorns?')\",\n        \"2 Samuel 23:6-7 ('sons of Belial' as thorns thrust away)\",\n        \"Luke 6:44\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Affliction, trial, or persistent hardship permitted by God for humbling and dependence — from Paul's 'thorn in the flesh.' This is a distinct symbolic use, very familiar in devotional literature.\",\n      \"basis\": [\n        \"2 Corinthians 12:7-9\",\n        \"Numbers 33:55; Joshua 23:13 (remaining Canaanites as 'thorns in your sides,' i.e., ongoing vexation)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christological typology of the burning bush: the thornbush (seneh) that burns without being consumed read as Israel enduring affliction, or as a type of Christ/the incarnation (deity dwelling amid the curse without being consumed). Found in patristic and some Reformed and devotional writers.\",\n      \"basis\": [\n        \"Exodus 3:2-4\",\n        \"Deuteronomy 33:16 ('the good will of him that dwelt in the bush')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Protective hedging or divine restraint — thorns as a barrier God uses to block a sinful path.\",\n      \"basis\": [\n        \"Hosea 2:6 ('I will hedge up thy way with thorns')\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable, broadly settled consensus that thorns/briers/brambles symbolize the curse of the Fall, sin's consequences, unfruitfulness, and judgment, anchored in Genesis 3:17-18 and reinforced by Hebrews 6:8 and prophetic desolation texts. However, the term is genuinely polyvalent: in specific passages, other readings are locally dominant (e.g., worldly cares in the Parable of the Sower; personal affliction in 2 Corinthians 12). The crown of thorns is very widely preached as Christ taking the curse upon himself, tying the Passion narrative back to Genesis 3 — this is often treated as an extension of the primary meaning rather than an alternative. The 'bramble' specifically (Judges 9) carries its own well-known negative connotation of worthless or tyrannical rule. Commentators across Catholic, Orthodox, Reformed, and evangelical traditions largely agree on the curse/sin core while applying context-specific senses passage by passage.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The curse of sin, divine judgment, and the hardship resulting from the Fall.\",\n  \"primary_basis\": [\n    \"Genesis 3:18\",\n    \"Matthew 27:29\",\n    \"Hebrews 6:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Worldly cares, anxieties, and the deceitfulness of wealth that choke spiritual growth.\",\n      \"basis\": [\n        \"Matthew 13:7\",\n        \"Matthew 13:22\",\n        \"Mark 4:18-19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wicked, worthless, or destructive people, including false prophets and corrupt rulers.\",\n      \"basis\": [\n        \"Judges 9:14-15\",\n        \"2 Samuel 23:6\",\n        \"Matthew 7:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Personal afflictions, trials, or spiritual harassment (e.g., a thorn in the flesh).\",\n      \"basis\": [\n        \"2 Corinthians 12:7\",\n        \"Numbers 33:55\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Thorns and thistles are universally recognized in Christian theology as symbols of the curse of sin introduced in Genesis. Christ's crown of thorns is widely interpreted as his physical bearing of the curse on humanity's behalf. In parables, brambles frequently represent either destructive leaders (Jotham's parable) or worldly distractions (Parable of the Sower).\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The effects of the fall—especially sin, curse, fruitlessness, hardship, and divine judgment. In Christian interpretation, thorns and related plants most broadly signify what corrupts or frustrates good fruit and what grows under God's curse or judgment.\",\n  \"primary_basis\": [\n    \"Genesis 3:17–18 — thorns and thistles arise in connection with the curse upon the ground after human disobedience.\",\n    \"Isaiah 5:5–6; 7:23–25; 32:13; 34:13 — thorns and briers portray judgment, devastation, and the loss of cultivated fruitfulness.\",\n    \"Hosea 10:8 — thorns and thistles overtake judged places of false worship.\",\n    \"Hebrews 6:7–8 — land producing thorns and thistles is worthless and near to being cursed.\",\n    \"Matthew 7:16; Luke 6:43–44 — thornbushes contrast with plants that bear good fruit.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Worldly anxiety, wealth, pleasure, and competing desires that choke the word and prevent spiritual fruitfulness.\",\n      \"basis\": [\n        \"Matthew 13:7,22\",\n        \"Mark 4:7,18–19\",\n        \"Luke 8:7,14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worthless, dangerous, or oppressive people and rulers. The lowly bramble can symbolize a destructive claimant to authority, while briers and thorns can represent hostile people surrounding God's servants.\",\n      \"basis\": [\n        \"Judges 9:7–15, especially 9:14–15 — Jotham's bramble represents Abimelech's destructive kingship.\",\n        \"Numbers 33:55; Joshua 23:13 — hostile inhabitants become thorns or scourges.\",\n        \"Ezekiel 2:6; 28:24 — rebellious or hostile neighbors are compared to briers and thorns.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ's suffering, mocked kingship, and, in theological interpretation, his bearing of the curse associated with fallen humanity.\",\n      \"basis\": [\n        \"Matthew 27:27–31\",\n        \"Mark 15:16–20\",\n        \"John 19:2–5\",\n        \"Genesis 3:17–18 is often connected typologically with the crown of thorns, although the Passion narratives do not explicitly make that connection.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Desolation caused by warfare or divine judgment, sometimes functioning primarily as a concrete image of abandoned land rather than as a fixed symbol of sin.\",\n      \"basis\": [\n        \"Isaiah 7:23–25; 32:13; 34:13\",\n        \"Jeremiah 12:13\",\n        \"Hosea 9:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The reversal of curse and restoration of creation, expressed through thorns being removed or replaced by fruitful trees.\",\n      \"basis\": [\n        \"Isaiah 55:13\",\n        \"Isaiah 35:1–2\",\n        \"Ezekiel 28:24\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong general consensus that thorns, thistles, and briers most often belong to the biblical imagery of curse, sin's consequences, obstruction, fruitlessness, and judgment. There is not, however, one fixed meaning applicable to every occurrence. Individual passages can specifically denote worldly cares, hostile people, bad rulers, desolated land, Christ's suffering, or the reversal of curse.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The curse of sin and its painful, obstructive consequences in a fallen creation (toil, barrenness, judgment, and hindrance to fruitfulness)\",\n  \"primary_basis\": [\n    \"Genesis 3:17-18 (thorns and thistles as part of the ground's curse after the Fall)\",\n    \"Hebrews 6:8 (land producing thorns and thistles is worthless and near to curse)\",\n    \"Isaiah 5:6; 7:23-25; 32:13 (thorns/briers as marks of divine judgment and desolation on the land/people)\",\n    \"Matthew 13:7, 22 (and parallels; thorns choking the seed as cares/riches of the world)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Worthless, harmful, or usurping leadership/people that bring fire and destruction rather than true fruit or shade\",\n      \"basis\": [\n        \"Judges 9:8-15 (Jotham's fable of the trees anointing the bramble as king)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Enemies, obstacles, or sources of continual irritation and oppression left among God's people\",\n      \"basis\": [\n        \"Numbers 33:55\",\n        \"Joshua 23:13\",\n        \"Judges 2:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Personal affliction, trial, or messenger of Satan that humbles and restrains\",\n      \"basis\": [\n        \"2 Corinthians 12:7 (Paul's thorn in the flesh)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The sin-curse borne and reversed by Christ (crown of thorns)\",\n      \"basis\": [\n        \"Matthew 27:29\",\n        \"Mark 15:17\",\n        \"John 19:2, 5 (linked interpretively to Genesis 3)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpreters consistently treat thorns/thistles/briers/brambles as multivalent symbols of the post-Fall curse and its outworkings (sin's effects, judgment, unfruitfulness, obstruction). The Genesis 3 origin supplies the dominant root meaning; other uses are extensions or applications rather than unrelated alternatives. No major school denies this cluster of associations.\"\n}\n\nBOOK ENTRY\nThe curse-ground's fruitless growth — worldly care and deceitful riches that choke the word, offer false protection, and end in fire.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 3:18; Matt 13:22; Judg 9:15; 2 Sam 23:6-7; Heb 6:8) · see The Parables of the Kingdom, ch. 2\n\nAVAILABLE KJV EXCERPTS\nGenesis 3:18 — Thorns also and thistles shall it bring forth to thee; and thou shalt eat the herb of the field;\nMatthew 13:22 — He also that received seed among the thorns is he that heareth the word; and the care of this world, and the deceitfulness of riches, choke the word, and he becometh unfruitful.\nJudges 9:15 — And the bramble said unto the trees, If in truth ye anoint me king over you, then come and put your trust in my shadow: and if not, let fire come out of the bramble, and devour the cedars of Lebanon.\n2 Samuel 23:6 — But the sons of Belial shall be all of them as thorns thrust away, because they cannot be taken with hands:\n2 Samuel 23:7 — But the man that shall touch them must be fenced with iron and the staff of a spear; and they shall be utterly burned with fire in the same place.\nHebrews 6:8 — But that which beareth thorns and briers is rejected, and is nigh unto cursing; whose end is to be burned.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "e6d62e07ee1a3d25c33cc6ba727382509dd400e01f43ffde4c864ed391109860",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-26-all-symbols-protocol-13",
+      "request": "runs/2026-07-26-all-symbols-protocol-13/requests/relationship/bramble/xai.json"
+    }
+  }
+}

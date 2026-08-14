@@ -1,0 +1,225 @@
+{
+  "created_at": 1785125830,
+  "completed_at": 1785125855,
+  "id": "1707fcfb-0d44-9188-b5c1-7f5987b99391",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_1707fcfb-0d44-9188-b5c1-7f5987b99391",
+      "summary": [
+        {
+          "text": "The task is to judge the BOOK ENTRY for \"Righteousness\" against the common interpretation and the scriptural evidence.\n{\n  \"book_core_identification\": \"Righteousness is right-living: God's commandments lived out by those under His authority; God is Right-Living by definition; opposite is sin.\",\n  \"support_scope\": \"FULL\",\n  \"unsupported_glossary_assertions\": [],\n  \"chapter_only_objections\": [],\n  \" strongest_counter\": \"The common interpretation: righteousness primarily means right standing before God (forensic justification/imputation of Christ's righteousness by faith, apart from works), with conformity to God's character as secondary or symbolic.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"persuasion\": \"PERSUADED\",\n  \"support_scope\": \"FULL\",\n  \"rationale\": \"The entry's core identification of righteousness as right-living (God by definition; His commandments lived out for those under authority) is the best explanation of the supplied texts. Direct definitional verses (Deut 6:25; Ps 119:172; 1 John 3:7; Deut 32:4; Ps 145:17) name commandments/doing as righteousness itself and identify God as righteous in His ways/works. The Pauline texts (Rom 4:4-8; Phil 3:9) are accounted for without contradiction once wage/debt claims are distinguished from duty-obedience (Luke 17:7-10; Heb 11:8), so imputed status is gift-source rather than a rival substance. No stronger counter explains the same cross-text pattern with fewer steps.\",\n  \"book_core_identification\": \"Righteousness is right-living: God is right-living by definition, and for those under His authority it is His commandments lived out (opposite: sin).\",\n  \"book_secondary_elaborations\": [\n    \"God is Right-Living by definition\",\n    \"for those under His authority, righteousness is His commandments lived out\",\n    \"Opposite: Sin\"\n  ],\n  \"unsupported_glossary_assertions\": [],\n  \"chapter_only_objections\": [\n    \"Broader chapter claims equating the wedding garment strictly with plural righteous acts/deeds that must be woven and washed, or fully collapsing forensic language into conduct alone, go beyond the printed glossary entry\",\n    \"Extended re-readings of 'end of the law', paidagōgos, cheirographon, and armor pieces as exclusively right-living clothing are chapter applications, not glossary assertions\"\n  ],\n  \"strongest_counter_interpretation\": \"Righteousness primarily denotes right standing/status before God (especially forensic/imputed righteousness of God/Christ credited by faith apart from works), with moral conformity as secondary fruit rather than the definition itself.\",\n  \"counter_core_identification\": \"Righteousness is chiefly a conferred legal/relational status of right standing with God received by faith.\",\n  \"counter_relation_to_book_core\": \"CONTRADICTS\",\n  \"material_core_denial\": \"The counter denies that righteousness is definitionally the living-out of God's commandments (or God's own right-living) and treats commandment-keeping as non-constitutive of the term's primary referent.\",\n  \"counter_case\": [\n    \"Rom 4:4-8 and Phil 3:9 contrast faith-counted/imputed righteousness with law/works righteousness, appearing to locate the term in status rather than deeds\",\n    \"Common readings of 2 Cor 5:21, Rom 3:21-26, and Gen 15:6 as forensic crediting\",\n    \"Traditional Protestant emphasis on alien righteousness as garment/status covering the sinner\"\n  ],\n  \"book_explanatory_advantages\": [\n    \"Directly matches explicit definitional statements (Deut 6:25 'it shall be our righteousness if we observe to do'; Ps 119:172 'all thy commandments are righteousness'; 1 John 3:7 'he that doeth righteousness is righteous')\",\n    \"Unifies God-as-righteous texts (Deut 32:4; Ps 145:17) with human texts under one 'right-living' sense without special pleading\",\n    \"Integrates Rom 4/Phil 3:9 via the supplied wage-vs-duty distinction (Luke 17:10) and faith-that-obeys (Heb 11:8) so the same verses support rather than overturn the core\",\n    \"Opposite 'sin' follows immediately from 1 John 3:4 lawlessness vs. doing righteousness\"\n  ],\n  \"counter_explanatory_advantages\": [\n    \"Fits the surface contrast language of 'not having mine own righteousness which is of the law' (Phil 3:9) and 'imputeth righteousness without works' (Rom 4:6)\",\n    \"Aligns with long-standing confessional readings that prioritize justification status\"\n  ],\n  \"evidence_book_core_cannot_explain\": [],\n  \"comparative_winner\": \"BOOK\",\n  \"decisive_sources\": [\n    \"Deuteronomy 6:25\",\n    \"Psalms 119:172\",\n    \"1 John 3:7\",\n    \"Deuteronomy 32:4\",\n    \"Psalms 145:17\",\n    \"Romans 4:4-8 (read with Luke 17:7-10 wage/duty distinction)\",\n    \"Philippians 3:9\",\n    \"Hebrews 11:8\"\n  ],\n  \"unresolved_objections\": [],\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_1707fcfb-0d44-9188-b5c1-7f5987b99391",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "persuasion": {
+            "type": "string",
+            "enum": [
+              "PERSUADED",
+              "UNPERSUADED"
+            ]
+          },
+          "support_scope": {
+            "type": "string",
+            "enum": [
+              "FULL",
+              "CORE_ONLY",
+              "NONE"
+            ],
+            "description": "Support for the exact glossary BOOK ENTRY only, never for the supporting chapter as a whole."
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "book_secondary_elaborations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Secondary assertions actually printed in the glossary BOOK ENTRY; exclude chapter-only claims."
+          },
+          "unsupported_glossary_assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Material assertions actually printed in the BOOK ENTRY that the evidence does not support. Must be empty for FULL and nonempty for CORE_ONLY."
+          },
+          "chapter_only_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Objections to applications or arguments found only in the supporting chapter. Preserved for later chapter review and excluded from the glossary scope ruling."
+          },
+          "strongest_counter_interpretation": {
+            "type": "string"
+          },
+          "counter_core_identification": {
+            "type": "string"
+          },
+          "counter_relation_to_book_core": {
+            "type": "string",
+            "enum": [
+              "CONTRADICTS",
+              "SAME_CORE_BROADER",
+              "SAME_CORE_NARROWER",
+              "EQUIVALENT"
+            ]
+          },
+          "material_core_denial": {
+            "type": "string"
+          },
+          "counter_case": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "book_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counter_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_book_core_cannot_explain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comparative_winner": {
+            "type": "string",
+            "enum": [
+              "BOOK",
+              "COUNTER"
+            ]
+          },
+          "decisive_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "persuasion",
+          "support_scope",
+          "rationale",
+          "book_core_identification",
+          "book_secondary_elaborations",
+          "unsupported_glossary_assertions",
+          "chapter_only_objections",
+          "strongest_counter_interpretation",
+          "counter_core_identification",
+          "counter_relation_to_book_core",
+          "material_core_denial",
+          "counter_case",
+          "book_explanatory_advantages",
+          "counter_explanatory_advantages",
+          "evidence_book_core_cannot_explain",
+          "comparative_winner",
+          "decisive_sources",
+          "unresolved_objections",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 23838,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1732,
+    "output_tokens_details": {
+      "reasoning_tokens": 677
+    },
+    "total_tokens": 25570,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 578504000,
+    "context_details": {
+      "input_tokens": 23838,
+      "output_tokens": 1732
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target."
+}

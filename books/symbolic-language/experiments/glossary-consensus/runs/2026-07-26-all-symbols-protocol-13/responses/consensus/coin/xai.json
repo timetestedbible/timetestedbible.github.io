@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919586,
+  "completed_at": 1783919610,
+  "id": "45cbfb8b-44a1-9344-9aff-9549a70bb84f",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_45cbfb8b-44a1-9344-9aff-9549a70bb84f",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Coin\" in Christian teaching and biblical interpretation, without any external knowledge of a specific author's view.\n{\n  \"primary_meaning\": \"The coin most commonly symbolizes the human soul or a sinner in Christian teaching, particularly through the Parable of the Lost Coin (Luke 15:8-10), where the coin represents a lost soul that God joyfully seeks and restores.\",\n  \"biblical_passages\": [\n \"Luke 15:8-10\",\n  \"Matthew 22:15-22\",\n  \"Mark 12:13-17\",\n  \"Luke 20:20-26\"\n  ],\n  \"alternative_readings\": [\n  {\n    \"meaning\": \"The coin symbolizes earthly wealth or material riches, dominant in contexts like the widow's mite (Mark 12:41-44) and the talents/minas (Matthew 25:14-30).\",\n    \"type\": \"dominant\"\n  },\n  {\n    \"meaning\": \"The coin symbolizes betrayal or the price of sin,  common in the thirty pieces of silver (Matthew 26:14-16, 27:3-10).\",\n    \"type\": \"common\"\n  },\n  {\n    \"meaning\": \"The coin symbolizes civic duty or the things of this world versus God, common in the tribute money passage (Matthew 22:15-22). \",\n    \"type\": \"common\"\n  },\n  {\n    \"meaning\": \"The coin symbolizes divine provision or redemption, rare in the temple tax coin (Matthew 17:24-27).\",\n    \"type\": \"rare\"\n  }\n  ],\n  \"no_settled\": false\n} \n\nThe primary symbolic meaning most commonly assigned to \"coin\" in Christian teaching is the lost sinner or soul, as seen in the Parable of the Lost Coin (Luke 15:8-10), where God searches for and rejoices over one person who repents.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"a lost sinner (or soul of value) who is diligently sought and joyfully recovered by God\",\n  \"primary_basis\": [\n    \"Luke 15:8-10\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"earthly authority, taxes, and the distinction between what belongs to Caesar and what belongs to God (via the image on the coin)\",\n      \"basis\": [\n        \"Matthew 22:15-22\",\n        \"Mark 12:13-17\",\n        \"Luke 20:20-26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"stewardship of resources, gifts, or responsibilities entrusted by God\",\n      \"basis\": [\n        \"Matthew 25:14-30\",\n        \"Luke 19:11-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the price of betrayal or blood money\",\n      \"basis\": [\n        \"Matthew 26:14-16\",\n        \"Matthew 27:3-10\",\n        \"Zechariah 11:12-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"sacrificial generosity from poverty\",\n      \"basis\": [\n        \"Mark 12:41-44\",\n        \"Luke 21:1-4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"divine provision meeting an obligation\",\n      \"basis\": [\n        \"Matthew 17:24-27\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Coins appear across multiple independent biblical contexts (parables of loss and stewardship, the tribute question, Judas's payment, the widow's offering, temple-tax provision) and receive distinct symbolic applications in Christian teaching; no single meaning has exclusive dominance.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_45cbfb8b-44a1-9344-9aff-9549a70bb84f",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2352,
+    "output_tokens_details": {
+      "reasoning_tokens": 1905
+    },
+    "total_tokens": 2954,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 151240000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 2352
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

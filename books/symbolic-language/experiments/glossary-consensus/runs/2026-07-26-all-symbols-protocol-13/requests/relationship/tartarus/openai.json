@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "tartarus",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nTartarus (tartaroō)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'tartaroō' (the verb form of Tartarus, appearing only once in the New Testament) is understood to mean that God cast the angels who sinned into a place or condition of imprisonment and gloomy darkness where they are held in restraint awaiting final judgment. It is typically treated as a temporary intermediate prison for fallen angels — distinct from Gehenna (the final hell of punishment) and from Hades (the general realm of the dead) — with the word deliberately borrowed from Greek cosmology, where Tartarus was the deepest abyss below Hades reserved for the punishment of divine beings (e.g., the Titans). Peter's use is generally read as appropriating that familiar Hellenistic image to describe divine confinement of rebellious angels, not as an endorsement of Greek mythology.\",\n  \"primary_basis\": [\n    \"2 Peter 2:4 (the sole biblical occurrence: God 'cast them into Tartarus' and committed them to chains/pits of gloomy darkness, kept until judgment)\",\n    \"Jude 6 (parallel passage: angels who did not keep their proper domain kept in eternal chains under darkness for the judgment of the great day)\",\n    \"1 Peter 3:19-20 (the 'spirits in prison' associated with the days of Noah, often linked to the same imprisoned beings)\",\n    \"Genesis 6:1-4 (the 'sons of God' episode, widely cited as the sin in view, especially via Second Temple tradition)\",\n    \"1 Enoch 6-21 (extra-biblical but routinely cited as the interpretive background: the Watchers bound in a dark abyss until judgment)\",\n    \"Luke 8:31 and Revelation 9:1-11; 20:1-3 (the 'abyss' as a comparable prison for demonic beings)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Tartarus as simply 'hell' — identified or conflated with the final place of punishment (Gehenna). This reading is embedded in older English translations (KJV and others render tartaroō as 'cast down to hell') and persists in popular preaching that treats Tartarus, Hades, and Gehenna interchangeably.\",\n      \"basis\": [\n        \"2 Peter 2:4 as rendered 'hell' in the KJV and similar translations\",\n        \"Matthew 25:41 (eternal fire prepared for the devil and his angels, read as the same destiny)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Tartarus as the deepest compartment or lowest region of Hades/Sheol within a tiered cosmology of the underworld — a view found in some patristic and later systematic treatments that map Tartarus as a distinct sub-region of the intermediate state.\",\n      \"basis\": [\n        \"2 Peter 2:4\",\n        \"Luke 16:19-31 (compartmentalized afterlife imagery)\",\n        \"Greek cosmological background (Tartarus below Hades in Homer and Hesiod)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Tartarus as a debased condition rather than a location — the fallen angels were cast into a state of deepest spiritual darkness and abasement, cut off from God's light, not confined in a literal place. This is notably the Jehovah's Witnesses' interpretation but also appears in some other non-spatial readings.\",\n      \"basis\": [\n        \"2 Peter 2:4 read as describing condition, not geography\",\n        \"Jude 6 (loss of original position/estate)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Tartarus as a purely literary or rhetorical borrowing from Greco-Roman mythology and Hellenistic Jewish literature, functioning as a vivid metaphor for certain divine judgment rather than teaching any specific cosmological doctrine. Common in critical scholarship, which stresses 2 Peter's dependence on 1 Enoch and Hellenistic idiom.\",\n      \"basis\": [\n        \"2 Peter 2:4 in light of 1 Enoch and Hellenistic Jewish usage (e.g., Josephus, Philo, Sibylline Oracles use Tartarus language)\",\n        \"Jude 6 and its explicit debt to Enochic tradition (cf. Jude 14-15)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divergence on the referent of the imprisoned angels: rather than the Genesis 6 Watchers, some (especially in older Reformed and dispensational teaching) read 'the angels who sinned' as those who fell with Satan in a primeval rebellion before Eden, making Tartarus the holding place from that original fall.\",\n      \"basis\": [\n        \"2 Peter 2:4\",\n        \"Isaiah 14:12-15 and Ezekiel 28:12-17 (traditionally applied to Satan's fall)\",\n        \"Revelation 12:4, 7-9\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The term appears exactly once in the Bible (2 Peter 2:4, as the verb tartarōsas), so all interpretation rests on that single verse plus parallels. There is broad scholarly and much popular consensus on the core idea — a dark confinement of fallen angels pending judgment, using imagery borrowed from Greek and Enochic tradition — but genuine divergence persists on (a) whether Tartarus is a place or a condition, (b) whether it is distinct from or identical to 'hell'/Gehenna, and (c) which angelic fall is in view (Genesis 6 Watchers vs. Satan's primeval rebellion). Modern academic commentary strongly favors the Enochic/Genesis 6 background; older translations' rendering 'hell' has kept the conflated popular reading alive.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A place or state of deep darkness and temporary confinement where fallen angels are held in chains awaiting final judgment.\",\n  \"primary_basis\": [\n    \"2 Peter 2:4\",\n    \"Jude 1:6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A general synonym for Hell or Gehenna, representing the final and eternal state of punishment for all wicked beings, both human and angelic.\",\n      \"basis\": [\n        \"2 Peter 2:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A synonym for Hades or Sheol, representing the intermediate state of the human dead before the resurrection.\",\n      \"basis\": [\n        \"Classical Greek mythology\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A metaphorical description of the spiritual degradation, limitation, and separation from God experienced by fallen angels, rather than a literal spatial location.\",\n      \"basis\": [\n        \"Theological extrapolation\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical studies, the verb tartaroō is a hapax legomenon in the New Testament. Scholarly consensus strongly distinguishes Tartarus from Gehenna (the final lake of fire) and Hades (the intermediate state for humans), recognizing it instead as a specific holding place for rebellious angels, a concept heavily influenced by Second Temple Jewish apocalyptic traditions such as 1 Enoch.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Tartarus denotes the deepest realm or condition of punitive confinement to which sinful angels are cast and held while awaiting final judgment. Christian interpretation commonly treats it as an infernal angelic prison, related to—but not always identical with—the final hell or lake of fire.\",\n  \"primary_basis\": [\n    \"2 Peter 2:4 — the sole New Testament use of tartaroō; sinning angels are cast into Tartarus and kept in gloomy confinement until judgment.\",\n    \"Jude 6 — angels who abandoned their proper domain are kept in darkness under bonds for the judgment of the great day.\",\n    \"1 Peter 3:19–20 — the “spirits in prison,” often associated with the same imprisoned angels.\",\n    \"Genesis 6:1–4 — commonly connected with this tradition when the sinning angels are identified with the “sons of God.”\",\n    \"Matthew 25:41 — the eternal fire prepared for the devil and his angels, often cited when Tartarus is related to final punishment.\",\n    \"Revelation 20:1–3, 10 — Satan’s confinement in the abyss and eventual punishment in the lake of fire provide related, though terminologically distinct, imagery.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Tartarus is simply another name for hell generally, including the place of punishment for wicked human beings as well as demons.\",\n      \"basis\": [\n        \"2 Peter 2:4 is translated “cast them down to hell” in several influential English versions.\",\n        \"Matthew 25:41 and Revelation 20:10 encourage a broad identification with final infernal punishment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"It is specifically the prison of the angelic “Watchers” whose sin involved the daughters of men in Genesis 6, rather than a general destination for all fallen angels.\",\n      \"basis\": [\n        \"Genesis 6:1–4\",\n        \"Jude 6–7\",\n        \"1 Peter 3:19–20\",\n        \"The Jewish interpretive background reflected in 1 Enoch, though 1 Enoch is not canonical in most Christian traditions.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The imprisoned angels are those who joined Satan in a primordial rebellion, without necessarily connecting their sin to Genesis 6.\",\n      \"basis\": [\n        \"2 Peter 2:4\",\n        \"Matthew 25:41\",\n        \"Revelation 12:7–9\",\n        \"Revelation 20:1–3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Tartarus is primarily figurative language for extreme degradation, divine restraint, and certain judgment, rather than a literal location within an underworld cosmology.\",\n      \"basis\": [\n        \"The verb tartaroō in 2 Peter 2:4 can be read as vivid imagery drawn from the Greek cultural environment.\",\n        \"The emphasis of 2 Peter 2:4 and Jude 6 is custody until judgment rather than geographical description.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The term retains its strictly classical Greek sense as the mythological prison of the Titans or rebellious divine beings.\",\n      \"basis\": [\n        \"In Greek mythology Tartarus was the deepest underworld prison.\",\n        \"2 Peter’s vocabulary may deliberately evoke that familiar cultural image.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable consensus about the broad meaning—punitive confinement of sinful angels awaiting judgment—but no settled consensus about the angels’ identity, the nature or location of Tartarus, or whether it is identical with the abyss, Hades, Gehenna, or the final lake of fire. The Greek term occurs in the New Testament only as the verb tartaroō in 2 Peter 2:4.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A prison or abyss of gloomy darkness into which God cast sinning angels, confining them until the final judgment (distinct from the final lake of fire).\",\n  \"primary_basis\": [\n    \"2 Peter 2:4 (the sole NT occurrence of tartaroō, describing angels cast into Tartarus and held in chains of darkness)\",\n    \"Jude 6 (parallel reference to angels kept in eternal chains under gloomy darkness until judgment)\",\n    \"Traditional Christian linkage to the fallen angels / Watchers tradition and the abyss as a temporary holding place for demonic beings\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Simply a synonym for hell (Hades or Gehenna) in general, without special reference to angelic imprisonment\",\n      \"basis\": [\n        \"Broader popular Christian usage equating Tartarus with hell\",\n        \"Occasional older translations rendering tartaroō simply as 'cast down to hell'\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The lowest or deepest compartment of the underworld/hell, reserved for the worst offenders (drawing on Greek mythological layering of Tartarus below Hades)\",\n      \"basis\": [\n        \"Classical Greek background of Tartarus as the deep pit beneath Hades\",\n        \"Some patristic and later Christian cosmological schemes of graded underworld regions\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A purely mythological or metaphorical allusion without implying a literal location or ongoing angelic confinement\",\n      \"basis\": [\n        \"Critical/scholarly readings that treat the Petrine language as borrowed imagery rather than doctrinal topography\",\n        \"Emphasis on rhetorical purpose over ontology\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation overwhelmingly centers on 2 Peter 2:4’s unique verb tartaroō as denoting the confinement of rebellious angels; secondary associations with Hades/Gehenna or Greek myth exist but do not displace the primary angelic-prison reading in standard teaching and commentaries.\"\n}\n\nBOOK ENTRY\nTo cast sinning angels into Tartarus: confinement in chains of darkness while they await judgment. The word does not name the grave of the human dead or Gehenna's destructive verdict.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(2 Pet 2:4; Jude 6) · see Heaven and Hell, ch. 16\n\nAVAILABLE KJV EXCERPTS\n2 Peter 2:4 — For if God spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "d140fca6136b32c8071afe1553b74843a11e9111490b56b3bdb54880da068d59",
+  "cache": {
+    "hit": false
+  }
+}

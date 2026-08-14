@@ -1,0 +1,126 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "understanding",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nUnderstanding\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'understanding' (Hebrew binah/tebunah; Greek synesis) is most commonly read as God-given spiritual discernment: the divinely granted capacity to perceive, grasp, and rightly apply God's truth and moral order. It is closely paired with wisdom, rooted in the fear of the Lord, and treated as illumination that comes from God rather than a merely natural intellectual faculty. It denotes insight into the meaning of God's word and will, enabling right living and the discernment of good and evil.\",\n  \"primary_basis\": [\n    \"Proverbs 9:10 ('the fear of the LORD is the beginning of wisdom, and the knowledge of the Holy One is understanding')\",\n    \"Proverbs 2:1-6 (the LORD gives wisdom; from his mouth come knowledge and understanding)\",\n    \"Proverbs 3:5 ('lean not on your own understanding')\",\n    \"Proverbs 4:5-7 ('get wisdom, get understanding')\",\n    \"Job 28:28 ('to depart from evil is understanding')\",\n    \"Psalm 111:10\",\n    \"Psalm 119:34, 119:130 ('the unfolding of your words gives light; it imparts understanding')\",\n    \"1 Kings 3:9-12 (Solomon's understanding heart)\",\n    \"Isaiah 11:2 (the Spirit of wisdom and understanding resting on the Messiah)\",\n    \"Luke 24:45 (Jesus opened their minds to understand the Scriptures)\",\n    \"Ephesians 1:17-18 (eyes of the heart enlightened)\",\n    \"Colossians 1:9 (filled with spiritual wisdom and understanding)\",\n    \"2 Timothy 2:7 ('the Lord will give you understanding in everything')\",\n    \"1 John 5:20 (the Son of God has given us understanding)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Understanding as one of the seven gifts of the Holy Spirit (donum intellectus), a distinct supernatural gift enabling penetration into the truths of faith — a formalized reading in Catholic and some Orthodox tradition drawn from the Septuagint/Vulgate text of Isaiah 11:2-3.\",\n      \"basis\": [\n        \"Isaiah 11:2-3 (LXX/Vulgate)\",\n        \"Catechetical tradition (e.g., Aquinas, Summa Theologiae II-II q.8)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Understanding as a personified attribute alongside Lady Wisdom in the wisdom literature, sometimes extended christologically so that Wisdom/Understanding prefigures or is identified with Christ, 'the wisdom of God.'\",\n      \"basis\": [\n        \"Proverbs 8:1, 8:14 ('I have counsel and sound wisdom; I have insight')\",\n        \"Proverbs 3:19 (by understanding God established the heavens)\",\n        \"1 Corinthians 1:24, 1:30\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Understanding located symbolically in the 'heart' — Hebrew anthropology treating the heart (leb/lebab) as the seat of understanding, so that gaining or losing understanding is described as the heart being opened, hardened, or darkened.\",\n      \"basis\": [\n        \"Deuteronomy 29:4\",\n        \"Isaiah 6:9-10\",\n        \"Matthew 13:14-15\",\n        \"Romans 1:21\",\n        \"Ephesians 4:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Understanding as practical skill or craftsmanship competence given by God's Spirit (technical ability rather than spiritual discernment), as with Bezalel and the tabernacle artisans.\",\n      \"basis\": [\n        \"Exodus 31:3, 35:31, 36:1\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Esoteric or mystical readings (e.g., correlation with Binah in Kabbalistic-influenced schemes, or gnostic-style ascent through levels of knowledge) treating understanding as a stage of hidden or higher knowledge.\",\n      \"basis\": [\n        \"Extra-biblical mystical literature; occasionally attached to Proverbs 3:19 and Job 28\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"'Understanding' functions in Scripture and Christian teaching more as a named virtue, faculty, or divine gift than as a figurative symbol like leaven, water, or oil; there is therefore no single allegorical 'code meaning' assigned to it. Nonetheless there is a broad, recognizable consensus: understanding is God-given discernment inseparable from wisdom and the fear of the Lord, and dependence on merely human understanding is warned against (Prov 3:5). The main interpretive variations concern emphasis (spiritual illumination, formal gift of the Spirit, seat in the heart, practical skill) rather than fundamentally competing symbolic definitions. Confidence is medium because the term's status as a 'symbol' is itself contestable even though the core theological meaning is widely shared.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual discernment and the God-given ability to comprehend divine truth, properly applying wisdom to life and grasping the moral reality of God's will.\",\n  \"primary_basis\": [\n    \"Proverbs 3:5\",\n    \"Proverbs 4:7\",\n    \"Proverbs 9:10\",\n    \"Colossians 1:9\",\n    \"1 Corinthians 2:14\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Fallen or limited human intellect and reasoning, often contrasted negatively with faith or divine revelation.\",\n      \"basis\": [\n        \"Proverbs 3:5\",\n        \"1 Corinthians 1:19\",\n        \"Isaiah 29:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Prophetic or apocalyptic insight, specifically the ability to decode divine mysteries, visions, and eschatological signs.\",\n      \"basis\": [\n        \"Daniel 1:17\",\n        \"Daniel 9:22\",\n        \"Revelation 13:18\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Practical skill, craftsmanship, or administrative ability granted by the Spirit for specific earthly tasks.\",\n      \"basis\": [\n        \"Exodus 31:3\",\n        \"1 Kings 3:9\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical theology, understanding is frequently paired with wisdom and knowledge. It is generally viewed not as a raw cognitive function but as a moral and spiritual orientation toward God.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God-given spiritual discernment: the capacity to comprehend, distinguish, and rightly apply divine truth, rather than merely possess information.\",\n  \"primary_basis\": [\n    \"Proverbs 2:1-6 — understanding is sought through wisdom and is given by the Lord.\",\n    \"Proverbs 3:13-18; 4:5-7 — understanding is closely joined to wisdom and presented as a virtue to acquire.\",\n    \"Psalm 119:34, 104, 130 — God’s word gives understanding that enables faithful obedience and discernment.\",\n    \"Isaiah 11:2 — the Spirit of the Lord is described as the Spirit of wisdom and understanding.\",\n    \"Luke 24:45 — Christ opens the disciples’ minds to understand the Scriptures.\",\n    \"Ephesians 1:17-18 — spiritual wisdom, revelation, and enlightened understanding are gifts from God.\",\n    \"Colossians 1:9-10 — spiritual wisdom and understanding lead to conduct worthy of the Lord.\",\n    \"2 Timothy 2:7 — understanding is ultimately granted by the Lord.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Practical wisdom or sound judgment for ordering one’s conduct well, especially in Proverbs and other wisdom literature.\",\n      \"basis\": [\n        \"Proverbs 3:13-18\",\n        \"Proverbs 4:5-9\",\n        \"Proverbs 14:29,33\",\n        \"Proverbs 16:16,22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral discernment—the ability to distinguish good from evil and choose obedience.\",\n      \"basis\": [\n        \"1 Kings 3:9-12\",\n        \"Psalm 119:104\",\n        \"Proverbs 2:9-12\",\n        \"Hebrews 5:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Intellectual comprehension, including ordinary human perception or the grasp of a teaching, without an inherently symbolic or supernatural sense.\",\n      \"basis\": [\n        \"Daniel 1:17\",\n        \"Matthew 15:10\",\n        \"Mark 7:14\",\n        \"1 Corinthians 14:14-20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A particular work or endowment of the Holy Spirit, sometimes associated with Isaiah’s description of the Spirit resting on the Messiah and, in some traditions, classified as a gift of the Spirit.\",\n      \"basis\": [\n        \"Isaiah 11:2\",\n        \"Ephesians 1:17\",\n        \"Colossians 1:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Christ himself as the embodiment or source of understanding, based on New Testament wisdom and knowledge language.\",\n      \"basis\": [\n        \"Colossians 2:2-3\",\n        \"1 Corinthians 1:24,30\",\n        \"1 John 5:20\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"“Understanding” has a stable general theological sense—discernment or comprehension, often granted by God—but it does not have one settled symbolic referent across Christian interpretation. Its exact meaning depends heavily on context and overlaps with wisdom, knowledge, moral judgment, scriptural illumination, and spiritual insight.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Divine gift of spiritual insight and discernment enabling comprehension of God's truths and mysteries\",\n  \"primary_basis\": [\n    \"Isaiah 11:2\",\n    \"Proverbs 2:6\",\n    \"1 Corinthians 2:12-14\",\n    \"Ephesians 1:17-18\",\n    \"Colossians 1:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Natural human intellectual capacity or cognitive reason (often contrasted with divine gift)\",\n      \"basis\": [\n        \"Proverbs 3:5\",\n        \"1 Corinthians 1:19-21\",\n        \"Job 32:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Near-synonym interchangeable with wisdom or knowledge without clear distinction\",\n      \"basis\": [\n        \"Proverbs 1:2\",\n        \"Proverbs 4:5-7\",\n        \"Proverbs 9:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Specific capacity for interpreting dreams, visions, or prophecies\",\n      \"basis\": [\n        \"Daniel 1:17\",\n        \"Daniel 5:11-12\",\n        \"Genesis 41:39\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Understanding is treated more as a spiritual gift or virtue than a concrete typological symbol (e.g., unlike lamb or light), yet Christian teaching shows clear consensus linking it primarily to Spirit-enabled insight into divine realities, especially via the Isaiah 11 tradition and Pauline enlightenment language.\"\n}\n\nBOOK ENTRY\nDiscernment of good from evil, gained by departing from evil — “a good understanding have all they that do his commandments”.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Job 28:28; Ps 111:10) · see The Fool and the Wise, ch. 20\n\nAVAILABLE KJV EXCERPTS\nJob 28:28 — And unto man he said, Behold, the fear of the Lord, that is wisdom; and to depart from evil is understanding.\nPsalms 111:10 — The fear of the LORD is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "d858c790717ed61f27ae08f8c2ce4305e186a4b2e52e49324093ea7028406055",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/relationship/understanding/xai.json"
+    }
+  }
+}

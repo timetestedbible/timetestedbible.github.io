@@ -1,0 +1,173 @@
+{
+  "id": "resp_0d80eebb1531a001006a54773d7a8c8195aea414e1e2e01b45",
+  "object": "response",
+  "created_at": 1783920445,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920464,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0d80eebb1531a001006a54773e0b348195ac89f8f5104a41ea",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0d80eebb1531a001006a5477422cb88195ab2b256a2b938b9e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"God—and, in explicitly Christian interpretation, Christ—as a firm, dependable foundation, refuge, source of strength, and salvation.\",\"primary_basis\":[\"Deuteronomy 32:4, 15, 18, 30–31: God is repeatedly called “the Rock.”\",\"Psalm 18:2, 31, 46; 62:2, 6–7; 95:1: the Lord is the believer’s rock, fortress, and salvation.\",\"Isaiah 26:4; 44:8: the Lord is portrayed as the everlasting Rock and the unique source of security.\",\"Matthew 7:24–25; Luke 6:47–48: rock represents the secure foundation provided by hearing and obeying Jesus’ words.\",\"Romans 9:33; 1 Peter 2:4–8: Christ is the cornerstone or rock upon whom some build and over whom others stumble.\",\"1 Corinthians 10:4: Paul explicitly identifies the spiritual rock accompanying Israel with Christ.\"],\"alternatives\":[{\"meaning\":\"Peter as the rock upon which Christ builds the church, often including his apostolic office and, in Catholic interpretation, the Petrine ministry.\",\"basis\":[\"Matthew 16:18–19 is the principal text: “you are Peter, and on this rock I will build my church.”\",\"John 1:42 records Jesus giving Simon the name Cephas/Peter, meaning rock or stone.\"],\"prominence\":\"common\"},{\"meaning\":\"Peter’s confession that Jesus is the Messiah and Son of God as the rock or foundation of the church.\",\"basis\":[\"Matthew 16:16–18 links Peter’s confession directly to Jesus’ statement about “this rock.”\",\"This interpretation is especially prominent in many Protestant and patristic readings.\"],\"prominence\":\"common\"},{\"meaning\":\"Christ himself as the rock intended in Matthew 16:18 and as the church’s ultimate foundation.\",\"basis\":[\"1 Corinthians 3:11 states that no foundation can be laid other than Jesus Christ.\",\"Ephesians 2:20 and 1 Peter 2:4–8 identify Christ as the cornerstone.\",\"Some interpreters read Matthew 16:18 in light of these passages.\"],\"prominence\":\"common\"},{\"meaning\":\"A cause of stumbling, judgment, or offense for those who reject God or Christ.\",\"basis\":[\"Isaiah 8:14 describes the Lord as a stone of stumbling and rock of offense.\",\"Romans 9:32–33 and 1 Peter 2:7–8 apply this imagery to Christ.\"],\"prominence\":\"common\"},{\"meaning\":\"Physical rock as a sign of God’s miraculous provision, especially water supplied in the wilderness.\",\"basis\":[\"Exodus 17:1–7 and Numbers 20:2–13 recount water coming from the rock.\",\"1 Corinthians 10:4 gives the episode an explicitly Christological interpretation.\"],\"prominence\":\"common\"},{\"meaning\":\"Unstable or false objects of trust, including rival powers or gods, by contrast with the true Rock.\",\"basis\":[\"Deuteronomy 32:31 contrasts Israel’s Rock with the enemies’ “rock.”\",\"Isaiah 31:1 warns against relying on human military strength rather than the Lord.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus that divine firmness, refuge, strength, and foundational security are the central symbolic associations of rock imagery. However, the symbol is context-dependent, and there is no settled cross-traditional consensus on the specific referent of “this rock” in Matthew 16:18; Peter, Peter’s confession, and Christ are all established readings.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 901,
+    "output_tokens_details": {
+      "reasoning_tokens": 144
+    },
+    "total_tokens": 1218
+  },
+  "user": null,
+  "metadata": {}
+}

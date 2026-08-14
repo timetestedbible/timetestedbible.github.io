@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920442,
+  "completed_at": 1783920463,
+  "id": "567fadd9-d12e-9c23-8629-8fce3a14cc57",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_567fadd9-d12e-9c23-8629-8fce3a14cc57",
+      "summary": [
+        {
+          "text": "The task is about the term \"Rich\" in biblical symbolism for Christian teaching and biblical interpretation.\n{\n  \"primary_meaning\": \"wealth and material prosperity as symbols of spiritual poverty and self-reliance apart from God\",\n  \"primary_basis\": [\n    \"Matthew 19:24\",\n    \"Luke 16:19-31\",\n    \"1 Timothy 6:10\",\n    \"Mark 10:23 24\",\n    \"Luke 12:21\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"spiritual riches or abundance in faith and good works\",\n      \"basis\": [\n        \"Ephesians 2:4\",\n        \"Luke 12:21\",\n        \"1 Timothy 6:18 19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"blessing and divine favor\",\n      \"basis\": [\n        \"Proverbs 10:22\",\n        \"Psalm 37:16\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n   \"confidence\": \"medium\",\n   \"notes\": \"The negative symbolic reading of wealth as a barrier to the kingdom is dominant in New Testament teaching, though positive uses of 'rich' (rich in faith, rich toward God) exist and are acknowledged.\"\n} \n\n The primary symbolic meaning most commonly assigned to \"Rich\" in Christian teaching is that of material wealth as a spiritual hindrance, representing self-reliance, pride, and a dangerous attachment to worldly things that can prevent entry into God's kingdom.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Material wealth as a spiritual hindrance or danger that fosters self-reliance, pride, and worldliness, making entrance into God's kingdom difficult\",\n  \"primary_basis\": [\n    \"Matthew 19:23-24\",\n    \"Mark 10:23-25\",\n    \"Luke 18:24-25\",\n    \"Luke 6:24\",\n    \"Luke 12:16-21\",\n    \"Luke 16:19-31\",\n    \"James 5:1-6\",\n    \"1 Timothy 6:9-10\",\n    \"Revelation 3:17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Spiritual abundance or being rich toward God (in faith, mercy, or good works)\",\n      \"basis\": [\n        \"Luke 12:21\",\n        \"James 2:5\",\n        \"1 Timothy 6:18\",\n        \"Ephesians 2:4\",\n        \"2 Corinthians 8:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Earthly prosperity as a divine blessing and sign of God's favor (especially in Old Testament contexts)\",\n      \"basis\": [\n        \"Deuteronomy 8:18\",\n        \"Deuteronomy 28:1-14\",\n        \"Proverbs 10:22\",\n        \"Psalm 112\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The wealthy as oppressors of the poor who face divine judgment\",\n      \"basis\": [\n        \"Amos 4:1\",\n        \"Amos 6:1-7\",\n        \"James 5:1-6\",\n        \"Luke 16:19-31\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation, particularly of the New Testament, overwhelmingly treats 'the rich' with cautionary symbolism centered on spiritual peril rather than a single rigid typology; positive uses of richness are usually qualified as spiritual or properly stewarded wealth rather than material riches per se.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_567fadd9-d12e-9c23-8629-8fce3a14cc57",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 2247,
+    "output_tokens_details": {
+      "reasoning_tokens": 1760
+    },
+    "total_tokens": 2849,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 141100000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 2247
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

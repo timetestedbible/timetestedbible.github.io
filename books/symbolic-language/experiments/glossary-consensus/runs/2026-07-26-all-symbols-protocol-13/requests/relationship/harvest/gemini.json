@@ -1,0 +1,133 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "harvest",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nHarvest\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'harvest' primarily symbolizes the eschatological ingathering of people at the end of the age — God's final gathering of the righteous into His kingdom and the corresponding judgment of the wicked. Jesus explicitly interprets the figure this way ('the harvest is the end of the age'), and the image carries a dual aspect: salvation/gathering of God's people (wheat into the barn) and judgment/destruction of the unrighteous (weeds burned, grapes trodden in the winepress).\",\n  \"primary_basis\": [\n    \"Matthew 13:24-30, 36-43 (parable of the wheat and weeds; 'the harvest is the end of the age, and the harvesters are angels')\",\n    \"Revelation 14:14-20 (the Son of Man reaping the earth with a sickle; the grape harvest and winepress of God's wrath)\",\n    \"Joel 3:13 ('Swing the sickle, for the harvest is ripe' — judgment of the nations)\",\n    \"Matthew 3:12 / Luke 3:17 (John the Baptist: gathering wheat into the barn, burning the chaff)\",\n    \"Mark 4:26-29 (parable of the growing seed; sickle put in when grain is ripe)\",\n    \"Jeremiah 51:33 and Hosea 6:11 (harvest as appointed time of judgment/restoration)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Evangelistic/missionary harvest: people who are spiritually ready to receive the gospel, with believers as 'workers' sent to gather them. This is extremely widespread in preaching and missions literature ('the harvest is plentiful but the workers are few') and in some traditions functions as the default meaning of 'the harvest.'\",\n      \"basis\": [\n        \"Matthew 9:36-38\",\n        \"Luke 10:1-2\",\n        \"John 4:35-38 ('the fields are ripe for harvest')\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Moral principle of sowing and reaping: harvest as the inevitable consequence or reward of one's conduct — one reaps what one sows, whether righteousness or corruption.\",\n      \"basis\": [\n        \"Galatians 6:7-9\",\n        \"Hosea 8:7 and 10:12-13\",\n        \"2 Corinthians 9:6-10\",\n        \"Proverbs 22:8\",\n        \"James 3:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Firstfruits/resurrection typology: Christ's resurrection as the 'firstfruits' of a larger harvest of resurrected believers; the Old Testament harvest feasts (Firstfruits, Weeks/Pentecost, Ingathering/Tabernacles) read typologically as stages of God's redemptive plan.\",\n      \"basis\": [\n        \"1 Corinthians 15:20-23\",\n        \"Leviticus 23:9-22, 33-43\",\n        \"Exodus 23:16\",\n        \"Acts 2 (Pentecost as harvest-feast fulfillment in some typological readings)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Harvest (or its failure) as a sign of covenant blessing or curse: abundant harvest signifying God's favor and provision; blighted or lost harvest signifying divine discipline.\",\n      \"basis\": [\n        \"Deuteronomy 28:1-12, 38-42\",\n        \"Leviticus 26:3-5, 16, 20\",\n        \"Amos 4:6-9\",\n        \"Haggai 1:6-11\",\n        \"Psalm 67:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Missed harvest as an image of lost opportunity for salvation or repentance.\",\n      \"basis\": [\n        \"Jeremiah 8:20 ('The harvest is past, the summer has ended, and we are not saved')\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolism of 'harvest' is well established but genuinely twofold at the top level. Scholarly and doctrinal treatments most often anchor the symbol in the eschatological end-of-the-age gathering and judgment (Matthew 13; Revelation 14; Joel 3), while popular preaching and missions usage most often anchors it in the evangelistic 'harvest of souls' (Matthew 9; John 4). These two strands are closely related — the mission harvest is frequently framed as the present-tense outworking of the end-time ingathering — so most interpreters treat them as complementary rather than competing. The sowing-and-reaping moral principle and the firstfruits/resurrection typology are distinct but widely recognized secondary uses. No major Christian tradition disputes the basic symbolic field; disagreements concern emphasis (judgment vs. salvation vs. mission) rather than the meaning itself.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The eschatological end of the age and final judgment, encompassing both the ingathering of the righteous and the sorting out of the wicked.\",\n  \"primary_basis\": [\n    \"Matthew 13:30\",\n    \"Matthew 13:39\",\n    \"Revelation 14:14-16\",\n    \"Joel 3:13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Evangelism, missionary work, and the immediate ingathering of souls for salvation.\",\n      \"basis\": [\n        \"Matthew 9:37-38\",\n        \"Luke 10:2\",\n        \"John 4:35\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Spiritual, moral, or material rewards based on one's actions (the principle of sowing and reaping).\",\n      \"basis\": [\n        \"Galatians 6:7-9\",\n        \"2 Corinthians 9:6-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Strictly the outpouring of God's wrath and punishment upon the wicked (often depicted as a grape harvest or vintage).\",\n      \"basis\": [\n        \"Revelation 14:18-20\",\n        \"Isaiah 63:1-6\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbol of the harvest is highly stable in Christian interpretation, carrying a dual primary application: the eschatological final judgment and the ongoing mission of the Church to evangelize. Both are explicitly defined by Jesus in the Gospels and are widely accepted across interpretive traditions.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The eschatological ingathering of humanity at the end of the age, when God gathers the faithful and judges or separates the wicked.\",\n  \"primary_basis\": [\n    \"Matthew 13:24–30, 36–43 — Jesus explicitly identifies the harvest as “the end of the age,” involving the gathering of both righteous and wicked.\",\n    \"Matthew 13:47–50 — the final separation of the righteous and wicked is compared to sorting a catch, closely paralleling harvest imagery.\",\n    \"Revelation 14:14–20 — the earth is reaped in imagery encompassing final gathering and divine judgment.\",\n    \"Joel 3:12–13 — a ripe harvest symbolizes the nations’ readiness for divine judgment.\",\n    \"Matthew 3:12; Luke 3:17 — threshing and the gathering of wheat versus burning chaff depict final salvation and judgment.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Evangelism and missionary ingathering: people who are receptive or ready to be brought into God’s kingdom, with disciples serving as laborers.\",\n      \"basis\": [\n        \"Matthew 9:37–38; Luke 10:2 — the plentiful harvest and few laborers describe the need for kingdom workers.\",\n        \"John 4:35–38 — fields ready for harvest symbolize people ready to receive Jesus’ message.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment specifically, especially the destruction of wicked individuals, cities, or nations, without equal emphasis on gathering the saved.\",\n      \"basis\": [\n        \"Isaiah 17:4–6 — harvesting depicts the reduction and judgment of Jacob’s glory.\",\n        \"Jeremiah 51:33 — Babylon is compared to a threshing floor whose harvest time is imminent.\",\n        \"Hosea 6:11; Joel 3:13; Revelation 14:17–20 — harvest or vintage imagery represents punitive judgment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral recompense: people eventually reap the consequences of what they sow, whether corruption or eternal life.\",\n      \"basis\": [\n        \"Galatians 6:7–9 — sowing to the flesh or Spirit produces a corresponding harvest.\",\n        \"2 Corinthians 9:6–11 — sowing and reaping symbolize generosity and its resulting fruit.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Resurrection, particularly the resurrection of believers following Christ as the firstfruits of a larger harvest.\",\n      \"basis\": [\n        \"1 Corinthians 15:20–23 — Christ’s resurrection is the firstfruits, implying the subsequent resurrection harvest of those who belong to him.\",\n        \"James 1:18 — believers are described as a kind of firstfruits of God’s creatures.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"God’s blessing, provision, abundance, and restored creation, often associated with thanksgiving or covenant faithfulness.\",\n      \"basis\": [\n        \"Psalm 67:6–7 — the earth’s yield accompanies divine blessing.\",\n        \"Joel 2:21–27 — restored harvests signify God’s mercy and restoration.\",\n        \"Amos 9:13–15 — extraordinary agricultural abundance depicts eschatological restoration.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual growth reaching maturity or ripeness before divine action.\",\n      \"basis\": [\n        \"Mark 4:26–29 — the seed grows to maturity and is harvested when the grain is ripe.\",\n        \"Revelation 14:15 — ripeness signals that the appointed time for reaping has arrived.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single context-independent symbolic definition of “harvest.” The strongest and most explicit biblical identification is the end-of-the-age gathering and judgment in Matthew 13, but Christian teaching also very commonly uses harvest language for evangelism. Context determines whether the emphasis falls on salvation, judgment, missionary work, resurrection, recompense, or blessing.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The end of the age / final judgment, when God reaps the earth, gathers the righteous (as wheat or grain) into his kingdom, and separates or destroys the wicked\",\n  \"primary_basis\": [\n    \"Matthew 13:24-30, 36-43 (parable of the weeds: 'the harvest is the end of the age, and the reapers are angels')\",\n    \"Revelation 14:14-20 (the harvest of the earth with the sickle of the Son of Man)\",\n    \"Joel 3:13 ('Put in the sickle, for the harvest is ripe')\",\n    \"Matthew 3:12 / Luke 3:17 (winnowing and burning of chaff)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The present mission field / ready souls awaiting evangelism and gathering into the church\",\n      \"basis\": [\n        \"Matthew 9:37-38 / Luke 10:2 ('The harvest is plentiful, but the laborers are few')\",\n        \"John 4:35 ('the fields are white for harvest')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The reaping of moral or spiritual consequences / fruit of one's deeds or ministry\",\n      \"basis\": [\n        \"Galatians 6:7-9 ('whatever one sows, that will he also reap')\",\n        \"2 Corinthians 9:6\",\n        \"Hosea 10:12-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God's material or spiritual provision and blessing (abundance as sign of divine favor)\",\n      \"basis\": [\n        \"Old Testament harvest festivals and promises (e.g., Deuteronomy 16; Psalm 67:6)\",\n        \"Parables of growth and fruitfulness\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The eschatological-judgment sense is the most consistently emphasized symbolic reading in biblical studies and historic Christian teaching when 'harvest' functions as a metaphor; contextual uses for evangelism and moral reaping are also frequent but secondary or complementary rather than competing primaries. No single meaning is exclusive; usage is context-dependent across OT and NT.\"\n}\n\nBOOK ENTRY\nThe end of the age, when the field of mankind is reaped — the wheat gathered, the chaff burned.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Joel 3:13; Matt 13:39) · see Grass, ch. 42\n\nAVAILABLE KJV EXCERPTS\nJoel 3:13 — Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.\nMatthew 13:39 —  The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "798605f73bb138654361168e0ebe0c4959f1eb7e3536ccb8fa0b888895194df9",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/relationship/harvest/gemini.json"
+    }
+  }
+}

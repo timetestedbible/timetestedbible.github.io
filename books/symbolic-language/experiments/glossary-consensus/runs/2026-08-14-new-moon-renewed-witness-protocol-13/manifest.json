@@ -1,0 +1,39 @@
+{
+  "protocol_version": 13,
+  "run_id": "2026-08-14-new-moon-renewed-witness-protocol-13",
+  "created_at": "2026-08-14T17:46:04.334900+00:00",
+  "entry_count": 1,
+  "persuasion_scope": "all",
+  "providers": {
+    "openai": {
+      "model": "gpt-5.6-sol",
+      "api": "responses",
+      "url": "https://api.openai.com/v1/responses"
+    },
+    "anthropic": {
+      "model": "claude-fable-5",
+      "api": "anthropic_messages",
+      "url": "https://api.anthropic.com/v1/messages"
+    },
+    "gemini": {
+      "model": "gemini-3.1-pro-preview",
+      "api": "gemini_generate_content",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent"
+    },
+    "xai": {
+      "model": "grok-4.5",
+      "api": "responses",
+      "url": "https://api.x.ai/v1/responses"
+    }
+  },
+  "input_sha256": "0b684aeb1502398ff7854598810295971f81c85ff5188d5880573a4225c2a49d",
+  "method_evidence_sha256": "cea248a491ce116b1c6d0a2c3e7ad5654628a9a3f95bf763b655010ffd8a2f00",
+  "accepted_findings_sha256": "73e488d574ea45fcad49c598bc514e0517cdb211fc3eb8fb26df7dbeb1ed201b",
+  "accepted_finding_sources": [],
+  "prompt_sha256": {
+    "01-consensus.md": "d83510f763522125d0341623d1c78d7764a8820aecb6b2cdb1e7523db78f6a33",
+    "02-relationship.md": "162dfd327a2eff776852db84b1fad0df3d5606963bb3b3839e93a138a7ebb2ad",
+    "03-persuasion.md": "f3795bab7781fed746d3561a2e6e42475a1532faa918d1d3260530336b7d9fcf"
+  },
+  "notes": "API keys are never written. Proprietary model runs are procedurally reproducible but not byte-for-byte deterministic."
+}

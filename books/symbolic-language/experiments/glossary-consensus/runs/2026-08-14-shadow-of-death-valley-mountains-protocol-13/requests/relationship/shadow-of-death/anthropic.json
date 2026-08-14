@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "shadow-of-death",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nShadow of Death\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'the shadow of death' (Hebrew tsalmaveth) is primarily understood as a symbol of the deepest darkness and gloom associated with mortal peril — the near presence or looming threat of death — through which the believer may pass without fear because God is present. In the Psalm 23 tradition it represents extreme danger, suffering, or the experience of dying itself, with the emphasis that it is only a 'shadow' (a threat that cannot ultimately harm those under God's protection). In the prophetic and New Testament usage (Isaiah 9:2; Matthew 4:16; Luke 1:79), it is extended to mean the spiritual darkness, hopelessness, and condition of humanity apart from God, which is dispelled by the light of Christ.\",\n  \"primary_basis\": [\n    \"Psalm 23:4 ('Yea, though I walk through the valley of the shadow of death, I will fear no evil')\",\n    \"Isaiah 9:2 ('the people that walked in darkness... they that dwell in the land of the shadow of death, upon them hath the light shined')\",\n    \"Matthew 4:16 (quoting Isaiah 9:2 and applying it to Christ's ministry)\",\n    \"Luke 1:79 (Zechariah's Benedictus: 'to give light to them that sit in darkness and in the shadow of death')\",\n    \"Job 3:5; 10:21-22; 12:22; 24:17; 34:22 (repeated poetic usage for deep gloom and the realm of the dead)\",\n    \"Psalm 44:19; Psalm 107:10-14 (deliverance from darkness and the shadow of death)\",\n    \"Jeremiah 2:6; 13:16; Amos 5:8 (deep darkness imagery)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Lexical/critical reading: the Hebrew word is better vocalized tsalmut, meaning simply 'deep darkness' or 'thick gloom' (from a root meaning 'to be dark'), with no etymological connection to death. This underlies modern translations such as the NRSV's 'the darkest valley' in Psalm 23:4. On this reading the term symbolizes extreme darkness and danger generally rather than death specifically.\",\n      \"basis\": [\n        \"Modern lexicons (BDB, HALOT) and critical commentaries on Psalm 23:4 and Job\",\n        \"Translation choices in NRSV, NIV footnotes, CEB, and other modern versions\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The shadow of death as spiritual death and the darkness of sin: humanity's fallen, unenlightened state prior to redemption, dispelled by Christ the light of the world. This is the dominant reading of the Isaiah 9:2 / Matthew 4:16 / Luke 1:79 strand and is prominent in patristic and homiletical tradition (e.g., readings connecting it to Gentile darkness or to the pre-Christian condition).\",\n      \"basis\": [\n        \"Matthew 4:16\",\n        \"Luke 1:79\",\n        \"Isaiah 9:2\",\n        \"Patristic commentary (e.g., Augustine, Chrysostom) and later homiletical tradition\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The shadow of death as Sheol or the realm/land of the dead itself — a quasi-locative reading in which the phrase names the dark domain of the departed rather than a threat experienced by the living.\",\n      \"basis\": [\n        \"Job 10:21-22 ('the land of darkness and the shadow of death')\",\n        \"Job 38:17 ('the gates of the shadow of death')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The shadow of death as the experience of dying or the deathbed specifically — a devotional/pastoral reading of Psalm 23:4 in which the valley is the believer's own final passage from life to death, common in funeral liturgy and hymnody.\",\n      \"basis\": [\n        \"Psalm 23:4 as used in funeral rites, hymns, and devotional literature\",\n        \"Puritan and later devotional writers (e.g., Bunyan's Valley of the Shadow of Death in Pilgrim's Progress, though Bunyan himself treats it as trials in life rather than dying)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The shadow of death as depression, despair, or seasons of spiritual desolation in the believer's life — a modern pastoral-psychological application.\",\n      \"basis\": [\n        \"Contemporary pastoral and counseling literature applying Psalm 23:4\",\n        \"Spurgeon and other preachers treating the valley as gloom and soul-trouble rather than literal death\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a stable, recognizable consensus at the core: the phrase symbolizes the darkest, most death-threatening extremity of human experience, through which God accompanies and delivers his people, and — in the prophetic/NT strand — the darkness dispelled by Christ. The main live dispute is philological rather than theological: whether the Hebrew originally means 'shadow of death' (a compound with maveth, 'death') or simply 'deep darkness' (tsalmut). Even scholars who prefer 'deep darkness' generally acknowledge that the traditional 'shadow of death' reading, established by the Septuagint (skia thanatou) and the Vulgate, shaped the entire Christian interpretive tradition and the NT citations. The various readings (mortal peril, dying, Sheol, spiritual darkness, despair) are overlapping applications of the same core image rather than sharply competing symbol systems.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Mortal danger, the transition of physical death, or profound suffering and despair. In Christian teaching, it most frequently symbolizes the literal end of life or a period of intense, life-threatening trial through which God's presence provides comfort.\",\n  \"primary_basis\": [\n    \"Psalm 23:4\",\n    \"Job 10:21-22\",\n    \"Jeremiah 2:6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Spiritual darkness, ignorance, or the state of humanity lost in sin and despair before the arrival of Christ.\",\n      \"basis\": [\n        \"Isaiah 9:2\",\n        \"Matthew 4:16\",\n        \"Luke 1:79\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Deep darkness or pitch blackness, understood simply as an intense physical or atmospheric darkness (reflecting modern linguistic consensus on the Hebrew word tsalmaveth rather than a literal shadow of death).\",\n      \"basis\": [\n        \"Job 3:5\",\n        \"Job 34:22\",\n        \"Amos 5:8\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While popular piety heavily associates the phrase with physical dying due to the use of Psalm 23 at funerals, academic scholarship often translates the underlying Hebrew as 'deep darkness.' Furthermore, prophetic and New Testament literature frequently use it to symbolize spiritual oppression and hopelessness relieved by the Messiah.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The darkness and terror of death or extreme mortal danger—often extended to severe suffering, affliction, and circumstances in which death seems near. In Christian teaching, the expression especially signifies that God remains present with and guides his people through such peril.\",\n  \"primary_basis\": [\n    \"Psalm 23:4 — the paradigmatic “valley of the shadow of death,” where God’s presence removes fear amid deadly danger.\",\n    \"Psalm 107:10, 14 — prisoners dwelling in darkness and the shadow of death are delivered from affliction and bondage.\",\n    \"Job 10:21–22; 16:16; 24:17; 38:17 — the expression is associated with death, the grave, terror, and profound darkness.\",\n    \"Jeremiah 2:6; 13:16 — it describes a deadly wilderness or impending calamity and gloom.\",\n    \"Isaiah 9:2, echoed in Matthew 4:16 — people dwelling in darkness and the land or shadow of death receive light.\",\n    \"Luke 1:79 — divine light comes to those sitting in darkness and the shadow of death.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Deep darkness, thick gloom, or obscurity, without necessarily personifying death. Many modern biblical scholars understand the underlying Hebrew term ṣalmāwet this way in at least some contexts.\",\n      \"basis\": [\n        \"Job 3:5; 12:22; 28:3; 34:22 — contexts emphasize darkness, concealment, and gloom.\",\n        \"Amos 5:8 — the term is contrasted with morning and may simply denote deep darkness.\",\n        \"Some modern translations render the Hebrew as “deep darkness” rather than “shadow of death.”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual darkness: alienation from God, sin, ignorance, and bondage under the power of death, overcome by divine revelation or the coming of Christ.\",\n      \"basis\": [\n        \"Isaiah 9:2 and Matthew 4:16 — light dawns on people dwelling in darkness and death’s shadow.\",\n        \"Luke 1:78–79 — the messianic dawn illuminates those in darkness and guides them into peace.\",\n        \"Ephesians 5:8–14 and Colossians 1:13 are often used as broader thematic parallels, though they do not use the exact expression.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"National oppression, exile, imprisonment, or collective calamity rather than an individual’s physical death.\",\n      \"basis\": [\n        \"Psalm 44:19 — communal devastation is described with the shadow of death.\",\n        \"Psalm 107:10–14 — captivity and affliction form the immediate setting.\",\n        \"Isaiah 9:1–2 — the darkness is frequently related to the oppression and distress of the affected regions.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The realm of the dead, Sheol, or the boundary of the grave as a quasi-geographical domain.\",\n      \"basis\": [\n        \"Job 10:21–22 — the destination of death is portrayed as a land of darkness and death-shadow.\",\n        \"Job 38:17 — the “gates of death” occur alongside the gates of deep darkness.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Hell or final condemnation specifically.\",\n      \"basis\": [\n        \"The term’s associations with death, darkness, and terror have encouraged this use in some preaching and devotional interpretation.\",\n        \"The biblical passages themselves generally refer more broadly to death, danger, gloom, or affliction rather than unambiguously to final punishment.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable dominant Christian association with death and mortal peril, especially because of Psalm 23:4. Nevertheless, the term has no single settled meaning across all passages. Its Hebrew background can denote “death-shadow” or simply “deep darkness,” and contextual uses range from literal gloom and the grave to oppression, suffering, and spiritual darkness.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A metaphor for times of extreme danger, deep darkness, mortal peril, or the threatening presence/approach of death (often traversed under God's protective presence and comfort).\",\n  \"primary_basis\": [\n    \"Psalm 23:4 (the dominant and most cited text: 'valley of the shadow of death')\",\n    \"Isaiah 9:2 (people walking in darkness / land of the shadow of death), quoted in Matthew 4:16\",\n    \"Job 3:5; 10:21-22; 12:22; 16:16; 24:17; 28:3; 34:22; 38:17 (recurrent poetic imagery of deathly gloom)\",\n    \"Psalm 44:19; 107:10, 14; Jeremiah 2:6; 13:16; Amos 5:8; Luke 1:79\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The realm of the dead / Sheol itself or the borderland of death (more concrete underworld association rather than lived peril)\",\n      \"basis\": [\n        \"Job 10:21-22; 38:17\",\n        \"Certain scholarly and ancient Near Eastern contextual readings of the Hebrew salmawet / tsalmaveth\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual darkness, ignorance, or the condition of those without the light of revelation/Messiah\",\n      \"basis\": [\n        \"Isaiah 9:2 / Matthew 4:16\",\n        \"Luke 1:79\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal dark, dangerous ravines or wilderness valleys associated with ambush and death\",\n      \"basis\": [\n        \"Geographic and historical readings of Psalm 23 and wilderness itineraries (e.g., Jeremiah 2:6)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Intense personal anguish, depression, or existential despair short of physical death\",\n      \"basis\": [\n        \"Pastoral and homiletic applications of Psalm 23:4\",\n        \"Job's lament contexts\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation overwhelmingly centers on Psalm 23:4 as figurative language for life-threatening or dread-filled circumstances rather than a technical term with a single fixed referent. The Hebrew phrase is sometimes analyzed as 'deep darkness' (salmawet) rather than a strict genitive 'shadow of death,' but traditional Christian usage retains the death-associated reading. No major confessional tradition treats the expression as unsettled in its core pastoral sense.\"\n}\n\nBOOK ENTRY\nA shadow is an image, outline, or boundary of its subject. The Shadow of Death marks the boundary of Death's mountain-kingdom. A valley is the low passage between two mountain-kingdoms; in Psalm 23, the Shepherd leads His people through that border from Death's kingdom of darkness into Christ's kingdom of light and life. It is the inverse of the Shadow of Life—the Shadow of Christ.\n[.opposite]Opposite: the Shadow of Christ.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 23:4; 1 Sam 17:3; Dan 2:35, 44; Ps 107:10, 14; Isa 9:2; Luke 1:78-79; Col 1:13) · see Shadow, ch. 17, and Mountain, ch. 39\n\nAVAILABLE KJV EXCERPTS\nPsalms 23:4 — Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.\n1 Samuel 17:3 — And the Philistines stood on a mountain on the one side, and Israel stood on a mountain on the other side: and there was a valley between them.\nDaniel 2:35 — Then was the iron, the clay, the brass, the silver, and the gold, broken to pieces together, and became like the chaff of the summer threshingfloors; and the wind carried them away, that no place was found for them: and the stone that smote the image became a great mountain, and filled the whole earth.\nDaniel 2:44 — And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.\nPsalms 107:10 — Such as sit in darkness and in the shadow of death, being bound in affliction and iron;\nPsalms 107:14 — He brought them out of darkness and the shadow of death, and brake their bands in sunder.\nIsaiah 9:2 — The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined.\nLuke 1:78 — Through the tender mercy of our God; whereby the dayspring from on high hath visited us,\nLuke 1:79 — To give light to them that sit in darkness and in the shadow of death, to guide our feet into the way of peace.\nColossians 1:13 — Who hath delivered us from the power of darkness, and hath translated us into the kingdom of his dear Son:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "0a8e2d5d421e0466e51ee62e21579e655581da9d4cc8829bd0a745737b193f06",
+  "cache": {
+    "hit": false
+  }
+}

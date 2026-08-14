@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919398,
+  "completed_at": 1783919416,
+  "id": "8582e7d0-0af7-9928-beff-a5a6318cd91b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_8582e7d0-0af7-9928-beff-a5a6318cd91b",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Bow\" in Christian teaching and biblical interpretation, based on independent knowledge.\n{\n  \"primary_meaning\": \"The rainbow as a symbol of God's covenant promise and faithfulness\",\n  \"primary_basis\": [\n    \"Genesis 9:13\",\n    \"Genesis 9:16\",\n    \"Revelation 4:3\",\n    \"Revelation 10:1\"\n  ],\n  \"alternatives \": [\n    {\n      \"meaning\": \"A weapon of war or judgment\",\n      \"basis\": [\n        \"Psalm 7:12\",\n        \"Psalm 37:14-15\",\n        \"Revelation 6:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning \": \"A sign of strength or military power\",\n      \"basis\": [\n        \"Hosea 1:5\",\n        \"Psalm 46:9\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high \",\n  \"notes\": \"The term 'Bow' most commonly symbolizes the rainbow in Christian teaching as God's covenant sign after the flood, though it can also refer to a weapon in contexts of warfare or judgment.\"\n}<|eos|> <|endoftext|>  <file_sep>output.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Sign of God's covenant promise of mercy and faithfulness (the rainbow set in the clouds after the flood)\",\n  \"primary_basis\": [\n    \"Genesis 9:12-17\",\n    \"Ezekiel 1:28\",\n    \"Revelation 4:3\",\n    \"Revelation 10:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Weapon of warfare, divine judgment, or conquest\",\n      \"basis\": [\n        \"Revelation 6:2\",\n        \"Psalm 7:12\",\n        \"Habakkuk 3:9\",\n        \"Lamentations 2:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Symbol of strength, power, or military might (human or divine)\",\n      \"basis\": [\n        \"Genesis 49:24\",\n        \"Job 29:20\",\n        \"Psalm 18:34\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Broken bow as emblem of peace, disarmament, or the defeat of enemies\",\n      \"basis\": [\n        \"Psalm 46:9\",\n        \"Hosea 1:5\",\n        \"Jeremiah 49:35\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"English 'bow' renders the same Hebrew term (qeshet) for both rainbow and archery weapon; Christian interpreters treat rainbow texts as covenant/glory symbolism and weapon texts as conflict/power symbolism. Context determines which reading applies; no single exclusive symbolic consensus exists for the bare term.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_8582e7d0-0af7-9928-beff-a5a6318cd91b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1977,
+    "output_tokens_details": {
+      "reasoning_tokens": 1593
+    },
+    "total_tokens": 2579,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 128740000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1977
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

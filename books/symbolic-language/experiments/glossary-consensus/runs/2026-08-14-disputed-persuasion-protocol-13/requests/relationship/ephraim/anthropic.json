@@ -1,0 +1,127 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "ephraim",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nEphraim\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching and biblical scholarship, 'Ephraim' functions primarily as a symbolic name (synecdoche) for the northern kingdom of Israel as a whole — the ten tribes that split from Judah — because Ephraim was the largest and politically dominant northern tribe. In the prophets, especially Hosea, Ephraim represents Israel in its unfaithfulness, idolatry, and pride, yet simultaneously as the wayward 'son' whom God still loves and promises to restore. Thus the settled symbolic core is: apostate-yet-beloved Israel, an object of both judgment and covenant compassion. A closely joined secondary layer comes from the name's etymology, 'fruitful' (Genesis 41:52), so Ephraim is also frequently expounded as fruitfulness or blessing granted by God, especially blessing in the land of affliction.\",\n  \"primary_basis\": [\n    \"Hosea 4:17 — 'Ephraim is joined to idols; let him alone'\",\n    \"Hosea 7:8–11 — Ephraim mixed among the peoples, 'a cake not turned,' 'a silly dove'\",\n    \"Hosea 11:3, 8 — 'I taught Ephraim to walk… How can I give you up, Ephraim?'\",\n    \"Hosea 5:3–14 and passim (Ephraim named ~37 times in Hosea for the northern kingdom)\",\n    \"Isaiah 7:2–17 — 'Ephraim' as the northern kingdom allied against Judah; 'within sixty-five years Ephraim will be shattered'\",\n    \"Isaiah 9:9, 21; 28:1–3 — the pride and 'drunkards of Ephraim'\",\n    \"Jeremiah 31:9, 18–20 — 'Ephraim is my firstborn… Is Ephraim my dear son?… I will surely have mercy on him'\",\n    \"Zechariah 9:10, 13; 10:7 — Ephraim paired with Judah in restoration oracles\",\n    \"Genesis 41:52 — 'God has made me fruitful in the land of my affliction' (etymology of the name)\",\n    \"Genesis 48:13–20 — Jacob crosses his hands to bless the younger Ephraim over Manasseh\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Fruitfulness / God-given increase and blessing, often blessing amid affliction — a devotional and homiletical reading built on the name's etymology.\",\n      \"basis\": [\n        \"Genesis 41:52\",\n        \"Genesis 48:19 — 'his offspring shall become a multitude of nations'\",\n        \"Deuteronomy 33:17 — 'the ten thousands of Ephraim'\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Typology of divine election reversing natural order (the younger blessed over the elder), sometimes extended patristically and homiletically to grace over law or the church/Gentiles receiving blessing ahead of natural primogeniture.\",\n      \"basis\": [\n        \"Genesis 48:13–20 (Jacob's crossed hands)\",\n        \"Hebrews 11:21 (Jacob blessing the sons of Joseph)\",\n        \"Compared with the Jacob/Esau and Isaac/Ishmael reversal pattern (Romans 9:10–13)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Restoration/reunification symbol: the 'stick of Ephraim' joined to the 'stick of Judah' as the prophesied reunion of the divided kingdoms under one Davidic king; in mainstream Christian reading this is eschatological restoration of Israel or fulfilled in Christ's one people.\",\n      \"basis\": [\n        \"Ezekiel 37:15–28\",\n        \"Jeremiah 31:1–20\",\n        \"Zechariah 10:6–10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Two-House / Ephraimite theology: Ephraim identified with the 'lost ten tribes' whose descendants are held to be present among Gentile Christians or specific modern nations (British-Israelism, Hebrew Roots 'Two House' movement), making Gentile believers literal or covenantal 'Ephraim.'\",\n      \"basis\": [\n        \"Genesis 48:19 ('melo ha-goyim,' 'fullness of the nations') read alongside Romans 11:25\",\n        \"Hosea 1:10–11; 8:8\",\n        \"Ezekiel 37:16–19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Latter-day Saint (Mormon) reading: the 'stick of Ephraim/Joseph' in Ezekiel 37 identified with the Book of Mormon, and Ephraim as the lineage of latter-day gathering — distinctive to LDS tradition, not shared by mainstream Christianity.\",\n      \"basis\": [\n        \"Ezekiel 37:16–19 as interpreted in LDS teaching (cf. Doctrine & Covenants 27:5)\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Geographic/incidental usage: 'Ephraim' as the town to which Jesus withdrew, or the hill country of Ephraim — locational rather than symbolic; occasionally moralized in sermons (Jesus retreating before his hour) but with no established symbolic consensus.\",\n      \"basis\": [\n        \"John 11:54\",\n        \"Judges and Joshua references to the hill country of Ephraim\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, stable agreement across academic commentaries (e.g., on Hosea and Isaiah), historic Christian exegesis, and standard Bible dictionaries that 'Ephraim' in the prophets is a metonym for the northern kingdom of Israel, characterized by apostasy yet remaining the object of God's fatherly love and promised restoration (Jeremiah 31 being the classic 'compassion' text, quoted in connection with the new covenant context). The etymological sense 'fruitful' and the Genesis 48 blessing-reversal are widely used supplementary layers rather than rivals. Materially different identifications of Ephraim with Gentile Christians or modern nations (Two-House/British-Israel) exist but are minority-to-fringe positions rejected by mainstream scholarship. The consensus judgment here concerns recognizability of interpretation, not its truth.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The Northern Kingdom of Israel, often symbolizing a rebellious, idolatrous, or backsliding people whom God still deeply loves and desires to restore.\",\n  \"primary_basis\": [\n    \"Hosea 4:17\",\n    \"Hosea 11:8\",\n    \"Jeremiah 31:18-20\",\n    \"Isaiah 7:8-9\",\n    \"Isaiah 28:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Fruitfulness or double blessing, derived from the literal etymology of the name and Jacob's prophetic blessing.\",\n      \"basis\": [\n        \"Genesis 41:52\",\n        \"Genesis 48:14-20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The literal Tribe of Ephraim, representing territorial or tribal inheritance within the historical narrative of Israel rather than a symbolic entity.\",\n      \"basis\": [\n        \"Joshua 16:1-10\",\n        \"Judges 8:1-3\",\n        \"Judges 12:1-6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Gentile church or a multitude of nations grafted into God's covenant, interpreting Jacob's blessing of Ephraim as a prophecy of Gentile inclusion.\",\n      \"basis\": [\n        \"Genesis 48:19\",\n        \"Romans 9:24-26\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical prophetic literature, Ephraim serves as a settled synecdoche for the entire Northern Kingdom of Israel. In pastoral contexts, this prophetic usage often makes Ephraim an archetype for the backsliding believer who faces divine discipline yet remains a recipient of God's enduring paternal love.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Ephraim most commonly functions as a representative name for the northern kingdom of Israel—often emphasizing its idolatry, covenant unfaithfulness, judgment, and hoped-for restoration. This usage arises because Ephraim became the leading tribe of the northern kingdom.\",\n  \"primary_basis\": [\n    \"Isaiah 7:2, 5, 8-9, 17—“Ephraim” designates the northern kingdom in its conflict with Judah.\",\n    \"Hosea 4:17; 5:3-14; 6:4; 7:1-16; 8:8-11; 9:3-17; 10:6-11; 11:8-9; 12:1, 8; 13:1-12; 14:8—Ephraim repeatedly represents sinful yet compassionately regarded northern Israel.\",\n    \"Jeremiah 31:6, 9, 18-20—Ephraim represents northern Israel as restored, repentant, and beloved by God.\",\n    \"Ezekiel 37:16-22—the stick of Joseph, identified with Ephraim and associated tribes, represents the northern kingdom reunited with Judah.\",\n    \"Zechariah 9:10, 13; 10:7—Ephraim is paired with Judah in depictions of Israel’s strength and restoration.\",\n    \"Psalm 78:9, 67-68—Ephraim is associated with the northern tribes and contrasted with God’s choice of Judah and Zion.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The historical person Ephraim, Joseph’s younger son, or the literal tribe descended from him, without an additional symbolic meaning.\",\n      \"basis\": [\n        \"Genesis 41:50-52—Ephraim is born to Joseph and named in connection with fruitfulness.\",\n        \"Genesis 48:8-20—Jacob gives Ephraim the greater blessing despite his being younger than Manasseh.\",\n        \"Numbers 1:32-33; Joshua 16:5-10—Ephraim appears as a literal tribe with its own population and territory.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fruitfulness, prosperity, or multiplication, based on the explanation of Ephraim’s name and Joseph’s statement that God made him fruitful in affliction.\",\n      \"basis\": [\n        \"Genesis 41:52—Joseph names him Ephraim because God made Joseph fruitful in the land of his affliction.\",\n        \"Genesis 48:19—Jacob promises that Ephraim’s offspring will become a multitude of nations.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The ten northern tribes, especially in restoration or eschatological interpretation, sometimes treated as the dispersed or ‘lost’ tribes awaiting reunion with Judah.\",\n      \"basis\": [\n        \"Ezekiel 37:16-22—the stick of Joseph/Ephraim is reunited with the stick of Judah.\",\n        \"Jeremiah 31:6-20—Ephraim returns and is restored.\",\n        \"Isaiah 11:12-13—the jealousy and hostility between Ephraim and Judah cease.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A typological image of Gentile believers, the Church, or the incorporation of the nations into God’s people, usually derived from Ephraim’s blessing and the phrase ‘multitude of nations.’\",\n      \"basis\": [\n        \"Genesis 48:19—Ephraim is promised a ‘multitude’ or ‘fullness of nations,’ wording sometimes connected typologically with Gentile inclusion.\",\n        \"Romans 11:25—occasionally linked to Genesis 48:19 through the phrase ‘fullness of the Gentiles,’ although the identification is not explicit in the text.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A specific modern ethnic or national population descended from Ephraim, as in British-Israelite, Anglo-Israelite, or similar tribal-identification systems.\",\n      \"basis\": [\n        \"Genesis 48:19 and passages about the dispersion and restoration of Ephraim are used in such systems, but Scripture does not explicitly identify Ephraim with any modern nation.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong interpretive consensus about Ephraim’s principal biblical representative function: it is a metonym for the northern kingdom of Israel. There is not, however, a single settled allegorical meaning applicable in every passage. Depending on context, Ephraim may simply denote the individual, the tribe, northern Israel, fruitfulness, or restored Israel; more elaborate Church, Gentile, or modern-national identifications are less widely accepted.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The northern kingdom of Israel (the ten tribes), often as a figure of apostate or idolatrous Israel\",\n  \"primary_basis\": [\n    \"Hosea 4–14 (esp. 4:17; 5:3–14; 6:4; 7:1–11; 11:1–9; 12:1; 13:1–12)\",\n    \"Isaiah 7:2–17; 9:8–21; 11:13; 28:1–3\",\n    \"Jeremiah 7:15; 31:9, 18–20\",\n    \"Ezekiel 37:15–28 (sticks of Judah and Ephraim/Joseph)\",\n    \"Genesis 48:8–20 (rise of the tribe as leading house of Joseph)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Fruitfulness / double fruitfulness (etymological symbol drawn from the name)\",\n      \"basis\": [\n        \"Genesis 41:52\",\n        \"Genesis 49:22 (Joseph as fruitful bough, applied to Ephraim)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine election / preference of the younger over the older (type of sovereign grace)\",\n      \"basis\": [\n        \"Genesis 48:13–20\",\n        \"comparison with Jacob/Esau election themes\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The ‘fullness of the nations’ / Gentile inclusion or ‘lost tribes’ identity (two-house or British-Israel readings of melo ha-goyim)\",\n      \"basis\": [\n        \"Genesis 48:19\",\n        \"occasional links to Romans 11:25\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Church itself (allegorical transfer of northern-Israel imagery)\",\n      \"basis\": [\n        \"Hosea applied typologically to the Church\",\n        \"occasional patristic or later spiritualizing readings\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Standard Christian biblical interpretation and preaching treat ‘Ephraim’ as the conventional prophetic designation for the northern kingdom/Israel, especially in Hosea and related prophets; the other senses appear but are secondary or specialized.\"\n}\n\nBOOK ENTRY\nThe scattered firstborn whose seed becomes the fulness of the nations.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 48:19) · see Jacob, Israel & Ephraim, ch. 45\n\nAVAILABLE KJV EXCERPTS\nGenesis 48:19 — And his father refused, and said, I know it, my son, I know it: he also shall become a people, and he also shall be great: but truly his younger brother shall be greater than he, and his seed shall become a multitude of nations.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "7c8854b5b0202e1951857dfe39cda3092417fc3b9979ab57004c3913591f8fce",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/relationship/ephraim/anthropic.json"
+    }
+  }
+}

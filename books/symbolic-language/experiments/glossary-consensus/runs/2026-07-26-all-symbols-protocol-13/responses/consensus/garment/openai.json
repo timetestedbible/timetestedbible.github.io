@@ -1,0 +1,173 @@
+{
+  "id": "resp_0e5114129af756f7006a54753ecf408196b8d4e7cbf8d25e52",
+  "object": "response",
+  "created_at": 1783919934,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919959,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0e5114129af756f7006a54753fa23c819683b73f57a2932cca",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0e5114129af756f7006a5475456c5c8196a6ed43a844ecad7e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"A garment most commonly symbolizes a person’s spiritual or moral condition—especially righteousness, salvation, or acceptance bestowed by God. Clean, white, or festal garments typically signify righteousness and redeemed status, while stained or filthy garments signify guilt or defilement.\",\"primary_basis\":[\"Isaiah 61:10 — salvation and righteousness are depicted as garments supplied by God.\",\"Zechariah 3:3-5 — Joshua’s filthy garments are removed and replaced, signifying the removal of iniquity.\",\"Matthew 22:11-14 — the wedding garment represents fitness or readiness to participate in the kingdom banquet.\",\"Galatians 3:27 — the baptized are described as having 'clothed' themselves with Christ.\",\"Romans 13:14 — believers are instructed to 'put on' the Lord Jesus Christ.\",\"Revelation 3:4-5, 18 — white garments signify purity, worthiness, and accepted status.\",\"Revelation 7:9, 13-14 — robes washed white signify the redeemed cleansed through the Lamb.\",\"Revelation 19:7-8 — fine linen is identified with the righteous deeds of the saints.\"],\"alternatives\":[{\"meaning\":\"Identity, status, office, or authority: distinctive clothing can identify someone as priest, king, prophet, heir, or member of a community.\",\"basis\":[\"Exodus 28:2-4, 40-43 — priestly garments signify glory, beauty, and consecrated office.\",\"Genesis 37:3, 23 — Joseph’s special garment marks favored status within the family.\",\"2 Kings 2:8-14 — Elijah’s mantle becomes associated with prophetic vocation and succession.\",\"Luke 15:22 — the best robe signals the restored son’s honor and family status.\"],\"prominence\":\"common\"},{\"meaning\":\"Sin, corruption, or moral defilement: filthy, stained, or polluted garments represent guilt or compromised conduct.\",\"basis\":[\"Zechariah 3:3-4 — filthy garments correspond to iniquity.\",\"Isaiah 64:6 — righteous deeds are compared with a polluted garment.\",\"Jude 23 — a garment stained by the flesh evokes contamination by sin.\",\"Revelation 3:4 — undefiled garments contrast with spiritual impurity.\"],\"prominence\":\"common\"},{\"meaning\":\"Mourning, humiliation, or repentance: sackcloth and torn garments outwardly express grief, judgment, or penitence.\",\"basis\":[\"Genesis 37:34 — Jacob tears his garments and wears sackcloth in mourning.\",\"Joel 2:12-13 — torn garments are contrasted with genuine inward repentance.\",\"Jonah 3:5-8 — sackcloth accompanies Nineveh’s repentance.\",\"Matthew 11:21 — sackcloth and ashes signify repentance.\"],\"prominence\":\"common\"},{\"meaning\":\"Human embodiment, mortality, or the future resurrection body: clothing imagery can portray bodily existence and the longing to be clothed with immortality.\",\"basis\":[\"2 Corinthians 5:1-4 — Paul speaks of being clothed with a heavenly dwelling rather than found naked.\",\"1 Corinthians 15:53-54 — the perishable and mortal must 'put on' imperishability and immortality.\"],\"prominence\":\"minority\"},{\"meaning\":\"Disguise, hypocrisy, or deceptive appearance: an outward garment can conceal a contrary inner reality.\",\"basis\":[\"Matthew 7:15 — false prophets come in sheep’s clothing while inwardly being ravenous wolves.\",\"2 Corinthians 11:13-15 — deceptive ministers disguise themselves as servants of righteousness, using related appearance imagery.\"],\"prominence\":\"minority\"},{\"meaning\":\"Protection, divine care, or covenant covering: clothing may symbolize God’s provision for vulnerability and shame.\",\"basis\":[\"Genesis 3:21 — God provides garments for Adam and Eve after the fall.\",\"Ezekiel 16:8-13 — God clothes Jerusalem in an allegory of covenant care and honor.\",\"Luke 12:27-28 — God’s clothing of creation supports trust in divine provision.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single settled symbolic meaning for every occurrence of 'garment.' The righteousness/salvation reading is the most recognizable general Christian interpretation, especially for clean, white, wedding, or divinely supplied garments, but the symbolism changes materially with garment type, condition, wearer, and narrative context.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1169,
+    "output_tokens_details": {
+      "reasoning_tokens": 256
+    },
+    "total_tokens": 1487
+  },
+  "user": null,
+  "metadata": {}
+}

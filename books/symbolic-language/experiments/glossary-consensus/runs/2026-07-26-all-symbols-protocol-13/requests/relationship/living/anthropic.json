@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "living",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nLiving creature\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'living creature' (Hebrew chayyah/chayyot; Greek zōon/zōa) most commonly refers to the four living creatures of the divine throne visions, understood as an exalted order of angelic beings — identified with the cherubim — who attend God's throne and lead the worship of heaven. Symbolically, they are most often taken to represent the whole of animate creation (wild beasts, domestic animals, humanity, and birds, via the lion, ox, man, and eagle faces) gathered in ceaseless praise before God, testifying to God's sovereignty over all living things.\",\n  \"primary_basis\": [\n    \"Ezekiel 1:5-14 (the four living creatures in the chariot-throne vision)\",\n    \"Ezekiel 10:14-22 (the living creatures explicitly identified as cherubim)\",\n    \"Revelation 4:6-9 (four living creatures around the throne, full of eyes, crying 'Holy, holy, holy')\",\n    \"Revelation 5:8-14; 6:1-8; 7:11; 19:4 (the living creatures in heavenly worship and judgment scenes)\",\n    \"Isaiah 6:1-3 (the seraphim, frequently cited as a parallel throne-attendant order)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The four living creatures as symbols of the four Evangelists/Gospels (traditionally: Matthew–man, Mark–lion, Luke–ox, John–eagle), a reading rooted in Irenaeus, Jerome, and Augustine and pervasive in Christian art and liturgy.\",\n      \"basis\": [\n        \"Revelation 4:6-8\",\n        \"Ezekiel 1:10\",\n        \"Irenaeus, Against Heresies 3.11.8; Jerome, preface to his Matthew commentary; Augustine, De Consensu Evangelistarum 1.6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The living creatures as emblems of divine attributes or of aspects of Christ (majesty/royalty in the lion, strength/service in the ox, intelligence/wisdom in the man, swiftness/heavenly vision in the eagle).\",\n      \"basis\": [\n        \"Ezekiel 1:10\",\n        \"Revelation 4:7\",\n        \"patristic and medieval homiletic tradition (e.g., Gregory the Great)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The four faces correspond to the standards of the four lead tribes in Israel's wilderness camp (Judah–lion, Ephraim–ox, Reuben–man, Dan–eagle), so the creatures symbolize God enthroned amid His covenant people.\",\n      \"basis\": [\n        \"Numbers 2 (camp arrangement)\",\n        \"rabbinic tradition applied to Ezekiel 1 and Revelation 4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A cosmological/astral reading: the four creatures reflect the four cardinal points or the four fixed zodiacal signs (Leo, Taurus, Aquarius/man, Scorpio-eagle), symbolizing God's dominion over the ordered cosmos; found in some history-of-religions scholarship.\",\n      \"basis\": [\n        \"Ezekiel 1\",\n        \"Revelation 4:6-8\",\n        \"ancient Near Eastern iconographic parallels cited in critical scholarship\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The non-symbolic lexical sense: in Genesis, 'living creature' (nephesh chayyah) simply denotes any animate being — animals and, in Genesis 2:7, the human as a 'living soul/being' — used in theological anthropology (humans and animals share creaturely life) rather than as a symbol.\",\n      \"basis\": [\n        \"Genesis 1:20-24\",\n        \"Genesis 2:7, 2:19\",\n        \"Genesis 9:10-16 (covenant with every living creature)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus that the 'living creatures' of Ezekiel and Revelation are cherubim-class angelic throne attendants, since Ezekiel 10 makes the identification explicit; that identification is essentially settled. What varies is the further symbolic significance assigned to them: representation of all creation is the most common scholarly and devotional reading, while the four-Evangelists association is the most historically influential ecclesial reading (dominant in art and lectionary symbolism, though most modern exegetes treat it as later typology rather than the text's original sense). If the author's term instead targets the Genesis usage (nephesh chayyah), the consensus there is lexical rather than symbolic: 'living creature/being' denotes animate life generally, and claims of a distinct symbolic meaning in that context would not reflect settled interpretation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Exalted angelic beings (specifically cherubim) that continually surround God's throne, declaring His holiness and representing the apex of animate creation in worship.\",\n  \"primary_basis\": [\n    \"Ezekiel 1:5-25\",\n    \"Ezekiel 10:15-20\",\n    \"Revelation 4:6-9\",\n    \"Revelation 5:8-14\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Four Evangelists (Matthew, Mark, Luke, and John) and their respective Gospels, known as the Tetramorph.\",\n      \"basis\": [\n        \"Revelation 4:7\",\n        \"Ezekiel 1:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fourfold nature of Christ or His primary attributes (Kingship/Lion, Servanthood/Ox, Incarnation/Man, Deity/Eagle).\",\n      \"basis\": [\n        \"Revelation 4:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Representatives of all living creatures on earth (wild animals, domesticated animals, humanity, and birds) praising the Creator.\",\n      \"basis\": [\n        \"Revelation 4:7\",\n        \"Genesis 9:10\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While modern biblical scholarship generally agrees that the living creatures represent angelic throne guardians (cherubim) and the whole of creation worshipping God, patristic and medieval Christian tradition heavily popularized them as symbols of the Four Evangelists, which remains highly visible in church iconography.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"In biblical visions, especially Ezekiel and Revelation, the “living creatures” are most commonly understood as exalted heavenly throne attendants—identified with or closely related to cherubim—who surround God’s throne, proclaim his holiness, and represent creation worshiping under his sovereign rule.\",\n  \"primary_basis\": [\n    \"Ezekiel 1:4–28 describes four living creatures supporting the divine throne-chariot.\",\n    \"Ezekiel 10:1–22 explicitly identifies the living creatures of Ezekiel’s vision as cherubim.\",\n    \"Revelation 4:6–11 places four living creatures around God’s throne, where they continually praise his holiness and lead the worship of creation.\",\n    \"Revelation 5:6–14; 6:1–8; 7:11; 19:4 portrays them as heavenly attendants participating in worship and divine judgment.\",\n    \"Isaiah 6:1–3 is frequently cited as a parallel because its six-winged seraphim proclaim God’s holiness, although they are not called “living creatures.”\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The four living creatures symbolize the four Evangelists or their Gospels: traditionally Matthew, Mark, Luke, and John, though early assignments of the lion, ox, human, and eagle varied.\",\n      \"basis\": [\n        \"Revelation 4:7 lists the creatures as lion-like, ox-like, human-faced, and eagle-like.\",\n        \"Ezekiel 1:10 gives each creature the faces of a human, lion, ox, and eagle.\",\n        \"This interpretation became highly influential in patristic teaching and Christian art, often linked typologically with the fourfold Gospel.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The four creatures represent the principal divisions or fullness of animate creation: wild animals, domesticated animals, humanity, and birds, with all creation worshiping God.\",\n      \"basis\": [\n        \"Revelation 4:7 presents a lion, ox or calf, human, and eagle.\",\n        \"Revelation 5:13 immediately broadens the scene to every creature in heaven, on earth, under the earth, and in the sea.\",\n        \"Psalm 148 and similar creation hymns provide a broader biblical pattern of all created orders praising God.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The creatures combine imagery of Ezekiel’s cherubim and Isaiah’s seraphim rather than belonging exclusively to either angelic class.\",\n      \"basis\": [\n        \"Ezekiel 10:20 identifies Ezekiel’s creatures as cherubim.\",\n        \"Revelation 4:8 gives each creature six wings and the trisagion, features paralleling Isaiah 6:2–3.\",\n        \"Revelation’s description therefore appears to merge multiple throne-vision traditions.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The four forms symbolize aspects of Christ, such as incarnation or humanity, sacrificial death, resurrection or royal power, and ascension or divinity.\",\n      \"basis\": [\n        \"The human, ox, lion, and eagle have been interpreted christologically in some patristic and medieval traditions.\",\n        \"These associations are typological rather than explicitly explained in Ezekiel or Revelation.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The four creatures correspond to zodiacal constellations, cosmic directions, seasons, or other structures of the created cosmos.\",\n      \"basis\": [\n        \"The lion, ox, human, and eagle have been correlated by some interpreters with Leo, Taurus, Aquarius, and Scorpio or the eagle associated with Scorpio.\",\n        \"The biblical texts themselves do not explicitly make these correlations.\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Outside throne visions, “living creature” can simply mean an animate being or living animal and may carry no special symbolic meaning.\",\n      \"basis\": [\n        \"Genesis 1:20–24 uses “living creature” for aquatic, aerial, and land animals.\",\n        \"Genesis 2:7 describes the human as a living being or living creature.\",\n        \"Genesis 9:10–16 uses the expression broadly for creatures included in the covenant after the flood.\"\n      ],\n      \"prominence\": \"dominant\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad agreement that the visionary living creatures of Ezekiel and Revelation are heavenly throne attendants, with Ezekiel explicitly calling them cherubim. There is no settled consensus on one further symbolic referent. Representation of the whole created order and identification with the four Evangelists are both major Christian interpretations, while the latter is especially prominent in historic Christian art and tradition. Context is decisive because the phrase elsewhere can be a nonsymbolic designation for living beings.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The four living creatures of Ezekiel and Revelation symbolize the four Evangelists (or the four Gospels): man/angel for Matthew, lion for Mark, ox for Luke, and eagle for John.\",\n  \"primary_basis\": [\n    \"Ezekiel 1:5-10\",\n    \"Ezekiel 10:14\",\n    \"Revelation 4:6-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Cherubim (angelic throne guardians) who continually worship God and execute His will\",\n      \"basis\": [\n        \"Ezekiel 1:4-28\",\n        \"Ezekiel 10:1-22\",\n        \"Revelation 4:6-11\",\n        \"Revelation 5:6-14\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The totality of animate creation (or the four corners/orders of creation) offering perpetual praise to God\",\n      \"basis\": [\n        \"Revelation 4:6-11\",\n        \"Revelation 5:13\",\n        \"Ezekiel 1:5-14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Four attributes or faces of Christ (royal power as lion, sacrificial service as ox, perfect humanity as man, soaring divinity as eagle)\",\n      \"basis\": [\n        \"Revelation 4:7\",\n        \"Ezekiel 1:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Simply ordinary animals or living beings without special apocalyptic symbolism (as in creation or flood narratives)\",\n      \"basis\": [\n        \"Genesis 1:20-24\",\n        \"Genesis 2:19\",\n        \"Genesis 6-9\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Gospel/Evangelist association is the most widespread symbolic reading in historic Christian teaching, liturgy, and iconography (rooted in Irenaeus and later Fathers). Biblical scholarship primarily identifies the figures as cherubim, while the creation-praise and Christ-attributes readings are also standard complementary layers. No major competing symbolic system has displaced these.\"\n}\n\nBOOK ENTRY\nA nation or organized people — the living counterpart of a beast or animal.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Dan 7:3, 17; Rev 8:9; 16:3) · see The Bow, ch. 44\n\nAVAILABLE KJV EXCERPTS\nDaniel 7:3 — And four great beasts came up from the sea, diverse one from another.\nDaniel 7:17 — These great beasts, which are four, are four kings, which shall arise out of the earth.\nRevelation 8:9 — And the third part of the creatures which were in the sea, and had life, died; and the third part of the ships were destroyed.\nRevelation 16:3 — And the second angel poured out his vial upon the sea; and it became as the blood of a dead man: and every living soul died in the sea.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "f349191f386aa6af208eafbf97dfab3a2fbebc31eec59b1e88de16ce32704d8a",
+  "cache": {
+    "hit": false
+  }
+}

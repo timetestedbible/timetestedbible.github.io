@@ -54,6 +54,8 @@ senses:
       the east gate and sign of the appointed times.
     citations:
       - Ps 81:3
+      - Job 10:17
+      - Ps 89:36-37
       - 1 Sam 20:5, 18
       - Isa 66:23
       - Ezek 46:1-3
@@ -72,6 +74,8 @@ definitions:
     source: books/symbolic-language/49-glossary.adoc#sym-new-moon
     citations:
       - Ps 81:3
+      - Job 10:17
+      - Ps 89:36-37
       - 1 Sam 20:5, 18
       - Isa 66:23
       - Ezek 46:1-3

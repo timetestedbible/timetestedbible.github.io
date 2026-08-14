@@ -1,0 +1,156 @@
+{
+  "created_at": 1785123124,
+  "completed_at": 1785123141,
+  "id": "ff3f96c3-f67d-9e6c-915e-dbe54e35cb0f",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_ff3f96c3-f67d-9e6c-915e-dbe54e35cb0f",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for the term \"Sabbath day (yom ha-shabbat)\" in biblical symbolism, specifically Christian teaching and biblical interpretation.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"A consecrated day of cessation from ordinary labor that commemorates God’s rest after creation, serves as a covenant sign of belonging to God, and typologically points to the spiritual rest believers enter through Christ.\",\n  \"primary_basis\": [\n    \"Genesis 2:2-3\",\n    \"Exodus 20:8-11\",\n    \"Exodus 31:12-17\",\n    \"Deuteronomy 5:12-15\",\n    \"Mark 2:27-28\",\n    \"Hebrews 4:1-11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The weekly Sabbath remains the literal seventh day (Saturday) as a continuing moral obligation for Christians\",\n      \"basis\": [\n        \"Exodus 20:8-11\",\n        \"Isaiah 66:22-23\",\n        \"Luke 4:16\",\n        \"Acts 13:14, 42-44\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Sabbath principle is transferred to Sunday (the Lord’s Day) in honor of the resurrection\",\n      \"basis\": [\n        \"Acts 20:7\",\n        \"1 Corinthians 16:2\",\n        \"Revelation 1:10\",\n        \"John 20:1, 19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Sabbath commandment is entirely fulfilled and abolished in Christ; no particular day is required\",\n      \"basis\": [\n        \"Colossians 2:16-17\",\n        \"Romans 14:5-6\",\n        \"Galatians 4:9-11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An eschatological symbol of the coming millennial or eternal rest of God’s people\",\n      \"basis\": [\n        \"Hebrews 4:9-11\",\n        \"Revelation 14:13\",\n        \"Isaiah 66:22-23\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian interpretation the core symbolic cluster of sacred rest, creation memorial, and christological fulfillment is stable; divergence concerns only the ongoing calendrical application or degree of continuity with the Mosaic form.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_ff3f96c3-f67d-9e6c-915e-dbe54e35cb0f",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 613,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 994,
+    "output_tokens_details": {
+      "reasoning_tokens": 459
+    },
+    "total_tokens": 1607,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 69724000,
+    "context_details": {
+      "input_tokens": 613,
+      "output_tokens": 994
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

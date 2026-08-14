@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "grapes",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nGrapes\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, grapes most commonly symbolize spiritual fruitfulness — the good fruit that God expects from his covenant people. Israel is repeatedly pictured as God's vine or vineyard planted to yield grapes, and the presence of good grapes (or their absence, 'wild/sour grapes') represents faithfulness or unfaithfulness, righteousness or its lack. In the New Testament this carries into the believer's fruit-bearing in union with Christ, the true vine.\",\n  \"primary_basis\": [\n    \"Isaiah 5:1-7 (the vineyard expected to yield good grapes but producing wild grapes; explicitly interpreted as Israel and Judah)\",\n    \"John 15:1-8 (Christ the true vine; disciples as branches expected to bear fruit)\",\n    \"Psalm 80:8-16 (Israel as a vine brought out of Egypt)\",\n    \"Jeremiah 2:21 (Israel planted as a choice vine that became degenerate)\",\n    \"Hosea 10:1 (Israel a luxuriant vine yielding fruit)\",\n    \"Matthew 21:33-41 / Mark 12:1-9 / Luke 20:9-16 (parable of the tenants in the vineyard, owner seeking fruit)\",\n    \"Micah 7:1 (lament that no cluster of grapes, i.e., no righteous person, is found)\",\n    \"Matthew 7:16 ('Are grapes gathered from thornbushes?' — fruit as evidence of character)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Blessing, abundance, and prosperity of the promised land — grapes as a sign of God's material provision and the goodness of the land (and eschatological abundance).\",\n      \"basis\": [\n        \"Numbers 13:23-27 (the cluster of Eshcol carried back by the spies)\",\n        \"Deuteronomy 8:7-8 (a land of vines)\",\n        \"Genesis 49:11-12 (Judah's blessing of abundant vines and wine)\",\n        \"Amos 9:13; Micah 4:4; Zechariah 3:10 (eschatological peace and plenty under vine and fig tree)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ripeness for divine judgment — the 'grapes of wrath' motif, in which harvested and trodden grapes represent the wicked crushed in the winepress of God's wrath.\",\n      \"basis\": [\n        \"Revelation 14:18-20 (the grapes of the earth gathered and thrown into the great winepress of God's wrath)\",\n        \"Isaiah 63:1-6 (the divine warrior treading the winepress alone)\",\n        \"Joel 3:13 (the harvest is ripe; the winepress is full)\",\n        \"Deuteronomy 32:32 (grapes of Sodom, poisonous clusters)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eucharistic/christological association — grapes as the source of wine and thus a symbol of Christ's blood and the cup of the new covenant; prominent in patristic exegesis, liturgy, and Christian art (e.g., the Eshcol cluster on the pole read typologically as Christ on the cross).\",\n      \"basis\": [\n        \"Matthew 26:27-29 ('fruit of the vine' at the Last Supper)\",\n        \"John 15:1 combined with eucharistic readings\",\n        \"Genesis 49:11 (washing garments in the blood of grapes, read christologically by church fathers)\",\n        \"Numbers 13:23 as a patristic/medieval type of the crucified Christ\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The sour-grapes proverb — grapes standing for inherited guilt or its repudiation, teaching individual moral responsibility.\",\n      \"basis\": [\n        \"Ezekiel 18:2-4 ('The fathers have eaten sour grapes...')\",\n        \"Jeremiah 31:29-30 (same proverb rejected under the new covenant)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"Grapes are genuinely multivalent in Scripture, but there is a recognizable consensus that the dominant symbolic frame is the vine/vineyard image of God's people and the fruit (grapes) God seeks from them, with fruitfulness vs. sour/wild grapes marking faithfulness vs. apostasy. The judgment/winepress motif and the blessing-of-the-land motif are well-established secondary strands, and the eucharistic association is strong in liturgical and patristic tradition though it technically attaches more to wine than to grapes per se. Confidence is 'medium' only because the term's meaning is context-dependent rather than singular; among biblical-studies reference works the fruitfulness reading is the most frequently listed primary sense.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual fruitfulness, covenant blessing, and the blood of Christ (the Eucharist)\",\n  \"primary_basis\": [\n    \"John 15:1-8\",\n    \"Matthew 26:27-29\",\n    \"Numbers 13:23\",\n    \"Genesis 49:11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine judgment and God's wrath (when harvested and crushed in a winepress)\",\n      \"basis\": [\n        \"Revelation 14:18-20\",\n        \"Isaiah 63:2-3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Israel's rebellion, spiritual failure, and sin (when depicted as wild or sour grapes)\",\n      \"basis\": [\n        \"Isaiah 5:2-4\",\n        \"Jeremiah 31:29\",\n        \"Ezekiel 18:2\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Grapes are a highly multivalent symbol in Christian interpretation, heavily dependent on context. Good grapes or the 'fruit of the vine' typically represent divine blessing, spiritual fruitfulness, and the blood of the New Covenant. Conversely, trampled grapes symbolize severe divine judgment, and sour or wild grapes signify apostasy and moral failure.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Fruitfulness, abundance, and divine blessing—especially the bounty of the Promised Land and the good fruit God desires from his people.\",\n  \"primary_basis\": [\n    \"Numbers 13:23–24 — the unusually large cluster of grapes represents the abundance of Canaan.\",\n    \"Deuteronomy 8:7–10 — vines are included among the blessings of the good land.\",\n    \"Genesis 49:11–12 — abundant vines and wine depict Judah’s prosperity.\",\n    \"Isaiah 5:1–7 — God’s vineyard is expected to yield good grapes, symbolizing righteous covenant fruit.\",\n    \"John 15:1–8 — the vine and its fruit are applied to spiritual fruitfulness through abiding in Christ.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Israel or God’s covenant people, from whom God expects faithfulness and justice.\",\n      \"basis\": [\n        \"Psalm 80:8–16\",\n        \"Isaiah 5:1–7\",\n        \"Hosea 9:10; 10:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The blood of Christ and the Eucharist, because grapes produce the wine identified with Christ’s covenant blood.\",\n      \"basis\": [\n        \"Matthew 26:27–29\",\n        \"Mark 14:23–25\",\n        \"Luke 22:17–20\",\n        \"1 Corinthians 10:16; 11:23–26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine wrath and final judgment, pictured as grapes being gathered and crushed in a winepress.\",\n      \"basis\": [\n        \"Isaiah 63:1–6\",\n        \"Joel 3:13\",\n        \"Revelation 14:18–20\",\n        \"Revelation 19:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sin, corruption, or covenant unfaithfulness, particularly when the grapes are wild, bitter, or sour.\",\n      \"basis\": [\n        \"Deuteronomy 32:32–33\",\n        \"Isaiah 5:2–7\",\n        \"Jeremiah 31:29–30\",\n        \"Ezekiel 18:2–4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Joy and festal celebration through the wine produced from grapes.\",\n      \"basis\": [\n        \"Psalm 104:14–15\",\n        \"Ecclesiastes 9:7\",\n        \"John 2:1–11\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Grapes do not have one fixed biblical symbolism. Fruitfulness and blessing are the broadest positive associations, but context can shift the image toward Israel, Eucharistic blood, sinful fruit, joy, or judgment.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the blood of Christ in the Eucharist (Communion wine as 'fruit of the vine')\",\n  \"primary_basis\": [\n    \"Matthew 26:27-29\",\n    \"Mark 14:23-25\",\n    \"Luke 22:17-20\",\n    \"1 Corinthians 11:25\",\n    \"John 15:1-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"divine judgment and the wrath of God (grapes of wrath / winepress)\",\n      \"basis\": [\n        \"Revelation 14:18-20\",\n        \"Isaiah 63:1-6\",\n        \"Lamentations 1:15\",\n        \"Joel 3:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"abundance, prosperity, and God's blessing (fruitfulness of the land)\",\n      \"basis\": [\n        \"Numbers 13:23-24\",\n        \"Deuteronomy 8:7-8\",\n        \"Genesis 49:11-12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Israel or God's people as the vineyard/fruit\",\n      \"basis\": [\n        \"Isaiah 5:1-7\",\n        \"Psalm 80:8-16\",\n        \"Matthew 21:33-46\",\n        \"Hosea 10:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"joy and festive celebration\",\n      \"basis\": [\n        \"Psalm 104:15\",\n        \"Ecclesiastes 9:7\",\n        \"Judges 9:13\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Grapes are rarely isolated from wine/vineyard imagery; Christian tradition strongly links them to the Eucharist via the Last Supper 'fruit of the vine,' while biblical texts equally support blessing, judgment, and corporate identity readings. No single meaning monopolizes published interpretation.\"\n}\n\nBOOK ENTRY\nA people's works ripened into persons as the vineyard's yield. Pressed grapes produce covenant wine or the blood of judgment according to whether the vintage is good or wild.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 5:2-7; Hos 9:10; Mic 7:1-2; Isa 65:8; Gen 49:11; Rev 14:18-20) · see The Parable of the Vineyard | (Isa 5:2-7; Hos 9:10; Mic 7:1-2; Isa 65:8; Gen 49:11; Rev 14:18-20) · see The Parable of the Vineyard, in the free digital edition at TimeTested.Bible\n\nAVAILABLE KJV EXCERPTS\nIsaiah 5:2 — And he fenced it, and gathered out the stones thereof, and planted it with the choicest vine, and built a tower in the midst of it, and also made a winepress therein: and he looked that it should bring forth grapes, and it brought forth wild grapes.\nIsaiah 5:3 — And now, O inhabitants of Jerusalem, and men of Judah, judge, I pray you, betwixt me and my vineyard.\nIsaiah 5:4 — What could have been done more to my vineyard, that I have not done in it? wherefore, when I looked that it should bring forth grapes, brought it forth wild grapes?\nIsaiah 5:5 — And now go to; I will tell you what I will do to my vineyard: I will take away the hedge thereof, and it shall be eaten up; and break down the wall thereof, and it shall be trodden down:\nIsaiah 5:6 — And I will lay it waste: it shall not be pruned, nor digged; but there shall come up briers and thorns: I will also command the clouds that they rain no rain upon it.\nIsaiah 5:7 — For the vineyard of the LORD of hosts is the house of Israel, and the men of Judah his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry.\nHosea 9:10 — I found Israel like grapes in the wilderness; I saw your fathers as the firstripe in the fig tree at her first time: but they went to Baalpeor, and separated themselves unto that shame; and their abominations were according as they loved.\nMicah 7:1 — Woe is me! for I am as when they have gathered the summer fruits, as the grapegleanings of the vintage: there is no cluster to eat: my soul desired the firstripe fruit.\nMicah 7:2 — The good man is perished out of the earth: and there is none upright among men: they all lie in wait for blood; they hunt every man his brother with a net.\nIsaiah 65:8 — Thus saith the LORD, As the new wine is found in the cluster, and one saith, Destroy it not; for a blessing is in it: so will I do for my servants' sakes, that I may not destroy them all.\nGenesis 49:11 — Binding his foal unto the vine, and his ass's colt unto the choice vine; he washed his garments in wine, and his clothes in the blood of grapes:\nRevelation 14:18 — And another angel came out from the altar, which had power over fire; and cried with a loud cry to him that had the sharp sickle, saying, Thrust in thy sharp sickle, and gather the clusters of the vine of the earth; for her grapes are fully ripe.\nRevelation 14:19 — And the angel thrust in his sickle into the earth, and gathered the vine of the earth, and cast it into the great winepress of the wrath of God.\nRevelation 14:20 — And the winepress was trodden without the city, and blood came out of the winepress, even unto the horse bridles, by the space of a thousand and six hundred furlongs.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "f15604a3dd110aa575b7e31ecdcbff6f1622646a05d4903745b71696b598d4df",
+  "cache": {
+    "hit": false
+  }
+}

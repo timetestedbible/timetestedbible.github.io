@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "swine",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSwine (pig, boar, sow)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, swine primarily symbolize uncleanness and spiritual impurity — the unholy, the profane, and those who reject or are incapable of valuing sacred things. Because the pig is the archetypal unclean animal of the Mosaic law, it became a standing figure for defilement, and in Jesus' usage ('do not cast your pearls before swine') for people who scorn or trample what is holy. By extension it commonly represents the unregenerate or profane person who returns to sin and filth.\",\n  \"primary_basis\": [\n    \"Leviticus 11:7 (the pig declared unclean)\",\n    \"Deuteronomy 14:8 (swine forbidden as food, unclean)\",\n    \"Matthew 7:6 (do not cast pearls before swine)\",\n    \"2 Peter 2:22 (the washed sow returns to wallowing in the mire)\",\n    \"Proverbs 11:22 (gold ring in a swine's snout)\",\n    \"Isaiah 65:4 and 66:3, 17 (eating swine's flesh as emblem of pagan abomination and rebellion)\",\n    \"Luke 15:15-16 (the prodigal son reduced to feeding pigs — depth of degradation)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Symbol of apostasy or backsliding: the professing believer or reformed sinner who returns to former corruption, drawn chiefly from 2 Peter 2:22's proverb of the sow returning to the mire.\",\n      \"basis\": [\n        \"2 Peter 2:22\",\n        \"Proverbs 26:11 (paired dog proverb)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Symbol of Gentiles, paganism, and idolatrous worship — swine-eating and swine sacrifice as marks of pagan practice and covenant unfaithfulness; also linked historically to Antiochus Epiphanes' desecration of the temple with a pig.\",\n      \"basis\": [\n        \"Isaiah 65:4\",\n        \"Isaiah 66:3, 17\",\n        \"1 Maccabees 1:47 (deuterocanonical/historical background)\",\n        \"Luke 15:15 (pig-keeping in a Gentile far country)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral emblem of gluttony, greed, sensuality, and fleshly appetite — a homiletical and patristic/medieval usage treating the pig as the picture of a life given over to base desires.\",\n      \"basis\": [\n        \"Luke 15:15-16\",\n        \"2 Peter 2:22 (applied morally)\",\n        \"Philippians 3:19 (thematically associated, 'their god is their belly')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Association with the demonic or with judgment on impurity, from the Gadarene/Gerasene episode where demons enter a herd of swine that then perishes; some interpreters treat swine here as fitting hosts for unclean spirits.\",\n      \"basis\": [\n        \"Matthew 8:30-32\",\n        \"Mark 5:11-13\",\n        \"Luke 8:32-33\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A destructive enemy or ravager of God's people, from the image of the boar out of the forest ravaging the vine (Israel); sometimes applied to hostile nations or Rome.\",\n      \"basis\": [\n        \"Psalm 80:13\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broadly recognizable consensus: the swine's core symbolic freight is uncleanness/impurity rooted in the Levitical food laws, with Matthew 7:6 and 2 Peter 2:22 supplying the most-cited New Testament applications (the profane person; the apostate returning to filth). The alternative readings listed are largely extensions of this core (paganism, sensuality, apostasy) rather than genuinely competing meanings, so they overlap considerably. Interpretive debate exists mainly over the precise referent of 'dogs and swine' in Matthew 7:6 (unbelievers generally, persistent mockers, or Gentiles in the historical setting) and over the significance of the Gadarene swine, not over the basic symbolism of impurity.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Uncleanness, moral and ritual impurity, spiritual depravity, and the profane or unholy.\",\n  \"primary_basis\": [\n    \"Leviticus 11:7\",\n    \"Deuteronomy 14:8\",\n    \"Matthew 7:6\",\n    \"Mark 5:11-13\",\n    \"Luke 15:15-16\",\n    \"2 Peter 2:22\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Fierce destruction and hostile enemies of God's people, particularly represented by the wild boar.\",\n      \"basis\": [\n        \"Psalm 80:13\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Hypocrisy or superficial morality, based on the animal having the outward sign of a cloven hoof but not inwardly chewing the cud.\",\n      \"basis\": [\n        \"Leviticus 11:7\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Swine serve as the quintessential biblical symbol for impurity and that which is contrary to God's holiness. In Christian interpretation, they frequently represent the unregenerate human nature, spiritual filth, and those who mock or violently reject holy things.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Ritual and moral uncleanness—by extension, what is profane, degraded, sinful, or unfit for holy use.\",\n  \"primary_basis\": [\n    \"Leviticus 11:7–8 and Deuteronomy 14:8 classify the pig as unclean and forbid eating or touching its carcass.\",\n    \"Isaiah 65:4 and 66:3,17 associate eating swine’s flesh with defilement, rebellion, or illicit worship.\",\n    \"Proverbs 11:22 uses a gold ring in a pig’s snout as an image of beauty joined to lack of discretion.\",\n    \"Luke 15:15–16 uses feeding pigs and desiring their food to portray the prodigal son’s extreme humiliation and degradation.\",\n    \"2 Peter 2:22 uses the washed sow returning to the mire as an image of returning to corruption.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Profane, hostile, or spiritually unreceptive people who despise sacred teaching.\",\n      \"basis\": [\n        \"Matthew 7:6 warns against giving what is holy to dogs or casting pearls before swine.\",\n        \"This reading is common in Christian exposition, though interpreters differ over whether the referent is persecutors, mockers, hardened hearers, or indiscriminately unreceptive people.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gentiles, pagans, or persons outside the covenant community.\",\n      \"basis\": [\n        \"The pig’s unclean status in Leviticus 11:7–8 and Deuteronomy 14:8 encouraged Jewish and some patristic Christian identification of swine with non-Jews or pagan society.\",\n        \"Some allegorical readings of Matthew 7:6 and the Gadarene/Gerasene swine narratives connect the animals with Gentile territory or pagan impurity.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Apostates or baptized believers who return to former sins.\",\n      \"basis\": [\n        \"2 Peter 2:20–22 applies the proverb of the sow returning to the mire to people who escape worldly corruption and then become entangled again.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Demonic uncleanness or a sphere hospitable to evil spirits.\",\n      \"basis\": [\n        \"In Matthew 8:28–34, Mark 5:1–20, and Luke 8:26–39, demons enter a herd of pigs, which then rushes into the water.\",\n        \"Many interpreters see the unclean animals as reinforcing the narrative’s atmosphere of ritual and demonic impurity, although the pigs are not usually treated as a universal symbol for demons themselves.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Destructive enemies or ravaging powers.\",\n      \"basis\": [\n        \"Psalm 80:13 depicts the boar from the forest ravaging Israel, represented as a vine.\",\n        \"Christian historical and allegorical interpretation has variously applied the boar to persecutors, invading nations, heretics, or other enemies of the Church.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Gluttony, greed, sensuality, or filthy living.\",\n      \"basis\": [\n        \"These associations developed strongly in Christian moral teaching and later cultural symbolism.\",\n        \"They draw broadly on pigs’ perceived feeding and wallowing behavior, especially the sow returning to mire in 2 Peter 2:22, rather than on one consistent biblical symbol.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a settled broad association between swine and uncleanness or degradation, rooted chiefly in the biblical purity laws. There is not a single fixed referent in every passage: pigs may be literal animals, while particular contexts evoke profane hearers, apostasy, demonic impurity, humiliation, or destructive enemies. Christian readings also differ because the New Testament removes food-based covenantal restrictions for Christians without erasing the older symbolic associations.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"spiritual uncleanness or impurity (including moral filth, sin, and the reprobate who return to it)\",\n  \"primary_basis\": [\n    \"Leviticus 11:7-8 (pigs declared unclean and forbidden)\",\n    \"Deuteronomy 14:8 (same dietary prohibition)\",\n    \"Matthew 7:6 (pearls before swine: do not give what is holy to the unclean/unreceptive)\",\n    \"2 Peter 2:22 (sow returning to wallowing in the mire as image of apostates/false teachers reverting to sin)\",\n    \"Luke 15:15-16 (prodigal son reduced to feeding swine as nadir of degradation)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Gentiles/pagans or the non-Jewish world (as unclean outsiders)\",\n      \"basis\": [\n        \"Gadarene swine episode (Matthew 8:28-34; Mark 5:1-20; Luke 8:26-39) set in Gentile territory\",\n        \"Matthew 7:6 interpreted as withholding the Gospel from the unreceptive\",\n        \"Jewish dietary distinction carried into early Christian typology\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"demons or a vessel/habitation for demonic forces\",\n      \"basis\": [\n        \"demons requesting and entering the herd of swine (Mark 5:11-13 and parallels)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"gluttony, greed, or sensual indulgence of the flesh\",\n      \"basis\": [\n        \"natural association of pigs with voracious appetite\",\n        \"patristic and medieval moral allegory (e.g., swine as vices of the flesh)\",\n        \"Proverbs 11:22 (gold ring in a pig's snout)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"heretics or those who trample sacred doctrine\",\n      \"basis\": [\n        \"Matthew 7:6 extended in patristic exegesis\",\n        \"2 Peter 2:22 applied to false teachers\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across OT law, Synoptic narratives, Petrine epistle, and subsequent Christian tradition the dominant symbolic valence remains uncleanness/impurity; alternative associations (Gentiles, demons, vices) are secondary elaborations that still rest on the same unclean status rather than independent positive or neutral meanings. No settled positive symbolic reading exists in mainstream Christian biblical interpretation.\"\n}\n\nBOOK ENTRY\nAn unclean Beast — a people or kingdom displaying the outward covenant sign without the inward work, like a parted hoof without chewing the cud. Swine trample what is holy and return to uncleanness after washing. Gathered as a religious body, they are the Synagogue of Satan: those who say they are Jews and are not.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Lev 11:7; Isa 66:5, 17; Matt 7:6; 23:27-28; Rom 2:28-29; 2 Pet 2:22; Rev 2:9; 3:9) · see The Other White Meat, ch. 48\n\nAVAILABLE KJV EXCERPTS\nLeviticus 11:7 — And the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you.\nIsaiah 66:5 — Hear the word of the LORD, ye that tremble at his word; Your brethren that hated you, that cast you out for my name's sake, said, Let the LORD be glorified: but he shall appear to your joy, and they shall be ashamed.\nIsaiah 66:17 — They that sanctify themselves, and purify themselves in the gardens behind one tree in the midst, eating swine's flesh, and the abomination, and the mouse, shall be consumed together, saith the LORD.\nMatthew 7:6 — Give not that which is holy unto the dogs, neither cast ye your pearls before swine, lest they trample them under their feet, and turn again and rend you.\nMatthew 23:27 — Woe unto you, scribes and Pharisees, hypocrites! for ye are like unto whited sepulchres, which indeed appear beautiful outward, but are within full of dead men's bones, and of all uncleanness.\nMatthew 23:28 — Even so ye also outwardly appear righteous unto men, but within ye are full of hypocrisy and iniquity.\nRomans 2:28 — For he is not a Jew, which is one outwardly; neither is that circumcision, which is outward in the flesh:\nRomans 2:29 — But he is a Jew, which is one inwardly; and circumcision is that of the heart, in the spirit, and not in the letter; whose praise is not of men, but of God.\n2 Peter 2:22 — But it is happened unto them according to the true proverb, The dog is turned to his own vomit again; and the sow that was washed to her wallowing in the mire.\nRevelation 2:9 — I know thy works, and tribulation, and poverty,(but thou art rich) and I know the blasphemy of them which say they are Jews, and are not, but are the synagogue of Satan.\nRevelation 3:9 — Behold, I will make them of the synagogue of Satan, which say they are Jews, and are not, but do lie; behold, I will make them to come and worship before thy feet, and to know that I have loved thee.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "b5871e7f7ec7d61f45f47ffcf360dcbb6264f88ba3af0c99bd813d1efe78519f",
+  "cache": {
+    "hit": false
+  }
+}

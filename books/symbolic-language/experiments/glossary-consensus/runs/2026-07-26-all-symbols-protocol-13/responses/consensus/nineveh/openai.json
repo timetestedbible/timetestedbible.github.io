@@ -1,0 +1,173 @@
+{
+  "id": "resp_0ea224c6a8870b38006a5476e3c34c81978e6cbba38e76a73e",
+  "object": "response",
+  "created_at": 1783920355,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920373,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0ea224c6a8870b38006a5476e4469c8197958bb1387122867b",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0ea224c6a8870b38006a5476eb06dc819780deffcfc72f0020",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Nineveh is most commonly treated as an emblem of a wicked, pagan society that stands under divine judgment but may receive divine mercy through repentance.\",\"primary_basis\":[\"Jonah 1:1-2 — Nineveh's wickedness comes before God.\",\"Jonah 3:4-10 — Nineveh is warned of judgment, repents, and is spared.\",\"Jonah 4:10-11 — God's compassion extends to the people of the pagan city.\",\"Matthew 12:41 and Luke 11:29-32 — Jesus uses the repentant Ninevites to condemn a generation that refuses to repent.\",\"Nahum 1:1-3; 2:13; 3:1-7 — Nineveh represents violent, arrogant imperial power brought under divine judgment.\"],\"alternatives\":[{\"meaning\":\"Nineveh symbolizes oppressive worldly empire or political power destined for divine overthrow.\",\"basis\":[\"Nahum 2:1-13\",\"Nahum 3:1-19\",\"Zephaniah 2:13-15\"],\"prominence\":\"common\"},{\"meaning\":\"Nineveh represents the Gentile world as the object of God's missionary concern and compassion.\",\"basis\":[\"Jonah 3:1-10\",\"Jonah 4:10-11\"],\"prominence\":\"common\"},{\"meaning\":\"The repentant people of Nineveh symbolize responsive Gentiles who contrast with unrepentant Israel or with those who reject Jesus.\",\"basis\":[\"Matthew 12:38-41\",\"Luke 11:29-32\"],\"prominence\":\"common\"},{\"meaning\":\"Nineveh functions broadly as a type of the sinful world, comparable in some preaching to Babylon or other cities opposed to God.\",\"basis\":[\"Jonah 1:2\",\"Nahum 3:1-7\"],\"prominence\":\"minority\"},{\"meaning\":\"Nineveh symbolizes an individual's inner sinful nature, the flesh, or a specific ecclesiastical institution.\",\"basis\":[\"Such readings are generally allegorical and lack a standard biblical identification.\"],\"prominence\":\"rare\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single settled symbolic definition of Nineveh across Christian interpretation. Its canonical portrayals differ: Jonah emphasizes pagan wickedness, repentance, mission, and mercy, while Nahum emphasizes imperial violence and irreversible judgment. The broadest recognizable synthesis is therefore a sinful pagan society accountable to God, capable of repentance, and otherwise subject to judgment.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 800,
+    "output_tokens_details": {
+      "reasoning_tokens": 291
+    },
+    "total_tokens": 1118
+  },
+  "user": null,
+  "metadata": {}
+}

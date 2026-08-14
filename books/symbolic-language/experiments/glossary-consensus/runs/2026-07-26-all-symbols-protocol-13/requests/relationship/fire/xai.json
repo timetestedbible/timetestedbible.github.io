@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "fire",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFire\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, fire is primarily a symbol of God's presence and holiness, which manifests in two closely linked ways: divine judgment upon sin and purifying refinement of God's people. The dominant summary formula is that fire represents the holy presence of God that both consumes what is evil and purifies what is to be preserved ('our God is a consuming fire').\",\n  \"primary_basis\": [\n    \"Exodus 3:2 (God appears to Moses in the burning bush)\",\n    \"Exodus 13:21-22 (pillar of fire signifying God's guiding presence)\",\n    \"Exodus 19:18 (the LORD descends on Sinai in fire)\",\n    \"Deuteronomy 4:24 (the LORD your God is a consuming fire)\",\n    \"Hebrews 12:29 (our God is a consuming fire)\",\n    \"Malachi 3:2-3 (the refiner's fire purifying the sons of Levi)\",\n    \"Zechariah 13:9 (refining a remnant as silver and gold are refined)\",\n    \"1 Corinthians 3:13-15 (fire testing the quality of each one's work)\",\n    \"1 Peter 1:7 (faith tested by fire like gold)\",\n    \"Isaiah 6:6-7 (burning coal purging Isaiah's lips)\",\n    \"Matthew 3:11-12 / Luke 3:16-17 (baptism with the Holy Spirit and fire; burning of chaff)\",\n    \"Leviticus 9:24 / 1 Kings 18:38 (fire from heaven consuming the sacrifice as divine acceptance and judgment)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Fire as the Holy Spirit, especially the Spirit's empowering presence at Pentecost (tongues of fire), and by extension spiritual fervor and empowerment.\",\n      \"basis\": [\n        \"Acts 2:3-4\",\n        \"Matthew 3:11 / Luke 3:16 (baptize with the Holy Spirit and fire)\",\n        \"1 Thessalonians 5:19 (do not quench the Spirit)\",\n        \"2 Timothy 1:6 (fan into flame the gift of God)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fire as eternal punishment or hell (final destructive judgment on the wicked), often treated as a distinct eschatological usage rather than a purifying one.\",\n      \"basis\": [\n        \"Matthew 25:41 (eternal fire prepared for the devil and his angels)\",\n        \"Mark 9:43-48 (unquenchable fire; Gehenna)\",\n        \"Revelation 20:14-15 (lake of fire)\",\n        \"2 Thessalonians 1:7-8\",\n        \"Jude 7 (Sodom as an example of eternal fire)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fire as trial, testing, and affliction that believers pass through, a metaphor for suffering that proves and strengthens faith.\",\n      \"basis\": [\n        \"1 Peter 1:7\",\n        \"1 Peter 4:12 (fiery trial)\",\n        \"Isaiah 43:2 (when you walk through the fire you shall not be burned)\",\n        \"Daniel 3 (the fiery furnace)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fire as the word of God, powerful, penetrating, and irrepressible.\",\n      \"basis\": [\n        \"Jeremiah 23:29 (is not my word like fire?)\",\n        \"Jeremiah 20:9 (a fire shut up in my bones)\",\n        \"Luke 24:32 (did not our hearts burn within us?)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Fire as unruly or destructive human passion, especially the tongue, anger, lust, or strife.\",\n      \"basis\": [\n        \"James 3:5-6 (the tongue is a fire)\",\n        \"Proverbs 6:27-28 (can a man carry fire in his bosom?)\",\n        \"Proverbs 26:20-21 (strife kindled like fire)\",\n        \"1 Corinthians 7:9 (better to marry than to burn)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Fire as purgatorial purification after death (a distinctly Roman Catholic reading of the testing fire).\",\n      \"basis\": [\n        \"1 Corinthians 3:13-15 as interpreted in Catholic tradition regarding purgatory\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Fire is one of the most heavily used and well-catalogued symbols in Scripture, and reference works (e.g., dictionaries of biblical imagery, standard commentaries) show broad agreement on its core meaning: the manifest presence and holiness of God, expressed as judgment on evil and purification of the faithful. The main interpretive variation is not disagreement over this core but over which sub-sense governs a given passage (e.g., whether 'baptism with fire' in Matthew 3:11 refers to Pentecost, purification, or judgment is a well-known exegetical debate). Context determines which strand applies; no single sub-meaning covers every occurrence, but the judgment/purification/divine-presence cluster is the recognizable consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"God's holy presence, purifying judgment, and consuming wrath against sin.\",\n  \"primary_basis\": [\n    \"Exodus 3:2\",\n    \"Deuteronomy 4:24\",\n    \"Hebrews 12:29\",\n    \"Leviticus 9:24\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The presence and empowering ministry of the Holy Spirit.\",\n      \"basis\": [\n        \"Acts 2:3\",\n        \"Matthew 3:11\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Eternal punishment, hell, and final destruction.\",\n      \"basis\": [\n        \"Mark 9:43\",\n        \"Revelation 20:14-15\",\n        \"Matthew 25:41\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Spiritual refinement, trials, and the testing of a believer's faith or works.\",\n      \"basis\": [\n        \"1 Peter 1:7\",\n        \"1 Corinthians 3:13-15\",\n        \"Zechariah 13:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The irresistible and powerful nature of God's Word or prophetic utterance.\",\n      \"basis\": [\n        \"Jeremiah 20:9\",\n        \"Jeremiah 23:29\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Fire is a highly polyvalent symbol in biblical interpretation. Rather than having a single exclusive meaning, there is a settled consensus that fire represents a well-defined cluster of concepts depending on the context: God's holy nature (which consumes impurities), the punishment of the wicked, the purification of the righteous, and the manifestation of the Holy Spirit.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Divine judgment: fire most commonly symbolizes God’s holy action against sin, including punishment, destruction, and—where the context permits—purification.\",\n  \"primary_basis\": [\n    \"Genesis 19:24–28 — fire destroys Sodom and Gomorrah in judgment.\",\n    \"Isaiah 66:15–16, 24 — the Lord comes with fire to execute judgment.\",\n    \"Matthew 3:10–12; Luke 3:16–17 — unfruitful trees and chaff are burned; baptism with the Holy Spirit and fire is variously interpreted as judgment or purification.\",\n    \"Matthew 25:41 — eternal fire is associated with final punishment.\",\n    \"2 Thessalonians 1:7–9 — Christ is revealed in flaming fire in judgment.\",\n    \"Revelation 20:10, 14–15 — the lake of fire represents final judgment.\",\n    \"Malachi 3:2–3 and 1 Corinthians 3:12–15 — fire tests and refines, supporting the related purificatory aspect.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God’s presence, holiness, and self-revelation\",\n      \"basis\": [\n        \"Exodus 3:2–6 — God appears to Moses in the burning bush.\",\n        \"Exodus 13:21–22 — the pillar of fire manifests God’s guiding presence.\",\n        \"Exodus 19:18 and 24:17 — fire accompanies God’s presence at Sinai.\",\n        \"Deuteronomy 4:24 and Hebrews 12:29 — God is described as a consuming fire.\",\n        \"Ezekiel 1:4, 13, 27 — fiery imagery accompanies the divine glory.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purification, refining, or testing\",\n      \"basis\": [\n        \"Psalm 66:10 — God tests his people as silver is refined.\",\n        \"Isaiah 6:6–7 — a burning coal signifies cleansing from guilt.\",\n        \"Malachi 3:2–3 — the Lord is compared to a refiner’s fire.\",\n        \"1 Corinthians 3:12–15 — fire tests the quality of each person’s work.\",\n        \"1 Peter 1:6–7 — trials test faith as fire tests gold.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit’s presence and empowering activity\",\n      \"basis\": [\n        \"Matthew 3:11 and Luke 3:16 — Jesus baptizes with the Holy Spirit and fire, though the meaning of “fire” is disputed.\",\n        \"Acts 2:3–4 — tongues as of fire accompany the filling of the Holy Spirit.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s word, prophetic message, or inward spiritual compulsion\",\n      \"basis\": [\n        \"Jeremiah 5:14 — God’s word becomes fire in Jeremiah’s mouth.\",\n        \"Jeremiah 20:9 — God’s word is like a fire shut up in the prophet’s bones.\",\n        \"Jeremiah 23:29 — God’s word is compared to fire.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Religious zeal, fervor, or passionate devotion\",\n      \"basis\": [\n        \"Luke 24:32 — the disciples’ hearts burn as Jesus opens the Scriptures.\",\n        \"Romans 12:11 — believers are commanded to be fervent in spirit, although fire is not explicitly named.\",\n        \"Traditional Christian devotional language often develops “fire” as an image of ardent love for God.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Conflict or division produced by Jesus’ mission\",\n      \"basis\": [\n        \"Luke 12:49–53 — Jesus speaks of casting fire on the earth immediately before describing division.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Fire is a strongly polyvalent biblical image rather than a symbol with one universally settled meaning. Divine judgment is the most recognizable default interpretation, but context frequently shifts the emphasis to divine presence, purification, or the Holy Spirit. Some passages deliberately combine these associations, and interpreters disagree especially over whether “baptism with the Holy Spirit and fire” denotes empowerment, purification, judgment, or a combination.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Divine judgment and wrath (including eschatological punishment)\",\n  \"primary_basis\": [\n    \"Matthew 3:10-12\",\n    \"Matthew 13:40-42\",\n    \"Matthew 25:41\",\n    \"Mark 9:43-48\",\n    \"2 Thessalonians 1:7-8\",\n    \"Hebrews 10:27\",\n    \"2 Peter 3:7\",\n    \"Jude 7\",\n    \"Revelation 14:10-11\",\n    \"Revelation 20:14-15\",\n    \"Revelation 21:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Manifest presence or theophany of God (often as consuming holiness)\",\n      \"basis\": [\n        \"Exodus 3:2\",\n        \"Exodus 13:21-22\",\n        \"Exodus 19:18\",\n        \"Exodus 24:17\",\n        \"Deuteronomy 4:24\",\n        \"1 Kings 18:38\",\n        \"Hebrews 12:29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit\",\n      \"basis\": [\n        \"Matthew 3:11\",\n        \"Luke 3:16\",\n        \"Acts 2:3-4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purification, refining, or testing of people/works\",\n      \"basis\": [\n        \"Isaiah 6:6-7\",\n        \"Malachi 3:2-3\",\n        \"Zechariah 13:9\",\n        \"1 Corinthians 3:13-15\",\n        \"1 Peter 1:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Zeal, passion, or devouring intensity (e.g., prophetic word or divine service)\",\n      \"basis\": [\n        \"Psalm 104:4\",\n        \"Jeremiah 20:9\",\n        \"Jeremiah 23:29\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Fire is polyvalent and context-dependent across the canon; Christian teaching and biblical studies routinely recognize multiple concurrent senses rather than one exclusive primary meaning. Judgment (especially hell/eschaton) receives heavy emphasis in moral and apocalyptic instruction, while presence, Spirit, and purification are equally standard in other loci. No single settled symbolic consensus overrides the others.\"\n}\n\nBOOK ENTRY\nGod's all-consuming presence, which reveals, refines, or destroys according to what encounters it. The same fire sustains the bush, refines silver, preserves the covered, and consumes uncovered wickedness.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 4:24; Heb 12:29; Ex 3:2; Dan 3:25-27; Mal 3:3; 1 Cor 3:15) · see Heaven and Hell, ch. 16\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 4:24 — For the LORD thy God is a consuming fire, even a jealous God.\nHebrews 12:29 — For our God is a consuming fire.\nExodus 3:2 — And the angel of the LORD appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed.\nDaniel 3:25 — He answered and said, Lo, I see four men loose, walking in the midst of the fire, and they have no hurt; and the form of the fourth is like the Son of God.\nDaniel 3:26 — Then Nebuchadnezzar came near to the mouth of the burning fiery furnace, and spake, and said, Shadrach, Meshach, and Abednego, ye servants of the most high God, come forth, and come hither. Then Shadrach, Meshach, and Abednego, came forth of the midst of the fire.\nDaniel 3:27 — And the princes, governors, and captains, and the king's counsellors, being gathered together, saw these men, upon whose bodies the fire had no power, nor was an hair of their head singed, neither were their coats changed, nor the smell of fire had passed on them.\nMalachi 3:3 — And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto the LORD an offering in righteousness.\n1 Corinthians 3:15 — If any man's work shall be burned, he shall suffer loss: but he himself shall be saved; yet so as by fire.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "33c53a83eb6170f78dc8e3a85006e59ca26d9eba07a7d1db94d451640cd3957f",
+  "cache": {
+    "hit": false
+  }
+}

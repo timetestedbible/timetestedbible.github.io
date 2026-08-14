@@ -1,0 +1,257 @@
+{
+  "id": "resp_0747385d61c015ed006a66db75b3d88197bcbfa491803a50d2",
+  "object": "response",
+  "created_at": 1785125749,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1785125796,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0747385d61c015ed006a66db763b9c819797fa17f65af718a7",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtul_KwaajShhbrXVR1CbhEU8gwgHDq36CqWiYaiQX_tCHgQ0m_DVWPsGFe4txoQ5dQax6aDjRLuy1Tz2pzcC4EKAXvXGTbj0gmVr6bi_YBE61to8wk4fDzR3pYxK2pMlWHjIcNnB58gQANJQ5DnAHBtf_0ptVnhkX4xPNAMK8c0XJ0ZHJ1uLfe8ifhe3VEDKv_IZtc29hBsThgJl8xKbgOfUlLaAmESTL3MT8TuJuItJ2HVrwNgIsZkktNy07NLKbFFWhj9xP5kL0oU2KlKCehEAFQ0ymNVNsb_8-8HFGN4pR-hpURGlFf5hIpsFl3JmgiUA_pLJwQvR7wIvoNmzpy_EaMjBJVim1MrpgkglGre8TmtYIEJkV6gfssu86QOCFEIc34D75BLGsPG1APDz4r6IxMapc_87q2Pn1Dn8ASPLh8kPPtnE-oucA9zc8XI-IDHBKeZwkHYutit2LLDJW4toDd2cBvRVToAR7wBUsOAYVEJcE1QEqoIXlyfHDkRsjMYGSZfO96q2jUtmyUxIN01GTbNNnoUd-9HZ4rUuMXdwqE4SCefVHQMP3YsXDSAdZB3KAYZQLI3R_0QykJIWjroU0Iz_jCem1leQn6m9_ewOQM3iyWTODyV-wf40wSy48q8iy-r_5Ywc1rUsER3Je_qYTO7h8jU8ezbDikW7BawJVYopVetzG7UoFgOz0tvP-JURhIv2vKEZae2dMiblF5_QLbK5kMiYB3tKvu_88PBhv3HXcL8aTxByxWDLdUXx0YVZcs5KLiX-wXl5p_bcJVrR0-MmNJJgbsatJrLZ05c6Ffk4HPP7bPxMPh1tPY1BvFA4N0Zt8rbPV6gUBs5MiwgAJQmg8zjX2RV6v1jtB7fwww-UTS-5hWN1yI1GOUwi5Obw1TU-XxFu96h-ygN9BO29NbrJBvEF_jvr8bOtwGE-Kuq4Tz_Q-BXIatbf4JcMn4Vr9NW_rDzzlLiVi33S-Acpa9AP_GkYZz30Sk0_2NAsJJ3YXcbYKUJgGIBBdBany_96PzxpJZ6j859aVTTD_c9GhqQQV3LKlJxlYw1cWJgV0-JhA7CY2K5vyNO7ZyXyAQT-w5B72rHwfLTuZiOhgjfZb38yANS1Z7EWWtS_psUamsxivQ6IN9SXhg0xOF9g2x_CRyHwvfscI3RHtGHSBYqCV6kYLJX86_tybh9wad8Alfnj8T_H0IdRtED_Uz4O9qvE7ZaXxI8aUGEqkVD8HH3-n3cM4QTj78WDnJMHOjOi7vca6TWU2wfB8rWTeZcWOTPdsCPCGodFcCM0H_31DFfbw2xSkFYpxB5ae8wEi-wbuqoKhcLMGbFbB5mN4kKSZh3Y3ww7F5I2TA0jS66ESY40r5mSIWLahnHcXjBt-gZ6oBiEA4ZSReuibawZ0kHn9Ojvabqk-q-8lhuxNlq5AJfCnqKpgrB3WvwehM5Qp-K0y_uWnMNAdTz9ua0lp6zLVbycPC7iO3ITeiU9W8opMXXYppCWc7MaPM9Q7OoFs_DbGyhXsK6aE35PDBukCCQMCK-8oHy4nboR-D4ffL8lNXhgEd3IwYvjklDKo9RROlvIzCxDyZQjqykSna_4YDfAnOM9ElP0ucCIi23mzE1RE0qlaqD_bP_tm71t-FL9itJd4aBVJG0cyBQgFO02a5x7bk7M8PaunqP3fARn10ZxR06A2KFlxkDdLhtYMxTvVmsPI0o5PgA0ryNIlsFCeFbSqUxcahjqPtSB4geetrRJa89jFEA1nvuTDK9MDNQykCpT0QfWZ1kDKuscIK36KocD0cH2jmyirBSqclifr0qpxz3yP8T0mWx82KUkNNB8fw_88FqZZHqcSDAJ4p3DN30eOm3YSuJBKfapczIlLOED1GRk-7475Lr47QMlakPGBggtspq0gxtKkl2BCNw88XVsLxKs3B88KQalTOubF8HsYBh8JPLaXs9R4nPeZYQcWc8Mw5VbQTj9USEVgh75ljV4cBOJD9iLZpSldLhwgRgNeVf7tFpZtMt-d9deoh1D8NnzWw9HO75GZTTZJvJwSFnIUojjZeJelZhVERaELBXxBwReNeLeQiXeD05T0cxzheJhyWRLsAGYAtl8MdAEZNfx6Rs_rs4h8A3rqYtcs-O_YR9curQEr3xSCFYho_EJk2Bc4N8j6-n6JM4b_KR9RbSHi6_zvWWN2er-w96AZ9j-vbo7R19ikGB62-5gQAnL8pbnTykxO66eevcYcSS1zhMhCwKM_Vn41FrWuYki_Eun81kYsTpCDHnf2Vt6H8JRvNWChXJVgtaAK4ZPJAtwCbAM9znJL89FBqgZbRBJQlLHjnaNb3grA-HA6VWkTySBJ2vFOw_4Rc13OHzDgZC6ls72o-XTbBdvwuNS8uEoLMWJvts1Ay217gRPWCKHW1AwHAUpU3_ba3BAtAalF56-GjOMgiQ-XpYpNHhEqMPITl7idu_tWtSTB0cwDYkUwT_oyJqUKQN0vFAtETV-TRWdzahDckGuNyq9ZVhCreoXH4aVOqBwETKj30mfVcMe_gChOK805AyoGJbhYryNdMTW2oBGjbS6k3MoJBjIrrqemNv5wkpsk9JWPvHd5SEqnKX8nsY1BHOmYnQpuHzEDXx1sOSgM2fZczo-x8iCrJBqXAjNz1MbalA776JsVaGAbPqUQe7KcLsvEObG3EweNXQ1d11n-6T0dIqYyPzjqUs9ZdZEfSxHXrQ4ZFh_9Pgn4Ox68O07VUA1GFBR0a4F4qsM9t0PRmzuuKKgsl033dd8vgnxHyF4NiK2C0xlZgWn4FPghnuz89veJQ_1uaPmvNRpsapDD_ix9BA9qk6p4JUzxgR76EWsjiTCQzJVCkBcxu5n2luJMFV8e-vQxPnKQiFxMOHjkCELy8ytzsm2GjTipddIvd2T3TZMU9zoV_cd5NVTyyLUdKme677wVLVU-iZ7suA5CUxWZidARvGPmjyCHPQztcRpyhaSUUNBxI-BdkoJKeCcEMEJD2pfmLH_1mlg1hWce2UzbwMHXbiwm1BhyZchoXz4OB09Q-epXl93tCYoa082XR02zz-4cujqyLtpEB5SdsZLicQZzCnoGa-zObNC-NrdTTY7uW4ew4sC0jYN26DIhsva25Nf7YCbHEZX_EOqNgDknsixe4wnL8FTTTCtn7nhRH8yk6q1egdfw18HUFQxUzrH_qBS-rEf2gdSehL1f4WLcLRR92DB0XbVVWImRTHF1NiIwQW22Xk4q9wH81DVAJ500fHrPg2CvgigyF4vxJDADQQ8FI2_RfI2z6RySlqPRELpG46cdZObEB4cF8yPW4JzhOsaw6Y82EVrxnO9la0N1sISd29y8IUUZzpnfLdpvKgIq7DTl25dRaQTETbVK8VZQBmE8enoh9OGVVEX8fEiY8aKPzo3gpZJ9SZACIOogJB748V-WGI6JwT61Nr-zsLij5Vg28opDP3cLulsr-EwoQmDu2TI-vOf4YZ3JxMXZOwb1h5NBA0k5LKx_XtJOp4R5cLoIkDzqzpCdr25ulkcRuEXZitSnh42tHqQg1tbwCQQ9YJY_gj85b1r6W0g6vIGr2WNXhP6lF5TRfrnfObaEDpakZtoPxTofiVdvHm7QO7kJndQVj6qsq20V_BpV34XwekcHUvXFGhLXmyMOQyUU_x7G_PgFBDnfmAoT91GxZIKu-F-H-GDr5qOODEneubzmONlPXSavggaX83C9FURa0SyJWyQc5HGsd-MkaNq_k52twjJchg27OvdsLsWOaLDwePkcFnmfN2nb-2-1mbOCF4HBEQB_KjR4sRZjNBWqFS5FMzn2wd0XGbgkVnJxxfQfSx_OitIPKXjDLdEflzh5sZ5Y4xMG0MNXMHQafI_l5R5qHTZwkNeti601FgRELy_Hzzr5vw76X0bMNz82-LtN3Qs2r2epL1acOCEQs-YPxt4-xph78CvhkhrdLFcVeBWCziRQLzW5zG9se_QDa6SaJ1ao11awBSa-LkHtxQyfmFgizoe7Y_74z1g6qZIYkj8m_O5IWddfpkskSp3SYjwkpNhk2S9zTSfTaTBdQvLnw3OksoGEhKKScRwNjA8T5QAHc47uYfHt2toiUVsRWU9kI3lIoGrPaF7YEcnWh56sSI5Pn65OTx3mh5l8LL5yqCMAjyMFfsZLMvbHlqoUM4WoJgUBdds7UfF1OcOkxGLdrCcmWgM93vEWaNOA-2wwJSBKe4MiTBubmzesVSk4T-8l1IhIjb-FP-GAGaazZ8fg==",
+      "summary": []
+    },
+    {
+      "id": "rs_0747385d61c015ed006a66db8179388197bec29d6081866dbf",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtulosYEJUd3DZvQkIM4gOSOVQQcLAmo3w7imIfScsJUVp2Y2cKDkjt2twsb_JXPyL0smZaZwjiYzrCGs8GWS0eR-bKc9q47BSJdS_T7DEHhq3C2ha7N12C20a1cQh-fLJXRQzFitce9HdbbrreraVTJzOju_bBimTJYa6-izfhmEn2D8H9coPjakF47DFgKyBpPS95EN70i1ouQJ8jxbMwxzumvohT5m8Q38b-H1befuLHGOJflkCrn7uG0b3U3NMeK9hJXypgRWt0BELdKW7XA0ocRHvxSqXoZQ5E9JrEutZm1HVywRsAJek-5_Dlqg4nuWvJVJnzIZxUsi1iup-iOZVr8mv-ShmVAax0MyFkMCNpULqnrF0X7mKLzvOpU4yKm0mxAjNe3kqauBI3ogiTxjizuIMslkEY0V2hZ_CzkGmxsi49oh3XX5FqASuaPLsalrhjakrnAla7yXgyyK-eQTTwMfnjfBz6x2cIfje73LWInHVyEpJM9CEgDIYq2A_t9Wz3Yf6eeVMcB3M7ZKaCNoLuUDoUFRApY7re-ASiC7n8rJN0nrtWk1ksRT0DOEAhsoZSC-GhhVr85NBkOOgoCf9C2bI08Sh3y-N9jTHjlNBCVVHjmozJcgALwvYISi_bGo4KUdL7qggoswK2JCOfo80BcpdZDdBH3Jqd9opHSkBBnpkZRupsLFIkeRqy7VLwL_9Gp9iyERaAgcxSY_P81VQ-MztpzUuNo4N4gNraL_VslYa3qojjUPTOIsDCwMAkbB6plaACdTEnO6Bqspu53iOlVPoJZISGNMiYXPD62O-0OWYgqxBm8xKeTQzNU6SGQ8OD7_u8ir9n8K2-hYpkFD4suDwxFhxnS0gTXb0ZVjGKLWOcxSj3_M6BQrijzcqt1eC4hZySFw8760zpGaM3acnlBXbQYFG7UkQ5xM26TjIbMGaCzTHj5kxiVkHCRMRoN3WFNU-fPG0R0cUqlT4kWYLdU2zAzRRZ4d42mFtp60R-qJCIcvZEu9IMmFEXYrkvxG4lHVakNwlipmqs8BbdXNVXp2VVkHhOKvGj3p4J8q7edajrg6tEnsRxY1yVKgt0S-A5ZIXzyFn2QX6ugRPDCBFKZ_RapL2Majq3xciC5kVlMbuSH67xYzsID3hrTu4rLBt3dvz0ZYcKxddiY-gcvMZJyVAsnciaefpUHkChF1-DJlevkxkna2FfANki0HJls5U_IUoMSVaFh6g1E7qTnFZrBYIDuR-gMyTtb9yHadVVSzSBNAtR2b8mPDcgfbNfJ8FkJ_aJozsdERQzs0CkFL3TW9MXOy6itX_Lb59TRvoo76EoZU4K56gEfOETj6IO3qSJDvpxVh7CRvtc_IQgjL0nGDPLllAiP8QNnevHFMt7c-ReImae0YQyw3NxbudCLv4LrAWmy6pLElaaMJDBtyYLkQj9oMBNCk3ge21WOitSrFECY5fnUwqKfsWV_6spwmARGRXq38KVHFoIeTBU4XXgH8dLhgoUlggiyGgqh0OAUqGISn42XGjY6-J374NvoLbvmrWNuq2MriOw-hj0ky1P78sFnNQJQ48Moh1DG2pX2Wdy9NgGITlKFuCiGyGevjqQtg_cRF1Ux6gCy0XIxyoY21Ww95UWMUH89w9MhvuqEH8eyLHzE0oIppz-q71QmIGolLSloVVIkblCbFK25JeRDeJwntGAed5LEU3gTX3Xz4W94Ykd9aMuZCduVEtSAjBOpXVrbxY6WeCl0s_O-IO8vIe0la5HDHkvFQhAOeHzUtVzEl_nyzB3BJThcV10sY5r0DWYNX0DsCGTSuPF0u2BjQcfUZy1bKzWok0aI44BlcPH2MUpxJrz92ptKnfnOFS3GEH-hXtEdIOPn7cl4HwMooWsUHetZu2P66Ckw3mUhb7vz0vWx0qQRLgv3kquS9dwsdIlAavwziyc7AOAX1A2-V6MpfkLmzX-rke1dtN0XEa7_uQnbQTliPV2LvKiOBXFEOv06gcqT5fK5l-y3MRtOdW7Hl2AOW4vuv_qBUO4-9-mXSc4Qdb1Z1IB9MgYdhGZw0Jv-aMBkprjZzmZ_QcmDOsCJkwFrzdxxk4K2QvaSHTSanvzj-zqGLFYotGcYm-bYRmtDPQrnBYSdVOKeUmIAnM5NR3wN6sXrT8MAaYC0kZlP0XI6CDtv7qoL53KHFrbifmuQj6qdKugerIIKk0lGcISXjkD8A0anw1fnZPw2CHNBAtLD_1jcZXcd9XAKHM-wvHQmeEMhIhx6IKc26G7yg2Y_atwFWnN5lu0P89CrHe1kWj1q1o6Lr2EvJUnv0qI7pvLh92y08fKyelq9jUb89YdN5OE9se52FjGqdXzUBGrT3KqUxWve50huexHrLSODvQZ7z8dR8jShNKX7ZnjPQ7Ev7b8RC9MDqjf_wxbgW9P_pzoKYtycTZyyyL_t5I5QKBUMc4PaC4nLgmN9aUykLQTwfI-6ekWtg1RrzPKB2rVOSVkK4jXhwAEZWqN_AFVN-dfdndtMApnkG522-yv-v9nx8kylrlA1jFRoBXSeA4WhXf6CXEqkgpYC9lN_XmBWjR74w6bobP9FlpT0wwy8mF12-pqwS2FX3TpKnOoTtSPK_E3FaZpIx4GvvyyOqu9dz1Liou0KRFUlN71dvR73mbvhFOYmoKFJ994qBggFx2W4W41NLHxib4ashd-IsqiOncpSfqeSIPsIdI2kxae9NC3o3zn1zg26FQ_CxqoW1LIiB-zF7jsxlvSqse-t6gJsQ57ddDFQ-UdXqdR8MVqkvo8966olZlRZsaQAXX6gVc60R4fxZ_bxV_dXUkvdcA72w1Q08nvVIoNM59v938bHnoHPELTFUXg3p_ZwJbVVjJ7isxojW-6k4IzXn98g2p6HfgMhl3r7xZo1T__m9wVSi6Zt67uO1Vt-E-LLiLhowLE8pwniYakzur4uWC31A9oeJ2At6eL9oDc7gBE_oxebYC_hROQKpglnKQjFkHbqV_mzhYrmfPQyQy-EV-e_xPvZcsDZi03mwo8QQqOzaYZ7uWN6tRu6aeKmGVCh9VitNUSPp0RVQBcLBatsjlqScBB4XwE0w40KDtzuxpr6QYIlL2--OVDT8hYdWsQ4pqJAgXAbVhAH18BudV229yESXiGYEyYHsHAowsp4ixYjKAmJTf_5XvMQqjbMrxWKkwockM_w0tn-PWaX7A3ReP9xhEMSaDg_oD9Y1AdmtsS-s8bQVYWCMCUqPmij7eB3jz1hvrkEuSurv4XGBX1XstlQzjsfgCNd_8ZemfITlW9y88eewMNSL5MP2Cn6thjySouOIHc_qP9NUUDD57rx9yE1p7037ZpGLAwJLVX1qpG6leB5SkArcsa_e_UKA_bJjkAqOswPW4CojHpO8ljTXXoNUvxLbg5xD-S2Lc1B6RvRXz7IqjGE2mn7_oWjTPGUkp_YCZ7BKlHQ-6YNxjWh0dQqKIBFl9UwO7ur7tTqphYJ81mhx-zMMoiRLXkyL8lhu4XmF9B_f3x3J2BDDlsmCF54lBbvwPJbVR5PFFkQ9MzUgfkpCJsYODX-jaKSjJDlaM2LI78tnLHD_bVx1sX-FTWn4MjiKv2D1uG3tSIOXaWo7qZ8PtfSE10IlgA1D6qGzjBgNqt8Z_NqBY0wcdO1ExsIrzH638Ff4ChhU9JWcpXaZ17l_IA-Fc50BsNDq4GqSWCl4uCZ_xC4Zj1hZSiFcPKXq98JeP-hFn5lNYpFmDIzW6d5rgO86ni7U5h_EFvt-J-NG49nJzoSXSL9GNLzOdEFZoAD6jg96WKvzshg2RXkNJJ1Ps66_Vy3-xdZXXPA-V9J7dGtBdf40zcH-iLFOQ5b8eOwRyUXcOF_BgjMmfubdE-J1ygRcPzDJNTi6Co32jIuAL421Wl4_zc4t2OFcL9-l1NVIUJOcKBSQf-eRLqAg5q0HteufvwWFzUAMz520ia-23pzoG3GOJoUcBETolbhw7V7upQrjDmS1ytQ3vfwQAQk2q8HzF6JAvrHq7p2jTFh57BpWhLptVJVvBj5BZxbHFEVaPuenN3YNOWZDAoFInO63HE6lDfqk7hlQH1GtxxnM8zuWMgQ31lxATGOChgJ8w2a4n9BjF_rju8xwFyzDFMacD9DFlIEcWy-VVv7dpQ9_I4je75A0-s22no1S8lhfpFcpIYk2Icxb2_XogxuMyOXlCYhX231g_QJNYoNVf9ygG0NZmHYt-7rfUXY2urHtSKfLkcHCshgP8RQR8tEiR3QD10WgZh90vD6_TByPCQLKtU0uPdU2kbivv4aYBTeSAnRVNkQMNazbmI7oH8O10ZLLMdcxiiSG4WycyKAstrBhToKYmqZQwSNoxX-kUPfILYFR4N162d-qo0SOUbdlx2WuOPo626xGTAWTeNJ1jhq8Rcjy13Bxn8KifSC9Rv9cNKNg7iVTNM7GwR_8Lemjbx8Hyu9xTZ-s6dsqYkWwpDnOhDqIllGqow9N5flY5Y0Vy_aTYsFsErlGzc2AwXChdf7iX3WDfgOR2boUTirSW48yT_HkqQ1fXkOtFVwPkXi0Dhc_7vYy9mCrrl86Ala3CXlpNuyChjl5iquTUaq1_8SG1xJO_RhSOddPH13UDQLMF4-ESKJyV75qhePusjb_ONJEfU4hoe0rApqIpMvuv-yv6FwpRTZZJFal4PmrtWbfsHPJhfNNSpeZwQhburO5CMqPXde4bySJEAb1vBeddU=",
+      "summary": []
+    },
+    {
+      "id": "rs_0747385d61c015ed006a66db8af3b48197a0d6147c6c975fc5",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtulVmlP1viYJHyp4i4Qj3THIpucXAparVgGGuF5XduFmZL_9zYzcsClW7Ya8QI38BStHQbURna7BNLC3uokBpTOPl8uvoYm7F54AH6g9cqSjv8deDl9UqmcOnXAC9c-qB435tuhIGs-Uo0fad5DbXl7YbUvOK7KHFSgV12WjLo7fCtg9mY5q93P9J322wZvf1eowpHKFmVE2F4XoP_bnpI69mgw903vMK81P5moC-oTiz4g1BxXOcn4650jKKMyyM2m1fyO79pKMT6firorwXPN5orpnWOZch9GQw6OINY0VgOaKjluBq6sQRnMX5lLqmXttlXa8DhkHDyADtnWrkrEwjiPQe68AS1CGTbaK1W6qacrCzj1BYCKElzm2nvuVu550R0hISBu_dSb2ya9udoxYoMpkhO8sFmAhnBSVIRHSMPxwzfNqTuwRhWCROn1ltIRFbpQYK4DKYVQ6Xq0vuSp32su8jr3ixdMvpm5BDBlC-iF_XQpzFYe58ipeDgd0AORhXI-dXQe1kMCnu2aCGtyKV8-kgeo_07mii0-R0aJ8L5WaO_wlrr4hT74ap11E-Syza4g_hQpPqYlp55o7zULvIWvErGITtGUMIRUF18Y8sWwthr1vUAZHnX2lC9w0ekuH6gzkNVaAZVUKzAkeFXrZPN8WiItXimdnY9H0A2FxCWlZpysoiK1l4CX3JThTUsl-6dimUCxJ3menIfKo66Nq7YgHFZ9tJUufHqbCvYZFkPb2nxGoks2K50CgB89-feD3jn4X7wr6kEb2BvOjNJjqeA2Tv6h4TCM_vy6z56rskC0368npvUZnzZR214ZgpqeMxVq8Xj3ZUhX6A_0LjGuc8GVmWC01NBAbG6hTlLG2SuE23CJNMuEbtJSGrIY1KUy-5VkdKL28JHjuAsszfeotq4mussJgQdabyJuMXKrPZkx6TrnqMY0x9zaLvYLGt3wO9cySebzqJzQzxeGt89-epKbG2hS6RXYmo47pJ0pzT6kA917uJEwUH9yD6_ObIehiAQafJ4su3vRsQ3w0Ph0UpkUDb4bsOZNrAouqsfCWw_PJx5a7QPuf77tQ1FKGdHMndAGeCYGjS6GEgk_ZMgxcouoays5UZXH5y4pmWZ3dqRBtyLMOdSDDZSdXFW5CjbncFAPJm2hGugcbjlRY0qxt44ZrvbngYBKqxRmfnS65p2S4qI1ydhrSeutAt3ZqLcbsObg6U81pjO2496bRrZmyd-cNSADwgYbEyEGSjjdmCoBEL_zkcIUWDgZzB7reI2RTLWIB8FMsZVcqytEQNTS9mtGvev5Cs3bYMieTXwKXB2wYgp8IgE1ML55gz43akTzfXsSos7cns5oW1OIUwQjkHq2dNtuPviRT5qCBHwDmt9ft-0s5u_BqPl7leA1k4bYkCLuFm0GJ9jrrzTnmpPG70F4M1brG9v8zmDYM0q-Iq9RkWfJyAbAafkrK1sBCowBjNlJJ2vHrJcslgoQtaDBVFRgSnVJir1LAYXVPRheKuY_He3Jq4RSnf0KSXSQF7fMfX55MOSGJ7Ti7Z8eE-S7VqvZ0yaxT6h-NmEsI-Jl95oDH4CObdB2KkHitqrT7dCT4peQOHV0v-A_Os6LHifpy3HiQ6K_qKBwUVaIwxW6--0KzJZQnvuXBsy_tK_akqn2zxChnEjTmbHdL7e3sSbj-txZ-UykTlAP1PYKvb0FnzSv5GWm1NHmg1oPewuWRMG1oeywWHhNNDJHdkON9SvUoKjcE9dk83sb2_onKcSoAaFNwR6c_WZ-4vyB-iTL3Y4USXmaLONtDnsN3SknDOcakJt6fQymfJVNubglApGpdtuMRFFRZzFRUz-QhWKHIO-7v3xn1WbEwd-jtK26aDaozps8DnAvqw5BFSQmQEPYhxvpC2siDsWHSrmSW1d8_-5yB-GbdmQhq5RxQfjGxYITTbAb99xS-f630v4wsj-4J8v2ZHOLAv4qumJRDgREKxLyBoM0fAREQgDMPJW3-X3LcFeKXXuCdpAKX7vnWlvpqiXKDXUvkWYdUlrpL3etlfqwpLr2QcV7S1Yeze8UsIf9zURN76w9QDb-3-m4oj3FqajVvREtcSF9j9gG-iwgA-FHaRWo-gw8Tg_a5uyZS80bziD_rOLRCgviIu9Wvqcg1Q9-5KFCceX2nmj2TglYZsoYquwuXJwaUdq_0sfBU7fEILXSx4Yyed6dYJ8jbV6C7lOXZchO_OMHgrWPoZ4Z-eZat4u4eOFNX4aiIeQs3kIEtI4KhBkJGCS2KnBA2sMP5b-Edboa-hc-eCC9kDYlV-hXic-FVO01LuItd92mzjolHe9FYQ2kReLa-dslWdMUcXKd4wQ8F8kdqlL4MpdGXUqOPQoTalO48iql3OoxixNdwyB-0pAzMZ2-Yxl5qysQ5PHOoLEW40GRXOnEqJ9fv91BB-qQKW2U310D8qsj0S-Ww3IgcKYHfZHT3n3cW-y6LPICurq3TaC3mXs3CioYX3aeeQmGxjbpq5w-BRNzCXuy3UhEU6QcpiHWhZSkfNx7SjW_Pz8eyXSdkhB5FNgNp5SsnY5K5cUOvn_rNqXpGYq8MpPw9uAV3OZaHrlg6drIYqgazy8zFpuTIxCuWn1FJUQmT5R9vc4z7SBc4-bT2b-kDhJ-4PHnmBQgzFkykDrOtvQL8i6CQ4bNSo2EQ893UOvW-ZjHXyKCk1qjKD4m_Kdfg6wojcLrBLjhuvC6GA5HWzuLwtQvtrskdq3cE0pwH_izIuBebTBDT87NxrV5TjuIik5zVyRcKWcUoiAXkJsoHuEAkRiBlBEcO44V0wqSH77PUxffr4ppnbZdVUitZXedbEv5yaYUmBxP4s3kkNPhSguduVkG8-TfdURrGKQGQlDfm_TBrNHTHIdqvO1UPm5GmFATB-2B-702m2UzeuaD3duN7UImGiz4p3bCpahN8CbHdO0ZbJrej5HCQ-UOImgcBeMkx7DVpNDI0QxF88cUApPCnkamtg7D6lvWcCP0_PE2le6fR7vsqd82UPtB_77rw5a49a4zerN1QtNPjtddLl3OWUk1jKapFuWkX0C6Sx4v3gG-gKeSPLZxS5EgHaMwNcs8QRyMrL-4ce8EuAtvXFHXvkWK5sMXqpkyYVb2hauCBv8riA64z9HOVazsOsW5N3kAJDZd9Ft6ab6AZ0ZLExYxF7VRwhySblaceu3mcaFNVJ86QV_URL56bsHpzeWPVyuVVkPlDcA16puK9HmWN0XGY5wSK2sH193uuEy_ovWIXBK9Ed5SIPJnNPTtXa_uc1ngTVh_gJvsHM1u4c6rn6BDaKHlry41OWDuWYRHNKkKk39tXMyltIAfSneobq71Y3MfGKUs8kOSTF2L7hoYgnLqixOR4ChZwELCmZJzuaFOi1kWM1Gk7LEQtA-5LEovL6WtWi87aRJJVVzNs0HINa65aB1eatKv7SYPn8wC3MiRMtPCXGEzFQCXiHxElydyKtKcXj4Bu4NczRIiMKePnBbBdDc00q1zZtSkHPiggihZLTRcRfXJ1wvf5lcizLoyhNlmL2PXKRv8qss2xqjJ9a9we7HSt9dr8gRalwoj9sdvKGkm4OcTM-hPesJKPazpJUFoIGRQJoq-jRN6JJzbY7pfxvaTc7EMY2dK-dS11Mv-ABppfuj0_bR3AWj_PVTipL9efw3wEB3jeCCbSqn9k5VUNH_BeNChKmpOio-Od0_i_tDvswZZR6_em63n7QcthPuBPnnDKOTFresW4X97GLe1mQH0aRkOvQNZXUzlLEK0RrazRvrMxHY1r4I1I8nhYUIqOMixI--wr_8R1HznvmNgR0HiO1SxDodq_LJUaBq1KyqdWaID_TbeHUBs_C1NxLEh7RY5M78SF7sHVGYwHD7uHtHJPS-w6W8mSjQ3dm4bBvr1gBvVTr7cIbn_eYkmU0Iwr86XMdFJWqwPFqJGzVdWcIy5fQ4dOVQOyHGANHZGzwWH35jatE1vju_GHwin1wOkussjbFusC352HH1qPk8ex9uWxbj5imAOeKZiIhEv",
+      "summary": []
+    },
+    {
+      "id": "msg_0747385d61c015ed006a66db92f444819784add493930cf9fa",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"persuasion\":\"UNPERSUADED\",\"support_scope\":\"NONE\",\"rationale\":\"The cited texts strongly support a recurring month-opening sacred observance associated with feasting, worship, cessation of work, appointed times, and ultimately a ceremonial shadow related to Christ. They do not, however, establish the entry’s distinguishing claim that this new moon is the full moon. Psalm 81:3 is the only supplied text that mentions language plausibly rendered “full moon,” and its natural counter-reading distinguishes the new-moon trumpet from the full-moon feast rather than identifying them as the same phase. Ezekiel’s east gate is explicitly an architectural worship entrance; treating it as the eastern horizon through which the full moon rises requires an additional symbolic equation not stated in the passage. The conventional calendrical-and-ceremonial reading therefore explains the cited evidence with fewer unsupported steps and better handles Psalm 81:3’s two temporal expressions.\",\"book_core_identification\":\"The biblical “new moon” is specifically the renewed full moon, and that full-moon phase marks the beginning of the month.\",\"book_secondary_elaborations\":[\"The full moon appears “in the east gate.”\",\"The new moon is a sign of the appointed times.\"],\"unsupported_glossary_assertions\":[\"That the full moon is the biblical new moon and marks the start of the month.\",\"That Ezekiel’s opened east gate identifies the full moon rising in the eastern sky.\"],\"chapter_only_objections\":[\"The identification of the pearl, the bride, and the full moon depends on extended lexical, visual, and typological associations not asserted in the glossary entry.\",\"The claim that the dark conjunction or western crescent is a counterfeit that “climbs in” rather than entering through the proper gate is not established by the glossary’s cited passages.\",\"The proposed correspondence among twelve pearl gates, twelve full moons, and twelve constellations goes beyond the entry.\",\"The calendar reconstruction and the claim that appointed months begin at the full moon are broader chapter applications requiring independent historical and textual evaluation.\"],\"strongest_counter_interpretation\":\"“New moon” denotes Israel’s recurring month-opening calendrical and cultic occasion, conventionally associated with the beginning of the lunar cycle rather than the full moon. In Christian typology it belongs to the ceremonial calendar described in Colossians 2:16–17 as a shadow whose substance is Christ. Psalm 81:3 refers separately to the new-moon trumpet and the full-moon feast.\",\"counter_core_identification\":\"The new moon is the sacred observance at the beginning of Israel’s lunar month, not an identification of the full-moon phase as the month’s beginning.\",\"counter_relation_to_book_core\":\"CONTRADICTS\",\"material_core_denial\":\"The counter-reading denies that “new moon” and “full moon” name the same phase or that the cited passages place the beginning of the month at the full moon.\",\"counter_case\":[\"Psalm 81:3 contains separate temporal phrases for the new moon and the term commonly rendered “full moon”; the counter-reading can preserve both rather than collapsing them into apposition.\",\"First Samuel 20 treats the new moon as a known monthly feast, without identifying it as a full moon.\",\"Isaiah 66:23 uses “from one new moon to another” as a recurring calendrical worship formula, again without specifying a lunar phase.\",\"Ezekiel 46 explicitly concerns access through the temple’s east-facing gate for the prince and worshipers on Sabbaths and new moons; the text never says that the moon itself enters that gate.\",\"Amos 8:5 identifies the new moon as a recognized sacred day during which commerce was suspended.\",\"Colossians 2:16–17 directly classifies the new moon with holy days and Sabbaths as a ceremonial shadow related to Christ, which supports the counter’s cultic and typological account.\"],\"book_explanatory_advantages\":[\"It offers a unified visual interpretation of Psalm 81:3’s possible “full moon” language and Ezekiel’s east-facing gate.\",\"A full moon does rise in the east near sunset, giving the proposed east-gate imagery an astronomical coherence.\",\"It emphasizes the moon’s genuine biblical role in recurring appointed worship.\"],\"counter_explanatory_advantages\":[\"It follows the immediate cultic and calendrical functions of every printed reference without converting temple architecture into celestial geography.\",\"It preserves the apparent distinction in Psalm 81:3 between the new moon and the full moon.\",\"It directly incorporates Colossians 2:16–17’s explicit interpretation of the observance as a shadow related to Christ.\",\"It does not require the unstated premise that an east-facing temple gate represents the eastern horizon or that its opening depicts a lunar body entering it.\"],\"evidence_book_core_cannot_explain\":[\"On the ordinary grammatical reading of Psalm 81:3, “at the new moon” and “at the full moon” designate distinct calendrical occasions or aspects of the festival calendar. The book’s core requires them to be the same phase, eliminating the distinction on which that reading depends.\"],\"comparative_winner\":\"COUNTER\",\"decisive_sources\":[\"Psalm 81:3\",\"Ezekiel 46:1–3\",\"Colossians 2:16–17\",\"1 Samuel 20:5, 18\"],\"unresolved_objections\":[\"The syntax and festival setting of Psalm 81:3 are debated, so its distinction between new moon and full moon is not beyond dispute.\",\"The supplied excerpts do not independently determine whether ancient Israel marked the month by conjunction or first visible crescent; they establish more securely the calendrical occasion than its exact astronomical mechanism.\",\"“New moon” can denote the sacred day or month boundary rather than an observed phase, which limits how precisely either phase-based reconstruction can be proved from these excerpts alone.\"],\"confidence\":\"medium\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_persuasion",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "persuasion": {
+            "type": "string",
+            "enum": [
+              "PERSUADED",
+              "UNPERSUADED"
+            ]
+          },
+          "support_scope": {
+            "type": "string",
+            "enum": [
+              "FULL",
+              "CORE_ONLY",
+              "NONE"
+            ],
+            "description": "Support for the exact glossary BOOK ENTRY only, never for the supporting chapter as a whole."
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "book_secondary_elaborations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Secondary assertions actually printed in the glossary BOOK ENTRY; exclude chapter-only claims."
+          },
+          "unsupported_glossary_assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Material assertions actually printed in the BOOK ENTRY that the evidence does not support. Must be empty for FULL and nonempty for CORE_ONLY."
+          },
+          "chapter_only_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Objections to applications or arguments found only in the supporting chapter. Preserved for later chapter review and excluded from the glossary scope ruling."
+          },
+          "strongest_counter_interpretation": {
+            "type": "string"
+          },
+          "counter_core_identification": {
+            "type": "string"
+          },
+          "counter_relation_to_book_core": {
+            "type": "string",
+            "enum": [
+              "CONTRADICTS",
+              "SAME_CORE_BROADER",
+              "SAME_CORE_NARROWER",
+              "EQUIVALENT"
+            ]
+          },
+          "material_core_denial": {
+            "type": "string"
+          },
+          "counter_case": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "book_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counter_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_book_core_cannot_explain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comparative_winner": {
+            "type": "string",
+            "enum": [
+              "BOOK",
+              "COUNTER"
+            ]
+          },
+          "decisive_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "persuasion",
+          "support_scope",
+          "rationale",
+          "book_core_identification",
+          "book_secondary_elaborations",
+          "unsupported_glossary_assertions",
+          "chapter_only_objections",
+          "strongest_counter_interpretation",
+          "counter_core_identification",
+          "counter_relation_to_book_core",
+          "material_core_denial",
+          "counter_case",
+          "book_explanatory_advantages",
+          "counter_explanatory_advantages",
+          "evidence_book_core_cannot_explain",
+          "comparative_winner",
+          "decisive_sources",
+          "unresolved_objections",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 18953,
+    "input_tokens_details": {
+      "cache_write_tokens": 18950,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2670,
+    "output_tokens_details": {
+      "reasoning_tokens": 1475
+    },
+    "total_tokens": 21623
+  },
+  "user": null,
+  "metadata": {}
+}

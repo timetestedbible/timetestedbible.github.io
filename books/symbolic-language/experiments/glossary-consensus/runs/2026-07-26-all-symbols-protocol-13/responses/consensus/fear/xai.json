@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919769,
+  "completed_at": 1783919780,
+  "id": "03c57e89-4883-9cc2-aa0f-516416c5663c",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_03c57e89-4883-9cc2-aa0f-516416c5663c",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Fear of the LORD\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Reverential awe, profound respect, and loving obedience toward God that constitutes the foundation of true wisdom, knowledge, and righteous living\",\n  \"primary_basis\": [\n    \"Proverbs 1:7\",\n    \"Proverbs 9:10\",\n    \"Psalm 111:10\",\n    \"Job 28:28\",\n    \"Ecclesiastes 12:13\",\n    \"Isaiah 11:2-3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Servile terror or dread of divine wrath, punishment, and judgment\",\n      \"basis\": [\n        \"Hebrews 10:31\",\n        \"passages on God's wrath and judgment (e.g., Deuteronomy 28; Revelation)\",\n        \"distinction in classical theology between servile and filial fear\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"One of the seven gifts of the Holy Spirit (filial fear that perfects hope and charity)\",\n      \"basis\": [\n        \"Isaiah 11:2-3\",\n        \"Catholic and Eastern Christian catechetical tradition\",\n        \"Thomas Aquinas and scholastic treatments of the gifts\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Simple religious piety or covenantal loyalty expressed in Torah observance\",\n      \"basis\": [\n        \"Deuteronomy 6:2, 10:12\",\n        \"wisdom literature framing\",\n        \"some historical-critical readings of Hebrew yir'at YHWH\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across Protestant, Catholic, and Orthodox teaching the dominant sense is positive reverential awe rather than mere fright; distinctions between filial and servile fear are standard but do not overturn the primary positive reading.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_03c57e89-4883-9cc2-aa0f-516416c5663c",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 605,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1040,
+    "output_tokens_details": {
+      "reasoning_tokens": 612
+    },
+    "total_tokens": 1645,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 72580000,
+    "context_details": {
+      "input_tokens": 605,
+      "output_tokens": 1040
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

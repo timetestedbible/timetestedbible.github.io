@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124796,
+  "completed_at": 1785124828,
+  "id": "399c6b8a-720b-9991-bb3e-84bd9e03a379",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_399c6b8a-720b-9991-bb3e-84bd9e03a379",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Sign\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reason\": \"The book's core identification of 'sign' as a marked witness (prophetic word/scene/similitude or covenant token) that points beyond itself to divine reality is equivalent to the consensus's functional referent as an attesting pointer or marker. The book's explicit rejection of the requirement for a wonder performed on demand narrows the category by excluding cases where signs are primarily understood as on-demand miracles or wonders, while retaining the core function of divine attestation and revelation.\",\n  \"extension_reason\": \"The book adds the prophetic similitude (Ezekiel as sign, Jonah as sign) and covenant tokens (rainbow, circumcision, Sabbath) as primary senses, while excluding or reclassifying miracles that function as wonders performed on demand as not constituting the primary sense of 'sign'. The book's common-view note acknowledges the consensus's miraculous teaching but presents a narrower 2-sense definition that prioritizes advance prophetic fulfillment and continuing covenant witness over authenticating miracles.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"A sign is a divinely given event, act, object, or miracle that points beyond itself to authenticate God's revelation, messenger, presence, power, covenant, or purpose (often with primary emphasis on wonders eliciting faith, especially in John).\",\n  \"book_summary\": \"A marked witness by which God makes His word known: either a prophetic word/scene/lived similitude given in advance whose fulfillment testifies, or a visible covenant token bearing continuing witness to an established word; neither requires a wonder performed on demand.\",\n  \"consensus_core_identification\": \"Attesting pointer (frequently miraculous) authenticating divine message, messenger, or covenant.\",\n  \"book_core_identification\": \"Marked witness to God's word via advance prophetic similitude (fulfilled later) or continuing covenant token, without requiring on-demand wonders.\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book excludes or demotes authenticating wonders performed on demand (central in consensus/John) while restricting the category to advance prophetic similitudes and covenant tokens only.\",\n  \"material_contradiction\": \"None; the book retains the attesting/witness function and the covenant/prophetic cases already present in consensus alternatives.\",\n  \"rationale\": \"Consensus cores converge on a broad semiotic/attesting function that prominently includes miracles as signs. The book preserves that general pointing-to-God's-word category and the exact covenant and prophetic cases (rainbow, circumcision, Sabbath, Isaiah 7, Ezekiel, Jonah) but materially narrows extension and conditions by making those two senses definitional and by explicitly denying that a wonder on demand is required. This is boundary refinement, not replacement of the referent or a wholly new identification.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Johannine and broader NT usage treats miraculous deeds themselves as the signs that reveal glory and authenticate (John 2:11; 20:30-31; Acts 2:22; Heb 2:4), which the book's 'no wonder on demand' clause appears to sideline.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_399c6b8a-720b-9991-bb3e-84bd9e03a379",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4967,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1773,
+    "output_tokens_details": {
+      "reasoning_tokens": 1292
+    },
+    "total_tokens": 6740,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 197016000,
+    "context_details": {
+      "input_tokens": 4967,
+      "output_tokens": 1773
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

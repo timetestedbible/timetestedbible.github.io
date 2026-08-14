@@ -7,7 +7,7 @@ Gratis limits and required notices: books/copyright-policies/.
 
 | version | status | block quotes | verses (blocks) | verses (inline) | total | gratis limit | headroom |
 |---|---|---|---|---|---|---|---|
-| KJV | public domain (US) | 227 | 355 | 200 | 555 | — | — |
+| KJV | public domain (US) | 228 | 356 | 200 | 556 | — | — |
 | AKJV | public domain | 69 | 158 | 0 | 158 | — | — |
 | ASV | public domain | 40 | 68 | 1 | 69 | — | — |
 | ESV | © Crossway | 29 | 54 | 0 | 54 | 500 | 446 (OK) |

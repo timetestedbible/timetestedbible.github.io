@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "darkness",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nDarkness\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, darkness primarily symbolizes evil, sin, and spiritual separation from God — the moral and spiritual condition opposed to God, who is symbolized by light. It encompasses spiritual ignorance or blindness, the realm and power of Satan, and life apart from the truth and salvation revealed in Christ. Believers are described as being delivered 'out of darkness' into God's light, and unbelief or wickedness is portrayed as 'walking in darkness.'\",\n  \"primary_basis\": [\n    \"John 1:5\",\n    \"John 3:19-20\",\n    \"John 8:12\",\n    \"1 John 1:5-6\",\n    \"1 John 2:9-11\",\n    \"Ephesians 5:8-11\",\n    \"Ephesians 6:12\",\n    \"Colossians 1:13\",\n    \"Acts 26:18\",\n    \"1 Peter 2:9\",\n    \"Romans 13:12\",\n    \"1 Thessalonians 5:4-5\",\n    \"2 Corinthians 4:6\",\n    \"2 Corinthians 6:14\",\n    \"Isaiah 9:2\",\n    \"Matthew 4:16\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine judgment and eschatological punishment — darkness as an expression or setting of God's wrath, including the plague of darkness in Egypt, the darkness of the Day of the Lord, and the 'outer darkness' of final condemnation.\",\n      \"basis\": [\n        \"Exodus 10:21-23\",\n        \"Amos 5:18-20\",\n        \"Joel 2:1-2\",\n        \"Zephaniah 1:15\",\n        \"Matthew 8:12\",\n        \"Matthew 22:13\",\n        \"Matthew 25:30\",\n        \"Matthew 27:45\",\n        \"2 Peter 2:17\",\n        \"Jude 13\",\n        \"Revelation 16:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Death, the grave, and Sheol — darkness as the condition of the dead and the shadowed realm beyond life ('the shadow of death').\",\n      \"basis\": [\n        \"Job 10:21-22\",\n        \"Psalm 23:4\",\n        \"Psalm 88:6, 12\",\n        \"Psalm 107:10\",\n        \"Ecclesiastes 6:4\",\n        \"Luke 1:79\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Primordial chaos or the unformed state before God's creative ordering — darkness over the face of the deep prior to the creation of light.\",\n      \"basis\": [\n        \"Genesis 1:2-4\",\n        \"Isaiah 45:7\",\n        \"Jeremiah 4:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The hiddenness, mystery, and transcendence of God — God is said to dwell in 'thick darkness,' a strand developed in apophatic and mystical theology (e.g., Gregory of Nyssa, Pseudo-Dionysius, John of the Cross's 'dark night of the soul') where darkness signifies the incomprehensibility of God rather than evil.\",\n      \"basis\": [\n        \"Exodus 20:21\",\n        \"Deuteronomy 4:11\",\n        \"1 Kings 8:12\",\n        \"2 Chronicles 6:1\",\n        \"Psalm 18:11\",\n        \"Psalm 97:2\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Human suffering, affliction, or trial — darkness as a season of distress, despair, or testing through which the believer passes, distinct from moral evil.\",\n      \"basis\": [\n        \"Isaiah 50:10\",\n        \"Psalm 88 (throughout)\",\n        \"Job 19:8\",\n        \"Micah 7:8\",\n        \"Lamentations 3:2\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Secrecy or concealment in a neutral sense — things done or spoken 'in the dark' as hidden matters that will be exposed, without darkness itself being evil.\",\n      \"basis\": [\n        \"Luke 12:2-3\",\n        \"1 Corinthians 4:5\",\n        \"Matthew 10:27\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Darkness is one of the most stable and widely recognized symbols in Christian interpretation, functioning almost universally as the antithesis of light in a dualistic light/darkness motif especially prominent in Johannine and Pauline literature. The primary meaning (evil, sin, ignorance, separation from God) is treated as dominant across Catholic, Orthodox, and Protestant traditions and in standard reference works (e.g., Dictionary of Biblical Imagery). The alternative senses are not competing definitions so much as distinct biblical usages acknowledged alongside the dominant one; the apophatic/mystical reading (darkness as divine mystery) is the most notable interpretive counterpoint because it assigns darkness a positive rather than negative valence, but it remains a minority strand associated chiefly with contemplative and Eastern Christian traditions.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Sin, spiritual blindness, evil, death, and separation from God, often representing the domain of Satan in contrast to the light of God.\",\n  \"primary_basis\": [\n    \"John 1:5\",\n    \"John 3:19\",\n    \"1 John 1:5-6\",\n    \"Ephesians 5:8-11\",\n    \"Colossians 1:13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine mystery, transcendence, and the unsearchable presence of God, often referred to as divine darkness or thick cloud.\",\n      \"basis\": [\n        \"Exodus 20:21\",\n        \"1 Kings 8:12\",\n        \"Psalm 18:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment, eschatological wrath, affliction, and eternal punishment, such as outer darkness.\",\n      \"basis\": [\n        \"Amos 5:18-20\",\n        \"Zephaniah 1:15\",\n        \"Matthew 8:12\",\n        \"Jude 1:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Natural ignorance or a lack of divine revelation prior to the coming of Christ.\",\n      \"basis\": [\n        \"Isaiah 9:2\",\n        \"Matthew 4:16\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While darkness predominantly symbolizes evil, sin, and judgment in Christian theology, there is a well-established secondary tradition regarding the divine darkness of God's incomprehensibility and hiddenness, drawn primarily from Old Testament theophanies.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Moral and spiritual evil—especially sin, unbelief, ignorance of God, and alienation from God—contrasted with God, truth, holiness, and salvation as “light.”\",\n  \"primary_basis\": [\n    \"John 3:19–21: people love darkness rather than light because their deeds are evil.\",\n    \"John 8:12 and 12:35–46: following Christ delivers people from darkness and enables them to walk in the light.\",\n    \"Ephesians 5:8–14: believers were formerly darkness but are now light in the Lord; darkness is associated with unfruitful works.\",\n    \"1 John 1:5–7 and 2:8–11: darkness is incompatible with fellowship with God and is associated with sin and hatred.\",\n    \"Colossians 1:13: salvation is described as rescue from the dominion of darkness.\",\n    \"Acts 26:18 and 1 Peter 2:9: conversion is movement from darkness to light and from Satan’s power to God.\",\n    \"Isaiah 9:2, applied to Jesus in Matthew 4:16: people in darkness receive the saving light of the Messiah.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine judgment, disaster, or eschatological exclusion rather than moral evil itself.\",\n      \"basis\": [\n        \"Exodus 10:21–23: darkness is a plague of judgment upon Egypt.\",\n        \"Amos 5:18–20 and Joel 2:1–2, 31: the Day of the Lord is characterized by darkness.\",\n        \"Matthew 8:12; 22:13; 25:30: “outer darkness” signifies exclusion and punishment.\",\n        \"Mark 13:24 and Revelation 16:10: cosmic or supernatural darkness accompanies judgment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Suffering, grief, oppression, or adverse circumstances.\",\n      \"basis\": [\n        \"Job 19:8 and 30:26: darkness expresses affliction and disappointed hope.\",\n        \"Psalm 88:6, 12, 18: darkness represents profound suffering, abandonment, and despair.\",\n        \"Isaiah 9:2 and 58:10: darkness describes distress or oppression from which deliverance comes.\",\n        \"Lamentations 3:2: affliction is portrayed as being driven into darkness without light.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Death, the grave, or the realm of the dead.\",\n      \"basis\": [\n        \"Job 10:21–22: death’s destination is described as a land of darkness.\",\n        \"Psalm 88:10–12: darkness and forgetfulness are associated with the grave.\",\n        \"Psalm 107:10, 14: “darkness and the shadow of death” depict mortal peril and captivity.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Divine hiddenness, mystery, or the concealed presence of God; here darkness is not evil.\",\n      \"basis\": [\n        \"Exodus 20:21: Moses approaches the thick darkness where God is.\",\n        \"1 Kings 8:12 and 2 Chronicles 6:1: God is said to dwell in thick darkness.\",\n        \"Psalm 18:11: God makes darkness his covering.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Primordial unformedness or the absence of created illumination and order.\",\n      \"basis\": [\n        \"Genesis 1:2–5: darkness covers the deep before light is called forth and distinguished from darkness.\",\n        \"This reading is especially prominent in creation studies, where the darkness need not itself represent moral evil.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Secrecy, concealment, or lack of disclosure without necessarily implying moral evil.\",\n      \"basis\": [\n        \"Psalm 139:11–12: darkness can conceal from humans but not from God.\",\n        \"Matthew 10:27 and Luke 12:3: what is spoken or hidden in darkness is contrasted with public disclosure.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a settled dominant Christian symbolic association between darkness and the complex of evil, sin, unbelief, spiritual ignorance, and alienation from God. It is not an exclusive meaning: biblical usage is strongly context-dependent, and darkness can also signify judgment, suffering, death, concealment, primordial conditions, or even God’s hidden presence.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"evil, sin, spiritual blindness/ignorance, death, and separation from or opposition to God (as the antithesis of divine light)\",\n  \"primary_basis\": [\n    \"John 1:5 (light shines in the darkness; darkness has not overcome it)\",\n    \"John 3:19-21 (people loved darkness rather than light because deeds were evil)\",\n    \"1 John 1:5-6 (God is light; in him is no darkness; walking in darkness is lying)\",\n    \"Ephesians 5:8-11 (once darkness, now light in the Lord; unfruitful works of darkness)\",\n    \"Colossians 1:13 (delivered from the domain of darkness)\",\n    \"Matthew 8:12 / 22:13 / 25:30 (outer darkness for the wicked)\",\n    \"Acts 26:18 (turn from darkness to light and from the power of Satan to God)\",\n    \"Isaiah 9:2 / Matthew 4:16 (people dwelling in darkness have seen a great light)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"eschatological judgment, wrath, or cosmic upheaval accompanying the Day of the Lord\",\n      \"basis\": [\n        \"Amos 5:18-20\",\n        \"Joel 2:1-2, 31\",\n        \"Zephaniah 1:15\",\n        \"Matthew 24:29\",\n        \"Mark 13:24\",\n        \"Revelation 6:12 / 16:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"primordial chaos, formlessness, or the uncreated state before God's ordering word\",\n      \"basis\": [\n        \"Genesis 1:2\",\n        \"Jeremiah 4:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"divine hiddenness, mystery, or the unapproachable presence of God (sometimes called 'divine darkness')\",\n      \"basis\": [\n        \"Exodus 20:21\",\n        \"Deuteronomy 4:11 / 5:22-23\",\n        \"1 Kings 8:12 / 2 Chronicles 6:1\",\n        \"Psalm 18:11 / 97:2\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"literal physical night, absence of sunlight, or ordinary obscurity without moral weight\",\n      \"basis\": [\n        \"Genesis 1:5\",\n        \"Psalm 104:20\",\n        \"John 6:17\",\n        \"various narrative uses\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Light/darkness dualism is one of the most consistent symbolic polarities across Old and New Testament literature and subsequent Christian teaching; the moral-spiritual reading of darkness as evil/sin/separation from God is the dominant and settled primary sense in preaching, catechesis, and standard commentaries, even while secondary nuances (judgment, chaos, mystery) are also widely recognized.\"\n}\n\nBOOK ENTRY\nConcealed disobedience — deeds hidden from the light.\n[.opposite]Opposite: Light.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(John 3:19-20) · see Light and Darkness, ch. 21\n\nAVAILABLE KJV EXCERPTS\nJohn 3:19 — And this is the condemnation, that light is come into the world, and men loved darkness rather than light, because their deeds were evil.\nJohn 3:20 — For every one that doeth evil hateth the light, neither cometh to the light, lest his deeds should be reproved.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "23396ad3dcc85edb6f95ab4fb9d147217567b2ab9625dd206ab3cd4df57c5ead",
+  "cache": {
+    "hit": false
+  }
+}

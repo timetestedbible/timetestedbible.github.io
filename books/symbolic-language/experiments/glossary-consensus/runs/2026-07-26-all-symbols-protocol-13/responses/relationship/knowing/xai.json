@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124131,
+  "completed_at": 1785124154,
+  "id": "d839da7e-feb7-91e6-b09d-09864e79259b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_d839da7e-feb7-91e6-b09d-09864e79259b",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Knowing, to know\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"Both identify the primary referent as intimate, experiential, covenantal relationship with God (including marital intimacy as paradigm), explicitly contrasting it with mere intellectual or propositional awareness. The book's addition of 'recognized and proven by faithful obedience' and the explicit span 'from marital intimacy to acknowledgment by one's covenant Lord' does not replace the consensus core but narrows its boundary conditions by foregrounding obedience as the criterion of recognition and covenant fidelity.\",\n  \"extension_reasoning\": \"The book adds the obedience criterion (already present in consensus 1 John 2:3-4 and Hosea 4:6) as definitional and extends the relational spectrum to include 'acknowledgment by one's covenant Lord' as a distinct but continuous mode.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Biblical 'knowing' (yada/ginōskō) primarily denotes intimate, experiential, covenantal relationship (esp. with God)—personal communion, love, and fidelity—rather than detached intellectual awareness; sexual union, election/foreknowledge, and obedience are treated as context-specific expressions of this core.\",\n  \"book_summary\": \"Knowing is covenant relationship recognized and proven by faithful obedience, extending from marital intimacy to acknowledgment by one's covenant Lord; it is not mere mental assent or awareness (opposite: stranger).\",\n  \"consensus_core_identification\": \"Intimate/experiential/covenantal relational knowledge (not mere cognition)\",\n  \"book_core_identification\": \"Covenant relationship recognized and proven by faithful obedience (marital to Lord's acknowledgment; not mere assent)\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book makes recognition/proof by faithful obedience definitional to the core, potentially excluding pure relational or elective senses that consensus admits without that condition as central.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Both identify the same central referent (covenantal/relational knowing vs. mere mental awareness) and share key cases (marital intimacy via Gen 4:1; Lord's acknowledgment via Matt 7:23; obedience link via 1 John 2:3-4). The book preserves this category but materially tightens the boundary and conditions by elevating 'recognized and proven by faithful obedience' into the definition itself, narrowing extension relative to the broader consensus primary meaning and its listed alternatives.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Consensus treats obedience primarily as evidence or ethical expression of the relational core rather than definitional to it, so the book's tighter formulation may over-narrow what counts as knowing.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_d839da7e-feb7-91e6-b09d-09864e79259b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4719,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1333,
+    "output_tokens_details": {
+      "reasoning_tokens": 909
+    },
+    "total_tokens": 6052,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 165656000,
+    "context_details": {
+      "input_tokens": 4719,
+      "output_tokens": 1333
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

@@ -1,0 +1,173 @@
+{
+  "id": "resp_0b2ef9a65928a055006a547872d7408193915b44f7ae920377",
+  "object": "response",
+  "created_at": 1783920754,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920773,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0b2ef9a65928a055006a547873b7688193afdb5b75539e5ee5",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0b2ef9a65928a055006a54787993a08193b5a8c428c96e4353",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Purity, chastity, and uncorrupted or exclusive devotion to God or Christ. In corporate imagery, a virgin commonly represents the faithful people of God—especially the Church—as a pure bride pledged to Christ.\",\"primary_basis\":[\"2 Corinthians 11:2 — Paul presents the Corinthian church as a “pure virgin” betrothed to Christ.\",\"Ephesians 5:25–27 — the Church is portrayed as Christ’s cleansed, holy, and spotless bride, although the word “virgin” is not used directly.\",\"Revelation 14:4–5 — the undefiled “virgins” who follow the Lamb are associated with faithfulness, truthfulness, and purity.\",\"Matthew 25:1–13 — the ten virgins represent those awaiting the bridegroom, linking virgin imagery with belonging, vigilance, and readiness.\",\"Jeremiah 31:4,13 and Amos 5:2 — “virgin Israel” personifies God’s covenant people.\"],\"alternatives\":[{\"meaning\":\"Literal sexual virginity, particularly Mary’s virginity and the miraculous conception of Jesus, rather than a general symbol.\",\"basis\":[\"Isaiah 7:14\",\"Matthew 1:18–25\",\"Luke 1:26–35\"],\"prominence\":\"dominant\"},{\"meaning\":\"The Church as the virgin bride of Christ, emphasizing exclusive covenant fidelity and freedom from spiritual adultery or false teaching.\",\"basis\":[\"2 Corinthians 11:2–4\",\"Ephesians 5:25–32\",\"Revelation 19:7–8\",\"Revelation 21:2,9\"],\"prominence\":\"common\"},{\"meaning\":\"Watchfulness and preparedness for Christ’s coming, based on the wise and foolish virgins; here virginity itself is not the main distinguishing symbol.\",\"basis\":[\"Matthew 25:1–13\"],\"prominence\":\"common\"},{\"meaning\":\"Personified Israel or a city/nation, often in contexts of covenant identity, vulnerability, mourning, judgment, or hoped-for restoration.\",\"basis\":[\"2 Kings 19:21\",\"Isaiah 37:22\",\"Jeremiah 14:17\",\"Jeremiah 31:4,13\",\"Amos 5:2\"],\"prominence\":\"common\"},{\"meaning\":\"Celibate consecration or renunciation of marriage for undivided service to God.\",\"basis\":[\"Matthew 19:10–12\",\"1 Corinthians 7:25–35\",\"Revelation 14:4\"],\"prominence\":\"minority\"},{\"meaning\":\"In Revelation 14:4, complete religious fidelity and avoidance of idolatrous defilement rather than literal male celibacy.\",\"basis\":[\"Revelation 14:4–5\",\"Compare biblical portrayals of idolatry as sexual infidelity: Hosea 1–3; Revelation 17–18\"],\"prominence\":\"common\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is a broad and recognizable association between virginity and purity, chastity, consecration, or exclusive fidelity. However, there is no single settled symbolic meaning applicable to every passage. Some texts use “virgin” literally, while others personify Israel, describe the Church’s relation to Christ, or emphasize readiness and covenant faithfulness.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 965,
+    "output_tokens_details": {
+      "reasoning_tokens": 277
+    },
+    "total_tokens": 1282
+  },
+  "user": null,
+  "metadata": {}
+}

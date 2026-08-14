@@ -1,0 +1,156 @@
+{
+  "created_at": 1783828152,
+  "completed_at": 1783828163,
+  "id": "006374f6-f383-9156-9718-6c11bbd8981d",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_006374f6-f383-9156-9718-6c11bbd8981d",
+      "summary": [
+        {
+          "text": "The task is about the biblical symbolism of \"Almond (shaqed)\". I need to respond with a specific JSON format.\n{\n  \"primary_symbolic_meaning\": \"The almond (shaqed) primarily symbolizes God's watchfulness and vigilance over His word, as illustrated in Jeremiah 1:11-12 where God shows Jeremiah an almond branch and declares, 'I am watching over my word to perform it.' This draws on the Hebrew word play between shaqed (almond) and shaqad (to watch or be alert), emphasizing divine alertness and prompt fulfillment.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"divine watchfulness / vigilance (God promptly watching over and fulfilling His word)\",\n  \"primary_basis\": [\n    \"Jeremiah 1:11-12 (explicit wordplay between Hebrew shaqed 'almond' and shaqad 'to watch/be alert')\",\n    \"the almond tree’s early blooming as a natural image of readiness and swiftness\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"resurrection, new life emerging from death, or divine choice/confirmation of priesthood\",\n      \"basis\": [\n        \"Numbers 17:8 (Aaron’s rod, a dead almond branch that miraculously budded, blossomed, and produced almonds overnight)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"old age / white hair of the elderly\",\n      \"basis\": [\n        \"Ecclesiastes 12:5 (the blossoming almond tree as a poetic image of white hair)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"hope, awakening, or firstfruits of spring\",\n      \"basis\": [\n        \"general observation of the almond as the earliest tree to blossom in the biblical landscape\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Jeremiah wordplay is the single most frequently cited and distinctive symbolic association in Christian biblical interpretation and teaching; the other readings arise from different passages and remain secondary or context-specific rather than competing for the primary slot.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_006374f6-f383-9156-9718-6c11bbd8981d",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 607,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1256,
+    "output_tokens_details": {
+      "reasoning_tokens": 899
+    },
+    "total_tokens": 1863,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 85580000,
+    "context_details": {
+      "input_tokens": 607,
+      "output_tokens": 1256
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

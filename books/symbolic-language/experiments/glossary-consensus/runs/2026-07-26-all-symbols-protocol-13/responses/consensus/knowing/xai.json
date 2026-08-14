@@ -1,0 +1,156 @@
+{
+  "created_at": 1783835712,
+  "completed_at": 1783835725,
+  "id": "8d6e2dfa-e41d-900b-9b19-1a2f9fd3151e",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_8d6e2dfa-e41d-900b-9b19-1a2f9fd3151e",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Knowing, to know\" in Christian teaching and biblical interpretation. I must respond only with JSON matching the schema, no surrounding text.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Intimate, experiential, personal relationship or union (especially with God), as distinct from mere intellectual or propositional awareness\",\n  \"primary_basis\": [\n    \"John 17:3 (eternal life as knowing the only true God and Jesus Christ)\",\n    \"Genesis 4:1 (Adam knew Eve and she conceived—intimate/relational sense)\",\n    \"Hosea 4:1, 6; 6:3, 6 (knowledge of God as relational/covenantal fidelity)\",\n    \"Jeremiah 9:23-24; 31:34 (knowing the Lord as true boast and new-covenant reality)\",\n    \"Matthew 7:23; 25:12 (I never knew you—personal recognition/relationship)\",\n    \"Philippians 3:8-10 (knowing Christ experientially, power of resurrection, sharing sufferings)\",\n    \"1 Corinthians 8:3; Galatians 4:9 (being known by God)\",\n    \"1 John 2:3-4; 4:7-8 (knowing God evidenced in keeping commandments and love)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sexual intercourse or carnal knowledge (euphemistic use of the verb)\",\n      \"basis\": [\n        \"Genesis 4:1, 17, 25; 19:5, 8; 24:16; 38:26\",\n        \"Judges 11:39; 19:22, 25\",\n        \"1 Samuel 1:19; 1 Kings 1:4\",\n        \"Matthew 1:25 (did not know her until...)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Intellectual, cognitive, or factual awareness/information\",\n      \"basis\": [\n        \"Genesis 3:5, 22 (knowledge of good and evil)\",\n        \"Proverbs and wisdom literature on knowledge/skill\",\n        \"Many NT uses of ginōskō/oida for ordinary cognition or recognition\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenantal loyalty, obedience, or recognition of God's character and ways\",\n      \"basis\": [\n        \"Hosea and prophetic literature (knowledge of God vs. cultic ritual)\",\n        \"Jeremiah 22:15-16 (doing justice and righteousness = knowing the Lord)\",\n        \"Psalm 9:10; 36:10; 91:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mystical or contemplative union/participation in divine life\",\n      \"basis\": [\n        \"John 14–17 and 1 John (abiding, mutual indwelling language)\",\n        \"Later patristic, medieval, and mystical writers reading these texts\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical Hebrew yadaʿ and Greek ginōskō/oida carry a broad semantic range; Christian teaching and biblical scholarship commonly distinguish the frequent relational/experiential/intimate sense (especially 'knowing God') from purely intellectual knowledge, while also recognizing the sexual euphemism and ordinary cognitive uses in context. No single monovalent 'symbol' is claimed for every occurrence, but the intimate/relational reading is the dominant interpretive emphasis when the term is treated symbolically or theologically.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_8d6e2dfa-e41d-900b-9b19-1a2f9fd3151e",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 605,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1688,
+    "output_tokens_details": {
+      "reasoning_tokens": 918
+    },
+    "total_tokens": 2293,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 111460000,
+    "context_details": {
+      "input_tokens": 605,
+      "output_tokens": 1688
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -167,8 +167,8 @@ usage_examples:
       - literal
       - symbolic
     note: >-
-      Valley supplies the low passage; Shadow of Death supplies the hostile covering through which
-      the Shepherd leads.
+      Valley supplies the low border between Death's mountain-kingdom and the Shepherd's
+      mountain-kingdom of life; Shadow of Death marks the side being crossed.
   - reference: Ezek 37:1-14
     modes:
       - literal
@@ -230,11 +230,11 @@ dry bones in that passage—then leads the living through it, raises the dead in
 it, or lifts the valley itself.
 
 Valley does not itself mean Shadow of Death. Psalm 23 joins two symbols in one
-phrase. **Valley** supplies the low passage between heights; **Shadow of
-Death** supplies the hostile covering under which the traveler walks. The
-Shepherd's presence introduces the contrary covering—the shadow of Christ,
-under whom His people live—and leads the traveler *through* rather than leaving
-him in Death's domain.
+phrase. **Valley** supplies the low passage between Death's mountain-kingdom
+and the Shepherd's mountain-kingdom of life; **Shadow of Death** marks Death's
+reach at the border being crossed. The Shepherd's presence introduces the
+contrary covering—the shadow of Christ, under whom His people live—and leads
+the traveler *through* rather than leaving him in Death's domain.
 
 The valley's own meaning is established by descent and lifting. Ezekiel 37
 raises the dead house standing in the valley. Isaiah and Luke lift or fill the

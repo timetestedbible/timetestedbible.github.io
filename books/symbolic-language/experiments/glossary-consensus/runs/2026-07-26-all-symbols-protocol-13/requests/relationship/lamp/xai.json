@@ -1,0 +1,126 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "lamp",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nLamp\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the lamp most commonly symbolizes God's Word (Scripture) as a source of guidance and illumination for the believer's life, and by close extension the light of divine truth and witness that believers are to display to the world.\",\n  \"primary_basis\": [\n    \"Psalm 119:105 ('Your word is a lamp to my feet and a light to my path')\",\n    \"Proverbs 6:23 ('For the commandment is a lamp, and the teaching a light')\",\n    \"2 Peter 1:19 (the prophetic word 'as a lamp shining in a dark place')\",\n    \"Matthew 5:14-16 (a lamp is put on a stand to give light; 'let your light shine before others')\",\n    \"Mark 4:21-22 / Luke 8:16 and Luke 11:33 (a lamp is not hidden under a basket or bed)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christian witness or testimony: the believer's visible good works and gospel proclamation shining before others (often merged with the primary meaning in preaching).\",\n      \"basis\": [\n        \"Matthew 5:14-16\",\n        \"Philippians 2:15\",\n        \"Luke 12:35 ('keep your lamps burning')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual readiness, watchfulness, and preparedness for Christ's return, especially via the oil supply in the lamp.\",\n      \"basis\": [\n        \"Matthew 25:1-13 (parable of the ten virgins)\",\n        \"Luke 12:35-36\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The churches themselves as lampstands bearing Christ's light; removal of the lampstand as loss of standing or witness.\",\n      \"basis\": [\n        \"Revelation 1:12-20 ('the seven lampstands are the seven churches')\",\n        \"Revelation 2:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit, symbolized by burning lamps or the sevenfold lamps before God's throne; also linked to the tabernacle menorah kept perpetually burning.\",\n      \"basis\": [\n        \"Revelation 4:5 ('seven lamps of fire... which are the seven Spirits of God')\",\n        \"Zechariah 4:1-6 (lampstand vision: 'not by might... but by my Spirit')\",\n        \"Exodus 25:31-40; 27:20-21 (the golden lampstand and perpetual oil)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The human spirit or conscience as the inward faculty by which God illuminates a person.\",\n      \"basis\": [\n        \"Proverbs 20:27 ('The spirit of man is the lamp of the LORD')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Dynastic continuity and covenant hope: the 'lamp of David' as the perpetuity of David's royal line, fulfilled messianically in Christ.\",\n      \"basis\": [\n        \"2 Samuel 21:17 ('the lamp of Israel')\",\n        \"1 Kings 11:36; 15:4\",\n        \"2 Kings 8:19\",\n        \"Psalm 132:17\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The eye as the 'lamp of the body,' representing moral perception, generosity, or singleness of devotion.\",\n      \"basis\": [\n        \"Matthew 6:22-23\",\n        \"Luke 11:34-36\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Life itself, whose extinguishing signifies death or judgment on the wicked ('the lamp of the wicked is put out').\",\n      \"basis\": [\n        \"Job 18:5-6; 21:17\",\n        \"Proverbs 13:9; 20:20; 24:20\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The lamp is a well-attested, multivalent biblical image, but there is a recognizable dominant strand: God's Word/divine truth giving guidance (Ps 119:105 is among the most quoted verses on the theme), closely paired homiletically with the believer's duty to shine as a witness (Matt 5:14-16). Context strongly determines which sense applies: eschatological readiness in Matthew 25, ecclesial identity in Revelation 1, dynastic promise in Kings, and the Spirit in Zechariah 4 and Revelation 4. Lamp (portable oil vessel) and lampstand (menorah) are related but sometimes distinguished in scholarly treatment; popular teaching often conflates them.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"God's Word, truth, and divine guidance providing spiritual direction in darkness.\",\n  \"primary_basis\": [\n    \"Psalm 119:105\",\n    \"Proverbs 6:23\",\n    \"2 Peter 1:19\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The visible witness, good works, and testimony of believers or the Church to the world.\",\n      \"basis\": [\n        \"Matthew 5:15\",\n        \"Luke 8:16\",\n        \"Revelation 1:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The life, vitality, and enduring royal lineage of David.\",\n      \"basis\": [\n        \"1 Kings 11:36\",\n        \"2 Samuel 21:17\",\n        \"Psalm 132:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit or the manifest presence of God (often depicted as seven lamps).\",\n      \"basis\": [\n        \"Revelation 4:5\",\n        \"Zechariah 4:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The human spirit or conscience searching the inner being.\",\n      \"basis\": [\n        \"Proverbs 20:27\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolism of a lamp is well-established but polyvalent. While God's Word is the most ubiquitous association in popular piety due to Psalm 119:105, the lamp frequently represents the enduring Davidic dynasty in the Old Testament and the visible witness of believers in the New Testament.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God’s truth—especially Scripture—as illumination and guidance for faithful living.\",\n  \"primary_basis\": [\n    \"Psalm 119:105: God’s word is “a lamp to my feet and a light to my path.”\",\n    \"Proverbs 6:23: “the commandment is a lamp and the teaching a light.”\",\n    \"2 Peter 1:19: the prophetic word is compared to “a lamp shining in a dark place.”\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The visible witness and good works of believers or the church.\",\n      \"basis\": [\n        \"Matthew 5:14–16: a lamp is placed on a stand so that its light may shine before others.\",\n        \"Mark 4:21; Luke 8:16; 11:33: a lamp is not hidden but displayed.\",\n        \"Revelation 1:12–20: the seven lampstands represent seven churches.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual readiness, vigilance, and persevering faith while awaiting Christ.\",\n      \"basis\": [\n        \"Matthew 25:1–13: the wise and foolish virgins are distinguished by preparedness involving their lamps and oil.\",\n        \"Luke 12:35: disciples are told to keep their lamps burning while awaiting their master.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s presence or the activity of the Holy Spirit.\",\n      \"basis\": [\n        \"Exodus 25:31–40; 27:20–21: sanctuary lamps burn before the Lord.\",\n        \"Revelation 4:5: seven burning lamps are identified as the seven spirits of God.\",\n        \"Zechariah 4:1–6: the lampstand vision is interpreted in connection with God’s Spirit.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Human life, inner spirit, or conscience searched by God.\",\n      \"basis\": [\n        \"Proverbs 20:27: the human spirit is “the lamp of the LORD.”\",\n        \"Proverbs 13:9; 20:20; 24:20: an extinguished lamp signifies the loss of life, prosperity, or future.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The continuation of David’s dynasty and, in Christian interpretation, the messianic hope fulfilled in Christ.\",\n      \"basis\": [\n        \"2 Samuel 21:17: David is called “the lamp of Israel.”\",\n        \"1 Kings 11:36; 15:4; 2 Kings 8:19: God preserves a “lamp” for David.\",\n        \"Psalm 132:17: God prepares a lamp for his anointed.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The dominant general Christian association is Scripture or divine truth giving guidance, but “lamp” has no single settled symbolic meaning across all biblical contexts. Its referent varies with the passage; oil, flame, lamp, and lampstand should also not automatically be treated as identical symbols.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The Word of God as a source of spiritual illumination, guidance, and direction for the believer's path\",\n  \"primary_basis\": [\n    \"Psalm 119:105\",\n    \"Proverbs 6:23\",\n    \"2 Samuel 22:29 / Psalm 18:28\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The seven churches (or the Church collectively) as light-bearers before God\",\n      \"basis\": [\n        \"Revelation 1:12-20\",\n        \"Revelation 2:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The human spirit or conscience as searched/illuminated by the Lord\",\n      \"basis\": [\n        \"Proverbs 20:27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faithful readiness, spiritual preparedness, or the believer's testimony (often with oil as the Spirit)\",\n      \"basis\": [\n        \"Matthew 25:1-13 (parable of the ten virgins)\",\n        \"Matthew 5:14-16\",\n        \"Luke 12:35\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"John the Baptist (or a prophetic witness) as a temporary shining light\",\n      \"basis\": [\n        \"John 5:35\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The eye as the lamp of the body (spiritual perception or singleness of heart)\",\n      \"basis\": [\n        \"Matthew 6:22-23\",\n        \"Luke 11:34-36\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Psalm 119:105 is the single most frequently cited and taught symbolic use across confessional lines and popular Christian instruction; other meanings are context-specific and well-attested but secondary in frequency of application as a general symbol for 'lamp'.\"\n}\n\nBOOK ENTRY\nThe commandment.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Prov 6:23) · see Light and Darkness, ch. 21\n\nAVAILABLE KJV EXCERPTS\nProverbs 6:23 — For the commandment is a lamp; and the law is light; and reproofs of instruction are the way of life:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "9f3bc0b3211c165f26b0c5165c19f20bf8f97de8b67f025a3d8d0fd807e4ae08",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/relationship/lamp/xai.json"
+    }
+  }
+}

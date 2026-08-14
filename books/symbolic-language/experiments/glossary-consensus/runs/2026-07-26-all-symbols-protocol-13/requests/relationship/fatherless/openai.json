@@ -1,0 +1,126 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "fatherless",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFatherless, orphan\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching the 'fatherless' or 'orphan' functions as the paradigmatic figure of the defenseless and socially vulnerable person who lacks a human protector and provider, and who therefore stands under God's special guardianship. Together with the widow and the sojourner/stranger, the orphan forms a stock triad representing all who are powerless, so that treatment of the fatherless becomes the biblical test of true justice and true religion: God is portrayed as 'father of the fatherless,' Israel is commanded to protect and provide for them, and oppressing them invites divine judgment.\",\n  \"primary_basis\": [\n    \"Exodus 22:22-24\",\n    \"Deuteronomy 10:17-18\",\n    \"Deuteronomy 14:28-29\",\n    \"Deuteronomy 24:17-21\",\n    \"Deuteronomy 27:19\",\n    \"Psalm 10:14, 17-18\",\n    \"Psalm 68:5\",\n    \"Psalm 82:3\",\n    \"Psalm 146:9\",\n    \"Isaiah 1:17, 23\",\n    \"Jeremiah 7:5-7\",\n    \"Jeremiah 22:3\",\n    \"Hosea 14:3\",\n    \"Zechariah 7:9-10\",\n    \"Malachi 3:5\",\n    \"James 1:27\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Primarily literal rather than symbolic: the term simply designates actual children who have lost their father (the household's legal protector and economic provider in the ancient world), and the biblical material is social-ethical legislation and prophetic critique rather than symbolism. Many scholars treat any 'symbolic' force as derivative of this literal social reality.\",\n      \"basis\": [\n        \"Exodus 22:22\",\n        \"Deuteronomy 24:17-21\",\n        \"Job 24:3, 9\",\n        \"Job 29:12\",\n        \"Job 31:16-21\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Spiritual orphanhood: humanity (or the disciple) estranged from God the Father is 'orphaned,' and salvation is framed as adoption into God's family. Jesus' promise 'I will not leave you as orphans' and Pauline adoption language are read this way, and this reading undergirds much devotional and adoption-theology teaching, including modern orphan-care ministry rhetoric.\",\n      \"basis\": [\n        \"John 14:18\",\n        \"Romans 8:15-17\",\n        \"Galatians 4:4-7\",\n        \"Ephesians 1:5\",\n        \"Psalm 27:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Corporate-national image of desolation and judgment: Israel/Zion under judgment or exile is depicted as fatherless or as producing orphans, so orphanhood symbolizes covenant curse, abandonment, and national ruin (and conversely, becoming fatherless is invoked as a curse on the wicked).\",\n      \"basis\": [\n        \"Lamentations 5:3\",\n        \"Psalm 109:9-12\",\n        \"Jeremiah 15:8\",\n        \"Exodus 22:24\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Care for orphans as a christological or 'least of these' identification: serving the orphan is serving Christ himself, an extension of Matthew 25 ethics applied to orphan care; the orphan becomes a symbol of Christ's hidden presence among the poor.\",\n      \"basis\": [\n        \"Matthew 25:34-40\",\n        \"James 1:27\",\n        \"Matthew 18:5\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable agreement across Jewish and Christian interpretation, patristic writing, and modern scholarship that the fatherless/orphan (with the widow and sojourner) stands for the vulnerable person under God's special protective care, making just treatment of them the measure of covenant faithfulness and genuine piety. The main interpretive divide is not over this core meaning but over whether the term is chiefly literal-ethical or also carries an extended theological symbolism of spiritual orphanhood remedied by divine adoption. The latter is a common secondary reading, prominent in evangelical adoption/orphan-care literature, but the social-justice/divine-protection meaning is the consensus primary sense.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The vulnerable, defenseless, and marginalized in society who are under God's special protection, often representing humanity's helpless spiritual state without God.\",\n  \"primary_basis\": [\n    \"Psalm 68:5\",\n    \"James 1:27\",\n    \"Deuteronomy 10:18\",\n    \"Exodus 22:22\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The spiritual state of disciples or humanity without Christ's presence or the Father's adoption.\",\n      \"basis\": [\n        \"John 14:18\",\n        \"Romans 8:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A broad prophetic metonymy for all victims of systemic societal injustice and oppression.\",\n      \"basis\": [\n        \"Isaiah 1:17\",\n        \"Jeremiah 5:28\",\n        \"Zechariah 7:10\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical literature, the fatherless are frequently grouped with widows and aliens to represent those lacking the traditional economic and legal protection of an adult male patron, serving as a primary test of Israel's covenant faithfulness and a reflection of God's character as a defender of the weak.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Symbolically, “fatherless” or “orphan” most commonly represents a state of vulnerability, abandonment, and lack of protective care, together with dependence on God as defender and Father. Christian teaching often uses the image to emphasize that God protects the defenseless and does not leave his people spiritually abandoned.\",\n  \"primary_basis\": [\n    \"Exodus 22:22–24 — God commands protection of orphans and hears their cries.\",\n    \"Deuteronomy 10:18; 24:17–22; 27:19 — God executes justice for the fatherless and commands Israel to provide for them.\",\n    \"Psalm 10:14, 17–18 — God is the helper and defender of the fatherless.\",\n    \"Psalm 68:5–6 — God is described as “Father of the fatherless” who gives the solitary a home.\",\n    \"Psalm 82:3–4; 146:9 — defending and sustaining the fatherless exemplifies divine justice.\",\n    \"Isaiah 1:17, 23 and Jeremiah 7:6–7 — care for orphans functions as a test of covenant faithfulness and true justice.\",\n    \"Hosea 14:3 — the orphan finds mercy in God.\",\n    \"John 14:18 — Jesus promises, “I will not leave you as orphans,” commonly interpreted as assurance that the disciples will not be abandoned.\",\n    \"James 1:27 — care for orphans and widows is presented as a defining expression of pure religion.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The term is primarily a literal social designation for children who have lost a father or parental protection, not a fixed symbol. Such persons form, with widows and resident foreigners, a representative class of the legally and economically vulnerable.\",\n      \"basis\": [\n        \"Exodus 22:22–24\",\n        \"Deuteronomy 24:17–22\",\n        \"Isaiah 1:17\",\n        \"James 1:27\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Spiritual orphanhood: alienation from God, absence of a relationship with God as Father, or fear of being abandoned by Christ.\",\n      \"basis\": [\n        \"John 14:18\",\n        \"Romans 8:14–17\",\n        \"Galatians 4:4–7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Adoption into God’s family: the orphan image serves as the negative counterpart to believers receiving sonship, belonging, inheritance, and the Spirit of adoption.\",\n      \"basis\": [\n        \"Romans 8:15–17\",\n        \"Galatians 4:4–7\",\n        \"Ephesians 1:5\",\n        \"Psalm 68:5–6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Loss of human leadership or pastoral care, so that a community or disciples are left without a spiritual father, teacher, or shepherd.\",\n      \"basis\": [\n        \"John 14:18 is sometimes read in this relational sense; broader pastoral applications draw on 1 Corinthians 4:15 and 1 Thessalonians 2:11, though those passages do not call believers orphans.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Corporate desolation caused by judgment, conquest, or exile, in which a people become “fatherless” through social collapse and bereavement.\",\n      \"basis\": [\n        \"Lamentations 5:3\",\n        \"Jeremiah 18:21\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad agreement about the term’s central association with vulnerability, abandonment, and God’s protective fatherhood, but no settled, universal symbolic code. In much of Scripture the term is literal and ethical rather than allegorical; explicitly metaphorical use is clearest in John 14:18.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The vulnerable, helpless, and marginalized who stand under God's special protective care and fatherhood, and whose defense is a mark of true righteousness and pure religion\",\n  \"primary_basis\": [\n    \"Psalm 68:5\",\n    \"Deuteronomy 10:18\",\n    \"Exodus 22:22-24\",\n    \"Isaiah 1:17\",\n    \"James 1:27\",\n    \"Psalm 146:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Spiritual condition of those without God as Father, or of disciples temporarily left without the immediate presence of Christ until the Spirit is given\",\n      \"basis\": [\n        \"John 14:18\",\n        \"Romans 8:15\",\n        \"Galatians 4:4-7\",\n        \"Ephesians 1:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Israel or God's covenant people in seasons of exile, judgment, or apparent abandonment\",\n      \"basis\": [\n        \"Hosea 14:3\",\n        \"Lamentations 5:3\",\n        \"Jeremiah 49:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Allegorical type of the soul or the Church dependent on divine adoption rather than earthly lineage\",\n      \"basis\": [\n        \"patristic and medieval allegorical readings of the Psalms and prophetic texts\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Consensus is strong on the ethical-theological force of the figure (God's character as father-protector and the corresponding duty of justice) rather than on any single elaborate allegory; the spiritual-adoption reading is also widespread in Christian teaching but secondary to the dominant social-justice and divine-care motif drawn from the Old Testament.\"\n}\n\nBOOK ENTRY\nGod's covenant people left without their Father — the remnant.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Lam 5:3) · see Orphans, Widows & the Fatherless, ch. 14\n\nAVAILABLE KJV EXCERPTS\nLamentations 5:3 — We are orphans and fatherless, our mothers are as widows.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "f662e9fe3643775de5b4686595fded2d6cc5ba6af0ea5b65ae876fbf53491362",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/relationship/fatherless/openai.json"
+    }
+  }
+}

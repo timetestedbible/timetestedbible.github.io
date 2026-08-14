@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "wheat",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWheat\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, wheat most commonly symbolizes the genuine people of God—true believers or 'children of the kingdom'—especially as distinguished from false or unrighteous people (tares/chaff) at the final judgment. The wheat harvest imagery represents the eschatological gathering of the righteous into God's kingdom.\",\n  \"primary_basis\": [\n    \"Matthew 13:24-30 (Parable of the Wheat and the Tares)\",\n    \"Matthew 13:36-43 (Jesus' explanation: the good seed are the children of the kingdom, gathered into the barn)\",\n    \"Matthew 3:12 (John the Baptist: 'he will gather his wheat into the barn, but the chaff he will burn')\",\n    \"Luke 3:17 (parallel to Matthew 3:12)\",\n    \"Job 5:26 and Psalm 126:5-6 (harvest imagery applied to the righteous, sometimes cited in support)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The grain of wheat that dies to bear fruit as a symbol of Christ's death and resurrection, and by extension the believer's self-sacrifice leading to spiritual fruitfulness.\",\n      \"basis\": [\n        \"John 12:24 ('unless a grain of wheat falls into the earth and dies, it remains alone; but if it dies, it bears much fruit')\",\n        \"1 Corinthians 15:36-38 (seed sown and raised, applied to resurrection)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wheat as God's material provision, blessing, and abundance—the staple of life given by God, sometimes extended to spiritual nourishment and, in sacramental traditions, to the Eucharistic bread (Christ as the Bread of Life).\",\n      \"basis\": [\n        \"Deuteronomy 8:8 (the good land of wheat and barley)\",\n        \"Psalm 81:16 ('finest of the wheat')\",\n        \"Psalm 147:14\",\n        \"Joel 2:24\",\n        \"John 6:35 (Bread of Life, connected to wheat/bread in Eucharistic interpretation)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sifting of wheat as a symbol of testing, trial, or Satan's attempt to shake believers' faith.\",\n      \"basis\": [\n        \"Luke 22:31 ('Satan has demanded to sift you like wheat')\",\n        \"Amos 9:9 (sifting the house of Israel)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Wheat versus chaff/tares as a symbol of the mixed nature of the visible church (true and false members coexisting until judgment), an ecclesiological reading emphasized by Augustine and later interpreters.\",\n      \"basis\": [\n        \"Matthew 13:24-30, 36-43 (read ecclesiologically rather than eschatologically)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable, well-established consensus: wheat's dominant symbolic meaning is the righteous/true believers gathered at God's harvest, anchored primarily in the parable of the wheat and the tares and John the Baptist's winnowing image. The John 12:24 death-and-resurrection reading and the provision/bread reading are both widely attested but are typically treated as distinct uses of wheat imagery rather than rivals to the primary meaning. Context governs which sense applies; commentators generally agree these senses coexist across different passages.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"True believers, the righteous, or the elect who are gathered into God's kingdom at the final judgment.\",\n  \"primary_basis\": [\n    \"Matthew 3:12\",\n    \"Matthew 13:24-30\",\n    \"Luke 3:17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Jesus Christ and His sacrificial death, yielding spiritual fruit through His resurrection.\",\n      \"basis\": [\n        \"John 12:24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine provision, spiritual nourishment, and God's abundant blessing.\",\n      \"basis\": [\n        \"Psalm 81:16\",\n        \"Psalm 147:14\",\n        \"Deuteronomy 8:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Word of God or the Gospel message planted in the hearts of people.\",\n      \"basis\": [\n        \"Luke 8:11\",\n        \"Matthew 13:3-8\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In New Testament parables, wheat is most strongly associated with the eschatological separation of the righteous from the wicked, typically contrasted with chaff or tares. However, in John's Gospel, a grain of wheat is explicitly used by Jesus as a metaphor for His own impending death and multiplication of life.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God’s faithful people—the righteous or true members of the kingdom—who are gathered and saved, often in contrast with weeds or chaff that face judgment.\",\n  \"primary_basis\": [\n    \"Matthew 13:24–30, 36–43 — in the parable of the wheat and weeds, the good crop is explicitly identified with the children of the kingdom.\",\n    \"Matthew 3:11–12 — the Messiah gathers his wheat into the barn while burning the chaff, a picture of final separation and judgment.\",\n    \"Luke 3:16–17 — parallel imagery of wheat gathered into the barn and chaff burned.Christ’s death and resurrection as a life-giving, fruitful self-sacrifice.\",\n    \"basis is John 12:24 — Jesus compares his approaching death to a grain of wheat that dies and bears much fruit.\",\n    \"prominence is common.Resurrection and transformation from mortal to immortal life.\",\n    \"basis is 1 Corinthians 15:35–44 — Paul uses a sown grain, possibly wheat, as an analogy for the resurrection body.\",\n    \"prominence is common.Divine provision, agricultural abundance, and covenant blessing.\",\n    \"basis is Deuteronomy 8:7–10 — wheat is among the provisions of the good land. Psalm 81:16 — God promises satisfaction with the finest wheat. Psalm 147:14 — plentiful wheat signifies God’s blessing and peace. Joel 2:19, 24 — restored grain represents renewed provision.\",\n    \"prominence is common.Bread, the Eucharist, and by extension Christ’s body or the Church’s unity.\",\n    \"basis is John 6:32–58 — Christ is the bread of life, although wheat is not explicitly named. Matthew 26:26–28; 1 Corinthians 10:16–17 — bread signifies Christ’s body and ecclesial unity. Later Christian liturgy and art commonly connect this bread imagery specifically with wheat.\",\n    \"prominence is common.Final judgment or the valuable yield preserved after separation from what is worthless.\",\n    \"basis is Matthew 3:12; Luke 3:17 — wheat and chaff depict the opposed outcomes of judgment. Matthew 13:24–30, 36–43 — wheat and weeds are separated at the end of the age.\",\n    \"prominence is dominant.\"\n  ],\n  \"alternatives\": [],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single context-independent symbolic definition of wheat. The dominant meaning in Christian exposition of the judgment parables is the faithful or righteous who belong to God’s kingdom, but other passages independently use wheat or grain for Christ’s death, resurrection, fruitfulness, and divine provision.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the righteous / true believers (children of the kingdom) who are gathered by God at the final harvest/judgment\",\n  \"primary_basis\": [\n    \"Matthew 13:24-30\",\n    \"Matthew 13:36-43\",\n    \"Matthew 3:12\",\n    \"Luke 3:17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ himself (or the believer) who must die in order to produce abundant fruit / new life\",\n      \"basis\": [\n        \"John 12:24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God's material blessing, provision, and abundance\",\n      \"basis\": [\n        \"Deuteronomy 8:8\",\n        \"Psalm 81:16\",\n        \"Psalm 147:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the eucharistic body of Christ (wheat becoming the bread of life)\",\n      \"basis\": [\n        \"John 6:35-51\",\n        \"Last Supper narratives (e.g., Matthew 26:26)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The wheat-and-tares / wheat-and-chaff harvest imagery supplies the most frequently taught and cross-referenced symbolic sense in Christian preaching and biblical theology. Contextual secondary senses (Christological, sacramental, or providential) are also well-attested but do not displace the primary righteous-vs-wicked reading.\"\n}\n\nBOOK ENTRY\nThe children of the kingdom — the good grain gathered into the barn at the harvest.\n[.opposite]Opposite: Tares.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 13:38; 3:12) · see Grass, ch. 42\n\nAVAILABLE KJV EXCERPTS\nMatthew 13:38 —  The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one;\nMatthew 3:12 — Whose fan is in his hand, and he will throughly purge his floor, and gather his wheat into the garner; but he will burn up the chaff with unquenchable fire.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "55cd28f353de009cb33b43fadfa68c6a7d3238565a17d876b70b2dd3e531dec5",
+  "cache": {
+    "hit": false
+  }
+}

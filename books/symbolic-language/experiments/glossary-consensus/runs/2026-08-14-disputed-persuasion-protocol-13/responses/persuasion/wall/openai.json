@@ -1,0 +1,250 @@
+{
+  "id": "resp_0f3f3ab0f4fabc77006a7f443ddc3481908bce489b7f6878df",
+  "object": "response",
+  "created_at": 1786725437,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1786725473,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f3f3ab0f4fabc77006a7f443ee2848190b7c12cee3fa948e9",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqf0RiwSlU2zNWWimo4kOS7i9bDnWoKm_DL1t_fu_HFdPktrJDLDUzB76WHqTlIIhbVvDAbKqXrz1hxroCedczy3R7jMSfEbi7pmhBTe9q13X3HbEuFqP_xY2eWxKYCpLVf4214Uk2EaJujCrIoaiIj52gAZ4uqfPrtG2cOgpXD3RKxEPEF9C5MDnNVCd1YJlcvEi5wlHAwqGgSplhBSepP6MIOySbtz0uYpnbHZvNeZC4Lxtd7Fum7dsTjte7fV2VwC_eQ3Z_q04Z0TeJb03liYNoygJIHttwMdZbMUASwZfR0s3GbI3xKMkKHZ0-5l45RPj6iJxkF6lZep4N_oBZInnB9fCNKyYlzMK5JQnL1z1PvEmoSGgDbe0g531-GYCKyYCBb5zbzwgts1HOOnfvz6ivdzP3925HJRryt2RkBWoC8PBoDzbEZ1E2JRlA5hs9HNtF_aFmAT1MPBYU-DJWU8-ksgtDCtlj8wJ6O84B8WhGGZAnVbbaszhJ4wffQrv2kEeF4k8SBThf0iUFGuv7W5Wmw7bD0aidJ9Yyu8WL1CHN0J35dDSZJ2zHYiS5aPBtOwwcrrjOWUox9LtROEalHZ53ZUDXTvLDEFjNhh0e29F1Snvg9qiO150uzIpN55mHicE45PS3mLm7MAw2KkquWGZp9BM7UWJCZS7FMmOKkH_G8LFWHAO1WPWOO6XWPf_6e09ojoJXyv1nUwx87rej2xPV3I_P8iWRZDNSTEay2B02QYKk0kj_8fWp7RKrlLJntp6uEyN9w69wRbjlkBVfNf4o2W4apdI1IAYGgktnWrmUankLIKbvr5ngmZhMTn7SQQfCSakOWeO1OR7KShnkZKdxMoI5ezWFlDIcXs9oOrDeXlJfN32fej1d4QE2tMRJNeV6fSm6k7DVblhkyqgfl-ud4mX4S83MXQjO5zK23ET-aG6XzinRlu8ySprm6xhH7OTsh5EYKuyuBriZuRYVVe5hiC2b9_rAftO7oEA_8Lr9e4XPqNrNr80c85fvqIzaln_hwM1M_UYU27-KwBtY9_9lrk_rrUzbvWRgzQeSBYf71E5iJxOJEYIgNmJ2X2xBmQGWcgf_PHLKQ9JQo9LQEpqeFuHC8_FEoUoJn7pzQ9JVMovI-gIMCuufvuujsqCyb-GQaTjsAB15HwPRqslEsVMTx51lYmDhZtBPGqEZ3FOHhNdEebEmpHomcJykEq1CbKbjNe6Kge5J1uM3HqfIloHBdWJ4rm22CXxCa_9GcTGEXsIvU3w5cPHs28_pHyUVvrgNw0NKS9I4UvTRahzr4lFpiYzP6C4wLL2tg0W3aW5Gmsk_iarX9jSK1k7au4CKaav9Ld9s2iVc-sLyCcqgf-BWUo7SGTSBjQin0rXozFBy5e76_HtkEk5q9nAXUGTKpS9TyiIKZGb8zOchE_s9jnOxmdz-hMz-isqVfCOBSCOxO1QyW1dj7l0PIOL8DlRHFooIEMMDL7kXk-ojy375Guh67LSj6vIlLvy5zTAfAcSLuiJoVmxY2nOzgNfHX1J3FLj50f37HVe6untsUrQ_zZ8wFuvxGvkTD82ZP2aCIFviS5a1wS3nC9KMRuVYbBwd3jYAbLLw3-v5dvBkRlm0jzcn8u9KCqw_WRSbBFIGzvu9-2vkiUNmVdaR2B2jlan1CjI3z26-_flxeqoI-1_E1GW1wNlwLZUtAlxkT9_ou4RkXcTnYmyOhN65Lx0qjz87yYriyxW-jy_JhkDGTS73Z2UemMeo6MmitIqlB8DDwoInTqxg3c6bE33LgY4XvYWHoItEeiP_rr7oDNsMFz_mscJhlvHfTHIVJ2XIGYbXaLfxriYbbuMzXl94M3A-ngH3gsCnnv9k---N3iBo8BjXCjw0zJh6UR3TtMcYeEOIM4gq9PyCkX75jmvm9cI03X4Q0JEuYBukOt8tg2in5AgBLlPflAc6uRQt8Skn9LnZdgciTg8uABMREey5rnnb79oLtZbiwggyNtJCrWm8fw6bLopzUdEQ9zCYtF_xXnDMjrN5yBknn_N-RtkTVkVQFU1piUoidjDIZIBCDaFDnmaAbJIyBNiRmPcfhpR4cVrUXMABJYkd9t0vp169eHaaHZ-JI-kJ1J0EHgRBY9CubnU0DWKERNpCRBNzRnwVZyoFJZZVv4Tz1g_N511dQZrukIWIG_xpnWEbIcMmL0hjY459E9oBtVuDnSgnZRix4bhybbdfcRrkc1WAeFwPeDm0jgcLt-lvaIOh66Xjcnbv96N59QFBAKvJuQudEG7X_8t5aqoEBBJykWs3JM-_-_IJkWh-94mwlCIFl-qbyREKDssHk42SmlGSswXsqcYeh4fMga_zKrOmVrux78RUxOQSwl6bReqDYCuWD0ZIqDdrTIv70-c8kQLJ0ihE0e22pz__3R5aV66gXjL-SPixz1c-tbS-UFCt4sPzzT8XUmgUZbiw0d_kUG3Ddr1uQCBFXc9uV7mPUIaOvG2luUlh6fUomSTipN7j5_9iLsfzVUQ9aYRIX85NyQMm188kgoNkASOYFn9_IXEtvHHU-WLtJwhQkgznl33NrGC3y8iVw5TtfatJvnXSS97gK4pM3pBldmJ_jy7YJPxjVFpT-nM7_GAB6Dc0jdZVjNenxInWfY_QmIjqmCr4vdkSnKXGZzWq0kYKRwqBBvUc6qChJHBUyOl-Cro1ddlZK1gc-JiKx297zxwf_KcH0vS4MReKMsZYs8HKOKqrpCT6T4svE0bGoxmYKI6abBoewc52syODKDgmTGKdj3us9XVc4WC2QmvbnVa2FBjnBXlSxNJxi2KJVQ3PjYYSJILKjBXfZCUaB1NddQNxmyQhgLLtFANEx3kqJoCA-LrKUCX6AQ3DxOrxbHjV_rWo_vMxNCBYlJ8tvfE7c0-Vuf1JgnPY--0rzbNcpUFw9gRn2ZEQV8Lpkpd0zbpMJK2i11553disSzqHPB7civOBOyjoqjGPv3zjqIwITcw23_D2ndzmA91rIXHAAUKRAxgifuIS45vLWBZ5RU_Md7JwDmxbwOtG_FwoNrFui2fcMWNlO1D9hu3pZzuFJ3VwO755IMveREKjxkemy55kdipCsV7vuhRFZE_s2Ly3T5E4E_aNg3LtaXQaqo6dZtlE7Se5x_ZP4TKZvSNPp3Ya0ffy3gJw4JMFNd0mW-UGTCW2zDvRqbeOF-B5jy9uAHOtOV3CE-XUITfLAeqm31kjoHgC7Ajl0A0xjjCkBgXKUKQOkMY3tNrhJVvjcmbKDB1SyJBtCNhEvBxDi0elIRNhgzwi-LOyIbtAfnyipUTB49QWEf3xchXEWTtouwus5ybN2qC4NLPxiNJW7TpLpFKNl6hhB6erHck0i19n6thMZZB6whFKI88mBYGrZ5atdGq1Jk2oWxP1LOhxmq8FcCHS0cPguK450oe0m1Pa_UFDamn3BbV0cmFGyG0CQnlmqmL_o9yjoqn49XDbQb8v9eWpI83vLuinmVxpiJ_csXiwY7S4suZnQyLZNuG56xnlEw8hpEdIxd_WshrXVr1ytr7rHqRWqe0T2I6y3uUeKR8aqOhklgXxq8SA_ZHAhq23wM66o6xWhdB4rusv-hB65jAfZuhMObMvBZLaSSiUckVeam2rgnd9d07p2m7ge9-YLBNWjfsq_QAbiP-AOivU-YtCJn528yWxS48E9O5_qivfc6ERhlQU9hNTnyjwrryN0kjUjsXT9mZ7Le2SYcntmDlqDi-kc4JatwPj5LMhsF8EPJsxnsUBt5jxPmaxalwguF4AejA2q3aTrertsmbkx2b2S6n6e5v7tP8ZuSrUHjelV_ABSeaj6oSqmSt-OBR3fBma2npYZjSlOy-cMXN69sNDIEB5Oo7qnnsP0IIt6nf0dMhnPo5V6xFp74NcmO8JuTF3Gmn1VPaB82rkX9XP9WnmciAuxXCTImP05s7oCh5jKspGNJItvLOLtj8ieNMFaAKxT_oDy-5lMPjGu90NST254jx01qTzSBccnM3BI5zaSyKAY_LCgdcUeMPKTToE8q2TYEMnV916T3J8Xqt1brRjIf-6_Oze27hZWXzSNpoRsg7uF8ipYokYLz1nISyxTEtwmDFrSyioCDSaZGXgLo6OL6V_Lpx_lb29e12DCq3GYbqYyDJGnb_cl_HQIGWMgMBzLVoDSgYWTaDc-xD9T5iw6c_7I39ZxEnP8zGNSmqIeYW2Wfztcv0dxkjZizZV0Ap3JyUtJrJ2g_GY7U8r8KQg6Y_8b5VTKIYdjLePXgC3yMi8m4n0pUuWQ9ZU6U_ElpsgCvZEGAQJ5Qy49sBzviyGmqHoJlqFYW7Xnphml0nGKTjtLXbEGpceTCdhDR8qKWQREsdEKxHSMiLwclIg53Sqb9CZFAhYv7R4T3E8oUk9lstMSCp6BA0jv-QBXApVWnpnsk3lvLxkojEsRAE-4UwtYGmS7DrzvF096Hd1blcb2cl0ZSWxNIJAjX3OQBr7jtvdyc83M8NOgvZIabQ8yEzgs132aoZ-jUb9EBA8Bh8W2D2tnICPThY4J2HIXpUvBfGE1HzHjKJJhmNtR1ZJqVbWM_ETnGhz_5yJdOlprtKFjIxIaUcNVJlggJJ3vgBRSVYOvHBncPLUR2ho4DrMJFajajfUFwAtbl5aIQ5AAGWHmdK76ca4F7_8yj4ryctSeNOm1E6a_eNs0NYROmij72n3O0NXvVh9xu47vd_IpSKkaZTsI1JBrFRoFastSoNZLnP-mbkd_KsQqQuFHFrZ2jo_YUKjPmWBTfcmGmZ9KnRlhVifS6uCj8YiaDW-cgw_TuBx__gRqBPCT75VgVfIdVXc7-oQkgKTGnuQBQEgbZPwOxB0O-Dw5N1c6n1QUQeMhGT-BS5STiLod8_15lxEoUGOhKrsCwBCWjmPzDrRH-pFJHZme_ZBsUJ37u4Ge7FsnT87G_ND3_199bAC_grOC-cQTlk8vzIRQBcXy2UcghiS4xcF-TgKSvVlzbf2h2aPpvyQKOHGHhud3J22RCGfdn_MBF-BLJNpRXaKp_tiemaL0DFn1i5eDIteampy7sRumB5KFvfeL_QP",
+      "summary": []
+    },
+    {
+      "id": "rs_0f3f3ab0f4fabc77006a7f444c270481908fd5b7316a5dc288",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqf0RiN0OVDNzS54016NA4md6jZQYE6ukGR4yd1LolmAXXY9_jbNFM_8WmxDCMk4-W2w4p8KRcdm5V0oGT1UdxsxDSTlvZ3uFrs12rHCIMSR9MYVRPlyPmDGuU1XnS3QDPwlyB6p9m1T7azv-mKVsikdvB6aIam99ocB7JnyB9rnrna37L_kUm4mqRrSyJ-WE9h4cNdWAXe496hQ10OTMxHTiAhezFbm7hIez15KVW4EGJ6POVlgaZP4FFU9g15TDJIQgXkzpiKdWaAthx4l_3qqjZagruMSd6jp1q4uziRzk8SOuB0k5rlUloubL54_RVzbGGUiHUVeJsmxsiXdswRoFYRrKbMMl4L4nTFjKNYgeUfhhHD3IpTa87yezKpxdYaRD8h456MGSvlVhsgeAsbtsUKMHO1rSxsm5gdsbVNXZKdu3a7hNmgdXmt4Xa2oQxwwqycxSIlqPP89Ml5v48sfXsOv7ukxj8xy2HA9EkYgmmAqoxl9s9YFhcF7qdWa_oIr85XZH36VJoXRjNMQJrZXzIQyB8EqpBqhK_jUFRQgDr3NDPXvCUC12WNY3-xi2KNbgXC1AuQ5DvaeC8w8PsrSZ195_VtmJchv1G3Ufz8-5UHjFBWH3i7uVaHAquskgt_BQVGqQWuq0wZsbUs7aEW8XGFmhGcA3QXVlrlWFFHkq93I1CS-J64uB3KBmHYx5-nmS18yitgGh9WiP2OfPtJdO7I-IVXrwqEblpxWUYPZ4ZWJ81sx6SDvFMpLdSAl_jWQ8H9ZdFnmq7-OM39Sg-P4A_SbL8wh2eWMAFHdqzUxOj2f3lUR6I8E3BznonBf6iwx7RJ3G13Q71iM4cNyynkaEPmuFvk2gxILm6MJkj6RT3xaQ10m1lGgQNLitHoGuGAzJmWu3cplfcHTGcnVLRUDBfGqD-kdzWmcTc1ScW5FlO906sJBuxH50yCnBqTXAoyrBwkXd-WsdZCC71XiIbKlqUXCq7ntA5s25PDgtn3dz6V1-cbbJXnA-dxW7Hkr2YRxClVEhTnmOsVAfyR4CXHMihv3AFABYRnFQKm10bhDS0Os3S_vvBjSM5VFB1x7IeVgPJYTMOEstzO8lzsCjiBxWTLPcDXUDqN-aLDLZPjEcjZ_2g8vNrC63XURKMXE2iexuJackC3-IZIQKZOu52Y3z-uGXze2WuUJkFa7kqbC47VCgS5ZCAxMwV3IDIjlDHt-MqKV7IN3ZZN9s-wwXmnwOUdpWmkyHVQbwPDKCwdlmds2QyEU1IXCc4Iy8STnptM-o19r6dJ4ok8YL83ufYdd9X27Z_iJm_pwNUJRdKRl-Vp6ABBz8zBzRGs2xWywKj6EIIJtLfciLcmJvdE6KvDEgmVtywsfqck2UhtSVJqFlTcfvvecWih2-5IfUFckZzl9NhC7LRNIT0o0NuEkfBM3QL8wjBfcZMDaejPVtrpAenlxowcIzTcn8uuStFJENboDQf-bxoEhnSShGUbB2GLgArw-FYPv7Z5xrdjyN0Xx_w2H719iTueJc93qErDDVn2oKyARH8JSeToX8Mgp175NP6UeAfmVg96Zp3g7CqQ6Dz1JhwA9xyTjJOrYwFAktcd6YvTskbYzLgqllJFxHX__tA6wsmR3ddGRCV4mxCE_LPOzvmsgIP4slbhfTEKOEYkemDCcV3PA0rBNhSr4aFht6OXpsDZqociYy54w080wSw_GD3ejSxcSo8U3r-dsKiFxMOn12wIW6PKBRm3-CdzLgsCVvEH_Hv3CeYlzWtE62bZHKa-9Qcj7HD-enXj7XeZ2wB_FRsIq8f6ddBkht_KGicx_ltVXsPh0sfXuIZxVEoM0s=",
+      "summary": []
+    },
+    {
+      "id": "msg_0f3f3ab0f4fabc77006a7f444de9648190b5c44681c4daee16",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"persuasion\":\"PERSUADED\",\"support_scope\":\"FULL\",\"rationale\":\"The cited texts support the entire printed entry. Isaiah explicitly calls Zion’s walls “Salvation,” while Zechariah identifies the LORD himself as the surrounding wall, supporting the more specific synthesis of divine salvation as covenantal enclosure. Proverbs presents wealth as an imagined high wall, and Ezekiel presents a wall associated with a false proclamation of peace that is destroyed by God’s storm. The broader protection/security interpretation is compatible with this evidence, but it is less precise: the book better accounts for the explicit naming of the wall as Salvation, the identification of God as the wall, and the coordinated contrast with deceptive substitutes.\",\"book_core_identification\":\"A wall signifies salvation as the covenantal enclosure by which God surrounds and preserves his people.\",\"book_secondary_elaborations\":[\"God himself is the true wall, described as a wall of fire around Jerusalem.\",\"A rich person’s wealth functions as a counterfeit, self-provided high wall existing “in his own conceit.”\",\"The whitewashed wall built alongside proclamations of false peace is another counterfeit, and God’s storm destroys it.\"],\"unsupported_glossary_assertions\":[],\"chapter_only_objections\":[\"The chapter’s stronger methodological claim that symbolic meanings hold uniformly across Scripture is not established merely by the glossary’s four references.\",\"The detailed identification of Isaiah’s vineyard wall with withdrawn salvation and the later Ephesians partition with an inward opening is a chapter-level application rather than an assertion of the glossary entry.\",\"The chapter’s broader architectural synthesis involving the vineyard, temple tower, builders, cornerstone, and New Jerusalem extends beyond what the glossary entry itself claims.\"],\"strongest_counter_interpretation\":\"A wall fundamentally represents protection, security, or defensive boundary. Divine salvation is one positive instance of that ordinary concept, while wealth and the whitewashed wall are failed or illusory forms of security; therefore “covenant’s enclosure” is a contextual theological specification rather than the symbol’s essential meaning.\",\"counter_core_identification\":\"A wall signifies protective security or a defensive boundary, whether genuine or false.\",\"counter_relation_to_book_core\":\"SAME_CORE_BROADER\",\"material_core_denial\":\"The counter does not materially deny the book’s identification; it subsumes divine, covenantal salvation under the broader category of protective security.\",\"counter_case\":[\"Ancient walls ordinarily protected cities, making security the natural common denominator across the cited passages.\",\"Isaiah 60:18 and Zechariah 2:5 can be read as theological applications of ordinary defensive protection rather than as establishing “covenant enclosure” as the wall’s defining symbolic meaning.\",\"Proverbs 18:11 and Ezekiel 13:10-15 describe imagined or unreliable security, which also fits the broader protection model without requiring a true-wall-versus-counterfeit-wall taxonomy.\"],\"book_explanatory_advantages\":[\"It preserves Isaiah’s explicit equation of walls with Salvation rather than reducing that wording to generic safety.\",\"It integrates Zechariah’s identification of the LORD himself as the surrounding wall.\",\"It explains the negative examples as deliberate counterfeits of genuine divine security: wealth is high only in one’s own conceit, and the wall promising peace cannot survive divine judgment.\",\"It gives the four references a coherent theological contrast between God-given enclosure and humanly constructed substitutes.\"],\"counter_explanatory_advantages\":[\"It reflects the ordinary historical function of city walls and accommodates the image’s wider biblical polyvalence.\",\"It requires less commitment to “covenant” as a technical component where that word is not explicit in the printed excerpts.\",\"It readily covers genuine, imagined, and failed defenses under one broad concept.\"],\"evidence_book_core_cannot_explain\":[],\"comparative_winner\":\"BOOK\",\"decisive_sources\":[\"Isaiah 60:18 — explicitly names Zion’s walls “Salvation.”\",\"Zechariah 2:5 — identifies the LORD as a wall of fire around Jerusalem.\",\"Proverbs 18:11 — portrays wealth as a high wall only “in his own conceit.”\",\"Ezekiel 13:10-15 — connects the built and daubed wall with false peace and depicts its destruction by divine storm.\"],\"unresolved_objections\":[\"“Covenant’s enclosure” is a defensible synthesis of the Zion texts but is not stated verbatim in the supplied verses.\",\"The broader protection/security reading remains a valid general account of wall imagery, though it does not contradict the book’s more specific core.\",\"Calling the Proverbs example “self-built” is interpretive shorthand, since the verse directly emphasizes wealth and conceit rather than the act of construction.\"],\"confidence\":\"medium\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_persuasion",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "persuasion": {
+            "type": "string",
+            "enum": [
+              "PERSUADED",
+              "UNPERSUADED"
+            ]
+          },
+          "support_scope": {
+            "type": "string",
+            "enum": [
+              "FULL",
+              "CORE_ONLY",
+              "NONE"
+            ],
+            "description": "Support for the exact glossary BOOK ENTRY only, never for the supporting chapter as a whole."
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "book_secondary_elaborations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Secondary assertions actually printed in the glossary BOOK ENTRY; exclude chapter-only claims."
+          },
+          "unsupported_glossary_assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Material assertions actually printed in the BOOK ENTRY that the evidence does not support. Must be empty for FULL and nonempty for CORE_ONLY."
+          },
+          "chapter_only_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Objections to applications or arguments found only in the supporting chapter. Preserved for later chapter review and excluded from the glossary scope ruling."
+          },
+          "strongest_counter_interpretation": {
+            "type": "string"
+          },
+          "counter_core_identification": {
+            "type": "string"
+          },
+          "counter_relation_to_book_core": {
+            "type": "string",
+            "enum": [
+              "CONTRADICTS",
+              "SAME_CORE_BROADER",
+              "SAME_CORE_NARROWER",
+              "EQUIVALENT"
+            ]
+          },
+          "material_core_denial": {
+            "type": "string"
+          },
+          "counter_case": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "book_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counter_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_book_core_cannot_explain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comparative_winner": {
+            "type": "string",
+            "enum": [
+              "BOOK",
+              "COUNTER"
+            ]
+          },
+          "decisive_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "persuasion",
+          "support_scope",
+          "rationale",
+          "book_core_identification",
+          "book_secondary_elaborations",
+          "unsupported_glossary_assertions",
+          "chapter_only_objections",
+          "strongest_counter_interpretation",
+          "counter_core_identification",
+          "counter_relation_to_book_core",
+          "material_core_denial",
+          "counter_case",
+          "book_explanatory_advantages",
+          "counter_explanatory_advantages",
+          "evidence_book_core_cannot_explain",
+          "comparative_winner",
+          "decisive_sources",
+          "unresolved_objections",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 12550,
+    "input_tokens_details": {
+      "cache_write_tokens": 12547,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1563,
+    "output_tokens_details": {
+      "reasoning_tokens": 611
+    },
+    "total_tokens": 14113
+  },
+  "user": null,
+  "metadata": {}
+}

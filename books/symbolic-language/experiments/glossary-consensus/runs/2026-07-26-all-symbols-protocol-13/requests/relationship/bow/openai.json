@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "bow",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nBow\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching and biblical interpretation, the bow is most commonly read as a symbol of military power, strength, and warfare — and by extension of God's judgment when God is depicted bending or drawing his bow against the wicked. Correspondingly, the breaking or removal of the bow symbolizes the end of war, the humbling of human might, and the peace God establishes.\",\n  \"primary_basis\": [\n    \"Psalm 46:9 (God breaks the bow and shatters the spear, making wars cease)\",\n    \"Psalm 7:12-13 (God bends his bow against the unrepentant, an image of divine judgment)\",\n    \"Hosea 1:5 and 2:18 (breaking the bow of Israel; abolishing the bow and sword from the land)\",\n    \"Zechariah 9:10 (the battle bow cut off; the messianic king speaks peace to the nations)\",\n    \"Jeremiah 49:35 (breaking the bow of Elam, the mainstay of their might)\",\n    \"Genesis 49:24 (Joseph's bow remained steady — bow as personal strength)\",\n    \"1 Samuel 2:4 (the bows of the mighty are broken — reversal of human power)\",\n    \"Lamentations 2:4 and Habakkuk 3:9 (God's bow as instrument of judgment)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The bow as the rainbow of Genesis 9 (Hebrew qeshet, the same word as the war-bow), interpreted as the sign of God's covenant with Noah and all creation — divine mercy, faithfulness, and the promise never again to destroy the earth by flood. Many interpreters explicitly connect the two senses, reading the rainbow as God's war-bow hung up or pointed away from the earth, signifying that God has set aside hostility.\",\n      \"basis\": [\n        \"Genesis 9:13-16\",\n        \"Ezekiel 1:28 (the bow in the cloud surrounding God's glory)\",\n        \"Revelation 4:3 and 10:1 (rainbow around the throne and the mighty angel)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The bow of the rider on the white horse in Revelation 6:2 as a symbol of conquest — read by some as Christ or the victorious gospel, and by others (more commonly in modern interpretation) as the Antichrist or a counterfeit conqueror unleashing war.\",\n      \"basis\": [\n        \"Revelation 6:2\",\n        \"often compared with Revelation 19:11-16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The 'deceitful' or 'slack' bow as an image of unfaithfulness and unreliability — Israel turning aside like a treacherous bow that misses its mark.\",\n      \"basis\": [\n        \"Psalm 78:57\",\n        \"Hosea 7:16\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The bow (with arrows/children) as an image of family strength and blessing — the warrior whose quiver is full, sometimes extended to the bow as the instrument by which children are 'sent forth.'\",\n      \"basis\": [\n        \"Psalm 127:3-5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The bow as covenant loyalty or personal devotion in the Jonathan narratives (Jonathan giving David his bow; the 'Song of the Bow'), read as friendship and covenant fidelity.\",\n      \"basis\": [\n        \"1 Samuel 18:4\",\n        \"2 Samuel 1:18-22\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"The consensus is bifurcated because 'bow' in Scripture covers two distinct referents sharing one Hebrew word (qeshet): the war-bow (power, warfare, judgment, and its breaking as peace) and the rainbow (covenant mercy, Genesis 9). Both readings are firmly established in Christian interpretation; which one is 'primary' depends on which referent the interpreter has in view. The weapon sense dominates by frequency of biblical occurrence, while the Genesis 9 covenant-rainbow reading is arguably the single most prominent symbolic use in popular Christian teaching. The interpretive tradition linking the two — the rainbow as God's unstrung or reversed war-bow — appears in both Jewish and Christian commentary and is widely cited, though not universally accepted. Confidence is medium because of this dual referent rather than any lack of established interpretation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"God's covenant, mercy, and faithfulness, specifically representing His promise of peace and His pledge not to destroy the earth by flood (the rainbow).\",\n  \"primary_basis\": [\n    \"Genesis 9:13-16\",\n    \"Ezekiel 1:28\",\n    \"Revelation 4:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Human military might, strength, and warfare, often used to contrast human power with reliance on God.\",\n      \"basis\": [\n        \"Psalm 44:6\",\n        \"1 Samuel 2:4\",\n        \"Hosea 1:5\",\n        \"Jeremiah 49:35\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment and wrath, depicting God as a warrior preparing to strike the wicked.\",\n      \"basis\": [\n        \"Psalm 7:12\",\n        \"Lamentations 2:4\",\n        \"Lamentations 3:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Conquest, earthly aggression, false peace, or the Antichrist (associated with the rider on the white horse).\",\n      \"basis\": [\n        \"Revelation 6:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Hebrew word 'qesheth' translates to both the meteorological rainbow and the archer's weapon. While the rainbow is the most globally recognized Christian symbol of God's covenant (an 'unstrung' bow pointed toward heaven), the weaponized bow is frequently used in biblical poetry and prophecy to symbolize either human military strength (which is easily broken by God) or impending divine judgment.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"When “bow” denotes the weapon, it most commonly symbolizes warfare, military power, conquest, or divine/human judgment. A broken bow correspondingly symbolizes defeated power or the ending of war.\",\n  \"primary_basis\": [\n    \"Psalm 7:12–13 portrays God preparing his bow as an image of judgment.\",\n    \"Psalm 18:34 and 2 Samuel 22:35 associate bending a bow with divinely enabled military strength.\",\n    \"Psalm 46:9 and Hosea 1:5 use the breaking of bows for the destruction of military power and cessation of warfare.\",\n    \"Psalm 76:3 depicts God breaking the weapons of battle, including the bow.\",\n    \"Jeremiah 49:35 uses the breaking of a people’s bow to signify the overthrow of its power.\",\n    \"Zechariah 9:10 connects cutting off the battle bow with the proclamation of peace.\",\n    \"Revelation 6:2 gives the rider on the white horse a bow and portrays him going out conquering.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The rainbow—literally God’s “bow in the cloud”—symbolizes God’s covenant, especially the promise not to destroy the earth again by a flood.\",\n      \"basis\": [\n        \"Genesis 9:12–17 explicitly identifies the bow in the cloud as the sign of the covenant with Noah and all living creatures.\",\n        \"Ezekiel 1:28 uses the appearance of the rainbow in a vision of divine glory.\",\n        \"Revelation 4:3 and 10:1 employ rainbow imagery around heavenly figures, often interpreted in light of divine glory, covenant, and mercy.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An unreliable or “deceitful” bow symbolizes faithlessness, treachery, or failure to fulfill one’s intended purpose.\",\n      \"basis\": [\n        \"Psalm 78:57 compares Israel’s unfaithfulness to a deceitful or unreliable bow.\",\n        \"Hosea 7:16 similarly compares apostasy to a treacherous bow.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The bow can symbolize human strength or martial capability more generally, without necessarily emphasizing active conquest or judgment.\",\n      \"basis\": [\n        \"Genesis 49:24 describes Joseph’s bow remaining firm as an image of sustained strength under divine aid.\",\n        \"Job 29:20 uses the renewed bow as an image of vigor or strength.\",\n        \"Psalm 44:6 denies ultimate trust in the bow, contrasting human military power with divine deliverance.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"If “bow” is read as the verb meaning to bend the body or knee, it symbolizes worship, reverence, submission, or compelled acknowledgment of authority.\",\n      \"basis\": [\n        \"Psalm 95:6 calls worshipers to bow down before the Lord.\",\n        \"Isaiah 45:23 declares that every knee shall bow to God.\",\n        \"Philippians 2:10 applies the bending of every knee to universal acknowledgment of Jesus.\",\n        \"Revelation 4:10 depicts heavenly elders falling down in worship.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning for “bow” apart from context. The weapon, the rainbow, and the act of bowing are distinct biblical senses. For the weapon specifically, warfare, power, conquest, and judgment form the clearest interpretive consensus.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Sign of God's covenant promise of mercy and faithfulness (the rainbow set in the clouds after the flood)\",\n  \"primary_basis\": [\n    \"Genesis 9:12-17\",\n    \"Ezekiel 1:28\",\n    \"Revelation 4:3\",\n    \"Revelation 10:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Weapon of warfare, divine judgment, or conquest\",\n      \"basis\": [\n        \"Revelation 6:2\",\n        \"Psalm 7:12\",\n        \"Habakkuk 3:9\",\n        \"Lamentations 2:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Symbol of strength, power, or military might (human or divine)\",\n      \"basis\": [\n        \"Genesis 49:24\",\n        \"Job 29:20\",\n        \"Psalm 18:34\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Broken bow as emblem of peace, disarmament, or the defeat of enemies\",\n      \"basis\": [\n        \"Psalm 46:9\",\n        \"Hosea 1:5\",\n        \"Jeremiah 49:35\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"English 'bow' renders the same Hebrew term (qeshet) for both rainbow and archery weapon; Christian interpreters treat rainbow texts as covenant/glory symbolism and weapon texts as conflict/power symbolism. Context determines which reading applies; no single exclusive symbolic consensus exists for the bare term.\"\n}\n\nBOOK ENTRY\nA kingdom's covenant and the power joined by it. To break the bow is to unstring the kingdom and end its might.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 9:13, 16; Jer 49:35; Isa 22:3; Hos 1:5; 2:18; Ps 46:9; 78:57) · see The Bow, ch. 44\n\nAVAILABLE KJV EXCERPTS\nGenesis 9:13 — I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.\nGenesis 9:16 — And the bow shall be in the cloud; and I will look upon it, that I may remember the everlasting covenant between God and every living creature of all flesh that is upon the earth.\nJeremiah 49:35 — Thus saith the LORD of hosts; Behold, I will break the bow of Elam, the chief of their might.\nIsaiah 22:3 — All thy rulers are fled together, they are bound by the archers: all that are found in thee are bound together, which have fled from far.\nHosea 1:5 — And it shall come to pass at that day, that I will break the bow of Israel in the valley of Jezreel.\nHosea 2:18 — And in that day will I make a covenant for them with the beasts of the field, and with the fowls of heaven, and with the creeping things of the ground: and I will break the bow and the sword and the battle out of the earth, and will make them to lie down safely.\nPsalms 46:9 — He maketh wars to cease unto the end of the earth; he breaketh the bow, and cutteth the spear in sunder; he burneth the chariot in the fire.\nPsalms 78:57 — But turned back, and dealt unfaithfully like their fathers: they were turned aside like a deceitful bow.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "fa89c91bc6ec186c37fb512ab9b97b36341a0b7798490eeeeb2b505715607c9c",
+  "cache": {
+    "hit": false
+  }
+}

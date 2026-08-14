@@ -1,0 +1,173 @@
+{
+  "id": "resp_081e35e69c29482f006a54768233e08197b2ecc6f39a48ca14",
+  "object": "response",
+  "created_at": 1783920258,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920274,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_081e35e69c29482f006a547682a5e881979b0eccb1d4fb925d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_081e35e69c29482f006a5476881ea881978308b77e8f92cd68",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Substantial or advanced spiritual teaching—truth suited to mature believers, contrasted with “milk” as elementary instruction for spiritual beginners.\",\"primary_basis\":[\"Hebrews 5:12–14 — milk is associated with immature learners, while “strong meat” or “solid food” belongs to the mature.\",\"1 Corinthians 3:1–2 — Paul says he fed the Corinthians with milk rather than meat because they were not ready for more mature instruction.\"],\"alternatives\":[{\"meaning\":\"Doing God’s will and accomplishing his work as spiritual nourishment.\",\"basis\":[\"John 4:32–34 — Jesus calls doing the Father’s will and finishing his work his “meat” or “food.”\"],\"prominence\":\"common\"},{\"meaning\":\"Christ himself, especially his flesh given for the life of the world and received by believers; interpreted sacramentally, spiritually, or soteriologically depending on tradition.\",\"basis\":[\"John 6:51–56 — Jesus describes his flesh as true food and connects eating it with abiding in him and eternal life.\",\"1 Corinthians 10:16–17 — participation in Christ through the bread is associated with communion in his body.\"],\"prominence\":\"common\"},{\"meaning\":\"Ordinary food used to symbolize morally indifferent practices, Christian liberty, and voluntary restraint for another believer’s conscience.\",\"basis\":[\"Romans 14:2–3, 14–21 — eating or abstaining from food illustrates disputes over conscience and mutual edification.\",\"1 Corinthians 8:8–13 — meat offered to idols becomes an example of limiting one’s liberty to avoid causing another believer to stumble.\"],\"prominence\":\"minority\"},{\"meaning\":\"Participation in sacrifice or communion with an altar, whether Israelite, Christian, or pagan.\",\"basis\":[\"1 Corinthians 10:18–21 — eating sacrificial food signifies participation in the altar and is contrasted with participation in demonic sacrifices.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Christian shorthand commonly treats “meat” as mature or deeper doctrine because of the milk-versus-solid-food passages. Nevertheless, there is no single settled biblical symbolism for the term across all contexts. In older English translations, especially the KJV, “meat” often means food generally rather than animal flesh, and its metaphorical significance depends on the passage.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 779,
+    "output_tokens_details": {
+      "reasoning_tokens": 287
+    },
+    "total_tokens": 1097
+  },
+  "user": null,
+  "metadata": {}
+}

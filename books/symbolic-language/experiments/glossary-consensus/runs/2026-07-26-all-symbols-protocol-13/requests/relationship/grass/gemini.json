@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "grass",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nGrass\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, grass primarily symbolizes the transience, frailty, and mortality of human life — the brevity of human existence and glory in contrast to the eternal, unchanging word and nature of God. Humanity 'is like grass' that flourishes briefly, then withers and is gone.\",\n  \"primary_basis\": [\n    \"Isaiah 40:6-8 ('All flesh is grass... the grass withers, the flower fades, but the word of our God stands forever')\",\n    \"Psalm 103:15-16 ('As for man, his days are like grass...')\",\n    \"Psalm 90:5-6 ('in the morning it flourishes... in the evening it fades and withers')\",\n    \"1 Peter 1:24-25 (quoting Isaiah 40 to contrast perishable flesh with the enduring word)\",\n    \"James 1:10-11 (the rich man will fade away 'like a flower of the grass')\",\n    \"Psalm 37:2 (evildoers 'will soon fade like the grass')\",\n    \"Job 8:12; Job 14:2 (human life withering like plants)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's providential care and provision: grass as something God feeds, waters, and clothes, used to argue from lesser to greater that God will care for his people (and, in pastoral imagery, as a picture of divine sustenance and rest).\",\n      \"basis\": [\n        \"Matthew 6:30 / Luke 12:28 ('if God so clothes the grass of the field...')\",\n        \"Psalm 104:14 ('You cause the grass to grow for the livestock')\",\n        \"Psalm 23:2 ('He makes me lie down in green pastures')\",\n        \"Deuteronomy 11:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The fleeting prosperity of the wicked: the wicked sprout and flourish like grass only to be swiftly destroyed, a subset of the transience theme applied specifically to God's enemies.\",\n      \"basis\": [\n        \"Psalm 92:7 ('though the wicked sprout like grass... they are doomed to destruction forever')\",\n        \"Psalm 37:1-2\",\n        \"Psalm 129:6 (like grass on housetops that withers before it grows up)\",\n        \"2 Kings 19:26 / Isaiah 37:27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Abundance, fruitfulness, or multitude: grass as an image of numerous offspring or flourishing blessing.\",\n      \"basis\": [\n        \"Job 5:25 ('your descendants... like the grass of the earth')\",\n        \"Psalm 72:16 (people flourishing 'like grass of the field')\",\n        \"Isaiah 44:4 ('they shall spring up among the grass')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In apocalyptic interpretation, the grass of Revelation is sometimes read symbolically as people or humanity (drawing on the 'all flesh is grass' motif), so that the burning or sparing of grass represents judgment on human beings; most commentators, however, treat it as literal vegetation.\",\n      \"basis\": [\n        \"Revelation 8:7 (a third of the grass burned up)\",\n        \"Revelation 9:4 (locusts told not to harm the grass)\",\n        \"Isaiah 40:6-7 as interpretive background\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, widely recognized consensus across Protestant, Catholic, and Orthodox commentary that grass is the Bible's standard image for the brevity and frailty of mortal human life, anchored above all in Isaiah 40:6-8 and its New Testament citation in 1 Peter 1:24-25. The alternative senses (divine provision, the short-lived wicked, abundance) are well attested in Scripture and commentary but are generally treated as contextual uses rather than rivals to the primary symbolism. The symbolic 'grass = people' reading in Revelation exists mainly in some popular and dispensational or idealist commentary and is not the majority scholarly view.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The transience, fragility, and brevity of human life and mortal glory.\",\n  \"primary_basis\": [\n    \"Isaiah 40:6-8\",\n    \"Psalm 90:5-6\",\n    \"Psalm 103:15\",\n    \"1 Peter 1:24\",\n    \"James 1:10-11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's provision and restorative care (as green pastures for His flock)\",\n      \"basis\": [\n        \"Psalm 23:2\",\n        \"John 6:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine provision for the lower aspects of creation, contrasting with God's provision for humanity\",\n      \"basis\": [\n        \"Matthew 6:30\",\n        \"Luke 12:28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Abundant growth, flourishing, or a vast multitude of descendants\",\n      \"basis\": [\n        \"Job 5:25\",\n        \"Psalm 72:16\",\n        \"Isaiah 44:4\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The dominant symbolic use of grass in biblical literature contrasts the fleeting, withering nature of humanity with the eternal, unchanging nature of God and His Word.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Human life, strength, beauty, and worldly glory are frail, temporary, and quickly pass away, like grass that grows and then withers.\",\n  \"primary_basis\": [\n    \"Isaiah 40:6–8 explicitly compares all flesh to grass and human faithfulness or glory to the flower of grass, contrasting them with the enduring word of God.\",\n    \"Psalm 90:5–6 compares human beings to grass that flourishes in the morning and fades by evening.\",\n    \"Psalm 103:15–16 says human days are like grass and disappear when the wind passes over them.\",\n    \"1 Peter 1:24–25 quotes Isaiah 40 to contrast perishable human glory with the abiding word of the Lord.\",\n    \"James 1:10–11 uses withering grass and its falling flower for the passing away of the rich and their pursuits.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Prosperity—especially that of the wicked—is short-lived and will soon be cut down.\",\n      \"basis\": [\n        \"Psalm 37:1–2 compares evildoers to grass that quickly withers.\",\n        \"Psalm 92:7 depicts the wicked springing up like grass before their destruction.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Life, nourishment, peace, fertility, and divine provision, particularly in pasture imagery.\",\n      \"basis\": [\n        \"Psalm 23:2 portrays green pastures as God's restful provision.\",\n        \"Genesis 1:11–12 presents grass and vegetation as part of God's life-giving creation.\",\n        \"Mark 6:39 mentions the green grass in the setting of Jesus feeding the multitude, sometimes interpreted as pastoral or provision imagery.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Withered or burned grass signifies drought, judgment, devastation, or the withdrawal of blessing.\",\n      \"basis\": [\n        \"Deuteronomy 11:17 connects lack of rain with the disappearance of grass and produce.\",\n        \"Isaiah 15:6 uses withered grass in an oracle of desolation.\",\n        \"Revelation 8:7 describes grass burned in trumpet judgment, though the image may be read literally or symbolically.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Grass represents humanity or peoples collectively, rather than merely the brevity of individual life.\",\n      \"basis\": [\n        \"Isaiah 40:7 states directly, “the people are grass.”\",\n        \"The broader context of Isaiah 40 contrasts vulnerable humanity and nations with God's permanence and sovereignty.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong conventional interpretation centered on human mortality, frailty, and transience. Nevertheless, grass is not a fixed symbol in every passage: it may function literally or evoke provision, flourishing, temporary prosperity, drought, or judgment depending on context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the frailty, mortality, and transience of human life\",\n  \"primary_basis\": [\n    \"Isaiah 40:6-8\",\n    \"Psalm 103:15-16\",\n    \"Psalm 90:5-6\",\n    \"1 Peter 1:24\",\n    \"James 1:10-11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's providential care even for ephemeral things\",\n      \"basis\": [\n        \"Matthew 6:30\",\n        \"Luke 12:28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"rest, refreshment, or temporary abundance\",\n      \"basis\": [\n        \"Mark 6:39\",\n        \"John 6:10\",\n        \"Psalm 23:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The withering-grass motif for human brevity is the standard, widely taught symbolic reading across Christian tradition, drawn from prophetic, psalmic, and New Testament texts; other associations exist but remain secondary.\"\n}\n\nBOOK ENTRY\nMortal people or flesh, growing across the field until they wither or are gathered at harvest.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 40:6-8; Matt 13:38) · see Grass, ch. 42\n\nAVAILABLE KJV EXCERPTS\nIsaiah 40:6 — The voice said, Cry. And he said, What shall I cry? All flesh is grass, and all the goodliness thereof is as the flower of the field:\nIsaiah 40:7 — The grass withereth, the flower fadeth: because the spirit of the LORD bloweth upon it: surely the people is grass.\nIsaiah 40:8 — The grass withereth, the flower fadeth: but the word of our God shall stand for ever.\nMatthew 13:38 —  The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one;\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "89de64e7d4a10207735eeaee9c5fd6264dd6d7903087646fd8ee42fe0b3d205b",
+  "cache": {
+    "hit": false
+  }
+}

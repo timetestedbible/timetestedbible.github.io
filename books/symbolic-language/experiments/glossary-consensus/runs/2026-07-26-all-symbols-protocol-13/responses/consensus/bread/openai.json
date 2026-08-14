@@ -1,0 +1,173 @@
+{
+  "id": "resp_0c803f8f6b37b621006a54735661048195a92334cf5555dc09",
+  "object": "response",
+  "created_at": 1783919446,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919467,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0c803f8f6b37b621006a547356e3b0819588050c932b755fcd",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0c803f8f6b37b621006a54735fc6b48195917d3b9e311b3760",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Bread most commonly symbolizes God-given life, provision, and spiritual nourishment, understood supremely in Christian teaching as Jesus Christ, the “bread of life.”\",\"primary_basis\":[\"Exodus 16:4-15, 31-35 — manna as bread provided by God in the wilderness.\",\"Deuteronomy 8:3 — bread contrasted with, yet used to illustrate, dependence on every word from God.\",\"John 6:32-35, 48-58 — Jesus identifies himself as the true bread from heaven and the bread of life.\",\"Matthew 26:26-29; Mark 14:22-25; Luke 22:19-20 — Jesus identifies the broken bread of the Last Supper with his body.\",\"1 Corinthians 10:16-17; 11:23-29 — bread signifies participation in Christ’s body and the unity of believers.\"],\"alternatives\":[{\"meaning\":\"The sacramental body or real presence of Christ in the Eucharist. Traditions agree that Eucharistic bread signifies Christ’s body but differ materially over whether and how Christ is objectively present.\",\"basis\":[\"Matthew 26:26\",\"Luke 22:19\",\"John 6:51-58\",\"1 Corinthians 10:16\",\"1 Corinthians 11:23-29\"],\"prominence\":\"common\"},{\"meaning\":\"God’s word or revealed truth as nourishment for spiritual life.\",\"basis\":[\"Deuteronomy 8:3\",\"Matthew 4:4\",\"Luke 4:4\",\"Jeremiah 15:16\"],\"prominence\":\"common\"},{\"meaning\":\"Ordinary material provision and the necessities of daily life rather than a specifically christological symbol.\",\"basis\":[\"Matthew 6:11\",\"Luke 11:3\",\"Proverbs 30:8-9\",\"Acts 2:46\"],\"prominence\":\"common\"},{\"meaning\":\"The fellowship and corporate unity of the church, represented by many believers sharing or forming one loaf.\",\"basis\":[\"Acts 2:42,46\",\"1 Corinthians 10:17\"],\"prominence\":\"common\"},{\"meaning\":\"Sacred fellowship with God or God’s covenantal presence, especially through the bread of the Presence and sacred meals.\",\"basis\":[\"Exodus 25:23-30\",\"Leviticus 24:5-9\",\"1 Samuel 21:4-6\"],\"prominence\":\"minority\"},{\"meaning\":\"Affliction, sorrow, wickedness, or dishonestly obtained sustenance, as in expressions such as “bread of tears,” “bread of wickedness,” or “bread of deceit.”\",\"basis\":[\"Psalm 80:5\",\"Proverbs 4:17\",\"Proverbs 20:17\",\"Isaiah 30:20\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad consensus around bread as life-sustaining provision and spiritual nourishment from God, especially Christ as the bread of life. Bread is nevertheless context-dependent and does not have one exclusive symbolic referent. Eucharistic interpretations are especially prominent but remain divided over the nature of Christ’s presence.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1114,
+    "output_tokens_details": {
+      "reasoning_tokens": 469
+    },
+    "total_tokens": 1431
+  },
+  "user": null,
+  "metadata": {}
+}

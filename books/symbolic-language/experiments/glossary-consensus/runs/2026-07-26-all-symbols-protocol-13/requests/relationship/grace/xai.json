@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "grace",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nGrace\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'grace' (Greek: charis) primarily denotes God's unmerited, undeserved favor toward sinners — divine love and salvation freely given as a gift rather than earned by human works or merit, supremely expressed in Jesus Christ. It is the standard shorthand for the free, saving kindness of God that justifies, forgives, and reconciles humanity apart from any human deserving.\",\n  \"primary_basis\": [\n    \"Ephesians 2:8-9 ('For by grace you have been saved through faith... not a result of works')\",\n    \"Romans 3:23-24 ('justified by his grace as a gift, through the redemption that is in Christ Jesus')\",\n    \"Romans 5:15-21 (grace abounding through the one man Jesus Christ)\",\n    \"Romans 6:14 ('you are not under law but under grace')\",\n    \"Romans 11:6 ('if it is by grace, it is no longer on the basis of works')\",\n    \"John 1:14-17 ('full of grace and truth... grace upon grace; the law was given through Moses; grace and truth came through Jesus Christ')\",\n    \"Titus 2:11 ('the grace of God has appeared, bringing salvation for all people')\",\n    \"2 Corinthians 8:9 ('you know the grace of our Lord Jesus Christ, that though he was rich, yet for your sake he became poor')\",\n    \"2 Timothy 1:9 (saved 'not because of our works but because of his own purpose and grace')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Grace as divine empowerment or enabling power — God's active strength working in and through believers to sustain them, equip them for ministry, and enable obedience, not merely a disposition of favor.\",\n      \"basis\": [\n        \"2 Corinthians 12:9 ('My grace is sufficient for you, for my power is made perfect in weakness')\",\n        \"1 Corinthians 15:10 ('by the grace of God I am what I am... I worked harder than any of them, though it was not I, but the grace of God that is with me')\",\n        \"Hebrews 4:16 ('grace to help in time of need')\",\n        \"2 Corinthians 9:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Roman Catholic sacramental-theological reading: grace as an infused, created participation in the divine life (sanctifying/habitual grace) communicated especially through the sacraments, which actually transforms and elevates the soul rather than being only a favorable divine attitude.\",\n      \"basis\": [\n        \"2 Peter 1:4 ('partakers of the divine nature')\",\n        \"John 1:16\",\n        \"Romans 5:5 (love of God 'poured into our hearts')\",\n        \"Council of Trent's decree on justification as the classic doctrinal articulation\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eastern Orthodox reading: grace as the uncreated energies of God himself — God's own presence and activity in which humans participate (theosis), following Gregory Palamas; grace is not a created gift or mere favor but God's self-communication.\",\n      \"basis\": [\n        \"2 Peter 1:4\",\n        \"2 Corinthians 3:18\",\n        \"Exodus 33-34 and Transfiguration narratives (Matthew 17) as read in Palamite tradition\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Scholarly gift/benefaction reading: charis understood within Greco-Roman patronage conventions as 'gift' — incongruous (given without regard to worth) yet expecting a return of gratitude, loyalty, and transformed life; associated notably with John Barclay's 'Paul and the Gift,' which distinguishes multiple 'perfections' of grace rather than one meaning of 'unconditional favor.'\",\n      \"basis\": [\n        \"Romans 5-6\",\n        \"Galatians 1-2\",\n        \"2 Corinthians 8-9 (charis used of the collection and of Christ's self-giving)\",\n        \"Comparative study of Second Temple Judaism and Greco-Roman benefaction texts\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Distinctions within Reformed and Wesleyan systems treating grace as differentiated categories — common grace (God's non-saving kindness to all creation, e.g., Matthew 5:45; Acts 14:17), prevenient grace (grace that goes before and enables a free response, in Wesleyan/Arminian theology), and irresistible/efficacious grace (Calvinist soteriology). These are refinements of the primary meaning rather than rivals to it.\",\n      \"basis\": [\n        \"Matthew 5:45\",\n        \"Acts 14:17\",\n        \"Psalm 145:9\",\n        \"John 6:44\",\n        \"Philippians 2:13\",\n        \"Titus 2:11\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Grace is one of the most stable and widely agreed theological terms in Christianity. Virtually all traditions converge on the core sense of 'unmerited divine favor,' often popularized by the acronym 'God's Riches At Christ's Expense' or the definition 'getting what we do not deserve.' The genuine divergences concern the mode and mechanics of grace (favorable attitude vs. infused quality vs. uncreated energy vs. reciprocal gift), and the extent/resistibility of grace (Catholic-Protestant, Calvinist-Arminian debates), not the basic symbolic meaning. The Hebrew background terms chen (favor, e.g., Genesis 6:8, 'Noah found grace/favor in the eyes of the LORD') and chesed (steadfast covenant love) are standardly cited as Old Testament roots of the concept.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Unmerited favor, specifically God's free and unearned gift of salvation, forgiveness, and love toward humanity despite human sinfulness.\",\n  \"primary_basis\": [\n    \"Ephesians 2:8-9\",\n    \"Romans 3:24\",\n    \"Romans 11:6\",\n    \"Titus 2:11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine empowerment, an enabling presence, or spiritual strength given to believers for sanctification, endurance, and ministry.\",\n      \"basis\": [\n        \"2 Corinthians 12:9\",\n        \"1 Corinthians 15:10\",\n        \"Hebrews 4:16\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Covenant loyalty and steadfast love, often conceptually overlapping with the Hebrew term 'chesed'.\",\n      \"basis\": [\n        \"Exodus 34:6\",\n        \"John 1:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Physical attractiveness, aesthetic charm, elegance, or general relational favor in the eyes of others.\",\n      \"basis\": [\n        \"Proverbs 31:30\",\n        \"Luke 2:40\",\n        \"Luke 4:22\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While Protestant traditions historically emphasize 'unmerited favor' regarding justification, Catholic, Orthodox, and Wesleyan traditions strongly emphasize grace as 'divine empowerment' (sanctifying or actual grace). Both concepts represent deeply settled, widespread consensus within biblical theology.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God’s freely given, undeserved favor toward humanity, especially his gift of forgiveness, salvation, and restored relationship through Jesus Christ.\",\n  \"primary_basis\": [\n    \"Ephesians 2:8–9 — salvation is by grace through faith, not the result of works.\",\n    \"Romans 3:23–24 — sinners are justified freely by God’s grace through Christ’s redemption.\",\n    \"Romans 5:15–21 — grace is contrasted with sin and death and brings justification and life through Christ.\",\n    \"Titus 2:11–14 — God’s saving grace has appeared and trains believers in godly living.\",\n    \"John 1:14–17 — grace and truth are associated with Jesus Christ and contrasted with the giving of the law through Moses.\",\n    \"2 Timothy 1:9 — salvation and calling rest on God’s purpose and grace rather than human works.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Grace as God’s active, transforming power within believers, enabling holiness, perseverance, and participation in divine life—not merely favorable disposition or pardon.\",\n      \"basis\": [\n        \"1 Corinthians 15:10 — grace works actively in Paul’s ministry.\",\n        \"2 Corinthians 12:9 — Christ’s grace is sufficient and his power is perfected in weakness.\",\n        \"Titus 2:11–12 — grace trains believers to reject ungodliness.\",\n        \"2 Peter 1:3–4 — divine gifts enable participation in the divine nature.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Grace as a divinely bestowed spiritual gift, empowerment, or vocation for service.\",\n      \"basis\": [\n        \"Romans 12:3–8 — differing gifts are given according to grace.\",\n        \"Ephesians 3:7–8 — Paul’s ministry is a gift of grace.\",\n        \"1 Peter 4:10 — believers steward varied gifts of God’s grace.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Grace as covenantal favor, election, and faithful divine generosity, emphasizing God’s initiative toward a people rather than only individual salvation.\",\n      \"basis\": [\n        \"Exodus 33:12–17 — Moses and Israel find favor before God.\",\n        \"Romans 11:5–6 — election is by grace rather than works.\",\n        \"2 Corinthians 6:1–2 — receiving grace is placed in a covenantal and communal setting.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Grace primarily as created or sacramentally communicated spiritual life, sometimes distinguished as sanctifying grace and actual grace.\",\n      \"basis\": [\n        \"John 3:5 — new birth through water and Spirit.\",\n        \"Acts 2:38 — baptism is linked with forgiveness and reception of the Holy Spirit.\",\n        \"Romans 6:3–4 — baptism unites believers with Christ’s death and resurrection.\",\n        \"2 Peter 1:4 — believers participate in the divine nature.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad Christian consensus that grace denotes God’s freely given and undeserved favor or gift, centered on salvation in Christ. The term is a theological concept more than a fixed biblical symbol. Significant traditions differ over whether grace should be understood chiefly as divine favor, transforming power, participation in divine life, or sacramentally communicated gift; thus the broad meaning is settled, while its precise mechanism and theological scope are not.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"God's unmerited favor and free gift of salvation/forgiveness extended to undeserving humanity\",\n  \"primary_basis\": [\n    \"Ephesians 2:8-9\",\n    \"Romans 3:24\",\n    \"Romans 5:15-17\",\n    \"Titus 2:11\",\n    \"John 1:16-17\",\n    \"2 Corinthians 12:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine enabling power or strength given to believers for holy living and service (often distinguished as 'sanctifying grace')\",\n      \"basis\": [\n        \"2 Corinthians 12:9\",\n        \"1 Corinthians 15:10\",\n        \"Hebrews 4:16\",\n        \"Acts 4:33\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A quality of beauty, elegance, or gracious demeanor (secular/linguistic sense sometimes read into biblical 'charis')\",\n      \"basis\": [\n        \"Psalm 45:2\",\n        \"Proverbs 1:9\",\n        \"Luke 4:22\",\n        \"Colossians 4:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sacramental or infused grace mediated through the Church and rites (Catholic/Orthodox emphasis)\",\n      \"basis\": [\n        \"John 1:16\",\n        \"Acts 2:38\",\n        \"traditional sacramental theology\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenant loyalty or steadfast love overlapping with Hebrew hesed\",\n      \"basis\": [\n        \"Exodus 34:6\",\n        \"Psalm 86:15\",\n        \"Jonah 4:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across mainstream Christian traditions the core symbolic/theological sense of grace (Greek charis) as God's unmerited favor is highly stable and dominant in biblical interpretation and teaching; secondary nuances (empowering, sacramental, aesthetic) are widely acknowledged but do not displace the primary meaning.\"\n}\n\nBOOK ENTRY\nFavor that moves first and then teaches its recipient to reject ungodliness and live rightly. Counterfeit grace turns favor into permission to remain lawless.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: God's unmerited favor by which sinners are saved, often summarized without grace's continuing work as teacher.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rom 5:8; Titus 2:11-12; Ex 34:6) · see Grace, Mercy & the Gift, ch. 24\n\nAVAILABLE KJV EXCERPTS\nRomans 5:8 — But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.\nTitus 2:11 — For the grace of God that bringeth salvation hath appeared to all men,\nTitus 2:12 — Teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly, in this present world;\nExodus 34:6 — And the LORD passed by before him, and proclaimed, The LORD, The LORD God, merciful and gracious, longsuffering, and abundant in goodness and truth,\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "703508a366ef4de05379d379dcc87ef78d7aaa410b62ac0d38ecd55e2daba8de",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124352,
+  "completed_at": 1785124388,
+  "id": "d0b3a91d-8ae3-97e8-ba7d-9875e6595370",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_d0b3a91d-8ae3-97e8-ba7d-9875e6595370",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry on \"Name\". I must respond with JSON only, matching the schema.\n{\n  \"core_relation\": \"DIVERGENT\",\n  \"extension_relation\": \"DIVERGENT\",\n  \"core_reason\": \"Consensus core identifies 'name' as the person's character, identity, authority, presence, and power (especially God's). Book core identifies 'name' as the covenant identity of a house, constituted by the Head's Word, covenant law, and fruitful priesthood. These are materially different referents; the book's definition replaces the consensus referent with a structural covenant-house identity.\",\n  \"extension_reason\": \"Book adds a specific tripartite covenant-house structure (Word/law/priesthood) and conditions (sub stitution or rejection creates counterfeit or vain name) that consensus does not cover. Consensus alternatives include reputation, delegated authority, temple presence, and new identity, but none match the book's house-identity composition. The book's common-view note acknowledges the consensus but presents this as the primary entry, indicating replacement rather than refinement.\",\n  \"scripture_support\": \"partial\",\n   \"scripture_notes\": \"Printed references (ark, house for name, manna, tables, rod, name in vain) provide partial support by linking to consensus themes (presence, authority, reputation) but the book's explicit tripartite house-identity definition is not present in them or in consensus alternatives.\",\n  \"rationale\": \"The book's entry shifts the symbolic referent from personal essence to architectural covenant components, creating a contradiction with the consensus identification of 'name' as character/identity. While the house-for-name texts are used, the book's composition and conditions (counterfeit/vain name) go beyond consensus and constitute a distinct symbolic system.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"NOVEL\",\n  \"consensus_summary\": \"Name symbolizes the essential character, identity, authority, presence, and power of the person who bears it (supremely God or Jesus), so that invoking or acting in the name engages the person himself; complementary facets include delegated authority, reputation, temple presence, and new/eschatological identity.\",\n  \"book_summary\": \"Name is the covenant identity of a house, consisting specifically of its Head’s Word, covenant law, and fruitful priesthood; substituting any element yields a counterfeit and rejecting any takes the Name in vain.\",\n  \"consensus_core_identification\": \"the revealed character/identity/authority/presence of a person (esp. God/Jesus)\",\n  \"book_core_identification\": \"covenant identity of a house = Head’s Word + covenant law + fruitful priesthood\",\n  \"core_relation\": \"NO_CONSENSUS\",\n  \"extension_relation\": \"NO_BASELINE\",\n  \"boundary_disagreement\": \"Book introduces an entirely new composite referent (triadic contents of the house/ark as the Name itself) never listed among consensus primary or alternative meanings; consensus boundaries concern personal attributes or delegated uses, not this structural triad.\",\n  \"material_contradiction\": \"None direct; the book does not explicitly deny the common personal-character reading (it even notes it) but simply replaces it with an unshared identification.\",\n  \"rationale\": \"Minimum cores differ in referent: consensus centers on personal essence/authority; the book centers on a covenantal house-composition drawn from ark furnishings. No consensus response or alternative mentions Word + law + priesthood as constitutive of Name, so the identification is absent rather than a narrowing, broadening, or contradiction of a shared core.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"The printed texts associate ‘name’ with the house/ark and list the three ark items, yet never equate the Name itself to that triad; the definition therefore appears imposed rather than read out of the citations alone.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_d0b3a91d-8ae3-97e8-ba7d-9875e6595370",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 5178,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2086,
+    "output_tokens_details": {
+      "reasoning_tokens": 1642
+    },
+    "total_tokens": 7264,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 226544000,
+    "context_details": {
+      "input_tokens": 5178,
+      "output_tokens": 2086
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

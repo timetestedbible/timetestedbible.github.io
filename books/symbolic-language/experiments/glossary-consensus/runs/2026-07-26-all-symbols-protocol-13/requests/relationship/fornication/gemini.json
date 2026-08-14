@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "fornication",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFornication, whoredom\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching and biblical interpretation, 'fornication' or 'whoredom' (Hebrew zanah/zenut; Greek porneia) used symbolically refers to spiritual unfaithfulness to God — most specifically idolatry and apostasy. Because the covenant between God and His people is portrayed as a marriage, worshiping other gods, trusting foreign alliances, or mixing pagan practices with true worship is depicted as adultery or prostitution against the divine Husband. The unfaithful people (Israel, Judah, or apostate 'Babylon') are personified as a harlot.\",\n  \"primary_basis\": [\n    \"Hosea 1–3 (Hosea commanded to marry a 'wife of whoredoms' because 'the land hath committed great whoredom, departing from the LORD,' Hos 1:2)\",\n    \"Ezekiel 16 (Jerusalem as an unfaithful wife who 'playedst the harlot' with idols and foreign nations)\",\n    \"Ezekiel 23 (Oholah and Oholibah, Samaria and Jerusalem, as harlot sisters)\",\n    \"Jeremiah 3:1–10, 20 ('thou hast played the harlot with many lovers'; Israel's 'whoredoms' under every green tree)\",\n    \"Exodus 34:15–16 ('go a whoring after their gods')\",\n    \"Leviticus 17:7; 20:5–6 (whoring after idols, familiar spirits)\",\n    \"Judges 2:17; 8:27, 33 (Israel 'went a whoring after other gods' / after the ephod and Baalim)\",\n    \"Isaiah 1:21 ('How is the faithful city become an harlot!')\",\n    \"Deuteronomy 31:16\",\n    \"Psalm 106:39\",\n    \"Revelation 17:1–5 (the great whore, 'Babylon the Great, the Mother of Harlots,' with whom the kings of the earth committed fornication)\",\n    \"Revelation 2:14, 20–22 (Balaam and Jezebel linking fornication with idolatry in the churches)\",\n    \"James 4:4 ('ye adulterers and adulteresses... friendship of the world is enmity with God')\",\n    \"Hosea 4:12; 5:4 ('the spirit of whoredoms')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal sexual immorality: porneia and 'fornication' frequently carry their plain, non-symbolic sense of illicit sexual activity (e.g., 1 Cor 6:18; 1 Thess 4:3; Acts 15:20). Many interpreters insist the literal meaning is primary in ethical texts and only becomes figurative in prophetic/apocalyptic contexts.\",\n      \"basis\": [\n        \"1 Corinthians 6:13–18\",\n        \"1 Thessalonians 4:3\",\n        \"Galatians 5:19\",\n        \"Matthew 15:19\",\n        \"Acts 15:20, 29\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Political and commercial alliance / illicit dependence on worldly powers: the harlotry imagery (especially of Tyre in Isaiah 23:15–17 and Babylon in Revelation 17–18) is read as denoting corrupt political entanglement, economic exploitation, and trafficking with the kings and merchants of the earth rather than idolatry narrowly defined.\",\n      \"basis\": [\n        \"Isaiah 23:15–17 (Tyre's 'hire' with all kingdoms)\",\n        \"Nahum 3:4 (Nineveh's whoredoms)\",\n        \"Revelation 18:3, 9–19 (kings and merchants enriched by the harlot)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Identification of the symbolic whore/fornication with a specific apostate religious system: historicist Protestant interpretation classically identified the whore of Revelation 17 with the Roman Catholic Church / papal Rome, so 'fornication' meant church-state union and doctrinal corruption. Preterist and many modern scholars instead identify her with pagan Rome or first-century Jerusalem.\",\n      \"basis\": [\n        \"Revelation 17:1–9, 18\",\n        \"Revelation 18:4 ('Come out of her, my people')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Cultic/ritual prostitution reading: some scholars have argued the prophetic 'whoredom' language originally referenced actual Canaanite fertility-cult prostitution practiced by Israelites, so the term is partly literal in Hosea and Ezekiel; more recent scholarship questions the historical existence of widespread cult prostitution and treats the language as purely metaphorical.\",\n      \"basis\": [\n        \"Hosea 4:13–14\",\n        \"Deuteronomy 23:17–18\",\n        \"1 Kings 14:24\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Broadened covenantal reading: 'fornication' as any breach of covenant loyalty or worldliness generally — friendship with the world, materialism, or divided allegiance — not restricted to formal idol worship.\",\n      \"basis\": [\n        \"James 4:4\",\n        \"Matthew 12:39 ('an evil and adulterous generation')\",\n        \"Hosea 6:7 in covenant framing\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"This is one of the most firmly established symbolic equations in biblical interpretation: when used figuratively, fornication/whoredom = unfaithfulness to God, chiefly idolatry/apostasy, grounded in the marriage metaphor for the covenant. The consensus spans patristic, medieval, Reformation, and modern critical scholarship. Disagreement is not over whether this symbolism exists but over (a) when a given passage is literal versus figurative, and (b) the specific historical referent of the harlot in Revelation 17 (papal Rome, pagan Rome, Jerusalem, or a generic world system). The last point is where confessional traditions diverge most sharply.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual unfaithfulness to God, specifically through idolatry, apostasy, or worshiping false gods.\",\n  \"primary_basis\": [\n    \"Hosea 1:2\",\n    \"Ezekiel 16:15-34\",\n    \"Jeremiah 3:1-9\",\n    \"Revelation 17:1-5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Political alliances with pagan nations and reliance on worldly powers instead of God.\",\n      \"basis\": [\n        \"Ezekiel 23:1-21\",\n        \"Isaiah 23:17\",\n        \"Revelation 18:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Compromise with false teaching, heresy, or worldly practices within the church.\",\n      \"basis\": [\n        \"Revelation 2:20-22\",\n        \"James 4:4\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The literal meaning of sexual immorality is the foundation for the metaphor. In biblical symbolism, because God is often depicted as the husband of His covenant people, idolatry and covenant-breaking are consistently described as whoredom or spiritual fornication.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Spiritual or covenant unfaithfulness to God—especially idolatry, apostasy, and devotion to rival gods or powers. Israel, the church, or a religious community is portrayed as an unfaithful spouse or prostitute.\",\n  \"primary_basis\": [\n    \"Hosea 1–3; 4:10–19; 5:3–4; 9:1—Hosea’s marriage and the language of whoredom symbolize Israel’s unfaithfulness and pursuit of other gods.\",\n    \"Jeremiah 2:20–25; 3:1–14; 13:27—Judah and Israel’s idolatry and covenant betrayal are described as prostitution and adultery.\",\n    \"Ezekiel 16 and 23—Jerusalem, Samaria, and their political-religious alliances and idolatries are depicted as whoredom.\",\n    \"Exodus 34:14–16 and Leviticus 17:7—worship of other gods is described as 'whoring' after them.\",\n    \"Numbers 25:1–3 and Judges 2:17; 8:27,33—sexual-whoredom language is associated with attachment to foreign gods.\",\n    \"Isaiah 1:21 and Nahum 3:4—unfaithful or oppressive cities are portrayed as harlots.\",\n    \"Revelation 2:20–22; 14:8; 17:1–6; 18:3,9—sexual-immorality and prostitute imagery symbolize idolatrous, corrupt, and imperial religious-political systems.\",\n    \"James 4:4—'adulterous' friendship with the world expresses unfaithfulness toward God.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal illicit sexual intercourse or sexual immorality, rather than a symbol. In many legal, ethical, and narrative contexts, Hebrew and Greek terms translated 'fornication' or 'whoredom' carry this ordinary sense.\",\n      \"basis\": [\n        \"Matthew 5:32; 15:19; 19:9\",\n        \"1 Corinthians 5–7, especially 5:1 and 6:13–18\",\n        \"1 Thessalonians 4:3–5\",\n        \"Hebrews 13:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Corrupt religion or doctrinal compromise, including accommodation to pagan worship and practices. Christian preaching often applies the marital metaphor to a church that mixes worship of God with false teaching or worldly religion.\",\n      \"basis\": [\n        \"Revelation 2:14,20–22\",\n        \"Revelation 17:1–6\",\n        \"Hosea 4:12–13\",\n        \"Ezekiel 16:15–22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Illicit political alliances and dependence on foreign empires rather than God. In prophetic texts, whoredom can specifically represent diplomatic, military, or commercial entanglement with other nations.\",\n      \"basis\": [\n        \"Ezekiel 16:26–29\",\n        \"Ezekiel 23:5–21\",\n        \"Isaiah 23:15–17\",\n        \"Nahum 3:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The exploitative economic, political, and imperial order represented by Babylon, particularly in Revelation. Here prostitution imagery encompasses luxury, commerce, violence, domination, and complicity with rulers.\",\n      \"basis\": [\n        \"Revelation 17:1–6,15–18\",\n        \"Revelation 18:3,9–24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"General moral corruption or worldliness without a specific reference to idolatry, covenant betrayal, or sexual conduct.\",\n      \"basis\": [\n        \"James 4:4\",\n        \"Revelation 17–18, as applied more broadly in Christian preaching\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a well-established consensus concerning the primary symbolic use: whoredom or fornication signifies spiritual and covenant infidelity, especially idolatry. Nevertheless, the words are not always symbolic; many New Testament occurrences refer directly to sexual immorality. In prophetic and apocalyptic contexts, the central covenant metaphor often includes political alliance, economic exploitation, false religion, and imperial complicity, so the precise emphasis must be determined from context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Spiritual unfaithfulness or idolatry (covenant adultery against God, often depicted as Israel or the people of God acting as a harlot by pursuing false gods or worldly powers)\",\n  \"primary_basis\": [\n    \"Hosea 1–3 (esp. Hosea 2:2–13)\",\n    \"Jeremiah 2:20–25; 3:1–9\",\n    \"Ezekiel 16:15–43; 23:1–49\",\n    \"Revelation 17:1–6; 18:3; 19:2\",\n    \"Isaiah 1:21; 57:3–8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal sexual immorality or cultic prostitution without metaphor (treated as straightforward ethical prohibition rather than symbol)\",\n      \"basis\": [\n        \"1 Corinthians 6:9–20\",\n        \"Galatians 5:19\",\n        \"Leviticus 18–20\",\n        \"Deuteronomy 22–23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Political alliances or dependence on foreign nations (treated as a form of unfaithfulness overlapping with but distinct from pure idolatry)\",\n      \"basis\": [\n        \"Ezekiel 16:26–29; 23:5–21\",\n        \"Hosea 7:11; 8:9\",\n        \"Isaiah 30:1–7; 31:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Apostate or corrupt religious institution (e.g., the harlot as the false church or Babylon as ecclesiastical Rome in historicist Protestant readings)\",\n      \"basis\": [\n        \"Revelation 17–18\",\n        \"interpretive tradition linking to 2 Thessalonians 2 and papal critiques\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Economic exploitation, luxury, or commercial seduction of the nations (especially Babylon the great as imperial commerce)\",\n      \"basis\": [\n        \"Revelation 18:3, 9–19\",\n        \"Ezekiel 27–28 (Tyre parallel)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The prophetic metaphor of whoredom for idolatry/covenant breach is the dominant and long-settled symbolic reading across mainstream Jewish and Christian interpretation of the relevant texts; literal sexual readings coexist but are not the primary symbolic assignment. Secondary applications (political, institutional, economic) remain subsidiary elaborations of the same unfaithfulness motif rather than fully independent meanings.\"\n}\n\nBOOK ENTRY\nCovenant unfaithfulness — joining oneself to other gods or kingdoms outside the union God established. The physical sin supplies the image.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 34:15-16; Hos 1:2; Jer 3:9; Rev 17:2) · see Marriage and Divorce, ch. 12\n\nAVAILABLE KJV EXCERPTS\nExodus 34:15 — Lest thou make a covenant with the inhabitants of the land, and they go a whoring after their gods, and do sacrifice unto their gods, and one call thee, and thou eat of his sacrifice;\nExodus 34:16 — And thou take of their daughters unto thy sons, and their daughters go a whoring after their gods, and make thy sons go a whoring after their gods.\nHosea 1:2 — The beginning of the word of the LORD by Hosea. And the LORD said to Hosea, Go, take unto thee a wife of whoredoms and children of whoredoms: for the land hath committed great whoredom, departing from the LORD.\nJeremiah 3:9 — And it came to pass through the lightness of her whoredom, that she defiled the land, and committed adultery with stones and with stocks.\nRevelation 17:2 — With whom the kings of the earth have committed fornication, and the inhabitants of the earth have been made drunk with the wine of her fornication.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "9a2af98729d82ab300112a55a7c8b3d8a6ec84d16edca3075381c5fc4489b4be",
+  "cache": {
+    "hit": false
+  }
+}

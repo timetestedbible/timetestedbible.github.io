@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "faith",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFaith\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'faith' primarily denotes trusting belief in and personal reliance upon God and, specifically, upon Jesus Christ for salvation. It is classically defined as confident assurance in what is hoped for and conviction about unseen realities, and it functions as the instrumental means by which a person is justified and receives God's grace (trust, not mere intellectual agreement).\",\n  \"primary_basis\": [\n    \"Hebrews 11:1 ('faith is the assurance of things hoped for, the conviction of things not seen')\",\n    \"Hebrews 11:6 ('without faith it is impossible to please God')\",\n    \"Ephesians 2:8-9 ('by grace you have been saved through faith')\",\n    \"Romans 1:17 / Habakkuk 2:4 ('the righteous shall live by faith')\",\n    \"Romans 4:3 / Genesis 15:6 (Abraham 'believed God, and it was counted to him as righteousness')\",\n    \"Romans 5:1 ('justified by faith, we have peace with God')\",\n    \"Galatians 2:16 (justified by faith in Christ, not works of the law)\",\n    \"Romans 10:9-10 (believing in the heart unto salvation)\",\n    \"John 3:16 (whoever believes in him has eternal life)\",\n    \"Mark 11:22-24 (faith in God expressed in prayer)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Faith as faithfulness or covenant fidelity — steadfast loyalty and obedience rather than (or in addition to) inward trust; includes the scholarly 'pistis Christou' debate over whether Paul means 'faith in Christ' or 'the faithfulness of Christ' (e.g., Richard Hays, N.T. Wright).\",\n      \"basis\": [\n        \"Galatians 2:16, 20 (pistis Christou constructions)\",\n        \"Romans 3:22, 3:26\",\n        \"Habakkuk 2:4 (Hebrew 'emunah, faithfulness)\",\n        \"Philippians 3:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'The faith' as a fixed body of doctrine or the objective content of Christian belief (fides quae creditur) — the deposit of apostolic teaching to be guarded and defended.\",\n      \"basis\": [\n        \"Jude 3 ('contend for the faith once for all delivered to the saints')\",\n        \"1 Timothy 4:1 ('some will depart from the faith')\",\n        \"2 Timothy 4:7 ('I have kept the faith')\",\n        \"Galatians 1:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faith as inseparable from works — living faith necessarily produces obedience and love, so faith without works is dead; emphasized in Catholic, Orthodox, and many Protestant readings ('faith working through love').\",\n      \"basis\": [\n        \"James 2:14-26 ('faith without works is dead')\",\n        \"Galatians 5:6 ('faith working through love')\",\n        \"Matthew 7:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faith as a sovereign gift of God rather than an autonomous human act — the Reformed/Calvinist emphasis that even the believing itself is divinely granted.\",\n      \"basis\": [\n        \"Ephesians 2:8-9 ('and this is not your own doing; it is the gift of God')\",\n        \"Philippians 1:29\",\n        \"John 6:44, 6:65\",\n        \"Romans 12:3 ('the measure of faith God has assigned')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faith as effective spiritual power or 'force' that produces miracles, healing, or material results when spoken and acted upon — characteristic of Pentecostal/charismatic and especially Word of Faith teaching.\",\n      \"basis\": [\n        \"Mark 11:22-24 (mountain-moving faith and confession)\",\n        \"Matthew 17:20 (faith as a mustard seed)\",\n        \"Matthew 9:22 ('your faith has made you well')\",\n        \"Hebrews 11:1 read as faith being 'substance'\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Faith as one of the spiritual gifts — a special charism of extraordinary trust given to some believers, distinct from saving faith common to all.\",\n      \"basis\": [\n        \"1 Corinthians 12:9 ('to another faith by the same Spirit')\",\n        \"1 Corinthians 13:2 ('faith so as to move mountains')\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Faith reduced to intellectual assent (assensus) to propositions — historically distinguished (and generally rejected as insufficient) by theologians who separate notitia, assensus, and fiducia; James's 'even the demons believe' is cited against it.\",\n      \"basis\": [\n        \"James 2:19 ('even the demons believe—and shudder')\",\n        \"John 12:42-43 (belief without confession)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"'Faith' is less a symbol than a central theological concept, but its consensus meaning is well settled: trusting reliance on God/Christ as the instrument of justification (Hebrews 11:1; Ephesians 2:8; Romans 4-5). The main live disputes are not about this core meaning but about its scope and mechanics: faith vs. faithfulness (translation of pistis and the pistis Christou debate), the relationship of faith to works (Catholic-Protestant divide, largely narrowed by ecumenical statements such as the 1999 Joint Declaration on Justification), whether faith is itself God's gift, and Word of Faith claims that treat faith as a quasi-force. The classical threefold analysis (notitia/knowledge, assensus/assent, fiducia/trust) is widely used across traditions to hold these strands together.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Trust, reliance, and confident assurance in God's character, promises, and the redemptive work of Jesus Christ, encompassing both intellectual belief and relational devotion.\",\n  \"primary_basis\": [\n    \"Hebrews 11:1\",\n    \"Ephesians 2:8-9\",\n    \"Romans 4:3-5\",\n    \"John 3:16\",\n    \"James 2:14-26\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Faithfulness, allegiance, or loyal obedience, emphasizing the Greek term pistis as fidelity or loyalty to Christ as Lord.\",\n      \"basis\": [\n        \"Romans 1:5\",\n        \"Galatians 5:22\",\n        \"Revelation 2:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Intellectual assent or cognitive agreement to specific theological propositions and historical facts.\",\n      \"basis\": [\n        \"James 2:19\",\n        \"Hebrews 11:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A spiritual force, tangible substance, or mechanism used to speak things into existence or manifest divine promises (often found in Word of Faith theology).\",\n      \"basis\": [\n        \"Hebrews 11:1\",\n        \"Mark 11:22-24\",\n        \"Romans 10:8\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While the broad consensus defines faith as relational trust and reliance on God, theological nuances exist. Protestant traditions emphasize faith as the sole instrument of justification, while Catholic traditions emphasize faith formed by love. Recent academic discussions, particularly regarding Pauline theology, heavily debate the translation of pistis Christou as either faith in Christ or the faithfulness of Christ.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Trusting reliance on God—especially confidence in Jesus Christ and his saving work—expressed through commitment, obedience, and hope rather than mere intellectual agreement.\",\n  \"primary_basis\": [\n    \"Hebrews 11:1, 6—faith is assurance regarding what is hoped for and conviction regarding what is unseen, grounded in approaching God.\",\n    \"Ephesians 2:8–9—salvation is received by grace through faith, not earned by works.\",\n    \"Romans 3:21–28; 5:1—justification and peace with God are associated with faith in Jesus Christ.\",\n    \"Galatians 2:16, 20—life and justification are described in relation to faith in Christ.\",\n    \"John 3:16; 20:30–31—believing in Christ is linked with eternal life.\",\n    \"Mark 11:22–24—faith denotes trust in God, particularly in prayer.\",\n    \"James 2:14–26—living faith is shown by corresponding action rather than remaining mere verbal assent.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Faithfulness, fidelity, or loyal allegiance to God or Christ. This reading emphasizes enduring covenant loyalty and obedient commitment, and is sometimes debated in passages traditionally translated as “faith in Christ.”\",\n      \"basis\": [\n        \"Habakkuk 2:4; Romans 1:17—the righteous live by faith or faithfulness.\",\n        \"Galatians 5:22—the same Greek word group can denote faithfulness.\",\n        \"Romans 3:22; Galatians 2:16—the phrase pistis Christou is variously interpreted as faith in Christ, Christ’s faithfulness, or participation in Christ’s fidelity.\",\n        \"Revelation 2:10, 13; 14:12—faith is closely associated with steadfast loyalty under pressure.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"“The faith” as the received body of Christian belief, apostolic teaching, or communal confession rather than an individual act of trust.\",\n      \"basis\": [\n        \"Jude 3—“the faith” was once for all entrusted to the saints.\",\n        \"Acts 6:7—people become obedient to “the faith.”\",\n        \"1 Timothy 4:1, 6; 2 Timothy 4:7—faith can denote the Christian message or confession preserved and followed.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Faith as a special Spirit-given capacity for unusual confidence in God, distinguished from the faith ordinarily expected of Christians.\",\n      \"basis\": [\n        \"1 Corinthians 12:9—faith is listed among particular gifts of the Spirit.\",\n        \"1 Corinthians 13:2—exceptional faith capable of “moving mountains” is distinguished rhetorically.\",\n        \"Matthew 17:20—mustard-seed faith is associated with extraordinary efficacy.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Faith primarily as intellectual assent to revealed propositions or acceptance of doctrine.\",\n      \"basis\": [\n        \"Romans 10:9–10—belief includes confessing truths about Jesus and his resurrection.\",\n        \"1 Corinthians 15:1–5—the gospel received in faith contains definite claims about Christ’s death and resurrection.\",\n        \"James 2:19—doctrinal belief alone is acknowledged but judged insufficient, making this a component rather than the usual complete definition.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus that faith centrally involves trustful reliance on God or Christ, but no single settled symbolic definition covers every biblical use. “Faith” is ordinarily treated as a theological disposition or relationship rather than as a symbol in the strict sense. Its semantic range also includes faithfulness, allegiance, a body of doctrine, and a particular spiritual gift.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Trusting reliance and confident assurance in God and His promises, centered on Jesus Christ for salvation and life (not mere intellectual assent)\",\n  \"primary_basis\": [\n    \"Hebrews 11:1\",\n    \"Ephesians 2:8-9\",\n    \"Romans 1:17 / Habakkuk 2:4\",\n    \"Romans 10:17\",\n    \"John 3:16\",\n    \"Galatians 2:16-20\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Intellectual assent or mental agreement to propositions/doctrines about God\",\n      \"basis\": [\n        \"James 2:19\",\n        \"various creedal formulations\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Covenant faithfulness/loyalty (especially the faithfulness of Christ or of God, via pistis Christou debates)\",\n      \"basis\": [\n        \"Galatians 2:16\",\n        \"Romans 3:22\",\n        \"Philippians 3:9\",\n        \"OT uses of emunah\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A supernatural gift or infused virtue enabling belief and good works\",\n      \"basis\": [\n        \"1 Corinthians 12:9\",\n        \"Ephesians 2:8\",\n        \"classical Catholic/Thomistic teaching\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Living obedience and active fidelity demonstrated in works (contrasted with dead faith)\",\n      \"basis\": [\n        \"James 2:14-26\",\n        \"Hebrews 11 narrative examples\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian teaching and most biblical interpretation, the core sense of faith (pistis/emunah) as trustful reliance on God/Christ is settled and dominant in preaching, confessions, and popular exposition. Nuances (assent vs. trust vs. faithfulness vs. gift) exist and are debated in academic and confessional settings, but they do not displace the primary meaning. The term functions more as a theological concept than a pure symbol, though it is sometimes paired with symbolic imagery (e.g., shield of faith).\"\n}\n\nBOOK ENTRY\nTrusting faithfulness — reliance on God's unseen promise held steady and brought to life through obedience.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: confident trust in God and His promises — the sole instrument of justification.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Hab 2:4; Heb 11:1, 8; Jas 2:17, 22; Rom 4:4-5; Eph 2:8-10) · see Love, Knowing, Faith & Belief, ch. 6\n\nAVAILABLE KJV EXCERPTS\nHabakkuk 2:4 — Behold, his soul which is lifted up is not upright in him: but the just shall live by his faith.\nHebrews 11:1 — Now faith is the substance of things hoped for, the evidence of things not seen.\nHebrews 11:8 — By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went.\nJames 2:17 — Even so faith, if it hath not works, is dead, being alone.\nJames 2:22 — Seest thou how faith wrought with his works, and by works was faith made perfect?\nRomans 4:4 — Now to him that worketh is the reward not reckoned of grace, but of debt.\nRomans 4:5 — But to him that worketh not, but believeth on him that justifieth the ungodly, his faith is counted for righteousness.\nEphesians 2:8 — For by grace are ye saved through faith; and that not of yourselves: it is the gift of God:\nEphesians 2:9 — Not of works, lest any man should boast.\nEphesians 2:10 — For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "33c302e20d37c3eae3d3ef2149d3656f07454cc66f091546178d7edf35491d3b",
+  "cache": {
+    "hit": false
+  }
+}

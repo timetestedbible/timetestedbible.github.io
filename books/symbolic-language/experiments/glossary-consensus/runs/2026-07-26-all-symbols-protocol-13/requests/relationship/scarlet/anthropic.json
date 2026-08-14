@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "scarlet",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nScarlet\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, scarlet most commonly symbolizes sin — deep-dyed, conspicuous guilt — with the closely paired idea that such sin can be cleansed and made 'white as snow.' The color's fastness as a dye (kermes/tola'at shani) is often cited to explain why it images sin's ingrained, seemingly permanent stain.\",\n  \"primary_basis\": [\n    \"Isaiah 1:18 ('though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool')\",\n    \"Revelation 17:3-4 (the woman arrayed in purple and scarlet, associated with abomination and immorality)\",\n    \"Revelation 18:16 (Babylon clothed in scarlet as emblem of corrupt luxury)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Blood, sacrifice, and atonement — scarlet as a pointer to sacrificial blood and, typologically, to the blood of Christ (e.g., the scarlet cord of Rahab read as a type of salvation through Christ's blood; scarlet wool in purification rites).\",\n      \"basis\": [\n        \"Joshua 2:18, 21 (Rahab's scarlet cord)\",\n        \"Leviticus 14:4-6, 49-52 (scarlet in cleansing rituals)\",\n        \"Numbers 19:6 (scarlet in the red heifer rite)\",\n        \"Hebrews 9:19 (scarlet wool used in sprinkling blood of the covenant)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Royalty, wealth, luxury, and worldly splendor — scarlet as a costly dye worn by the rich and powerful, sometimes with an ironic or judgmental edge.\",\n      \"basis\": [\n        \"2 Samuel 1:24 (Saul clothed daughters of Israel in scarlet)\",\n        \"Proverbs 31:21 (household clothed in scarlet)\",\n        \"Matthew 27:28 (soldiers put a scarlet robe on Jesus in mock royalty)\",\n        \"Lamentations 4:5 (those brought up in scarlet)\",\n        \"Revelation 18:12, 16 (merchandise and clothing of Babylon)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In tabernacle typology, scarlet (with blue and purple in the curtains and priestly garments) is read devotionally as pointing to Christ's humanity, suffering, or sacrificial death.\",\n      \"basis\": [\n        \"Exodus 25:4; 26:1, 31, 36; 28:5-6 (scarlet yarn in the tabernacle and priestly vestments)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Scarlet as a mark of harlotry, apostasy, or the corrupt world system specifically (the 'scarlet woman' of Revelation as an emblem of false religion or Babylon), sometimes treated as a distinct symbol rather than a subset of sin generally.\",\n      \"basis\": [\n        \"Revelation 17:1-6 (the great harlot in scarlet, the scarlet beast)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Scarlet is a polyvalent color symbol in Scripture, but Isaiah 1:18 has made 'sin (and its cleansing)' the dominant reflexive association in sermons, hymns, and popular teaching. The blood/atonement reading (especially Rahab's cord as a type of Christ's blood, a reading going back to patristic writers such as Clement of Rome, 1 Clement 12) and the luxury/royalty reading are both well established and not mutually exclusive with the primary meaning; many interpreters treat scarlet's meaning as context-dependent rather than fixed. Tabernacle color typology is popular in some devotional and dispensational circles but is not mainstream academic exegesis.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Sin and deep-seated guilt, as well as the typological counterpart of redemption, salvation, and the atoning blood of Christ (often conceptualized as the scarlet thread of redemption).\",\n  \"primary_basis\": [\n    \"Isaiah 1:18\",\n    \"Joshua 2:18\",\n    \"Leviticus 14:4-6\",\n    \"Hebrews 9:19\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Earthly wealth, luxury, royalty, and high social status.\",\n      \"basis\": [\n        \"Proverbs 31:21\",\n        \"2 Samuel 1:24\",\n        \"Matthew 27:28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual adultery, corruption, persecution of saints, and the violent, anti-God world system.\",\n      \"basis\": [\n        \"Revelation 17:3-4\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Scarlet is widely recognized in Christian symbolism as having a dual typological nature: representing both the deep, indelible stain of human sin and the means of cleansing through Christ's blood, famously represented by Rahab's scarlet cord. In historical and apocalyptic biblical literature, it additionally symbolizes earthly luxury, wealth, and spiritual harlotry.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Sin and guilt, pictured as a deep, conspicuous stain that requires cleansing or forgiveness.\",\n  \"primary_basis\": [\n    \"Isaiah 1:18 is the principal text: “though your sins are like scarlet ... they shall be as white as snow.”\",\n    \"Revelation 17:3–4 and 18:12,16 reinforce a negative association in Christian interpretation by linking scarlet with Babylon’s sinful, corrupt luxury, although their immediate symbolism is broader than personal guilt.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Blood, sacrifice, and atonement or ritual purification.\",\n      \"basis\": [\n        \"Scarlet yarn appears in purification rites in Leviticus 14:4–7,49–52 and Numbers 19:6.\",\n        \"Hebrews 9:19 recalls scarlet wool in connection with covenant blood and purification.\",\n        \"Joshua 2:18–21’s scarlet cord has often been read typologically as a sign of salvation through Christ’s blood, though the text itself identifies it as a signal.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Royalty, wealth, luxury, and high social status.\",\n      \"basis\": [\n        \"2 Samuel 1:24 associates scarlet clothing with luxury.\",\n        \"Proverbs 31:21 and Lamentations 4:5 reflect costly or privileged clothing.\",\n        \"Matthew 27:28 uses a scarlet robe in the soldiers’ mockery of Jesus’ kingship.\",\n        \"Revelation 17:4 and 18:12,16 use scarlet as part of Babylon’s extravagant display.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Corrupt imperial splendor, sexual immorality, persecution, and worldly excess.\",\n      \"basis\": [\n        \"Revelation 17:1–6 depicts the woman clothed in purple and scarlet, seated on a scarlet beast, and drunk with the blood of the saints.\",\n        \"Revelation 18:12,16 places scarlet among the luxuries of fallen Babylon.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Deliverance or protective salvation, especially as a foreshadowing of Christ’s blood.\",\n      \"basis\": [\n        \"Joshua 2:18–21 describes Rahab’s scarlet cord as the identifying sign by which her household is spared.\",\n        \"Christian typological interpretation has compared the cord with Passover blood and Christ’s saving blood, but this symbolism is not stated explicitly in Joshua.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A costly red textile or vivid dye without an independent symbolic meaning.\",\n      \"basis\": [\n        \"Scarlet material is repeatedly listed in tabernacle furnishings and priestly textiles, including Exodus 25:4; 26:1,31,36; and 28:5–8.\",\n        \"In such passages, many interpreters treat scarlet primarily as a valuable material within a multicolored design rather than assigning it a fixed theological meaning.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"“Sin” is the most recognizable stand-alone Christian symbolic meaning because of Isaiah 1:18. Nevertheless, scarlet has no single settled meaning across Scripture; its significance depends heavily on context and may involve guilt, blood, purification, royalty, luxury, or corrupt power.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the deep stain or guilt of sin\",\n  \"primary_basis\": [\n    \"Isaiah 1:18\",\n    \"Revelation 17:3-4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"the blood of Christ / redemptive covering or protection (typological)\",\n      \"basis\": [\n        \"Joshua 2:18-21 (Rahab's scarlet cord)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"wealth, luxury, or royal status\",\n      \"basis\": [\n        \"2 Samuel 1:24\",\n        \"Proverbs 31:21\",\n        \"Revelation 18:12-16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"materials of sacred worship or sacrificial service (with blue and purple)\",\n      \"basis\": [\n        \"Exodus 25:4\",\n        \"Exodus 26:1\",\n        \"Exodus 28:5-8\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Isaiah 1:18 supplies the most widely recognized Christian symbolic association; other biblical uses of the color remain active in typology and historical description but do not displace the sin association as the primary conventional reading.\"\n}\n\nBOOK ENTRY\nCovenant blood displayed outwardly — and counterfeited by those who wear the form without the substance.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 1:18; Josh 2:18; Heb 9:19; Rev 17:4) · see Garments & Armor, ch. 43 — derived in the digital edition’s symbol study at TimeTested.Bible\n\nAVAILABLE KJV EXCERPTS\nIsaiah 1:18 — Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool.\nJoshua 2:18 — Behold, when we come into the land, thou shalt bind this line of scarlet thread in the window which thou didst let us down by: and thou shalt bring thy father, and thy mother, and thy brethren, and all thy father's household, home unto thee.\nHebrews 9:19 — For when Moses had spoken every precept to all the people according to the law, he took the blood of calves and of goats, with water, and scarlet wool, and hyssop, and sprinkled both the book, and all the people,\nRevelation 17:4 — And the woman was arrayed in purple and scarlet colour, and decked with gold and precious stones and pearls, having a golden cup in her hand full of abominations and filthiness of her fornication:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "9e77b156fb4bdeb9bafd515bf45e96b9b678978ab373f1006834442a6cecbdec",
+  "cache": {
+    "hit": false
+  }
+}

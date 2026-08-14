@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "mercy",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nMercy\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'mercy' primarily denotes God's compassionate disposition toward sinners and sufferers: His withholding of deserved judgment and His active lovingkindness (Hebrew hesed/racham; Greek eleos), supremely expressed and embodied in the atoning work of Jesus Christ. As a symbol it is most concretely anchored in the 'mercy seat' (kapporet) atop the Ark of the Covenant—the place of atonement where blood was sprinkled—read typologically as pointing to Christ as the meeting place of God's justice and forgiveness. Mercy is thus commonly defined as God NOT giving sinners the punishment they deserve (often paired with, and distinguished from, grace as God giving what is undeserved), and derivatively as the compassionate conduct God requires of His people toward others.\",\n  \"primary_basis\": [\n    \"Exodus 34:6-7 (the LORD merciful and gracious, abounding in steadfast love)\",\n    \"Exodus 25:17-22 and Leviticus 16:14-15 (the mercy seat and Day of Atonement)\",\n    \"Romans 3:25 and Hebrews 9:5 (Christ as hilasterion/place of mercy)\",\n    \"Lamentations 3:22-23 (His mercies are new every morning)\",\n    \"Psalm 103:8-13 (He does not deal with us according to our sins)\",\n    \"Ephesians 2:4-5 (God, rich in mercy, made us alive with Christ)\",\n    \"Titus 3:5 (saved not by works but according to His mercy)\",\n    \"Luke 6:36 (be merciful as your Father is merciful)\",\n    \"Matthew 5:7 (blessed are the merciful)\",\n    \"Micah 6:8 (love mercy)\",\n    \"Hosea 6:6 / Matthew 9:13 (I desire mercy, not sacrifice)\",\n    \"James 2:13 (mercy triumphs over judgment)\",\n    \"Hebrews 4:16 (approach the throne of grace to receive mercy)\",\n    \"1 Peter 2:10 (once had not received mercy, now have received mercy)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Mercy as covenant loyalty (hesed): scholarly and some pastoral traditions render the Hebrew term less as pity and more as steadfast, faithful covenant love—God's reliable commitment to His people rather than mere leniency.\",\n      \"basis\": [\n        \"Exodus 34:6-7\",\n        \"Psalm 136 (his hesed endures forever)\",\n        \"Hosea 2:19-20\",\n        \"Ruth 1:8; 2:20 (hesed in human relationships)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mercy as a required human ethical practice: the works of mercy (corporal and spiritual) as concrete Christian duty, prominent in Catholic moral teaching and in social-gospel readings—mercy defined by what disciples do for the poor, sick, imprisoned, and strangers.\",\n      \"basis\": [\n        \"Matthew 25:31-46 (sheep and goats)\",\n        \"Luke 10:25-37 (Good Samaritan: 'the one who showed mercy')\",\n        \"James 2:13-17\",\n        \"Matthew 5:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mercy sharply distinguished from grace in a two-part formula popular in evangelical teaching: mercy is God withholding deserved punishment; grace is God bestowing undeserved favor. Treated as a definitional pairing rather than a synonym.\",\n      \"basis\": [\n        \"Ephesians 2:4-8\",\n        \"Titus 3:5-7\",\n        \"Hebrews 4:16 (mercy and grace named together)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Devotional/mystical readings, especially the Catholic Divine Mercy tradition (St. Faustina Kowalska, Divine Mercy Sunday), in which mercy is presented as God's greatest attribute and the defining lens for the whole gospel.\",\n      \"basis\": [\n        \"John 20:19-31 (Gospel for Divine Mercy Sunday)\",\n        \"Psalm 118 and Psalm 136 liturgical use\",\n        \"Diary of St. Faustina (extrabiblical devotional source)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Mercy read primarily through the tension or interplay with divine justice—theological treatments (Anselm, Aquinas, Reformed theology) asking how God can be simultaneously just and merciful, resolved in the cross.\",\n      \"basis\": [\n        \"Romans 3:25-26 (just and the justifier)\",\n        \"Psalm 85:10 (steadfast love and faithfulness meet)\",\n        \"Habakkuk 3:2 (in wrath remember mercy)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"'Mercy' functions more as a core theological attribute of God than as a pictorial symbol, so its 'symbolic meaning' is unusually stable across Catholic, Orthodox, and Protestant traditions: divine compassion that spares the guilty and relieves the suffering, grounded in the character of God revealed in Exodus 34 and fulfilled in Christ. The most genuinely symbolic element is the mercy seat/atonement-cover typology (Exodus 25; Romans 3:25), which nearly all traditions read christologically. Differences among traditions are largely of emphasis (covenant hesed vs. pity vs. ethical practice vs. devotional focus) rather than materially conflicting definitions; none of the alternatives contradicts the primary meaning, and all are widely recognized as facets of it.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"God's compassionate withholding of deserved judgment and His active, steadfast lovingkindness toward humanity.\",\n  \"primary_basis\": [\n    \"Ephesians 2:4-5\",\n    \"Titus 3:5\",\n    \"Lamentations 3:22-23\",\n    \"Exodus 34:6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Covenant loyalty and steadfast love (translating the Hebrew 'hesed'), emphasizing God's relational fidelity to His promises rather than solely the forgiveness of sins.\",\n      \"basis\": [\n        \"Psalm 136:1-26\",\n        \"Hosea 6:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Mercy Seat or place of propitiation/atonement, symbolizing the intersection of God's justice and forgiveness through sacrifice.\",\n      \"basis\": [\n        \"Exodus 25:17-22\",\n        \"Hebrews 9:5\",\n        \"Romans 3:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Practical compassion, physical healing, and charitable action toward the suffering, poor, or marginalized.\",\n      \"basis\": [\n        \"Matthew 5:7\",\n        \"Luke 10:37\",\n        \"James 2:13\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian interpretation, mercy is classically distinguished from grace: grace is receiving unmerited favor, while mercy is being spared merited punishment. It bridges forensic forgiveness and active, loving compassion.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Mercy most commonly signifies God’s compassionate grace toward the guilty, suffering, or needy—especially his willingness to forgive, withhold deserved judgment, and act to restore. Christian teaching consequently treats human mercy as compassionate action modeled on God’s character.\",\n  \"primary_basis\": [\n    \"Exodus 34:6–7 — God identifies himself as merciful and gracious, forgiving sin while remaining just.\",\n    \"Psalm 103:8–13 — divine mercy is expressed through compassion, forgiveness, and not repaying people according to their sins.\",\n    \"Hosea 6:6; Matthew 9:13; 12:7 — God desires mercy rather than merely external sacrifice.\",\n    \"Micah 6:8 — loving mercy is presented as a central requirement of faithful life.\",\n    \"Matthew 5:7 — the merciful are blessed and promised mercy.\",\n    \"Luke 6:36 — disciples are commanded to be merciful as their Father is merciful.\",\n    \"Luke 10:25–37 — the Good Samaritan exemplifies mercy as practical compassion toward someone in distress.\",\n    \"Luke 15:11–32 — the father’s reception of the prodigal son portrays compassionate forgiveness and restoration.\",\n    \"Luke 18:9–14 — the tax collector appeals to divine mercy for a sinner.\",\n    \"Romans 9:15–18; 11:30–32 — mercy is associated with God’s sovereign and undeserved saving action.\",\n    \"Ephesians 2:4–5 — God, being rich in mercy, gives life to sinners through grace.\",\n    \"Titus 3:5 — salvation is attributed to God’s mercy rather than human works.\",\n    \"James 2:13 — mercy triumphs over judgment and must characterize Christian conduct.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Mercy is understood specifically as forgiveness or the withholding of deserved punishment, in contrast with strict judgment.\",\n      \"basis\": [\n        \"Psalm 51:1–2\",\n        \"Luke 18:13–14\",\n        \"James 2:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mercy denotes active compassion toward suffering or vulnerable people, expressed through care, generosity, healing, and practical assistance rather than primarily through pardon.\",\n      \"basis\": [\n        \"Matthew 25:31–46\",\n        \"Luke 10:33–37\",\n        \"James 2:14–17\",\n        \"1 John 3:16–18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"In Old Testament interpretation, mercy can emphasize covenant loyalty or steadfast love, especially where Hebrew terms such as hesed are translated as “mercy.”\",\n      \"basis\": [\n        \"Exodus 34:6–7\",\n        \"Psalm 136\",\n        \"Micah 6:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mercy is interpreted christologically through the “mercy seat,” with Christ’s atoning work presented as the place or means by which divine mercy and forgiveness are given.\",\n      \"basis\": [\n        \"Leviticus 16:13–16\",\n        \"Romans 3:25\",\n        \"Hebrews 9:5–14\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In devotional and moral traditions, mercy may symbolize the full set of corporal and spiritual works of mercy, including feeding, sheltering, visiting, instructing, forgiving, and comforting others.\",\n      \"basis\": [\n        \"Isaiah 58:6–10\",\n        \"Matthew 25:34–40\",\n        \"Luke 3:10–11\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus around mercy as compassionate, undeserved favor expressed in forgiveness and restorative action. It is not, however, a single fixed biblical symbol comparable to a lamb, dove, or temple; it is principally a theological and ethical concept whose emphases vary by context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"God's compassionate loving-kindness that withholds deserved judgment and extends forgiveness and help to sinners and the needy\",\n  \"primary_basis\": [\n    \"Exodus 34:6–7 (God proclaims Himself merciful and gracious)\",\n    \"Psalm 103:8–13 (The Lord is merciful and gracious, slow to anger)\",\n    \"Micah 6:8; Hosea 6:6; Matthew 9:13 (desire for mercy over sacrifice)\",\n    \"Ephesians 2:4–5; Titus 3:5 (salvation according to His mercy)\",\n    \"Luke 6:36; Matthew 5:7 (call to imitate divine mercy)\",\n    \"Lamentations 3:22–23 (steadfast mercies that never cease)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Human ethical virtue and obligatory practice of compassion toward the poor, sick, strangers, and enemies (including corporal and spiritual works of mercy)\",\n      \"basis\": [\n        \"Matthew 25:31–46\",\n        \"Luke 10:25–37 (Good Samaritan)\",\n        \"James 2:13\",\n        \"Proverbs 14:21, 31\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The mercy seat (kapporet) as the place of atonement and divine presence above the ark, symbolizing propitiation and access to God\",\n      \"basis\": [\n        \"Exodus 25:17–22\",\n        \"Leviticus 16\",\n        \"Hebrews 9:5; Romans 3:25\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Covenantal hesed (loyal love/steadfast mercy) emphasizing God's faithful commitment rather than mere pity\",\n      \"basis\": [\n        \"Psalm 136\",\n        \"Deuteronomy 7:9\",\n        \"Micah 7:18–20\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian interpretation (patristic, medieval, Reformation, and modern biblical studies) mercy is stably understood first as a divine attribute of compassionate non-retribution and benevolent aid, with the human imitation of that attribute as the chief secondary sense. No major tradition treats the term as symbolically unsettled.\"\n}\n\nBOOK ENTRY\nCovenant loyalty expressed through compassion, forgiveness, and faithful dealing. Mercy received creates an obligation to show mercy, and Scripture joins pardon with confession and forsaking.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: compassion that withholds deserved punishment, often summarized without the covenant obligations surrounding it.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 7:9; Prov 28:13; Matt 18:27-35; 5:7) · see Grace, Mercy & the Gift, ch. 24\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 7:9 — Know therefore that the LORD thy God, he is God, the faithful God, which keepeth covenant and mercy with them that love him and keep his commandments to a thousand generations;\nProverbs 28:13 — He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy.\nMatthew 18:27 — Then the lord of that servant was moved with compassion, and loosed him, and forgave him the debt.\nMatthew 18:28 — But the same servant went out, and found one of his fellowservants, which owed him an hundred pence: and he laid hands on him, and took him by the throat, saying, Pay me that thou owest.\nMatthew 18:29 — And his fellowservant fell down at his feet, and besought him, saying, Have patience with me, and I will pay thee all.\nMatthew 18:30 — And he would not: but went and cast him into prison, till he should pay the debt.\nMatthew 18:31 — So when his fellowservants saw what was done, they were very sorry, and came and told unto their lord all that was done.\nMatthew 18:32 — Then his lord, after that he had called him, said unto him, O thou wicked servant, I forgave thee all that debt, because thou desiredst me:\nMatthew 18:33 — Shouldest not thou also have had compassion on thy fellowservant, even as I had pity on thee?\nMatthew 18:34 — And his lord was wroth, and delivered him to the tormentors, till he should pay all that was due unto him.\nMatthew 18:35 — So likewise shall my heavenly Father do also unto you, if ye from your hearts forgive not every one his brother their trespasses.\nMatthew 5:7 — Blessed are the merciful: for they shall obtain mercy.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "70b9ba509075720531902d70685789f776d158acba81ebccbe333b28b55be974",
+  "cache": {
+    "hit": false
+  }
+}

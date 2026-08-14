@@ -1,0 +1,156 @@
+{
+  "created_at": 1783845139,
+  "completed_at": 1783845150,
+  "id": "5b1a696b-469a-98ec-acc0-86c1f14484b8",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_5b1a696b-469a-98ec-acc0-86c1f14484b8",
+      "summary": [
+        {
+          "text": "The user wants me to act as a \"blind consensus definer\" for the term \"Truth (the truth)\" in biblical symbolism, based on Christian teaching and biblical studies. I must not search for or infer any spe...",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Jesus Christ as the personal embodiment and full revelation of divine truth\",\n  \"primary_basis\": [\n    \"John 14:6\",\n    \"John 1:14\",\n    \"John 1:17\",\n    \"John 8:32\",\n    \"John 18:37\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The written Word of God / Holy Scripture as reliable divine revelation\",\n      \"basis\": [\n        \"John 17:17\",\n        \"Psalm 119:160\",\n        \"2 Timothy 3:16-17\",\n        \"Psalm 119:142\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit as the Spirit of truth who guides into all truth\",\n      \"basis\": [\n        \"John 14:17\",\n        \"John 15:26\",\n        \"John 16:13\",\n        \"1 John 5:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The gospel message and apostolic teaching / Christian doctrine\",\n      \"basis\": [\n        \"Ephesians 1:13\",\n        \"Colossians 1:5\",\n        \"Galatians 2:5\",\n        \"1 Timothy 2:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God's own character of faithfulness, reliability, and covenant loyalty\",\n      \"basis\": [\n        \"Exodus 34:6\",\n        \"Deuteronomy 32:4\",\n        \"Psalm 31:5\",\n        \"Isaiah 65:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral integrity, honesty, or upright conduct in human life\",\n      \"basis\": [\n        \"Psalm 15:2\",\n        \"Zechariah 8:16\",\n        \"Ephesians 4:25\",\n        \"3 John 1:3-4\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across mainstream Christian interpretation the term 'the truth' is most strongly and distinctively linked to the person of Christ (especially via the Johannine corpus), with secondary but still widespread associations to Scripture, the Spirit, the gospel, and God's faithfulness. These readings are complementary rather than mutually exclusive in classical theology; no major competing symbolic system displaces the Christological primary.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_5b1a696b-469a-98ec-acc0-86c1f14484b8",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 605,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1576,
+    "output_tokens_details": {
+      "reasoning_tokens": 1000
+    },
+    "total_tokens": 2181,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 100900000,
+    "context_details": {
+      "input_tokens": 605,
+      "output_tokens": 1576
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

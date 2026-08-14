@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "voice",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nVoice\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'voice' (especially 'the voice of the LORD' or 'a voice from heaven') most commonly symbolizes God's direct self-revelation and authoritative communication to humanity—the audible manifestation of divine presence, power, and command that calls for hearing and obedience.\",\n  \"primary_basis\": [\n    \"Genesis 3:8 (the voice/sound of the LORD God in the garden)\",\n    \"Exodus 19:16-19 and Deuteronomy 4:12 (God speaks from Sinai; 'you heard the sound of words but saw no form')\",\n    \"Deuteronomy 30:19-20 (obey his voice, for he is your life)\",\n    \"1 Kings 19:11-13 (the 'still small voice' / low whisper to Elijah)\",\n    \"Psalm 29:3-9 ('the voice of the LORD' repeated seven times, associated with power and majesty)\",\n    \"Matthew 3:17 and 17:5 (the voice from heaven at Jesus' baptism and transfiguration: 'This is my beloved Son... listen to him')\",\n    \"John 10:27 ('My sheep hear my voice, and I know them, and they follow me')\",\n    \"Hebrews 3:7-15 quoting Psalm 95 ('Today, if you hear his voice, do not harden your hearts')\",\n    \"Revelation 1:10-15 (a voice like a trumpet and like the sound of many waters)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The prophetic herald or witness: 'a voice crying in the wilderness' applied to John the Baptist, symbolizing the messenger who prepares the way for God/Christ (the voice as forerunner distinguished from the Word himself, a contrast developed by Augustine and others).\",\n      \"basis\": [\n        \"Isaiah 40:3\",\n        \"Matthew 3:3\",\n        \"Mark 1:3\",\n        \"John 1:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Shepherd's voice as relational guidance and recognition: hearing Christ's voice symbolizes belonging to his flock, personal discipleship, and ongoing guidance.\",\n      \"basis\": [\n        \"John 10:3-5, 16, 27\",\n        \"Revelation 3:20 ('if anyone hears my voice and opens the door')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Theophanic power in nature: the voice of God identified with thunder and storm, symbolizing overwhelming divine majesty and judgment.\",\n      \"basis\": [\n        \"Psalm 29\",\n        \"Job 37:2-5\",\n        \"Exodus 19:16\",\n        \"John 12:28-29 (crowd hears the voice as thunder)\",\n        \"Psalm 18:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The inner voice of the Holy Spirit or conscience: in devotional and charismatic teaching, 'hearing God's voice' symbolizes personal inward guidance and promptings of the Spirit.\",\n      \"basis\": [\n        \"1 Kings 19:12 (still small voice, applied devotionally)\",\n        \"Isaiah 30:21 ('your ears shall hear a word behind you')\",\n        \"Romans 8:14-16\",\n        \"Acts 13:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological summons: the voice (often with trumpet imagery) as the call that raises the dead and gathers the elect at the end of the age.\",\n      \"basis\": [\n        \"John 5:25-28 ('the dead will hear the voice of the Son of God')\",\n        \"1 Thessalonians 4:16 (the voice of the archangel)\",\n        \"Revelation 1:10; 4:1\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Voice as testimony or accusation: blood or creation 'crying out' symbolizes witness before God demanding justice.\",\n      \"basis\": [\n        \"Genesis 4:10 (the voice of Abel's blood crying from the ground)\",\n        \"Hebrews 12:24\",\n        \"Luke 19:40\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"'Voice' is not a codified symbol in the way 'lamb' or 'leaven' is, but there is broad, recognizable agreement across Catholic, Orthodox, Protestant, and evangelical traditions that the biblical motif of the voice—especially the voice of God—signifies divine revelation, presence, and authority demanding a response of hearing and obedience (the shema tradition). The alternative readings listed are largely complementary emphases rather than competing definitions: herald (John the Baptist), shepherd's guidance, thunderous theophany, inward guidance by the Spirit, and eschatological summons all sit within the same core idea of God communicating. The devotional 'hearing God's voice' usage is very prominent in popular and charismatic contexts but is treated more cautiously in academic biblical studies. Confidence is medium rather than high only because the term is a motif rather than a fixed symbol with a single technical definition.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Divine revelation, authority, and active communication, often representing God's power, presence, or the guidance of the Holy Spirit.\",\n  \"primary_basis\": [\n    \"Psalm 29:3-9\",\n    \"John 10:27\",\n    \"Hebrews 3:7-8\",\n    \"Genesis 3:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A human herald or prophetic messenger preparing the way for the Lord, specifically typified by John the Baptist.\",\n      \"basis\": [\n        \"Isaiah 40:3\",\n        \"John 1:23\",\n        \"Mark 1:3\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The gentle, inward, and intimate guidance of God or the Holy Spirit.\",\n      \"basis\": [\n        \"1 Kings 19:12\",\n        \"Isaiah 30:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Overwhelming divine judgment, majesty, and absolute, irresistible power.\",\n      \"basis\": [\n        \"Revelation 1:15\",\n        \"Ezekiel 43:2\",\n        \"Joel 3:16\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical symbolism, 'voice' (especially the voice of the Lord) bridges the gap between God's transcendent power and His immanent relationship with creation. It can manifest as a universe-shattering force, a gentle whisper, or the prophetic calling of a human messenger.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"When used symbolically—especially as “the voice of God”—voice most commonly signifies divine self-revelation, authoritative speech, command, calling, or guidance: God making his will and presence known.\",\n  \"primary_basis\": [\n    \"Exodus 19:16-19; Deuteronomy 4:12, 33—Israel hears God’s voice at Sinai without seeing a form.\",\n    \"Psalm 29:3-9—the voice of the LORD expresses divine majesty, power, and sovereignty.\",\n    \"1 Kings 19:11-13—Elijah encounters God through the “low whisper” or “still small voice,” commonly interpreted as divine communication, though the translation is debated.\",\n    \"Isaiah 30:21—a guiding word directs God’s people in the proper way.\",\n    \"John 10:3-5, 16, 27—Christ’s sheep know and follow his voice, symbolizing recognition of and obedience to him.\",\n    \"John 5:25-29—the Son’s voice conveys life-giving and judicial authority.\",\n    \"Revelation 1:10-15; 10:3-4—the heavenly or divine voice communicates revelation and is associated with overwhelming authority. \"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A voice can symbolize proclamation, witness, or the public transmission of a message rather than divine speech itself.\",\n      \"basis\": [\n        \"Isaiah 40:3-6; Matthew 3:3; John 1:23—the “voice crying in the wilderness” represents the prophetic herald.\",\n        \"Revelation 12:10; 14:2—the heavenly voice announces or bears witness to divine events.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The recognizable voice of the shepherd symbolizes personal relationship, identity, trust, and obedient discipleship.\",\n      \"basis\": [\n        \"John 10:3-5, 14-16, 27—the sheep distinguish the shepherd’s voice from that of strangers.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A powerful or many-watered voice symbolizes majesty, irresistible power, and awe-inspiring divine or heavenly presence.\",\n      \"basis\": [\n        \"Ezekiel 43:2—the glory of God approaches with a voice like many waters.\",\n        \"Revelation 1:15; 14:2; 19:6—voices like rushing waters or thunder convey overwhelming power and grandeur.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A voice can personify a demand for justice, testimony, or accusation, even when no literal speaker is present.\",\n      \"basis\": [\n        \"Genesis 4:10—Abel’s blood “cries” from the ground.\",\n        \"Hebrews 12:24—Jesus’ sprinkled blood “speaks a better word” than Abel’s.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The voices of bridegroom and bride symbolize communal joy, covenant blessing, restoration, and ordinary flourishing.\",\n      \"basis\": [\n        \"Jeremiah 7:34; 16:9; 25:10—the removal of these voices signifies judgment.\",\n        \"Jeremiah 33:10-11—their return signifies restoration and thanksgiving.\",\n        \"Revelation 18:23—their cessation marks Babylon’s desolation.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In some devotional traditions, “voice” is treated as an inward impression, conscience, or private guidance from God.\",\n      \"basis\": [\n        \"1 Kings 19:12 is frequently invoked through the traditional phrase “still small voice.”\",\n        \"Romans 8:14-16 and John 16:13 are sometimes connected with inward divine guidance, although neither passage establishes “voice” as a fixed symbol for subjective impressions.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"“Voice” has no single settled symbolic meaning when unqualified; it often functions literally or metonymically for the speaker and message. The strongest recurring symbolic association is authoritative communication—most notably God’s revelation, command, call, or guidance—but context determines whether voice instead emphasizes identity, witness, power, justice, joy, or restoration.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Divine revelation, authority, and guidance (the speech of God or Christ addressing humanity)\",\n  \"primary_basis\": [\n    \"John 10:3-5, 16, 27 (sheep hear the shepherd's voice)\",\n    \"Psalm 29 (voice of the Lord over the waters, powerful and majestic)\",\n    \"Matthew 3:17 / Mark 1:11 / Luke 3:22 (voice from heaven at Jesus' baptism)\",\n    \"1 Kings 19:11-13 (still small voice to Elijah)\",\n    \"Revelation 1:10-15 (voice like a trumpet / many waters of the risen Christ)\",\n    \"Hebrews 3:7-15 / 4:7 (Today, if you hear his voice)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Prophetic proclamation or the call to prepare for the Lord (especially the forerunner)\",\n      \"basis\": [\n        \"Isaiah 40:3\",\n        \"Matthew 3:3\",\n        \"Mark 1:3\",\n        \"John 1:23\",\n        \"Luke 3:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Inner guidance or conviction of the Holy Spirit / conscience\",\n      \"basis\": [\n        \"Acts 8:29\",\n        \"Acts 10:19\",\n        \"Romans 8:16\",\n        \"Hebrews 3:7\",\n        \"1 Kings 19:12 (applied devotionally)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Manifestation of divine power or judgment\",\n      \"basis\": [\n        \"Psalm 29:3-9\",\n        \"Exodus 19:16-19\",\n        \"Job 37:2-5\",\n        \"Revelation 10:3-4 (seven thunders)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Human prayer, praise, testimony, or cry for justice\",\n      \"basis\": [\n        \"Genesis 4:10 (blood/voice of Abel)\",\n        \"Psalms of lament and praise\",\n        \"Revelation 6:9-10 (souls under the altar)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian biblical interpretation the term is not a rigid emblem like 'lamb' or 'rock,' yet a clear primary association exists with God's (or Christ's) communicative presence and authority. Other senses appear frequently but are secondary or contextual rather than competing primary symbols. No single technical 'symbol of the voice' is codified in creeds or standard handbooks beyond this dominant divine-speech usage.\"\n}\n\nBOOK ENTRY\nThe words of the one who speaks; the Shepherd's voice is His words.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(John 10:27) · see Love, Knowing, Faith & Belief, ch. 6\n\nAVAILABLE KJV EXCERPTS\nJohn 10:27 — My sheep hear my voice, and I know them, and they follow me:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "15b76cb11d31dd8c631a717c685ea820db1185c6069b92a13c47a7155229b7a5",
+  "cache": {
+    "hit": false
+  }
+}

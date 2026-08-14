@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "worship",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWorship\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'worship' most commonly signifies reverent adoration, homage, and self-surrender directed exclusively to God — the act of ascribing supreme worth ('worth-ship') to God, expressed outwardly in bowing down or prostration (Hebrew shachah, Greek proskuneo, literally 'to bow/kiss toward') and inwardly in submission of the whole self. It symbolizes the creature's acknowledgment of the Creator's absolute worthiness, glory, and lordship, and by extension the total orientation of one's life toward God rather than idols or rivals.\",\n  \"primary_basis\": [\n    \"Exodus 20:3-5 (worship reserved for God alone; prohibition of idols)\",\n    \"Deuteronomy 6:13 (fear the LORD your God and serve him only)\",\n    \"Matthew 4:10 / Luke 4:8 (Jesus: 'Worship the Lord your God, and serve him only')\",\n    \"John 4:23-24 (true worshipers worship the Father in spirit and truth)\",\n    \"Psalm 95:6 ('Come, let us bow down in worship, let us kneel before the LORD our Maker')\",\n    \"Psalm 29:2 / Psalm 96:9 (ascribe to the LORD the glory due his name; worship in the splendor of holiness)\",\n    \"Romans 12:1 (offer your bodies as a living sacrifice — your spiritual/reasonable worship)\",\n    \"Revelation 4:10-11 and 5:12-14 (heavenly worship: 'Worthy is the Lamb')\",\n    \"Revelation 22:8-9 (angel refuses worship: 'Worship God!')\",\n    \"Hebrews 12:28 (worship God acceptably with reverence and awe)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Worship as whole-life obedience and service rather than a cultic or ritual act — every act of life offered to God constitutes worship (the 'all of life is worship' reading, emphasized in evangelical and Reformed teaching).\",\n      \"basis\": [\n        \"Romans 12:1-2\",\n        \"Deuteronomy 10:12-13\",\n        \"Micah 6:6-8\",\n        \"Colossians 3:17\",\n        \"1 Corinthians 10:31\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worship as the corporate, liturgical, and sacramental assembly of the church — the gathered congregation's ordered praise, word, and sacrament (Eucharist/Lord's Supper), central in Catholic, Orthodox, and liturgical Protestant traditions.\",\n      \"basis\": [\n        \"Acts 2:42-47\",\n        \"Hebrews 10:24-25\",\n        \"1 Corinthians 11:23-26\",\n        \"Colossians 3:16\",\n        \"Acts 13:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worship as sacrifice of praise — the replacement of Old Testament animal sacrifice with verbal/musical praise and thanksgiving offered through Christ.\",\n      \"basis\": [\n        \"Hebrews 13:15-16\",\n        \"Psalm 50:14, 23\",\n        \"Psalm 141:2\",\n        \"1 Peter 2:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worship as experiential encounter with God's manifest presence — the charismatic/Pentecostal emphasis that worship (especially sung praise) ushers worshipers into intimacy with God, sometimes tied to the idea that God 'inhabits the praises' of his people.\",\n      \"basis\": [\n        \"Psalm 22:3\",\n        \"John 4:23-24\",\n        \"2 Chronicles 5:13-14\",\n        \"Psalm 100\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worship as covenant renewal — a structured dialogical drama in which God calls, cleanses, instructs, feeds, and sends his people, re-enacting the covenant relationship (a reading in Reformed liturgical theology).\",\n      \"basis\": [\n        \"Exodus 24:1-11\",\n        \"Nehemiah 8-9\",\n        \"Isaiah 6:1-8 (as a pattern of call, confession, cleansing, commission)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Worship narrowly identified with music and singing — a popular contemporary usage ('worship' = the song portion of a service); widely used colloquially but generally criticized by scholars as a reduction of the biblical concept.\",\n      \"basis\": [\n        \"Psalm 96:1-2\",\n        \"Ephesians 5:19\",\n        \"Colossians 3:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Worship defined etymologically as 'worth-ship' — ascribing worth or worthiness to God as its essential core (a definitional emphasis found across popular and academic treatments, e.g., following writers like Evelyn Underhill).\",\n      \"basis\": [\n        \"Revelation 4:11\",\n        \"Revelation 5:12\",\n        \"Psalm 29:1-2\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"'Worship' is less a symbol than a foundational biblical practice and theological category, so its 'symbolic meaning' is usually framed as what the act signifies: exclusive allegiance, homage, and total self-offering to God. There is broad ecumenical consensus on this core (worship = reverent adoration and submission due to God alone), grounded in the Hebrew shachah (to bow down) and Greek proskuneo (to prostrate/do homage) plus latreuo (to serve). The main interpretive divergences concern scope and emphasis — ritual/liturgical act vs. whole-life orientation vs. experiential encounter — rather than the core meaning. John 4:23-24 ('in spirit and truth') is the most contested proof text, read variously as inward sincerity plus doctrinal truth, worship enabled by the Holy Spirit, or worship centered on Christ as the truth. The New Testament application of worship language to Jesus (Matthew 28:9, 17; Hebrews 1:6; Revelation 5) is also standardly cited in Christological arguments, since worship is reserved for God alone.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Total submission, reverence, and the attribution of ultimate worth and glory to God, representing the surrender of the believer's entire life and will.\",\n  \"primary_basis\": [\n    \"John 4:23-24\",\n    \"Romans 12:1\",\n    \"Psalm 95:6\",\n    \"Revelation 4:10-11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Idolatry or spiritual adultery when directed toward anything other than God.\",\n      \"basis\": [\n        \"Exodus 20:3-5\",\n        \"Revelation 13:4-8\",\n        \"Romans 1:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Liturgical or ritual observance, focusing on the physical acts and communal gatherings of believers.\",\n      \"basis\": [\n        \"Hebrews 10:25\",\n        \"Colossians 3:16\",\n        \"1 Corinthians 14:26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The eschatological harmony and ultimate submission of all creation at the end of the age.\",\n      \"basis\": [\n        \"Philippians 2:10-11\",\n        \"Revelation 5:13-14\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While 'worship' is a practical element of Christian liturgy, its theological and symbolic essence is overwhelmingly understood to transcend musical or ritual acts, representing instead a comprehensive posture of heart and life-surrender to the Creator.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Reverent devotion, honor, and self-surrender directed to God. In Christian teaching, worship signifies acknowledging God’s supreme worth and sovereignty through praise, prayer, thanksgiving, service, obedience, and sacrificial dedication.\",\n  \"primary_basis\": [\n    \"Exodus 20:3-6 — exclusive devotion to God and prohibition of idolatrous worship.\",\n    \"Psalm 95:1-7 — praise, bowing, and kneeling before the Creator and covenant God.\",\n    \"Matthew 4:10; Luke 4:8 — worship and service belong to God alone.\",\n    \"John 4:23-24 — true worship is offered to the Father “in spirit and truth.”\",\n    \"Romans 12:1-2 — presenting one’s whole life to God as a living sacrifice and spiritual worship/service.\",\n    \"Hebrews 12:28-29 — acceptable worship is associated with reverence and awe.\",\n    \"Revelation 4:8-11; 5:8-14 — heavenly worship acknowledges God’s and the Lamb’s worthiness, sovereignty, and redemptive work.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Corporate liturgy or acts of praise—singing, prayer, preaching, sacraments, offerings, and other gathered-church practices.\",\n      \"basis\": [\n        \"Acts 2:42-47\",\n        \"1 Corinthians 11:17-34; 14:26\",\n        \"Ephesians 5:18-20\",\n        \"Colossians 3:16-17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Whole-life obedience and service rather than primarily a religious ceremony; worship symbolizes comprehensive dedication of body, conduct, vocation, and moral life to God.\",\n      \"basis\": [\n        \"1 Samuel 15:22\",\n        \"Romans 12:1-2\",\n        \"Colossians 3:17,23-24\",\n        \"James 1:27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sacrifice or offering: biblical worship is interpreted through temple sacrifice and, in Christian theology, through Christ’s self-offering and believers’ spiritual sacrifices.\",\n      \"basis\": [\n        \"Leviticus 1-7\",\n        \"Hebrews 9:11-14; 10:1-14\",\n        \"Romans 12:1\",\n        \"1 Peter 2:5\",\n        \"Hebrews 13:15-16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Allegiance or submission to a ruler. This is especially prominent in apocalyptic interpretation, where worship of God and the Lamb contrasts with worship of the beast and represents competing loyalties.\",\n      \"basis\": [\n        \"Daniel 3:1-18\",\n        \"Matthew 4:8-10\",\n        \"Revelation 13:4-15; 14:6-12; 19:10; 22:8-9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Intimate communion with, encounter with, or enjoyment of God’s presence, sometimes treated as the deepest symbolic significance of worship.\",\n      \"basis\": [\n        \"Psalm 27:4\",\n        \"Psalm 63:1-5\",\n        \"John 4:23-24\",\n        \"2 Corinthians 3:18\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus about worship’s ordinary theological sense—honoring and devoting oneself to God—but no single settled symbolic interpretation. Scripture presents worship through overlapping images and practices, including prostration, praise, sacrifice, service, obedience, communion, and allegiance. Different Christian traditions emphasize these dimensions differently.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The act of ascribing supreme worth to God alone through heartfelt reverence, adoration, praise, thanksgiving, and obedient submission\",\n  \"primary_basis\": [\n    \"John 4:23-24\",\n    \"Matthew 4:10\",\n    \"Romans 12:1\",\n    \"Psalm 95:6\",\n    \"Revelation 4:8-11\",\n    \"Exodus 20:3-5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A continuous lifestyle of everyday obedience, service, and devotion rather than discrete acts or gatherings\",\n      \"basis\": [\n        \"Romans 12:1-2\",\n        \"Colossians 3:17\",\n        \"Micah 6:6-8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Primarily corporate liturgical ritual (e.g., Eucharist/Mass/Divine Liturgy) as the central act of worship\",\n      \"basis\": [\n        \"1 Corinthians 11:23-26\",\n        \"Hebrews 10:25\",\n        \"Acts 2:42\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Emotional/musical praise and charismatic encounter with God's presence\",\n      \"basis\": [\n        \"Psalms (various praise psalms)\",\n        \"Ephesians 5:19\",\n        \"1 Corinthians 14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Strictly prostration or bowing as physical homage (from Hebrew hishtachavah / Greek proskuneō)\",\n      \"basis\": [\n        \"Genesis 22:5\",\n        \"Matthew 2:11\",\n        \"Revelation 19:10\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian traditions the core meaning of worship as exclusive ascription of worth to the triune God is settled; differences concern form, frequency, and whether the term primarily denotes attitude, lifestyle, or specific rites. No major symbolic reinterpretation displaces this consensus in mainstream biblical interpretation.\"\n}\n\nBOOK ENTRY\nTo bow down and serve — homage in the body, allegiance in the life; the fear of the LORD made visible, kept at His appointed times, on His terms. Not the song service: Scripture separates worship from singing in single scenes.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 20:5; Matt 4:10/Deut 6:13; 2 Chr 20:18-19; Rev 14:7) · see Worship, ch. 22\n\nAVAILABLE KJV EXCERPTS\nExodus 20:5 — Thou shalt not bow down thyself to them, nor serve them: for I the LORD thy God am a jealous God, visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me;\nMatthew 4:10 — Then saith Jesus unto him, Get thee hence, Satan: for it is written, Thou shalt worship the Lord thy God, and him only shalt thou serve.\n2 Chronicles 20:18 — And Jehoshaphat bowed his head with his face to the ground: and all Judah and the inhabitants of Jerusalem fell before the LORD, worshipping the LORD.\n2 Chronicles 20:19 — And the Levites, of the children of the Kohathites, and of the children of the Korhites, stood up to praise the LORD God of Israel with a loud voice on high.\nRevelation 14:7 — Saying with a loud voice, Fear God, and give glory to him; for the hour of his judgment is come: and worship him that made heaven, and earth, and the sea, and the fountains of waters.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "06fdb86b1b858f5e7a2e0c9069cc417091d8e56c8c8bd4f160b445b901d36497",
+  "cache": {
+    "hit": false
+  }
+}

@@ -228,9 +228,11 @@ def build_index() -> dict[str, Any]:
     live_glossary_by_anchor = {entry["anchor"]: entry for entry in current_glossary}
     current_entries: list[dict[str, Any]] = []
     for anchor, run_id in current_runs.items():
+        if anchor not in live_glossary_by_anchor:
+            continue
         run = run_lookup[run_id]
         entry = next(entry for entry in run["entries"] if entry["anchor"] == anchor)
-        live_entry = live_glossary_by_anchor.get(anchor, {})
+        live_entry = live_glossary_by_anchor[anchor]
         live_term = live_entry.get("term") or entry["term"]
         live_definition = live_entry.get("definition", entry["definition"])
         live_common_view = live_entry.get("common_view", entry["commonView"])

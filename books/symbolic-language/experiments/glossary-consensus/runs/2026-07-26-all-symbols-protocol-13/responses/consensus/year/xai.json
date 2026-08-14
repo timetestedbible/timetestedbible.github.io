@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920905,
+  "completed_at": 1783920938,
+  "id": "ced447c0-0f6c-9c6e-ad1d-b4231aae4de3",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_ced447c0-0f6c-9c6e-ad1d-b4231aae4de3",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Year\" in Christian teaching and biblical interpretation, as a blind consensus definer.\n{\n  \"primary_meaning\": \"A period of time, often representing a prophetic season or judgment period\",\n  \"primary_basis\": [\n    \"Numbers 14:34\",\n    \"Ezekiel 4:6\",\n    \"Daniel 9:24-27\",\n    \"Revelation 11:2-3 12:6\",\n    \"Isaiah 61:2\",\n    \"Luke 4:19\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literal historical period\",\n      \"basis\": [\n        \"Genesis 1:14\",\n        \"Exodus 23:10\",\n        \"Leviticus 25:1-7\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Messianic age of salvation or Jubilee\",\n      \"basis\": [\n        \"Isaiah 61:1-2\",\n        \"Luke 4:18-19\",\n        \"Leviticus 25 50-year Jubilee\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"360-day prophetic year\",\n      \"basis\": [\n        \"Revelation 11:2-3\",\n        \"Revelation 12:6\",\n        \"Ezekiel 4:6\"\n      ],\n      \" prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The term 'Year' carries no single dominant symbolic meaning like 'day' or 'number' in most Christian symbolism studies. Instead, it functions as a flexible 12-month cycle symbolizing time, testing, or divine seasons. The day-year principle (days = years) is frequently applied in prophecy, but the term itself most often denotes literal time or the 'acceptable year of the Lord' as grace.\"\n}``` \n\nThe primary symbolic meaning most commonly assigned to \"Year\" in Christian teaching and biblical interpretation is a period of time, often representing a prophetic season or judgment period.\n\nThe biblical passages normally used to support that meaning are Numbers 14:34, Ezekiel 4:6, Daniel 9:24-27, Revelation 11:2-3 12:6, Isaiah  61:2, and Luke 4:19.\n\nMaterially different alternative readings include:\n\n- Literal historical period, dominant, supported by Genesis 1:14, Exodus 23:10, Leviticus 25:1-7.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"No single settled symbolic meaning; most often denotes a complete cycle of time or a designated period of divine action (favor, judgment, testing, or release), especially the 'acceptable/favorable year of the Lord' as the messianic era of salvation and grace\",\n  \"primary_basis\": [\n    \"Isaiah 61:1-2\",\n    \"Luke 4:18-19\",\n    \"Leviticus 25:8-13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Periods of testing, judgment, discipline or wandering (e.g., forty years in the wilderness representing a generation under divine scrutiny)\",\n      \"basis\": [\n        \"Numbers 14:33-34\",\n        \"Deuteronomy 8:2\",\n        \"Psalm 95:10\",\n        \"Hebrews 3:8-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Prophetic time-reckoning unit of 360 days, used to equate 42 months / 1260 days with 3.5 years in apocalyptic calculations\",\n      \"basis\": [\n        \"Daniel 7:25\",\n        \"Daniel 12:7\",\n        \"Revelation 11:2-3\",\n        \"Revelation 12:6,14\",\n        \"Revelation 13:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Jubilee year as type of ultimate liberation, debt cancellation, restoration of inheritance and eschatological redemption\",\n      \"basis\": [\n        \"Leviticus 25:8-55\",\n        \"Isaiah 61:1-2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Application of the day-year principle in which observed days of sin or reconnaissance generate corresponding years of consequence (days symbolize years)\",\n      \"basis\": [\n        \"Numbers 14:34\",\n        \"Ezekiel 4:5-6\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Unlike more fixed biblical symbols (e.g., water, rock, lamb), 'year' functions mainly as a temporal measure whose symbolic force is context-dependent. The 'year of the Lord/favor' and Jubilee motifs are widely recognized in both Jewish and Christian teaching; the 360-day prophetic year and day-year principle are standard in historicist and some evangelical eschatology but secondary to the term itself. No single meaning dominates across the whole tradition.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_ced447c0-0f6c-9c6e-ad1d-b4231aae4de3",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 3099,
+    "output_tokens_details": {
+      "reasoning_tokens": 2515
+    },
+    "total_tokens": 3701,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 190300000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 3099
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

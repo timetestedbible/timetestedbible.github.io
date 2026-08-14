@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124880,
+  "completed_at": 1785124892,
+  "id": "23f96aff-9ed4-9737-ae12-2e01b23d70e7",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_23f96aff-9ed4-9737-ae12-2e01b23d70e7",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Tares (darnel)\".\n{\n  \"core_relation\": \"MATCH\",\n  \"extension_relation\": \"MATCH\",\n  \"core_consensus_summary\": \"Tares symbolize the 'sons of the evil one' — false believers or counterfeit Christians sown by the devil among the genuine 'sons of the kingdom' (the wheat).",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Tares symbolize the sons of the evil one (false/counterfeit believers or the wicked) sown by the devil among the true sons of the kingdom, coexisting until end-time separation and destruction at the harvest.\",\n  \"book_summary\": \"The counterfeit sown among the wheat by the enemy, a mimicking weed bound and burned at harvest; the children of the wicked one (distinct from chaff).\",\n  \"consensus_core_identification\": \"sons of the evil one / false counterfeit believers (wicked persons)\",\n  \"book_core_identification\": \"counterfeit / children of the wicked one\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"none\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Both reduce to the identical core referent supplied by Jesus’ own interpretation in Matthew 13: the tares are the children of the wicked one, counterfeits sown among the wheat. The book’s phrasing (mimicry until harvest, binding and burning) and the added note distinguishing them from chaff are immaterial elaborations already present or compatible in the consensus; no boundary shift or replacement of referent occurs.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"none; the book’s brief wording simply omits secondary ecclesiological debates about the field that the consensus already treats as non-core\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_23f96aff-9ed4-9737-ae12-2e01b23d70e7",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3755,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 774,
+    "output_tokens_details": {
+      "reasoning_tokens": 437
+    },
+    "total_tokens": 4529,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 112836000,
+    "context_details": {
+      "input_tokens": 3755,
+      "output_tokens": 774
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

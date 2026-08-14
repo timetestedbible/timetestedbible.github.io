@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920183,
+  "completed_at": 1783920196,
+  "id": "553d1b38-dc7f-92a9-839b-d9e1f305e42b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_553d1b38-dc7f-92a9-839b-d9e1f305e42b",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Liberty\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Spiritual freedom from bondage to sin, death, and the Mosaic law through Christ\",\n  \"primary_basis\": [\n    \"Galatians 5:1\",\n    \"John 8:32-36\",\n    \"2 Corinthians 3:17\",\n    \"Romans 8:2\",\n    \"Romans 6:18\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Typological release from physical captivity or debt slavery (Jubilee/messianic liberation) pointing to spiritual freedom\",\n      \"basis\": [\n        \"Leviticus 25\",\n        \"Isaiah 61:1\",\n        \"Luke 4:18-19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Socio-political or national liberation applied to contemporary oppression\",\n      \"basis\": [\n        \"Exodus narrative\",\n        \"liberation-theology readings of Isaiah and Luke\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Moral license or freedom to indulge the flesh\",\n      \"basis\": [\n        \"Misreading of Galatians 5:13 and 1 Corinthians 6:12\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"New Testament usage of eleutheria/eleutheros consistently centers on Christ-won spiritual freedom; OT precedents function mainly as types. Political applications exist in some traditions but remain secondary to the spiritual sense in standard biblical interpretation.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_553d1b38-dc7f-92a9-839b-d9e1f305e42b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1476,
+    "output_tokens_details": {
+      "reasoning_tokens": 1119
+    },
+    "total_tokens": 2078,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 94840000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1476
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "elders",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nElders\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'elders' most commonly carry the symbolic meaning of the representative leadership of God's covenant people — mature, authoritative figures who stand for and govern the whole community. When the term is treated symbolically (most notably the twenty-four elders of Revelation 4–5), the dominant interpretation is that they represent the totality of the redeemed people of God across both covenants: the twelve tribes of Israel plus the twelve apostles (12 + 12 = 24), depicted as enthroned, crowned, and worshiping — i.e., the church/people of God glorified and reigning with God.\",\n  \"primary_basis\": [\n    \"Revelation 4:4\",\n    \"Revelation 4:10-11\",\n    \"Revelation 5:8-10\",\n    \"Revelation 7:11\",\n    \"Revelation 11:16\",\n    \"Revelation 19:4\",\n    \"Revelation 21:12-14 (twelve tribes' gates plus twelve apostles' foundations, supporting the 12+12 reading)\",\n    \"Exodus 24:1, 9-11 (seventy elders ascend and behold God, prototype of elders in the divine presence)\",\n    \"Numbers 11:16-25 (seventy elders share Moses' spirit and authority)\",\n    \"Acts 14:23; Acts 15:2-6; Acts 20:17, 28 (elders as appointed representative leaders of the churches)\",\n    \"1 Timothy 5:17; Titus 1:5 (elders as governing office)\",\n    \"1 Peter 5:1-4 (elders shepherd the flock and receive the crown of glory)\",\n    \"James 5:14 (elders act on behalf of the congregation)\",\n    \"Isaiah 24:23 (the LORD reigns 'before his elders' in glory)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The twenty-four elders of Revelation are angelic beings — members of the heavenly court or divine council — not redeemed humans. Advocates note they are distinguished from the redeemed in Revelation 5:8-10 (in some manuscript readings they sing about the redeemed rather than as them) and that they function like the heavenly council of 1 Kings 22:19 and Isaiah 24:23.\",\n      \"basis\": [\n        \"Revelation 5:8-10 (textual variant 'them/they' vs 'us/we')\",\n        \"Revelation 7:13-14 (an elder speaks as an informant distinct from the saved multitude)\",\n        \"1 Kings 22:19\",\n        \"Isaiah 24:23\",\n        \"Psalm 89:7 (council of the holy ones)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The twenty-four elders represent specifically the church raptured and rewarded in heaven before the tribulation (a classic dispensationalist reading), emphasizing their crowns as the believer's rewards already granted.\",\n      \"basis\": [\n        \"Revelation 4:4 (crowns and white garments as promised rewards, cf. Revelation 2:10; 3:5, 11)\",\n        \"1 Thessalonians 4:16-17\",\n        \"2 Timothy 4:8\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The twenty-four elders correspond to the twenty-four priestly courses of the temple, symbolizing glorified priestly worship and service before God (sometimes combined with, sometimes distinct from, the 'whole people of God' view).\",\n      \"basis\": [\n        \"1 Chronicles 24:1-19 (twenty-four divisions of priests)\",\n        \"1 Chronicles 25:1-31 (twenty-four courses of temple musicians)\",\n        \"Revelation 5:8 (elders with harps and bowls of incense, priestly imagery)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The elders represent only Old Testament saints or only the apostles/church (one half of the 12+12 scheme rather than both), i.e., a narrower identification of which redeemed group is in view.\",\n      \"basis\": [\n        \"Hebrews 11:2 ('the elders' as OT faithful)\",\n        \"Matthew 19:28 (apostles on twelve thrones)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Non-symbolic/institutional reading: 'elders' is simply an office or social role (Israel's elders at the gate, synagogue elders, church presbyters) and carries no symbolic freight beyond ordinary leadership and wisdom of age.\",\n      \"basis\": [\n        \"Exodus 3:16\",\n        \"Deuteronomy 21:19; Ruth 4:2 (elders at the gate)\",\n        \"Acts 14:23; Titus 1:5\",\n        \"1 Timothy 5:17-19\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"The term operates on two levels. (1) As an ordinary biblical office (Israel's elders, church presbyters), the meaning — representative, governing, shepherding leadership of God's people — is essentially uncontested and functions more as a role than a symbol. (2) As a symbol, the debate centers almost entirely on the twenty-four elders of Revelation. There the '12 tribes + 12 apostles = the whole redeemed people of God' reading is the most widely taught in churches and popular commentary, but modern critical scholarship contains a substantial and arguably comparable stream identifying them as angelic members of the heavenly council; dispensationalist circles favor the raptured-church reading; the priestly-courses reading is often blended into the majority view. Because the identity of the twenty-four elders remains genuinely disputed among reputable interpreters, I mark the symbolic consensus as unsettled, while noting that the 'redeemed people of God' interpretation is the single most recognizable answer in general Christian teaching.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The complete body of the redeemed people of God, often specifically representing the union of Old and New Covenant believers (represented by the 12 Patriarchs and 12 Apostles), as well as spiritual maturity, wisdom, and pastoral authority.\",\n  \"primary_basis\": [\n    \"Revelation 4:4\",\n    \"Revelation 5:8-10\",\n    \"1 Peter 5:1-5\",\n    \"Acts 20:17-28\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"An exalted order of angelic beings or a heavenly divine council assisting in God's governance.\",\n      \"basis\": [\n        \"Psalm 89:7\",\n        \"Isaiah 24:23\",\n        \"Revelation 7:11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Exclusively Old Testament saints or literal national Israel.\",\n      \"basis\": [\n        \"Hebrews 11:2\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Literal local church leadership and pastoral authority without symbolic application.\",\n      \"basis\": [\n        \"1 Timothy 5:17\",\n        \"Titus 1:5\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In apocalyptic literature, particularly the Book of Revelation, the 'twenty-four elders' are overwhelmingly interpreted symbolically in Christian tradition as the glorified Church or the entirety of God's redeemed people. In other contexts, the term functions less symbolically and more literally to represent wisdom, spiritual maturity, and delegated pastoral authority.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Elders most commonly signify mature, authorized leaders and representative guardians of God’s covenant community. In Revelation, the twenty-four elders are commonly understood as heavenly representatives of the redeemed people of God, expressing their worship, priestly status, and royal participation in God’s reign.\",\n  \"primary_basis\": [\n    \"Exodus 3:16-18; 19:7; 24:1, 9-11 — Israel’s elders represent the covenant people before God.\",\n    \"Numbers 11:16-17, 24-25 — seventy elders share responsibility and receive the Spirit for leadership.\",\n    \"Deuteronomy 21:1-9; Ruth 4:1-12 — elders exercise communal, judicial, and representative authority.\",\n    \"Acts 14:23; 15:2-23; 20:17-28 — elders lead local churches and participate in authoritative communal discernment.\",\n    \"1 Timothy 5:17; Titus 1:5-9; 1 Peter 5:1-5 — elders teach, oversee, shepherd, and model mature faith.\",\n    \"Revelation 4:4, 10-11; 5:5-10; 7:11-14; 11:16-18; 19:4 — the twenty-four elders surround God’s throne, worship, wear crowns, and perform representative or interpretive roles.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The twenty-four elders specifically symbolize the total redeemed covenant people: twelve patriarchs or tribes plus twelve apostles, uniting Old and New Testament believers.\",\n      \"basis\": [\n        \"Revelation 4:4 — their number is twenty-four and they sit enthroned with crowns.\",\n        \"Revelation 5:8-10 — they are associated with priestly worship and the redeemed kingdom.\",\n        \"Revelation 21:12-14 — the twelve tribes and twelve apostles jointly symbolize the whole people of God.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The twenty-four elders symbolize the glorified church, often distinguished from Israel and understood as already enthroned in heaven.\",\n      \"basis\": [\n        \"Revelation 4:4 — white garments, thrones, and crowns are linked elsewhere with victorious believers.\",\n        \"Revelation 3:4-5, 11, 21 — faithful Christians are promised white garments, crowns, and participation in Christ’s throne.\",\n        \"Revelation 5:9-10 — some textual traditions or translations associate the elders’ song directly with redemption and future reign.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The twenty-four elders are members of a heavenly divine council or a high order of angelic beings rather than symbols of redeemed humanity.\",\n      \"basis\": [\n        \"1 Kings 22:19; Job 1:6; Psalm 82:1; 89:6-7 — biblical depictions of a heavenly assembly around God.\",\n        \"Isaiah 24:23 — the Lord reigns before his elders in glory.\",\n        \"Revelation 4:4-10; 5:11; 7:11 — the elders occupy the heavenly court and are sometimes listed alongside angels and living creatures.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The twenty-four elders correspond to the twenty-four priestly divisions and symbolize ordered, continuous heavenly priestly worship.\",\n      \"basis\": [\n        \"1 Chronicles 24:1-19 — David organizes the priests into twenty-four divisions.\",\n        \"Revelation 4:10-11; 5:8 — the elders worship and present golden bowls of incense, imagery associated with priestly service.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Outside Revelation, ‘elders’ primarily denotes an actual communal or ecclesial office rather than a symbolic class; traditions differ over whether elder, overseer, and bishop are identical or distinct offices.\",\n      \"basis\": [\n        \"Acts 14:23; 20:17, 28 — local elders are appointed and called overseers.\",\n        \"1 Timothy 3:1-7; 5:17-22; Titus 1:5-9 — qualifications and duties are given for concrete church offices.\",\n        \"1 Peter 5:1-4 — elders are charged to shepherd the flock.\"\n      ],\n      \"prominence\": \"dominant\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad agreement that elders convey mature authority, representative leadership, and responsibility for God’s people. There is no single settled symbolic interpretation applicable to every biblical occurrence. Debate especially concerns the identity of Revelation’s twenty-four elders: representatives of all the redeemed, the glorified church, priestly figures, or members of the heavenly council.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Representatives of the redeemed people of God (the Church and/or Israel) in the heavenly throne room\",\n  \"primary_basis\": [\n    \"Revelation 4:4\",\n    \"Revelation 4:10\",\n    \"Revelation 5:8-10\",\n    \"Revelation 7:11-13\",\n    \"Revelation 11:16\",\n    \"Revelation 19:4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The twelve tribes of Israel plus the twelve apostles, symbolizing the complete people of God\",\n      \"basis\": [\n        \"The number 24 as 12+12\",\n        \"Revelation 21:12-14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Angelic beings or members of a heavenly/divine council\",\n      \"basis\": [\n        \"Isaiah 24:23\",\n        \"Psalm 89:7\",\n        \"Parallels to OT divine council and throne-room scenes (e.g., Job 1–2, 1 Kings 22)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Representatives of the Old Testament priesthood (the 24 priestly courses)\",\n      \"basis\": [\n        \"1 Chronicles 24:1-19\",\n        \"Priestly actions such as offering incense and harps in Revelation 5:8\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Literal human church leaders or elders without further apocalyptic symbolism\",\n      \"basis\": [\n        \"Acts 14:23\",\n        \"Acts 20:17\",\n        \"1 Timothy 5:17\",\n        \"Titus 1:5\",\n        \"1 Peter 5:1\",\n        \"James 5:14\"\n      ],\n      \"prominence\": \"dominant\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"The ordinary biblical sense of elders as community or church leaders is settled and non-symbolic. Symbolic discussion concentrates almost entirely on the twenty-four elders of Revelation, where multiple readings remain in play and no single interpretation has achieved consensus across Christian traditions.\"\n}\n\nBOOK ENTRY\nLeaders and representatives of the assemblies, seated as a court around the throne — the constellations among the host of heaven and their stars.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(1 Kgs 22:19; Isa 24:23; Rev 4:4; Matt 19:28; Ps 89:5-7) · see Sun, Moon & Stars, ch. 29\n\nAVAILABLE KJV EXCERPTS\n1 Kings 22:19 — And he said, Hear thou therefore the word of the LORD: I saw the LORD sitting on his throne, and all the host of heaven standing by him on his right hand and on his left.\nIsaiah 24:23 — Then the moon shall be confounded, and the sun ashamed, when the LORD of hosts shall reign in mount Zion, and in Jerusalem, and before his ancients gloriously.\nRevelation 4:4 — And round about the throne were four and twenty seats: and upon the seats I saw four and twenty elders sitting, clothed in white raiment; and they had on their heads crowns of gold.\nMatthew 19:28 — And Jesus said unto them, Verily I say unto you, That ye which have followed me, in the regeneration when the Son of man shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Israel.\nPsalms 89:5 — And the heavens shall praise thy wonders, O LORD: thy faithfulness also in the congregation of the saints.\nPsalms 89:6 — For who in the heaven can be compared unto the LORD? who among the sons of the mighty can be likened unto the LORD?\nPsalms 89:7 — God is greatly to be feared in the assembly of the saints, and to be had in reverence of all them that are about him.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "b7b6416f20a62139cba32e6b7d1d2e90682cbd5b4aa70508e9910883ae6d2279",
+  "cache": {
+    "hit": false
+  }
+}

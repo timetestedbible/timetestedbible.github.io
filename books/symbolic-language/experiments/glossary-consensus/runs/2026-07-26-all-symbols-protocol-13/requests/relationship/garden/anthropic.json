@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "garden",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nGarden\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the garden symbolizes paradise as the place of God's presence and unbroken fellowship with humanity — Eden as the original state of blessedness lost through sin and destined to be restored in the new creation. The garden thus frames the entire biblical storyline: creation in a garden (Eden), redemption accomplished in gardens (Gethsemane and the garden tomb), and consummation in a garden-city (the New Jerusalem with the tree of life and river of life). It represents divine provision, life, intimacy with God, and eschatological restoration.\",\n  \"primary_basis\": [\n    \"Genesis 2:8-15 (God plants the garden of Eden and places humanity there)\",\n    \"Genesis 3:8, 3:23-24 (God's presence in the garden; expulsion after the fall)\",\n    \"Isaiah 51:3 (the LORD will make the wilderness 'like Eden... like the garden of the LORD')\",\n    \"Ezekiel 28:13 and 36:35 (Eden as the garden of God; restoration 'like the garden of Eden')\",\n    \"John 19:41; 20:15 (crucifixion and resurrection in a garden; Jesus mistaken for the gardener, widely read as new-creation imagery)\",\n    \"Revelation 22:1-5 (river of life and tree of life — Eden restored in the New Jerusalem)\",\n    \"Revelation 2:7 (the tree of life 'in the paradise of God')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eden as an archetypal temple or sanctuary — the garden read as the first sacred space where God dwells and Adam serves as priest, prefiguring tabernacle, temple, and ultimately the church and new creation (a reading prominent in biblical theology, e.g., G. K. Beale, John Walton).\",\n      \"basis\": [\n        \"Genesis 2:15 ('work and keep,' the same Hebrew verbs used of priestly Levitical service, Numbers 3:7-8)\",\n        \"Genesis 3:24 (cherubim guarding the east entrance, paralleling temple decoration and orientation)\",\n        \"1 Kings 6:29-35 (garden imagery — palms, flowers, cherubim — carved throughout Solomon's temple)\",\n        \"Ezekiel 47:1-12 with Revelation 22:1-2 (river flowing from the temple/throne bearing life-giving trees)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The garden of the Song of Songs read allegorically as the bride — historically the church or the individual soul in union with Christ, and in Catholic tradition the 'enclosed garden' (hortus conclusus) applied to the Virgin Mary.\",\n      \"basis\": [\n        \"Song of Songs 4:12-16 ('a garden locked is my sister, my bride')\",\n        \"Song of Songs 5:1; 6:2 (the beloved entering and enjoying his garden)\",\n        \"Patristic and medieval allegorical commentary (Origen, Bernard of Clairvaux) applying the garden to Christ and the church/soul\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The garden as an image of the fruitful, cultivated spiritual life — the believer's heart or the church as God's field, tended and watered by God to bear fruit.\",\n      \"basis\": [\n        \"Isaiah 58:11 ('you shall be like a watered garden')\",\n        \"Jeremiah 31:12 ('their life shall be like a watered garden')\",\n        \"1 Corinthians 3:6-9 ('you are God's field'; Paul plants, Apollos waters, God gives growth)\",\n        \"John 15:1-8 (vine and vinedresser imagery, often grouped with garden symbolism)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gethsemane specifically as the 'second garden' where the obedience of Christ (the last Adam) reverses the disobedience of the first Adam in Eden — a typological reading emphasizing recapitulation.\",\n      \"basis\": [\n        \"Matthew 26:36-46 and Luke 22:39-46 (Gethsemane, Jesus' submission 'not my will but yours')\",\n        \"Romans 5:12-19 (Adam-Christ typology supplying the interpretive frame)\",\n        \"John 18:1 (John's deliberate note that the arrest occurred in a garden)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The garden as a purely literal-historical location (Eden as a real geographic place) with little or no symbolic freight — a reading found in some strictly literalist traditions that resist typological expansion.\",\n      \"basis\": [\n        \"Genesis 2:10-14 (named rivers — Pishon, Gihon, Tigris, Euphrates — cited as geographic markers)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus that the garden functions as the Bible's master image of paradise and God's dwelling with humanity, arcing from Eden (Genesis 2-3) to Eden-restored (Revelation 21-22). The main interpretive traditions — paradise/divine presence, garden-as-temple, garden-as-bride/soul, and garden-as-fruitful-life — are complementary rather than contradictory, and most teaching blends them. Note that 'garden' covers several distinct biblical referents (Eden, the Song of Songs garden, Gethsemane, the garden tomb), and consensus applies to the overarching Eden-to-New-Creation pattern more than to any single verse. Assessment made blind to the author's material as instructed.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Paradise, the original state of perfection, divine sanctuary, and unbroken communion with God, often representing both original creation and eschatological restoration.\",\n  \"primary_basis\": [\n    \"Genesis 2:8-15\",\n    \"Genesis 3:1-24\",\n    \"Revelation 22:1-5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A place of agony, intense testing, and willing surrender to God's will (Gethsemane).\",\n      \"basis\": [\n        \"Matthew 26:36-46\",\n        \"Mark 14:32-42\",\n        \"Luke 22:39-46\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Intimate love, purity, and the bride or Church (a locked garden).\",\n      \"basis\": [\n        \"Song of Solomon 4:12-16\",\n        \"Song of Solomon 5:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The flourishing human soul or the restored people of God, nourished by the Holy Spirit (a watered garden).\",\n      \"basis\": [\n        \"Isaiah 58:11\",\n        \"Jeremiah 31:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The site of burial and subsequent resurrection, bridging death and new life (the garden tomb).\",\n      \"basis\": [\n        \"John 19:41\",\n        \"John 20:15\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The garden motif frames the entire biblical narrative, starting with the Garden of Eden as a protological temple and ending with the garden-city in Revelation. Intermediate gardens like Gethsemane and the garden of the tomb serve as critical transitional sites of Christ's passion and resurrection.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Paradise: the ordered, life-giving presence of God in which humanity enjoys communion with God, often extended to the hope of creation restored.\",\n  \"primary_basis\": [\n    \"Genesis 2:8–17 — Eden as the divinely planted place of life, abundance, vocation, and fellowship with God.\",\n    \"Genesis 3:22–24 — expulsion from the garden signifies lost access to life and divine presence.\",\n    \"Isaiah 51:3 — restored Zion is compared to Eden, 'the garden of the LORD.'\",\n    \"Ezekiel 36:35 — the restored desolate land becomes 'like the garden of Eden.'\",\n    \"Revelation 2:7; 22:1–5 — restored access to the tree of life and the river of life evokes Eden in the final dwelling of God with humanity.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The beloved, erotic intimacy, fertility, and exclusive mutual delight of bride and bridegroom.\",\n      \"basis\": [\n        \"Song of Songs 4:12–16 — the beloved is an enclosed garden whose fruits and spices celebrate beauty, sexuality, and intimacy.\",\n        \"Song of Songs 5:1; 6:2–3 — entering or tending the garden continues the imagery of mutual love.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s cultivated people or an individual life made fruitful and well-watered by divine blessing.\",\n      \"basis\": [\n        \"Isaiah 58:11 — the restored faithful person is 'like a watered garden.'\",\n        \"Isaiah 61:11 — righteousness and praise spring up as growth in a garden.\",\n        \"Jeremiah 31:12 — restored Israel’s life becomes 'like a watered garden.'\",\n        \"1 Corinthians 3:6–9 — the church is described through related cultivated-field imagery as 'God’s field.'\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A setting for testing, obedient surrender, suffering, and prayer, especially through Gethsemane, sometimes contrasted with Adam’s disobedience in Eden.\",\n      \"basis\": [\n        \"Matthew 26:36–46; Mark 14:32–42 — Jesus prays and submits to the Father’s will in Gethsemane.\",\n        \"John 18:1–11 — Jesus enters a garden and is arrested there.\",\n        \"Romans 5:12–19; 1 Corinthians 15:21–22,45 — Adam–Christ typology provides the wider basis for contrasting Edenic disobedience with Christ’s obedience.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"New creation and the reversal of Eden through Jesus’ death and resurrection, with the garden tomb and Mary’s identification of Jesus as a gardener carrying symbolic force.\",\n      \"basis\": [\n        \"John 19:41–42 — Jesus is buried in a tomb located in a garden.\",\n        \"John 20:11–18 — the risen Jesus appears there, and Mary initially supposes him to be the gardener.\",\n        \"Genesis 2–3 — supplies the Edenic background often proposed for John’s garden imagery.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Mary, the Church, or the faithful soul as an enclosed and fruitful garden in traditional allegorical interpretation.\",\n      \"basis\": [\n        \"Song of Songs 4:12 — 'a garden enclosed' became a major source for Marian, ecclesial, and spiritual allegory.\",\n        \"Song of Songs 4:13–16 — the garden’s fruits and fragrance were interpreted as virtues or spiritual graces.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Garden imagery has a dominant symbolic association with Eden, divine presence, abundant life, and restored creation, but it has no single settled meaning across all biblical contexts. Its significance depends heavily on whether the passage concerns Eden, the Song of Songs, prophetic restoration, Gethsemane, or the garden tomb.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The Garden of Eden as paradise: the original place of perfect creation, innocence, abundance, and unhindered communion with God, later associated with the Fall and eschatological restoration\",\n  \"primary_basis\": [\n    \"Genesis 2:8–15 (planting of Eden, trees of life and knowledge, rivers, Adam's placement)\",\n    \"Genesis 3 (temptation, Fall, expulsion from the garden)\",\n    \"Revelation 2:7 and 22:1–5 (tree of life and paradise of God restored in the new creation)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Church (or the soul of the believer) as an enclosed, cultivated garden of divine love and fruitfulness\",\n      \"basis\": [\n        \"Song of Songs 4:12–16; 5:1; 6:2 (enclosed garden, fountain, spices)\",\n        \"Patristic and medieval allegories equating the bride/garden with the Church or soul\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gethsemane as the place of agony, prayer, submission to the Father's will, and betrayal\",\n      \"basis\": [\n        \"Matthew 26:36–46; Mark 14:32–42; Luke 22:39–46; John 18:1 (Jesus' prayer and arrest in the garden)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual growth or the cultivated life of virtue under God's care\",\n      \"basis\": [\n        \"Isaiah 58:11; Jeremiah 31:12 (souls as watered gardens)\",\n        \"Parables and imagery of planting, pruning, and fruitfulness (e.g., John 15)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"General fertility, life, or the created order under divine blessing (without specific Edenic or ecclesial reference)\",\n      \"basis\": [\n        \"Genesis 1–2 creation motifs; various poetic uses of gardens/orchards in wisdom and prophetic literature\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In mainstream Christian biblical interpretation and teaching the term 'Garden' most immediately and commonly evokes Eden as paradise lost and restored; other readings (ecclesial, Gethsemane, spiritual-cultivation) are well-attested but secondary or context-specific. No major tradition treats the term as lacking symbolic content.\"\n}\n\nBOOK ENTRY\nA planted grouping of trees — nations or peoples arranged together under a gardener's rule.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: paradise and fellowship with God — Eden lost and restored.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ezek 31:9) · see Trees, ch. 41\n\nAVAILABLE KJV EXCERPTS\nEzekiel 31:9 — I have made him fair by the multitude of his branches: so that all the trees of Eden, that were in the garden of God, envied him.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "fe897b01bf03a5ef1a9ead547257721f7cca2722727120b7604a41ceffec6399",
+  "cache": {
+    "hit": false
+  }
+}

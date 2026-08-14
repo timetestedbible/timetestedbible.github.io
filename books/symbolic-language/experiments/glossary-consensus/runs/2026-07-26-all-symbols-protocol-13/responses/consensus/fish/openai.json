@@ -1,0 +1,173 @@
+{
+  "id": "resp_046bcfa7aa9b065f006a5474cda7f08193848a9ccf2a4b75a7",
+  "object": "response",
+  "created_at": 1783919821,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919841,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_046bcfa7aa9b065f006a5474ce4bb48193be25dd9742c7f598",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_046bcfa7aa9b065f006a5474d2b5148193b215506124211cc5",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"In broad Christian symbolism, the fish most commonly signifies Jesus Christ and, by extension, Christian faith and Christian identity. This association is especially tied to the early Christian ichthys emblem and the Greek acrostic interpreted as “Jesus Christ, God’s Son, Savior.”\",\"primary_basis\":[\"Matthew 14:13–21; Mark 6:30–44; Luke 9:10–17; John 6:1–14 — fish in the feeding of the multitude, often connected with Christ’s provision and later Christian art.\",\"Luke 24:41–43 — the risen Jesus eats fish, supporting its association with the resurrection and Christ’s embodied identity.\",\"John 21:1–14 — the risen Jesus provides fish and shares a meal with the disciples.\",\"Matthew 17:24–27 — the fish containing the temple-tax coin is sometimes incorporated into Christ-centered fish symbolism.\",\"The ichthys acrostic itself is post-biblical rather than an explicit biblical interpretation: Greek ΙΧΘΥΣ was read as “Jesus Christ, God’s Son, Savior.”\"],\"alternatives\":[{\"meaning\":\"Fish represent people who are gathered or won through evangelism and mission.\",\"basis\":[\"Matthew 4:18–22; Mark 1:16–20 — Jesus calls disciples to become “fishers of men/people.”\",\"Luke 5:1–11 — the miraculous catch is connected with Peter’s future mission of catching people.\",\"John 21:4–11 — the great catch is often interpreted ecclesially or missionally.\"],\"prominence\":\"common\"},{\"meaning\":\"Fish represent humanity gathered for final judgment, with the righteous separated from the wicked.\",\"basis\":[\"Matthew 13:47–50 — the dragnet gathers fish of every kind, followed by separation at the end of the age.\"],\"prominence\":\"common\"},{\"meaning\":\"Fish symbolize Christians, converts, or the baptized, especially as those brought into the Church.\",\"basis\":[\"Matthew 4:19 and Luke 5:10 — converts are implicitly the “fish” caught by apostolic mission.\",\"John 21:4–11 — the catch is traditionally read as the nations or members gathered into the Church.\",\"This reading is strengthened by early Christian baptismal and ecclesial tradition, although it is not assigned uniformly by the biblical texts themselves.\"],\"prominence\":\"common\"},{\"meaning\":\"Fish signify divine provision, abundance, and blessing.\",\"basis\":[\"Matthew 14:13–21 and parallels — multiplication of loaves and fish.\",\"John 21:4–13 — miraculous abundance and the meal provided by the risen Christ.\",\"Matthew 7:9–11; Luke 11:11–13 — a fish serves as an example of a good gift.\"],\"prominence\":\"common\"},{\"meaning\":\"A great fish symbolizes judgment, confinement, deliverance, and death-and-resurrection typology.\",\"basis\":[\"Jonah 1:17–2:10 — Jonah is swallowed and delivered by a great fish.\",\"Matthew 12:39–41 — Jonah’s experience is used as a sign of Jesus’ death and resurrection.\"],\"prominence\":\"minority\"},{\"meaning\":\"Fish can symbolize pagan kingdoms, rulers, or vulnerable peoples caught by imperial power.\",\"basis\":[\"Habakkuk 1:14–17 — humanity is compared to fish caught by a conquering power.\",\"Ezekiel 29:3–5; 32:2–4 — Pharaoh is portrayed as a great aquatic monster drawn out and judged.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"The fish is widely recognized as a symbol of Christ and Christianity, but Scripture does not assign fish one consistent symbolic meaning. In direct biblical exegesis, fish often represent people gathered by mission or judgment; the specifically Christological fish emblem depends substantially on early Christian use of the Greek ichthys acrostic rather than on a single biblical passage.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1034,
+    "output_tokens_details": {
+      "reasoning_tokens": 218
+    },
+    "total_tokens": 1351
+  },
+  "user": null,
+  "metadata": {}
+}

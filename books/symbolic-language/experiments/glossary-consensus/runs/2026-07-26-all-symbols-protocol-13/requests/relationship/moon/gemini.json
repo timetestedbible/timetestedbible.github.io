@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "moon",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nMoon\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching the moon is most commonly interpreted as a symbol of derived or reflected light: it has no light of its own but reflects the sun, and is therefore read as a figure of the Church (or the individual believer) reflecting the light of Christ, who is symbolized by the sun. This reading is ancient (patristic writers such as Augustine and Ambrose spoke of the Church as 'luna,' waxing and waning through history while receiving all her light from Christ) and remains a staple of sermons and devotional teaching.\",\n  \"primary_basis\": [\n    \"Genesis 1:14-16 (the 'lesser light to rule the night,' contrasted with the greater light)\",\n    \"Revelation 12:1 (the woman clothed with the sun, with the moon under her feet, often read ecclesially or as Israel/Mary)\",\n    \"Song of Solomon 6:10 ('fair as the moon, clear as the sun,' applied to the bride/Church)\",\n    \"Psalm 89:37 (the moon as a faithful witness in the sky)\",\n    \"2 Corinthians 3:18 and John 8:12 are frequently paired homiletically to make the reflection point, though they do not mention the moon\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eschatological sign of judgment and the Day of the Lord: the darkening of the moon or the moon turning to blood signals divine intervention, cosmic upheaval, and the end of the age.\",\n      \"basis\": [\n        \"Joel 2:31\",\n        \"Acts 2:20\",\n        \"Matthew 24:29\",\n        \"Mark 13:24-25\",\n        \"Isaiah 13:10\",\n        \"Revelation 6:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Symbol of Israel or of the covenant family (in Joseph's dream the sun, moon, and eleven stars represent Jacob, his wife/mother, and the brothers); Revelation 12:1 is often read this way as well, with the woman representing Israel.\",\n      \"basis\": [\n        \"Genesis 37:9-10\",\n        \"Revelation 12:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Emblem of permanence, stability, and the enduring faithfulness of God's covenant promises ('as long as the moon endures').\",\n      \"basis\": [\n        \"Psalm 72:5,7\",\n        \"Psalm 89:36-37\",\n        \"Jeremiah 31:35-36\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Marker of appointed times, seasons, and sacred calendar (new moons and festivals), i.e., a functional symbol of ordered time under God rather than a metaphor.\",\n      \"basis\": [\n        \"Genesis 1:14\",\n        \"Psalm 104:19\",\n        \"Numbers 10:10; 28:11\",\n        \"Colossians 2:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A created object that must not be worshiped — a polemic against pagan lunar cults; the moon symbolizes the temptation of idolatry and the creature/Creator distinction.\",\n      \"basis\": [\n        \"Deuteronomy 4:19; 17:3\",\n        \"Job 31:26-28\",\n        \"2 Kings 23:5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In Marian devotion (especially Catholic tradition), the moon under the woman's feet in Revelation 12 is applied to Mary, and the crescent appears in Immaculate Conception iconography.\",\n      \"basis\": [\n        \"Revelation 12:1\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"The moon carries several well-attested but distinct symbolic uses in Christian interpretation rather than one universally settled meaning. The 'reflected light = Church/believer' reading is probably the most frequently taught symbolic identification, especially in patristic tradition and popular preaching, but it is largely a homiletical inference rather than an explicit biblical equation. Within academic biblical studies, the moon is more often treated contextually — as a calendar marker, a covenant-permanence image, or an apocalyptic sign — than as a fixed symbol. Any author claiming a single definitive biblical meaning for 'moon' goes beyond scholarly consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The Church, which possesses no innate light but reflects the divine light of Christ (the Sun of Righteousness), often associated with phases of waxing and waning through earthly history and persecution.\",\n  \"primary_basis\": [\n    \"Song of Solomon 6:10\",\n    \"Genesis 1:16\",\n    \"Psalm 89:37\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Cosmic judgment, apocalyptic upheaval, and the Day of the Lord (specifically when darkening or turning to blood).\",\n      \"basis\": [\n        \"Joel 2:31\",\n        \"Acts 2:20\",\n        \"Revelation 6:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Virgin Mary, symbolizing purity, spiritual illumination, and triumph over temporal mutability.\",\n      \"basis\": [\n        \"Revelation 12:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The passage of time, natural cycles, seasons, and the divinely ordained order of the cosmos.\",\n      \"basis\": [\n        \"Genesis 1:14\",\n        \"Psalm 104:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Pagan idolatry, false worship, or spiritual blindness when treated as a deity.\",\n      \"basis\": [\n        \"Deuteronomy 4:19\",\n        \"Job 31:26-28\",\n        \"Jeremiah 8:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Interpretation of the moon is highly context-dependent in Christian tradition. Early patristic writers frequently invoked the 'mysterium lunae' (mystery of the moon) as a primary ecclesiological metaphor for the Church reflecting Christ's light. In apocalyptic biblical texts, lunar anomalies universally signal divine judgment and the disruption of the cosmos. In Catholic and Orthodox iconography, Revelation 12:1 has firmly associated the moon with Marian symbolism.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"In prophetic and apocalyptic interpretation, the moon most commonly functions as part of the divinely ordered cosmos; its darkening, turning to blood, or otherwise failing symbolizes the Day of the Lord, divine judgment, and the upheaval of the present world order.\",\n  \"primary_basis\": [\n    \"Isaiah 13:9–10 — the moon withholds its light during the day of the Lord against Babylon.\",\n    \"Isaiah 24:21–23 — the moon is confounded when the Lord reigns in judgment.\",\n    \"Joel 2:10, 2:30–31; 3:15 — the moon darkens or turns to blood before the day of the Lord.\",\n    \"Matthew 24:29; Mark 13:24; Luke 21:25 — the moon is darkened amid signs accompanying eschatological upheaval.\",\n    \"Acts 2:19–20 — Joel’s blood-red moon imagery is applied to the coming day of the Lord.\",\n    \"Revelation 6:12–17 — the moon becomes like blood at the opening of the sixth seal.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The moon represents the Church, which has no light of its own but reflects the light of Christ, as the moon reflects the sun.\",\n      \"basis\": [\n        \"Genesis 1:16 — the lesser light is allegorically associated with a subordinate, reflected luminary.\",\n        \"Psalm 19:1–6 — celestial light imagery is sometimes incorporated into Christ-and-Church allegory.\",\n        \"Song of Songs 6:10 — the woman 'fair as the moon' has traditionally been interpreted ecclesiologically or Marianly.\",\n        \"Revelation 12:1 — the woman clothed with the sun and associated with the moon is often read as the Church, Israel, Mary, or a combination of these.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The moon represents a mother, matriarch, or feminine figure.\",\n      \"basis\": [\n        \"Genesis 37:9–10 — Jacob interprets Joseph’s sun, moon, and stars as father, mother, and brothers.\",\n        \"Revelation 12:1 — the moon appears beneath the feet of the symbolic woman, encouraging feminine, Marian, Israelite, and ecclesial readings.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The moon symbolizes Israel or the covenant people, especially in interpretations of Joseph’s dream and the woman of Revelation 12.\",\n      \"basis\": [\n        \"Genesis 37:9–10 — the celestial family is associated with the patriarchal household that becomes Israel.\",\n        \"Revelation 12:1–6 — the woman’s twelve-star and messianic imagery is commonly connected with Israel, though the moon’s specific meaning remains disputed.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The moon signifies appointed times, seasons, liturgical order, and the stability of God’s created or covenantal order.\",\n      \"basis\": [\n        \"Genesis 1:14–18 — the heavenly lights mark signs, seasons, days, and years.\",\n        \"Psalm 104:19 — God appoints the moon for seasons.\",\n        \"Psalm 89:35–37 — the moon is an enduring witness to the promised permanence of David’s line.\",\n        \"Jeremiah 31:35–36 — the fixed order of sun, moon, and stars supports the endurance of Israel before God.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The moon symbolizes mutability, transience, or the changing character of earthly things, in contrast with God’s constancy.\",\n      \"basis\": [\n        \"Psalm 72:5–7; 89:36–37 — comparisons with the moon can suggest duration while also inviting reflection on created changeability.\",\n        \"Isaiah 60:19–20; Revelation 21:23 — the redeemed city’s lack of need for sun or moon has traditionally supported contrasts between created, changeable light and God’s unchanging glory.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no settled, universal Christian symbolic definition of the moon. Its meaning is strongly context-dependent. Judgment and cosmic upheaval are the clearest recurring meanings when the moon is altered in prophetic texts; reflected light and the Church are prominent in traditional allegory but are not explicitly defined as such by Scripture. In narrative passages such as Genesis 37, the text itself supplies a different, family-specific interpretation.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the Church (or people of God) as a lesser light reflecting the light of Christ/the Sun\",\n  \"primary_basis\": [\n    \"Genesis 1:16\",\n    \"Revelation 12:1\",\n    \"Song of Solomon 6:10\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"mutability, changeableness, or the changeable world/order (due to waxing and waning)\",\n      \"basis\": [\n        \"phases of the moon as observed natural phenomenon\",\n        \"contrast with divine immutability (James 1:17)\",\n        \"Revelation 12:1 (moon under feet as dominion over changeable things)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"cosmic portents of judgment or the end of an age (darkened or turned to blood)\",\n      \"basis\": [\n        \"Joel 2:31\",\n        \"Acts 2:20\",\n        \"Matthew 24:29\",\n        \"Revelation 6:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the Virgin Mary\",\n      \"basis\": [\n        \"Revelation 12:1\",\n        \"Song of Solomon 6:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a maternal/familial figure or secondary authority in visionary/dream contexts\",\n      \"basis\": [\n        \"Genesis 37:9-10\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Meanings are highly context-dependent across creation, prophetic, apocalyptic, and allegorical readings; the Church-as-reflector motif is frequent in patristic/medieval allegory but not a universal or exclusive consensus across all Christian traditions and genres.\"\n}\n\nBOOK ENTRY\nThe faithful witness — the reflecting, submissive side of a relationship. It pictures the Son submitting to and reflecting the Father, the wife submitting to her husband, and the Church submitting to Christ as Christ submits to the Father.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the Church reflecting Christ's light as the moon reflects the sun.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 89:37; Rev 1:5; John 5:19, 30; 1 Cor 11:3; Eph 5:22-24) · see Sun, Moon & Stars, ch. 29\n\nAVAILABLE KJV EXCERPTS\nPsalms 89:37 — It shall be established for ever as the moon, and as a faithful witness in heaven. Selah.\nRevelation 1:5 — And from Jesus Christ, who is the faithful witness, and the first begotten of the dead, and the prince of the kings of the earth. Unto him that loved us, and washed us from our sins in his own blood,\nJohn 5:19 — Then answered Jesus and said unto them, Verily, verily, I say unto you, The Son can do nothing of himself, but what he seeth the Father do: for what things soever he doeth, these also doeth the Son likewise.\nJohn 5:30 — I can of mine own self do nothing: as I hear, I judge: and my judgment is just; because I seek not mine own will, but the will of the Father which hath sent me.\n1 Corinthians 11:3 — But I would have you know, that the head of every man is Christ; and the head of the woman is the man; and the head of Christ is God.\nEphesians 5:22 — Wives, submit yourselves unto your own husbands, as unto the Lord.\nEphesians 5:23 — For the husband is the head of the wife, even as Christ is the head of the church: and he is the saviour of the body.\nEphesians 5:24 — Therefore as the church is subject unto Christ, so let the wives be to their own husbands in every thing.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "5f26fba1cb6863d47f13ae5bb84229d906d749e9a0d2fae9ca87e705df1418d4",
+  "cache": {
+    "hit": false
+  }
+}

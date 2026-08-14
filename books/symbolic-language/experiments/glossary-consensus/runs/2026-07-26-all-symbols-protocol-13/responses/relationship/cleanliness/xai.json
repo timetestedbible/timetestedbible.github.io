@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123389,
+  "completed_at": 1785123433,
+  "id": "884f9f9f-950e-91a7-9d4e-fa7cb229a79f",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_884f9f9f-950e-91a7-9d4e-fa7cb229a79f",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry on \"Clean, unclean; cleanse, cleansing\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of clean/unclean as states of freedom from defilement (physical, ceremonial, or moral) that govern permitted contact, approach, or use, with cleansing as removal of defilement, aligns with the consensus's primary referent of purity versus defilement. However, it materially narrows the consensus's extension by rejecting the collapse into moral-spiritual condition alone and by distinguishing uncleanness from moral guilt, while separating it from sanctification (holy claim and use). The book adds physical and ceremonial cases without guilt and excludes the consensus's typological equation with Christ's forgiveness as the primary referent.\",\n  \"extension_reasoning\": \"The book broadens the cases covered by including physical and ceremonial impurity without moral guilt (Leviticus 12, 15, Numbers 19) and excludes the consensus's primary 1:1 mapping of uncleanness to sin/guilt and cleansing to Christ's atoning blood. It reclassifies some consensus cases (e.g., dietary laws as moral symbols) as non-moral ritual status, while retaining the moral cases but subordinating them.\",\n  \"core_consensus_summary\": \"Clean/unc lean symbolizes moral-spiritual purity versus sinful defilement; cleansing symbolizes forgiveness and sanctification through Christ, with OT rites as types.\",\n  \"book_summary\": \"Clean means free from defilement and fit for permitted contact, approach, or use; cleansing removes that defilement. Uncleanness may be physical, ceremonial, or moral and does not always imply guilt; sanctification concerns holy claim and use, not merely cleanliness.\",\n  \"citation_support\": \"partial\",\n  \"citation_reasoning\": \"The printed references include both ritual examples (Leviticus 10:10, 12:2, 15:18, Numbers 19:11) and moral/spiritual ones (Psalm 51:2, 10; Ephesians 5:26; 1 John 1:7, 9), providing partial support for the book's multi-category view but insufficient to override the consensus's dominant moral-typological reading.\",\n  \"boundary_disagreement \": \"Book admits physical/ceremonial uncleanness without guilt as valid and treats sanctification as distinct from cleanliness; consensus primary collapses the language into moral purity and closely joins cleanness with holiness.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Christian consensus takes clean/unclean primarily as moral-spiritual symbolism (uncleanness = sin/defilement/unfitness for God; cleanness = holiness/purity), with cleansing as forgiveness and sanctification through Christ; OT rites are types. Ritual, boundary, and other senses appear as secondary alternatives.\",\n  \"book_summary\": \"Clean means free from defilement and fit for permitted contact, approach, or use; to cleanse is to remove that defilement. Uncleanness may be physical, ceremonial, or moral and does not always imply guilt; sanctification concerns holy claim and use, not merely cleanliness.\",\n  \"consensus_core_identification\": \"moral-spiritual purity versus sinful defilement (cleansing = atonement/sanctification by Christ)\",\n  \"book_core_identification\": \"freedom from defilement enabling permitted contact/approach/use (physical, ceremonial, or moral; not always guilt; distinct from sanctification)\",\n  \"core_relation\": \"BOOK_BROADENS\",\n  \"extension_relation\": \"BOOK_SUPERSET\",\n  \"boundary_disagreement\": \"Book explicitly includes non-moral physical and ceremonial uncleanness without guilt and severs cleanliness from sanctification/holiness; consensus primary collapses the terms into moral purity and closely joins cleanness to holiness.\",\n  \"material_contradiction\": \"None on the shared defilement/fitness concept; the book rejects only the consensus habit of equating or reducing the category to moral guilt and sanctification.\",\n  \"rationale\": \"Both identify a purity/defilement status governing fitness. The book preserves that referent but materially widens its extension and redraws boundaries by admitting physical/ceremonial cases that carry no guilt and by distinguishing sanctification (holy claim/use) from mere cleanliness, against the consensus primary that treats moral-spiritual symbolism as the core meaning.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"NT usage and Christian tradition re-read purity language typologically as heart-morality and Christ’s cleansing from sin, rendering non-moral ritual senses provisional shadows rather than coequal core senses.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_884f9f9f-950e-91a7-9d4e-fa7cb229a79f",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 5375,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2692,
+    "output_tokens_details": {
+      "reasoning_tokens": 2209
+    },
+    "total_tokens": 8067,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 266844000,
+    "context_details": {
+      "input_tokens": 5375,
+      "output_tokens": 2692
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

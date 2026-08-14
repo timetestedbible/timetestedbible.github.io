@@ -1,0 +1,257 @@
+{
+  "id": "resp_0119113e7a984645006a66dacae8dc819399e70142ccb4c04b",
+  "object": "response",
+  "created_at": 1785125578,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1785125623,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0119113e7a984645006a66dacb73f881938408893fa833cae2",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtr3Htu439SGwKBSjQykBE8taxPs52mM17Bf-qlONFlZmFqL4oWSPPElZxE1Hzl-XIaK6nwAaFj83WbI_u8BttjPaYb4WqOnPf-35PaA04lDKp8bF698wXxlaTc7QMLF0YRNnvNRMKSZ2kL7Ixx48KQd-jFOZWiUlcmoEszqc1iY6M7UVcKBb6EZEU9MZSY-vSMTVYzgYlEA1nQEjQDnpAVm4TP5UTUv5oyLv8yPPV_hkiUfG2us2FnTOLMXzs2LGMY5mZtII63e1539J1qvCT1z8s9HPXv_sw3ETYJELPYciFp0J8u5n9EyBJ2PsTDZZWkpLDFnpRNEyP-hzxyeuNU7OifugVPL_JmQYDnjGRWyzi8jJ4SupkaKnUgBglrMDV3VGge0rMqWrcV1Yt6c3B1NNMoeol--CLYrMP_xSn9J7XGM4ynujv2BhWv_4Xf1PyyeD2xGa6VyuE-bBrX1EDcpJltU60zOQZVq43u60kZep3-03-ODdTUoQ20tTsyyT1FLrv4M8I77jy2JTmVqjVU5PJETHZ8W_bwAluV_dUG95sOfXwxIuqPFEadA1pgdmMrs0tDgfofh6u2hf5oe0M7ZW5i5fcJi7PVwAi9IuGsMhK2DDawIvVURG8oBoN5lL2HemOV98DU7RuU4MIDzMYXcP1XSL4eWAlNWlWKI-gDxsMoM9D662rrgVvDFGfBNuxYkumJOeimmTWYO3NlOoteK4iD7NkXWmtQ1iyc92B6c9E_bZSAg9waqFco0Povq-ymWH-zmHXImcgltrOPgDDdaDtt6_6RtDcEGdXpiRaA0D0O6ll951GmZxgvyrZ0MrvlbkIgpq4RQiLTkx3U07Qb7lI3Kq68pF7rNx-jSivtvj_CwkYns3ySY8AWIPuEtd_IUiMH7PkDNR_u3Yu708b-cdSp7nBBjcUHoEIzI-Rk2DzeEbSBHRVbQaSr6EkWGdFhXzNBLJGPB5_L8R7KtT3arpdYo1dlRG3pgHGm9nVE0cRXG2RJZQOxzbrmZfFUzbGz5NieTl3saTYl4-JmxNHGVa0hqGa0sSiSC1ocXKCDUrivk25g-aPQpKfoTGMN-A9MimrQgMGDXw444ziqzjlqx8tCOh8KyNS__voxv784xR11IxRLpHhUzowoVxWrFqwCJaC4IyCi11ZQWxcG3FFPsI1urTQtw8DU_cyE96i4WZ8cgV5uka37Zh60Q8rS7yuSr6cv2XNIrRAlIhV2wPQZUpLhIWy__Ly1TFK7G0Tmvg_fxBV2pdG1VNxUcfwY-B_PiZeS_2giB4M3DknUtfErmtkEQd2TwJlsPNFIkPEZtV37b7I71LiZIcE14ffFZFdvI7nQ_wv-lcdgieHEzWD89p_BljYWEA43mcGqlhfMDf6Yj4SqrRNjeUIPXKfPRDhmDvJEgY9JDtkfvSaVppEuPSDCJeQkZwsk_IJP-_fk4ORnzr73vbkQOjXZFpxiZEJEeC2LzYblI0m96PnvozatzkHWQoafkIk4iHnGMs789jQI7HTQ2dT1fcgSNd3oVxxWHztbdonHybrehHOUwkxjzyF5Ikas8v0ooTPtyeZINTtUvf7Yyn9Yz9XC91V3wVTY970u-Scg5eVMBN5zZJ7H8_RG_8KJCTL7Yo02AL3e3vlagviZ3wsrK8k8IaJCv_6ZLkspfdJUko6UtpGDr7XL_3fVvv36PyxlgvMTSEmAafw0RvDVynJmFh30_DbMeWaZnatkoYzGDMLSPTjnMd8rXN_GjrvKO6LWN7VSJ8SDetu1M2AQHTRz6tQbw-rgBm-YoEmpSWFonDtN3FvxdN2DEYjAo9OXkN0Tucjmt_XbCYngG6OiiKpIS-zAeQEmYknMLL6McxUFW2twMx06396zdhKRD6lLAe1j5k8BW7AessYi4BorsRX6-k_cnRERWktAlkh0anV5IwE2RTHYqZh3WU9rcQxvesX2ibjknvmyh82sgLAEcr6YyiVDTxQiUmXqBYUWAH2qLGCNGUM_71O15D5h-i4K2KcVLse0Fae7rUdaaLgh8HKyNdbNePb33IMkY4-R7doxO1xlL5ZS9lzElyax5h3nMF28XO65Xj5QXm6nTIJrpQw663uSxKvJQ9bewAuDCKYt6CqfWVsZxtrpd9TCEiR_k0xiwcxpVhRE-swCqGn3oyx84y9Z_CEWbhbDf1J5eHxizuDGMKjunJE517o01sJs8oJyl48xxJnyViwYCyAVv5XP2EnYFdxHHLtzVOMLCOvCPn4608I6L7bdeum_CvCa8rnvaadmrfDgM-_AYUJhyCTXUwmBkyGD6qrJ2eoJXR84UYG9rAQv_1XvmJ8i9QXwrXABkiWLsXWXyZCVlk2hhLLNgPuidl61uBPgErRTLpTY6_s8TPrEN8xHiHL6e2SAi2Jk9W2V80nyF4gkmpCZ0IMMo8-FzRZEzBNni2bWjk_OpV1vLPnWOeK2kajWpt_cljUXh8XzkgO9kmJqV3_P9j32oyBEy4NP9TaQCZKlvBdhsTDj2kMMwyoV1XoVEbs991S-dm0o3_rWBkaQHSLfBPg0pVnTnrsROsmzYaffrP5Bxe70EkCcs_D1nf7cv_yBS00oIXIeY41sWt6-UsycIgIAYQx6YM3pX5PYh-VoMLggxJdaS4EjUfFH4Dsf3SDBoW3t1VabFCGevITB-vWgLbRd9hbS95Dbv1pVrBn43wRHkFCHGtdH2KBHOKG6sYf4ZxleiUAyB0YnDxAm1pJ4tbtAznpKeROI724MEe_1NjlY9hhUKjKZsImCeAJe77tTnhPH5aFFjywm6XFlBT6Ft9hX4mQLKQXb8SXgdcR9bBeriii4wfVb4_M1vPfLa2L5xgj5lnmE4mwiu-zVS92KUZ8gdqAX_ryMs9YKD8Kzq-fQXXXnJr9IVQizQYoOre44eqAWQ6WAtI7dKJcEL11_-eFgjCrS3frDPxgUqJxZcPJl9oXPOPa4dB-QfjGP7y8NvovFYEINJegZLxvgaPQlrK_sWNhjEXUtLoQ1AWven52zYs6pk4iF5uWQJwSCku93BU4cEJZp72dyj_Z8PKHfYUf6bTE7mD1SSYY6YE73iJ5kor2KwDLdJM9nRsWF-QAcDRlYeOyyAh7l4EbjTB7ZZCZvirguaDitzNC7QERsMoLTo6wasnJz2PYgS7oQ0TnuQpxN882c0o8agqqPtCm_In8Lwm7W48z67aAjUSp6udXl8uKo97SOWEDmR642AlsAVKiwlytzL1cmbZ4y6MlrAMcufWdLuyb3g_TBQO09bhB0OsaSbXKRBD1Tl3zuy_C4WfbE1NhR75N0I_-Lm7nlyZFeV0DV8DmTCkpV7ULfN9Umq4wrJnAo6qqtBlUAgyHfPcCaKyVW6Tidm71Edpe8ivKM424_WBIw-iQXX4ANL_ib5odK2OxMYeUwB33iymT4JZ5Unfvi-CtmpVmVPiknLStcMdN-TeFNpWm3oStZXIYgd7i6I-8tK7sjWGYXFB1D_YoQg6zTidyUyuQsY6ysVmHr4oSfDF952RabkxhV2Ui2m9uXdra1M4K5DXF3GkW_0hbohxZ0gFYnjBBWGTRXlnwHvBE6T8YqT6JXOpDSm0xLeNQvU7d5FuqJi7kpfGDW-usIOc4-X1bY_Lfjsd-8ddQuwTq6DcOr0l3HA2n_GHPQcRI4oQVcnewJEI5rKK9wfGh0-Vipoi2RkVCCXoZznXBVRElc6grszgkL95IZSAbS74-kDVYaGcBRGmaCLJ-h1UhtVnGPUw3Ja1M7c3cVtKW_ZLmNzNqscWg_b2nngzrhTflmF2FCXLNg_9EzrE-yZbrtO1Uw3BJk7M5UwzVuJ4YbAGvVj2ZSWDzlgOmCTqHYAdWdg4ptZjIRPL6dWhim_JQ9gb2GvP8FkBwTZPwzlTt9qZlBZqPaarFrcAtFdsHIkFawdXcwp7nw9td8wJxmmU56AlGUl4ZVgxGxyImPm5FfLyhwN9lyBrOzlzHGLplIkqmHKYqs0DHvzxhpLXr2RO94zQV5bFQr9Dx_GXhunpoUwlkkeeZskZ1TRpFbzs0S2IfEBaYWGV0z2ZUxvqRn1-GFhrG9YEDtibTZHl8qDQt-mqocohPPy8fjLACHJ5DhMLE0s5mPxaDzFuNwZyLnAxxKmUOcsv628Q5CvHyoKrO0GXPiDfZyxXYaeWrRUqshaMCEz2z4TXExXPXZ3k2__xQSVcFZLn_5_3wycFJLifOIRHxBiXdhYJRmVllMpHgCjWpXXhwKVkwBvn8xOptjE_qVSKc8rpAVJ5Bl9Vdxn9hl-j_UaZDBfEULnMGc1WwTNKwqv24I7DLPnXTes-g5oTUe7pMAMEN0qaUoZa5Lc_0imCGDgRMq392W3BCLGy5F3r_eeKZG5Py0sjQj27WnZEIl8aIGYgfY21m0ZBMloRLdADI9n9vVD7eq7",
+      "summary": []
+    },
+    {
+      "id": "rs_0119113e7a984645006a66dad551448193bd9ccc54bd255152",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtr3ZzrkGmcrE3lZqKi0Dk4hEcY4H6iTzYUUpgrFNePcxvXLZLaEOsK0EJq5YubF0dq7kE1JNPWIDItCAsWjRRG5Wn4a8eWVE21SCcidzQjODF1CaMGaPa5gQiVrrspIGDsnbwAVw2wIJh1WFdhpYTKJbkEiuJiwsULzMfm-FJcC1dZsOvmnvvSiZYv8-clbfSvoikYtT8_3QleMwtK3Ikiw7du-tQ0a2EJ177J5MDA9c02MmjGyM0RDmQ7Epcq2r_byUv6Rdg7HFKbqN2TEKubd1jEA2gPtiPAqM0WA7y3eyGoYjZbd38RB74eM3SBkHN4mVGFQUssfLSQyS0s3y4sN6V5cw7o_7JzA9o_wsrO1KmbLvjna4F7hTD-Z_aPPVOhUTmDLwiJ0NEX0qnlLdKTvEZ4QHt4wp7KBdty4FQ1-KseEEAcL6OPTdUuocdxHwZBr2aiPbZI37xzSCd08H7-DgP_B-ONFmDuZ2NQ2kI0SZi5Skh5mgt-ME_5rVEj6Hy60lhz0E6NbuCXpwp8yRV9Px-bGnSPvyndezC1NQ_ID_1wHA2kIfXXS8icDqOscel2RpzA1iu7KAwhY-lu4DORfiABo2XduwfLH2eoqkUnw_eEYOM7qYE-0EHhye9wuqhEXUBPnGez8ZjcRyIzoZ66j81f64vRZDU5sUfkB-gFMcOX6Vo3I580Lns18zclStoBLdZbjCwIhEm4CZsvXtt3nMpIwt02dGWxnSuNxbmRZvzFJrk0lEs3hkfZ0A9CCiPUVl4FbJZ70e77aR_uPXgOaRJxkSWJlZmfvCwocp_M7Y39vRLRk598tcAfG989BBuEJ3Qqqfhh2dMVP18rz1aP4z7uLleo-Rz3kD0dcDnG7a6GN9PgkBGcjdVhvC2A-krMsMseOcY-0GIIYTVlpRN_WKr2JHcYsTPvtJF0r4BSnzpkfEb-5qgTsdBbacoTnPCA_RmQCo6PaOwZqpShgdXP1e_2EKLCYVLg8Jm4FMdbQFEl9pwxy0uPreMItTz49bHv3nZs0uMYqdeGBhNQp6-qBpyjCPZF0_hN2N2rjHI24DAYukRpFZE57PwyLV9QzK1SYcCBnkxEa8oihelBcQPi8gtnfcSxz3KPTPKyE6LvyI0DZrRGzLb1Cy8NTwgHs0FxP97aKNkKIt21Mw9I7A5PQA3WZQ0DZ38nq76dH5xFjuwzYmXQoLPrYXIPuJ8JMh_ZAbOWe6aHVAFN7MUaLxlGtIVWYdO5eLclJ1hUYUf9V6_YdIVd9rZSihU3JimyWYnCIoaXpYokrGHuZxQ0HiEkLtVN9Kn2vSRP46VAN62o4phoptOh3zKdQe7Uvgif3GqNKsqJlX-ZTNBPDTJupLFJplJA9fX0tfq1tfVTSYTVSJdK-AqDHXIKr8kLjNKtXuKVG6JP-2c4Q5abD8CBfpOdnWXaRKO5JjQlEv911yr_y34ic_NThi1u5J5opvictPOGLwtr25kkb5RPzfZx6kHEU3s6KcH-aZ0tOjWcfrpm2boeQqm5m7BHjAMr60MdKcN9h_9455mNyDjOe-s6gHI-oU1VrVkScLa773hZHBTspqy9JwNA99oZ6Fz5U7iGli-0TCAaQyvc_VY1Gzm3MAvK030ZdeeTn7G_KUpBmSLG9usdHA9Qrm5qGGX60H_hCW6CsOBlc95ql94mp56GtUQZ8YBRL9qqDwAvRj6_jP2uIZ2RS3SZFeLjUabl_z2ScH_1CAJPiDrDmqC8SzSQZBNOq3kvm0oOuepYkQgn6UUnfNb2drx_fS5tEJkJkYANn3yM9Owkw8DEsqTFanF1TRixPylrjy3nyDb8Y_mv7MLDIC-Jlyi9QtLbFxIcFyItYc1mfsSAGj0khA5FUh2ZhMl74Erme5oiyMfKMCzMD0PKVkfqs_eiM-I29Q2CnN0Io62FPKvTfU3QNf-_fPkzMXkY7c4eDyPItZOsADe8zNZNH02rP1BZZpef6oA4dpRizb02w0o9u9s1XbyP1IGq4vscmoM4VKOzgNndic6OkvqkzYABdDCI49dKFzjSh5Bk3YmntyebOe0ordmUBGhEi1cQxrdQPs6mcoTcRA5b1rQjzAvax3XTtOEWw0unzP1sE4hfi0kcEhhaxNVGORmaaLcUcerg1qAfwotrKvADMxkOXMpSxcqZlp92aMa0YFATaqesOsYNceasXqr_ywStdD6N0ryk8Nw_pBvWHqc0IJ4xIj4I6vVojmLSrepZh6SoVMzjAa25EuCg4f_9KWGkay3onJhsQcp33QrP4lNjMy_zjD1wcCCnuOQAv-AzYIpl2XDJF_FjAodArycDOEmHCPbfejXGEenhmHqZi1sKVmzUW6hwdSAvABOifoFO1o4cFhcuJBw_wFvzcYDNAriAlS5w2qD3c_xQxaFrVlwkrH01nJCU7jikfMVjONFaqOkAyz5MJHyDwhTv6AJtrIuMBbBkIYJSOF1exPQsWbSv4iPkYVoheplnBHI661GidN29yYbR8seNvkEq7E5QUwOiHr5m-DX_Dyfui6VZQ2ZDmMpy4EP4JqMWW-H-wUXsJM3xLtGtGy6plBI0MbMblKTtgT7qmBG4pe97nJF9F2Gc41O7vrn4QnWxzlxBCxvJ4MsCgGSX-F3IUrCHiG6QX0SutKcNAXrq9yYY4OSMtvcwmsChIsI1SqNqxlrgKFdiduqKRdHPuAsG5-s9XnuiVLncBchlK5e9h82Cs_l4RFc4dKKX7Z4dK5em0Z1SjnJzYyo6dx8CLy_WwgPE75YhfjfqT3ctrNS7Ah8s7ZA3QsvS9Bk0BHngTrRqnvNQUkOTP4AuagqDYBt6NJjMMF_VT5Ekr3392doOeiV4Olv-bDclaPF_oh-K_mulDGa-Zafj7dJ5ZBANj-3xKWnagh4QMpILUL0_R3_-WkMdzTYJQxXxr4yswkBkik2WUZhZDR1d96yrYwrrY39F3ESDzlFk4oJQlFs0otffXAjtR2bHIeYLXEBa5fc2Hxsk5eSzAvIx_ac4VSIpTYg9TtUB1BgRIn955ff5F8G_yZmzs7anncsk4OJile27lMjl-Gs_yKzS7SO1lVVrtspEP4MmywPVajg7y6oNj-bZgCgm6PArSqlLO_CXKQ-Nif6-57Q8U_TM7OTn2PycW89YzSNxRx33Yy2QmwO2Z7NoHZPabc3OfQ39Iru9iVlYrnMi8x5Q80ydvAKOueCH_u7mFXxRGkNIs1guFKE-DeQBnWISs32ACDz7LX1nX2Cg-5HRcVQfpA6stjIe75q239UzH8MYERB7B_MHpLciuVhwJ3oiyyxYsn-2XVMG9zDG7Kp-9eY-UTLbffJfScxmuFCkHERGlSwzHbm6pAtBwV1ZsuzzmuklSf8wsJQ48K0c_ksiCY_0NPFR9VlpAvBKOsxQI10pVNcgP65zfkBXEKhFKPWiUkBoKDvDQmYCFGUEGXl6u1BhCoRRxJ0mT_TZTauhJHSNS178LNh1dLTdQrS7cuBd1_LLayzyKJYA8xcxpq0ljkW4bAkDXQK_eDwI7Boafx3klqDeRKC_pmn5ejo3gZdQpdN-eKKY-0K_kSn0fyfPEMrRyPF1AYO7uYTICuJGSIdlQnxdavmp82y0p_BO3hI7mhES89zR0yKWaZfj3NSvnDnWiuqXJlgJbsxJtEO2LdsTJbDNg8KzIpfAEQVUV6vUb4HKs3h53pIqYkRJbPgRhoTM2BS3dF8yKfP6Tp1tfH-5-ZBEJ7vtjY_2CWIjyVOoAG_aDiFbmD4DdMzmF80XmQaXDfxCkpJblR3aFF27EwmivCGkqkywSBnfRtEIoMst6vB4FqGhoBY_53e_5qFzLW7zU5CDVRgn_wTxDbB6vXwrYoXMICUAu-eJ71QyBauqZ7k3O5V1jjYn7tMu7wImVO7GS0uFiiAv4kBi7dU-YnSkiuLAPM_QWEHjukdII1_dLbIBtGEbZoVbY-DXCFwWILlpZvYQgtXtG6qPSAeHcwrvCRV2Iai_A1aPnw5X7Q3eHzPWFVE951jD_qqZ3ip8MIeM582Q924SJ_oX5OTiueulVt2v2SYqKjS9Rviij-uyms7f0vOpmA88jBKTncWlOlC4Q1U2B5XVHDLM2eUk7-8c_lO4HIjmyy_oUtPfAi1ASnFc_E5eA5mi781yUGBu8fk3_L_BVzd6WLk8q9BPtd9mnkF8ETmLAtkXnawoYMqBFV1guiTeDc8dOg55zzEEnD79Ef8XzboWV06enH3idGjsXmSQTc4_8FnLq1VMHezR7wfaRZQRLTefrfNeVb0H4dPshKnV30vSPl-rtpKNaf1pDAqU5Pl8vf3Cqj0545n9lX6bGGaBwFuxFHq5p9SLJ_Gnmie4ALCBUFkyZbOZ6gcSu_fmrMVXr3VS25mBn5iKeeL6EvjG454LSB1iLAMPogpKhpOIzqgYxwknapyUqq-5Y2wQjX3snemivewpKCADDwJcpThqfXJky011HCuDMe52BPU7E4gp4RqM9aZdix8QHAnqc-RDI_iq_h4qN1eSz2JjEY-_ApCsWfa1iJDEyrQcs-_3GWGI6Nx8kEBpMjkrTCIMvYDXOzruSzKAAr55A-A5uKRTWobbzj5D_DIiVqgQ-zqrMNUUxfuWklNay46xktbatIbBKq4l6Yg==",
+      "summary": []
+    },
+    {
+      "id": "rs_0119113e7a984645006a66dadebab08193a87484369d13cb65",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtr3LSXKrruE5FSG-yF4eZqyljUqEmSbrgzUhA18QJCZDgmd4M3HSEReFbi9yJ8KQh0NKMquKYSWZi3xsAJsUxiwcmIRjjZ3b1i9wbQ0YrK0n4O6rY511wQJQlgbby2Aa8wy36_GgfqVAq0csmyTE3oJB4oylbPbHsOVsw6zMPZ1OZCq1Ecg8J0UUOBZ-dYraMPMZmAIG7q79khJ9rNjKrukN-HLk1m0PLEYjxSMIAA6sf5qa54SXGiJSLFyHjZun9vcnyL3fLlFAuSI0AZmaxvgEtdinswUD_UW6ItPBQAL_1xwzzXbOm7V6EtfnOF32JqHHO866nyh4n1LA3C2v3Aop7vqlrfRWo2ZMyGMKpDa3oy_er2hbQS4X4X3rI_aNaiGmlrEXmpJmBgf5s5AZA1MPUBXIYaCDn6RyHgz1VR2c4ETyR1sUGEt1PsTlUPkSZeOdU1saPkqZkhXDk5Mn0rZ6iTQ2ZHttSBbXb5KuOJurujY3_Aac631HzEN6dxOBrH0FIrktTfRdpoZjs_5IK3bP88ckEx9iABhjUicZkgiFQ2vnmVloGDWfo7bzG7KbTrnO40wZbcUAyKLCvLd-ujaPOluoqboSQaTXnOP5Af-7a570b-TVmhT2GwTZk55rrP36ho6YQCwMfX4XNaFRK4gO9Mu6969GBSuQ2u_oSrMd43QHCSetleI79qaZ14FhY4MYbblQhHcuinCau_MnQmVDkNUtu1GHR7LGIPHBQddruul2SjqhWfNsVzEFs469ErDR6I4KzxeiDrhBL7fIhIYXu0DUCYctDn5sKDtWfbQG_ER_NK2cL8iDntMh6xaBRe24HC50HlNVfvA7QIG_qZ5aZ7wrlAdfnje51oBR7MASMrEGFaFsd6Yp8Xb7Q1u9v1kfhxUJbX1NnjX5fiOC-BOTq2ND_sm1xwqjMhhc1_i7hXe8GWHhZvrhuOYrnJ9h5toxuJ36lF1HK2lDC_b0AaNKFYwoQf7Zvh_iuIHoZP7NjGN7F-QgzYakRF5aVLqzauFYf6UlF1seOwFmndYCzW6me_PV-sRHoIZtWS2AZm3tmEclHP2y1Oe0x-8iNYIkneT_vqckoAZh1rv_7c_11-gqwtVjFsaxxIc-Wb0GnCIEDLE9eXBdasWOlYlRqlRvYt35fP2FroiJsvFHduQwnscizHhCe57mV7lFFF3EVsKRsObdPWo40LlCW39oZbf0d9mcZZ8qqBdcg_DTPRRdn8DwVMsBwNVlgerbXor3HjBW8yHfziREVaEzcorutHpVwIOtLNhW8Jlm8gpzHWJTNTMzq_cLFccIymkKxMqqdx6U4NmBRBdv9zv8yWbIDkSiHyiaw0pTW0iISb-ymWuD6hnnO_pJDTQ5zXEWRg6JZPul91lx2E3Wp5XvZ96cRD2AEzP0O9jJhU5yngv8vr16IlcGOmJMdz3IuZFTvcBTwriIiNegEizHWiP-XnmlzGPZ9pwa6uxyrVTLDBHbGhKNAG-wlWNaIeUOXufPO-mxTTktb25SIG-QvMAcF5nz-RodCjZ-ZPrmx1sp5BNN2r7PrbTMeRalECUhDC9IR-5oLR444qMmTXV4721bZo7SomZ0ol3J4pbiSQTXL3luKzO8j2ESBsr12qzhP0rT1MzItT2X4x1HjU3tFkaja51_RC2NINN9fcNEMLoSRF0TnoQ9i9oatBJR3xnzOhte0QGxSLkbZL0tPmpTcxh-Fi14keYN719hyfcsJBjAVbKuqr0pLPgCh328ynuy0m4uj4Qw_JeodUvw4jLGbd-hzrxjJzZ-DVwqsuUsxm4YoITrtLXcJBikunigHvmpNbaWYbK_Dd3-A8COWG2XsewYdyKsw6JIWHj3B-mBFfezCzemtvrFYiV0zOSiz9SOmtyBrLYVi_p27nhNrBlld4t152LuORkOkt8OiEjuUsT5aQ0ebdKZAOY8n7gVHJHz44JZJEHH11HsU4mCmMihxg_qt9htLObplYOHWQDntL_kYHthdChoWmb5F2d_bTqJfObfv5XNCHXi1OJpd_nTrvBzJWxtfxGGAfJ7Ia5V8r8_v5t8Jc0ABrICaUKmcdZR4dI3kkjM44-OBL0zshmyEi_OkhnNshYnIczU1365R6rB9sFaTrLUUUVCqOW7ScjqYHc2vJWxDXJ8Q3kHQjmLSim2LC9wH2Uf2NSNgX_jNgnS9xKDu7rPvyNE__WR91t3RXutCckEitG8TH7FqwZDLMrbJX-qOS4i1c17E8K5mSTtgo3OMAtamfSKNQgVQDOM0nrOjJif2t50wAmR3Y_menpprRelmdalIwsesZWZrLQ6L8rYIrk2v2xeqaAxp5kleED03fbKBdZuLQfHdgVUD70TET0S3U71sdSdJiiYRrISIkv-GAm5btsAQ9MeuJr5fpsn3P_Y7J_yky-xxo1QexBib_w2yOg8AgjH8WoOwLk2hKJpUCrep6DKw==",
+      "summary": []
+    },
+    {
+      "id": "msg_0119113e7a984645006a66dae2f7f881938a2a1eb2750a181e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\n  \"persuasion\": \"PERSUADED\",\n  \"support_scope\": \"FULL\",\n  \"rationale\": \"The supplied texts establish that KJV “hell” is not the rendering of one biblical word or one uniform referent. Psalm 16:10 uses “hell” for Hebrew Sheol, and Acts 2:27 quotes it using Greek Hades; the context is the Messiah’s death and resurrection, not final punishment. Matthew 10:28 uses Gehenna for destructive judgment, while 2 Peter 2:4 uniquely uses tartaroō for the confinement of sinful angels awaiting judgment. A traditional theological definition of hell may validly summarize final-punishment passages, but it cannot explain all biblical occurrences of the English translation label without first distinguishing these underlying terms. The entry therefore gives the better explanation of its cited evidence.\",\n  \"book_core_identification\": \"“Hell” is an ambiguous English Bible-translation label covering multiple Hebrew and Greek terms rather than a single scriptural term or uniform referent; each occurrence must be interpreted from its underlying word and context.\",\n  \"book_secondary_elaborations\": [\n    \"When “hell” translates Sheol, it should be treated under Sheol.\",\n    \"When “hell” translates Hades, it is associated with Sheol.\",\n    \"When “hell” translates Gehenna, it should be treated as Gehenna or the Valley of Hinnom.\",\n    \"When “hell” translates tartaroō, it should be treated as Tartarus.\"\n  ],\n  \"unsupported_glossary_assertions\": [],\n  \"chapter_only_objections\": [\n    \"The chapter’s claim that all the dead are unconscious and that Luke 16 is only parabolic remains disputed and goes beyond the glossary entry.\",\n    \"Its annihilationist conclusion is contested by Matthew 25:46, Revelation 14:10-11, and traditional readings of Mark 9:43-48.\",\n    \"Equating judgment fire directly with God because God is called a consuming fire requires an additional interpretive step not asserted by the glossary.\",\n    \"The arguments from kolasis etymology and aiōnios as an everlasting result rather than an everlasting process are debatable lexical claims.\",\n    \"The historical claim that eternal torment chiefly derives from Plato rather than Scripture is broader and more contestable than the glossary’s translation distinction.\",\n    \"The chapter’s wider claims about heaven, resurrection, and the ultimate location of the redeemed are outside the entry’s scope.\"\n  ],\n  \"strongest_counter_interpretation\": \"In established Christian doctrinal usage, “hell” is a legitimate umbrella term for the final, irreversible punishment and exclusion of the wicked, even though older English translations also use the word for several distinct biblical lexemes and occasionally for the grave or intermediate realm.\",\n  \"counter_core_identification\": \"Hell primarily denotes final divine punishment, while Sheol, Hades, Gehenna, and Tartarus represent different lexical sources, stages, or aspects within the Bible’s broader death-and-judgment framework.\",\n  \"counter_relation_to_book_core\": \"SAME_CORE_BROADER\",\n  \"material_core_denial\": \"The strongest defensible counter does not successfully deny the entry’s lexical core. It instead adds a broader theological usage. A stricter claim that every biblical occurrence of English “hell” directly refers to final punishment is contradicted by Psalm 16:10 and Acts 2:27, where the term concerns Christ’s death and release through resurrection.\",\n  \"counter_case\": [\n    \"Matthew 25:41, 46, Mark 9:43-48, 2 Thessalonians 1:9, and Revelation 20:10-15 support a recognizable unified doctrine of final judgment.\",\n    \"Long-standing Christian usage gives “hell” a conventional theological meaning beyond its function in older English translations.\",\n    \"The distinct source terms can be viewed as related components of a broader death-and-judgment complex rather than wholly unrelated concepts.\"\n  ],\n  \"book_explanatory_advantages\": [\n    \"It directly explains why Psalm 16:10 and Acts 2:27 can call the Messiah’s temporary state in death “hell.”\",\n    \"It accounts for the Hebrew-to-Greek correspondence between Sheol and Hades in the quotation of Psalm 16.\",\n    \"It preserves the distinction between Hades and final judgment evident when Hades gives up its dead and is itself cast into the lake of fire in Revelation 20:13-14.\",\n    \"It distinguishes Matthew’s Gehenna warning from 2 Peter’s special verb tartaroō concerning sinful angels.\",\n    \"It prevents a later theological umbrella meaning from being imposed uniformly on every occurrence of the English translation word.\"\n  ],\n  \"counter_explanatory_advantages\": [\n    \"It summarizes the substantial group of New Testament passages concerning final punishment under one familiar doctrinal heading.\",\n    \"It better reflects mainstream Christian theological usage outside the narrow question of translation lexemes.\",\n    \"It emphasizes thematic continuity among death, judgment, exclusion, and punishment.\"\n  ],\n  \"evidence_book_core_cannot_explain\": [],\n  \"comparative_winner\": \"BOOK\",\n  \"decisive_sources\": [\n    \"Psalm 16:10 and Acts 2:27-31: Hebrew Sheol and Greek Hades are both rendered “hell” in a resurrection context.\",\n    \"Matthew 10:28: “hell” renders Gehenna and concerns destruction of body and soul.\",\n    \"2 Peter 2:4: “cast them down to hell” renders tartaroō and concerns sinful angels reserved for judgment.\",\n    \"Revelation 20:13-14, cited in the supporting chapter: Hades is distinguished from the lake of fire and is ultimately destroyed.\"\n  ],\n  \"unresolved_objections\": [\n    \"Redirecting every New Testament use of Hades simply to Sheol may understate developments or contextual differences in New Testament usage, especially Luke 16.\",\n    \"Tartaroō is a verb rather than the noun Tartarus, though “cast into Tartarus” is its conventional and well-supported lexical sense.\",\n    \"The entry addresses the ambiguity of the English translation label, not whether “hell” remains useful as a later theological umbrella term.\"\n  ],\n  \"confidence\": \"high\"\n}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_persuasion",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "persuasion": {
+            "type": "string",
+            "enum": [
+              "PERSUADED",
+              "UNPERSUADED"
+            ]
+          },
+          "support_scope": {
+            "type": "string",
+            "enum": [
+              "FULL",
+              "CORE_ONLY",
+              "NONE"
+            ],
+            "description": "Support for the exact glossary BOOK ENTRY only, never for the supporting chapter as a whole."
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "book_secondary_elaborations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Secondary assertions actually printed in the glossary BOOK ENTRY; exclude chapter-only claims."
+          },
+          "unsupported_glossary_assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Material assertions actually printed in the BOOK ENTRY that the evidence does not support. Must be empty for FULL and nonempty for CORE_ONLY."
+          },
+          "chapter_only_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Objections to applications or arguments found only in the supporting chapter. Preserved for later chapter review and excluded from the glossary scope ruling."
+          },
+          "strongest_counter_interpretation": {
+            "type": "string"
+          },
+          "counter_core_identification": {
+            "type": "string"
+          },
+          "counter_relation_to_book_core": {
+            "type": "string",
+            "enum": [
+              "CONTRADICTS",
+              "SAME_CORE_BROADER",
+              "SAME_CORE_NARROWER",
+              "EQUIVALENT"
+            ]
+          },
+          "material_core_denial": {
+            "type": "string"
+          },
+          "counter_case": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "book_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counter_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_book_core_cannot_explain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comparative_winner": {
+            "type": "string",
+            "enum": [
+              "BOOK",
+              "COUNTER"
+            ]
+          },
+          "decisive_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "persuasion",
+          "support_scope",
+          "rationale",
+          "book_core_identification",
+          "book_secondary_elaborations",
+          "unsupported_glossary_assertions",
+          "chapter_only_objections",
+          "strongest_counter_interpretation",
+          "counter_core_identification",
+          "counter_relation_to_book_core",
+          "material_core_denial",
+          "counter_case",
+          "book_explanatory_advantages",
+          "counter_explanatory_advantages",
+          "evidence_book_core_cannot_explain",
+          "comparative_winner",
+          "decisive_sources",
+          "unresolved_objections",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 13312,
+    "input_tokens_details": {
+      "cache_write_tokens": 13309,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2583,
+    "output_tokens_details": {
+      "reasoning_tokens": 1275
+    },
+    "total_tokens": 15895
+  },
+  "user": null,
+  "metadata": {}
+}

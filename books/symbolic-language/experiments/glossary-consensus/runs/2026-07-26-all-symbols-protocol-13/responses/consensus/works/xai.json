@@ -1,0 +1,156 @@
+{
+  "created_at": 1783839833,
+  "completed_at": 1783839848,
+  "id": "4d6120e9-65c7-9207-8832-a4eb62614a56",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_4d6120e9-65c7-9207-8832-a4eb62614a56",
+      "summary": [
+        {
+          "text": "The task is about the term \"Works (good works, evil works)\" in biblical symbolism from a Christian perspective. I need to act as a blind consensus definer, basing my answer on independent knowledge of...{\n  \"primary_meaning\": \"Good works symbolize the outward evidence of genuine faith and obedience to God, while evil works symbolize the fruit of human sinfulness and rebellion against divine will.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Human deeds/actions (good works as righteous fruit of genuine faith that evidence salvation and glorify God; evil works as sinful deeds of the flesh that reveal unbelief and bring judgment)\",\n  \"primary_basis\": [\n    \"Ephesians 2:8-10\",\n    \"James 2:14-26\",\n    \"Matthew 5:16\",\n    \"Matthew 7:16-20\",\n    \"Matthew 16:27\",\n    \"Galatians 5:19-23\",\n    \"Revelation 20:12-13\",\n    \"Titus 2:7,14; 3:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Works of the Mosaic law as a failed or obsolete basis for justification, contrasted with faith alone\",\n      \"basis\": [\n        \"Romans 3:20-28\",\n        \"Galatians 2:16\",\n        \"Galatians 3:2-11\",\n        \"Philippians 3:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Good works as cooperative with divine grace in the process of justification/salvation (synergistic view)\",\n      \"basis\": [\n        \"James 2:24\",\n        \"Philippians 2:12-13\",\n        \"Matthew 25:31-46\",\n        \"Romans 2:6-7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal moral performance with no deeper symbolic or soteriological freight beyond reward/punishment\",\n      \"basis\": [\n        \"Proverbs 24:12\",\n        \"Ecclesiastes 12:14\",\n        \"2 Corinthians 5:10\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian traditions the core sense of works as moral deeds (good as fruit/evidence of faith; evil as fruit of sin leading to judgment) is stable and widely attested in preaching, creeds, and commentaries. Disagreement exists mainly on the precise soteriological role of good works (evidence only vs. cooperative cause), which is reflected in the alternatives rather than overturning the primary meaning. No major symbolic re-reading (e.g., purely allegorical) has achieved broad currency.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_4d6120e9-65c7-9207-8832-a4eb62614a56",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 608,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1957,
+    "output_tokens_details": {
+      "reasoning_tokens": 1419
+    },
+    "total_tokens": 2565,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 127660000,
+    "context_details": {
+      "input_tokens": 608,
+      "output_tokens": 1957
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

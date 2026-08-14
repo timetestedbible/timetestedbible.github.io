@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "field",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nField\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, the field most commonly symbolizes the world — the whole realm of humanity in which God's kingdom is sown, where good and evil grow together until the final judgment/harvest. This meaning is treated as authoritative because Jesus himself supplies it in his explanation of the parable of the wheat and the tares: 'The field is the world' (Matthew 13:38). Closely bound to this is the derivative missionary sense: the world as a harvest field of souls ready to be gathered.\",\n  \"primary_basis\": [\n    \"Matthew 13:24-30, 36-43 (parable of the wheat and the tares; v. 38 'the field is the world')\",\n    \"Matthew 9:37-38 ('the harvest is plentiful, but the laborers are few')\",\n    \"John 4:35 ('lift up your eyes and look on the fields, for they are white already to harvest')\",\n    \"Luke 10:2 (Lord of the harvest sending laborers)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The mission field: the world's population viewed as a harvest of souls awaiting evangelism; the basis of the widespread evangelical idiom 'the mission field.'\",\n      \"basis\": [\n        \"John 4:35\",\n        \"Matthew 9:37-38\",\n        \"Luke 10:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The church or believers as God's cultivated field — God's people under his husbandry, tended by ministers who plant and water while God gives the growth.\",\n      \"basis\": [\n        \"1 Corinthians 3:6-9 ('you are God's field, God's building')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The human heart as soil/ground receiving the seed of the word — strictly the 'soils' of the parable of the sower, but often merged with field imagery in preaching.\",\n      \"basis\": [\n        \"Matthew 13:3-23\",\n        \"Mark 4:3-20\",\n        \"Luke 8:4-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The field containing hidden treasure as the world in which Christ purchases his treasured people (or, alternately, the field as the sphere in which the believer finds the kingdom).\",\n      \"basis\": [\n        \"Matthew 13:44\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Fields as covenant land/inheritance and redemption imagery (kinsman-redeemer purchase of fields), read typologically of Christ's redemption.\",\n      \"basis\": [\n        \"Jeremiah 32:6-15 (Jeremiah buys the field at Anathoth)\",\n        \"Ruth 4:1-10\",\n        \"Leviticus 25:23-28\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The 'Field of Blood' (Akeldama) as a symbol of the wages of betrayal and sin.\",\n      \"basis\": [\n        \"Matthew 27:3-10\",\n        \"Acts 1:18-19\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The consensus is unusually firm for the primary meaning because Matthew 13:38 contains an explicit dominical interpretation ('the field is the world'), which commentators across Catholic, Orthodox, Protestant, and evangelical traditions treat as controlling for that parable. However, 'field' is context-dependent across Scripture: in 1 Corinthians 3:9 it is explicitly the church, and in harvest sayings it functions as the mission field. Historically, the tension between 'the field is the world' (Matthew 13) and 'you are God's field' (1 Corinthians 3) fed the Augustinian/Donatist debate over whether the wheat-and-tares field means the world or the church — Augustine's 'world' reading (following the text) prevailed, though a 'field = church' application persists in some preaching. Note also that the parable-of-the-sower soils describe hearts, not strictly the 'field,' though popular usage conflates them.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The world (the broad sphere of human existence where God's word is sown and spiritual forces operate)\",\n  \"primary_basis\": [\n    \"Matthew 13:38\",\n    \"Matthew 13:44\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The human heart or mind (as receptive soil for the word of God)\",\n      \"basis\": [\n        \"Matthew 13:3-8\",\n        \"Luke 8:5-15\",\n        \"1 Corinthians 3:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The sphere of missionary labor, evangelism, and the harvest of souls\",\n      \"basis\": [\n        \"John 4:35\",\n        \"Matthew 9:37-38\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The natural, earthly, or secular realm associated with the flesh and human effort (e.g., Esau as a man of the field)\",\n      \"basis\": [\n        \"Genesis 25:27\",\n        \"Genesis 3:17-19\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Jesus explicitly states 'the field is the world' in Matthew 13:38 when explaining the Parable of the Weeds, which firmly establishes its primary symbolic meaning in Christian exegesis. A closely related secondary consensus interprets the field/soils as individual human hearts based on the Parable of the Sower.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The world—the human sphere in which God’s kingdom, gospel, and final judgment operate. This is the most recognizable Christian symbolic meaning because Jesus explicitly says, “the field is the world” in the parable of the wheat and weeds.\",\n  \"primary_basis\": [\n    \"Matthew 13:24–30, 36–43, especially 13:38: “The field is the world.”\",\n    \"Matthew 13:44: the treasure hidden in a field, often interpreted with the field as the world or earthly sphere.\",\n    \"Matthew 9:37–38 and John 4:35–38: fields and harvest symbolize people ready for evangelism or divine gathering.\",\n    \"Mark 4:26–29: cultivated ground depicts the sphere in which God’s kingdom grows toward harvest.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The human heart or individual hearer receiving God’s word, especially where the field is identified with the soils in the parable of the sower.\",\n      \"basis\": [\n        \"Matthew 13:3–9, 18–23\",\n        \"Mark 4:3–20\",\n        \"Luke 8:4–15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The church or visible community of professing believers, particularly in applications of the wheat-and-weeds parable and in Paul’s description of believers as God’s cultivated field.\",\n      \"basis\": [\n        \"1 Corinthians 3:5–9, especially 3:9: “You are God’s field.”\",\n        \"Matthew 13:24–30, though Matthew 13:38 explicitly identifies that parable’s field as the world.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Israel or God’s covenant people as land cultivated by God and expected to produce righteous fruit.\",\n      \"basis\": [\n        \"Isaiah 5:1–7\",\n        \"Jeremiah 12:10–13\",\n        \"Hosea 10:12\",\n        \"Psalm 80:8–16, using the closely related vineyard image\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A person’s life, ministry, or assigned sphere of labor in which spiritual planting, growth, and harvest occur.\",\n      \"basis\": [\n        \"1 Corinthians 3:6–9\",\n        \"Galatians 6:7–9\",\n        \"2 Corinthians 10:13–16\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single universal symbolic meaning for “field” apart from context. “The world” is the dominant meaning when the term is treated as an explicit symbol, chiefly because of Matthew 13:38, but other passages directly use agricultural land for hearts, the church, covenant people, or a sphere of ministry.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the world\",\n  \"primary_basis\": [\n    \"Matthew 13:38 (explicit definition in the parable of the wheat and tares)\",\n    \"Matthew 13:24-30, 36-43\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"the sphere or readiness of gospel harvest/evangelistic labor\",\n      \"basis\": [\n        \"John 4:35\",\n        \"Matthew 9:37-38\",\n        \"Luke 10:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the human heart or individual receptivity (soil types)\",\n      \"basis\": [\n        \"Matthew 13:3-9, 18-23 (parable of the sower)\",\n        \"Mark 4:3-20\",\n        \"Luke 8:5-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the church (as mixed community of wheat and tares)\",\n      \"basis\": [\n        \"interpretive tradition applying Matthew 13:24-30 internally despite the explicit world identification\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Jesus’ own allegorical key in Matthew 13:38 supplies the dominant symbolic identification; other uses are secondary metaphors rather than competing primary symbols.\"\n}\n\nBOOK ENTRY\nThe world — sown with the word and reaped at the harvest. Its edge feeds the poor and stranger, and its hidden treasure is found beneath the surface.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Matt 13:38; Lev 19:9-10) · see Grass, ch. 42\n\nAVAILABLE KJV EXCERPTS\nMatthew 13:38 —  The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one;\nLeviticus 19:9 — And when ye reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest.\nLeviticus 19:10 — And thou shalt not glean thy vineyard, neither shalt thou gather every grape of thy vineyard; thou shalt leave them for the poor and stranger: I am the LORD your God.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "06300999b4ca2101e57ecafa61497932c09371cbd853f08bd33689946c71fa6f",
+  "cache": {
+    "hit": false
+  }
+}

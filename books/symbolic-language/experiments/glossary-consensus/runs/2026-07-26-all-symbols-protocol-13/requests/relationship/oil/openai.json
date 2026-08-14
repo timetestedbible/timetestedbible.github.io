@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "oil",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nOil (lamp oil)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In popular Christian teaching, lamp oil is most commonly taken as a symbol of the Holy Spirit (and, closely related, the inner spiritual life or grace supplied by the Spirit that keeps one's 'light' burning). This reading is driven above all by the Parable of the Ten Virgins, where possessing oil marks readiness for the Bridegroom's coming, and it is reinforced by the broader biblical association of anointing oil with the Spirit's presence and empowerment.\",\n  \"primary_basis\": [\n    \"Matthew 25:1-13 (Parable of the Ten Virgins: wise virgins have oil, foolish do not)\",\n    \"Exodus 27:20-21 and Leviticus 24:1-4 (pure olive oil for the perpetually burning tabernacle lamp)\",\n    \"Zechariah 4:1-6, 11-14 (golden lampstand fed by olive trees: 'not by might, nor by power, but by my Spirit')\",\n    \"1 Samuel 16:13 (Samuel anoints David with oil and the Spirit of the LORD comes upon him mightily)\",\n    \"Acts 10:38 (God 'anointed Jesus of Nazareth with the Holy Spirit and with power')\",\n    \"1 John 2:20, 27 (the 'anointing' from the Holy One that abides in believers)\",\n    \"Psalm 45:7 / Hebrews 1:9 ('anointed with the oil of gladness')\",\n    \"Isaiah 61:1 / Luke 4:18 ('the Spirit of the Lord is upon me, because he has anointed me')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Personal faith, genuine saving grace, or a real (versus merely professed) relationship with Christ — the oil distinguishes true disciples from nominal ones; common in Reformed and evangelical exegesis of Matthew 25, sometimes deliberately avoiding a one-to-one allegorical identification.\",\n      \"basis\": [\n        \"Matthew 25:1-13\",\n        \"Matthew 7:21-23 (profession without reality)\",\n        \"2 Timothy 3:5 (form of godliness denying its power)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Good works, love/charity, or deeds of righteousness that accompany true faith; found in patristic writers (e.g., Augustine, Chrysostom on the Ten Virgins) and in some later homiletic traditions.\",\n      \"basis\": [\n        \"Matthew 25:1-13 read alongside Matthew 5:16 ('let your light shine before others, that they may see your good works')\",\n        \"James 2:14-26 (faith without works)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual preparedness or watchfulness itself — oil as a narrative device signifying readiness for Christ's return rather than a coded symbol for any single referent; many modern critical commentators warn against allegorizing the detail at all.\",\n      \"basis\": [\n        \"Matthew 25:13 ('watch therefore, for you know neither the day nor the hour')\",\n        \"Matthew 24:42-44\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Word of God / divine truth that fuels the believer's light.\",\n      \"basis\": [\n        \"Psalm 119:105 ('your word is a lamp to my feet')\",\n        \"Proverbs 6:23\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Individually acquired spiritual experience, obedience, and testimony that cannot be borrowed or transferred (a reading emphasized in Latter-day Saint teaching, e.g., Spencer W. Kimball's exposition of the Ten Virgins).\",\n      \"basis\": [\n        \"Matthew 25:8-9 (the oil cannot be shared)\",\n        \"Doctrine and Covenants 45:56-57 (LDS scripture explicitly linking oil to receiving the truth and taking the Holy Spirit as guide)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, widely recognizable popular association of lamp oil with the Holy Spirit, grounded in the Bible's pervasive anointing imagery, and this is arguably the default meaning in devotional, Pentecostal/charismatic, and much evangelical teaching. However, academic and confessional commentary on Matthew 25 is genuinely divided: many scholars (e.g., in the tradition of Jülicher and most modern critical commentators) resist assigning the oil any specific symbolic referent, treating it as a plot detail signifying preparedness, while patristic and Reformation-era interpreters variously identified it with charity, good works, faith, or grace. So the Holy Spirit reading is dominant at the popular level but not a settled scholarly consensus; the safest characterization is 'dominant in popular usage, contested in exegesis.' Related but distinct oil symbolism (healing, consecration, gladness, kingship) exists for anointing oil generally and should not be conflated with lamp-oil symbolism specifically.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The Holy Spirit, encompassing His indwelling presence, empowering, and illuminating grace.\",\n  \"primary_basis\": [\n    \"Zechariah 4:1-6\",\n    \"Matthew 25:1-13\",\n    \"Exodus 27:20-21\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Inward spiritual readiness, genuine faith, or good works (especially charity and love).\",\n      \"basis\": [\n        \"Matthew 25:1-13\",\n        \"Luke 12:35\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Joy, gladness, and festive celebration.\",\n      \"basis\": [\n        \"Psalm 45:7\",\n        \"Isaiah 61:3\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The illuminating truth of the Word of God.\",\n      \"basis\": [\n        \"Psalm 119:105\",\n        \"Proverbs 6:23\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian interpretation, lamp oil is overwhelmingly associated with the Holy Spirit, heavily influenced by Zechariah 4 where the oil supplying the lampstand is explicitly identified as God's Spirit. However, in the specific context of the Parable of the Ten Virgins (Matthew 25), exegetes have historically debated whether the oil strictly means the Holy Spirit, or broader concepts like inward grace, love (as argued by Augustine), or general spiritual preparedness.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The Holy Spirit—especially the Spirit’s sustaining presence, empowering grace, and illumination that enable believers to bear spiritual light and remain ready for Christ.\",\n  \"primary_basis\": [\n    \"Zechariah 4:1–14 connects an oil-supplied lampstand with God’s Spirit, especially “Not by might, nor by power, but by my Spirit” (4:6).\",\n    \"1 Samuel 16:13 associates anointing with oil and the coming of the Spirit upon David.\",\n    \"Exodus 27:20–21 and Leviticus 24:1–4 describe pure oil continually sustaining the sanctuary lamps, commonly used typologically for continuing spiritual life and illumination.\",\n    \"Matthew 25:1–13, the parable of the ten virgins, is frequently interpreted in Christian teaching as contrasting possession of the Spirit or sustaining grace with an merely outward profession, although the passage itself does not identify the oil’s symbolism.\",\n    \"Revelation 4:5 identifies the seven burning lamps before God’s throne with the sevenfold Spirit of God, reinforcing the lamp-and-Spirit association.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Readiness, vigilance, or persevering discipleship rather than a separately decoded symbol such as the Holy Spirit.\",\n      \"basis\": [\n        \"Matthew 25:1–13 explicitly emphasizes keeping watch and being prepared for the bridegroom’s delayed arrival.\",\n        \"Many interpreters regard the oil chiefly as a necessary element in the parable’s story and resist assigning it an independent allegorical referent.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Good works, active obedience, mercy, or charity that demonstrate and sustain faithful discipleship.\",\n      \"basis\": [\n        \"Matthew 5:14–16 links shining light with good works.\",\n        \"Matthew 25:31–46 emphasizes deeds of mercy in the same broader discourse as the ten virgins.\",\n        \"This reading has substantial precedent in patristic and later moral interpretation of Matthew 25.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Saving faith, inward spiritual life, or genuine conversion, contrasted with merely external religious profession.\",\n      \"basis\": [\n        \"Matthew 25:1–13 distinguishes two outwardly similar groups whose true preparedness is revealed only when the bridegroom arrives.\",\n        \"James 2:14–26 and related passages are sometimes invoked to characterize living faith as something more than outward profession.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Divine grace, love, or charity understood as an inward gift that cannot simply be transferred from one person to another.\",\n      \"basis\": [\n        \"Matthew 25:8–9 presents the oil as personally possessed and not practically transferable at the decisive moment.\",\n        \"Romans 5:5 associates divine love with the Holy Spirit poured into believers’ hearts, supporting interpretations that combine oil, grace, love, and the Spirit.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Consecration, healing, joy, hospitality, or abundance, when oil appears outside a lamp context.\",\n      \"basis\": [\n        \"Exodus 30:22–33 and Leviticus 8:10–12 use oil for consecration.\",\n        \"Psalm 23:5 and Psalm 45:7 associate oil with honor and joy.\",\n        \"Mark 6:13 and James 5:14 associate oil with healing.\",\n        \"Deuteronomy 8:8 and Joel 2:24 present oil as a sign of agricultural abundance and blessing.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The Holy Spirit is the most recognizable symbolic identification of lamp oil in popular Christian teaching, especially through Zechariah 4 and interpretations of Matthew 25. Nevertheless, there is no settled cross-traditional consensus that lamp oil always carries that meaning. In particular, Matthew 25 never explicitly defines the oil, and many biblical scholars treat readiness as the parable’s point without assigning the oil a fixed allegorical referent.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"the Holy Spirit (empowering presence that fuels spiritual light, witness, and anointing)\",\n  \"primary_basis\": [\n    \"Matthew 25:1-13 (parable of the ten virgins and their lamps)\",\n    \"Zechariah 4:1-14 (lampstand fed by olive oil, identified with the Spirit)\",\n    \"Exodus 27:20-21 and 35:14 (pure oil for the perpetual tabernacle lamp)\",\n    \"1 Samuel 16:13 (anointing oil and the Spirit coming upon David)\",\n    \"Acts 10:38 (Jesus anointed with the Holy Spirit)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"spiritual readiness or preparedness for Christ's return\",\n      \"basis\": [\n        \"Matthew 25:1-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"personal faith or saving grace that sustains the believer\",\n      \"basis\": [\n        \"Matthew 25:1-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"good works or deeds of righteousness\",\n      \"basis\": [\n        \"Matthew 25:1-13 (certain patristic and later readings)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"joy or gladness\",\n      \"basis\": [\n        \"Psalm 45:7\",\n        \"Isaiah 61:3\",\n        \"Hebrews 1:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"healing, consecration, or divine blessing\",\n      \"basis\": [\n        \"James 5:14\",\n        \"Mark 6:13\",\n        \"Psalm 23:5\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian tradition overwhelmingly links oil (including lamp oil) with the Holy Spirit as the agent of anointing, empowerment, and sustained spiritual light. The parable of the ten virgins generates secondary debate over readiness, faith, or works, but these remain subordinate to the Spirit association drawn from anointing and Zechariah imagery. No major stream rejects the Spirit symbolism.\"\n}\n\nBOOK ENTRY\nThe tested, pressed fruit of the Spirit, stored as evidence of faithful obedience and burned to give a visible example that lights the Way.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the Holy Spirit — anointing, consecration, and empowering.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 25:6; 27:20; Ps 119:11, 151, 172; 141:5; Prov 6:23; 7:1-3; 21:20; 23:23; 27:5-9; Jer 31:33; Ezek 36:27; Zech 4:6-14; Matt 25:3-9; 5:16; John 12:50; 1 John 2:4) · see The Fool and the Wise, ch. 20, and The Anointing\n\nAVAILABLE KJV EXCERPTS\nExodus 25:6 — Oil for the light, spices for anointing oil, and for sweet incense,\nExodus 27:20 — And thou shalt command the children of Israel, that they bring thee pure oil olive beaten for the light, to cause the lamp to burn always.\nPsalms 119:11 — Thy word have I hid in mine heart, that I might not sin against thee.\nPsalms 119:151 — Thou art near, O LORD; and all thy commandments are truth.\nPsalms 119:172 — My tongue shall speak of thy word: for all thy commandments are righteousness.\nPsalms 141:5 — Let the righteous smite me; it shall be a kindness: and let him reprove me; it shall be an excellent oil, which shall not break my head: for yet my prayer also shall be in their calamities.\nProverbs 6:23 — For the commandment is a lamp; and the law is light; and reproofs of instruction are the way of life:\nProverbs 7:1 — My son, keep my words, and lay up my commandments with thee.\nProverbs 7:2 — Keep my commandments, and live; and my law as the apple of thine eye.\nProverbs 7:3 — Bind them upon thy fingers, write them upon the table of thine heart.\nProverbs 21:20 — There is treasure to be desired and oil in the dwelling of the wise; but a foolish man spendeth it up.\nProverbs 23:23 — Buy the truth, and sell it not; also wisdom, and instruction, and understanding.\nProverbs 27:5 — Open rebuke is better than secret love.\nProverbs 27:6 — Faithful are the wounds of a friend; but the kisses of an enemy are deceitful.\nProverbs 27:7 — The full soul loatheth an honeycomb; but to the hungry soul every bitter thing is sweet.\nProverbs 27:8 — As a bird that wandereth from her nest, so is a man that wandereth from his place.\nProverbs 27:9 — Ointment and perfume rejoice the heart: so doth the sweetness of a man's friend by hearty counsel.\nJeremiah 31:33 — But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.\nEzekiel 36:27 — And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.\nZechariah 4:6 — Then he answered and spake unto me, saying, This is the word of the LORD unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith the LORD of hosts.\nZechariah 4:7 — Who art thou, O great mountain? before Zerubbabel thou shalt become a plain: and he shall bring forth the headstone thereof with shoutings, crying, Grace, grace unto it.\nZechariah 4:8 — Moreover the word of the LORD came unto me, saying,\nZechariah 4:9 — The hands of Zerubbabel have laid the foundation of this house; his hands shall also finish it; and thou shalt know that the LORD of hosts hath sent me unto you.\nZechariah 4:10 — For who hath despised the day of small things? for they shall rejoice, and shall see the plummet in the hand of Zerubbabel with those seven; they are the eyes of the LORD, which run to and fro through the whole earth.\nZechariah 4:11 — Then answered I, and said unto him, What are these two olive trees upon the right side of the candlestick and upon the left side thereof?\nZechariah 4:12 — And I answered again, and said unto him, What be these two olive branches which through the two golden pipes empty the golden oil out of themselves?\nZechariah 4:13 — And he answered me and said, Knowest thou not what these be? And I said, No, my lord.\nZechariah 4:14 — Then said he, These are the two anointed ones, that stand by the Lord of the whole earth.\nMatthew 25:3 — They that were foolish took their lamps, and took no oil with them:\nMatthew 25:4 — But the wise took oil in their vessels with their lamps.\nMatthew 25:5 — While the bridegroom tarried, they all slumbered and slept.\nMatthew 25:6 — And at midnight there was a cry made, Behold, the bridegroom cometh; go ye out to meet him.\nMatthew 25:7 — Then all those virgins arose, and trimmed their lamps.\nMatthew 25:8 — And the foolish said unto the wise, Give us of your oil; for our lamps are gone out.\nMatthew 25:9 — But the wise answered, saying, Not so; lest there be not enough for us and you: but go ye rather to them that sell, and buy for yourselves.\nMatthew 5:16 — Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.\nJohn 12:50 — And I know that his commandment is life everlasting: whatsoever I speak therefore, even as the Father said unto me, so I speak.\n1 John 2:4 — He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "bda59597518e38c586bfe59f747787b7706e4a7c579ccc7f4ef74b3c17d1d0cd",
+  "cache": {
+    "hit": false
+  }
+}

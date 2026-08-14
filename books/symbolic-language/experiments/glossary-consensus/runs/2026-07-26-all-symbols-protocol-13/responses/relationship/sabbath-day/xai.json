@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124595,
+  "completed_at": 1785124618,
+  "id": "0c262593-59cc-9243-8b1e-f583f5e19a23",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0c262593-59cc-9243-8b1e-f583f5e19a23",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry on \"Sabbath day (yom ha-shabbat)\" and return only a JSON object matching the schema.\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of 'Sabbath day (yom ha-shabbat)' as the marked/resting member of the sabbath-unit (with shabbat shabbaton for 7th day, Yom Kippur, sabbatical year) refines the consensus's typological symbol of spiritual/eschatological rest by narrowing the referent to a precise linguistic and calendrical category within the sabbath system.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"NOVEL\",\n  \"consensus_summary\": \"Christian consensus identifies the Sabbath day primarily as a type/symbol of spiritual rest in Christ and the eschatological rest of God’s people, grounded in creation rest and anchored by Hebrews 3–4 and Colossians 2:16–17, with secondary readings as covenant sign, redemption memorial, Sunday transfer, literal seventh-day obligation, or millennial typology.\",\n  \"book_summary\": \"The book identifies yom ha-shabbat as the marked member of the sabbath-unit (parallel to the renewed-moon day as day of the month), distinguished from the resting member itself denoted by the doubled phrase shabbat shabbaton wherever that rest falls.\",\n  \"consensus_core_identification\": \"Typological symbol of rest fulfilled in Christ and consummated eschatologically.\",\n  \"book_core_identification\": \"Marked calendrical member of the sabbath-unit (linguistic/structural designation parallel to new-moon day).\",\n  \"core_relation\": \"NO_CONSENSUS\",\n  \"extension_relation\": \"DIFFERENT_REFERENT\",\n  \"boundary_disagreement\": \"Consensus boundaries concern which rest (creation/Christ/eschaton) or which practice (Saturday/Sunday/none) counts; the book’s boundary is internal to biblical usage—when the phrase marks the unit-member versus when doubled language marks the rest itself—without engaging the symbolic or obligatory cases.\",\n  \"material_contradiction\": \"None direct; the book does not assert or deny the rest-in-Christ typology, but replaces the entire symbolic referent with a structural-linguistic one absent from consensus.\",\n  \"rationale\": \"Reducing both to minimum cores shows no shared referent: consensus cores are christological/eschatological rest symbolism (and listed alternatives stay within covenant, liberation, calendrical-obligation, or millennial frames). The book’s core is a technical designation of the term as the marked day-member of a sabbath unit, illustrated by the Ezek 46:1 genitive parallel and the shabbat/shabbat shabbaton distinction. No consensus primary or alternative covers this identification, yielding NOVEL rather than contradiction of an equivalent core.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"One could argue the book is merely clarifying Hebrew/Greek phrasing presupposed by all readings and therefore not a competing ‘meaning,’ but the entry presents this structural marked-member claim as the term’s identification, which consensus never states.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_0c262593-59cc-9243-8b1e-f583f5e19a23",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4251,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1468,
+    "output_tokens_details": {
+      "reasoning_tokens": 922
+    },
+    "total_tokens": 5719,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 170924000,
+    "context_details": {
+      "input_tokens": 4251,
+      "output_tokens": 1468
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

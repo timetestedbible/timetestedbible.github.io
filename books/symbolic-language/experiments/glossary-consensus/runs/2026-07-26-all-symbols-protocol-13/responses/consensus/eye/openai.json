@@ -1,0 +1,173 @@
+{
+  "id": "resp_0f39e9c3a3b2c68b006a54746de110819496731d4dcaffd79e",
+  "object": "response",
+  "created_at": 1783919725,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919749,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f39e9c3a3b2c68b006a54746e679c8194b470cb3be23eaf63",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0f39e9c3a3b2c68b006a5474747ab88194904be57dc6685367",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Spiritual perception or understanding—the capacity to recognize divine truth, with clear or opened eyes representing faith and insight, and blindness or darkened eyes representing unbelief, ignorance, or moral corruption.\",\"primary_basis\":[\"Matthew 6:22–23 and Luke 11:34–36: the eye as the lamp of the body, linking the condition of the eye with inner light or darkness.\",\"Ephesians 1:18: Paul prays that the “eyes of the heart” may be enlightened.\",\"Psalm 119:18: “Open my eyes” so that the speaker may perceive the wonders of God’s law.\",\"Isaiah 6:9–10, cited in Matthew 13:13–15, John 12:39–40, and Acts 28:26–27: closed eyes signify failure or refusal to understand and turn to God.\",\"2 Corinthians 4:4–6: spiritual blindness contrasts with illumination through the knowledge of Christ.\",\"Revelation 3:17–18: eye salve and restored sight symbolize recognition of one’s true spiritual condition.\"],\"alternatives\":[{\"meaning\":\"God’s omniscience, watchful providence, judgment, or protective attention, especially in references to the eyes of the Lord.\",\"basis\":[\"2 Chronicles 16:9: the Lord’s eyes range throughout the earth.\",\"Proverbs 15:3: the Lord’s eyes observe both evil and good.\",\"Psalm 33:18 and 1 Peter 3:12: God’s eye is upon those who fear him and his eyes attend to the righteous.\",\"Revelation 5:6: the Lamb’s seven eyes symbolize the fullness of divine knowledge and are identified with the seven spirits of God.\"],\"prominence\":\"common\"},{\"meaning\":\"Moral desire directed toward an object—particularly lust, covetousness, or temptation.\",\"basis\":[\"Genesis 3:6: the forbidden fruit is pleasing to the eyes.\",\"Job 31:1: Job makes a covenant with his eyes concerning lust.\",\"Matthew 5:28–29: the offending eye appears in teaching about lust and radical avoidance of sin.\",\"1 John 2:16: the “desire/lust of the eyes” characterizes worldly craving.\"],\"prominence\":\"common\"},{\"meaning\":\"Generosity versus stinginess or envy. A “good” or “single” eye can denote generosity, while an “evil eye” can denote greed, miserliness, or begrudging envy.\",\"basis\":[\"Deuteronomy 15:9: an evil eye toward the poor describes withholding generosity.\",\"Proverbs 22:9: a good or generous eye is associated with sharing food.\",\"Proverbs 23:6 and 28:22: an evil eye is associated with stinginess and haste for wealth.\",\"Matthew 6:22–24: many interpreters read the good and bad eye in the immediate context of treasure, wealth, and service to God or Mammon.\",\"Matthew 20:15: the “evil eye” describes envy at another’s generosity.\"],\"prominence\":\"common\"},{\"meaning\":\"Purity, sincerity, or undivided devotion, especially through the traditional rendering of the “single eye.”\",\"basis\":[\"Matthew 6:22–24: the “single” or healthy eye has traditionally been read as simplicity of intention and undivided allegiance to God.\",\"Luke 11:34–36: a sound eye corresponds to a life filled with light.\"],\"prominence\":\"common\"},{\"meaning\":\"Authority, guidance, or leadership, as when a person functions as “eyes” for another or for a community.\",\"basis\":[\"Numbers 10:31: Hobab is asked to serve as “eyes” for Israel in the wilderness.\",\"Job 29:15: Job says he was “eyes to the blind,” describing protective and just leadership.\"],\"prominence\":\"minority\"},{\"meaning\":\"A symbol of the Holy Spirit in the apocalyptic image of the Lamb’s seven eyes.\",\"basis\":[\"Zechariah 3:9 and 4:10: seven eyes are associated with the Lord’s comprehensive activity throughout the earth.\",\"Revelation 5:6 explicitly identifies the Lamb’s seven eyes with the seven spirits of God sent into all the earth.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single settled symbolic meaning applicable to every biblical occurrence of “eye.” The broadest and most recognizable symbolic use is perception—especially spiritual understanding or blindness—but the referent and literary context substantially change the meaning. References to human eyes, the “evil eye,” God’s eyes, and apocalyptic seven-eyed imagery should therefore be interpreted separately.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1195,
+    "output_tokens_details": {
+      "reasoning_tokens": 227
+    },
+    "total_tokens": 1512
+  },
+  "user": null,
+  "metadata": {}
+}

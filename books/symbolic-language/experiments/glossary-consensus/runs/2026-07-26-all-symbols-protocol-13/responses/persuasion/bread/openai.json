@@ -1,0 +1,257 @@
+{
+  "id": "resp_03c8b4bfb911636d006a66da0a7f14819783195f496feda93b",
+  "object": "response",
+  "created_at": 1785125386,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1785125430,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_03c8b4bfb911636d006a66da0b2bf48197a934e1a24408d5fd",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZto2qDyyU7NIPjPQbjUmphikeuTIxQIRBMKOp4xlD09dY64TJBbDssXtOyZIYYZ-VmJRSHU5xPGEJLoYRI-KxO8puibguWr95FRZCd2xBCMHdfb9GGGMnYPGvoegM5AZB94vV21jaokchm1EIheWWizxQ70EPfmoamrfbKe6bOnoqRXKa0Pd4GOEcmPEPiVhY0YVtVkYDpQzIg49JLxRIY4o1KJM8FAd9nWo_bbJKZKzNwx5V2LGjqBLtjprkGft7y7uwAe6kzZEF0QOou-1IOGKa9Os2i8Rh12azu60lvPdT5YhYsksOXgJ3gGiQqK-BCFfvT7rFZOxwgox9gIyIZOxoxbrwMRuqrFRkdT5MemeO8W598NNnnuMXdK5NvV5PbWjPQGswzFeCYJschgliwG8ND8AcY5fL4YwQFGtaX46X6XZzi_P7B0IoiM0OAqD2RAlZzq5eIumBg5PrZvju2zkyoC05VpV-A52O8a9HGtEI6rpO9es-lgWYS0n8asA9asOlL-XtcaQfg5XEF2PDcLVXi0fIV62uTKeHuSQy8kchAN7eBP7hHQMzDFIiLwtWd_qFubShFPFuKlprTkpCxE2vsl19XefOZybdyn7t8Nwku_u2Kc9C1c2eZ30PDTKDBLpNi-bbDHel1yrpBYJwwZoJMKPjIsWj9MFx7KJV1umkm3a8FlH5pRvqcYqD2660TlMS-5EoVKz01vCix9g9spTi5uWvGdMGe0E8EEtAAAYQc7go1DOpxpdJoK14wUvRZ9wDWhapxsdAU3VpW_iIBn9LN0dS44Z7qQSPs1JWNpMwXK8FcBloQXqoMwYPlgwayf0sRMYOF06LruimFGM0sRR6_lNaaK74cbXKq-jTetiUWC8QU7Sdo1SlStVu8qH7H5HxZe0wd7cn1sTf2RsMyOfpewEbkxkJcA6R4IpC4K3NwuEEN-3p4WePfTOwykblcOoxN2KRFe5VUJ6L1iQjFS7UdcIPpJLdqtkGuPlLN3gdk40Qe4qqi4DAGDuLJ49SlSrsWXrna3RyNuKZS_DX4ufcq0og4_IzYhdPTGooIHsmFxGfAwLUpRRvJOL5ILlKz2hBn0EK-rvbO1YpVmwQXnGUA-XSD2qytpyv4MUxUdKepVzZx5_HX7JFQcwqktUF2gxFiiRwx9e7IX__lDu0Ql1yG8uj902gg5dCeMpv-Gw5wIbImrX8sBKuqdz5Y72bnv3rhaGT4Aj1Nq1YeYo2MSH1GToSflRQGuxy56ywUrq1C-J922WUiS8E-SXfNDKOJ9evpdZwjw0ieCZDjOHPBWieJCoM_AaG2jmZCp7qCYRUR4EHHSQ3WWI15A2ipocFi0c-m0aHhud9XnvxB0lGCttuprW1PxtqjdoWOzHr7Bx1mVksE_dZpWWLQ7skfa4eg5l792JSVAnDoQorJhPkeZ0FE0ihBYETCJ6N5rPqzanuTiq7TeGFOzuuSjQiBcehrryPNuIacq53vRI4Rd_Gf2atr-oExrP_3pig7Nc552DEZ4ZuZrg_TEDfL50uiB8mfkxtAxDTr5Jys_TOBepaSxatSOuq_Dl6QqMcsv9lNy2gB0Ju8mNk3hUrI-lYl7ZeNr1LjSZODXy1E5IJiTNIVylNsx056ZdpBDv8KBvJNywJDJtxm768cHO1kN5Lqkba_KdghH3erZ-4GCJnGZ9yvOmPJyl1ztlaOf9pnkCL87hZsi7R8O_xJHHkNWozdROYdvVTub4g2oQWneDlvaMzeKy5Cmb8yJ6m_rk2CJkIpaP7-2by-hNapN8LYiv8rL55WmtYBg1iEJdRF4Pl9SJ21Xa-gs9grkvhD6vqdWqaTGcwKI8zpqjCiM8YYsJyeaLPFhp57y5GcQUE8x_0nCOOx5c15JGq2NzJPUBkHi2X2nSbQesSlMRDRwNc8SPzOu-LdtsqaA7St0Ii8oo4UM-WqUJjquL7XmTuvk0ELXeKgyypdun1yUYa7b32WbeaqmOTL16rNmQHHLURAaRJTOeM-wpZPDaL69FEhVLyo19AHeutJ_U5-l4Xj3hsV4_XU__7F_MhcniVCjMPlnXxtXyqD6AxVLPz6PQ6NzcyjD5uLQWeI2RuLZnYuXYXfKNZfIIH70xfnMFTORW8DNE1mcswdk1IEgVzk7UxCFiOeifBwrvIo_CTbz2DSUAdQyl0wGPM6ielrCeG_CQRUMy_F36XxoxHTlXAnmcIBdqIUf4jcYOX8jgBcVXD0qqTj2_qAAh09Y46fs65oRN5yfiXuvLYGlfK-XGBISdIlhwHkGkVUbT1X3fjBkLqnoPsgcHhrqxzgeP9aUaPJwWNYbmB1sDjh0axhSszLv6_3uyHIGBYrrLobu3FonRW6Nvvj0BbzUMpnDrP8dNgPMPLFn7YMC8vUQ_1BLPunKGiaGWEtruZYnykSrEiW3KY6mapdlmDHS7QPFTobEv7uXBv-rqlr3719WFI08ITpvVjgaP8uOLF9Cg-kNCjXDM9u64D3WHx3gMeM-8afOHsZU4KpgMJ83vq8-VdyC5knHdmRclKz6dM199CxSBMXh9uwqDGnHKajbZNzGGXNJ2pp7pQJ4Knb1PRrNjM8fuYbYgk2391DZiNuxXLyBtRANxwhf0Cbej7rWSy15QSqsT1qnHFJPDqZzSZri_VfsmZSjvo21l2eidDfcC6Dh_InEFsHsMX2uC7ymxzDhuSn7u4GCiCghy2xHCyOY_kp10BX3B9h22ODB5uC_VLtVko9yB3xM6jgRXV1EBd2WlmR_CdqFQJcHn--UUoEmPf3NN5W_cRoGEYr4KfOIr_FuqtgPcNpWfs9x-uIlBcrzpt9ajTWaeO1shuCBTltjzRqTauR57gC-kUWSWncqr1W76d08u8ZYfexzwLrHvCJj7K0Q0QcfOWn_pAgl9-xsA97E9WYJ4d-cmmYbX1QbAJlqaS-ZqfQf1gJZ7tdVIorv-2AhZUFg1yljAdmly0qRshwYkLubLMQO0vHc4PAWrNVhsjKROcdgStcwTVviJhaL_x0MRCC6DEhHURtoXdRWxs4OygGQroBtGPvvLKjjr1sSMcwejEl7ooMkrAhApNSjHVWGLakxTu6voyLazUah5BS_LcVzBpICNUD8LaBZ6cqCosz9MQ7MybOXlCnTU49nc_x1MjTIz8TN3cQZJCX2wmhYj0x_KHlH5RgCQSxaqe2vO3sHDMktS5gidngEe7581iotJNDsWevDYO-wWZfyZQ-4FIVv30MTo58KUQ7GfhD_W3u79J6yG_J6uEAJLTK3eCvIRv-ew6UfFXVAZum2-5s2G678MYcj54jRcoXCjymwHpCUGWg5A-bCDyrYNEzwEF-1kf01C54DZqZCbwA2RAxk_JE_Kw_PaEeJ9NOekNRnM5pEPy7ueajZABFjyNnS-iJqGlMRVNWmFX9N6EvZUf28lhaOwMazeqc18ZcBSD2NebG5s4eS1AUyIZz-F4dlFwTQLXbZwTJ02-8hIUTQtirMM_6iLD5Qv1wAoZ2qQGla60f5QmId0HOxL5Mt8ym6D5H9HQ-crV_9F5oojpHuK_2mKF1UZCR4IRjTODVYxyYXc1ZvVbvUkHBNQDC5lTizIxTibdR9RE3G9l2gjieuW9CuhS7HEcp6-nC5jbnWj0o6kemeGT8ZrTDLE4nGenf5kx6gL8ierxc0gPrcWAAysbDMI-fdscxhriTfzgrlu4BTK0hR5C-1E7qUa8Vd1CaThuivYLG5r5di_vuQcw858Qd1zr8XdlUz2m-C3PxZ0fsAIfhkQY64mK2tVVfQaD8wfp13Vs4GhFEdOJ42CruVTywAdoH8R0-yqs74v83RX7wfJStVxwxol_l3pbmXClGNknKUzmovoOG3xcrInK8jHMXhb6FhX0lDKaouOoSkukZoOMSp9Vl0ooBuAssfnxZREaWB5YX6r-e2fQqsO6KyCBM8qo-gTGOyFMCOIMqLmIjFZzFZOYAp9AMkIHK3JNGAUkNWVFeFQ83KZ_Mw6SwGZof5B_0415H9E7KgxTD2-uXKgxFE9HSyAzH1mYnYuU8pcbJ9FRVkeVyU2g85RwhLBdhveZbThm2w_PBX8S1TLUmIJGF9n3AlOFz0dhum3oa8DuStrdCtzFxqtF0pE36XFGQv6O41e6yKvlUQgGYHfVUsji49V_CvjvkOj0q2Byyh_8RAiKA0ZlOg6THItXpUNCQEJ0eTej_UULFEQg9Is7N7DlVhf1SUVpoVoWOt7Z230XQxNtPFQ_zZP5MrwGwC_1ExmbmOP6Rv24QxCYKz1cp4=",
+      "summary": []
+    },
+    {
+      "id": "rs_03c8b4bfb911636d006a66da1443d481978a76de9c377a34f6",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZto2aRW8MfbD38s1xdRIAxt00yzhWdBgpAyvtneoK6xKOZoA-Y7Iyeb_189AxuRfsDlnC8g5G7LXDAMvr-Qzw_EiM7AZ5jF8esxBxa_OMnXbuFHA2b4ndcBd3DMZR9kcCsbC14nbcNi4gWgrJW40ktdhpttgSIUE00GzDElyurdOiZ0e_Gjc4SocDOq-XurTutA6mUkt5HDeBZ_9l1kCAbPorZ3OpGvf-TaUUqoqoeBxDNIW0Y2RvbxlFDE73Yp6l51y9jLflHiKHZMjp8CtrcvOG0iDyPLL-ZXcnD6yMbkMTXJ9kTP2NF4qQQx-euI4ivjXak-RRnISd-h-vZtRruYtOaWhl-C9M9ldhXTZuroU6Fwh-W97PGlX783cZ82kPzp1ognjsjZNeNWcv83c1vYb75P-H0zx_iFvv5GCkwc161hxc8SPTE0U-tQ65K8MubpUm5PKVrK0T3_LEiQf_iE8j6fI223vMluYgPrW8wJB1KjLxKdIVEmeTaz_-F-TZdR31Z06T5yJORhWeT8PlqVEers0Rq9NMy9O-cYHVz1fG3jUx4GxDLPdipCSUoV4b9UOZu42dUh8mKZYr4yU0HKTYKGwI2ZMLH7iAeRwnVOJgk7yVo0qzIcDkSZ6T5yzzdeMMjf4KLXZDC6bliEDmWdrQ1WvUT2U61dCC9j2JeHbdL3TMxbcEXTQp_QgGvowe7bbN92uz7PZ92jSIUg3EQWHDEevOwbmBDNsnFOJKPbTfQ5PHg75v9CStPPED4LmVuxl2c35acRHOzBAlpzcRkQ30CVNc2Uth-t7q8iDscApSXPbEV6gLZY2dROxQlAYDWDYXVcY9bxm04z9L6_9x9I9KOqJXi2puTtxHH_mpI6NNjsLUd10jVrjjNUEWm7IkjkQZCAbM1l8vBgweRyghbf-aSJ0-pBsiU5QzD_CLWnVIDAeBtFqTmqjKgMFvnxNjDctgeTIPn7waBQzaMt3rWwSR0qO-2oY0ufHaqM5MNfM2-UnEAst-hivhV4wsA4h9OJuc2LcZmFj9nXT4LXHmBzaMEY2pIwqXERtSPmxxy_HqPJ9E0oaTDDtDS3OX2kWglb9omXPk3GynflPCOfh0mAiAmyN1cKnPrv8NdJW87UzD9oBp1GJ6541-Eh8g09p0t2mIx7FdVpo7_X6-39TMj-hoBajG7nkpTGWH5ssjYJMgcNYOoVVz87o3UentWxVizVlC8K0K5xFqDhOIOWBMO-bE7pRsGqHUytLKNJMH-r6qzOhr8pRZ1taNGJOTF1RuBc_eyfuzr7lR4V-G9dwlIGL0L3p1m1h4F6yAO56wkXujtWitsk-X6OY0q1sNohYp9FzZ2QpA-VlQmVO-jSFFJw1hBZ3uXq-vtzTbZoGA-HMGcuZO28axEOpau4Wq67rCxJv8z6Qj2gh3AHB5vNy57jCNyZUU4eimn20G343C3g1hcGNuCUy1HIulGiBXOXUHjJWGyml7E40I4b3sZCk3TW233jq0e5rCMgOGCocbwoBD0OlQPvsZH0uzBqMwjwpEUtf75bMKr51IxQPNnSMCggtP7-1pjeI4URJNKn9W2CP4nM5Ww6zlQB3O96DKMM_m1cMUWIGaIiw2eAY6_vocKp0DEIimm36PqAjUyVslnQOl8HzEcSEQZ6iqPQpSG-Z-rCQq5qG2B4VQCXLUzOv6qzIXuIg2MW5WTTaDwQ5R4cGvehi6YpRzA2IkXFf3pxRdw9Q9q-GKtbxAJk0EC8MgQf0fGumHHwVD5AXGyfVpQxeyC2WluVcEESnKHiRNcVqMxtJ4DYCCdhWF6-TFCzmAh408rRAn9eUaeGd6Jqu7h-Gfm-MI5fhBhRid0GXFKhzq5FKT46HngrIBLYosdWn4qVnS1PKIYnUDOxzFtV_PKc0Q5pTn2OvG0W9xtlR06uvHDr1TsX9ehuUjEAz4juEtHRoFL-xwEAiFVpUkyHvn10FPVVsL3b8EFYK5HFoozcWF-2grwRKYSJi6SlYLWrfoimpcRaVDsm8eLulszddfq4Hok4wZOb5LwvI8zEV8xCum8jqtwKOLAR2y5tn5hG7FflHOzBJ476oDnaKvf9GdSX7ZQc5oJTr0FEsTj0Rejram69DIyXHP8Trd-iraIGTpEhYf70X5dbOMZwt-MjN34tK88fB_3LXNuSmDygB5CivEBR_tcJFddTTSMeEEx99ngpoSA7HUfXm7K6xwAktVU64Jb2sU79W4QshGOagH7RuqsN8p87X90vnPru8zxtNs1GgGoQ5GLOJXoGOLnZf-NtBb1CIBfQQAu4fCs92ZSnb38JKacuLryMr3vO5-MRYASawdASrwRRKWRJrF6NuxYL7BftSBNto7EAMlEivEjo_afSInqVwKJLt2dOzp_R2mJ36S04dvtOIjzhQunh0cFKIePM5C3bVcha-HBFerzJp5qTCxwyUTm1kmKPZQqcYL1G01wOm1qoD7dXoyE9fI1HiYJI7s4Ipw3-6MxehhVGBRfFhbbwLjKyqFRsplICXLX0efXgoNUnyLQBT5U32Fa_S1aWdRhm8aNQJcPLG0jja5nmeeWzDaEtgxHr9SEe-KOO7qtE0HFXv7nrjXN1zmDNNlL60KROFzW3j3NRSSBxeAGOhFDXVxorgwFEYj4v9wwFzj0b_CTnzr5OJti_D0uXDuH0BOviAtcyr0SYOcPFkHSaCLm23-OlH4nX_KVQA9zk7yRRmbDkKqlKcy4X5ciR2ovazyPcHUQhr3idspqjEMNl2i9gNhxqPbSKPjvuqM7qznwlHXjzUkuzye1vSHR44GtY0aP2_gVgAq0KfLADVDjEe5pccwt70hvgntrQpGjYdIp5S6HY1eJPEPT2pBnGGoEpfwyTEYCQQ9-xqNIh3RWU2Ay4zvyYAewPLPErN1KSKET7NEUti-wo4zW3cEfk3ECHGudZHXhqdy-9ABE6SCBuc3VcplcilhSTLATVTFEweegTBOTtVEg88FSCjmxpmlqexTkhnJBZWbFF7Q7D3_-L75Qube6sScYRQUbG0UsLiNNZWk5wzyjVBES0auVlek3OQTUjx5wKIjEeGz-SvQ506pyJvJQPvkv2qBeGuXxTfm2Gt-zuEYx5iT6dlJwagpBT6tKBeNGTXtPM9yAV4jt4Hcct-IR34YZivuemIWnawgkjywksw4Ao4BF50xLDuX2a7fw11EDxGkq1kFgDkguZeNStVx_6GJaYLICjIK-oPjy1oH2hcLbGSRnWWzP20NZ9OoSzNJQdfFUZZB0oCRhg7efTxTnUK_w6oifLnORb6NCFIh_BuqCcKZuvdtVcc3TTLzN70DdcmlJRZgNKgIH8ddxSX78RDrquPCL26jqCH8IVf7gvEJtfzaO4DCKPXHrEwVHuP3VewagEe1_EJXmqM-QOMRYYoebqu9neiyAy4SDr_PdBHcTvzqO9mrE9g9Iz3cfk59M7PjjpFCbUtWF1MyMH1BuNF_JGcmK7Fmvb-1ugo0YbJ1qVXRqeDlpqW7nfDS5JLXjTl_PSHnQhl0SAdxWEirFtry3_K7qdNFbxaqhUqy-s2-iv5fXR4zNtbawlcStabFaACpJ8t2Ut5Hx-TzsD5RXitmrKt6iRpcbj-I8ACscJZf7mVyHIBY_fF4W-gf2J_CiNizafTjW1hqRKCZrLxt6rjCWASugBRAmsrLsT00z10IS1FsGy_tyzmJM-8ZS6KCGhPcwb1ZMwovz_2L2ZMdRmWqBj_pPzATgRUphtBXb2Dwr4ghwqyxHP_0phZFfd7i2lHqLYl71j1oAyUbKjMzqAz9pjVgqy0SYh38yZzKKf5PArFjvCgS0Dm4ND07b2qyNRxHSxmqzRy9GKMX7B95MDpCNPqt1GmYnynawi3nCOIqoXxcoBSQHKYJfPe3P31yKsLXGsv30TRF7xhKIxekRSJpm8eSOCGhZb73fgqe3CfxcGDw215_0MF6w_Lejh_yl_FoaGvFKzBzRFtp0WjlJqQOx4sCvARylmifomFJobipVj6gDCA61raYsg66NTNyuiWAI-vGhgXVUAyCrpQ9DoLq07v_uWR5wfWwKiWhAtp0apzrI4SmRJT-BW8klc_ENrgeztaXtBmgq_fPfhJOfZnIjvGiX5Kzj1OIrp4-7-ylkEnaR4vT4WF6L5c9mdDhA_55a7SuwiHvYx03JPKHJo5Fwu0jDG31bdLUJawsxoo9AMjyRm0AQy_WoBQXRkyL5LNJNOyWnHx3lklxz04zUNMy5RqbnrKSwajN1ThFc2WDP2R1SrJBDPBd533VlrPqtRCK-mxsy3RbxuDZPBWOrrRG5fegvpRdb2LtsKNQLb3W8JYGDzelDY4_xbA4BLqRlHLIjZCwSQWqwMrP9PWPamXsHdtMOkveZsIctSbw9k1gMNXZ0FcG_11mptXh3NRABGkOmU-xoFPZWhEfMxcmhRqRj6ij4PYmbAhUPw9dC2J6Yah4NeoRifSt9feJY95hljMc3xBJ5sewXm8k0g-79hT6TfMna8UmEyAo-U9rAnDvjFdIbFUDeGt18k=",
+      "summary": []
+    },
+    {
+      "id": "rs_03c8b4bfb911636d006a66da1ddce4819785659321c9749a6f",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZto2X3FAFN0O5_cnAjd-8xRR0mgvFbKME1hT4gqLP2d8g9gV9xMHoUn4KH9MhvYJTTVyLEuNEQEqPjx4fmn_7-C4Y5C4dIL852TdfQhLC7k9RVDf1gi3Tm26AR0VX2yJye0OzwrdIoDZ59mDoO5g8kwWIrmmejV7OcODdY6Vsc-NqzHfmGbUAwjF0-MSduVtc9HmMBWkHwRuYxaVxH3an6y_YaxE6ZpAgsVP3-I1JrHw0ezpqfrOh78gRPkxYwKZ64UHJjaGaZoAo15eU7OyCkrj41ZgxUxpYroOXmhvuou7YpqeqV3FLKiWaV98n29K-6xFUGuFZ88RjDoE8GDpxJ2KuFS95dujqKcO_VZVSAFYX2WuMilvIxxa2y37PqXgw3qrDBXheUVD9ckWx_p3hxJj1e_PiDCaSTJO6L4i03YFKqrRV5DD9Yf-sV3QEs6Z7akxyCdebI9rzGZ8a2-1x1v_2yT0PnDjeqbv-UM4xe8tLidcReLn5ipFC1Ds4PHnKJ3jmwz9RQKu0qYNsC49YWwIYkvAvXhkYtpEKPkTkrk1-CZ47RGlL5eLdVwuIbzbtPugjoOvUb72HLWPoSTozBK7oFSoGoD0AYW-PcEjsMlbjGGetG94uqza-WMKk4aFYPqU32I5EK664qEJdqUNu3g1OQL_32GKUb8sYjM-IQgiGPY8ZO1dvlWdOI2q2TjqExGUQDK_1nROoiqDzDns97QUcAu45tRB1QclSGXKdsQoKiW6FGGfaa16C0NEVTYR5QWppfRjoDV6aPHpRqoEgSVTIId0iInsw2ncvYr6pVpn8jZNtgBlLgaURPPXFIWRLPdZH2PVzV7NQ4UKg79vytRQlWq7U-rhVnfe7H2mwI1UwGn3mGwTp1FldiT6_EazV4-3JXKckbrdM5yB9kU8yt6ZB0n0q9LyK4AeDvPAFNfhBZauyEbBzDjsI3ZfiKVpfEDuxEZ3fCX3lNqIgFcmWjZiXKWYkeI-HiC172PY9_rzEVS401CITlUkJLV9usqaBLGzwVO7cclu4YN9HWvd5_YyGSUrrS-wB4yQrHnciksVCdktXykt7y7dtGx9hogr-LqwKK90S-_YciCtS9MJz3cOLAFXwRcUl663hVRKOIKDhz_DlH4yqioc9IKSH3iCJXc1gfrDsokGabuanktDJrLHYlNAXucSBraLpvD6Kz3S5_yd9JeEYAjIJ-4MRaR1840imAbYZog_w5NPw3AJk29wactscrisUykmNpiCKcBmN2WXFTD7UCJmeMWwb1cA7rPoGEFStyK7_EVNdrWkANhmatI28Tm_wAgvRtvPBHA3uWCXLcRN7z7uK4yRc8keXScWw7AvzYZddFJZtEvxxf58oUgjbdwGpTzWxEmgHS0_sfl3eP5GcfuzlbL7LQzQatQfqsVHDik9cUJdgI9TrKH-yZagci0Z3c1c2qHVAX6YfFYx7VXZUoL73FKMBhYBALLA4nXiYUrI1GpcG14frOsin6hNvmt-jIcO6485XNJXudXhh-XBlPoCxhqeUvWQ6rUbdusscdKc0-I5Y0Cq4HAovGymtSuEUB2VkEjRXUuUkKwMlJ8FwxNTUhd17UAcVEWkGk-JGhE-IW5o5LEEsaOlJqhE2fl45kLLw15hxu2_uyHliFD3lY6f-COefmodCPPU_upV1IUgIxb88ITLzpyl5D4tjEt4-vvrNcXeW_nlAfFdESEKG0MBij3oNyHUfwn7ZLM-jkt50tyRKT_CE4qkYhzH6XXYsQDQFo_rkMd1vavvrptG076BoAqRH8PTD1kJFg-mjo8xJERiyW_s0N0h4OORUOXOYz_qG-QSvsTTDfADSk66YNevsx3Yl2rvdStugSKAcWR-fLt7kc-GSVtJowODCCnBa3x__kbDduddH2JqK83WQt0GtF9hbosqFQLM1GRcBft6GE_qi-EOOVgybeMnxJPfZR1smuTLr_zHskBUH5VZmi7sieMAQcNNmvYdh44DpW0ZtUpYzUXH6b9U3sYH35TLrbNd7yBV4Y09XEoDBAi417Lv1aINwXONXCSK2SzyoInOufdxL_t6SFNpLn8I6gEH3G4IS5kXJLtKO5RsT6hlgv86XQTq48lvsfP-H2cJUv6sbpFeckh7MOiFpZ3Duc-Xrs3u2epR_i4BRJZgj3AYUD4skCSdF7BovMFB5IwNIZa3fDeHIACYolDJyH9eLt3K9z-cChPsVX_9Pe9v2QfV8MA_2M8ysrfyJtHLiU7f98Y5tx1W0gXSphSJyBjhwNMyWGTRJajk4HEEQQfiKmL2qdycm6LS4tDjycuwxej3y9PZMGaQdV_pm2EEordzovXNcV9qaa16iod5yVAO2JadmicMxqzfDd_2CqbtHR1u6UqPavV4hLyehKoi6gROJluQ0jec37nWsr2dbcRWsKAXCpxEef8gSZ7gbqs7_3KGlX_4Bi-A6Q2z_fxnw-25TuPmT1PCVCIhhSq2Z1ozBQeVylW44e11Smlcyk5oWVZWRLIXLIC83hXbhsG2pUJZYeIAVyshgIjAKQR7rN-yIGJlMVGF3CZyUAsk_2Dip31hmj_VlxGIvlAGVjNqpO5FQ4MaHea_A8VxctpY4agn1kJD-BxF7T6U2kvWJrzQEwLEOAnw_ROJZdg_fgcJi83t1GEJfler9G28-WyWaWygxZvBWyEeNBsUGCUyOfNNSlTwsin_wvKck_CzT4g_QVrEEWjYuWsnaWWPgEu_3J5tCMd6k8O0qnzDJurQusQ2D_ymrFV8xynW83W4llgXnrH59siLHvYPpnUVuKO2ybca44KrHURgQ5M50IECe0A8GXmt9YaNQ-PbnjBV0pWMbkbYqNogkAWNBvpiqAWO5Kz6g82JtHhH0R1nHsAEtjsqRaj_AxbOq4_RAMKUIa4uIKpY3vaU2PP3d_sjg-HmIu4=",
+      "summary": []
+    },
+    {
+      "id": "msg_03c8b4bfb911636d006a66da2415548197a9df26aefa1ba745",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\n  \"persuasion\": \"UNPERSUADED\",\n  \"support_scope\": \"NONE\",\n  \"rationale\": \"The cited passages establish that God's word is necessary spiritual nourishment and that leaven can represent corrupt teaching or wickedness, but they do not establish the entry's central equation of bread with the word of God. Deuteronomy 8:3 and Matthew 4:4 distinguish ordinary bread from God's word rather than identify them. By contrast, John 6 explicitly identifies the true or living bread with Jesus and then with his flesh, while the Last Supper texts identify the bread with his body. The book can reconcile word, Christ, and body as related sources of spiritual life, but its glossary replaces the texts' most explicit bread referent with an inferred doctrinal referent. The Christ/body interpretation therefore explains the central evidence more directly while still accommodating the word-as-nourishment passages and the contextual symbolism of leaven.\",\n  \"book_core_identification\": \"Bread symbolizes the word of God, understood as divine teaching or doctrine.\",\n  \"book_secondary_elaborations\": [\n    \"Unleavened bread is pure doctrine.\",\n    \"Leavened bread contains corrupting doctrine.\"\n  ],\n  \"unsupported_glossary_assertions\": [\n    \"The general identification of bread with the word of God; the principal cited proof texts contrast bread with God's word rather than define bread as God's word.\"\n  ],\n  \"chapter_only_objections\": [\n    \"The chapter's claim that feeding widows or the hungry symbolically means teaching them the word is a broader application not asserted in the glossary entry.\",\n    \"The chapter's identification of Christ's body with 'the word to be eaten and kept' requires an additional bridge beyond John 6's explicit identification of bread with Christ and his flesh.\",\n    \"The book's general rule that symbols must retain uniform definitions across contexts is a methodological claim outside the glossary judgment.\"\n  ],\n  \"strongest_counter_interpretation\": \"Bread principally symbolizes Jesus Christ himself as God's life-giving provision, especially his body given for believers; physical bread, manna, and God's spoken word are related forms or analogies of sustenance rather than evidence that bread uniformly means doctrine. Leaven and unleavened bread can acquire contextual meanings of corrupt teaching versus sincerity and truth without changing bread's principal Christological referent.\",\n  \"counter_core_identification\": \"Bread symbolizes Christ, particularly his life-giving and sacrificial body.\",\n  \"counter_relation_to_book_core\": \"CONTRADICTS\",\n  \"material_core_denial\": \"The scriptural evidence does not make divine teaching the principal referent of bread; its clearest explicit identifications make Christ and his body the referent.\",\n  \"counter_case\": [\n    \"John 6:35 and 6:48 explicitly say, 'I am the bread of life,' identifying the bread with Jesus rather than abstract doctrine.\",\n    \"John 6:51 explicitly states, 'the bread that I will give is my flesh,' supplying a direct textual key that the book's doctrinal identification must reinterpret.\",\n    \"Matthew 26:26 and 1 Corinthians 11:23-24 identify the sacramental bread with Christ's body.\",\n    \"Deuteronomy 8:3 and Matthew 4:4 say humanity does not live by bread alone but by God's word. This contrast supports dependence on revelation but does not equate the two terms.\",\n    \"Matthew 16:12 directly identifies leaven with Pharisaic and Sadducean doctrine, while 1 Corinthians 5:7-8 contrasts wicked leaven with sincerity and truth. These passages support the entry's leaven qualifications contextually, but they do not prove its general definition of bread.\"\n  ],\n  \"book_explanatory_advantages\": [\n    \"It unifies Deuteronomy 8:3 and Matthew 4:4 around the theme of God's word as spiritual nourishment.\",\n    \"It combines Matthew 16:12 with 1 Corinthians 5:7-8 into a coherent contrast between corrupt teaching and sincerity or truth.\",\n    \"It offers a non-literal account of eating Christ's flesh by relating spiritual eating to receiving and keeping his life-giving words.\"\n  ],\n  \"counter_explanatory_advantages\": [\n    \"It follows the direct first-person identification in John 6 rather than deriving an equation from a contrast.\",\n    \"It accounts naturally for the Last Supper and Pauline Communion texts, where bread is expressly associated with Christ's body.\",\n    \"It preserves Deuteronomy 8:3 and Matthew 4:4 as contrasts between material sustenance and dependence on God's speech.\",\n    \"It permits leaven to symbolize doctrinal or moral corruption in the passages where Scripture expressly assigns that meaning, without universalizing that local modifier into the primary meaning of bread.\"\n  ],\n  \"evidence_book_core_cannot_explain\": [\n    \"John 6:51 expressly names Christ's flesh as the bread he gives. Treating the bread instead as doctrine requires identifying Christ's flesh with doctrine, an equivalence the verse does not state.\",\n    \"The Last Supper formula 'This is my body' supplies an explicit bread referent that is displaced, rather than directly explained, by the glossary's definition.\"\n  ],\n  \"comparative_winner\": \"COUNTER\",\n  \"decisive_sources\": [\n    \"John 6:35, 48-51\",\n    \"Matthew 26:26\",\n    \"1 Corinthians 11:23-24\",\n    \"Deuteronomy 8:3\",\n    \"Matthew 4:4\",\n    \"Matthew 16:12\",\n    \"1 Corinthians 5:7-8\"\n  ],\n  \"unresolved_objections\": [\n    \"Bread is multivalent, and passages such as Isaiah 55:10-11 can legitimately associate both bread and seed with the effects of God's word.\",\n    \"Christ and God's word are closely related in Christian theology, so the competing readings can sometimes function complementarily even though the glossary's doctrinal identification is not the best primary explanation.\",\n    \"The leaven and unleavened-bread elaborations have substantial contextual support despite the failure of the entry's central identification.\"\n  ],\n  \"confidence\": \"medium\"\n}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_persuasion",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "persuasion": {
+            "type": "string",
+            "enum": [
+              "PERSUADED",
+              "UNPERSUADED"
+            ]
+          },
+          "support_scope": {
+            "type": "string",
+            "enum": [
+              "FULL",
+              "CORE_ONLY",
+              "NONE"
+            ],
+            "description": "Support for the exact glossary BOOK ENTRY only, never for the supporting chapter as a whole."
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "book_secondary_elaborations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Secondary assertions actually printed in the glossary BOOK ENTRY; exclude chapter-only claims."
+          },
+          "unsupported_glossary_assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Material assertions actually printed in the BOOK ENTRY that the evidence does not support. Must be empty for FULL and nonempty for CORE_ONLY."
+          },
+          "chapter_only_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Objections to applications or arguments found only in the supporting chapter. Preserved for later chapter review and excluded from the glossary scope ruling."
+          },
+          "strongest_counter_interpretation": {
+            "type": "string"
+          },
+          "counter_core_identification": {
+            "type": "string"
+          },
+          "counter_relation_to_book_core": {
+            "type": "string",
+            "enum": [
+              "CONTRADICTS",
+              "SAME_CORE_BROADER",
+              "SAME_CORE_NARROWER",
+              "EQUIVALENT"
+            ]
+          },
+          "material_core_denial": {
+            "type": "string"
+          },
+          "counter_case": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "book_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counter_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_book_core_cannot_explain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comparative_winner": {
+            "type": "string",
+            "enum": [
+              "BOOK",
+              "COUNTER"
+            ]
+          },
+          "decisive_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "persuasion",
+          "support_scope",
+          "rationale",
+          "book_core_identification",
+          "book_secondary_elaborations",
+          "unsupported_glossary_assertions",
+          "chapter_only_objections",
+          "strongest_counter_interpretation",
+          "counter_core_identification",
+          "counter_relation_to_book_core",
+          "material_core_denial",
+          "counter_case",
+          "book_explanatory_advantages",
+          "counter_explanatory_advantages",
+          "evidence_book_core_cannot_explain",
+          "comparative_winner",
+          "decisive_sources",
+          "unresolved_objections",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 11545,
+    "input_tokens_details": {
+      "cache_write_tokens": 11542,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2624,
+    "output_tokens_details": {
+      "reasoning_tokens": 1328
+    },
+    "total_tokens": 14169
+  },
+  "user": null,
+  "metadata": {}
+}

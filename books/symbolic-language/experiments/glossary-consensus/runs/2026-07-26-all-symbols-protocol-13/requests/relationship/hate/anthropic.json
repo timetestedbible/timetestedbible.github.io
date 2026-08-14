@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "hate",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nHate\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'hate' in Scripture is most commonly explained not as raw emotional malice but as a Semitic idiom of comparative preference and decisive rejection: to 'hate' something or someone is to love it less, to renounce its claim, or to repudiate allegiance to it in favor of a supreme loyalty (ultimately loyalty to God/Christ). Thus Jesus' demand that disciples 'hate' father, mother, and their own life is read as a call to subordinate every rival attachment to him, and God's 'hatred' (of Esau, of sin, of evildoers' ways) is read as sovereign rejection or covenantal non-election and holy opposition to evil rather than human-style spite.\",\n  \"primary_basis\": [\n    \"Luke 14:26 (whoever does not 'hate' father and mother... cannot be my disciple)\",\n    \"Matthew 10:37 (the parallel showing 'hate' means 'love less than me')\",\n    \"Matthew 6:24 / Luke 16:13 (no one can serve two masters; he will hate the one and love the other)\",\n    \"Genesis 29:30-31 (Leah 'hated' explained by v.30 as 'loved less' than Rachel)\",\n    \"Deuteronomy 21:15-17 (the 'hated' wife = the less-loved wife)\",\n    \"Malachi 1:2-3 and Romans 9:13 ('Jacob I loved, but Esau I hated' — read as election/rejection language)\",\n    \"John 12:25 (whoever hates his life in this world will keep it)\",\n    \"Psalm 5:5; Proverbs 6:16-19 (God's hatred of sin and wickedness as holy opposition)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Hate as literal moral evil and the antithesis of Christian love — hatred of a brother is spiritually equivalent to murder and evidence of darkness; this is the plain ethical sense, not an idiom.\",\n      \"basis\": [\n        \"1 John 2:9-11\",\n        \"1 John 3:15\",\n        \"1 John 4:20\",\n        \"Matthew 5:21-22, 43-44 (love your enemies)\",\n        \"Galatians 5:19-21; Titus 3:3\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Righteous hatred of evil as a positive virtue commanded of believers — to hate what God hates (sin, injustice, false ways) while loving people.\",\n      \"basis\": [\n        \"Psalm 97:10 ('you who love the LORD, hate evil')\",\n        \"Amos 5:15 ('hate evil, love good')\",\n        \"Romans 12:9 ('abhor what is evil')\",\n        \"Psalm 119:104, 128\",\n        \"Proverbs 8:13 ('the fear of the LORD is hatred of evil')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The world's hatred of Christ and his followers as a predicted mark of authentic discipleship and the cosmic conflict between light and darkness.\",\n      \"basis\": [\n        \"John 15:18-25\",\n        \"John 17:14\",\n        \"Matthew 10:22; 24:9\",\n        \"1 John 3:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'Hate' in divine-election texts read as actual divine reprobation/wrath toward persons (a stronger Reformed/double-predestination reading), rather than mere idiom for 'chose the other.'\",\n      \"basis\": [\n        \"Romans 9:13\",\n        \"Malachi 1:2-3\",\n        \"Psalm 5:5; Psalm 11:5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"'Hate' in Luke 14:26 taken at near-literal force as radical renunciation demanding actual severance from family and self, not merely comparative love (some rigorist, ascetic, or hard-sayings readings).\",\n      \"basis\": [\n        \"Luke 14:26 read without harmonizing to Matthew 10:37\",\n        \"Luke 14:33 (renounce all)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Caveat: 'hate' functions more as a recurring lexical/idiomatic term than as a single symbol, so consensus is context-dependent. There is broad, well-settled agreement on two tracks that commentators keep distinct: (1) the Semitic idiom of 'love less / renounce / reject' in discipleship and election passages (Luke 14:26; Gen 29; Rom 9:13), and (2) the plain ethical sense in which interpersonal hatred is condemned as anti-love (1 John). Standard reference works (e.g., major commentaries, TDNT on miseō, lexicons like BDAG) explicitly note the comparative/preferential idiom. If the author's book assigns 'hate' a single unified symbolic meaning beyond these, that would go beyond recognizable consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A Semitic comparative idiom meaning to love less, to prioritize secondary to another, or to covenantally reject and not choose, rather than denoting literal emotional malice.\",\n  \"primary_basis\": [\n    \"Luke 14:26\",\n    \"Romans 9:13\",\n    \"Malachi 1:2-3\",\n    \"Genesis 29:31-33\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Righteous indignation, absolute moral opposition, or divine wrath directed toward sin, idolatry, and injustice.\",\n      \"basis\": [\n        \"Proverbs 6:16-19\",\n        \"Psalm 97:10\",\n        \"Revelation 2:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal emotional animosity, enmity, or human malice, often portrayed negatively as a sin or positively in imprecatory contexts as loyalty to God.\",\n      \"basis\": [\n        \"Psalm 139:21-22\",\n        \"Matthew 5:43\",\n        \"1 John 2:9-11\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Exegetes universally agree that in passages dealing with election (Jacob and Esau) or extreme discipleship (hating one's family), hate functions as a hyperbole or idiom for priority and preference. In other contexts, it can carry standard meanings of moral revulsion or human enmity.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"“Hate” is most commonly understood not as a fixed biblical symbol but as hostility, rejection, or settled opposition—the moral contrary of love. In Christian teaching, hatred of other people ordinarily signifies sinful alienation from God and neighbor.\",\n  \"primary_basis\": [\n    \"Leviticus 19:17–18 — hatred of one’s brother is prohibited alongside the command to love one’s neighbor.\",\n    \"Matthew 5:43–44 — Jesus contrasts hating enemies with loving and praying for them.\",\n    \"1 John 2:9–11 — hatred of a brother is associated with darkness and spiritual blindness.\",\n    \"1 John 3:15 — hatred of a brother is equated morally with murder.\",\n    \"1 John 4:20 — professed love for God is incompatible with hatred of one’s brother.\",\n    \"Galatians 5:19–23 — hatred or enmity belongs to the works of the flesh, contrary to the fruit of the Spirit.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"In some biblical idioms, especially comparisons involving loyalty or preference, “hate” means “love less,” subordinate, or reject in favor of another rather than feel emotional hostility.\",\n      \"basis\": [\n        \"Genesis 29:30–33 — Leah is described as “hated” in contrast with Jacob’s greater love for Rachel.\",\n        \"Deuteronomy 21:15–17 — the “loved” and “hated” wives form a preference contrast.\",\n        \"Luke 14:26 — hating one’s family and life is commonly read as radical subordination of all other loyalties to Christ.\",\n        \"Matthew 10:37 — the parallel teaching is expressed as loving family more than Jesus.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hatred can denote righteous moral abhorrence of evil rather than malice toward persons.\",\n      \"basis\": [\n        \"Psalm 97:10 — those who love the Lord are commanded to hate evil.\",\n        \"Proverbs 8:13 — fear of the Lord is identified with hatred of evil, pride, and corrupt speech.\",\n        \"Amos 5:15 — Israel is commanded to hate evil and love good.\",\n        \"Romans 12:9 — believers are told to abhor evil and cling to what is good.\",\n        \"Revelation 2:6 — hatred of the Nicolaitans’ works is commended.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"When attributed to God, “hate” is read as divine rejection, judicial opposition, or covenantal non-election; interpreters differ over whether it also describes a form of personal divine abhorrence.\",\n      \"basis\": [\n        \"Malachi 1:2–3 — “Jacob I loved, but Esau I hated.”\",\n        \"Romans 9:10–13 — Paul cites the Jacob–Esau contrast in discussing election.\",\n        \"Psalm 5:4–6 — God is said to hate evildoers.\",\n        \"Psalm 11:5 — God’s soul is said to hate the wicked and the lover of violence.\",\n        \"Hosea 9:15 — divine hatred appears in a context of covenant judgment.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hatred may represent the world’s opposition to Christ and his disciples, expressing estrangement from God and resistance to divine revelation.\",\n      \"basis\": [\n        \"John 3:19–20 — those who do evil hate the light.\",\n        \"John 7:7 — the world hates Jesus because he testifies against its works.\",\n        \"John 15:18–25 — the world’s hatred of disciples continues its hatred of Christ and the Father.\",\n        \"1 John 3:13 — believers should not be surprised if the world hates them.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad agreement about the ordinary moral sense of hatred and about several context-specific uses, but “hate” has no single settled symbolic meaning across Scripture. Its force depends on context: personal hostility, comparative preference, covenantal rejection, divine judgment, moral abhorrence of evil, or opposition to Christ.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Sinful enmity or active opposition to God, righteousness, or neighbor; the moral opposite of Christian love (agape) that must be renounced\",\n  \"primary_basis\": [\n    \"1 John 2:9-11\",\n    \"1 John 3:15\",\n    \"1 John 4:20\",\n    \"Matthew 5:43-44\",\n    \"Leviticus 19:17\",\n    \"Proverbs 10:12\",\n    \"Galatians 5:19-21\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Hyperbolic or comparative language expressing absolute priority of discipleship over natural affections (love less by comparison)\",\n      \"basis\": [\n        \"Luke 14:26\",\n        \"Matthew 10:37\",\n        \"John 12:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God's holy aversion to sin and evil (divine hatred as righteous opposition rather than sinful passion)\",\n      \"basis\": [\n        \"Psalm 5:5\",\n        \"Psalm 11:5\",\n        \"Proverbs 6:16-19\",\n        \"Malachi 1:2-3\",\n        \"Romans 9:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The world's or unbelievers' hostility toward Christ and his followers as a mark of authentic discipleship\",\n      \"basis\": [\n        \"John 15:18-25\",\n        \"Matthew 10:22\",\n        \"1 John 3:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Internal spiritual struggle or renunciation of the old self/flesh\",\n      \"basis\": [\n        \"Romans 7:15\",\n        \"Galatians 5:17\",\n        \"Ephesians 4:22-24\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation treats hate primarily as a moral/spiritual reality to be rejected in human hearts while recognizing qualified biblical uses (divine hatred of sin; hyperbolic discipleship sayings; expected persecution). No single narrow 'symbol' like an object or color exists; consensus centers on its opposition to love and holiness.\"\n}\n\nBOOK ENTRY\nTo un-choose — to repudiate a covenant partner or claim in favor of another. Scripture enacts hate through refusal, disfavor, or sending away, not merely through feelings of hostility.\n[.opposite]Opposite: Love.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: an emotion — hostility, bitterness — softened in the famous texts to “love less.”\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 29:30-31; Prov 1:29; Hos 9:15; Luke 14:26) · see Love, Knowing, Faith & Belief, ch. 6\n\nAVAILABLE KJV EXCERPTS\nGenesis 29:30 — And he went in also unto Rachel, and he loved also Rachel more than Leah, and served with him yet seven other years.\nGenesis 29:31 — And when the LORD saw that Leah was hated, he opened her womb: but Rachel was barren.\nProverbs 1:29 — For that they hated knowledge, and did not choose the fear of the LORD:\nHosea 9:15 — All their wickedness is in Gilgal: for there I hated them: for the wickedness of their doings I will drive them out of mine house, I will love them no more: all their princes are revolters.\nLuke 14:26 — If any man come to me, and hate not his father, and mother, and wife, and children, and brethren, and sisters, yea, and his own life also, he cannot be my disciple.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "b06d6fc45520fc06d2cea892eddc1b905f67b51d3aa36125c37c13880600774f",
+  "cache": {
+    "hit": false
+  }
+}

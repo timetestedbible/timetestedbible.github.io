@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124731,
+  "completed_at": 1785124775,
+  "id": "450c30f1-828c-9cac-a103-a523f74d986c",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_450c30f1-828c-9cac-a103-a523f74d986c",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Shadow\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification of 'shadow' as an object or activity shaped like its substance and marking the boundary of its covering is a precise geometric definition that subsumes the consensus's typological sense (feasts as shadow of Christ's substance) and protective sense (covering/protection). It preserves the central referent of typology and protection but materially narrows and unifies them under a single definitional category, adding the 'shaped like substance' and 'boundary of covering' conditions.\",\n  \"extension_reasoning\": \"The book retains the consensus's typological cases (Colossians 2:16-17, Hebrews 8:5, 10:1) and protective cases (Psalm 91:1, Numbers 14:9) but reclassifies them under the new boundary-marking definition. It excludes or reassign s the consensus's separate 'transience' and 'shadow of death' senses from being independent meanings of 'shadow' itself, treating 'Shadow of Death' only as the opposite of the positive shadow concept. This narrows the extension by subordinating death/darkness to opposition and by restricting the primary referent to appointed times and holy assemblies.\",\n  \"consensus_summary\": \"Blind consensus views 'shadow' as polyvalent: primary senses are divine protection/refuge under God's wings (OT) or typological foreshadowing of Christ (NT), with common alternatives of life's transience and the shadow of death/darkness.\",\n  \"book_summary\": \"Shadow is an object or activity shaped like the substance casting it, marking the reach and boundary of that substance's covering; the appointed times and holy assemblies are the Shadow of Christ's substance, opposite to the Shadow of Death.\",\n  \"consensus_core_identification\": \"Divine protection/refuge or typological foreshadowing of Christ's substance.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Consensus treats 'shadow' as polyvalent and context-dependent, with two leading candidates for primary sense (divine protection/refuge under God's wings or shade; NT typological foreshadowing where OT rites are shadow and Christ/heavenly things the substance) plus common alternatives of life's transience and the shadow of death/gloom; no single settled ranking.\",\n  \"book_summary\": \"Shadow is an object or activity shaped like the substance that casts it and that marks the reach and boundary of that substance's covering; the appointed times and holy assemblies are specifically the shadow of Christ's substance, with Shadow of Death as its opposite.\",\n  \"consensus_core_identification\": \"Either (or both) divine protective covering/refuge or incomplete typological foreshadowing of Christ's substance.\",\n  \"book_core_identification\": \"The shaped outline that marks the reach/boundary of a substance's covering, instantiated by the appointed times/holy assemblies as Christ's shadow.\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book unifies protection and typology under a single 'covering-boundary' definition and restricts the positive typological cases chiefly to appointed times/holy assemblies; it reclassifies 'Shadow of Death' as opposite rather than as one ordinary sense of the term.\",\n  \"material_contradiction\": \"None; the central referents (protective covering and feasts-as-shadow-of-Christ) remain intact.\",\n  \"rationale\": \"Minimum cores overlap on the two dominant consensus senses (covering/protection and Col/Heb typology). The book does not replace those referents but supplies a tighter geometric/covering definition, narrows the typological extension to the feasts of Lev 23, and inverts the status of 'shadow of death.' That is boundary refinement, not core contradiction or novelty.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Some consensus responses already elevate the Col/Heb typological sense to primary, so the book could be read as near-MATCH once wording differences are discounted.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_450c30f1-828c-9cac-a103-a523f74d986c",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4349,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2434,
+    "output_tokens_details": {
+      "reasoning_tokens": 1961
+    },
+    "total_tokens": 6783,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 224316000,
+    "context_details": {
+      "input_tokens": 4349,
+      "output_tokens": 2434
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

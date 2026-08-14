@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124257,
+  "completed_at": 1785124279,
+  "id": "38a0606f-2c05-9772-994e-f3c32cda4c80",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_38a0606f-2c05-9772-994e-f3c32cda4c80",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus and the book's entry on \"Meat\" and return only a JSON object matching the schema.\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_citations_support\": \"partial\",\n  \"core_citations\": [\n    \"Hebrews 5:14\",\n    \"John 4:34\",\n    \"Matthew 24:45\"\n  ],\n  \" extension_citations_support\": \"partial\",\n  \"extension_citations\": [\n    \"John 6:55\",\n    \"John 7:17\",\n    \"Matthew 12:50\",\n    \"Luke 8:21\",\n    \"Psalms 40:8\",\n    \"Job 34:3\"\n ],\n  \"notes\": \"Consensus core identifies meat as advanced/mature spiritual teaching (solid food) distinct from milk's elementary content. Book core preserves the milk/meat contrast but redefines meat as the same word carried to complete obedience and exercised discernment, narrowing the referent from teaching depth to obedient application.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"DIVERGENT\",\n  \"consensus_summary\": \"Consensus primary meaning: 'meat' (solid food) symbolizes advanced/mature spiritual teaching or deeper doctrine, explicitly contrasted with 'milk' as elementary instruction for spiritual infants (1 Cor 3:1–2; Heb 5:12–14).\",\n  \"book_summary\": \"Book: meat is the word obeyed to completeness; milk is the word received, and meat is that same word carried through to full obedience with senses exercised to discern.\",\n  \"consensus_core_identification\": \"Advanced/mature spiritual teaching (deeper doctrine content) for the spiritually grown, versus milk as elementary teaching.\",\n  \"book_core_identification\": \"The same word carried through to complete obedience (reception completed in doing), with exercised discernment.\",\n  \"core_relation\": \"CONTRADICTS\",\n  \"extension_relation\": \"DIFFERENT_REFERENT\",\n  \"boundary_disagreement\": \"Consensus bounds meat by depth/maturity of teaching content distinct from milk; the book bounds meat by degree of obedience to the same word (received vs fully obeyed), not by advanced versus elementary doctrine.\",\n  \"material_contradiction\": \"Consensus treats meat and milk as different levels of doctrinal content; the book treats them as the same word at different stages (reception vs complete obedience), so the central milk/meat identification cannot both hold in the same sense.\",\n  \"rationale\": \"Minimum cores conflict: settled consensus centers meat on mature doctrine (1 Cor 3; Heb 5), while the book replaces that referent with complete obedience of the word, aligning more with John 4:34-type will-doing and re-reading Heb 5:14 around exercised senses rather than advanced teaching content. Shared passages do not make the cores equivalent; accepting the book requires rejecting the consensus primary identification.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"1 Corinthians 3:1–2 and Hebrews 5:12–14 present meat/solid food as teaching the immature cannot yet bear—i.e., advanced content—not merely elementary word fully obeyed.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_38a0606f-2c05-9772-994e-f3c32cda4c80",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 3611,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1426,
+    "output_tokens_details": {
+      "reasoning_tokens": 960
+    },
+    "total_tokens": 5037,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 155604000,
+    "context_details": {
+      "input_tokens": 3611,
+      "output_tokens": 1426
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

@@ -1,0 +1,127 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "wind",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWind\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, wind most commonly symbolizes the Holy Spirit — the invisible, sovereign, life-giving breath/Spirit of God. The link is built into the biblical languages themselves: Hebrew 'ruach' and Greek 'pneuma' each mean wind, breath, and spirit, so interpreters routinely treat wind as the standing image of the Spirit's unseen but powerful activity in creation, regeneration, and empowerment.\",\n  \"primary_basis\": [\n    \"John 3:8 — 'The wind blows where it wishes... so it is with everyone born of the Spirit' (Jesus' explicit wind/Spirit analogy in the new-birth discourse)\",\n    \"Acts 2:2-4 — the sound 'like a mighty rushing wind' at Pentecost accompanying the outpouring of the Holy Spirit\",\n    \"Ezekiel 37:9-14 — the breath/wind (ruach) summoned to give life to the dry bones, interpreted as God's Spirit\",\n    \"Genesis 1:2 — the ruach of God hovering over the waters, widely read as Spirit/wind/breath in creation\",\n    \"Genesis 2:7 — God breathing the breath of life into Adam\",\n    \"John 20:22 — Jesus breathing on the disciples, saying 'Receive the Holy Spirit'\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Wind as an instrument or image of divine judgment and God's destructive/purging power (the east wind, scattering chaff, the whirlwind of wrath).\",\n      \"basis\": [\n        \"Jeremiah 4:11-12\",\n        \"Hosea 13:15\",\n        \"Exodus 14:21 (east wind at the Red Sea)\",\n        \"Psalm 1:4 (wicked as chaff the wind drives away)\",\n        \"Isaiah 40:7\",\n        \"Jonah 1:4; 4:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wind as instability, changeableness, or false teaching — being 'tossed' or 'blown about' as a figure for doubt and doctrinal fickleness.\",\n      \"basis\": [\n        \"Ephesians 4:14 ('tossed to and fro... by every wind of doctrine')\",\n        \"James 1:6 (the doubter like a wave driven by the wind)\",\n        \"Jude 12 ('clouds without water, carried about by winds')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wind as the transience, emptiness, or vanity of human life and effort ('chasing after wind', life as a passing breath).\",\n      \"basis\": [\n        \"Ecclesiastes 1:14 and repeated 'striving after wind' refrain\",\n        \"Psalm 103:15-16\",\n        \"Psalm 78:39\",\n        \"Job 7:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wind/storm as theophany — the medium or accompaniment of God's presence and power when He appears or speaks (though sometimes pointedly NOT the locus of His presence).\",\n      \"basis\": [\n        \"Job 38:1 (God answers out of the whirlwind)\",\n        \"1 Kings 19:11 (great wind, 'but the LORD was not in the wind')\",\n        \"2 Kings 2:11 (Elijah taken up in a whirlwind)\",\n        \"Psalm 104:3-4 (God rides on the wings of the wind; makes winds His messengers)\",\n        \"Nahum 1:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Winds/storms as trials, adversity, or hostile forces that test faith — often with Christ's authority over the wind demonstrating His deity.\",\n      \"basis\": [\n        \"Matthew 7:25-27 (winds beating on the house)\",\n        \"Mark 4:37-41 and Matthew 14:24-32 (Jesus stilling the wind)\",\n        \"Revelation 7:1 (four winds held back)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Wind is a genuinely polysemous biblical image, and responsible commentators insist context governs its sense in any given passage. Nevertheless, when Christians speak of what wind 'symbolizes,' the dominant, catechetically standard answer is the Holy Spirit, anchored by John 3:8 and Acts 2 and reinforced by the ruach/pneuma wordplay. The judgment, instability/false-doctrine, transience, and theophany readings are all well attested in commentaries and preaching but function as context-specific senses rather than the default symbolic identification.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The Holy Spirit, the breath of God, or the invisible, life-giving, and sovereignly directed power of God.\",\n  \"primary_basis\": [\n    \"John 3:8\",\n    \"Acts 2:2\",\n    \"Ezekiel 37:9\",\n    \"Genesis 1:2\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Emptiness, futility, transience, or the brevity of human life.\",\n      \"basis\": [\n        \"Ecclesiastes 1:14\",\n        \"Job 7:7\",\n        \"Psalm 1:4\",\n        \"Psalm 78:39\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment, destructive forces, or severe trials (often specifically represented by the scorching East Wind).\",\n      \"basis\": [\n        \"Exodus 10:13\",\n        \"Hosea 13:15\",\n        \"Jeremiah 4:11-12\",\n        \"Matthew 7:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"False teaching, instability, or shifting and deceitful doctrines.\",\n      \"basis\": [\n        \"Ephesians 4:14\",\n        \"Jude 1:12\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In both Hebrew (ruach) and Greek (pneuma), the word for wind is identical to the word for spirit and breath. This linguistic overlap makes the symbolic connection to the Holy Spirit and the breath of God inherent in the original biblical texts.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The Holy Spirit, especially the Spirit’s invisible, sovereign, powerful, and life-giving activity.\",\n  \"primary_basis\": [\n    \"John 3:5–8, where the shared Greek term pneuma can mean both “wind” and “spirit,” and the wind illustrates the Spirit’s mysterious sovereign work\",\n    \"Acts 2:1–4, where the Spirit’s coming is accompanied by the sound of a mighty rushing wind\",\n    \"Ezekiel 37:1–14, where the Hebrew ruach (“wind,” “breath,” or “spirit”) gives life to the dry bones\",\n    \"Genesis 1:2, sometimes translated or interpreted as the Spirit or wind of God moving over the waters\",\n    \"John 20:22, where Jesus breathes on the disciples and tells them to receive the Holy Spirit\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God’s power, presence, or sovereign action more generally, without wind standing specifically for the Holy Spirit.\",\n      \"basis\": [\n        \"1 Kings 19:11–12\",\n        \"Psalm 104:3–4\",\n        \"Psalm 135:7\",\n        \"Nahum 1:3\",\n        \"Mark 4:35–41\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine judgment, destruction, or the scattering force of God.\",\n      \"basis\": [\n        \"Exodus 10:13–19\",\n        \"Psalm 1:4\",\n        \"Isaiah 17:13\",\n        \"Jeremiah 4:11–12\",\n        \"Hosea 13:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human instability, transience, emptiness, or fruitless striving.\",\n      \"basis\": [\n        \"Job 7:7\",\n        \"Psalm 78:39\",\n        \"Ecclesiastes 1:14\",\n        \"Hosea 8:7\",\n        \"James 1:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"False doctrine or deceptive teaching that carries unstable people about.\",\n      \"basis\": [\n        \"Ephesians 4:14\",\n        \"Jude 12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The directions or extremities of the earth, and thus worldwide gathering, scattering, or cosmic action, as in the “four winds.”\",\n      \"basis\": [\n        \"Jeremiah 49:36\",\n        \"Ezekiel 37:9\",\n        \"Daniel 7:2\",\n        \"Zechariah 6:5\",\n        \"Matthew 24:31\",\n        \"Revelation 7:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ordinary meteorological wind serving the narrative literally rather than functioning as a stable symbol.\",\n      \"basis\": [\n        \"Jonah 1:4\",\n        \"Mark 4:37\",\n        \"Acts 27:14–15\"\n      ],\n      \"prominence\": \"dominant\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian teaching most readily recognizes wind as an image of the Holy Spirit because Hebrew ruach and Greek pneuma can mean wind, breath, or spirit. Nevertheless, Scripture uses wind in many distinct ways, and many occurrences are literal. Consequently, there is no single settled symbolic meaning applicable to every biblical use; context controls the interpretation.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The Holy Spirit (or Spirit of God), as an invisible, sovereign, life-giving, and empowering presence\",\n  \"primary_basis\": [\n    \"John 3:8 (Spirit compared to wind that blows where it wills)\",\n    \"Acts 2:1-4 (sound of a mighty rushing wind at Pentecost)\",\n    \"Ezekiel 37:9-14 (breath/wind/Spirit reviving dry bones)\",\n    \"Genesis 1:2 and the dual meaning of Hebrew ruach / Greek pneuma as wind-breath-spirit\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Instrument of divine judgment, scattering, or destructive power\",\n      \"basis\": [\n        \"Jeremiah 4:11-12; 18:17\",\n        \"Isaiah 41:16; Hosea 13:15\",\n        \"Revelation 7:1 (holding back the four winds of judgment)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Transience, futility, or emptiness (chasing the wind)\",\n      \"basis\": [\n        \"Ecclesiastes 1:14, 17; 2:11, 17, 26\",\n        \"Hosea 12:1; Job 6:26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s life-giving breath or creative power more generally (not always identified as the personal Holy Spirit)\",\n      \"basis\": [\n        \"Genesis 2:7\",\n        \"Psalm 104:29-30\",\n        \"Job 33:4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Angelic agents or messengers\",\n      \"basis\": [\n        \"Psalm 104:4 (makes his angels winds)\",\n        \"Hebrews 1:7\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian teaching and biblical studies the Spirit association is the dominant symbolic reading because of the lexical overlap of ruach/pneuma and the explicit New Testament linkages; other senses appear frequently but function as secondary or contextual rather than the primary conventional symbol.\"\n}\n\nBOOK ENTRY\nSpirit — ruach.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Zech 6:5) · see The Four Winds, ch. 34\n\nAVAILABLE KJV EXCERPTS\nZechariah 6:5 — And the angel answered and said unto me, These are the four spirits of the heavens, which go forth from standing before the Lord of all the earth.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "bec6a2f104c7abd842aa758ead6d0207033f22bfbd305412c127fd24e0d71c82",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/relationship/wind/anthropic.json"
+    }
+  }
+}

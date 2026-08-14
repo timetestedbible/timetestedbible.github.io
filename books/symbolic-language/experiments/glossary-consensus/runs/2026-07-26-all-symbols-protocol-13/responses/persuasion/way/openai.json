@@ -1,0 +1,264 @@
+{
+  "id": "resp_03670ff37ccc1df5006a66dc1eabec8190a9c841da15dff59c",
+  "object": "response",
+  "created_at": 1785125918,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1785125967,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Judge the exact glossary entry against the strongest specific alternative; treat the chapter as evidence, not as an additional judgment target.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_03670ff37ccc1df5006a66dc1f3bac8190b7cc8f0a5e6d9432",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtxPK_HBcJWMd4O_yjXJYgNQgzTjRqiMFj0QusA7ijOtu3W8rkXuxkY8AwNlNP_ubw6dN_P50Z9MiFpwyKKF4NNilsrzgJJJ700WEs_ZZBxiVd9k0JiLLlWOspC7AHttP0MoxTTG1GyG-UXK_-WL3rWm83Fh2WUDqCs27JYxdWlH5KirwdtldaSDJoV-N5ouIZrJpUWMUmw2eVC2vfQAsyC4uKO9mf8GfePVgsY7TSXnBda9nNAhtLZdMj7n72vWpC2WOcs7kvG8XL8yqsfvMxNCcbiZcIEQDYag2TcA7-IyzhDHYem0CZ2ds7B9zw0X6i-MvI2JUWTxlYFfSxz8SEZU4Q3tO_XMtRzTu8el7oApSviSfMoJzhDMgkq2kKjQ5wDU6LIK54wi3TS0NTMVu5J2OYjf6_zhFKz7QAF8PCYXNRnVxdkB0-xKbRdhYX63ysRPfbGMo8VMYQeNHTCAyz_vuWK4QHsDKNs9auNMylfCQf3Ovw9jAdPwoV5GSnpp3BcdUX6atjOdSP6kId54-Fohx4oUgsQ-01GPgRqZDZOJAmrGT-OeoUfkarmpQZ2ulElVnkrk3sKu8t3vTKibQhgdErh39EXHm8q9zqpdEYam7PTpNCMAYT_zsBYAyStHc156cVBmOfmzk4mXrjxZ6SsOwfAz5iQlLfhbvczI1hinLEBuU4qS-RhqNwdEM_0uq3VjERfNh3qkFyYA6TJUCTOKXX7UNUsh7wXOkD2DIvJQiiTSMCC_CQws5JgpSxHP5V7WiTQsiGkEa_NbRBIvxiEXFxjy-fCKFWCCUQ8WKfd5KQSuvPeevGR4Zd-VwlIVRF-2Kdt_QnceScW6LT_aQtEUn6DBeHc_ASZbEFKCSPKE008IXMfbFteYkJVro20HrnkJvVyXJP0HdIlulhBmYart-DvqqUkvhkuEVggbTBKSxrXnzza1v9r41ngznBKQcJ613rKcft4z0jP_i72akXd4r3hbbKcU0N8KmFgS8dSFJfyqNqxFnCzJQ0i7s8-6dtuBihJsBZHleCBVSFmenuwOBUiwqpXCH8RfSeRjaYxho6T0chvkbA3aeogGksmLymwmXaW3j9mTtc9qDYHeFQPMAJpN9yFYLzjMFsjFFX-6T5dhL85LDj58zZohu5ccAowe0Om7f0sitjfnTwlt7IWr9Jeg67NEBckhsHMfho9kjot2-9G5o-V6lXWC_jQrxCQwXhs0sv_ykEjDkrzjQ24dwDmFMzKBIl_3hadMY2tgEr6vu7CWHYneixE3u_muaD6jJNfK3vt9qu88NkEuAJg6mCYxqqTI2BTvPEOajwK548oXgumizViCp3fUDwNl_5q-MfRL2lGqZgjB6i1C2sv9CuVu37Pa2lcy_FdLVyRVEkGXObZFjBichmzE0MfxCcpFnmjNgFpR2rlWX68oSKlCRD1HUoHeQhd_l9aBHkJa4lmVvwMBgp6Nc9QCPG2uo8QbgMNk8SQkrz_OdWOMWpRWkeJIu1gIAbCxJVxRdcGk9bmyLfUXWuxscb4-Te_Nm6gdW0rNyIWqVtD21S_8mQE3owBWvTvirXwkUDAj_QztZsYjtyBXsn4k_I37YWK-dhOUHUhcABdlh-Fvpe6baKTDvnrDH06I4hftzihnw5GK2-Lw06h6Eibwq7nqv1Hxo5PYeB6UGl-clpzoz2oBXzubwuT1oHKkEWejc9hfX7Ewq6TG8xTEHETnKixcRjiNCKKQ_RqhqwDDf_S1c0EkGKPu2aFsR0ctGVJnGXzrYNODJNqqXzUP3XDPjKekX1yXTYgm-VTlbzhx30nuOBznIgtaLDFJ4dstEUySimDArp8MqFn_Fv6vv76BXJrny4jvmzk9dcOhGRe6Arl9K3wFQpJFqNBes6FAlBZRCjxJL57UrQEn_Z4sq8cD9sdzl_Um8lpcO9E2_ip6fcBjG5f4wlv7brNkDObboHT-7Td3qzTFdi1MTzjAV2LptTedSI2tjy6H48oC9TKcoAKm_rHBaP_aI-truFd-A_ju71bEFPvzjCs15FsQHHv66aiutobmFQcFm5akeFBpY4sUh-Woo5JmwP_xvF6q0ebOjJ5bFb7IP4G60eujo6KMO1nh5N1whTpkPbooCQjhELLjq8GInBiqmhKYQU2JshTHTsxQR3DpbES_qtcUaEYLSXv8DFH0gjO9bKSDG6nO77of-TiYJrYufdQYHSsKwFfitDItg4S4Rk9EP7M3oVJqPrqv8lxvJ3Et014UzBoxqRs-z7CcrMWOJjiPmXhI_dAGX6w6qFv5jNWrC_Xm6fqhlBvz_PnuunK4qVCmkGVxy1fTZxInjEyFJmrUTPJ7R1EjaYXXqOXvCp7XCC0iPgO2gTtwNAimcyGBVF7QmdXmC_NFGln7J31x-vUh-xZd4_ITc_Pzj74eyBts_lU3y_MxyfGNDxCpG5mxrtqimqcgYbmvPU88gJ1fJ4lVITyVOIxFIWED60MrzW7dtpcDK82_6kb4F7iIbTk3iZeom_-y0-DpJNUmjb93ncfA2GNadU64vlT-8vsHaGK3yWx_oVJZfSLqlPbD0YpS72HDASi1rWvDjWY98atjIOiEzuBD5uMdUdK5R-N_5okUe70vXcgiLdEfZNt9sxTsuiRMYpWVEmGp0A1dPjHFlIDcEX-fLLD96XDuEE1EkDY-K0P7FqltPoMtb4-sPh9r0ABpDPffisvw4zi5Al0a15spabxrVGaDUhbpm1II-TXe18_BTiaabyRz_KoHTP77qfqgR7oUtsp-5FLEw09PYyQabAd8DV1OhLw74wtDQYtJ8Ktqna_FpyMzWn9tvPa8vI1qdnjlIr79JPfuh15Gz9cbdahExXj7z_IyGZ9vPWg59hmB9zYfz1f76IJhZZXCkkYXzkHYmnjNFAyqO0oBgas0MQLQHgryUKxs0WbtvkDoHaQOiEV14misShfZ-NTY7K_VVIHncke1I7DShIxYIvWirLM07wos2X4Y99lTd2nXDHHM2quzjjloCmaDcoeA9-o76NFI9-W2QwRvOJRlIkrg5Xh5Ti2f9BjL738hcidCEaYmL7rMSEBhBGvu90YTiIBU3yH9fyfxH1ayt6B6eRr_TQY8Kcfy35b1hcNlHIGE0EFhGvDhUFFn-m0a38zvnuGIk7HA2nkCMv7aGiHsqGKrsbYWfn88-FPXVxvDbnir9i-9kaIgQ2NCxe03UpZV5tSzjLyMw9V1PzjwroPAucPYJ8TOwvfICeiJL_E2-STrJ-T9x56o4xHG5faKN5i2eDSIeCcFEYymZNdhNX7UJ4YtBMg8H4ZlTiIJ9KLmaIzm4dyRQCu03GCGLX9yRluTy2rO8LDaeaZCUI-P0hL9f0puTD3aR1HoAlpWM0pm5fleQ0PJsx6Q9AD4-tw-8HKb7W3Bagn_2eBz1p9N9kT09sOXA41XCT-B6qMe0dn20AFyo_aVeIuwLId1PqlT8dyP0dXMaff_za43kU2S953Ikr3Gfsbyo48GWFXQjnkQvb047Iif3Og_Ne11ZeIajQINlwaDabnWWWkwBSiRlUFqjM65yhvwik4F4uZGEj-KHblKDqxsQrGJ-QTIvqLIocPRVaM6RTNkuGuIgkWZOg0ZAnWPTsJyCYZKQQzLrqLakzG4Hqw3JycZTFdqHGzRbbK3OS4QKvnO23ZrBSxM1yfFv3JTXCflceDvXnMr5TE6NibfQiYyN_ki_tVr-LbQCuHQjs-6Bkt1CKfKwA7HH0dLQDbdFyoLtacwZv_-M4KmX_5D-A8cyAe8u9-E14wfTiNfrN9Ab5rh93mevaXGIAEOHmZHX5-M4nhRSfoExCI7iNHeOoSsSrddP7SWU3vyM9iV4KCuNwuO_ASJbJlx1PAP9DCGQhe9g24tBA-0YRoL6nt6nGt5PiQ8e3qtdjJbKX-UzVdt4HtJOeoikMgMuMLRJ-WPAbLfhBFY0zOyvM4GejUQRgvcb1-FXd882WkJSh74SmhARa0s_3v8Sb8PvaSULsRG1gS52jhz4ou0TGIpL5qwIGCedJmK5nSotxKC0kE5wnSkmXPkjEdogG3MM95ODd6eKt-QOeu7cUTDhpjzEiEYIO-T0F1LayRy-BQuimlF_V3Kw-XvV8II1PsUR3rOaMSAt53N-eIv65mXoiWx6WhpBlX1HJxVrSa7GdcGwDdt8bTYawDGhE-3iDLEA8nebnuzb3988GI3a5FJRnQFlPqR_XxZUqXbuadL4JFqBJvq0EsDTXAnFDUpPJVt4BL2Kb4fzNzCORu0ZwdlCVnokx1lQnu_3yFtIgcM2dCtFfIy-m4cFpkRrxB9dRr1LbqkG4lzWXkNvarWVfeVv_NHYD8JN_RPpnhSARwEUdslaZwcffOiY-06RJsIIOcOmUqODg==",
+      "summary": []
+    },
+    {
+      "id": "rs_03670ff37ccc1df5006a66dc287c7c8190abd728e0b739b472",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtxPHKe7tU-vrdzmxw3VplGO6IKGpfdvZpMhToU5qdnKQabzQiYsIEAezE7riNreJXt_Tu0TDtij9C6cIHeY35WkRIsS__Hnbi916BDBL8UnoL9ps25xVJEm3VK0-gyrJz5UllF7yyU-zywfgvUuCHrMXJC8xfwPHZY7mWE_DrIEuR5srseZf0qWg4xsbwYPWKszw3Zby4CPfc-Kb8T0BRj-kt7oOwbBp-VcCkq8Au0UDKpmOEIoqRIfWIj5IN9g0baumJ3T1oHtR5MnJpXoIjXqC_bOAq7oFyOnxkV_q3MEDItvc6GVWnzL7qvXVs1psMEKvl_KcZM7Ry8GHooRfiY-aVmGeh925k_qSlZwUTjYil2kJYfz4LSM2IyL0xT0VtcFrB9rYEGx0qH9A-75fSNBr-Gm5lucpReKWAHkTxLL7F9omSoZuTiINFEXexZZo-uqCaKE-LNGao6d6Vh_Td0pmpY9rthr_DrdgjXTf7OGS6A68x_2GUVpIqDFSsiRzY49sBQebIiBUWlyquM4f266ss_HIF6Tv2L1XfBzRLBJXwxXR2R8aKBTIo7wY0iKQMd4pTCbsdkPQSlm06VfY__y2WID21aWYgHAT-zA6LYoIq2M0m2NJVNDTmQfKbtAQtSZZr3pJz_esysx0JVlmzveUwV8r4loTt_LuXCmbQN66xvlmNgH1HftG3JzBmjs2aQCnJYO6lCiO0jyA9AVlhwPhoRZ3KcSR6TUW0jzFcXZdsEFSu_mlSMBTkPy0nWqskrc4aCKhi0ClTBQHs08qAO8P0fgzwYSPnOwzK_16gwm-XDlBHojHgle_DMQXLL_kP5EG68bZDFvnbkLj4CyUEH35n9OdjcXHqnxAm4oca__s3P32H9Md1FARyd7rfEnkHX8Fq4mQ2SL0lH5Xnf_Kk8J0XaGpmUrwXs-vGnuHEGO8Yd2Fb4t5Nb44hrPs1WF4QknJV4ZR1p12G6C-AqT_1dw-vfkPhuzNn--RDOC4GK1sTF0rDeysd1j6EweRgb_AQN-6DcCsRPv8noQphxvamG6p1f1AYt1NUIpuN9-f-vdTDlBLd9J_xfHXOu6yzZ6QkOL_-uWiCZEffvIM_jM-hCOFJaGsnSUBZtOaafuLvrsXsSbIpZDiKm4gfzHJLP2d_t03OyYwi6lakJVS5foFODRQevSt7GgyCTNbb7M6WfS9kqq4MOa_X3v1rwXmaCA5q97W_Br3FthbPH10lOeOTinobJX5T97etY9HPb4e7w7w33HGJxG9Uyg18sAoH1LcDIHN0BJyuN0K2q_G_hOLCpIVuoUvOJZNmlAxJt2NE7kbdzEGjaTuwLoV0wspjC6gKQESZoBjtSamLLQkxY-ntCeMuLOOjtT9CwqpQyEBFTCyayqL4zr7IthbPxJlbVi_NeLg0osMwq294eo8_3nPhhSiHRSGDveL3BGt3hh_ApPK5w1g0rP-HI4bP5-NBMMwNJMXnRwuRJk1BYmi_7o-rJ9cBuHpIx8dHeB9GYncOxT5Bi65tvVlJIaO3YJeHTLh9mxjrOlQDEDCGhP6ZaXd07suXdfaiu2Mw2B64v_ZSGgshBqMGe7zXnHDwK4rhKgi-jKDH3XvFUicsaFS_KW77iYkzibFNSKHItdqyfZUO4hE-3fTobYNyiCH55HvDwMsrYGsXr25zOeHBz3QOPhzv5-cs-AqEQ2WTGOcCFxfQnMseA2KQfchn-COMTR6-NbSBHm2gt7bnahoWJfX0JHuvJLpab4a5fRmcxy1USPY8n0Io5CR-1-Mk9m9rxhQen50b5I9SWT8RRn8YXxmHiNhghj_7qH6ocrQkXn8Tyk2TAkYIUPBM92-HQacVyjABcOgNVnQBPK77oa7s6bLg3s6eW6Js6CqlwRShUz9TBtrizXn4QGzGX4_KIDjQz9vDU98a6jE3SiKHs9nHI7CW5p6MDCC6YvkMmMjhwyuYuX1u8WWy03uclEEsSCHSRX_e91O_E-59ilW-4Tf3X6iU-7lxBZ_4OPdhcQUzgNZBYtEWyajs6WbMU9icJXmY3cmlcB2XCZCnwhPsm70za5HnVH3nCYWT1Ar_Pf9fLFivE2nSxk6zw3aT0cWY5JEbIvw_KCjXNITjyRLW3j5qaYu9AptdXoqp3JcBhFBoxOHwerG_emXKn80rpxABX-nPXWSch3WsWJFT1E8WY2JDo9BrnMDSiJuxo_vUtB8h_DBVT0YkdAQL3BUwQ0Hk0TAtK8tozmkvsnNGNwSOGatLc1FUzdu4ux1DW-3lWDp3uu2ybWUdtnzWZGgMPMO1lqL0ZzZ3eK3TsWeO_q6ZTLpDXsxomrJ-yjBa2hFZI8prbnnjExP1Wjn-mFXzQKx6FQ9Ws572pFFuZtLw5U3i3vClcth-heS_ccKp4Z68tzxhX0eVzb8PjpZrIOVMiTjdUKb5IVfZeTooC7OBurAl6LrWlMPTv5Bs8uTApsbLreUt5TC2MsaND4fpANnEgTL12QtRxlBsTmGazbKIGfB4vRrXcageBD13nu2oSoKF5yNLktTkMR1KuBJeS8RlYB4infmIw2Ci04KxmOnmxXLFkHMmyyEXMN-UKkpwap5YOdkZjP3vGw6IHguZIEI0UWLI5unGNHAsLkiPQ_nMcoj6egnf2UVnTxVNaD29wQ2w9WTkp_0IilmVvYwynhcT9fyGwoI63vRtFADwdop5inJRKDbvdltSshgG-qJPUKjR3xGI6ejBOMz0fJdx97CkOHV11GzSYr3oy1h660BCdr199nB-Xjkx8tFwgwHVDiDgiQMywH0cS2FW2vFAmVTQUFw0Tho7MgDsfsAtasBwbx4AT_Z2QRg9-u3iJ2hAYD0nEhmwUCeG3-K_ZgfSAggKHH7967Fn01yo5jSWVWjzAZtIZrolPC0ZsjQ9PAcO7X4YzsZpzowm_w9owoallhqS270iePHOM_CBvf2NM5Oh0pYT81gAOQdbwtwpjkIPA0fVa4utwN5cCtD5_6IXHslzzc843AJ2aWe5tvkOAMb1zXT48-Amh3EzCd9YriHEyy3sdfNvbgvCgA3JJzwEGRz-Olr6XJG2yey_8MFdpohfXTblbYRSBIQOFIIS5D883eBE0ssmOtw1BTWwh36bO5PYgHixT-zLoiMw-e8VzXunMY95a7bN3xP6qEmHz0kNNxNLa8m8jAQqihLhByBkkp0sawxtXYTcFpD9Extllfb5NKAFESwmSuoVmNwp4mw30Xzfl48sNAyn5UYpDPv3Pc2nG3zQq7thZE_wRUZRL88Gqj_ccTQLbXiHBrRcYAO_B18XQFKVjCVB8d7tSbdKOVYgv5X62Aqn2qKqLtTmKwD8zjhZmUmFWkShR33Tf7r9-cC8lt0Yd5JWg3qjrglsDpb8RHfzBnQUIkfD34zTEBFl5LQ9W99opOOg0671Yy1ona4uGW8HarX_XMbwNEiShDw3zHZ_izaTqF3IBsfqLRwnqA25_U4RcDPV5FM5cKtOWf8utFw1pkrYrpu61_hCpnWHuPRvUQfKmLK8wzMifmF0vz7jM-0HJA5NG2X5kxtKstXt7zvCXZlQXC_qRE9hVa440UiDuzMGYONT9brfeUvksEmKCDWzLtEHM6tt8sSbxFfVsj-ys6fGycvi_mtJKyHBFu1lOS8FssGYTJ7StUMVe9MzFnu5dyOXXr_WtmIsvhWxAm5mPLwwW9edeFOalaV_YERQwbfhZ7A17H_OUBHRlFTbsqKcH7dtI76x--AiCw17G-dCi70UBmlmckWh3YRR-KRte4DTdKN2Ka07Mns86FSyqkSeWXfGechsHrKRDwopHEISIzzy9-ypiY-xIIbRz2FD5YD35beXk6uo932AH-wVbKW1T5Qg0b3voM5LoWYXWmlVwALD9_j-3fp-kua4rp3OdkdD6cHTy3fkd4-uPB9o0wE0NL5fUDZ0Sodzbtrto3pts26lZC-W8QQPBZgKkD-gJ0AQXdxOpZd4bZB15gNBbKdt77HNvAW9h34yK0S93rV6RXf3UnIUEWMEwsdYwFQN5ncRdFMnn8Y4PsNNWUR1rBOQINsVmiw14EVyilxQ5pS1ySnYKqOyFLi1v6KDFs5V5WvmBpQSDhFpiTQt5P0uIRSn1cloRZWzSHKpFGEiqTt1qXriMogzKsdIfxm5FY2Ve_N1zqU1yeaFLop7Gf8JyvrdrTFSSzJlqSbCEjJLi2u22lJ0Ys_QNKAKYd9DRd1BmmwtvzLf58yypLHSJ5G4TXTMfyiVnXIjGpdWM-27wPfFwVy1r9Ras7kwo=",
+      "summary": []
+    },
+    {
+      "id": "rs_03670ff37ccc1df5006a66dc31ea648190836c6a2f891ebf84",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtxP-C5aLLHyBn7vYsCDE_k5I0Yy5XFMLgJesSnxNcmrLnRtxF2g4jw93VKHE9niljUSj2b9zFxRjuqDSMDMEoS4SpMhYFIiJHXT1zvwxFiVcECY_2Mlcdtfz1UVKS9uu0gbqx-6Rl4F5YHf1coJHPLjZWXsdGaGld6AICMWsW8cUs788xQVBd1Cu8R8jZbDWF5TKgkxBMdgqr6wBjmYV1gnzGMcnfzv1BQfUfCSlBCVDqJVVqrCxMPfniptHEJ2xx1R-aqsqyItL_L0iNzP_Mbm6PPntmltI38SXc02sYnuBB0PadiQFQl9DxYz3tgFRHd5RfQJtZOzirWAFUpQxF26PnJasl9vYySYtWh2HGZxX54s8bynaHC3X0vz8cRxOJ8gFiyb-PIh5B2Cch4YsDferyb-N84n3LVyfGBC7z9g3JVWN6YZ0iAIj8EzfEtTp2S1D8GDBdtCJrM7Wj8jQQWQPbaOT0JwcaeeJXQ22QfmAGR3nxzaon2RNfeJN85zf765aeZuPAUmX6ygC94sORmUGBbrcSyDxlik2seftwbeve2Z2uA27w46kA4IBYGZ0fjJtOCtFZF5w-32oNpxVp2fYHnV7m3ywXNzclnnFaLnWaShE65HOYzbC0ELLJh38hZDqewLy6fqyEOsaj1AveOg76XMh7j4WPZ_nLENjOhyF-UEGAk0jEawvDXeNA3Gf70cDzGH6k2jopHpyVX0Yx2mkYB0sleLlN-I_0drTPdIjrM7Ev3sSBATy9f_n133fiSuVV-M9HzZlDYnA_JGV6K5J0q5s1hO-GyBbWPMs9P2Kgy55qEKydNV4CcEoPdiMSeNVd_3ZIM-SOTNCb5th5H-OP7GWHXHZE69jNSvH9nUAa3CfwX5RIGtJaoXqz7toUK-pLhX-_bTqlJCg7N3VacUWZ0dbt9H2jgfZa4baSY4awsfd1F5Mh0L0waCgMpqv6ExR3vL-LD3ervqcfKrrwlnoWZeaCbdVFVKDbFETERKzu7FCmLWpQzxuAXdEPGjhT87gevzjhbZReVqmNmKyw1dReWdlaSsljDHYYTXpip2dNA4svMhzYQTSrCF56yPhtP5EoAhjOoDY8_RmtLT-GiN3nj4v5VzNSNnsNxyBBZgAALqfu7lFivyf_V-0w5EX87W8UvtptkldVEkglNYRPH1ZRoMSYUTpAgTW0PgI5uTLA_fuSCe2LqG2HjYU4fiQwCZdcYsU0xPhx_zjXWe1vJQLsv-4pWxRfuooZ_FZHNeLGL4XS6WvmAwbzeu2HahUiyHjjI59lM3SOSIsqV-uipW_Hi7-pJlRG-Rp8MDoY_E_vOpgAgCB0qjTmdD-oiLtDbC1rkZBEVb5vbrCdEHhEmpNQtvvFfzsPB1Xaf8z-OGKNHn7vHMyVXtmBnOAWKl1Riuw9SP7WJ8EggmU-KnmwwREBTV5_H-Rqulz0qxysb5-byFaGj2CEGwD2YgENGVs4E2w5h36ixBH-Pd4TSuRCGXfxWp6ueVPnrYM_0PCnLMyXWm7YrZ9zbJ_fW-_dR7wRt7XfaCqQ8JcaDhAIUEXjpdB07-2Sm4mGuFNDqZZVxOXI38m-ooaLeRKxz5OYzPlgL-2VuDGEanRUWLX6Fv7CDxr-tkDee7UVjBuUPkCzv0rY5dNryzJukhjRMXdfLI5E7roVE8DV1SGZ2XsccB8OsaJtVPyTPyZ_B9ydNo_GLSRkXygFRxh1EXv4Ngsuq1EaD6cEIImpU7YG9TzLSDTPxXQfCKsVkoEis7db1lyN-ML3EIb4ztwI7gIZZphAN65Mua92wFHGsSbGgfWLxhwNzIabbquKGvdj4_JpSIMOoeVTmLnWNF_C_OMN1RkDO2-o1z1e7uQd0oxCP6JeZ50fE2MQ_TJFswPBop_D1J5nqU2s_1TC2rVdTF3HqJO23mHmJkotf-Crwr6l1wLlIBdXeNCbHB0no2kREGDetv6AA5FA3b7p7AG2gw5kSSQHInv6l2-DNKqfIx91fTzy0x5KzbV6XVBFAjJJmTr7cAw7EuglXvncE4SzdChBnowxAMkyaEEpBQp185lWsyslm2ZkzTkqK2DejfrFCZPbnxq8n5MwE8N_5gPupf6IqcuNHFFFXYqadFXIUNBl2SHUtjfhzm5sPZeUz6sZxOvDdLWa8tVi-UQMTQyQdwyifdqP8DIr87R8xI0bcmHRB7OvTQZauoAhYbrYCfTjSc6dL2P2mGctidAvKIhRW3AuRfZRAGQwspL8vUn6WqhQASfgWn9qPvNfp7FopugdME7PNOzPyZCiq5GEbR2ReJArQ-NRgxo_xEC_no0Qsxc8I8NxQ5ucVziR_VJnF6GyKu2PZ5n5XeZsjJqe5dQKlbOo-YoS2DPCmYjA9hO2eqFEQWabP3gCyj9ditQzC_ofbJ7cpnWqb03i_wfskJ0iqx05iBFIi68F5H0aL2EVYTbN3z_Ry2n0BkPxk2PTCbV06-CooyGVjB75wHqoGJ9D-W2hPMVaTDyFdTXevgBJA6CvwB5n3W1al9lx9pPmtzYQIhiCr8PqzqeWCptK-3F1aob-dpVlBgDYrlz6P8Ap5q1-z1aw2em7cnqEkM8p7XZxfgg3Uh8N3tQ9ljHZdYFmUeI3J1BkZXJcA2aykznO3IJ1uL_plU7uixFs0wHh4Qfae6QVQUwh1238JluhjlpqN8pI6BeifAL0ZdhrISc8Tjsq-Pbx-h4UHMo-HXumzjOjTuAmD5pZ2wfXVOpTiS-MmikBhGLQt5hU7PYxln9s2msZ2PuvxwvvimaO18OlLGs4Hc3xePUoLM--KCAqOO9O3feFA0rBrOTtfAP9bCs7u1afKoB82HlW--QofT9Oa7LZXlCH2YWB7eYZfp_yJANAeca5nyHBBbnsUSS-o4gMyweKS-2F5ZlhnvCxcy4LzmjgkhC8rAOCxAHvfuMaYBz2l0WbAPTW--iS_lJ81ofyNeXPuAr8grK97J0IL26XpQqifaSPGYOw24vHfkpvomM_z4Zwr8TTakrqlnG9-yhkQHcDTkDejT9B_JeLqvZflEsbuLO_pFhYqXnTjEgKS2fYpgvdK2BlumMAJmnwiy6ysm8jaDJZ9ULahiB9MSl_VhlHDzVWR5kJVorkbL95jAyB3VmdZM3wfmllW4rfOQN855Wi9ixwv2Mev3dxtE-RlCALwOe55sq3977HlGHbEW-Dm86NdnGVPbN4QIw_Saogqw2ovrlr3lC6KB5H1v7ozfsbR858TK_tbp-kNsfuT43R1H4M1zSK0crKRWnX3XbBtuHjDL6xs3xbKY6ee9B_Tpya83FydugwjEwK-VH9dgrF2OGYD8UGqHd7t9sybM--_JAZsUEri1-plGqZ7Wg5LHQ3g5HAOY75XNNaJFuElYEwB_iwHouAOpUsz6bWtHuXId0avCioMMDHmCbsa-6EudHY_cs4cD-t7TTh-5vvDn-yUCNCZbHXFZBqrvcZMva6nC61ZUGKb15hWcv2h_rHpgPDp9N8uVKjE3jDQpX6zKMsg0dvq0--P7vfnVne7R2MsYI1aHLLrjXz2jmX6k9cLGaf_BETeV5YJhp5A6C5gwy-koEx5Jg9r7ZvyfYrGgPopxXzwZzhAPzRYx1TBF0nhqIFCe501cvnrQE_eLYRKSV37eFjCkrd7CESIzCXykT7QQC83HAgisSks3AsxCUPsimuENtEQp5vmwSE_nS5RyZUJVq5yTMz0TG5DZeQRT0VBBaavSwytPJGHFc8edObLROtp0pKBymCSqnz4F7RwXJF-WUo0860O1d8jy_yrLxM-U8-ByQJ5jYZdisW5HMPFREOFfsjsRZ-W-9hS7EXvnQuPrJGbK7E8cBiJ9_sx4HpQjRPY0-VUUBvRpzkWkpHQIxPCyGryfr9kC-wsHV3PbkUfcFgwboS7YeqNLor4DsdheS1Bz58Tcp_F_mVeZ4X9IXw7YA5XuNfgY-eSvX2CUu2gyWnSV8cYMVotQLum-HTFWc8gXhKX2uvXpVKPP0OyHRsuNkh9bk32FOxgckI4uY3VoezgQnKvBGSzDck6N2u7XxQRfINFAk3K_NqnaaXUo12cTleN42zoXCcojM16knblL2Xu6I5jsNtTtKE0RPXmcnGWhYnKBHbcNzeJJRC70xpWgHVw41SDtMjKKJWCx-zExU0-dj4m-mSieJSl7otNrbfIbp6Lr1YyiM9Tc-W1jDcdWm2wamdOqMS2nP4v4qaB-jaQjsRzP1GmXATASjhvmFPUKdQAf8XUCgemQc2XwbiLoObAwKLfSk71rWfWkZEGzXKGTzYBzxvOjWbzXO5NlvGRVc0yITIVp6eGBifesMNgQaWeg47dDjCoBglRRUdg6PQ0BV2WmR0GLYm4k3G6BYzqFipeBgKiPkIAAUcS-3JZ4KA9txJ_FwCCrJCbqYjiPDLJYwasooldFuZ9rbEPwbRqACHrfl9FrURJ7PuwdLpmuI_DH-b__Q5OuY2k2k6WPE9PSZ9oYL7x-YXctmGVp_qMsIUJ0wpR9V5MOE6NZvS2oRzod9vZdXMM=",
+      "summary": []
+    },
+    {
+      "id": "rs_03670ff37ccc1df5006a66dc3b76008190aa9c6c79ff1fbd08",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqZtxPdm7LbwnFHnsWi-SDGblili7iiqFZR8-poNjLZrQfFQtM8cLtqo9VK0WARu8Q5Q60mdcna3ViAml4M1jMl3_VUocfhFhO6KfTtE-OfunyqPXR_27X7uYs9faYujXp1keOFjgkO7XHCs4MkeKpIqufyLC3gLS5EjzOU9G8Lde3RGQwOnAzhnAi7pp--n1l3pc60TBDqYVIcf0P8foyxdHxy8QLL4oR8I-FIrX2Qr8BtFxpdNKjcDyzaDvvJe6aKnCBnQT9LgHxg7Cscxh0p0SacjpvUGEGrGbu8wOXdQK6whTzljt1z0K3Iu3d0xFFcczojnkQ3kOcN0ouR9phIDAdpTsz5I3BEqdrCpUIyl8cEko3dMQUu4JGQOU9Crrz1ymgQOXq8Q0QmtfnkC2FwXfwAJZSiWcSZq4s0OaBOo4zJASOVgvwEM4NeMSZLr4qGiv2XYD14taz5_yenhrJnli5xLtynjfV7elKQBjKA-SnqwjZ8A0FmtbFdSCREeDvCc3vfhTYJmUKzoeRDyktYNo4w_I7lq8mWunYtYCi9M_hFU142aaj8Owc7mcnrVyWbIpNoBd2QlHd6Outx0fcJ-xg3uBrqf5os9iwCjIlZ7dEcaQyPT_dnrlpvqsYdWpFlEHCcafRSz-eoh7cuyh_5IOqGs2obWiJZY6yJShGVOfJoc0RDVm2KurHKf0HX9MTJuY5JVxZWZxq1jXbMPB4KqELKtPCLXJlLhW1IJf3WE-bGOVAerFjFkf4P-h6hoTCX3ZTD6lIVvuMabsw-uEGGf8Z4J6iB2lt6jjGUP_uIKY3l7iv2sDZeNXspo0Ya5bEh7YHxGeMe0xFVNZoFja3vQ9Us3LNdqqdNoUpxy2uue0ystLlRLCaBAZoLP1hEiB1lcTdEtJaelohigAe5S3D0lDIgsCeh_-itAsnwT3zLzAOLY7HhIw-nMajAkIP6bpIL69D1JV1AGO3jseoUr08J_AhESSo6_3flEwe8XJgIKPJegOAUfMMxjD-uAB8uuv2Za5OOMZ1vt3LpUCiVpbJcLLLEWo6NwzSnDc_-NEMB-HW7ZKsH-khUv4-v2gIjY96cCmtnywkdxX_WL20d4zVAuYNiXDUloha_GkPM0kviUpPEGCWbgiuYP2YIpOZDzCgd1_8eO6uSDl5paRn9o_3UBe15oqsN88KZu6srXj0qceuMhmfLmSEmA3uokmMooS5vC6LhX-CSXq-axYFdEykbOjKMc3MyLSH_7lkscSHTZOHd8881L_iZVyJh0j3MWA4IudO2FVQ6TvU0Pct2mYE06EvHSnLclnO2fTIAvx5VrRmK854iEao6rSkdoptqRXF7IiOINDLNPHGqu2SlaCl2DrD8ycO84yD2xKBXq1zSSuqDRVa2SqBxPMVzwykZEFJvGrQDu6Biy43u_faZ1bd-iWJ-tVmDM-BWPD5W9Glcsgo8seZmjy_dfsAdG1v8WKcJGR9de2LEhk8iewqralqKpJnINvIaDizy0DVwfeNlzts11XKs9PwO9l3C9LgWg0dTBjk3r1WYjytkmkM4tYs9W9mLpp2oWOQjlPI2osG8HmJMzK1sYNSXzR0xckOiJKoSVRHhYsoGS0VKTExmfUsGjGqIkbpITc83wXCHuc9Tf-nBkNniOQlvpnjYVtI6pT0zHU52K2DosSriPVDEBU4GTzfyAMIChz7vhnGn2vclaJ5Tveu9Yte1dS7_LGlqBXG3KhO3SUB6Ed6wubEq9WXXE9zGkAcVXEiRmXkRg_9ImVwPhn03jtQLdhZg0xo5mT0Q2Q_Bvrcesfa-IqzJUKqWhajNV4AmTYqTGf_CIMM2pmKewzBjA6-PXyCTVIEfv2RBT_8_sfDTbUveUAdPYg6zNElHNek9C2OmaJsvuryWGRu7aKqxe18Tfvff_9krUwa-KZrD-rtx5A_0T4wQapvlwa52eWypwb6mRgYxMFaOAI3SRcpKL9WTy3AwUjKXWfkCWv0C-uMhXgtO2kqzc_GJV16sGtRRZVxGY74WVh7frloGng=",
+      "summary": []
+    },
+    {
+      "id": "msg_03670ff37ccc1df5006a66dc3e5f6081909822be9bfb32b2cf",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"persuasion\":\"PERSUADED\",\"support_scope\":\"FULL\",\"rationale\":\"The entry’s narrowly stated identification is well supported. Jeremiah 6:16 directly joins the “good way” to walking in it, making manner of life—not merely destination—the operative sense. Matthew 7:14 places the narrow way within an ethical two-ways contrast leading respectively to life and destruction. Genesis 18:19, quoted in the supporting chapter, makes the covenant dimension explicit by defining keeping “the way of the LORD” as doing justice and judgment. The christological alternative explains John 14:6 especially well, but it does not exclude this semantic content: Jesus can personally embody and enact the covenant conduct designated by “the way.” Because the glossary entry does not deny that personal or salvific application, the counter-reading does not defeat any assertion actually printed in it.\",\"book_core_identification\":\"“The way” signifies covenant conduct: the divinely prescribed manner of life one walks.\",\"book_secondary_elaborations\":[\"The conduct can be described as “the walk,” emphasizing practiced manner of life rather than destination alone.\"],\"unsupported_glossary_assertions\":[],\"chapter_only_objections\":[\"The chapter’s claim that symbolic definitions must hold uniformly across Scripture understates ordinary lexical and contextual variation.\",\"Acts 24:14 does not by itself establish that the movement called “the Way” was specifically named for old covenant conduct rather than for the Christian faith or movement more generally.\",\"The assertion that Genesis 3:24 preserves rather than bars access to the tree of life is difficult to reconcile with the immediate expulsion and guarded entrance narrative.\",\"The derivation of prosphatos in Hebrews 10:20 as necessarily meaning “freshly slain” may place more interpretive weight on etymology than contextual usage warrants.\",\"Several extended identifications involving highways, beasts, wedding garments, doors, and doorposts are typological constructions not necessary to establish the glossary entry.\"],\"strongest_counter_interpretation\":\"“The way” is the divinely provided path or means of access to God and life, climactically identified with Jesus himself in John 14:6; ethical walking is a consequent form of discipleship rather than the symbol’s primary meaning.\",\"counter_core_identification\":\"The appointed means of access to God and salvation, personally embodied in Jesus Christ.\",\"counter_relation_to_book_core\":\"SAME_CORE_BROADER\",\"material_core_denial\":\"No decisive material denial remains. The counter broadens the image from covenant conduct to salvific access and identifies Jesus as its personal embodiment, but covenant conduct can itself be the way walked toward life, and Jesus can embody that way without contradiction.\",\"counter_case\":[\"John 14:6 grammatically identifies the way with Jesus himself and immediately explains it in terms of coming to the Father through him.\",\"Hebrews 10:19–20 presents a living way into God’s presence opened through Christ’s flesh, emphasizing sacrificial access rather than conduct alone.\",\"Acts uses “the Way” as a technical designation for the Christian movement, a usage broader than an ethical walk.\",\"Biblical “way” language is context-sensitive and can denote a route, means, movement, conduct, or destiny.\"],\"book_explanatory_advantages\":[\"Jeremiah 6:16 explicitly connects the good way with the command to “walk therein” and with the people’s refusal to walk.\",\"Genesis 18:19 directly explains keeping the way of the LORD as doing justice and judgment, strongly supporting both “covenant” and “conduct.”\",\"Matthew 7:14’s contrast between two ways and two outcomes naturally reflects the established biblical two-ways tradition of lived obedience and disobedience.\",\"The gloss “the walk” explains why Scripture repeatedly speaks of walking in a way rather than merely locating or intellectually affirming it.\",\"The interpretation can accommodate John 14:6 by understanding Jesus as the perfect personal embodiment of the way rather than treating the personal and ethical readings as mutually exclusive.\"],\"counter_explanatory_advantages\":[\"It more immediately reflects the syntax and exclusivity of John 14:6.\",\"It better foregrounds the cultic-access imagery of Hebrews 10:19–20.\",\"It readily encompasses the Acts designation for the entire Christian movement.\",\"Its broader formulation better reflects the term’s contextual semantic range across Scripture.\"],\"evidence_book_core_cannot_explain\":[],\"comparative_winner\":\"BOOK\",\"decisive_sources\":[\"Jeremiah 6:16 — the good way is explicitly something to “walk” or refuse to walk.\",\"Genesis 18:19 — keeping the way of the LORD is defined as doing justice and judgment.\",\"Matthew 7:14 — the narrow way belongs to the biblical contrast between manners of life leading to life or destruction.\",\"John 14:6 — supports personal embodiment of the way but does not require rejection of the conduct sense.\"],\"unresolved_objections\":[\"“Covenant” is more explicit in Genesis 18:19 and the broader biblical setting than in Matthew 7:14 considered in isolation.\",\"The entry is a compressed symbolic gloss and should not be treated as an exhaustive lexical definition for every occurrence of “way.”\",\"John 14:6 and Hebrews 10:19–20 place stronger emphasis on Christ’s person and sacrificial mediation than the glossary’s brief wording communicates.\"],\"confidence\":\"medium\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_persuasion",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "persuasion": {
+            "type": "string",
+            "enum": [
+              "PERSUADED",
+              "UNPERSUADED"
+            ]
+          },
+          "support_scope": {
+            "type": "string",
+            "enum": [
+              "FULL",
+              "CORE_ONLY",
+              "NONE"
+            ],
+            "description": "Support for the exact glossary BOOK ENTRY only, never for the supporting chapter as a whole."
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "book_secondary_elaborations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Secondary assertions actually printed in the glossary BOOK ENTRY; exclude chapter-only claims."
+          },
+          "unsupported_glossary_assertions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Material assertions actually printed in the BOOK ENTRY that the evidence does not support. Must be empty for FULL and nonempty for CORE_ONLY."
+          },
+          "chapter_only_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Objections to applications or arguments found only in the supporting chapter. Preserved for later chapter review and excluded from the glossary scope ruling."
+          },
+          "strongest_counter_interpretation": {
+            "type": "string"
+          },
+          "counter_core_identification": {
+            "type": "string"
+          },
+          "counter_relation_to_book_core": {
+            "type": "string",
+            "enum": [
+              "CONTRADICTS",
+              "SAME_CORE_BROADER",
+              "SAME_CORE_NARROWER",
+              "EQUIVALENT"
+            ]
+          },
+          "material_core_denial": {
+            "type": "string"
+          },
+          "counter_case": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "book_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "counter_explanatory_advantages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_book_core_cannot_explain": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "comparative_winner": {
+            "type": "string",
+            "enum": [
+              "BOOK",
+              "COUNTER"
+            ]
+          },
+          "decisive_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unresolved_objections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "persuasion",
+          "support_scope",
+          "rationale",
+          "book_core_identification",
+          "book_secondary_elaborations",
+          "unsupported_glossary_assertions",
+          "chapter_only_objections",
+          "strongest_counter_interpretation",
+          "counter_core_identification",
+          "counter_relation_to_book_core",
+          "material_core_denial",
+          "counter_case",
+          "book_explanatory_advantages",
+          "counter_explanatory_advantages",
+          "evidence_book_core_cannot_explain",
+          "comparative_winner",
+          "decisive_sources",
+          "unresolved_objections",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 10972,
+    "input_tokens_details": {
+      "cache_write_tokens": 10969,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2803,
+    "output_tokens_details": {
+      "reasoning_tokens": 1710
+    },
+    "total_tokens": 13775
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,156 @@
+{
+  "created_at": 1785123019,
+  "completed_at": 1785123040,
+  "id": "896438a0-3361-917a-b7e0-1f41381ffadb",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_896438a0-3361-917a-b7e0-1f41381ffadb",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for the term \"Hate\" in biblical symbolism. I need to respond with a specific JSON format.\n{\n  \"primary_symbolic_meaning\": \"Hate symbolizes the rejection of God and the embrace of evil, representing enmity toward divine love and the source of sin and division in human relationships.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Sinful enmity or active opposition to God, righteousness, or neighbor; the moral opposite of Christian love (agape) that must be renounced\",\n  \"primary_basis\": [\n    \"1 John 2:9-11\",\n    \"1 John 3:15\",\n    \"1 John 4:20\",\n    \"Matthew 5:43-44\",\n    \"Leviticus 19:17\",\n    \"Proverbs 10:12\",\n    \"Galatians 5:19-21\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Hyperbolic or comparative language expressing absolute priority of discipleship over natural affections (love less by comparison)\",\n      \"basis\": [\n        \"Luke 14:26\",\n        \"Matthew 10:37\",\n        \"John 12:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God's holy aversion to sin and evil (divine hatred as righteous opposition rather than sinful passion)\",\n      \"basis\": [\n        \"Psalm 5:5\",\n        \"Psalm 11:5\",\n        \"Proverbs 6:16-19\",\n        \"Malachi 1:2-3\",\n        \"Romans 9:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The world's or unbelievers' hostility toward Christ and his followers as a mark of authentic discipleship\",\n      \"basis\": [\n        \"John 15:18-25\",\n        \"Matthew 10:22\",\n        \"1 John 3:13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Internal spiritual struggle or renunciation of the old self/flesh\",\n      \"basis\": [\n        \"Romans 7:15\",\n        \"Galatians 5:17\",\n        \"Ephesians 4:22-24\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation treats hate primarily as a moral/spiritual reality to be rejected in human hearts while recognizing qualified biblical uses (divine hatred of sin; hyperbolic discipleship sayings; expected persecution). No single narrow 'symbol' like an object or color exists; consensus centers on its opposition to love and holiness.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_896438a0-3361-917a-b7e0-1f41381ffadb",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1000,
+    "output_tokens_details": {
+      "reasoning_tokens": 463
+    },
+    "total_tokens": 1602,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 69864000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1000
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

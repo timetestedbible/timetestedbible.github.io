@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "righteousness",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nRighteousness\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'righteousness' primarily signifies right standing before God — a state of being in right relationship with Him and conformed to His moral character and standard. In its most prominent (especially Protestant) doctrinal use, it refers to the righteousness of God credited or imputed to believers through faith in Christ (justification), rather than righteousness achieved by human works. Symbolically it is frequently pictured as a garment or robe (clothing the sinner), a breastplate (protection), and a crown or reward, all conveying a status conferred by God that covers, protects, and vindicates the believer.\",\n  \"primary_basis\": [\n    \"Genesis 15:6 (Abraham believed God and it was credited to him as righteousness)\",\n    \"Romans 1:17 (the righteousness of God revealed from faith to faith)\",\n    \"Romans 3:21-26 (righteousness of God through faith in Jesus Christ, apart from the law)\",\n    \"Romans 4:1-8, 4:22-25 (righteousness credited/imputed to those who believe)\",\n    \"2 Corinthians 5:21 (that we might become the righteousness of God in him)\",\n    \"Philippians 3:9 (not having a righteousness of my own from the law, but that which is through faith)\",\n    \"Isaiah 61:10 (robe of righteousness imagery)\",\n    \"Isaiah 64:6 (our righteousnesses as filthy rags — human righteousness insufficient)\",\n    \"Ephesians 6:14 (breastplate of righteousness)\",\n    \"Matthew 5:6, 5:20 (hunger and thirst for righteousness; righteousness exceeding that of the Pharisees)\",\n    \"Jeremiah 23:6 ('The LORD our righteousness')\",\n    \"1 Corinthians 1:30 (Christ made to us righteousness)\",\n    \"Habakkuk 2:4 (the righteous shall live by faith)\",\n    \"Revelation 19:8 (fine linen is the righteous deeds of the saints)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Imputed forensic righteousness (classic Protestant/Reformed): a legal declaration in which Christ's righteousness is credited to the believer's account; the believer is declared righteous, not made righteous. This is the dominant reading within Protestant evangelicalism.\",\n      \"basis\": [\n        \"Romans 4:3-8\",\n        \"Romans 5:17-19\",\n        \"2 Corinthians 5:21\",\n        \"Philippians 3:9\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Infused/transformative righteousness (Roman Catholic and Orthodox): righteousness is not merely declared but actually imparted, making the believer genuinely righteous through grace, faith working in love, and sanctification (Council of Trent's position).\",\n      \"basis\": [\n        \"Romans 5:19 ('made righteous')\",\n        \"1 John 3:7 (the one who practices righteousness is righteous)\",\n        \"James 2:21-24 (justified by works and not by faith alone)\",\n        \"Galatians 5:6 (faith working through love)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenant faithfulness (New Perspective on Paul, e.g., N.T. Wright, Dunn, Sanders): 'the righteousness of God' refers to God's own faithfulness to His covenant promises, and human righteousness means covenant membership/status within God's people rather than imputed merit.\",\n      \"basis\": [\n        \"Romans 3:1-8, 3:21-26 (God's righteousness as His covenant faithfulness)\",\n        \"Romans 9-11 (God's faithfulness to Israel)\",\n        \"Psalm 143:1-2 (righteousness parallel to faithfulness)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ethical-social righteousness (Hebrew tsedaqah): in much Old Testament scholarship and in social-justice-oriented traditions, righteousness denotes right conduct in relationships — justice for the poor, honesty, and equity in community life — often paired with mishpat (justice).\",\n      \"basis\": [\n        \"Amos 5:24 (let justice roll down like waters, righteousness like an ever-flowing stream)\",\n        \"Micah 6:8\",\n        \"Isaiah 1:16-17\",\n        \"Proverbs 21:3\",\n        \"Genesis 18:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God's saving activity/vindication: particularly in Isaiah and the Psalms, God's righteousness is His delivering, salvation-bringing action on behalf of His people — righteousness as near-synonym for salvation.\",\n      \"basis\": [\n        \"Isaiah 46:13 (my righteousness is near, my salvation)\",\n        \"Isaiah 51:5-8\",\n        \"Psalm 98:2 (revealed his righteousness in the sight of the nations)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Imparted righteousness / entire sanctification (Wesleyan-Holiness): God actually works righteousness into the believer's life progressively or through a second work of grace, distinguished from both bare imputation and Catholic infusion.\",\n      \"basis\": [\n        \"Romans 6:13-19\",\n        \"Romans 8:3-4 (the righteous requirement of the law fulfilled in us)\",\n        \"1 Thessalonians 5:23\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus at the core: righteousness means right standing with God and conformity to His standard, with a strong symbolic register of clothing/garment imagery (robe, breastplate, fine linen) indicating a status God confers. However, the mechanism is one of the most contested loci in Christian theology: imputed (Protestant), infused (Catholic/Orthodox), covenant-faithfulness (New Perspective), and ethical/relational (OT scholarship) readings differ materially. The consensus judgment above reflects the core meaning being settled while the theological mechanism remains a live, confessionally divided debate. The 'primary' framing given here reflects the dominance of the faith-righteousness/justification reading in Protestant-influenced English-language teaching; in Catholic and Orthodox contexts the transformative reading is primary.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Conformity to God's character, standard, and will, encompassing both a right relational and legal standing before God and moral uprightness in conduct.\",\n  \"primary_basis\": [\n    \"Genesis 15:6\",\n    \"Romans 1:17\",\n    \"Romans 3:21-26\",\n    \"Romans 4:3\",\n    \"2 Corinthians 5:21\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Imputed righteousness: a legal declaration where Christ's alien righteousness is credited to the believer by faith, apart from works (historic Protestant emphasis).\",\n      \"basis\": [\n        \"Philippians 3:9\",\n        \"Romans 4:4-5\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Infused righteousness: intrinsic moral transformation and holiness imparted to the believer through grace and the sacraments, making them inherently just (historic Roman Catholic emphasis).\",\n      \"basis\": [\n        \"James 2:24\",\n        \"Romans 5:19\",\n        \"Matthew 5:20\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Covenant faithfulness: God's loyal adherence to His promises to Israel and the world, and correspondingly, a person's status as a faithful member of God's covenant family (emphasized in the New Perspective on Paul).\",\n      \"basis\": [\n        \"Romans 3:3-5\",\n        \"Psalm 143:1\",\n        \"Isaiah 51:5-6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Social justice and equity: right relationships expressed through ethical treatment of others, fair societal systems, and advocacy for the poor and marginalized (Old Testament Prophetic tradition).\",\n      \"basis\": [\n        \"Amos 5:24\",\n        \"Isaiah 1:17\",\n        \"Micah 6:8\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"While there is general agreement that righteousness denotes alignment with God, the term lacks a singular settled theological definition across Christianity. This is due to profound historical schisms (e.g., the Reformation debate between imputed and infused righteousness) and modern biblical scholarship (e.g., the New Perspective on Paul, which views righteousness primarily through the lens of covenant inclusion rather than individualized legal or moral categories).\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Moral and spiritual rightness before God: conformity to God’s character and will, including just conduct and, in salvation contexts, a right standing with God granted by grace.\",\n  \"primary_basis\": [\n    \"Genesis 15:6 — Abraham’s faith is counted as righteousness.\",\n    \"Psalm 106:3 — righteousness is associated with justice and right conduct.\",\n    \"Isaiah 61:10 — salvation and righteousness are pictured as garments bestowed by God.\",\n    \"Matthew 5:6, 10, 20 — righteousness characterizes those who seek and live under God’s reign.\",\n    \"Matthew 6:33 — believers are to seek God’s kingdom and righteousness.\",\n    \"Romans 1:16–17 — the gospel reveals the righteousness of God and connects it with faith.\",\n    \"Romans 3:21–26 — righteousness is manifested through Christ and received through faith.\",\n    \"Romans 4:3–8 — righteousness is counted apart from works.\",\n    \"2 Corinthians 5:21 — believers become the righteousness of God in Christ.\",\n    \"Philippians 3:8–9 — Paul contrasts righteousness based on law with righteousness through faith in Christ.\",\n    \"Ephesians 6:14 — righteousness is symbolized as a protective breastplate.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A forensic or judicial status: God declares the believer righteous because of Christ, often explained as Christ’s righteousness being imputed or credited to the believer.\",\n      \"basis\": [\n        \"Romans 3:21–28\",\n        \"Romans 4:3–8\",\n        \"Romans 5:17–19\",\n        \"2 Corinthians 5:21\",\n        \"Philippians 3:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An imparted or transformative quality: grace actually makes a person righteous through sanctification, virtuous living, and participation in divine life, rather than righteousness being only a declared status.\",\n      \"basis\": [\n        \"Matthew 5:20\",\n        \"Romans 6:13–19\",\n        \"1 Corinthians 6:9–11\",\n        \"James 2:14–26\",\n        \"1 John 3:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenant faithfulness or covenant membership: righteousness denotes fidelity to covenant obligations, and justification identifies those recognized as members of God’s covenant people.\",\n      \"basis\": [\n        \"Genesis 15:6\",\n        \"Deuteronomy 6:25\",\n        \"Psalm 143:1–2\",\n        \"Romans 3:1–6\",\n        \"Galatians 2:15–21\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Justice and right social order, especially protection of the poor and oppressed; righteousness is closely paired with justice rather than treated primarily as private morality or individual salvation.\",\n      \"basis\": [\n        \"Psalm 72:1–4\",\n        \"Isaiah 1:16–17, 21–27\",\n        \"Isaiah 5:7\",\n        \"Amos 5:24\",\n        \"Matthew 25:31–46\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s own saving justice and faithfulness: when Scripture speaks of the “righteousness of God,” it can signify God’s action in keeping promises, judging evil, and rescuing his people.\",\n      \"basis\": [\n        \"Psalm 98:1–3\",\n        \"Isaiah 46:12–13\",\n        \"Isaiah 51:5–8\",\n        \"Romans 1:17\",\n        \"Romans 3:25–26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ himself as the believer’s righteousness: righteousness is interpreted christologically, with union with Christ being the source and embodiment of right standing and holy life.\",\n      \"basis\": [\n        \"Jeremiah 23:5–6\",\n        \"1 Corinthians 1:30\",\n        \"2 Corinthians 5:21\",\n        \"Philippians 3:9\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on the core idea of rightness according to God—encompassing right standing, right conduct, and justice. There is no settled consensus across Christian traditions on whether saving righteousness is principally declared, imputed, imparted, covenantal, participatory, or some combination of these.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Right standing with God (justification) and conformity to God's moral standards/will, often as a gift received by faith rather than earned by works\",\n  \"primary_basis\": [\n    \"Romans 3:21-26\",\n    \"Romans 1:17\",\n    \"Genesis 15:6\",\n    \"Philippians 3:9\",\n    \"2 Corinthians 5:21\",\n    \"Matthew 5:6\",\n    \"Matthew 6:33\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Personal moral uprightness, ethical conduct, or holy living produced in the believer\",\n      \"basis\": [\n        \"Matthew 5:20\",\n        \"1 John 3:7\",\n        \"James 2:14-26\",\n        \"Ephesians 4:24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God's own character of justice, faithfulness, and covenant loyalty (including God's saving acts)\",\n      \"basis\": [\n        \"Psalm 11:7\",\n        \"Psalm 89:14\",\n        \"Isaiah 45:21-25\",\n        \"Romans 3:25-26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Social justice, equity, and righting of wrongs for the oppressed or poor\",\n      \"basis\": [\n        \"Amos 5:24\",\n        \"Isaiah 1:17\",\n        \"Micah 6:8\",\n        \"Psalm 72:1-4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Infused or transformative righteousness (inner renewal enabling good works) versus purely forensic/imputed status\",\n      \"basis\": [\n        \"Romans 5:5\",\n        \"Titus 3:5-7\",\n        \"Council of Trent canons on justification (historical Catholic framing)\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Broad Christian consensus centers on right relationship with God and alignment with divine standards, with strong Pauline emphasis on righteousness as gift through faith. Denominational nuances (forensic imputation in much Protestant teaching vs. infused/transformative righteousness in Catholic and Orthodox traditions) and modern social-justice applications exist but do not overturn the primary forensic-relational and moral core attested across classic biblical interpretation.\"\n}\n\nBOOK ENTRY\nRight-living. God is Right-Living by definition; for those under His authority, righteousness is His commandments lived out.\n[.opposite]Opposite: Sin.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: primarily right standing before God — Christ's imputed righteousness received by faith apart from works — with right-living as its subsequent fruit and evidence.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 32:4; 6:25; Ps 119:172; 145:17; Luke 17:7-10; Rom 4:4-8; Phil 3:9; Heb 11:8; 1 John 3:7) · see Love, Knowing, Faith & Belief, ch. 6, for the dependent definitions; The End of the Law for Paul's wage, debt, law, and obedience vocabulary; and Garments & Armor, ch. 43, for righteousness given and worn\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 32:4 — He is the Rock, his work is perfect: for all his ways are judgment: a God of truth and without iniquity, just and right is he.\nDeuteronomy 6:25 — And it shall be our righteousness, if we observe to do all these commandments before the LORD our God, as he hath commanded us.\nPsalms 119:172 — My tongue shall speak of thy word: for all thy commandments are righteousness.\nPsalms 145:17 — The LORD is righteous in all his ways, and holy in all his works.\nLuke 17:7 — But which of you, having a servant plowing or feeding cattle, will say unto him by and by, when he is come from the field, Go and sit down to meat?\nLuke 17:8 — And will not rather say unto him, Make ready wherewith I may sup, and gird thyself, and serve me, till I have eaten and drunken; and afterward thou shalt eat and drink?\nLuke 17:9 —  Doth he thank that servant because he did the things that were commanded him? I trow not.\nLuke 17:10 — So likewise ye, when ye shall have done all those things which are commanded you, say, We are unprofitable servants: we have done that which was our duty to do.\nRomans 4:4 — Now to him that worketh is the reward not reckoned of grace, but of debt.\nRomans 4:5 — But to him that worketh not, but believeth on him that justifieth the ungodly, his faith is counted for righteousness.\nRomans 4:6 — Even as David also describeth the blessedness of the man, unto whom God imputeth righteousness without works,\nRomans 4:7 — Saying, Blessed are they whose iniquities are forgiven, and whose sins are covered.\nRomans 4:8 — Blessed is the man to whom the Lord will not impute sin.\nPhilippians 3:9 — And be found in him, not having mine own righteousness, which is of the law, but that which is through the faith of Christ, the righteousness which is of God by faith:\nHebrews 11:8 — By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went.\n1 John 3:7 — Little children, let no man deceive you: he that doeth righteousness is righteous, even as he is righteous.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "37787616612a338a506e5ed6bf6b4b8e743b2e32c60c59e96cccc6b6d58f9bf6",
+  "cache": {
+    "hit": false
+  }
+}

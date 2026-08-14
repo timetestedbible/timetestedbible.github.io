@@ -1,0 +1,173 @@
+{
+  "id": "resp_0e4e22ebd4602000006a5476a66b708193858abe90f7eb6675",
+  "object": "response",
+  "created_at": 1783920294,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920319,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0e4e22ebd4602000006a5476a85ecc81938cb4d49bc057220d",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0e4e22ebd4602000006a5476b3741c8193b97fce88745ad9e2",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The term “moment” has no settled, technical symbolic meaning in Christian interpretation. When used symbolically, its most common broad sense is the brevity and transience of human experience, often contrasted with God’s eternity or the lasting significance of divine action.\",\"primary_basis\":[\"Psalm 30:5 — God’s anger lasts “but a moment,” contrasted with enduring favor.\",\"Psalm 90:4-12 — human life is brief when measured against God’s eternity.\",\"2 Corinthians 4:17-18 — “momentary” affliction is contrasted with eternal glory.\",\"James 4:14 — human life is compared to a mist that appears briefly and vanishes.\"],\"alternatives\":[{\"meaning\":\"A divinely appointed or decisive opportunity—a significant point in God’s timing requiring faithful response.\",\"basis\":[\"Ecclesiastes 3:1 — there is an appointed time for every matter.\",\"Mark 1:15 — “the time is fulfilled,” announcing a decisive stage in God’s purpose.\",\"Galatians 4:4 — Christ comes in “the fullness of time.”\",\"Ephesians 5:15-16 — believers are told to make the most of the time or opportunity.\"],\"prominence\":\"common\"},{\"meaning\":\"Sudden eschatological transformation, judgment, or divine intervention.\",\"basis\":[\"1 Corinthians 15:51-52 — resurrection and transformation occur “in a moment, in the twinkling of an eye.”\",\"Matthew 24:42-44 — the Son of Man comes at an unexpected hour.\",\"1 Thessalonians 5:2-3 — the day of the Lord comes suddenly, like a thief.\"],\"prominence\":\"common\"},{\"meaning\":\"A temporary period of suffering or divine displeasure that will be surpassed by restoration and eternal glory.\",\"basis\":[\"Psalm 30:5 — momentary anger is contrasted with lifelong favor and renewed joy.\",\"Isaiah 54:7-8 — brief abandonment or wrath is contrasted with everlasting compassion.\",\"2 Corinthians 4:17 — momentary affliction prepares an eternal weight of glory.\"],\"prominence\":\"minority\"},{\"meaning\":\"A special mystical or conversion instant in which an individual directly encounters God.\",\"basis\":[\"Acts 9:3-6 — Saul’s sudden encounter with Christ is sometimes treated as a defining spiritual moment.\",\"Luke 24:30-32 — the disciples recognize Christ in a decisive instant.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"“Moment” is ordinarily a temporal expression rather than an established biblical symbol such as light, water, or bread. Its significance depends heavily on context. Christian teaching commonly uses it for brevity, appointed opportunity, or sudden divine action, but none of these functions as an exclusive or universally recognized symbolic definition.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1079,
+    "output_tokens_details": {
+      "reasoning_tokens": 496
+    },
+    "total_tokens": 1396
+  },
+  "user": null,
+  "metadata": {}
+}

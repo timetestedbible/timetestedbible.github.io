@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124367,
+  "completed_at": 1785124413,
+  "id": "e7e468bd-c68f-98e9-877f-cd56dc7ef87b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_e7e468bd-c68f-98e9-877f-cd56dc7ef87b",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Net\". I must return only a JSON object matching the schema.\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification matches the consensus primary meaning: the net as an enclosure that gathers living people from the sea of peoples for sorting into vessels or furnace at judgment. The book preserves the evangel ical/gospel/kingdom gathering sense (explicitly calling the gospel 'the kingdom's' net) while unifying it with the snare/judgment senses under one category of 'enclosure by which a power takes the living... for the sorting of the harvest'. The Hebrew link to 'devoted thing' (herem ) and the 'never ransomed' clause add precision and boundary conditions not present in the consensus.\",\n  \"extension_reasoning\": \"The book broadens the extension by including armies as God's net (Ezek 32:3; 17:20; Hab 1:14-17) and wicked's hidden nets (snare imagery), which the consensus treats as common secondary alternatives. It also adds the irrevocable, non-ransomed character of the harvest and the connection to 'devoted thing'. The consensus's minority readings (church unity, oppressive power) are absorbed rather than rejected. The printed citations (Hab, Ezek, Matt 13, Ezek 47) strongly support this multi-valent but unified view.\",\n  \"boundary_disagreement\": \"Consensus foregrounds the positive evangelistic sense as primary and treats OT snare/judgment as secondary; book unifies all under a single 'power takes living for sorting, never ransomed' category, with armies and wicked nets as co-equal instances. The book adds the herem/devoted-thing dimension and the 'sea of peoples' framing.\",\n  \"material_contradiction\": \"none\",\n  \"consensus_summary\": \"Net primarily symbolizes the gospel and kingdom of God as an instrument for gathering people (ev angelism, 'fishers of men', dragnet parable), with common secondary senses of snare/trap and divine judgment.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Primary meaning is the gospel/kingdom as instrument of evangelistic gathering of people (fishers of men; dragnet parable gathering every kind for later separation). Common alternatives are snare/trap of the wicked and instrument of divine judgment; minority readings include church unity or oppressive conquest.\",\n  \"book_summary\": \"Enclosure by which a power takes the living from the sea of peoples (every kind, alive) for harvest sorting into vessels or furnace, never ransomed; armies are God's net, gospel the kingdom's, wicked hide theirs (and are caught); Hebrew equates dragnet with the devoted thing (wholly consecrated or destroyed).\",\n  \"consensus_core_identification\": \"Net as gospel/kingdom gathering instrument (evangelism and dragnet ingathering pending judgment).\",\n  \"book_core_identification\": \"Net as any power's enclosure taking living from sea of peoples for irrevocable harvest sorting (vessels/furnace); gospel, armies, and wicked snares as instances; linked to herem devotion.\",\n  \"core_relation\": \"BOOK_BROADENS\",\n  \"extension_relation\": \"BOOK_SUPERSET\",\n  \"boundary_disagreement\": \"Book unifies consensus primary (kingdom/gospel net) with its common alternatives (divine judgment nets; wicked snares) under one core, adds armies-as-God's-net and herem/never-ransomed conditions, and does not privilege the fishers-of-men call narratives.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Cores share the Matt 13 referent of a net gathering every kind from the sea for sorting, so the general category is preserved rather than replaced; the book materially broadens and re-precisifies by treating gospel, armies, and hidden snares as coordinate instances of the same enclosure-for-irrevocable-devotion, plus the Hebrew dragnet/herem link. This changes extension and boundaries without contradicting the shared sorting image, yielding REFINED (not MATCH, not DIVERGENT).\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Consensus privileges the NT fishers-of-men evangelistic call as primary, which the entry's citations and wording de-emphasize in favor of a judgment/devotion unification that may over-assimilate distinct metaphors.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_e7e468bd-c68f-98e9-877f-cd56dc7ef87b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4115,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 2688,
+    "output_tokens_details": {
+      "reasoning_tokens": 2167
+    },
+    "total_tokens": 6803,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 241404000,
+    "context_details": {
+      "input_tokens": 4115,
+      "output_tokens": 2688
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "sabbath-day",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSabbath day (yom ha-shabbat)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the Sabbath day is most commonly interpreted as a type or symbol of rest — specifically, the spiritual rest found in Christ and the eschatological rest of God's people. The weekly Sabbath, rooted in God's rest after creation, is read as a shadow pointing forward to the salvation-rest believers enter through faith in Jesus, and ultimately to the final rest of the age to come (heaven / the new creation). Colossians 2:16-17 ('a shadow of the things to come... the substance belongs to Christ') and Hebrews 3-4 ('there remains a Sabbath rest for the people of God') anchor this dominant typological reading.\",\n  \"primary_basis\": [\n    \"Genesis 2:2-3\",\n    \"Exodus 20:8-11\",\n    \"Deuteronomy 5:12-15\",\n    \"Colossians 2:16-17\",\n    \"Hebrews 3:7-4:11\",\n    \"Matthew 11:28-30\",\n    \"Mark 2:27-28\",\n    \"Revelation 14:13\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Covenant sign: the Sabbath as the distinctive sign of the Mosaic covenant between God and Israel, marking Israel as a sanctified people (a reading emphasized in both Jewish interpretation and much Christian biblical theology).\",\n      \"basis\": [\n        \"Exodus 31:12-17\",\n        \"Ezekiel 20:12\",\n        \"Ezekiel 20:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Memorial of redemption/liberation: the Sabbath commemorates deliverance from slavery in Egypt, symbolizing freedom and God's redemptive act; extended in liberation and social-justice readings to rest for laborers, servants, and the land.\",\n      \"basis\": [\n        \"Deuteronomy 5:15\",\n        \"Exodus 23:12\",\n        \"Leviticus 25 (sabbatical year/Jubilee)\",\n        \"Isaiah 58:13-14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Transferred moral ordinance: the Sabbath as a perpetual creation ordinance whose observance is transferred to Sunday, the Lord's Day, commemorating Christ's resurrection (classic Reformed/Puritan 'Christian Sabbath' view; also reflected in Catholic teaching on Sunday).\",\n      \"basis\": [\n        \"Genesis 2:2-3\",\n        \"Exodus 20:8-11\",\n        \"Acts 20:7\",\n        \"1 Corinthians 16:2\",\n        \"Revelation 1:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Perpetual seventh-day command: the seventh-day Sabbath remains literally binding on Christians and functions as a sign of loyalty to God, especially in eschatological context (Seventh-day Adventist and other sabbatarian bodies).\",\n      \"basis\": [\n        \"Exodus 20:8-11\",\n        \"Isaiah 66:22-23\",\n        \"Matthew 5:17-19\",\n        \"Revelation 14:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Millennial/cosmic-week typology: the Sabbath as the seventh 'day' of a cosmic week, symbolizing a future thousand-year reign or the world to come (found in the Epistle of Barnabas, some patristic writers, and later millenarian traditions).\",\n      \"basis\": [\n        \"Genesis 2:2-3\",\n        \"Psalm 90:4\",\n        \"2 Peter 3:8\",\n        \"Revelation 20:1-6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sanctified time / imitation of God: the Sabbath as symbolizing holiness in time and humanity's call to imitate the Creator's pattern of work and rest (a theme in Jewish thought, e.g., Heschel, increasingly cited in Christian spirituality literature).\",\n      \"basis\": [\n        \"Genesis 2:2-3\",\n        \"Exodus 20:11\",\n        \"Exodus 31:17\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable dominant consensus in Christian interpretation that the Sabbath symbolizes rest fulfilled in Christ and consummated eschatologically, driven chiefly by Hebrews 4 and Colossians 2:16-17. However, the term carries layered meanings (creation rest, covenant sign, redemption memorial) that most interpreters treat as complementary rather than competing. The main genuine disagreement is not over the symbolism but over practice: whether observance is abrogated, transferred to Sunday, or still binding on the seventh day. Assessment made blind to the author's material, as instructed.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Spiritual rest in Christ, salvation from works-righteousness, and the ultimate eschatological rest for the people of God in the new creation.\",\n  \"primary_basis\": [\n    \"Hebrews 4:1-11\",\n    \"Colossians 2:16-17\",\n    \"Genesis 2:2-3\",\n    \"Matthew 11:28-30\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A perpetual sign of covenant loyalty, holiness, and moral obedience, often observed practically on Sunday (the Lord's Day) or Saturday.\",\n      \"basis\": [\n        \"Exodus 20:8-11\",\n        \"Exodus 31:13-17\",\n        \"Isaiah 58:13-14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A typological symbol of the millennial kingdom, representing a future one-thousand-year era of peace corresponding to the seventh 'day' of human history.\",\n      \"basis\": [\n        \"2 Peter 3:8\",\n        \"Revelation 20:1-6\",\n        \"Psalm 90:4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A paradigm and symbol of social justice, liberation from oppression, and economic equity, connected to the Jubilee.\",\n      \"basis\": [\n        \"Deuteronomy 5:12-15\",\n        \"Leviticus 25:1-55\",\n        \"Luke 4:16-19\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"While the literal practice and ongoing moral obligation of the Sabbath is debated among traditions, its typological and symbolic meaning as pointing to spiritual and eschatological rest in Christ enjoys a strong theological consensus.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Sacred rest grounded in God’s completed creation, commonly understood typologically as pointing to the believer’s rest in Christ and ultimately to eternal or eschatological rest with God.\",\n  \"primary_basis\": [\n    \"Genesis 2:2–3 — God rests on and sanctifies the seventh day after completing creation.\",\n    \"Exodus 20:8–11 — Sabbath rest is patterned on God’s creation rest.\",\n    \"Deuteronomy 5:12–15 — Sabbath also commemorates Israel’s deliverance from slavery.\",\n    \"Hebrews 4:1–11 — Sabbath rest is applied to entering God’s rest through faith and to a rest still awaiting God’s people.\",\n    \"Colossians 2:16–17 — Sabbaths are described as a shadow whose substance belongs to Christ.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Sabbath is primarily the covenant sign marking Israel as God’s sanctified people, rather than chiefly a symbol of inward or heavenly rest.\",\n      \"basis\": [\n        \"Exodus 31:12–17\",\n        \"Ezekiel 20:12, 20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Sabbath symbolizes liberation from oppression, humane treatment of workers and animals, and social equality before God.\",\n      \"basis\": [\n        \"Deuteronomy 5:12–15\",\n        \"Exodus 23:10–12\",\n        \"Isaiah 58:13–14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The seventh-day Sabbath remains a continuing literal creation ordinance and divine command for Christians, while also signifying creation, redemption, and sanctification.\",\n      \"basis\": [\n        \"Genesis 2:2–3\",\n        \"Exodus 20:8–11\",\n        \"Mark 2:27–28\",\n        \"Luke 4:16\",\n        \"Hebrews 4:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Sabbath is typologically transferred to or fulfilled in the Christian Lord’s Day, Sunday, which commemorates Christ’s resurrection and anticipates eternal rest.\",\n      \"basis\": [\n        \"Matthew 28:1–6\",\n        \"Acts 20:7\",\n        \"1 Corinthians 16:2\",\n        \"Revelation 1:10\",\n        \"Hebrews 4:9–11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Sabbath foreshadows a future millennial ‘seventh age’ of history or a thousand-year messianic rest.\",\n      \"basis\": [\n        \"Psalm 90:4\",\n        \"2 Peter 3:8\",\n        \"Revelation 20:1–6\",\n        \"Hebrews 4:9–11\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation has a strong dominant association between the Sabbath and divine rest—creation rest, rest in Christ, and final rest—but no single precise symbolic interpretation is settled across traditions. Disagreement especially concerns whether the Sabbath is fulfilled in Christ, transferred to Sunday, or remains binding as the literal seventh day.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A consecrated day of cessation from ordinary labor that commemorates God’s rest after creation, serves as a covenant sign of belonging to God, and typologically points to the spiritual rest believers enter through Christ.\",\n  \"primary_basis\": [\n    \"Genesis 2:2-3\",\n    \"Exodus 20:8-11\",\n    \"Exodus 31:12-17\",\n    \"Deuteronomy 5:12-15\",\n    \"Mark 2:27-28\",\n    \"Hebrews 4:1-11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The weekly Sabbath remains the literal seventh day (Saturday) as a continuing moral obligation for Christians\",\n      \"basis\": [\n        \"Exodus 20:8-11\",\n        \"Isaiah 66:22-23\",\n        \"Luke 4:16\",\n        \"Acts 13:14, 42-44\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Sabbath principle is transferred to Sunday (the Lord’s Day) in honor of the resurrection\",\n      \"basis\": [\n        \"Acts 20:7\",\n        \"1 Corinthians 16:2\",\n        \"Revelation 1:10\",\n        \"John 20:1, 19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Sabbath commandment is entirely fulfilled and abolished in Christ; no particular day is required\",\n      \"basis\": [\n        \"Colossians 2:16-17\",\n        \"Romans 14:5-6\",\n        \"Galatians 4:9-11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An eschatological symbol of the coming millennial or eternal rest of God’s people\",\n      \"basis\": [\n        \"Hebrews 4:9-11\",\n        \"Revelation 14:13\",\n        \"Isaiah 66:22-23\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian interpretation the core symbolic cluster of sacred rest, creation memorial, and christological fulfillment is stable; divergence concerns only the ongoing calendrical application or degree of continuity with the Mosaic form.\"\n}\n\nBOOK ENTRY\nThe marked member of the sabbath-unit — the day of the sabbath, as the renewed-moon day is the day of the month; Ezekiel 46:1 sets the two genitives side by side. When the law means the resting member itself it doubles the word — shabbat shabbaton, \"the sabbath of rest\" — wherever that rest falls: the seventh day, the Day of Atonement, the land's seventh year. Greek writes the same construction: \"the day of the sabbaths\" (hē hēmera tōn sabbatōn).\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 20:8; Ezek 46:1; Ex 31:15; Lev 23:32; Luke 4:16) · see The Sabbath, ch. 32\n\nAVAILABLE KJV EXCERPTS\nExodus 20:8 — Remember the sabbath day, to keep it holy.\nEzekiel 46:1 — Thus saith the Lord GOD; The gate of the inner court that looketh toward the east shall be shut the six working days; but on the sabbath it shall be opened, and in the day of the new moon it shall be opened.\nExodus 31:15 — Six days may work be done; but in the seventh is the sabbath of rest, holy to the LORD: whosoever doeth any work in the sabbath day, he shall surely be put to death.\nLeviticus 23:32 — It shall be unto you a sabbath of rest, and ye shall afflict your souls: in the ninth day of the month at even, from even unto even, shall ye celebrate your sabbath.\nLuke 4:16 — And he came to Nazareth, where he had been brought up: and, as his custom was, he went into the synagogue on the sabbath day, and stood up for to read.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "d294be3e5dc1463dd952fa71bd5b44a9a96b077a1fa549a0bd00a4aa16bb4257",
+  "cache": {
+    "hit": false
+  }
+}

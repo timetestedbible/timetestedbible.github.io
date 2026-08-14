@@ -1,0 +1,179 @@
+{
+  "id": "resp_059b626e5cd95b4b006a54777adac08196a2b07cff77491f59",
+  "object": "response",
+  "created_at": 1783920506,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920537,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_059b626e5cd95b4b006a54777b9ee88196ab6987f7d97e5050",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_059b626e5cd95b4b006a547785e0bc8196a538325aa266a3e8",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_059b626e5cd95b4b006a547788644481969230c1ad02088f67",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The sea or deep waters most commonly symbolize primordial chaos, danger, death, and hostile powers that God restrains or defeats. This is especially prominent in poetic, prophetic, and apocalyptic texts.\",\"primary_basis\":[\"Genesis 1:2, 6–10 — the primordial deep is ordered and bounded in creation.\",\"Job 38:8–11; Psalms 93:3–4; 104:6–9 — God confines and rules the threatening waters.\",\"Psalms 74:13–14; 89:9–10; Isaiah 27:1; 51:9–10 — divine victory over the sea and its monsters represents triumph over chaotic or hostile powers.\",\"Exodus 14–15 — the sea is both a deadly threat and the arena of God's victory and deliverance.\",\"Daniel 7:2–3 — violent imperial beasts emerge from the storm-tossed sea.\",\"Mark 4:35–41 and parallels — Jesus' calming of the sea is commonly read as authority over chaos and mortal danger.\",\"Revelation 13:1; 21:1 — the beast rises from the sea, while the disappearance of the sea is often interpreted as the removal of chaos, evil, or threat.\"],\"alternatives\":[{\"meaning\":\"Peoples, nations, multitudes, or the turbulent pagan world, especially in prophetic and apocalyptic interpretation.\",\"basis\":[\"Isaiah 17:12–13 compares tumultuous nations to roaring seas.\",\"Isaiah 57:20 compares the wicked to a tossing sea.\",\"Daniel 7:2–3 associates the sea with the setting from which world empires arise.\",\"Revelation 17:15 explicitly interprets waters as peoples, multitudes, nations, and languages.\"],\"prominence\":\"common\"},{\"meaning\":\"Life, divine blessing, spiritual refreshment, and the Holy Spirit, particularly when the image is flowing or living water rather than the threatening sea.\",\"basis\":[\"Psalm 1:3 and Isaiah 44:3–4 use water for flourishing and divine blessing.\",\"Ezekiel 47:1–12 depicts life-giving water flowing from the temple.\",\"John 4:10–14 presents living water as eternal life.\",\"John 7:37–39 explicitly relates living water to the Spirit.\",\"Revelation 22:1–2 depicts the river of the water of life.\"],\"prominence\":\"common\"},{\"meaning\":\"Cleansing, rebirth, and baptismal renewal.\",\"basis\":[\"Ezekiel 36:25–27 links clean water with purification and a renewed heart and spirit.\",\"John 3:5 associates birth of water and Spirit with entry into God's kingdom, though its precise interpretation is disputed.\",\"Acts 22:16 and Ephesians 5:26 connect washing with cleansing.\",\"1 Peter 3:20–21 relates the flood waters typologically to baptism.\"],\"prominence\":\"common\"},{\"meaning\":\"Divine judgment together with deliverance through death-like waters.\",\"basis\":[\"Genesis 6–9 presents flood waters as judgment while preserving Noah's household.\",\"Exodus 14–15 makes the sea judgment for Egypt and deliverance for Israel.\",\"Jonah 1–2 uses engulfing waters as an image of descent toward death followed by rescue.\",\"1 Corinthians 10:1–2 and 1 Peter 3:20–21 support Christian typological readings involving baptism, judgment, and salvation.\"],\"prominence\":\"common\"},{\"meaning\":\"Separation, instability, or the barrier between peoples and realms; on this reading, the absence of the sea in the new creation signifies the end of separation or alienation.\",\"basis\":[\"Isaiah 57:20 depicts the sea's restlessness and instability.\",\"Revelation 21:1 has often been interpreted as removal of separation as well as chaos, although the text does not explicitly define the symbol this way.\"],\"prominence\":\"minority\"},{\"meaning\":\"Literal features of creation without a symbolic referent.\",\"basis\":[\"Genesis 1:9–10 calls the gathered waters seas as part of the created world.\",\"Many narrative references to seas, rivers, and water function geographically or physically even when later interpreters also find typology in them.\"],\"prominence\":\"common\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single settled symbolic meaning for both “sea” and “waters” across Scripture. The threatening sea or deep most recognizably signifies chaos, danger, death, and hostile power, but water imagery can also signify life, Spirit, cleansing, judgment, salvation, or nations. Genre, movement, and context are decisive: stormy or abyssal seas tend toward chaos imagery, while flowing or living water tends toward life and blessing.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 319,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1634,
+    "output_tokens_details": {
+      "reasoning_tokens": 657
+    },
+    "total_tokens": 1953
+  },
+  "user": null,
+  "metadata": {}
+}

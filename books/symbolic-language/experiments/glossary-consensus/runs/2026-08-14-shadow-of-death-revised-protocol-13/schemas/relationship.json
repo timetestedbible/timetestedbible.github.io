@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "relation": {"type": "string", "enum": ["MATCH", "REFINED", "DIVERGENT", "NOVEL"]},
+    "consensus_summary": {"type": "string"},
+    "book_summary": {"type": "string"},
+    "consensus_core_identification": {"type": "string"},
+    "book_core_identification": {"type": "string"},
+    "core_relation": {"type": "string", "enum": ["EQUIVALENT", "BOOK_NARROWS", "BOOK_BROADENS", "COMPATIBLE_OVERLAP", "CONTRADICTS", "NO_CONSENSUS"]},
+    "extension_relation": {"type": "string", "enum": ["SAME_CASES", "BOOK_SUBSET", "BOOK_SUPERSET", "PARTIAL_RECLASSIFICATION", "DIFFERENT_REFERENT", "NO_BASELINE"]},
+    "boundary_disagreement": {"type": "string"},
+    "material_contradiction": {"type": "string"},
+    "rationale": {"type": "string"},
+    "citation_support": {"type": "string", "enum": ["STRONG", "PARTIAL", "INSUFFICIENT"]},
+    "strongest_objection": {"type": "string"},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]}
+  },
+  "required": ["relation", "consensus_summary", "book_summary", "consensus_core_identification", "book_core_identification", "core_relation", "extension_relation", "boundary_disagreement", "material_contradiction", "rationale", "citation_support", "strongest_objection", "confidence"]
+}

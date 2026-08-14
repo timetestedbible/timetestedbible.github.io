@@ -1,0 +1,195 @@
+{
+  "id": "resp_078199e0fadaff0e006a547f18dd98819587b0b132de87af6b",
+  "object": "response",
+  "created_at": 1783922456,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922475,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_078199e0fadaff0e006a547f1a06308195898a0d71c2003f9a",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_078199e0fadaff0e006a547f23e35c81958f09395ccc8e9e86",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The sun principally symbolizes God’s radiant glory and, most characteristically, Jesus Christ as the Sun of Righteousness; it can also signify the glorified righteous and governing figures.\",\"book_summary\":\"The sun identifies the Father as the original source of light, while the righteous shine derivatively like the sun in His kingdom.\",\"consensus_core_identification\":\"God, especially Christ, as the source and manifestation of divine light, righteousness, and glory.\",\"book_core_identification\":\"The Father specifically as the source of all lesser light, with the righteous reflecting that light.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book restricts the primary divine identification to the Father rather than retaining the consensus’s broader God/especially-Christ identification. Its secondary inclusion of the righteous is already recognized by the consensus.\",\"material_contradiction\":\"There is no direct contradiction at the broad divine-referent level: the Father falls within the consensus category of God. The difference becomes material at the Trinitarian-personal boundary because the book assigns primacy to the Father where the consensus assigns it especially to Christ.\",\"rationale\":\"The central category remains divine light and glory, so the book does not replace it with an unrelated referent. It materially narrows that category to the Father and treats the righteous as recipients or reflectors of derived light. This preserves the consensus’s general identification while changing its principal personal specification and excluding many other contextual senses.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Because the blind consensus repeatedly makes Christ—not merely God generically—the principal identification, one could view the book’s Father-specific identification as replacing the central referent and therefore as divergent. However, the consensus expressly includes God, and Psalm 84:11 directly identifies the LORD God as a sun, making refinement the better classification. The printed texts support God as sun and the righteous shining, but do not by themselves establish the Father as the exclusive source from which every lesser light is drawn; Genesis 37:9 also concerns familial or governing figures rather than that source claim.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3772,
+    "input_tokens_details": {
+      "cache_write_tokens": 3769,
+      "cached_tokens": 0
+    },
+    "output_tokens": 847,
+    "output_tokens_details": {
+      "reasoning_tokens": 402
+    },
+    "total_tokens": 4619
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123925,
+  "completed_at": 1785123960,
+  "id": "942adc84-5b88-9395-8a01-009f28135f75",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_942adc84-5b88-9395-8a01-009f28135f75",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry on \"Heaven\" and return only a JSON object matching the schema.\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reason\": \"The book's core identification of heaven as 'the jurisdiction where God's will is already done' (including both visible sky and seat of rule) preserves the consensus referent of God's transcendent realm and presence while materially shifting emphasis and boundary: it centers on the locus of divine sovereignty and the downward movement of salvation rather than primarily on God's dwelling place or the eternal destiny of the redeemed. The consensus treats heaven as the ultimate eschatological home; the book subordinates that to the present jurisdiction of God's will and the cosmic movement from heaven to earth (Matt 6:10; Ps 115:16).\",\n  \"extension_reason\": \"The book narrows the consensus by excluding or de-emphasizing the eschatological destiny of the redeemed as the primary referent and the intermediate state of the blessed dead. It broadens by explicitly including the visible sky as co primary with the seat of rule, and reclassifies heaven as the source of saving movement downward rather than the final abode. This is a boundary refinement rather than replacement.\",\n  \"citation_support\": \"strong\",\n  \"consensus_summary\": \"Heaven primarily signifies God's transcendent dwelling place, throne, and eternal destiny of the redeemed in blessed communion; alternatives include the physical sky, kingdom of heaven as God's reign, intermediate state, or renewed creation.\",\n  \"book_summary\": \"Heaven is the jurisdiction where God's will is already done—both the visible sky and the seat of rule—with Scripture's saving movement coming downward from heaven to earth.\",\n  \"rationale\": \"The book's definition retains the core category of heaven as God's realm (sky + throne) but redefines its primary function as the domain of already-accomplished divine will and the downward trajectory of salvation.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Heaven primarily signifies the transcendent dwelling place of God (throne, presence, glory, rule) and, derivatively, the eternal destiny/home of the redeemed in unbroken fellowship; the term is also commonly the physical sky/firmament, a metonym for God’s reign (“kingdom of heaven”), an intermediate state, or the sphere joined to renewed earth.\",\n  \"book_summary\": \"Heaven is the jurisdiction where God’s will is already done, covering both the visible sky and the seat of rule; Scripture’s saving movement proceeds downward from heaven to earth.\",\n  \"consensus_core_identification\": \"transcendent dwelling-place/realm of God and eschatological home of the redeemed\",\n  \"book_core_identification\": \"jurisdiction where God’s will is already done (visible sky + seat of rule), origin of downward saving movement\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book elevates ‘will already done’ and the descent motif as definitional while treating sky and seat of rule as coequal; it does not center the redeemed’s eternal destiny or beatific communion that consensus treats as primary.\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Both identify heaven as God’s realm (sky/throne/rule). The book preserves that general referent yet materially re-precision it as the jurisdiction of already-accomplished will and the source of downward salvation, thereby narrowing and reweighting the consensus core away from destiny/fellowship without replacing the category itself.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Consensus primary sense as the redeemed’s eternal home and place of divine fellowship is omitted from the book’s core definition.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_942adc84-5b88-9395-8a01-009f28135f75",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4446,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2136,
+    "output_tokens_details": {
+      "reasoning_tokens": 1733
+    },
+    "total_tokens": 6582,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 208376000,
+    "context_details": {
+      "input_tokens": 4446,
+      "output_tokens": 2136
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

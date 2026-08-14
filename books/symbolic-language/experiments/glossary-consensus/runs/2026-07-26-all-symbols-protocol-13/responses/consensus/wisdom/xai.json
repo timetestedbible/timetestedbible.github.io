@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920875,
+  "completed_at": 1783920899,
+  "id": "bf21f0b0-501b-9236-b706-3064f7b9a02b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_bf21f0b0-501b-9236-b706-3064f7b9a02b",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Wisdom\" in Christian teaching and biblical interpretation, without any knowledge of an author's book or preferred conclusion. I need to answer fr...{\n  \"primary_meaning\": \"Divine wisdom personified as a feminine figure, often seen as a prefiguration or type of Christ\",\n  \"primary_basis\": [\n    \"Proverbs 8\",\n    \"1 Corinthians 1:24\",\n    \"Colossians 2:3\",\n    \"Wisdom 8:12-21\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Purely ethical or practical instruction\",\n      \"basis\": [\n        \"Proverbs 1-9 as moral teaching\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ap ocalyptic revelation or divine revelation\",\n      \"basis\": [\n        \"Job 28\",\n        \"Baruch 3:37-4:1\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Holy Spirit or feminine aspect of God\",\n      \"basis\": [\n        \"Some patristic readings\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Traditional Christian interpretation strongly identifies Wisdom with Christ, though modern biblical studies often treat it as literary personification of an attribute.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Jesus Christ (the divine Logos/Son), as the personal embodiment and personification of God's wisdom\",\n  \"primary_basis\": [\n    \"Proverbs 8:22-31 (Wisdom present/begotten before creation and active in it)\",\n    \"1 Corinthians 1:24 ('Christ the power of God and the wisdom of God')\",\n    \"1 Corinthians 1:30 (Christ as wisdom from God)\",\n    \"Colossians 2:3 (all treasures of wisdom hidden in Christ)\",\n    \"Matthew 11:19 / Luke 7:35 (wisdom justified by her deeds/children, applied to Jesus)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Literary/poetic personification of a divine attribute (God's wise ordering of creation and moral call) without hypostatic or christological identification\",\n      \"basis\": [\n        \"Proverbs 1–9 as extended poetic device\",\n        \"Job 28\",\n        \"modern critical biblical scholarship\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit\",\n      \"basis\": [\n        \"occasional patristic associations of Sophia with the Spirit\",\n        \"certain pneumatological readings of Wisdom literature\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A semi-divine feminine figure or archetype (Sophia)\",\n      \"basis\": [\n        \"Wisdom of Solomon and Sirach\",\n        \"Gnostic texts\",\n        \"some modern feminist or sophiological theologies\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Traditional Christian exegesis (patristic through confessional) overwhelmingly reads personified Wisdom christologically as a type or hypostasis of the Son; modern biblical studies commonly prefers a non-ontological literary reading while still acknowledging the later christological application. The christological sense remains the dominant symbolic assignment in Christian teaching.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_bf21f0b0-501b-9236-b706-3064f7b9a02b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2055,
+    "output_tokens_details": {
+      "reasoning_tokens": 1600
+    },
+    "total_tokens": 2657,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 127660000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 2055
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

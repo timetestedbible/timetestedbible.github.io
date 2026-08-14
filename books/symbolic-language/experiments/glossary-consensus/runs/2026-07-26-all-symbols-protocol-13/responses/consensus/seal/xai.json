@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920504,
+  "completed_at": 1783920522,
+  "id": "9e2a872c-44d4-9560-b4c1-c16c15dcecd5",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_9e2a872c-44d4-9560-b4c1-c16c15dcecd5",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for biblical symbolism of \"Seal (mark in the forehead)\". I must respond only with JSON matching the schema, no surrounding text.\n{\n  \"primary_meaning\": \"A mark of divine ownership and protection, signifying that the bearer belongs to God and is sealed for salvation or preservation from eschatological judgment.\",\n  \"primary_basis\": [\n    \"Revelation 7:3\",\n    \"Revelation 9:4\",\n    \"Revelation 14:1 9\",\n    \"Ezekiel 9:4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A counterfeit mark of allegiance to the beast or Antichrist, symbolizing submission to evil or worldly power.\",\n      \"basis\": [\n        \"Revelation 13:16-17\",\n        \"Revelation 14:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit as the seal of God upon the believer's heart or forehead.\",\n      \"basis\": [\n        \"Ephesians 1:13\",\n        \"Ephesians 4:30\",\n        \"2 Corinthians 1:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A literal physical mark or tattoo required in the end times for economic participation.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Divine ownership, protection, and identification of God's faithful servants, shielding them from judgment\",\n  \"primary_basis\": [\n    \"Revelation 7:2-3\",\n    \"Revelation 9:4\",\n    \"Revelation 14:1\",\n    \"Ezekiel 9:4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The indwelling Holy Spirit as God's authenticating seal on believers\",\n      \"basis\": [\n        \"Ephesians 1:13-14\",\n        \"Ephesians 4:30\",\n        \"2 Corinthians 1:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Counterfeit mark of the beast signifying allegiance to the Antichrist or worldly system, leading to exclusion from God's people\",\n      \"basis\": [\n        \"Revelation 13:16-17\",\n        \"Revelation 14:9-11\",\n        \"Revelation 20:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal physical mark, brand, or implant to be applied in a future end-times scenario\",\n      \"basis\": [\n        \"Revelation 13:16-17\",\n        \"Revelation 7:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sacramental or ritual sign such as baptism or confirmation marking incorporation into the church\",\n      \"basis\": [\n        \"Ephesians 1:13\",\n        \"traditional liturgical practice\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Consensus exists on the basic contrast between God's protective seal of ownership and the beast's mark of allegiance; differences arise mainly in eschatological schools (preterist, historicist, futurist) regarding literal versus symbolic application and timing.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_9e2a872c-44d4-9560-b4c1-c16c15dcecd5",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 607,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1799,
+    "output_tokens_details": {
+      "reasoning_tokens": 1368
+    },
+    "total_tokens": 2406,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 114320000,
+    "context_details": {
+      "input_tokens": 607,
+      "output_tokens": 1799
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

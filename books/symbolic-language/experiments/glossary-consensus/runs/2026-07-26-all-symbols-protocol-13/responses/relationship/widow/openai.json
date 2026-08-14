@@ -1,0 +1,207 @@
+{
+  "id": "resp_01e0ea09177034ce006a54800de1e081979646df1a6063feb9",
+  "object": "response",
+  "created_at": 1783922701,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922730,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_01e0ea09177034ce006a54800e7e5081978998285c234033dd",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_01e0ea09177034ce006a5480178b74819790c2e763e1bfcd3f",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_01e0ea09177034ce006a5480217f148197a0bad097087d983e",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_01e0ea09177034ce006a54802396548197919cc45548385f32",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"The widow primarily represents a bereaved, socially powerless, and materially vulnerable person whom God protects and the covenant community must support. A well-attested secondary meaning personifies Zion, Israel, or the Church as desolate or deprived of her husband.\",\"book_summary\":\"The widow signifies God’s covenant people when separated from God, their divine Husband.\",\"consensus_core_identification\":\"A vulnerable or desolate party deprived of ordinary protection, primarily a literal widow but sometimes a corporate people portrayed as widowed.\",\"book_core_identification\":\"God’s covenant people deprived of their marital relationship with God as Husband.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book selects the recognized corporate-widowhood motif and treats it as the term’s identification, excluding or leaving aside literal vulnerable widows, exemplary faithful widows, and other widow imagery covered by the consensus.\",\"material_contradiction\":\"There is no necessary contextual contradiction: the book’s identification is explicitly represented among the consensus alternatives. The disagreement arises only if the entry is intended as an exhaustive definition replacing the broader and more common vulnerability motif.\",\"rationale\":\"The book does not introduce an unknown meaning or oppose the consensus outright. Its reading corresponds closely to the consensus’s established Zion/Israel/Church-as-widow alternative, but narrows the symbol to covenantal separation from the divine Husband rather than encompassing the term’s broader biblical uses.\",\"citation_support\":\"PARTIAL\",\"strongest_objection\":\"Lamentations 1:1 portrays Jerusalem as being like a widow, and Isaiah 54:5 calls her Maker her Husband, but neither cited verse alone explicitly states that God’s covenant people have been covenantally cut off from him. Isaiah 54:5 may instead stress the continuing identity of God as Husband and Redeemer, so the stronger claim of separation depends on surrounding context and inference.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 3838,
+    "input_tokens_details": {
+      "cache_write_tokens": 3835,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1570,
+    "output_tokens_details": {
+      "reasoning_tokens": 1167
+    },
+    "total_tokens": 5408
+  },
+  "user": null,
+  "metadata": {}
+}

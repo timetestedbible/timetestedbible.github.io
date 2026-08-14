@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123435,
+  "completed_at": 1785123460,
+  "id": "1476c9d4-bb39-9cfc-810f-bfa3a2d8c803",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_1476c9d4-bb39-9cfc-810f-bfa3a2d8c803",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Darkness\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"The book's core identification ('Concealed disobedience — deeds hidden from the light') is a precise narrowing of the consensus primary meaning (evil, sin, spiritual blindness/ignorance, separation from God as antithesis of light). It retains the moral-spiritual evil category and the light/darkness polarity but restricts the referent to the specific aspect of concealment of evil deeds.\",\n  \"extension_reasoning\": \"The book narrows the consensus's broad category of moral evil to the subset of concealed disobedience (deeds hidden from the light), excluding or de-emphasizing applications to divine judgment, death, primordial chaos, divine mystery, or neutral suffering. It adds precision by tying darkness explicitly to the reproof of evil deeds (John 3:19-20).",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Darkness primarily symbolizes evil, sin, spiritual blindness/ignorance, and separation from God as the antithesis of light, with common secondary senses of judgment, death/Sheol, primordial chaos, and (more minority) divine mystery or suffering.\",\n  \"book_summary\": \"Concealed disobedience—deeds hidden from the light (opposite: Light).\",\n  \"consensus_core_identification\": \"moral-spiritual evil/sin and separation from God opposed to light\",\n  \"book_core_identification\": \"concealed disobedience (evil deeds hidden from the light)\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book restricts the symbol to the concealment/hiding of disobedient deeds (the John 3:19-20 motif), excluding or sidelining the broader consensus cases of general evil, judgment/outer darkness, death, chaos, divine hiddenness, and affliction.\",\n  \"material_contradiction\": \"None; the book's sense is already an acknowledged facet inside the consensus primary meaning rather than a replacement of it.\",\n  \"rationale\": \"Consensus core is the broad light/dark dualism of evil versus God. Book keeps that same referent category and the opposition to light but materially narrows extension and precision to ‘concealed disobedience,’ treating darkness essentially as the hiding-place of evil deeds. This is boundary refinement, not core replacement or novelty.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The glossary entry collapses a widely polyvalent biblical symbol into one narrow Johannine aspect, under-representing the dominant broader usage attested across the consensus.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_1476c9d4-bb39-9cfc-810f-bfa3a2d8c803",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4522,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1467,
+    "output_tokens_details": {
+      "reasoning_tokens": 1084
+    },
+    "total_tokens": 5989,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 176284000,
+    "context_details": {
+      "input_tokens": 4522,
+      "output_tokens": 1467
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

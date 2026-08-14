@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "faithful-witness",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nFaithful Witness\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'Faithful Witness' (Greek: ho martys ho pistos) is understood primarily as a Christological title: it designates Jesus Christ as the one who perfectly and reliably testifies to God's truth and character — revealing God, confirming God's promises, and remaining true to that testimony even to the point of death. The title carries the double sense of the Greek word martys: 'witness' in the legal/testimonial sense and, by extension, 'martyr,' since Christ's witness culminated in his crucifixion. His resurrection ('firstborn of the dead' in the same verse) vindicates that witness.\",\n  \"primary_basis\": [\n    \"Revelation 1:5 — 'Jesus Christ, the faithful witness, the firstborn of the dead, and the ruler of the kings of the earth'\",\n    \"Revelation 3:14 — 'the Amen, the faithful and true witness'\",\n    \"Revelation 19:11 — the rider called 'Faithful and True'\",\n    \"John 18:37 — 'for this purpose I have come into the world, to bear witness to the truth'\",\n    \"John 3:11, 3:32-33 — Jesus testifies to what he has seen; whoever receives his testimony certifies that God is true\",\n    \"1 Timothy 6:13 — Christ Jesus 'who in his testimony before Pontius Pilate made the good confession'\",\n    \"Psalm 89:37 — 'a faithful witness in the skies,' frequently cited as the Old Testament background for Revelation 1:5 via the Davidic covenant context of Psalm 89\",\n    \"Isaiah 55:4 — the Davidic figure given 'as a witness to the peoples'\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Martyrological/ecclesial reading: 'faithful witness' as a designation for believers who testify to Christ faithfully, especially unto death. Antipas is explicitly called 'my faithful witness' (Revelation 2:13), and the term is extended to the church's vocation of costly testimony (Revelation 6:9; 11:3; 12:11; 17:6). This reading treats Christ's faithful witness as the pattern the church is called to imitate.\",\n      \"basis\": [\n        \"Revelation 2:13 (Antipas, 'my faithful witness')\",\n        \"Revelation 6:9\",\n        \"Revelation 11:3 (the two witnesses)\",\n        \"Revelation 12:11\",\n        \"Revelation 17:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Davidic-covenantal/messianic reading: 'faithful witness' in Revelation 1:5 is read as a deliberate allusion to Psalm 89 (vv. 27, 37), presenting Jesus as the fulfillment of the Davidic covenant — the enduring, guaranteed heir whose throne is as sure as the 'faithful witness in the skies.' Common in academic commentary (e.g., Beale, Bauckham) and complements rather than replaces the primary reading.\",\n      \"basis\": [\n        \"Psalm 89:27, 89:37\",\n        \"Revelation 1:5 (parallel triad: witness, firstborn, ruler of kings, echoing Psalm 89)\",\n        \"Isaiah 55:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Astronomical/creational reading of Psalm 89:37 itself: the 'faithful witness in the sky' is the moon (or the rainbow, in some older interpretations) as a perpetual natural testimony to God's covenant faithfulness, not a messianic title. This concerns the Psalm's original sense rather than the New Testament title.\",\n      \"basis\": [\n        \"Psalm 89:37 in its immediate context (vv. 36-37, sun and moon as fixed guarantees)\",\n        \"Genesis 9:12-17 (rainbow as covenant sign, in the minority 'rainbow' variant)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Prophetic-office reading: 'faithful witness' emphasizes Christ as the true prophet whose testimony contrasts with false witnesses and false prophets (drawing on the wisdom contrast of Proverbs 14:5, 25), and grounds the reliability of the entire revelation given in the Apocalypse — i.e., the title functions to certify the trustworthiness of the book's message.\",\n      \"basis\": [\n        \"Proverbs 14:5, 14:25\",\n        \"Revelation 22:6, 22:16, 22:20 ('these words are trustworthy and true')\",\n        \"Revelation 3:14\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, cross-traditional agreement (Catholic, Orthodox, Protestant, and academic biblical scholarship) that 'Faithful Witness' is first and foremost a title of Jesus Christ from Revelation 1:5 and 3:14, denoting his reliable testimony to God vindicated through death and resurrection. The listed alternatives are largely complementary emphases rather than rival meanings: the martyrological/ecclesial extension and the Davidic-covenant background are both widely affirmed alongside the primary Christological sense. Genuine disagreement is limited to secondary questions, such as how strongly the 'martyr' connotation should be pressed in the first-century usage of martys, and what the 'faithful witness in the skies' denotes within Psalm 89 itself.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A Christological title referring to Jesus Christ, symbolizing his perfect, unwavering testimony to God's truth, his role as the ultimate revealer of the Father, and his obedience even unto the point of death.\",\n  \"primary_basis\": [\n    \"Revelation 1:5\",\n    \"Revelation 3:14\",\n    \"Psalm 89:37\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A designation for individual Christian believers or the Church, particularly martyrs, who bear unwavering testimony to Christ in the face of persecution.\",\n      \"basis\": [\n        \"Revelation 2:13\",\n        \"Acts 1:8\",\n        \"Revelation 11:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit, who bears internal and external testimony to the truth of God and the Gospel.\",\n      \"basis\": [\n        \"John 15:26\",\n        \"1 John 5:6\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The term is most famously used as a direct title for Jesus Christ in the Book of Revelation. The Greek word for witness, 'martys', is the root of the English word 'martyr', connecting the concept of faithful witnessing inextricably to suffering and giving one's life for the truth.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A Christological title signifying Jesus Christ as the perfectly trustworthy revealer and representative of God, whose testimony is confirmed by his obedient life, death, and resurrection.\",\n  \"primary_basis\": [\n    \"Revelation 1:5 explicitly calls Jesus Christ “the faithful witness,” followed by references to his resurrection and kingship.\",\n    \"Revelation 3:14 calls Christ “the Amen, the faithful and true witness.”\",\n    \"John 18:37 presents Jesus as coming into the world to testify to the truth.\",\n    \"1 Timothy 6:13 recalls Christ Jesus giving faithful testimony before Pontius Pilate.\",\n    \"Revelation 19:11 describes the returning Christ as “Faithful and True,” reinforcing the title’s association with his reliability and truthfulness.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A faithful Christian disciple or martyr who maintains testimony to Christ despite persecution or death.\",\n      \"basis\": [\n        \"Revelation 2:13 calls Antipas “my faithful witness,” using language closely parallel to Christ’s title.\",\n        \"Acts 1:8 commissions believers as Christ’s witnesses.\",\n        \"Revelation 12:11 depicts believers overcoming through their testimony and willingness to face death.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The witnessing vocation of the church collectively: the church is called to embody and proclaim God’s truth faithfully in the world.\",\n      \"basis\": [\n        \"Acts 1:8 assigns the witnessing mission to the gathered disciples.\",\n        \"Revelation 11:3–12 portrays the two witnesses, often interpreted in Christian tradition as symbolizing the witnessing church, though other identifications are also common.\",\n        \"Revelation 20:4 associates fidelity to the testimony of Jesus with persecuted believers.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"“Witness” primarily in the sense of a martyr—one whose death itself testifies to the faith—rather than principally a truthful revealer.\",\n      \"basis\": [\n        \"Revelation 2:13 links faithful witness Antipas with being killed.\",\n        \"The Greek word martys, originally meaning witness, developed the Christian sense “martyr” through its association with testimony unto death.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A heavenly or covenantal witness other than Christ, such as the enduring witness mentioned in poetic or prophetic texts.\",\n      \"basis\": [\n        \"Psalm 89:37 refers to a “faithful witness” in the sky, variously understood as the moon, the heavens, or a heavenly attestor.\",\n        \"Isaiah 55:4 describes the Davidic figure as a witness to the peoples, sometimes connected typologically with the Messiah.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"When capitalized and used as a biblical title, “Faithful Witness” is overwhelmingly understood as referring to Jesus Christ, especially from Revelation 1:5 and 3:14. There is less uniformity over which aspect is primary—truthful revelation, covenant fidelity, testimony before death, or martyrdom—but these are usually treated as complementary nuances rather than competing identifications.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A christological title for Jesus as the reliable, true, and ultimate revealer/testifier of God's character, will, and truth (even unto death)\",\n  \"primary_basis\": [\n    \"Revelation 1:5\",\n    \"Revelation 3:14\",\n    \"John 18:37 (linked as background for Jesus' self-description as witness to the truth)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A designation for Christian martyrs who faithfully testify to Christ even unto death (by analogy with the martys root)\",\n      \"basis\": [\n        \"Revelation 2:13 (Antipas as 'my faithful witness')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The moon (or creation) as a reliable celestial/covenantal witness\",\n      \"basis\": [\n        \"Psalm 89:37\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In published Christian interpretation and biblical studies the capitalized or titular form is overwhelmingly treated as a Revelation christological title; secondary applications to martyrs or Old Testament imagery exist but do not displace the primary sense.\"\n}\n\nBOOK ENTRY\nThe Messiah, who bears the Father's light faithfully through the night. The moon writes this witness in the sky.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 89:37; Rev 1:5; 3:14; Isa 55:4) · see Sun, Moon & Stars, ch. 29\n\nAVAILABLE KJV EXCERPTS\nPsalms 89:37 — It shall be established for ever as the moon, and as a faithful witness in heaven. Selah.\nRevelation 1:5 — And from Jesus Christ, who is the faithful witness, and the first begotten of the dead, and the prince of the kings of the earth. Unto him that loved us, and washed us from our sins in his own blood,\nRevelation 3:14 — And unto the angel of the church of the Laodiceans write; These things saith the Amen, the faithful and true witness, the beginning of the creation of God;\nIsaiah 55:4 — Behold, I have given him for a witness to the people, a leader and commander to the people.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "ef0201c185f5065535eceae5de1aa07c0b273c374fb4904e11f4301f275052e0",
+  "cache": {
+    "hit": false
+  }
+}

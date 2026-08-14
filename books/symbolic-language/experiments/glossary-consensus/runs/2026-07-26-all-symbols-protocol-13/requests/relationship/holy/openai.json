@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "holy",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nHoly\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'holy' (Hebrew qadosh, Greek hagios) primarily means 'set apart' or 'separated' — designating that which belongs to God and is distinct from the common or profane. Applied to God himself, it denotes his absolute transcendence, otherness, and moral perfection; applied to people, places, and objects, it denotes consecration to God's exclusive use and possession. A tightly connected secondary sense is moral purity: because God is holy, his people are called to ethical purity and separation from sin. Standard teaching thus combines two strands: (1) positional/relational holiness (set apart for God) and (2) moral/ethical holiness (purity of character conforming to God's nature).\",\n  \"primary_basis\": [\n    \"Leviticus 19:2 ('Be holy, for I the LORD your God am holy')\",\n    \"Leviticus 11:44-45\",\n    \"Isaiah 6:3 ('Holy, holy, holy is the LORD of hosts')\",\n    \"Exodus 3:5 (holy ground)\",\n    \"Exodus 19:5-6 ('a kingdom of priests and a holy nation')\",\n    \"1 Samuel 2:2 ('There is none holy like the LORD')\",\n    \"1 Peter 1:15-16 ('be holy in all your conduct')\",\n    \"1 Peter 2:9 ('a holy nation, a people for his own possession')\",\n    \"Hebrews 12:14 ('the holiness without which no one will see the Lord')\",\n    \"Revelation 4:8\",\n    \"Isaiah 57:15\",\n    \"Psalm 99:1-9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Holiness as primarily moral purity or sinlessness — emphasized in Wesleyan/Holiness traditions (entire sanctification, Christian perfection) where holiness is chiefly an ethical and experiential state produced by the Spirit rather than mainly a positional 'set-apartness.'\",\n      \"basis\": [\n        \"1 Thessalonians 4:3-7\",\n        \"Hebrews 12:14\",\n        \"Matthew 5:48\",\n        \"2 Corinthians 7:1\",\n        \"1 John 3:2-3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Holiness as the numinous — God's awe-inspiring, 'wholly other' transcendence that evokes fear and fascination (Rudolf Otto's 'mysterium tremendum'); holiness is fundamentally God's incomparable divinity rather than an ethical category.\",\n      \"basis\": [\n        \"Isaiah 6:1-5\",\n        \"Exodus 3:5-6\",\n        \"Exodus 19:16-24\",\n        \"Job 42:5-6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Holiness as ritual/cultic status within the graded purity system of the Torah — a technical category (holy vs. common, clean vs. unclean) governing sacred space, priesthood, sacrifice, and access to God, as emphasized in biblical scholarship on Leviticus (e.g., Milgrom, Wenham).\",\n      \"basis\": [\n        \"Leviticus 10:10\",\n        \"Leviticus chapters 11-16\",\n        \"Numbers 4:15\",\n        \"Ezekiel 44:23\",\n        \"Haggai 2:11-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Holiness as positional/definitive sanctification of believers in Christ — 'saints' (hagioi) are holy by union with Christ regardless of attained moral state, with holiness understood as covenantal belonging to God's people.\",\n      \"basis\": [\n        \"1 Corinthians 1:2\",\n        \"1 Corinthians 6:11\",\n        \"Colossians 3:12\",\n        \"Ephesians 1:1-4\",\n        \"Hebrews 10:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Holiness understood as God's dangerous, contagious power or 'energy' resident in sacred objects and space, which can bless or destroy on contact — a reading found in some history-of-religions and Old Testament scholarship.\",\n      \"basis\": [\n        \"2 Samuel 6:6-7 (Uzzah)\",\n        \"Exodus 19:12-13\",\n        \"Leviticus 10:1-3\",\n        \"1 Samuel 6:19-20\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Holiness as essentially identical with God's fullness of being, glory, or love — some theologians (e.g., strands in Barth and in relational theologies) define holiness less as separation and more as God's self-giving otherness expressed in covenant love.\",\n      \"basis\": [\n        \"Hosea 11:9 ('the Holy One in your midst')\",\n        \"Isaiah 57:15\",\n        \"John 17:17-19\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a strong, widely recognized consensus that 'holy' fundamentally means 'set apart / separated unto God,' with God as the ultimate referent and derived holiness for people, places, objects, and times. Virtually all lexicons (BDB, HALOT, TDNT), systematic theologies, and catechetical materials teach this core. The alternatives listed are mostly differences of emphasis (ethical vs. positional vs. cultic vs. numinous) rather than outright rivals; scholars debate whether the etymological sense 'to cut/separate' is primary or whether 'belonging to the divine sphere' is more accurate, but the practical definition in Christian teaching is stable. Any author proposing a materially different symbolic meaning would be departing from a well-settled consensus.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Set apart for God, consecrated, and reflecting divine moral purity or transcendence.\",\n  \"primary_basis\": [\n    \"Leviticus 11:44\",\n    \"Isaiah 6:3\",\n    \"1 Peter 1:15-16\",\n    \"Exodus 19:6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Moral perfection and absolute sinlessness.\",\n      \"basis\": [\n        \"Hebrews 7:26\",\n        \"1 John 1:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ontological wholly-otherness or the terrifying, unapproachable divine presence.\",\n      \"basis\": [\n        \"Exodus 3:5\",\n        \"Revelation 4:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Ritual consecration or mere dedication for sacred temple use, often applied to inanimate objects.\",\n      \"basis\": [\n        \"Exodus 30:29\",\n        \"Matthew 23:17\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The broad consensus recognizes a dual meaning: a relational status of being separated from the profane for God's use, and an ethical or ontological state of absolute purity reflecting God's nature.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Sacredness: belonging to or being set apart for God and therefore distinct from the ordinary or profane. In Christian teaching this commonly includes moral purity; when applied to God, it denotes his perfect purity, unique majesty, and transcendence.\",\n  \"primary_basis\": [\n    \"Leviticus 11:44-45; 19:2 — Israel is commanded to be holy because God is holy.\",\n    \"Exodus 3:5 — ground is holy because of God’s presence.\",\n    \"Exodus 19:5-6 — Israel is designated a holy nation belonging especially to God.\",\n    \"Isaiah 6:1-7 — the threefold proclamation of God’s holiness is associated with his majesty and the cleansing of impurity.\",\n    \"1 Peter 1:15-16; 2:9 — Christians are called to holy conduct and described as a holy nation.\",\n    \"Hebrews 12:14 — holiness is presented as necessary for seeing the Lord.\",\n    \"Revelation 4:8 — heavenly worship proclaims God as holy three times.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Moral purity or sinlessness, treated as the principal meaning rather than as a consequence of consecration to God.\",\n      \"basis\": [\n        \"Leviticus 19:2-18 links holiness with ethical commandments.\",\n        \"1 Peter 1:14-16 connects holiness with obedient conduct.\",\n        \"Hebrews 12:14 and Ephesians 1:4 associate holiness with blameless life.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s absolute otherness, transcendence, and incomparable majesty.\",\n      \"basis\": [\n        \"Isaiah 6:1-5 presents holiness amid divine enthronement, awe, and human unworthiness.\",\n        \"Isaiah 40:25 associates the Holy One with divine incomparability.\",\n        \"Revelation 4:8-11 joins holiness with sovereignty, eternity, and worship.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Consecration for a specific divine purpose or service, without necessarily implying intrinsic moral perfection.\",\n      \"basis\": [\n        \"Exodus 29:37; 30:29-30 describes altars, objects, and priests as holy through consecration.\",\n        \"Numbers 6:5-8 describes the Nazirite as holy through dedication.\",\n        \"1 Corinthians 7:14 uses “holy” of family members in a covenantal or relational sense.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The manifestation or sphere of God’s special presence, so that places, times, objects, or people are called holy because God is present or claims them.\",\n      \"basis\": [\n        \"Exodus 3:5 identifies ground as holy at the divine appearance.\",\n        \"Exodus 25:8; 26:33-34 concerns the sanctuary and Most Holy Place.\",\n        \"Psalm 99:5,9 associates holiness with God’s throne and holy mountain.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wholeness, completeness, or integrated spiritual health as the root symbolic meaning of holiness.\",\n      \"basis\": [\n        \"This is sometimes proposed in devotional or theological treatments, but it is not the standard lexical explanation of the biblical Hebrew and Greek terms.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a settled broad consensus, though not a single exhaustive definition. The meanings “set apart for or belonging to God,” “sacred,” “morally pure,” and “divinely transcendent” overlap and vary with context. “Holy” is ordinarily treated as a theological and relational descriptor rather than as a symbol with one fixed allegorical referent.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Set apart or consecrated to God; sacred, distinct from the common or profane, and characterized by divine purity or moral perfection.\",\n  \"primary_basis\": [\n    \"Leviticus 11:44-45 / 19:2 ('Be holy, for I am holy')\",\n    \"Isaiah 6:3 ('Holy, holy, holy is the Lord of hosts')\",\n    \"1 Peter 1:15-16 (echoing the Leviticus call to holiness)\",\n    \"Exodus 3:5 (holy ground as set apart)\",\n    \"Revelation 4:8 (thrice-holy acclamation of God)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine otherness or transcendence (God as wholly other, separate from creation)\",\n      \"basis\": [\n        \"Isaiah 6:3 and the trisagion tradition\",\n        \"Rudolf Otto-influenced readings of the numinous in biblical theophanies\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral purity or ethical perfection required of believers\",\n      \"basis\": [\n        \"1 Peter 1:15-16\",\n        \"Hebrews 12:14\",\n        \"Matthew 5:48 (be perfect as your heavenly Father is perfect)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Cultic or ritual consecration (objects, places, times, or persons dedicated exclusively to sacred use)\",\n      \"basis\": [\n        \"Exodus 28–29 (priestly consecration)\",\n        \"Leviticus 8–10 and temple/holy-of-holies language\",\n        \"Sabbath and festival texts calling days 'holy'\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across mainstream Christian biblical interpretation the core semantic range of Hebrew qadosh and Greek hagios is widely agreed to center on 'set apartness' for God, with moral purity, divine transcendence, and cultic consecration as closely related and frequently overlapping applications rather than fully competing symbols. No major tradition treats 'holy' as lacking a recognizable primary sense.\"\n}\n\nBOOK ENTRY\nSet apart from the common; for created things, claimed by God for an appointed purpose.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 13:2; Lev 10:10; 20:26; Deut 7:6) · see Uncommon Sanctification, Justification, and Cleanliness\n\nAVAILABLE KJV EXCERPTS\nExodus 13:2 — Sanctify unto me all the firstborn, whatsoever openeth the womb among the children of Israel, both of man and of beast: it is mine.\nLeviticus 10:10 — And that ye may put difference between holy and unholy, and between unclean and clean;\nLeviticus 20:26 — And ye shall be holy unto me: for I the LORD am holy, and have severed you from other people, that ye should be mine.\nDeuteronomy 7:6 — For thou art an holy people unto the LORD thy God: the LORD thy God hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "65a651566e0d188b2804811245bc897dc8a13c8c7bc3959c2dd94e83fcc66a2d",
+  "cache": {
+    "hit": false
+  }
+}

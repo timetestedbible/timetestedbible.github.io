@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "dog",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nDog\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the dog is a predominantly negative symbol of uncleanness, contempt, and moral impurity. It represents those outside the covenant community or hostile to what is holy: the profane, the wicked, unbelievers, and (in the Gospels) Gentiles as viewed from a Jewish covenantal perspective. By extension it commonly symbolizes false teachers and apostates who return to their sin.\",\n  \"primary_basis\": [\n    \"Matthew 7:6 (do not give what is holy to dogs)\",\n    \"Matthew 15:26-27 / Mark 7:27-28 (children's bread thrown to the dogs, in the Canaanite/Syrophoenician woman episode)\",\n    \"Philippians 3:2 (beware of the dogs, of evil workers)\",\n    \"Revelation 22:15 (outside are the dogs, sorcerers, immoral persons)\",\n    \"2 Peter 2:22 quoting Proverbs 26:11 (the dog returns to its own vomit)\",\n    \"Deuteronomy 23:18 (the wages of a dog not brought into the LORD's house)\",\n    \"Psalm 22:16,20 (dogs surround me, evildoers encircle)\",\n    \"1 Samuel 24:14 and 2 Samuel 9:8 ('dead dog' as expression of worthlessness and self-abasement)\",\n    \"Isaiah 56:10-11 (blind watchmen as mute, greedy dogs)\",\n    \"1 Kings 21:19-24; 2 Kings 9:36 (dogs licking blood/eating Jezebel as sign of disgrace and judgment)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Dogs as a specific figure for Gentiles or the nations outside Israel's covenant, especially in exegesis of Matthew 15 / Mark 7; some interpreters soften this by noting the diminutive 'little dogs/house dogs' and read the exchange as opening blessing to Gentiles.\",\n      \"basis\": [\n        \"Matthew 15:21-28\",\n        \"Mark 7:24-30\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Dogs as false teachers, Judaizers, or heretics who threaten the church — an inversion by Paul of the Jewish epithet against Gentiles.\",\n      \"basis\": [\n        \"Philippians 3:2\",\n        \"Isaiah 56:10-11\",\n        \"2 Peter 2:22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Dogs as apostates or backsliders who return to former sin after professing conversion.\",\n      \"basis\": [\n        \"2 Peter 2:20-22\",\n        \"Proverbs 26:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'Dog' in Deuteronomy 23:18 read as a technical term for a male cult prostitute rather than a literal animal or general slur — a reading held in scholarly and some translation traditions.\",\n      \"basis\": [\n        \"Deuteronomy 23:17-18\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"'Dogs' in Revelation 22:15 read specifically as the sexually immoral or perverse (linked to Deut 23:18) rather than a general term for the wicked.\",\n      \"basis\": [\n        \"Revelation 22:15\",\n        \"Deuteronomy 23:18\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A positive symbolism of loyalty, watchfulness, and faithfulness — largely extra-biblical or paracanonical (Tobit's dog; medieval iconography; the Dominican 'Domini canes' pun on hounds of the Lord; the Syrophoenician woman's humble acceptance of the term as a model of persistent faith).\",\n      \"basis\": [\n        \"Tobit 6:2; 11:4 (deuterocanonical)\",\n        \"Matthew 15:27-28 (the woman's response commended)\",\n        \"Later Christian iconographic and homiletic tradition rather than direct biblical texts\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Dogs as instruments or images of divine judgment and disgrace (scavenging corpses, licking blood).\",\n      \"basis\": [\n        \"1 Kings 14:11; 16:4; 21:19-24\",\n        \"2 Kings 9:10,36\",\n        \"Jeremiah 15:3\",\n        \"Psalm 68:23\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a well-recognized, broadly settled consensus that biblical dog imagery is overwhelmingly negative: in the ancient Near Eastern context dogs were semi-wild scavengers, not household pets, so the term functions as a slur denoting uncleanness, contempt, and exclusion from the holy. The main interpretive debates concern application (whom the dogs represent in a given passage — Gentiles, false teachers, apostates, the sexually immoral, or the wicked generally) rather than the basic valence. Positive dog symbolism (loyalty, fidelity) is essentially a later Christian and deuterocanonical development, not the dominant biblical sense.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Impurity, wickedness, false teachers, and those outside the covenant (the unholy).\",\n  \"primary_basis\": [\n    \"Revelation 22:15\",\n    \"Philippians 3:2\",\n    \"Matthew 7:6\",\n    \"Proverbs 26:11\",\n    \"2 Peter 2:22\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Humble faith and persistence of Gentiles seeking grace\",\n      \"basis\": [\n        \"Matthew 15:26-27\",\n        \"Mark 7:27-28\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Agents of divine judgment and violent scavenging\",\n      \"basis\": [\n        \"1 Kings 14:11\",\n        \"1 Kings 21:19\",\n        \"2 Kings 9:36\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Pitiable companions or marginal comfort for the outcast\",\n      \"basis\": [\n        \"Luke 16:21\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Because dogs were generally street scavengers rather than household pets in the ancient Near East, they predominantly symbolize filth, danger, and spiritual impurity in biblical texts, with very few positive connotations.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A dog most commonly symbolizes what is unclean, contemptible, morally corrupt, or excluded from the holy community. Applied to people, the image commonly denotes wicked persons, hostile outsiders, or false teachers rather than one fixed class in every passage.\",\n  \"primary_basis\": [\n    \"Matthew 7:6 — holy things are not to be given to dogs, associating dogs with those who profane what is sacred.\",\n    \"Philippians 3:2 — Paul calls dangerous religious opponents “dogs.”\",\n    \"Revelation 22:15 — “dogs” are outside the holy city alongside the immoral and deceitful.\",\n    \"Psalm 22:16, 20 — dogs represent hostile and violent enemies surrounding the sufferer.\",\n    \"Psalm 59:6, 14 — enemies are compared to snarling, prowling dogs.\",\n    \"2 Peter 2:22 and Proverbs 26:11 — the dog returning to its vomit symbolizes relapse into folly or corruption.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Gentiles or people outside Israel’s covenant community\",\n      \"basis\": [\n        \"Matthew 15:26–27 and Mark 7:27–28 use household-dog imagery in the encounter with the Syrophoenician/Canaanite woman.\",\n        \"Later Christian interpretation often treats the image as reflecting a Jewish designation for Gentile outsiders, while noting that the narrative ultimately emphasizes the woman’s faith and inclusion.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"False teachers, apostates, or corrupt religious opponents\",\n      \"basis\": [\n        \"Philippians 3:2 applies “dogs” to opponents whom Paul regards as dangerous teachers.\",\n        \"2 Peter 2:22 applies the returning-dog proverb to people who return to corruption after knowing the way of righteousness.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Persistent folly or return to former sin\",\n      \"basis\": [\n        \"Proverbs 26:11 compares a fool repeating folly to a dog returning to vomit.\",\n        \"2 Peter 2:22 reuses this proverb to depict spiritual relapse.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Persecutors or violent enemies\",\n      \"basis\": [\n        \"Psalm 22:16, 20 depicts dogs surrounding and threatening the sufferer.\",\n        \"Psalm 59:6, 14 compares hostile enemies to prowling dogs.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Humility, persistence, or faith that receives even the “crumbs” of divine mercy\",\n      \"basis\": [\n        \"Matthew 15:27 and Mark 7:28 have sometimes been interpreted positively with emphasis on the woman’s humble yet persistent response rather than on the dog image itself.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Companionship or loyal service\",\n      \"basis\": [\n        \"Tobit 6:2 and 11:4 mention Tobias’s dog accompanying him, especially in traditions that include Tobit.\",\n        \"This positive association is culturally familiar but is not a major biblical symbol developed in mainstream Christian interpretation.\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad consensus that biblical dog imagery is predominantly negative, centering on uncleanness, contempt, exclusion, hostility, or moral corruption. There is no settled rule identifying dogs with one specific group in every text; the precise referent depends on context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"unclean, despised, or contemptible persons (especially Gentiles, false teachers, apostates, or the wicked)\",\n  \"primary_basis\": [\n    \"Matthew 15:26-27 (and Mark 7:27)\",\n    \"Matthew 7:6\",\n    \"Philippians 3:2\",\n    \"Revelation 22:15\",\n    \"2 Peter 2:22\",\n    \"Proverbs 26:11\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"scavengers that devour corpses as agents or signs of divine judgment and shame\",\n      \"basis\": [\n        \"1 Kings 14:11\",\n        \"1 Kings 16:4\",\n        \"1 Kings 21:19-24\",\n        \"2 Kings 9:10, 36\",\n        \"Psalm 68:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"vicious enemies or persecutors surrounding the righteous\",\n      \"basis\": [\n        \"Psalm 22:16, 20\",\n        \"Psalm 59:6, 14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"literal animals without further symbolic loading (or merely unclean scavengers in daily life)\",\n      \"basis\": [\n        \"Exodus 22:31\",\n        \"1 Samuel 17:43\",\n        \"Luke 16:21\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"positive symbols of loyalty or companionship\",\n      \"basis\": [],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Across OT and NT usage and classic Christian exegesis, dogs carry a consistently pejorative valence tied to impurity, outsider status, and moral reprobation; no single narrow referent (Gentiles vs. false teachers vs. the damned) dominates exclusively, and positive associations are essentially absent from the biblical and traditional interpretive record.\"\n}\n\nBOOK ENTRY\nA wild beast representing a kingdom or its citizens, especially Rome in the crucifixion pattern. Gentile dogs eat crumbs from Israel's table; Roman soldiers surrounded Jesus at the cross.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 22:16; Matt 15:26-27; 27:27-35; Mark 7:28; Rev 22:15) · see Trees, ch. 41\n\nAVAILABLE KJV EXCERPTS\nPsalms 22:16 — For dogs have compassed me: the assembly of the wicked have inclosed me: they pierced my hands and my feet.\nMatthew 15:26 — But he answered and said, It is not meet to take the children's bread, and to cast it to dogs.\nMatthew 15:27 — And she said, Truth, Lord: yet the dogs eat of the crumbs which fall from their masters' table.\nMatthew 27:27 — Then the soldiers of the governor took Jesus into the common hall, and gathered unto him the whole band of soldiers.\nMatthew 27:28 — And they stripped him, and put on him a scarlet robe.\nMatthew 27:29 — And when they had platted a crown of thorns, they put it upon his head, and a reed in his right hand: and they bowed the knee before him, and mocked him, saying, Hail, King of the Jews!\nMatthew 27:30 — And they spit upon him, and took the reed, and smote him on the head.\nMatthew 27:31 — And after that they had mocked him, they took the robe off from him, and put his own raiment on him, and led him away to crucify him.\nMatthew 27:32 — And as they came out, they found a man of Cyrene, Simon by name: him they compelled to bear his cross.\nMatthew 27:33 — And when they were come unto a place called Golgotha, that is to say, a place of a skull,\nMatthew 27:34 — They gave him vinegar to drink mingled with gall: and when he had tasted thereof, he would not drink.\nMatthew 27:35 — And they crucified him, and parted his garments, casting lots: that it might be fulfilled which was spoken by the prophet, They parted my garments among them, and upon my vesture did they cast lots.\nMark 7:28 — And she answered and said unto him, Yes, Lord: yet the dogs under the table eat of the children's crumbs.\nRevelation 22:15 — For without are dogs, and sorcerers, and whoremongers, and murderers, and idolaters, and whosoever loveth and maketh a lie.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "646c42c18761c56e843dc1181816cf55628ec195e2cd2213912f51b8ae91b55b",
+  "cache": {
+    "hit": false
+  }
+}

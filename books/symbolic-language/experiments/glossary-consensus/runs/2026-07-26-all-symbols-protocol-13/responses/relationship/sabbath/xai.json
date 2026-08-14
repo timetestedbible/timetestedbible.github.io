@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124583,
+  "completed_at": 1785124616,
+  "id": "64121ba7-faea-93c9-8a23-21c39d62f120",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_64121ba7-faea-93c9-8a23-21c39d62f120",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Sabbath (shabbat, sabbaton)\".\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_meaning\": \"The Sabbath is the completing member of the seven-unit (the week, the land's sabbath year, the seven sevens to Jubilee), crowned by rest; Hebrew terminology (shabbatot 7 sabbaths, sabbaton week) and Greek usage (sabbatou twice in the week, sabbaton first day of the week) show the term denotes the full heptad whose rest is its telos.\",\n  \"extension_meaning\": \"The book narrows the referent from the isolated seventh-day rest or 24-hour observance to the complete seven-day unit at every scale the law counts, while retaining the rest motif as the completing element; it excludes purely symbolic or covenant-only readings that treat Sabbath as merely a sign or memorial without the structural seven-unit emphasis, and it broadens the term's application to linguistic and calendrical units (e.g., 'seven sabbaths' = seven weeks) that consensus alternatives rarely foreground.\",\n  \"core_support\": \"strong\",\n  \"extension_support\": \"strong\",\n  \"scripture_support\": \"strong\",\n  \"notes\": \"The book's core identification of Sabbath as the heptad crowned by rest is a 180-degree shift from the consensus primary meaning (rest in Christ/eschatological rest) and is not covered by any listed alternative; the common-view note explicitly contrasts the book's structural reading with the 'commonly taught' seventh-day rest itself. This is therefore a material redefinition of the referent rather than mere boundary adjustment.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"NOVEL\",\n  \"consensus_summary\": \"Consensus primary meaning is the Sabbath as sacred/spiritual rest fulfilled in Christ (cessation from works-righteousness) and as eschatological rest for God’s people, with the weekly day as shadow; alternatives cover covenant sign, literal seventh-day binding, Lord’s Day transfer, millennial typology, and liberation/justice motifs.\",\n  \"book_summary\": \"Sabbath is a complete seven crowned by rest—the week itself and the counted unit of seven at every scale (land’s seventh year, seven sevens to Jubilee)—where rest is merely the completing member of the whole unit; Hebrew/Greek usage equates sabbaths with weeks.\",\n  \"consensus_core_identification\": \"spiritual/eschatological rest in Christ (the day or concept of rest as shadow/substance)\",\n  \"book_core_identification\": \"the complete heptad/unit of seven crowned by rest (rest only as completer)\",\n  \"core_relation\": \"NO_CONSENSUS\",\n  \"extension_relation\": \"NO_BASELINE\",\n  \"boundary_disagreement\": \"Consensus (and its listed alternatives) never treats ‘sabbath’ as denoting the full counted seven/week/unit; book’s common-view note explicitly rejects the usual focus on the seventh-day rest alone and the translational substitution of ‘weeks’ for counted sabbaths.\",\n  \"material_contradiction\": \"None direct; the readings address different primary referents rather than affirming incompatible predicates of one shared referent.\",\n  \"rationale\": \"Consensus cores uniformly center rest (creational, soteriological, eschatological) as the symbolic meaning, with no alternative identifying Sabbath as the completed seven itself. The book’s structural/linguistic core (heptad crowned by rest, sabbath=week at every scale) is absent from all consensus primary and alternative meanings, yielding novelty rather than refinement or contradiction of a shared category.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Traditional Christian and Jewish usage overwhelmingly privileges the seventh-day rest (or its fulfillment) as the core referent; Greek sabbaton=week is a secondary lexical extension, not a redefinition of the symbol.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_64121ba7-faea-93c9-8a23-21c39d62f120",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4537,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2045,
+    "output_tokens_details": {
+      "reasoning_tokens": 1563
+    },
+    "total_tokens": 6582,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 204736000,
+    "context_details": {
+      "input_tokens": 4537,
+      "output_tokens": 2045
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

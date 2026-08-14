@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919870,
+  "completed_at": 1783919888,
+  "id": "b4e2ebd9-9c89-9d53-93b3-c56c8fc6ed58",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_b4e2ebd9-9c89-9d53-93b3-c56c8fc6ed58",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Flood\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"God's righteous judgment on human wickedness and the merciful salvation of a faithful remnant via the ark\",\n  \"primary_basis\": [\n    \"Genesis 6–9\",\n    \"Matthew 24:37–39\",\n    \"Luke 17:26–27\",\n    \"2 Peter 2:5\",\n    \"2 Peter 3:5–7\",\n    \"Hebrews 11:7\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Typological prefiguration of Christian baptism (waters of judgment that also cleanse, ark as Church/Christ)\",\n      \"basis\": [\n        \"1 Peter 3:20–21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Foreshadowing of eschatological final judgment at Christ's return\",\n      \"basis\": [\n        \"Matthew 24:37–39\",\n        \"2 Peter 3:5–7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sign of divine covenant faithfulness and promise never again to destroy the earth by flood (rainbow)\",\n      \"basis\": [\n        \"Genesis 9:8–17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Re-creation motif restoring order from chaos after primordial waters\",\n      \"basis\": [\n        \"Genesis 1 and 6–9 parallels\",\n        \"Psalm 29\",\n        \"Psalm 104\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Primarily moral or legendary tale without strong typological weight\",\n      \"basis\": [],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Protestant, Catholic, and Orthodox teaching the Flood functions first as historical judgment-salvation narrative that supplies the dominant typology; baptismal and eschatological readings are widespread secondary applications rather than rivals.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_b4e2ebd9-9c89-9d53-93b3-c56c8fc6ed58",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1716,
+    "output_tokens_details": {
+      "reasoning_tokens": 1262
+    },
+    "total_tokens": 2318,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 107320000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1716
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

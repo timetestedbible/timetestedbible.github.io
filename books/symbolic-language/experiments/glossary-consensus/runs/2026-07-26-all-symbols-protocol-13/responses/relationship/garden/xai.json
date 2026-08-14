@@ -1,0 +1,178 @@
+{
+  "created_at": 1785123792,
+  "completed_at": 1785123825,
+  "id": "420189a3-9a30-9a6f-a1a4-6f3b087aacdc",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_420189a3-9a30-9a6f-a1a4-6f3b087aacdc",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry for the term \"Garden\".\nThe book's entry for \"Garden\" is DIVERGENT from the blind consensus. The core identification is not merely a wording difference or boundary shift; it replaces the consensus referent entirely. The consensus centers on Eden as paradise, divine presence, and eschatological restoration. The book instead identifies the term as a planted grouping of trees symbolizing nations or peoples arranged under a gardener's rule. This is not an extension of the consensus but a distinct metaphorical use drawn from Ezekiel 31, where the trees of Eden represent Assyria and other empires. The book acknowledges the common view separately in its note, confirming it treats the Edenic reading as secondary while elevating the nations-as-trees sense as primary. The scripture reference and excerpt reinforce this by linking the garden directly to the trees of Eden as nations. Thus, the book's meaning contradicts the consensus primary identification rather than refining or expanding it. The citations provide partial support through the Ezekiel 31 link but are insufficient alone to establish the book's definition as the dominant sense. Overall, this is a clear replacement of the central referent. \n\ncore_relation: DIVERGENT  \nextension_relation: replaces Eden/paradise referent with nations-as-trees grouping; consensus alternatives (temple, bride, fruitful life) do not cover this identification.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"NOVEL\",\n  \"consensus_summary\": \"The garden primarily symbolizes paradise (Eden) as the place of God’s presence, unbroken fellowship, divine provision, and eschatological restoration, framing the biblical storyline from creation to new creation; complementary alternatives include temple/sanctuary, bride/soul, fruitful spiritual life, and Gethsemane typology.\",\n  \"book_summary\": \"A planted grouping of trees, specifically nations or peoples arranged together under a gardener’s rule.\",\n  \"consensus_core_identification\": \"Paradise/Eden as the place of divine presence and fellowship with God (lost and restored).\",\n  \"book_core_identification\": \"Planted grouping of trees standing for nations/peoples under a gardener’s rule.\",\n  \"core_relation\": \"NO_CONSENSUS\",\n  \"extension_relation\": \"NO_BASELINE\",\n  \"boundary_disagreement\": \"Consensus extensions cover Eden, Gethsemane, Song garden, watered garden, and garden-tomb as paradise/presence/fruitfulness motifs; the book’s national-political grouping under a ruler is outside those bounds entirely.\",\n  \"material_contradiction\": \"None directly; the book’s identification is simply absent from the consensus primary meaning and listed alternatives rather than negating paradise language.\",\n  \"rationale\": \"Minimum cores differ in referent: consensus centers on Edenic paradise/presence, while the book centers on a collective of trees-as-nations under rule. No consensus primary or alternative meaning matches or refines into the book’s national-arrangement reading, so the relation is novelty by absence. The book’s own common-view note explicitly flags the paradise reading as the familiar teaching it is setting aside.\",\n  \"citation_support\": \"INSUFFICIENT\",\n  \"strongest_objection\": \"Ezekiel 31:9 places ‘trees of Eden’ inside ‘the garden of God,’ treating the garden as the containing locale rather than equating it with the planted grouping of nations itself; the verse therefore supplies at best remote background for a trees=nations motif, not direct warrant for redefining Garden.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_420189a3-9a30-9a6f-a1a4-6f3b087aacdc",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4365,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1661,
+    "output_tokens_details": {
+      "reasoning_tokens": 1203
+    },
+    "total_tokens": 6026,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 184784000,
+    "context_details": {
+      "input_tokens": 4365,
+      "output_tokens": 1661
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

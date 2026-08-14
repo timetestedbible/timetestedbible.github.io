@@ -1,0 +1,167 @@
+{
+  "created_at": 1785125002,
+  "completed_at": 1785125011,
+  "id": "c530b2e4-32c5-980e-b1bf-efcda41c2ce7",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Consensus treats personified Wisdom primarily as Christ (the Logos/Son, God's wisdom incarnate), with a widely recognized secondary sense of God-given skillful/godly living rooted in the fear of the Lord, plus literary-personification and other minority readings.\",\n  \"book_summary\": \"Wisdom is the fear of the LORD lived out—the doing of the commandments—citing that the fear of the LORD is the beginning of wisdom.\",\n  \"consensus_core_identification\": \"Personified Wisdom = Christ / the eternal Wisdom-Logos (dominant symbolic reading), alongside practical wisdom as godly living from fear of the Lord.\",\n  \"book_core_identification\": \"Wisdom = the fear of the LORD lived out in obedience to the commandments.\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"BOOK_SUBSET\",\n  \"boundary_disagreement\": \"Book restricts the term to the practical-ethical sense (fear of the Lord enacted as commandment-keeping) and does not adopt or mention the dominant christological identification of personified Wisdom.\",\n  \"material_contradiction\": \"None at the practical core; the book does not deny Christ is God's wisdom, but simply does not use that identification for the term.\",\n  \"rationale\": \"Blind responses consistently list the practical-ethical reading (fear of the Lord / skillful godly living / Torah-keeping) as a real and common sense of biblical wisdom, even while most treat christological personification as primary for the symbolic figure. The book selects and sharpens exactly that practical sense—equating wisdom with lived fear of the Lord expressed as doing the commandments—and its printed texts (Prov 9:10; Ps 111:10; Deut 4:6) are the classic proof-texts for it. This preserves the consensus category while narrowing extension away from the christological and other personified readings, yielding REFINED rather than MATCH or DIVERGENT.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Most consensus responses treat the christological reading of personified Wisdom as the dominant symbolic identification, so an entry that omits it entirely might be seen as incomplete rather than a mere refinement of the practical sense.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_c530b2e4-32c5-980e-b1bf-efcda41c2ce7",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4560,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 497,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5057,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 112316000,
+    "context_details": {
+      "input_tokens": 4560,
+      "output_tokens": 497
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

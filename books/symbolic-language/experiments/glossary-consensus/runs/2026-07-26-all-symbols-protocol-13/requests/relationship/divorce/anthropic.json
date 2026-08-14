@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "divorce",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nDivorce (bill of divorcement)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching and biblical interpretation, the 'bill of divorcement' functions symbolically as God's judicial severance of His covenant relationship with unfaithful Israel. Building on the pervasive marriage metaphor in which God is the husband and Israel the wife, divorce represents the rupture of the covenant caused by Israel's 'spiritual adultery' — idolatry and apostasy. The most cited instance is Jeremiah 3:8, where God says He gave the northern kingdom of Israel a certificate of divorce and sent her away because of her adulteries, while faithless Judah did not learn from this. The symbol thus communicates covenant judgment: exile and rejection as the legal consequence of persistent unfaithfulness, while also setting up the prophetic hope of restoration and remarriage (Hosea 2; Isaiah 54; Isaiah 62:4-5).\",\n  \"primary_basis\": [\n    \"Jeremiah 3:1-8 (God gives Israel a bill of divorce for her adulteries)\",\n    \"Isaiah 50:1 ('Where is the bill of your mother's divorcement, whom I have put away?')\",\n    \"Hosea 1-3 (Hosea's marriage to Gomer dramatizing God's relationship with adulterous Israel and eventual restoration)\",\n    \"Deuteronomy 24:1-4 (the legal institution of the bill of divorcement underlying the metaphor)\",\n    \"Ezekiel 16 and 23 (Israel and Judah as unfaithful wives)\",\n    \"Malachi 2:14-16 (divorce as covenant treachery; 'God hates divorce')\",\n    \"Isaiah 54:5-8 and 62:4-5 (the forsaken wife restored, supplying the redemptive resolution of the divorce image)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A non-symbolic, legal-ethical reading: the bill of divorcement is primarily a concession within Mosaic law regulating actual marriage dissolution, which Jesus reinterprets to affirm the permanence of marriage. In this reading the texts are about marriage ethics rather than symbolism.\",\n      \"basis\": [\n        \"Deuteronomy 24:1-4\",\n        \"Matthew 5:31-32\",\n        \"Matthew 19:3-9\",\n        \"Mark 10:2-12\",\n        \"Luke 16:18\",\n        \"1 Corinthians 7:10-16\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Divorce/death to the law as a picture of the believer's release from the Mosaic law in order to be joined to Christ: the marriage-and-release analogy in Romans 7 is read as a symbolic 'divorce' from the old covenant enabling union with the risen Christ.\",\n      \"basis\": [\n        \"Romans 7:1-6\",\n        \"Galatians 2:19\",\n        \"2 Corinthians 3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A reading, prominent in Hebrew Roots, Two-House, and some Reformed/messianic circles, that God's divorce of the northern kingdom (the 'lost ten tribes') created a legal problem under Deuteronomy 24 (a divorced wife cannot return), which was resolved only by Christ's death — the husband dying so that scattered Israel could lawfully be remarried to God in the new covenant.\",\n      \"basis\": [\n        \"Jeremiah 3:8\",\n        \"Deuteronomy 24:1-4\",\n        \"Hosea 1:9-11; 2:14-23\",\n        \"Romans 7:1-4\",\n        \"Romans 9:25-26 (citing Hosea)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"An exegetical position that God never actually issued a divorce (or issued it only to the northern kingdom, not Judah): Isaiah 50:1 is read as a rhetorical question implying no bill of divorce exists, so the covenant was suspended, not legally dissolved — stressing God's enduring faithfulness. Dispensational writers similarly speak of Israel being 'set aside' temporarily rather than divorced.\",\n      \"basis\": [\n        \"Isaiah 50:1 read rhetorically\",\n        \"Hosea 2:19-20\",\n        \"Romans 11:1-2, 25-29\",\n        \"Jeremiah 31:31-37\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Divorce as a figure of apostasy or unfaithfulness within the church: the unfaithful-wife imagery extended typologically to the church or Christendom departing from Christ, sometimes appearing in Adventist, Restorationist, and sectarian exegesis of the 'harlot' imagery.\",\n      \"basis\": [\n        \"Revelation 17-18 read against the bride imagery of Revelation 19:7-9 and 21:2\",\n        \"2 Corinthians 11:2\",\n        \"James 4:4 ('adulteresses... friendship with the world')\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable, well-attested consensus on two levels. As law and ethics (the dominant context in which the term appears), the bill of divorcement is treated non-symbolically. As symbolism — the question asked here — the settled mainstream reading across Catholic, Orthodox, Protestant, and academic commentary is that divorce imagery represents God's covenant lawsuit against and judicial separation from unfaithful Israel because of idolatry (spiritual adultery), with exile as its historical expression and restoration/remarriage as its prophetic resolution. The main live scholarly debate concerns whether God is depicted as actually having divorced Israel/Judah (Jeremiah 3:8 vs. the rhetorical force of Isaiah 50:1), not whether the marriage-divorce metaphor governs the imagery. More elaborate legal-typological systems (e.g., the Two-House 'Christ died to remarry divorced Israel' argument) are recognizable but minority positions.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"God's judgment and temporary covenantal separation from unfaithful Israel due to spiritual adultery (idolatry).\",\n  \"primary_basis\": [\n    \"Jeremiah 3:8\",\n    \"Isaiah 50:1\",\n    \"Hosea 2:2-4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A literal ethical and legal provision concerning human marriage, marital unfaithfulness, and the hardness of the human heart.\",\n      \"basis\": [\n        \"Deuteronomy 24:1-4\",\n        \"Matthew 19:7-9\",\n        \"Mark 10:4-12\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The termination of the Old Covenant system (the Law) to establish the New Covenant (grace and the Church).\",\n      \"basis\": [\n        \"Romans 7:1-4\",\n        \"Galatians 4:21-31\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Total apostasy or the final spiritual severing of an individual or institution from God's grace.\",\n      \"basis\": [\n        \"Revelation 2:22-23\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In prophetic literature, a bill of divorcement is the established symbol for God formally rejecting a rebellious nation (usually the northern kingdom of Israel) because of idolatrous spiritual adultery, though He often promises future restoration. In the New Testament, discussions of the bill of divorcement are almost entirely literal and ethical rather than symbolic.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"When treated symbolically, divorce or a bill of divorcement most commonly represents the rupture of a covenant relationship because of persistent unfaithfulness—especially God’s judicial separation from unfaithful Israel, whose idolatry and apostasy are portrayed as marital adultery.\",\n  \"primary_basis\": [\n    \"Jeremiah 3:1–10, especially 3:8, explicitly depicts God giving faithless Israel a certificate of divorce because of her spiritual adultery.\",\n    \"Isaiah 50:1 uses a certificate of divorce to discuss Zion’s alienation and exile, while stressing that the separation resulted from the people’s sins rather than arbitrary rejection by God.\",\n    \"Hosea 1–3 develops the closely related marriage metaphor: Israel’s covenant infidelity is adultery, followed by judgment, separation, and anticipated restoration.\",\n    \"Ezekiel 16 and 23 portray Jerusalem, Samaria, and Israel’s idolatry and foreign alliances as marital infidelity deserving covenant judgment.\",\n    \"Deuteronomy 24:1–4 supplies the legal and cultural background for the prophetic image of a written certificate of divorce.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A literal legal instrument ending or formally recognizing a marriage, rather than a symbol. In many biblical discussions this is the term’s direct sense, with emphasis on regulating divorce and protecting the dismissed wife from informal abandonment.\",\n      \"basis\": [\n        \"Deuteronomy 24:1–4\",\n        \"Matthew 5:31–32\",\n        \"Matthew 19:3–9\",\n        \"Mark 10:2–12\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"A general image for apostasy or renunciation of allegiance to God, applicable beyond the specific historical judgment of Israel or Judah.\",\n      \"basis\": [\n        \"Jeremiah 3:1–10\",\n        \"Hosea 1–3\",\n        \"James 4:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A symbol specifically of Israel’s exile or loss of covenant privileges, sometimes framed as God terminating or suspending the Mosaic covenantal relationship.\",\n      \"basis\": [\n        \"Isaiah 50:1\",\n        \"Jeremiah 3:8\",\n        \"Hosea 2:2–13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A permanent and total divine rejection of ethnic Israel, sometimes interpreted as replacement by the church.\",\n      \"basis\": [\n        \"Jeremiah 3:8 read in isolation or through supersessionist frameworks\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A temporary disciplinary separation that aims at repentance and eventual restoration, rather than an irreversible covenant termination.\",\n      \"basis\": [\n        \"Jeremiah 3:12–14\",\n        \"Hosea 2:14–23\",\n        \"Hosea 3:1–5\",\n        \"Isaiah 50:1\",\n        \"Romans 11:1–32\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Mosaic bill of divorcement as a typological symbol of the passing away of the old covenant and its replacement by the new covenant.\",\n      \"basis\": [\n        \"Deuteronomy 24:1–4 combined typologically with Jeremiah 31:31–34 and Hebrews 8:6–13\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable consensus only when the term is used symbolically in prophetic marriage imagery: it signifies covenant rupture or judicial separation caused by unfaithfulness. The term itself is often literal, especially in Deuteronomy and the Gospel divorce teachings, so there is no consensus that every biblical reference to a bill of divorcement carries an independent symbolic or typological meaning. Whether God’s prophetic ‘divorce’ of Israel was permanent, temporary, or covenantally qualified remains disputed.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Metaphor for God's judgment and temporary putting-away of unfaithful Israel (or Judah) for spiritual adultery/idolatry\",\n  \"primary_basis\": [\n    \"Jeremiah 3:8\",\n    \"Isaiah 50:1\",\n    \"Hosea 1–2 (covenant-marriage divorce theme)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Legal concession permitted by Moses because of the hardness of human hearts, not God's creational ideal for permanent marriage\",\n      \"basis\": [\n        \"Deuteronomy 24:1–4\",\n        \"Matthew 19:3–9\",\n        \"Mark 10:2–12\",\n        \"Matthew 5:31–32\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Illustration of covenant breach and the possibility of restoration after judgment\",\n      \"basis\": [\n        \"Jeremiah 3\",\n        \"Hosea 2–3\",\n        \"Isaiah 50:1 (with restoration oracles)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Type of the supersession or permanent transfer of covenant status from national Israel to the Church as the new bride\",\n      \"basis\": [\n        \"Jeremiah 3:8 applied to NT ecclesiology\",\n        \"occasional appeals to Romans 11 or Ephesians 5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Protective legal instrument requiring formal documentation to limit arbitrary dismissal of wives\",\n      \"basis\": [\n        \"Deuteronomy 24:1–4\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"The bill of divorcement is first a Mosaic legal provision later cited by Jesus; its main symbolic/prophetic use is the husband–wife metaphor for Yahweh and Israel. Beyond that covenant imagery there is no single fixed allegorical meaning in mainstream Christian teaching, and permanence of the 'divorce' remains debated.\"\n}\n\nBOOK ENTRY\nA covenant severed and the wife sent from the house — exile and scattering. Scripture distinguishes treacherous divorce from separation out of a union God never joined.\n[.opposite]Opposite: Marriage.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Jer 3:8; Isa 50:1; Deut 24:1-4; Ezra 10:3; Mal 2:11-16) · see Marriage and Divorce, ch. 12\n\nAVAILABLE KJV EXCERPTS\nJeremiah 3:8 — And I saw, when for all the causes whereby backsliding Israel committed adultery I had put her away, and given her a bill of divorce; yet her treacherous sister Judah feared not, but went and played the harlot also.\nIsaiah 50:1 — Thus saith the LORD, Where is the bill of your mother's divorcement, whom I have put away? or which of my creditors is it to whom I have sold you? Behold, for your iniquities have ye sold yourselves, and for your transgressions is your mother put away.\nDeuteronomy 24:1 — When a man hath taken a wife, and married her, and it come to pass that she find no favour in his eyes, because he hath found some uncleanness in her: then let him write her a bill of divorcement, and give it in her hand, and send her out of his house.\nDeuteronomy 24:2 — And when she is departed out of his house, she may go and be another man's wife.\nDeuteronomy 24:3 — And if the latter husband hate her, and write her a bill of divorcement, and giveth it in her hand, and sendeth her out of his house; or if the latter husband die, which took her to be his wife;\nDeuteronomy 24:4 — Her former husband, which sent her away, may not take her again to be his wife, after that she is defiled; for that is abomination before the LORD: and thou shalt not cause the land to sin, which the LORD thy God giveth thee for an inheritance.\nEzra 10:3 — Now therefore let us make a covenant with our God to put away all the wives, and such as are born of them, according to the counsel of my lord, and of those that tremble at the commandment of our God; and let it be done according to the law.\nMalachi 2:11 — Judah hath dealt treacherously, and an abomination is committed in Israel and in Jerusalem; for Judah hath profaned the holiness of the LORD which he loved, and hath married the daughter of a strange god.\nMalachi 2:12 — The LORD will cut off the man that doeth this, the master and the scholar, out of the tabernacles of Jacob, and him that offereth an offering unto the LORD of hosts.\nMalachi 2:13 — And this have ye done again, covering the altar of the LORD with tears, with weeping, and with crying out, insomuch that he regardeth not the offering any more, or receiveth it with good will at your hand.\nMalachi 2:14 — Yet ye say, Wherefore? Because the LORD hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously: yet is she thy companion, and the wife of thy covenant.\nMalachi 2:15 — And did not he make one? Yet had he the residue of the spirit. And wherefore one? That he might seek a godly seed. Therefore take heed to your spirit, and let none deal treacherously against the wife of his youth.\nMalachi 2:16 — For the LORD, the God of Israel, saith that he hateth putting away: for one covereth violence with his garment, saith the LORD of hosts: therefore take heed to your spirit, that ye deal not treacherously.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "eb57bd52aff4663d21e494b08f45c55ae7888997440c143c0e8e0639ebd05ae0",
+  "cache": {
+    "hit": false
+  }
+}

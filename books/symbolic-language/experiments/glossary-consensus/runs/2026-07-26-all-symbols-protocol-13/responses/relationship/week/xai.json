@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124959,
+  "completed_at": 1785124975,
+  "id": "7b0c7f2b-6acb-9862-b9ee-4362edd24bc3",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_7b0c7f2b-6acb-9862-b9ee-4362edd24bc3",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Week\".\nThe book's core identification is a unit of seven (a heptad) that Scripture applies to days or years according to the scale being counted. This is essentially the same as the consensus core: a heptad of seven, whether literal days or prophetic years, carrying the symbolism of completeness.\n\nThe book's extension is narrower than the 4 responses, which expand the heptad into specific prophetic applications (Daniel's 70 weeks as 490 years), creation-week symbolism, and liturgical uses. The book simply states the general principle without those extensions.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Week (shabua/heptad) primarily denotes a unit of seven, most commonly seven years in prophetic contexts such as Daniel 9, while more broadly symbolizing divine completeness and the creation-Sabbath cycle; ordinary seven-day usage also exists.\",\n  \"book_summary\": \"A unit of seven, not necessarily seven days; Scripture applies it to days or years according to the scale being counted.\",\n  \"consensus_core_identification\": \"heptad/unit of seven (days or years, especially prophetic years)\",\n  \"book_core_identification\": \"unit of seven scalable to days or years\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"none\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Both identify the core as a flexible heptad rather than a fixed seven-day period. Consensus details (Daniel years, creation pattern, completeness) are elaborations of the same referent the book states minimally; no replacement or boundary shift occurs.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Consensus sometimes elevates creation-week symbolism or eschatological placement as primary, while the book stays strictly definitional.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_7b0c7f2b-6acb-9862-b9ee-4362edd24bc3",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4352,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 987,
+    "output_tokens_details": {
+      "reasoning_tokens": 689
+    },
+    "total_tokens": 5339,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 144084000,
+    "context_details": {
+      "input_tokens": 4352,
+      "output_tokens": 987
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

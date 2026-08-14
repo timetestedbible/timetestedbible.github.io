@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "new-moon",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nNew moon\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching the 'new moon' is understood primarily as part of Israel's ceremonial calendar of appointed times, and its symbolic significance is defined by Colossians 2:16-17: it is a 'shadow of things to come,' a type pointing forward to Christ, in whom the ceremonial observance finds its fulfillment. Because it marks the beginning of a month, it is commonly given the associated sense of renewal and new beginnings, with the fulfillment located in the newness of life in Christ rather than in continued calendrical observance.\",\n  \"primary_basis\": [\n    \"Colossians 2:16-17 (new moons as a shadow of things to come, the substance belonging to Christ)\",\n    \"Numbers 28:11-15 (prescribed new moon offerings)\",\n    \"Numbers 10:10 and Psalm 81:3 (trumpet blowing at the new moon)\",\n    \"1 Samuel 20:5, 18, 24-27 (new moon feast in Israel's life)\",\n    \"2 Kings 4:23 and Amos 8:5 (new moon as a recognized day of worship and cessation of commerce)\",\n    \"Isaiah 66:23 (from new moon to new moon all flesh will worship the LORD)\",\n    \"Ezekiel 46:1-6 (new moon worship in the temple vision)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Eschatological perpetual worship: Isaiah 66:23 (and Ezekiel 46) are read as a picture of continual, rhythmic worship of God in the new creation or millennial age, with the new moon symbolizing the ongoing cycle of devotion; some premillennial and dispensational interpreters take this as literal future observance.\",\n      \"basis\": [\n        \"Isaiah 66:22-23\",\n        \"Ezekiel 46:1-6\",\n        \"Zechariah 14:16 (analogous future feast observance)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Prophetic critique of empty ritual: the new moon appears in oracles where God rejects hollow ceremonial observance divorced from justice and covenant faithfulness, so the term functions as shorthand for externalized religion God despises when the heart is absent.\",\n      \"basis\": [\n        \"Isaiah 1:13-14\",\n        \"Hosea 2:11\",\n        \"Amos 8:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Symbol of renewal, restoration, and monthly rededication (Rosh Chodesh): drawing on Jewish tradition, some Messianic, Hebrew-roots, and devotional writers treat the new moon as a symbol of Israel's (or the believer's) renewal, sometimes linking the waxing moon to Israel's restoration or the church reflecting the light of Christ as the moon reflects the sun.\",\n      \"basis\": [\n        \"Psalm 81:3\",\n        \"Numbers 10:10\",\n        \"Isaiah 66:23\",\n        \"rabbinic Rosh Chodesh tradition imported into Christian devotional use\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Continuing obligation reading: some sabbatarian, Hebrew-roots, and related groups argue the new moon remains a divinely appointed time to be observed today, reading Colossians 2:16 as protecting rather than abolishing the practice.\",\n      \"basis\": [\n        \"Colossians 2:16 (reread as defending observance from critics)\",\n        \"Isaiah 66:23\",\n        \"Numbers 28:11-15\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Lunar-sabbath and calendrical reconstruction readings that make the new moon the anchor of a reconstructed biblical calendar with theological significance for end-times timing.\",\n      \"basis\": [\n        \"Genesis 1:14 (lights as signs for appointed times)\",\n        \"Psalm 104:19\",\n        \"Numbers 28-29 calendar texts\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"There is a recognizable mainstream consensus, but it is a modest one: the new moon is rarely given rich standalone symbolism in Christian interpretation. It is almost always treated as one member of the triad 'festival, new moon, sabbath' (Colossians 2:16; Isaiah 1:13-14; Hosea 2:11), and its meaning is derived from that ceremonial-shadow framework rather than from an independent symbolic tradition. The renewal/new-beginnings reading is popular in devotional and Messianic literature but is less established in classical commentary. Interpreters divide mainly over whether Isaiah 66:23 is literal future observance, symbolic perpetual worship, or hyperbolic prophetic idiom; that dispute does not disturb the dominant 'shadow fulfilled in Christ' reading.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A symbol of cyclical renewal, sacred time, and the marking of God's appointed seasons, viewed typologically in the New Testament as a temporary shadow of the spiritual reality found in Christ.\",\n  \"primary_basis\": [\n    \"Numbers 10:10\",\n    \"Psalm 81:3\",\n    \"Colossians 2:16\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Empty ritualism or hypocritical religious observance when practiced without true devotion to God.\",\n      \"basis\": [\n        \"Isaiah 1:13-14\",\n        \"Hosea 2:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A marker of eternal, unending worship in the eschatological age or new creation.\",\n      \"basis\": [\n        \"Isaiah 66:23\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian consensus heavily emphasizes the New Testament perspective, particularly Colossians 2, where new moon festivals are categorized alongside Sabbaths and dietary laws as shadows fulfilled by Christ's advent.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"There is no settled, specifically Christian symbolic meaning of “new moon.” When treated symbolically, its most common association is renewal or a fresh beginning, especially the recurring renewal of worship and covenantal devotion at the start of each month.\",\n  \"primary_basis\": [\n    \"Numbers 10:10 associates the beginnings of months with trumpet blasts, sacrifices, and remembrance before God.\",\n    \"Numbers 28:11–15 prescribes special offerings at the beginning of each month.\",\n    \"Psalm 81:3 connects the new moon with festal worship.\",\n    \"Isaiah 66:23 uses the recurring movement “from new moon to new moon” to portray continual and universal worship before God.\",\n    \"Ezekiel 46:1, 6–7 includes new-moon observance in its vision of restored worship.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A literal calendrical observance marking the beginning of the lunar month, rather than an independent symbol.\",\n      \"basis\": [\n        \"1 Samuel 20:5, 18, 24–27 describes a new-moon feast.\",\n        \"2 Kings 4:23 treats the new moon as a customary religious occasion.\",\n        \"Numbers 28:11–15 gives concrete cultic regulations for the day.\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"An element of the Old Testament ceremonial calendar that functions as a shadow fulfilled in Christ, so Christians are not to be judged over its observance.\",\n      \"basis\": [\n        \"Colossians 2:16–17 explicitly calls festivals, new moons, and Sabbaths a shadow of things to come, with the substance belonging to Christ.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A sign of restored or eschatological worship, particularly the regular worship of all humanity in God’s future order.\",\n      \"basis\": [\n        \"Isaiah 66:23 portrays all flesh worshiping before God from one new moon to another.\",\n        \"Ezekiel 46:1–7 places new-moon worship within a visionary restored temple order.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A representative of merely external, corrupted, or rejected religious observance when worship is joined to injustice or unfaithfulness.\",\n      \"basis\": [\n        \"Isaiah 1:13–14 says God rejects Israel’s new moons and appointed feasts because of corrupt worship.\",\n        \"Hosea 2:11 announces the ending of new moons as part of judgment.\",\n        \"Amos 8:5 depicts merchants impatiently observing the new moon while practicing exploitation.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A prophetic symbol specifically of national Israel’s restoration or of a future reinstituted sacrificial calendar.\",\n      \"basis\": [\n        \"Isaiah 66:23 and Ezekiel 46:1–7 are interpreted this way in some dispensational and restorationist traditions.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical studies generally treats the new moon first as an actual monthly calendrical and cultic observance. “Renewal” is the most recognizable symbolic association, but it is inferred from the lunar cycle and the recurring worship calendar rather than explicitly defined by Scripture. Colossians 2:16–17 supplies the clearest distinctively Christian typological interpretation.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A ceremonial observance that functions as a shadow or type pointing forward to the substance found in Christ\",\n  \"primary_basis\": [\n    \"Colossians 2:16-17\",\n    \"Numbers 28:11-15\",\n    \"1 Chronicles 23:31\",\n    \"Isaiah 1:13-14\",\n    \"Ezekiel 46:1-6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"New beginnings, renewal, or the start of a fresh cycle of time under God's ordering\",\n      \"basis\": [\n        \"Astronomical fact of the lunar cycle beginning again\",\n        \"Psalm 81:3\",\n        \"1 Samuel 20:5, 18, 24\",\n        \"Numbers 10:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Perpetual worship continuing into the new creation\",\n      \"basis\": [\n        \"Isaiah 66:23\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A continuing obligatory observance for Christians\",\n      \"basis\": [\n        \"OT festival commands applied directly\",\n        \"Certain sabbatarian or Hebrew-roots readings of Colossians 2\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"medium\",\n  \"notes\": \"Colossians 2 supplies the dominant Christian typological reading that new-moon observances belong to the ceremonial shadows fulfilled in Christ; the renewal motif is also frequently invoked but is secondary and more homiletical than dogmatic. No single naturalistic or prophetic symbolism has achieved comparable consensus.\"\n}\n\nBOOK ENTRY\nThe renewed moon — the phase of the moon that marks the start of the month: the full moon in the east gate and sign of the appointed times.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: the dark conjunction or first visible crescent that begins the month.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 81:3; 1 Sam 20:5, 18; Isa 66:23; Ezek 46:1-3; Amos 8:5; Col 2:16-17) · see The Pearls of Wisdom, ch. 31\n\nAVAILABLE KJV EXCERPTS\nPsalms 81:3 — Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day.\n1 Samuel 20:5 — And David said unto Jonathan, Behold, to morrow is the new moon, and I should not fail to sit with the king at meat: but let me go, that I may hide myself in the field unto the third day at even.\n1 Samuel 20:18 — Then Jonathan said to David, To morrow is the new moon: and thou shalt be missed, because thy seat will be empty.\nIsaiah 66:23 — And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith the LORD.\nEzekiel 46:1 — Thus saith the Lord GOD; The gate of the inner court that looketh toward the east shall be shut the six working days; but on the sabbath it shall be opened, and in the day of the new moon it shall be opened.\nEzekiel 46:2 — And the prince shall enter by the way of the porch of that gate without, and shall stand by the post of the gate, and the priests shall prepare his burnt offering and his peace offerings, and he shall worship at the threshold of the gate: then he shall go forth; but the gate shall not be shut until the evening.\nEzekiel 46:3 — Likewise the people of the land shall worship at the door of this gate before the LORD in the sabbaths and in the new moons.\nAmos 8:5 — Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?\nColossians 2:16 — Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days:\nColossians 2:17 — Which are a shadow of things to come; but the body is of Christ.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "58249b74693369350011088d2484f8915c1fb61ca86dad8622428302ff03dc11",
+  "cache": {
+    "hit": false
+  }
+}

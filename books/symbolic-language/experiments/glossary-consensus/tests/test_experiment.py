@@ -14,11 +14,11 @@ SPEC.loader.exec_module(exp)
 
 
 class ExperimentTests(unittest.TestCase):
-    def test_glossary_has_147_symbols_and_16_recovered_words(self):
+    def test_glossary_has_154_symbols_and_16_recovered_words(self):
         symbols = exp.parse_glossary(include_words=False)
         all_entries = exp.parse_glossary(include_words=True)
-        self.assertEqual(147, len(symbols))
-        self.assertEqual(163, len(all_entries))
+        self.assertEqual(154, len(symbols))
+        self.assertEqual(170, len(all_entries))
         self.assertEqual(16, sum(entry["source_badge"] == "WORD" for entry in all_entries))
 
     def test_blind_input_does_not_expose_book_definition(self):
@@ -41,6 +41,31 @@ class ExperimentTests(unittest.TestCase):
             ],
             pearl["chapter_files"],
         )
+
+    def test_new_moon_includes_foreign_ttt_chapter(self):
+        new_moon = next(entry for entry in exp.parse_glossary() if entry["anchor"] == "new-moon")
+        self.assertEqual(
+            [{"book": "time-tested-tradition", "slug": "when-does-the-month-start"}],
+            new_moon["foreign_chapter_refs"],
+        )
+        self.assertEqual(
+            [
+                "books/symbolic-language/31-the-pearl.adoc",
+                "books/time-tested-tradition/07-when-does-the-month-start.adoc",
+            ],
+            new_moon["chapter_files"],
+        )
+
+        cfg = exp.load_json(exp.DEFAULT_CONFIG)
+        with tempfile.TemporaryDirectory() as directory:
+            run = Path(directory)
+            exp.snapshot_run(run, [new_moon], cfg, ["openai"])
+            self.assertTrue((run / "inputs" / "chapters" / "31-the-pearl.adoc").exists())
+            self.assertTrue((run / "inputs" / "chapters" / "07-when-does-the-month-start.adoc").exists())
+            evidence = exp.evidence_bundle(run, new_moon)
+            self.assertIn("books/symbolic-language/31-the-pearl.adoc", evidence)
+            self.assertIn("books/time-tested-tradition/07-when-does-the-month-start.adoc", evidence)
+            self.assertIn("Job supplies the verbal bridge", evidence)
 
     def test_method_evidence_is_limited_to_persuasion(self):
         entry = exp.parse_glossary(include_words=False)[0]
@@ -134,6 +159,7 @@ class ExperimentTests(unittest.TestCase):
         exp.validate_relationship_decision({"relation": "REFINED", "core_relation": "BOOK_NARROWS", "extension_relation": "BOOK_SUBSET"})
         exp.validate_relationship_decision({"relation": "DIVERGENT", "core_relation": "CONTRADICTS", "extension_relation": "DIFFERENT_REFERENT"})
         exp.validate_relationship_decision({"relation": "DIVERGENT", "core_relation": "CONTRADICTS", "extension_relation": "PARTIAL_RECLASSIFICATION"})
+        exp.validate_relationship_decision({"relation": "DIVERGENT", "core_relation": "CONTRADICTS", "extension_relation": "SAME_CASES"})
         exp.validate_relationship_decision({"relation": "NOVEL", "core_relation": "NO_CONSENSUS", "extension_relation": "NO_BASELINE"})
         exp.validate_relationship_decision({"relation": "NOVEL", "core_relation": "COMPATIBLE_OVERLAP", "extension_relation": "DIFFERENT_REFERENT"})
         with self.assertRaises(ValueError):

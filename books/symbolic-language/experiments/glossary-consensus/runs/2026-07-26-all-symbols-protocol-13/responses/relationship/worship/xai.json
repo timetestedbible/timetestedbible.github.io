@@ -1,0 +1,178 @@
+{
+  "created_at": 1785125049,
+  "completed_at": 1785125109,
+  "id": "67a87f05-8e09-94f0-91d7-7ccf4037e3fd",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_67a87f05-8e09-94f0-91d7-7ccf4037e3fd",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry on \"Worship\". I must return only a JSON object matching the schema.\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"Both identify worship as bodily homage (bowing/shachah/proskuneo) plus life allegiance/submission to God alone, with exclusive devotion and fear of the LORD. The book's core — 'to bow down and serve — homage in the body, allegiance in the life' — matches the consensus primary meaning exactly in referent and category. The book's explicit rejection of 'song service' and emphasis on 'appointed times, on His terms' refines the extension by narrowing the practice to structured, covenantal observance rather than any act of praise or whole-life orientation.\",\n  \"extension_reasoning\": \"Consensus treats worship as broad category including whole-life obedience, corporate liturgy, sacrifice, and experiential encounter; book narrows it to specific acts of bowing and serving at appointed times, excluding singing (even when praise follows bowing) and any 24/7 or spontaneous acts. This is a boundary refinement, not replacement of the central referent.\",\n  \"scripture_support\": \"strong\"\n}turn\n\n{\n  \"core_relation\": \"REFINED\",\n  \"extension_relation\": \"REFINED\",\n  \"core_reasoning\": \"Both identify worship as bodily homage plus life allegiance/submission to God alone, with exclusive devotion and fear of the LORD. The book's core — 'to bow down and serve — homage in the body, allegiance in the life' — matches the consensus primary meaning exactly in referent and category. The book's explicit rejection of 'song service' and emphasis on ' appointed times, on His terms' refines the extension by narrowing the practice to structured, covenantal observance rather than any act of praise or whole-life orientation.\",\n  \"extension_reasoning\": \"Consensus treats worship as broad category including whole-life obedience, corporate liturgy, sacrifice, and experiential encounter; book narrows it to specific acts of bowing and serving at appointed times, excluding singing (even when praise follows bowing) and any 24/7 or spontaneous acts. This is a boundary refinement, not replacement of the central referent.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"REFINED\",\n  \"consensus_summary\": \"Worship is exclusive reverent adoration, homage, and self-surrender to God alone (ascribing supreme worth), expressed in bodily bowing/prostration and whole-life orientation/submission; common alternatives cover liturgy, sacrifice of praise, lifestyle service, and experiential encounter, while pure reduction to music/singing is widely noted but criticized.\",\n  \"book_summary\": \"Worship is to bow down and serve: homage in the body plus allegiance in the life, the fear of the LORD made visible, kept at His appointed times on His terms; it is explicitly not the song service, as Scripture separates worship from singing.\",\n  \"consensus_core_identification\": \"exclusive reverent homage/self-surrender to God (bodily bowing + life orientation/ascription of worth)\",\n  \"book_core_identification\": \"bow down and serve (bodily homage + life allegiance); fear of the LORD made visible at appointed times on His terms (not singing)\",\n  \"core_relation\": \"BOOK_NARROWS\",\n  \"extension_relation\": \"PARTIAL_RECLASSIFICATION\",\n  \"boundary_disagreement\": \"Book requires appointed times/God's terms and reclassifies song service as non-worship (separated in Scripture); consensus is broader on continuous lifestyle, varied liturgical forms, and praise without mandating those temporal/conditional strictures (while already often rejecting music-alone reduction).\",\n  \"material_contradiction\": \"None on the shared core of exclusive bowing/serving homage to God; disagreement is boundary/extension only.\",\n  \"rationale\": \"Minimum cores both center on bowing down and serving God with bodily homage and life allegiance. Book preserves that referent but materially narrows precision and cases via appointed-times condition, 'on His terms,' and explicit exclusion of song service (supported by the 2 Chr separation scene), yielding refinement rather than equivalence or replacement.\",\n  \"citation_support\": \"PARTIAL\",\n  \"strongest_objection\": \"Could be scored MATCH if appointed times and anti-song emphasis are treated as immaterial detail already latent in consensus critiques of music reduction and bowing language.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_67a87f05-8e09-94f0-91d7-7ccf4037e3fd",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4563,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 2596,
+    "output_tokens_details": {
+      "reasoning_tokens": 2126
+    },
+    "total_tokens": 7159,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 238316000,
+    "context_details": {
+      "input_tokens": 4563,
+      "output_tokens": 2596
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

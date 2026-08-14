@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920268,
+  "completed_at": 1783920279,
+  "id": "3fc74818-a4cc-90ae-89d4-0934e736c5fd",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_3fc74818-a4cc-90ae-89d4-0934e736c5fd",
+      "summary": [
+        {
+          "text": "The user wants me to respond with a specific JSON format about the symbolic meaning of \"Meat\" in Christian teaching and biblical interpretation.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Mature or advanced Christian doctrine and spiritual teaching (solid food for the spiritually mature), as contrasted with elementary teachings (milk for infants in the faith)\",\n  \"primary_basis\": [\n    \"1 Corinthians 3:1-2\",\n    \"Hebrews 5:12-14\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ's flesh as true spiritual nourishment (eucharistic or incarnational sense)\",\n      \"basis\": [\n        \"John 6:55 (KJV: 'my flesh is meat indeed')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"General physical or divine provision/sustenance (food as God's care)\",\n      \"basis\": [\n        \"various OT references to meat offerings or daily bread (e.g., Genesis 9; Exodus contexts)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Ceremonial or sacrificial offerings representing dedication or atonement\",\n      \"basis\": [\n        \"Leviticus meat-offering passages\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In KJV-era English 'meat' frequently denotes food in general rather than flesh specifically; the milk/meat contrast is the dominant didactic symbolism in Christian teaching and preaching.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_3fc74818-a4cc-90ae-89d4-0934e736c5fd",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1079,
+    "output_tokens_details": {
+      "reasoning_tokens": 758
+    },
+    "total_tokens": 1681,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 71020000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1079
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "west",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWest\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In most Christian teaching, the west is understood as the direction of the setting sun and therefore symbolizes endings, completion, decline, or death — the close of day as opposed to the east's new beginning. It is very frequently invoked in tandem with the east to express totality or infinite distance, most famously in the assurance that God removes believers' sins 'as far as the east is from the west,' an immeasurable, unrepeatable distance signifying complete forgiveness. A closely related homiletical point notes that in the tabernacle and temple the entrance faced east and the Holy of Holies lay at the west end, so that movement westward pictured drawing nearer to God's presence, whereas movement eastward (as in the expulsion from Eden) pictured departure from Him.\",\n  \"primary_basis\": [\n    \"Psalm 103:12 ('as far as the east is from the west, so far has he removed our transgressions from us')\",\n    \"Psalm 113:3 ('from the rising of the sun to the place where it sets, the name of the LORD is to be praised')\",\n    \"Malachi 1:11 (God's name great among the nations 'from the rising to the setting of the sun')\",\n    \"Isaiah 43:5-6 (gathering offspring from the east and the west)\",\n    \"Isaiah 45:6 and Isaiah 59:19 (from the rising of the sun to the west, God's glory/name known and feared)\",\n    \"Matthew 8:11 / Luke 13:29 (many will come from east and west to sit at table in the kingdom)\",\n    \"Exodus 26-27 and Exodus 40 (tabernacle layout: entrance on the east, Most Holy Place at the west end)\",\n    \"Genesis 3:24 (cherubim placed at the east of Eden, implying expulsion was eastward, away from God's presence)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"West as one pole of a merism expressing totality or the whole world ('east and west' = everywhere), used of God's universal reign, the worldwide gathering of God's people, and the inclusion of the Gentiles rather than carrying an independent symbolic value of its own.\",\n      \"basis\": [\n        \"Psalm 113:3\",\n        \"Isaiah 43:5-6\",\n        \"Isaiah 45:6\",\n        \"Malachi 1:11\",\n        \"Matthew 8:11\",\n        \"Luke 13:29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"West as the direction of the sea (Hebrew 'yam,' the Mediterranean, is the standard Old Testament word for west), so that in Hebrew idiom the west is simply 'seaward' — a geographic rather than symbolic usage; some interpreters extend this to associate the west with the sea's connotations of chaos or the unknown.\",\n      \"basis\": [\n        \"Genesis 12:8; Genesis 28:14 (yammah, 'seaward/westward')\",\n        \"Exodus 10:19 (west wind, literally 'sea wind')\",\n        \"Numbers 34:6 (the Great Sea as the western border)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"West as the direction of decline, darkness, or death because the sun sets there — used in patristic and liturgical tradition, where baptismal candidates faced west to renounce Satan (the region of darkness) before turning east toward Christ, the rising Sun of Righteousness.\",\n      \"basis\": [\n        \"Patristic baptismal liturgies (e.g., Cyril of Jerusalem, Mystagogical Catecheses; Ambrose, On the Mysteries) — a liturgical-traditional basis rather than a direct proof text\",\n        \"Malachi 4:2 and Luke 1:78 supply the contrasting eastern 'sunrise' imagery\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"West as movement toward God's presence: because the sanctuary's Most Holy Place lay at the west end and Eden's exile was eastward, some teachers read westward movement as a picture of return, atonement, and approach to God (the priest moving west through the tabernacle furniture toward the mercy seat).\",\n      \"basis\": [\n        \"Exodus 26:22 (the west end of the tabernacle, the rear where the ark stood)\",\n        \"Exodus 40 (arrangement of the tabernacle)\",\n        \"Genesis 3:24 (eastward expulsion as the contrast)\",\n        \"Ezekiel 8:16 (sun worshipers facing east with backs to the temple, condemned)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"West as an eschatologically negative or judgment-associated direction in some strands of interpretation (e.g., the false sign in Matthew 24:27 where the true coming flashes from east to west, or later Jewish-Christian speculation associating the west with the nations/Rome).\",\n      \"basis\": [\n        \"Matthew 24:27\",\n        \"Hosea 11:10 (children trembling/coming from the west at the Lord's roar, read variously)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Unlike 'east,' which carries a fairly recognizable symbolic profile in Christian interpretation (sunrise, Eden, the coming of Christ), 'west' has no single settled symbolic meaning in mainstream biblical scholarship. It functions most often (a) geographically, as 'seaward' in Hebrew idiom, and (b) rhetorically, as half of the east-west merism for totality or infinite distance (Psalm 103:12 being the most-preached text). The sunset/death/darkness association is strong in liturgical tradition (renunciation of Satan facing west) and in general religious symbolism, but it is applied to Scripture homiletically more than exegetically. The tabernacle-oriented 'westward toward God's presence' reading is popular in some devotional and typological teaching but is a minority position. Answers to 'what does the west symbolize in the Bible?' therefore vary considerably by tradition, and I have marked consensus as unsettled.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Approaching the presence of God, restoration, and returning from exile. In biblical spatial symbolism, moving west contrasts with eastward exile, representing a return to God's dwelling place.\",\n  \"primary_basis\": [\n    \"Genesis 3:24\",\n    \"Exodus 27:13-18\",\n    \"Ezekiel 43:1-4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Complete removal, infinite distance, or totality (especially concerning the forgiveness of sins when paired with 'East').\",\n      \"basis\": [\n        \"Psalm 103:12\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The sea, the Gentile nations, or universal ingathering (derived from the Mediterranean Sea forming Israel's western border, and the Hebrew word 'yam' meaning both 'sea' and 'west').\",\n      \"basis\": [\n        \"Hosea 11:10\",\n        \"Matthew 8:11\",\n        \"Luke 13:29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Finality, the close of an era, or darkness (associated with the setting sun).\",\n      \"basis\": [\n        \"Psalm 50:1\",\n        \"Isaiah 45:6\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolic meaning of 'west' is highly context-dependent. In biblical theology, its most profound symbolism relates to the Tabernacle and Temple, which were oriented facing east; thus, entering and moving toward the Holy of Holies required moving west. Geographically and linguistically, however, 'west' is synonymous with the Mediterranean Sea ('yam' in Hebrew), often representing the Gentile nations or the ends of the earth.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"There is no settled biblical symbolism for “west.” When Christian teaching does assign it a general symbolic value, the most recognizable association is with the setting sun and therefore with ending, decline, darkness, mortality, or death, often contrasted with east as dawn, resurrection, or new beginning.\",\n  \"primary_basis\": [\n    \"Psalm 50:1 — the span from the rising of the sun to its setting\",\n    \"Psalm 104:19 — the sun knows its time for setting\",\n    \"Psalm 113:3 — from sunrise to sunset the Lord’s name is praised\",\n    \"Malachi 1:11 — God’s name is great from the rising of the sun to its setting\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Complete or immeasurable separation, especially when west is paired with east.\",\n      \"basis\": [\n        \"Psalm 103:12 — sins removed as far as east is from west\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Universality or worldwide extent rather than darkness or death; east and west together encompass the whole earth and all peoples.\",\n      \"basis\": [\n        \"Genesis 28:14 — descendants spread west, east, north, and south\",\n        \"Psalm 50:1\",\n        \"Psalm 113:3\",\n        \"Isaiah 43:5-6 — God gathers from east, west, north, and south\",\n        \"Matthew 8:11 — people come from east and west into the kingdom\",\n        \"Luke 13:29 — people come from every cardinal direction\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The place of divine presence or the Holy of Holies, derived typologically from the westward location of the innermost sanctuary in the tabernacle and temple.\",\n      \"basis\": [\n        \"Exodus 26:22-34 — the western rear of the tabernacle and placement of the ark behind the veil\",\n        \"Leviticus 16:2-17 — God’s presence above the ark in the inner sanctuary\",\n        \"Ezekiel 8:16 — apostates turn their backs toward the temple while worshiping the sun in the east\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Gentile territories, distant nations, or lands toward the sea, based on Israel’s geography and prophetic gathering language.\",\n      \"basis\": [\n        \"Isaiah 11:11-12 — gathering dispersed Israel from distant regions\",\n        \"Isaiah 49:12 — people come from afar, including western regions\",\n        \"Isaiah 59:19 — the Lord’s name feared from the west\",\n        \"Hosea 11:10 — children come trembling from the west\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A specific western kingdom or power in an apocalyptic passage, not a universal symbol of west.\",\n      \"basis\": [\n        \"Daniel 8:5 — the goat comes from the west\",\n        \"Daniel 8:21 — the goat is identified as the kingdom of Greece\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical references to west are usually literal geographic directions or one element in an east–west or four-directions formula. Symbolic meanings are therefore context-dependent. Sunset, ending, darkness, and death form the best-known later Christian symbolic association, but they are not a fixed biblical definition.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"darkness, night, death, or the realm of evil/Satan (as the counterpart to the east)\",\n  \"primary_basis\": [\n    \"historical Christian baptismal and liturgical practice of facing west to renounce the devil\",\n    \"natural association of west with sunset, evening, and ensuing darkness\",\n    \"contrast with stronger positive east symbolism of sunrise, divine glory, and Christ (Ezekiel 43:2; Malachi 4:2; Luke 1:78)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"direction of gathering or inclusion of peoples (including Gentiles) into God's kingdom\",\n      \"basis\": [\n        \"Isaiah 43:5\",\n        \"Matthew 8:11\",\n        \"Luke 13:29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"infinite separation or complete removal of sin\",\n      \"basis\": [\n        \"Psalm 103:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"direction of approach toward God's presence (Holy of Holies located westward in Tabernacle/Temple)\",\n      \"basis\": [\n        \"Exodus 26–27 (Tabernacle orientation)\",\n        \"1 Kings 6 (Temple orientation)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"completion, evening, or the end of a cycle\",\n      \"basis\": [\n        \"general association with sunset and close of day\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Cardinal directions receive largely contextual and traditional rather than explicit, uniform biblical definitions. East carries clearer positive freight, so west frequently functions as its negative opposite in Christian teaching and liturgy, yet multiple non-contradictory usages coexist without one exclusive settled meaning.\"\n}\n\nBOOK ENTRY\nWhere a course ends — behind, the destination. The Hebrew for west is “sea” (yam): Scripture's compass faces east, placing the western sea at the back as the “hinder sea.” The related after/back/end word-family can therefore mark what is last, latter, or westernmost; and east and west together span complete separation.\n[.opposite]Opposite: East.\n[.ancientwit]Ancient witness: Sifre Deuteronomy 357; Rashi (on Deuteronomy 34:2).\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 11:24; Zech 14:8; Joel 2:20; Jer 50:12; Ps 103:12) · see The Fall of Babylon, ch. 35\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 11:24 — Every place whereon the soles of your feet shall tread shall be yours: from the wilderness and Lebanon, from the river, the river Euphrates, even unto the uttermost sea shall your coast be.\nZechariah 14:8 — And it shall be in that day, that living waters shall go out from Jerusalem; half of them toward the former sea, and half of them toward the hinder sea: in summer and in winter shall it be.\nJoel 2:20 — But I will remove far off from you the northern army, and will drive him into a land barren and desolate, with his face toward the east sea, and his hinder part toward the utmost sea, and his stink shall come up, and his ill savour shall come up, because he hath done great things.\nJeremiah 50:12 — Your mother shall be sore confounded; she that bare you shall be ashamed: behold, the hindermost of the nations shall be a wilderness, a dry land, and a desert.\nPsalms 103:12 — As far as the east is from the west, so far hath he removed our transgressions from us.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "485bb931e0feeb1eb4c85c2ace918b06f51a94e12043f05b1252840e312dfbc8",
+  "cache": {
+    "hit": false
+  }
+}

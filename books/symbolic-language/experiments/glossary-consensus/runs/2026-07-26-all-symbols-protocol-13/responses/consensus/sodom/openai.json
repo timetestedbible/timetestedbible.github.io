@@ -1,0 +1,173 @@
+{
+  "id": "resp_04cd6431d4ad3935006a5477d0c238819099b0e15b543a620c",
+  "object": "response",
+  "created_at": 1783920592,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920616,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_04cd6431d4ad3935006a5477d15ad08190809f2a8e5092ba17",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_04cd6431d4ad3935006a5477d958bc81908f49c19678dcd777",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Sodom and Gomorrah most commonly symbolize extreme communal wickedness brought under catastrophic divine judgment. In traditional Christian teaching, their wickedness is frequently associated especially with sexual immorality, including attempted sexual violence and, in many historic interpretations, homosexual conduct; the broader and more stable symbolism is that of flagrant sin and its punishment.\",\"primary_basis\":[\"Genesis 18:20-21 — the cities’ grave sin and the outcry against them\",\"Genesis 19:1-29 — the attempted assault of Lot’s visitors and the cities’ destruction by fire\",\"Jude 7 — Sodom and Gomorrah as examples of sexual immorality and punishment by eternal fire\",\"2 Peter 2:6-10 — their destruction as an example of judgment upon the ungodly\",\"Matthew 10:14-15; 11:23-24 and Luke 10:10-12 — Sodom as the standard of severe judgment\",\"Luke 17:28-30 — Sodom’s sudden destruction as a warning concerning final judgment\"],\"alternatives\":[{\"meaning\":\"Sodom primarily symbolizes pride, prosperous self-indulgence, neglect of the poor, and social injustice rather than one particular form of sexual sin.\",\"basis\":[\"Ezekiel 16:49-50 — pride, excess, ease, failure to aid the poor and needy, and subsequent abominations\",\"Isaiah 1:9-17 — Jerusalem is compared with Sodom while being condemned for corrupt worship, injustice, and failure to defend the vulnerable\"],\"prominence\":\"common\"},{\"meaning\":\"The Genesis account is read primarily as a condemnation of violent attempted gang rape, domination, and radical violation of hospitality, not as a general symbol for consensual same-sex relations.\",\"basis\":[\"Genesis 19:4-11 — the threatened coercive assault of Lot’s guests\",\"Judges 19:22-30 — a close narrative parallel involving attempted assault and lethal sexual violence\",\"Hebrews 13:2 — hospitality to strangers and angels, sometimes connected interpretively with Genesis 19\"],\"prominence\":\"common\"},{\"meaning\":\"Sodom functions prophetically as a label for covenant corruption, apostasy, and moral resemblance to pagan wickedness, even when the place being described is Jerusalem.\",\"basis\":[\"Isaiah 1:9-10 — Judah’s rulers and people are addressed as Sodom and Gomorrah\",\"Jeremiah 23:14 — Jerusalem’s prophets are compared with Sodom and Gomorrah\",\"Ezekiel 16:46-52 — Jerusalem is portrayed as morally worse than Sodom\",\"Revelation 11:8 — the great city is spiritually called Sodom and Egypt\"],\"prominence\":\"common\"},{\"meaning\":\"Sodom and Gomorrah chiefly symbolize the suddenness and finality of eschatological judgment.\",\"basis\":[\"Luke 17:28-30 — ordinary life continues until fire falls, paralleling the revelation of the Son of Man\",\"2 Peter 2:6 — the cities are an example of what will happen to the ungodly\",\"Jude 7 — their punishment anticipates final judgment\"],\"prominence\":\"common\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"There is broad Christian consensus that Sodom and Gomorrah are paradigms of grave wickedness and divine judgment. There is no equally settled consensus about which specific sin is primary: historic teaching often foregrounds sexual immorality, while many modern interpreters emphasize attempted sexual violence, abuse of strangers, pride, oppression, and neglect of the poor.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 322,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1033,
+    "output_tokens_details": {
+      "reasoning_tokens": 293
+    },
+    "total_tokens": 1355
+  },
+  "user": null,
+  "metadata": {}
+}

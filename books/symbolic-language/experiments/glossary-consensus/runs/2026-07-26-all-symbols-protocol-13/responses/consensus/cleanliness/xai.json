@@ -1,0 +1,156 @@
+{
+  "created_at": 1783892147,
+  "completed_at": 1783892166,
+  "id": "195bdf26-46d8-93f3-a742-b26736b7ec40",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_195bdf26-46d8-93f3-a742-b26736b7ec40",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Clean, unclean; cleanse, cleansing\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Spiritual and moral purity versus defilement by sin, with 'clean' denoting holiness and fitness for God's presence, 'unclean' denoting sin-induced impurity or separation from God, and 'cleansing/cleanse' denoting divine purification and forgiveness (especially through Christ's atoning blood, the Spirit, or the word), of which OT ritual categories are types.\",\n  \"primary_basis\": [\n    \"Leviticus 11–15 (clean/unclean animals, skin diseases, discharges as holiness codes)\",\n    \"Psalm 51:7, 10 ('cleanse me with hyssop'; 'create in me a clean heart')\",\n    \"Isaiah 1:16–18 ('wash yourselves; make yourselves clean')\",\n    \"Mark 7:14–23 (Jesus on defilement from the heart, not food)\",\n    \"Acts 10:9–16, 28 (Peter's vision reinterpreting clean/unclean for Gentiles)\",\n    \"1 John 1:7–9 (blood of Jesus cleanses from all sin)\",\n    \"Hebrews 9:13–14; 10:22 (Christ's blood purifies conscience vs. OT rites)\",\n    \"Ephesians 5:25–27 (Christ cleanses the church by the washing of water with the word)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Primarily ceremonial/ritual categories regulating Israelite worship access and cultic fitness, without intrinsic moral symbolism until later Christian typological reading\",\n      \"basis\": [\n        \"Leviticus purity legislation in its original cultic setting\",\n        \"Hebrews contrast of OT shadows with NT reality\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Practical health, hygiene, or dietary regulations protecting against disease\",\n      \"basis\": [\n        \"Modern observations on risks of pork, shellfish, etc.\",\n        \"Apologetic literature emphasizing divine foresight\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Social/ethnic boundary markers distinguishing holy Israel from Gentiles and outsiders\",\n      \"basis\": [\n        \"Acts 10 and Galatians on table fellowship\",\n        \"Anthropological readings of purity as identity (e.g., Mary Douglas influence in biblical studies)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Traditional Christian teaching and preaching treat the language as symbolically pointing to moral/spiritual holiness and Christ's cleansing work; historical-critical and some modern studies stress ritual, social, or hygienic functions as primary in the OT itself, but these remain secondary within confessional Christian interpretation.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_195bdf26-46d8-93f3-a742-b26736b7ec40",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 609,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1992,
+    "output_tokens_details": {
+      "reasoning_tokens": 1390
+    },
+    "total_tokens": 2601,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 129780000,
+    "context_details": {
+      "input_tokens": 609,
+      "output_tokens": 1992
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

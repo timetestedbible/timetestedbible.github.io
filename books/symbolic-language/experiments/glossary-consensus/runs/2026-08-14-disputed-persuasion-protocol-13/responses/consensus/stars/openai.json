@@ -1,0 +1,173 @@
+{
+  "id": "resp_027435daecdd28e5006a5477e295108197b84ab1c3c717380d",
+  "object": "response",
+  "created_at": 1783920610,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920633,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_027435daecdd28e5006a5477e3558c8197bfa55f9f2c1f98fc",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_027435daecdd28e5006a5477e952508197b6e300fb4091eac5",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"In symbolic and especially apocalyptic interpretation, stars most commonly represent heavenly beings—particularly angels or angelic messengers—and, by extension in some contexts, spiritual powers.\",\"primary_basis\":[\"Job 38:7 associates the “morning stars” with the “sons of God,” commonly understood as heavenly beings.\",\"Revelation 1:16, 1:20 explicitly identifies the seven stars as the angels or messengers of the seven churches.\",\"Revelation 9:1 portrays a fallen star acting as a personal heavenly agent.\",\"Revelation 12:4 is commonly interpreted as depicting angels or heavenly powers swept down with the dragon.\",\"Isaiah 14:12 and Luke 10:18 are often brought into Christian discussions of a fallen heavenly being, although the original contexts and their relationship to star symbolism are disputed.\"],\"alternatives\":[{\"meaning\":\"Numerous descendants, a vast people, or an innumerable multitude promised by God.\",\"basis\":[\"Genesis 15:5\",\"Genesis 22:17\",\"Genesis 26:4\",\"Exodus 32:13\",\"Deuteronomy 1:10\",\"Hebrews 11:12\"],\"prominence\":\"common\"},{\"meaning\":\"Human rulers, authorities, royal figures, or nations—especially their exaltation and downfall.\",\"basis\":[\"Genesis 37:9-10 interprets the sun, moon, and stars as members of Joseph’s ruling family.\",\"Isaiah 13:10 uses darkened stars in an oracle of national judgment.\",\"Ezekiel 32:7-8 uses extinguished heavenly lights in the judgment of Pharaoh.\",\"Daniel 8:10 uses the heavenly host and stars in a vision concerning persecuted powers and people.\",\"Matthew 24:29 and Revelation 6:13 use falling stars within imagery of cosmic and political judgment.\"],\"prominence\":\"common\"},{\"meaning\":\"The righteous, saints, teachers, or faithful witnesses who shine with heavenly glory.\",\"basis\":[\"Daniel 12:3 says that those who lead many to righteousness will shine like the stars.\",\"Philippians 2:15 describes believers as shining like lights or stars in the world.\",\"1 Corinthians 15:41-42 compares differing stellar glory with resurrection glory.\"],\"prominence\":\"common\"},{\"meaning\":\"The leaders or messengers of local churches.\",\"basis\":[\"Revelation 1:20 identifies the seven stars as the angels or messengers of the seven churches.\",\"Interpretations differ over whether these are heavenly angels, human church leaders, or personifications of the churches.\"],\"prominence\":\"common\"},{\"meaning\":\"Christ as the Morning Star, signifying messianic kingship, victory, hope, and the dawn of salvation.\",\"basis\":[\"Numbers 24:17 speaks of a star coming from Jacob and is traditionally read messianically.\",\"2 Peter 1:19 refers to the morning star rising in believers’ hearts.\",\"Revelation 22:16 calls Jesus the bright Morning Star.\",\"Revelation 2:28 promises the morning star to the conqueror.\"],\"prominence\":\"common\"},{\"meaning\":\"Glory, splendor, permanence, guidance, or divine order in creation without representing a specific class of beings.\",\"basis\":[\"Psalm 8:3\",\"Psalm 19:1-4\",\"Psalm 136:9\",\"1 Corinthians 15:41\",\"Matthew 2:2-10\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single settled symbolic meaning for “stars” across the Bible. They are frequently literal celestial bodies, and their symbolic referent depends strongly on genre and context. Angels or heavenly beings are the most recognizable general meaning in Christian apocalyptic interpretation, but descendants, rulers, the righteous, church messengers, and Christ are all well-established contextual readings.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1035,
+    "output_tokens_details": {
+      "reasoning_tokens": 248
+    },
+    "total_tokens": 1352
+  },
+  "user": null,
+  "metadata": {}
+}

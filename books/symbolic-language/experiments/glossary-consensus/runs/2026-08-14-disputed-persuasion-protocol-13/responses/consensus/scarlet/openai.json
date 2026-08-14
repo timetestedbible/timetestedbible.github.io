@@ -1,0 +1,173 @@
+{
+  "id": "resp_0e93bb8f1b3425da006a547773c5948195ac384926c2ff47df",
+  "object": "response",
+  "created_at": 1783920499,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920523,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0e93bb8f1b3425da006a547774879481959b30dd5c3205ff84",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0e93bb8f1b3425da006a5477808ce08195b5c746c308d51bd8",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Sin and guilt, pictured as a deep, conspicuous stain that requires cleansing or forgiveness.\",\"primary_basis\":[\"Isaiah 1:18 is the principal text: “though your sins are like scarlet ... they shall be as white as snow.”\",\"Revelation 17:3–4 and 18:12,16 reinforce a negative association in Christian interpretation by linking scarlet with Babylon’s sinful, corrupt luxury, although their immediate symbolism is broader than personal guilt.\"],\"alternatives\":[{\"meaning\":\"Blood, sacrifice, and atonement or ritual purification.\",\"basis\":[\"Scarlet yarn appears in purification rites in Leviticus 14:4–7,49–52 and Numbers 19:6.\",\"Hebrews 9:19 recalls scarlet wool in connection with covenant blood and purification.\",\"Joshua 2:18–21’s scarlet cord has often been read typologically as a sign of salvation through Christ’s blood, though the text itself identifies it as a signal.\"],\"prominence\":\"common\"},{\"meaning\":\"Royalty, wealth, luxury, and high social status.\",\"basis\":[\"2 Samuel 1:24 associates scarlet clothing with luxury.\",\"Proverbs 31:21 and Lamentations 4:5 reflect costly or privileged clothing.\",\"Matthew 27:28 uses a scarlet robe in the soldiers’ mockery of Jesus’ kingship.\",\"Revelation 17:4 and 18:12,16 use scarlet as part of Babylon’s extravagant display.\"],\"prominence\":\"common\"},{\"meaning\":\"Corrupt imperial splendor, sexual immorality, persecution, and worldly excess.\",\"basis\":[\"Revelation 17:1–6 depicts the woman clothed in purple and scarlet, seated on a scarlet beast, and drunk with the blood of the saints.\",\"Revelation 18:12,16 places scarlet among the luxuries of fallen Babylon.\"],\"prominence\":\"common\"},{\"meaning\":\"Deliverance or protective salvation, especially as a foreshadowing of Christ’s blood.\",\"basis\":[\"Joshua 2:18–21 describes Rahab’s scarlet cord as the identifying sign by which her household is spared.\",\"Christian typological interpretation has compared the cord with Passover blood and Christ’s saving blood, but this symbolism is not stated explicitly in Joshua.\"],\"prominence\":\"minority\"},{\"meaning\":\"A costly red textile or vivid dye without an independent symbolic meaning.\",\"basis\":[\"Scarlet material is repeatedly listed in tabernacle furnishings and priestly textiles, including Exodus 25:4; 26:1,31,36; and 28:5–8.\",\"In such passages, many interpreters treat scarlet primarily as a valuable material within a multicolored design rather than assigning it a fixed theological meaning.\"],\"prominence\":\"common\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"“Sin” is the most recognizable stand-alone Christian symbolic meaning because of Isaiah 1:18. Nevertheless, scarlet has no single settled meaning across Scripture; its significance depends heavily on context and may involve guilt, blood, purification, royalty, luxury, or corrupt power.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1170,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 1488
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "rock",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nRock\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'rock' primarily symbolizes God (and, in Christian typology, Christ) as an unshakable foundation, refuge, and source of salvation — connoting stability, permanence, protection, and trustworthiness. The New Testament extends this explicitly to Christ, both as the spiritual rock that accompanied Israel (1 Cor 10:4) and as the sure foundation on which faith and the church are built.\",\n  \"primary_basis\": [\n    \"Deuteronomy 32:4 (\\\"He is the Rock, his works are perfect\\\")\",\n    \"Deuteronomy 32:15, 18, 30-31\",\n    \"Psalm 18:2 (\\\"The LORD is my rock, my fortress\\\")\",\n    \"Psalm 62:2, 6-7\",\n    \"Psalm 95:1 (\\\"the rock of our salvation\\\")\",\n    \"2 Samuel 22:2-3, 32, 47\",\n    \"Isaiah 26:4 (\\\"the LORD... is an everlasting rock\\\")\",\n    \"1 Corinthians 10:4 (\\\"that rock was Christ\\\", referencing Exodus 17:6 and Numbers 20:8-11)\",\n    \"Matthew 7:24-25 (the wise man builds his house on the rock)\",\n    \"1 Peter 2:4-8 and Isaiah 28:16 (Christ as cornerstone/foundation stone)\",\n    \"Matthew 16:18 (\\\"on this rock I will build my church\\\")\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Peter as the rock: in Matthew 16:18, the rock is Peter himself, the foundation of the church and warrant for the papal office (the standard Roman Catholic reading).\",\n      \"basis\": [\n        \"Matthew 16:18-19\",\n        \"John 1:42 (Cephas)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Peter's confession of faith (or Christ himself) as the rock of Matthew 16:18, rather than Peter's person — the classic Protestant and much patristic reading (e.g., Augustine at times, Chrysostom).\",\n      \"basis\": [\n        \"Matthew 16:16-18\",\n        \"1 Corinthians 3:11\",\n        \"Ephesians 2:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Rock/stone as an object of stumbling and judgment: Christ as a 'stone of stumbling and rock of offense' to unbelievers, and the stone that crushes worldly kingdoms.\",\n      \"basis\": [\n        \"Isaiah 8:14\",\n        \"Romans 9:32-33\",\n        \"1 Peter 2:7-8\",\n        \"Psalm 118:22 with Matthew 21:42-44\",\n        \"Daniel 2:34-35, 44-45\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The struck rock as a type of Christ's atoning death and the source of living water / the Spirit: the rock struck at Horeb prefiguring Christ smitten so that grace flows out.\",\n      \"basis\": [\n        \"Exodus 17:6\",\n        \"Numbers 20:8-11\",\n        \"1 Corinthians 10:4\",\n        \"John 7:37-39\",\n        \"John 19:34\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Rock as an image of hardness, barrenness, or unresponsiveness (e.g., rocky soil where the seed cannot take root, hearts of stone).\",\n      \"basis\": [\n        \"Matthew 13:5-6, 20-21 (parable of the sower)\",\n        \"Ezekiel 36:26\",\n        \"Jeremiah 23:29\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The core symbolism — God/Christ as rock of refuge, salvation, and foundation — is among the most stable and widely recognized symbols in Christian interpretation, attested from the Hebrew Bible through the New Testament and across patristic, Catholic, Orthodox, and Protestant traditions. The one genuinely contested locus is Matthew 16:18, where the referent of 'this rock' (Peter, Peter's confession, or Christ) divides Catholic and Protestant exegesis; this is a dispute about referent, not about the symbol's basic force (foundation/stability). The 'stumbling stone' and 'struck rock' motifs are complementary rather than competing meanings.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"God or Jesus Christ as a firm, immovable foundation, ultimate protector, and source of salvation.\",\n  \"primary_basis\": [\n    \"Psalm 18:2\",\n    \"Deuteronomy 32:4\",\n    \"1 Corinthians 10:4\",\n    \"Matthew 7:24-27\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Apostle Peter as the earthly foundation of the Christian Church\",\n      \"basis\": [\n        \"Matthew 16:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The confession of faith made by Peter regarding Jesus as the Messiah\",\n      \"basis\": [\n        \"Matthew 16:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A stumbling stone or rock of offense to those who reject the gospel\",\n      \"basis\": [\n        \"Romans 9:33\",\n        \"1 Peter 2:8\",\n        \"Isaiah 8:14\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The overarching symbol of God or Christ as a dependable foundation is universally accepted. The most significant divergence involves Matthew 16:18, where the rock is debated as being Peter himself (traditionally Catholic), his confession of faith (traditionally Protestant), or Christ alone.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God—and, in explicitly Christian interpretation, Christ—as a firm, dependable foundation, refuge, source of strength, and salvation.\",\n  \"primary_basis\": [\n    \"Deuteronomy 32:4, 15, 18, 30–31: God is repeatedly called “the Rock.”\",\n    \"Psalm 18:2, 31, 46; 62:2, 6–7; 95:1: the Lord is the believer’s rock, fortress, and salvation.\",\n    \"Isaiah 26:4; 44:8: the Lord is portrayed as the everlasting Rock and the unique source of security.\",\n    \"Matthew 7:24–25; Luke 6:47–48: rock represents the secure foundation provided by hearing and obeying Jesus’ words.\",\n    \"Romans 9:33; 1 Peter 2:4–8: Christ is the cornerstone or rock upon whom some build and over whom others stumble.\",\n    \"1 Corinthians 10:4: Paul explicitly identifies the spiritual rock accompanying Israel with Christ.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Peter as the rock upon which Christ builds the church, often including his apostolic office and, in Catholic interpretation, the Petrine ministry.\",\n      \"basis\": [\n        \"Matthew 16:18–19 is the principal text: “you are Peter, and on this rock I will build my church.”\",\n        \"John 1:42 records Jesus giving Simon the name Cephas/Peter, meaning rock or stone.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Peter’s confession that Jesus is the Messiah and Son of God as the rock or foundation of the church.\",\n      \"basis\": [\n        \"Matthew 16:16–18 links Peter’s confession directly to Jesus’ statement about “this rock.”\",\n        \"This interpretation is especially prominent in many Protestant and patristic readings.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ himself as the rock intended in Matthew 16:18 and as the church’s ultimate foundation.\",\n      \"basis\": [\n        \"1 Corinthians 3:11 states that no foundation can be laid other than Jesus Christ.\",\n        \"Ephesians 2:20 and 1 Peter 2:4–8 identify Christ as the cornerstone.\",\n        \"Some interpreters read Matthew 16:18 in light of these passages.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A cause of stumbling, judgment, or offense for those who reject God or Christ.\",\n      \"basis\": [\n        \"Isaiah 8:14 describes the Lord as a stone of stumbling and rock of offense.\",\n        \"Romans 9:32–33 and 1 Peter 2:7–8 apply this imagery to Christ.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Physical rock as a sign of God’s miraculous provision, especially water supplied in the wilderness.\",\n      \"basis\": [\n        \"Exodus 17:1–7 and Numbers 20:2–13 recount water coming from the rock.\",\n        \"1 Corinthians 10:4 gives the episode an explicitly Christological interpretation.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Unstable or false objects of trust, including rival powers or gods, by contrast with the true Rock.\",\n      \"basis\": [\n        \"Deuteronomy 32:31 contrasts Israel’s Rock with the enemies’ “rock.”\",\n        \"Isaiah 31:1 warns against relying on human military strength rather than the Lord.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus that divine firmness, refuge, strength, and foundational security are the central symbolic associations of rock imagery. However, the symbol is context-dependent, and there is no settled cross-traditional consensus on the specific referent of “this rock” in Matthew 16:18; Peter, Peter’s confession, and Christ are all established readings.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"God (and specifically Christ) as firm foundation, strength, refuge, and source of salvation/security\",\n  \"primary_basis\": [\n    \"Deuteronomy 32:4, 15, 18, 30-31\",\n    \"2 Samuel 22:2-3 / Psalm 18:2, 31, 46\",\n    \"Psalm 62:2, 6-7\",\n    \"Isaiah 26:4; 28:16; 44:8\",\n    \"1 Corinthians 10:4\",\n    \"Matthew 7:24-25; 16:18\",\n    \"1 Peter 2:4-8 (with Psalm 118:22 and Isaiah 8:14)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Peter (or the Petrine office) as the foundation of the Church\",\n      \"basis\": [\n        \"Matthew 16:18 (Catholic and some patristic readings)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Peter’s confession of faith (or the content of that confession) as the foundation\",\n      \"basis\": [\n        \"Matthew 16:16-18 (common Protestant reading)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Christ (or the gospel) as a rock of stumbling / offense to the unbelieving\",\n      \"basis\": [\n        \"Isaiah 8:14\",\n        \"Romans 9:33\",\n        \"1 Peter 2:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Believers themselves as living stones built on the Rock/Christ\",\n      \"basis\": [\n        \"1 Peter 2:5\",\n        \"Ephesians 2:20-22\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across OT and NT the dominant, near-universal Christian usage treats 'rock' as a divine title and metaphor for God’s/Christ’s reliability and protective strength. The only significant ongoing dispute concerns the precise referent of the 'rock' in Matthew 16:18; that local controversy does not overturn the broader symbolic consensus.\"\n}\n\nBOOK ENTRY\nJesus Christ, the covenant Head and bedrock beneath His house and kingdom — the foundation, refuge, and source upon whom His people stand.\n[.opposite]Opposite: Sand.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 32:4; Ps 40:2; Isa 32:2; Matt 7:24-25; 1 Cor 10:4) · see Mountain, ch. 39\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 32:4 — He is the Rock, his work is perfect: for all his ways are judgment: a God of truth and without iniquity, just and right is he.\nPsalms 40:2 — He brought me up also out of an horrible pit, out of the miry clay, and set my feet upon a rock, and established my goings.\nIsaiah 32:2 — And a man shall be as an hiding place from the wind, and a covert from the tempest; as rivers of water in a dry place, as the shadow of a great rock in a weary land.\nMatthew 7:24 — Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock:\nMatthew 7:25 — And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock.\n1 Corinthians 10:4 — And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Christ.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "d5b939a0738bc680f24cf405b9b002ffe9982c2e1a2da78d843919cf48d31f77",
+  "cache": {
+    "hit": false
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "dew",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nDew\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"Divine blessing and favor — God's quiet, life-giving, refreshing grace descending on His people, often tied to fertility, provision, and prosperity.\",\n  \"primary_basis\": [\n    \"Genesis 27:28 (Isaac's blessing: 'God give thee of the dew of heaven')\",\n    \"Deuteronomy 33:13, 28 (blessing of dew on Israel)\",\n    \"Hosea 14:5 ('I will be as the dew unto Israel')\",\n    \"Psalm 133:3 ('as the dew of Hermon... there the LORD commanded the blessing')\",\n    \"Proverbs 19:12 (the king's favor 'is as dew upon the grass')\",\n    \"Micah 5:7 (the remnant of Jacob 'as a dew from the LORD')\",\n    \"Zechariah 8:12 and Haggai 1:10 (dew given or withheld as sign of blessing or judgment)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's word, teaching, or doctrine gently distilling on hearers\",\n      \"basis\": [\n        \"Deuteronomy 32:2 ('my speech shall distil as the dew')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Transience and fleetingness — that which quickly evaporates, used of Israel's inconstant devotion or of the wicked\",\n      \"basis\": [\n        \"Hosea 6:4 ('your goodness is as a morning cloud, and as the early dew it goeth away')\",\n        \"Hosea 13:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Resurrection and revivification of the dead\",\n      \"basis\": [\n        \"Isaiah 26:19 ('thy dew is as the dew of herbs, and the earth shall cast out the dead'; also rabbinic 'dew of resurrection' tradition carried into some Christian exegesis)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"God's providential provision, associated with the manna\",\n      \"basis\": [\n        \"Exodus 16:13-14\",\n        \"Numbers 11:9\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit or the Incarnation descending silently — patristic and Catholic typology, especially reading Gideon's fleece as a figure of Mary receiving Christ like dew\",\n      \"basis\": [\n        \"Judges 6:36-40\",\n        \"Psalm 72:6 ('like showers that water the earth'; cf. Vulgate/liturgical 'Rorate caeli' from Isaiah 45:8)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Youthful vigor, freshness, or the abundance of the Messiah's people/army\",\n      \"basis\": [\n        \"Psalm 110:3 ('thou hast the dew of thy youth')\",\n        \"2 Samuel 17:12 (troops falling on the enemy 'as the dew falleth on the ground')\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broadly recognizable consensus that dew primarily symbolizes divine blessing, favor, and refreshing grace, rooted in its role in the arid Near East as an essential, silently arriving source of moisture. However, dew is a polyvalent image in Scripture: the same figure is also used negatively for transience (Hosea) and positively for resurrection, provision, and teaching. Commentators (e.g., Matthew Henry, Keil-Delitzsch, standard Bible dictionaries such as ISBE and the Dictionary of Biblical Imagery) generally treat blessing/grace as the leading sense while acknowledging the transience motif as a distinct secondary use. The Marian/incarnational reading of Gideon's fleece is well established in Catholic and Orthodox liturgical tradition but is not the dominant sense in Protestant exegesis.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Divine blessing, provision, refreshment, grace, and God's life-giving presence.\",\n  \"primary_basis\": [\n    \"Genesis 27:28\",\n    \"Deuteronomy 32:2\",\n    \"Hosea 14:5\",\n    \"Psalm 133:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Transience, superficial piety, or fleeting faithfulness.\",\n      \"basis\": [\n        \"Hosea 6:4\",\n        \"Hosea 13:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Resurrection and the renewal of life from the dead.\",\n      \"basis\": [\n        \"Isaiah 26:19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sudden, stealthy, or overwhelming arrival.\",\n      \"basis\": [\n        \"2 Samuel 17:12\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In the arid climate of the ancient Near East, dew was a crucial source of moisture during the dry season, making it a natural and pervasive symbol for God's sustaining grace and favor. Its alternative use as a symbol of transience relies on the way dew quickly evaporates in the morning sun.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Life-giving blessing, refreshment, and provision bestowed by God—often emphasizing fertility, renewal, and divine favor.\",\n  \"primary_basis\": [\n    \"Genesis 27:28 — the “dew of heaven” accompanies agricultural abundance in Isaac’s blessing.\",\n    \"Deuteronomy 33:13, 28 — dew is included among God’s blessings upon the land and Israel’s secure prosperity.\",\n    \"Hosea 14:5 — God promises, “I will be like the dew to Israel,” portraying restorative grace and renewed flourishing.\",\n    \"Zechariah 8:12 — dew is associated with fruitful land and restored blessing.\",\n    \"Psalm 133:3 — the dew of Hermon illustrates the life-giving blessing God bestows.\",\n    \"Exodus 16:13–14 and Numbers 11:9 — dew accompanies the manna, linking it with God’s sustaining provision.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The brevity, instability, or transience of human devotion and life.\",\n      \"basis\": [\n        \"Hosea 6:4 — Israel’s faithfulness is “like the dew that goes away early.”\",\n        \"Hosea 13:3 — the condemned are compared to early dew that disappears.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God’s teaching or gracious speech, which gently nourishes life.\",\n      \"basis\": [\n        \"Deuteronomy 32:2 — Moses asks that his teaching “distill as the dew.”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Resurrection, renewed life, or divine vitality overcoming death.\",\n      \"basis\": [\n        \"Isaiah 26:19 — the dead rise because God’s dew is described as a life-giving or luminous dew.\",\n        \"Psalm 110:3 — the difficult phrase concerning the “dew” of youth has sometimes received messianic and resurrection-oriented readings.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit or sanctifying grace descending gently from God.\",\n      \"basis\": [\n        \"Hosea 14:5 and Psalm 133:3 are interpreted typologically in some Christian preaching and liturgical traditions.\",\n        \"The image of descending, life-giving moisture lends itself to pneumatological interpretation, though Scripture does not consistently establish dew as a fixed symbol of the Spirit.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A miraculous sign confirming God’s will.\",\n      \"basis\": [\n        \"Judges 6:36–40 — dew on, and then absent from, Gideon’s fleece functions as a requested sign.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The presence or withholding of dew as an instrument of covenant blessing or judgment.\",\n      \"basis\": [\n        \"1 Kings 17:1 and Haggai 1:10 — withheld dew signifies drought and divine judgment.\",\n        \"Genesis 27:39 is textually and contextually debated as either blessing or deprivation involving heaven’s dew.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Dew has no single fixed biblical symbolism; its meaning is strongly context-dependent. The broadest positive association in Christian interpretation is God-given blessing, refreshment, fertility, and sustaining grace, while its rapid disappearance also makes it a recurring image of transience.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"God's gentle blessing, favor, or spiritual refreshment/revival poured out quietly upon His people\",\n  \"primary_basis\": [\n    \"Hosea 14:5 (I will be like the dew to Israel)\",\n    \"Deuteronomy 33:13/28 (blessing of heaven's dew)\",\n    \"Psalm 133:3 (dew of Hermon as emblem of blessing/unity)\",\n    \"Micah 5:7 (remnant like dew from the Lord)\",\n    \"Zechariah 8:12 (heavens give dew as covenant blessing)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Word of God or true doctrine that gently nourishes\",\n      \"basis\": [\n        \"Deuteronomy 32:2 (doctrine drops as rain, speech distills as dew)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Resurrection life or awakening of the dead\",\n      \"basis\": [\n        \"Isaiah 26:19 (your dead shall live... for your dew is like the dew of herbs)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sign of divine confirmation or miraculous provision (as with Gideon's fleece or manna context)\",\n      \"basis\": [\n        \"Judges 6:36-40\",\n        \"Exodus 16:13-14 (manna appearing with dew)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Holy Spirit's quiet, life-giving influence\",\n      \"basis\": [\n        \"Analogical extension from Hosea 14:5 and refreshment imagery\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, medieval, Reformation, and modern evangelical/conservative commentaries the dominant cluster is blessing/refreshment/favor; secondary readings (Word, resurrection, Spirit) are well-attested but less universal as the primary symbol. No major tradition treats dew as inherently negative.\"\n}\n\nBOOK ENTRY\nThe word descending from heaven — silent, nightly, found in the morning: “my speech shall distil as the dew” (Deut 32:2). The manna falls upon the dew, and when the dew lifts, the word lies on the ground as daily bread; received without root, it evaporates when the sun grows hot.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: divine blessing or refreshment, often the Holy Spirit's quiet renewing presence.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 32:2; Num 11:9; Ex 16:14; Deut 8:3; 1 Kgs 17:1; Hos 14:5; Isa 26:19) · see The Pearls of Wisdom, ch. 31\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 32:2 — My doctrine shall drop as the rain, my speech shall distil as the dew, as the small rain upon the tender herb, and as the showers upon the grass:\nNumbers 11:9 — And when the dew fell upon the camp in the night, the manna fell upon it.\nExodus 16:14 — And when the dew that lay was gone up, behold, upon the face of the wilderness there lay a small round thing, as small as the hoar frost on the ground.\nDeuteronomy 8:3 — And he humbled thee, and suffered thee to hunger, and fed thee with manna, which thou knewest not, neither did thy fathers know; that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of the LORD doth man live.\n1 Kings 17:1 — And Elijah the Tishbite, who was of the inhabitants of Gilead, said unto Ahab, As the LORD God of Israel liveth, before whom I stand, there shall not be dew nor rain these years, but according to my word.\nHosea 14:5 — I will be as the dew unto Israel: he shall grow as the lily, and cast forth his roots as Lebanon.\nIsaiah 26:19 — Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "2dcfa227d98ecd88daec58f1990941d6e5d3b86572f8c79046d07339872cd895",
+  "cache": {
+    "hit": false
+  }
+}

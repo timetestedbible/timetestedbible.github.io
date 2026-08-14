@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "judgment",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nJudgment\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'Judgment' primarily refers to God's final eschatological judgment: the decisive act at the end of history in which God, exercised through Jesus Christ, holds all humanity accountable, evaluates every person's deeds and relationship to Christ, and renders a verdict that separates the righteous (destined for eternal life) from the wicked (destined for condemnation). It is symbolically depicted through courtroom imagery (books opened, a throne, a verdict), harvest imagery (reaping, winnowing, separating wheat from chaff), and shepherd imagery (separating sheep from goats). The 'Last Judgment' or 'Day of Judgment' is an article of the historic creeds ('he will come again to judge the living and the dead') and is affirmed across Catholic, Orthodox, and Protestant traditions.\",\n  \"primary_basis\": [\n    \"Matthew 25:31-46 (the Son of Man separating sheep from goats)\",\n    \"Revelation 20:11-15 (the great white throne; books opened; the dead judged by their works)\",\n    \"2 Corinthians 5:10 (all must appear before the judgment seat of Christ)\",\n    \"Romans 2:5-16 (the day of wrath when God's righteous judgment is revealed; God judges secrets through Christ)\",\n    \"Romans 14:10-12 (we will all stand before God's judgment seat and give account)\",\n    \"Hebrews 9:27 (it is appointed for man to die once, and after that comes judgment)\",\n    \"John 5:22-29 (the Father has given all judgment to the Son; resurrection to life or judgment)\",\n    \"Acts 17:31 (God has fixed a day on which he will judge the world by a man he has appointed)\",\n    \"Matthew 12:36 (account on the day of judgment for every careless word)\",\n    \"Daniel 7:9-10 (the Ancient of Days enthroned, court in session, books opened)\",\n    \"Ecclesiastes 12:14 (God will bring every deed into judgment)\",\n    \"Matthew 13:36-43, 47-50 (harvest and dragnet parables of end-of-age separation)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Temporal or historical judgment within history: God's judgments on nations, cities, and Israel itself through prophetic 'Day of the LORD' oracles, wars, exile, and natural catastrophe (e.g., the flood, Sodom, Babylon, the Assyrian and Babylonian conquests). Much Old Testament judgment language is read this way rather than as end-of-world imagery.\",\n      \"basis\": [\n        \"Isaiah 13 (oracle against Babylon)\",\n        \"Amos 5:18-20 (the day of the LORD against Israel)\",\n        \"Ezekiel 7 (judgment on the land of Israel)\",\n        \"Genesis 6-9 and Genesis 19 (flood; Sodom and Gomorrah, cited in 2 Peter 2:4-9 as patterns of judgment)\",\n        \"Nahum and Obadiah (judgments on Nineveh and Edom)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Realized or present judgment: especially in Johannine theology, judgment is already occurring now in people's response to Christ; belief or unbelief constitutes the verdict, and Christ's death is itself the judgment of the world.\",\n      \"basis\": [\n        \"John 3:18-19 (whoever does not believe is condemned already; this is the judgment, that light has come into the world)\",\n        \"John 12:31 (now is the judgment of this world)\",\n        \"John 9:39 (for judgment I came into this world)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Judgment as purifying discipline or refinement of God's own people, beginning with the household of God, rather than final condemnation; associated imagery of refiner's fire and testing of works.\",\n      \"basis\": [\n        \"1 Peter 4:17 (judgment begins at the household of God)\",\n        \"1 Corinthians 3:12-15 (works tested by fire; the person saved though as through fire)\",\n        \"Malachi 3:2-3 (refiner's fire, fuller's soap)\",\n        \"Hebrews 12:5-11 (the Lord disciplines those he loves)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A distinct 'bema seat' judgment of believers for rewards, separated in time and purpose from the great white throne judgment of unbelievers; characteristic of dispensationalist systems.\",\n      \"basis\": [\n        \"2 Corinthians 5:10 (judgment seat / bema of Christ)\",\n        \"1 Corinthians 3:12-15 (rewards for works)\",\n        \"Romans 14:10\",\n        \"Revelation 20:11-15 (read as a separate later judgment of the unsaved dead)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Preterist reading: New Testament 'coming judgment' language (especially in the Olivet Discourse and, for full preterists, Revelation) refers principally to the historical judgment on Jerusalem and the temple in AD 70, not (or not only) to a future universal judgment.\",\n      \"basis\": [\n        \"Matthew 23:36-24:34 (this generation will not pass away)\",\n        \"Luke 21:20-24 (Jerusalem surrounded by armies)\",\n        \"Matthew 26:64 (coming on the clouds language read as vindication-in-judgment within that generation)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Judgment as human moral discernment and church discipline: the ethical sense in which believers are told not to judge hypocritically yet are to judge rightly and adjudicate matters within the church; a different (non-eschatological) sense of the same term frequently treated in Christian teaching.\",\n      \"basis\": [\n        \"Matthew 7:1-5 (judge not, that you be not judged)\",\n        \"John 7:24 (judge with right judgment)\",\n        \"1 Corinthians 5:12-13 and 6:1-5 (judging those inside the church; saints will judge the world)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Judgment with a restorative or annihilationist outcome: universalist readings see judgment as ultimately corrective and reconciling; conditionalist/annihilationist readings see its verdict as final destruction rather than eternal conscious torment. These differ over the result of judgment rather than its reality.\",\n      \"basis\": [\n        \"Matthew 10:28 (destroy both soul and body in hell) for annihilationism\",\n        \"1 Corinthians 15:22-28 and Colossians 1:19-20 for universalist readings\",\n        \"2 Thessalonians 1:9 (eternal destruction) contested between views\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Judgment is one of the most stable and credal concepts in Christian interpretation: the final judgment of all people by God through Christ is affirmed in the Apostles' and Nicene Creeds and across virtually all traditions, so its core meaning is not disputed. The interpretive diversity concerns scope and timing (final vs. historical vs. already-realized vs. AD 70), the subjects (believers' works vs. unbelievers' condemnation, and whether these are one event or several), and the outcome (eternal punishment, annihilation, or ultimate restoration). Associated symbols consistently attached to judgment include the throne and opened books, harvest/winnowing, fire, scales, the winepress (Revelation 14), and the sheep-goat separation. If the experiment's term intends 'judgment' as a symbol for something else entirely, no such alternative symbolic equation has recognizable consensus; the dominant usage treats judgment as the referent that other symbols (harvest, fire, courtroom) point to, rather than as a symbol standing for a different concept.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Divine justice, the ultimate eschatological evaluation of deeds, the separation of the righteous from the wicked, and the final rectification of all wrongs.\",\n  \"primary_basis\": [\n    \"Matthew 25:31-46\",\n    \"Revelation 20:11-15\",\n    \"2 Corinthians 5:10\",\n    \"Daniel 7:9-10\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Historical, temporal punishment or wrath poured out on rebellious nations or individuals.\",\n      \"basis\": [\n        \"Amos 1:1-15\",\n        \"Revelation 16:1-7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Fatherly discipline and purification of believers or the church.\",\n      \"basis\": [\n        \"1 Peter 4:17\",\n        \"1 Corinthians 11:32\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Vindication, salvation, and deliverance of the oppressed.\",\n      \"basis\": [\n        \"Judges 2:16-18\",\n        \"Psalm 72:1-4\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical symbolism for judgment often employs imagery of fire, scales, thrones, and agricultural harvests (separating wheat from chaff). While typically associated with condemnation in popular theology, in biblical studies it is frequently recognized as a positive restorative concept of setting the world right and rescuing the oppressed.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God’s righteous evaluation of human persons, deeds, peoples, or powers, resulting in a just verdict—vindication or condemnation—and often in reward, punishment, or separation. In Christian teaching, “judgment” most commonly points especially to the final, eschatological judgment by God through Christ.\",\n  \"primary_basis\": [\n    \"Ecclesiastes 12:14 — God brings every deed, including hidden things, into judgment.\",\n    \"Matthew 25:31–46 — the Son of Man separates the righteous from the wicked and assigns their respective destinies.\",\n    \"John 5:22–29 — the Father entrusts judgment to the Son, followed by resurrection to life or judgment.\",\n    \"Acts 17:31 — God has appointed a day to judge the world in righteousness through the risen Christ.\",\n    \"Romans 2:5–16 — God’s impartial judgment assesses deeds and hidden things.\",\n    \"2 Corinthians 5:10 — all appear before Christ’s judgment seat to receive according to what they have done.\",\n    \"Revelation 20:11–15 — the dead are judged before the great white throne according to their deeds.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Historical or temporal divine judgment: God acts within history against individuals, nations, cities, or oppressive powers through disaster, defeat, exile, or societal collapse.\",\n      \"basis\": [\n        \"Genesis 6–9\",\n        \"Exodus 7–12\",\n        \"2 Kings 17:5–23\",\n        \"2 Kings 25:1–21\",\n        \"Isaiah 13:1–22\",\n        \"Jeremiah 25:8–14\",\n        \"Revelation 18:1–24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Condemnation or punitive sentence specifically, rather than the whole neutral process of evaluation. In many passages “judgment” functions almost synonymously with adverse verdict, wrath, or destruction.\",\n      \"basis\": [\n        \"John 3:18–19\",\n        \"John 12:31\",\n        \"Romans 5:16–18\",\n        \"2 Peter 2:4–9\",\n        \"Jude 6–15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Disciplinary, corrective, or purifying judgment directed toward God’s people, intended to expose sin, produce repentance, or restore holiness rather than merely condemn.\",\n      \"basis\": [\n        \"1 Corinthians 11:29–32\",\n        \"Hebrews 12:5–11\",\n        \"1 Peter 4:17\",\n        \"Revelation 3:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Vindication and deliverance: judgment is good news for the oppressed because God condemns evil, establishes justice, and publicly vindicates the faithful.\",\n      \"basis\": [\n        \"Psalm 9:7–10\",\n        \"Psalm 96:10–13\",\n        \"Isaiah 11:1–5\",\n        \"Luke 18:7–8\",\n        \"Revelation 6:9–11\",\n        \"Revelation 19:1–2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral discernment or self-examination by believers, including distinguishing right from wrong and assessing oneself before God.\",\n      \"basis\": [\n        \"1 Corinthians 6:1–5\",\n        \"1 Corinthians 11:28–31\",\n        \"1 Corinthians 14:29\",\n        \"Hebrews 5:14\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad consensus on the core meaning of divine evaluation and just verdict, especially in relation to final judgment. However, “judgment” is not a symbol with one rigid referent in every passage: context determines whether it emphasizes evaluation, condemnation, temporal punishment, discipline, separation, or vindication.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"God's definitive evaluation of human lives and deeds (especially at the eschatological Last Judgment), resulting in eternal reward or condemnation\",\n  \"primary_basis\": [\n    \"Matthew 25:31-46\",\n    \"Revelation 20:11-15\",\n    \"2 Corinthians 5:10\",\n    \"Romans 14:10-12\",\n    \"John 5:22-29\",\n    \"Acts 17:31\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God's temporal or historical judgments on nations, cities, or individuals within history (e.g., exile, conquest, plagues) as expressions of covenant justice\",\n      \"basis\": [\n        \"Deuteronomy 28\",\n        \"Amos 1–2\",\n        \"Isaiah 13–23\",\n        \"Jeremiah 25\",\n        \"Luke 19:41-44\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Distinction between the judgment seat of Christ (for believers' rewards) and the great white throne (for the unredeemed)\",\n      \"basis\": [\n        \"2 Corinthians 5:10\",\n        \"1 Corinthians 3:12-15\",\n        \"Revelation 20:11-15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Present-tense divine judgment already operative in the world or in the conscience through the Spirit and the gospel\",\n      \"basis\": [\n        \"John 3:18-19\",\n        \"John 12:31\",\n        \"Romans 1:18-32\",\n        \"1 Corinthians 11:31-32\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Metaphorical or existential description of the natural consequences of moral choices rather than a future personal divine tribunal\",\n      \"basis\": [\n        \"Galatians 6:7-8\",\n        \"various wisdom texts\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Mainstream Christian tradition across Catholic, Orthodox, and Protestant lines treats the Final Judgment as a core article of faith; secondary distinctions (timing, dual judgments, historical vs. eschatological) are widely recognized but do not displace the primary eschatological sense.\"\n}\n\nBOOK ENTRY\nThe act of governing, administering, and discerning right from wrong; also the ruling made or executed. Condemnation is only one aspect, and good judgment follows God's law and statutes.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Deut 10:18; Ps 119:160; Matt 23:23; 1 Sam 8:20; Isa 33:22; Dan 7:22) · see Justice and Judgment, ch. 18\n\nAVAILABLE KJV EXCERPTS\nDeuteronomy 10:18 — He doth execute the judgment of the fatherless and widow, and loveth the stranger, in giving him food and raiment.\nPsalms 119:160 — Thy word is true from the beginning: and every one of thy righteous judgments endureth for ever.\nMatthew 23:23 — Woe unto you, scribes and Pharisees, hypocrites! for ye pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought ye to have done, and not to leave the other undone.\n1 Samuel 8:20 — That we also may be like all the nations; and that our king may judge us, and go out before us, and fight our battles.\nIsaiah 33:22 — For the LORD is our judge, the LORD is our lawgiver, the LORD is our king; he will save us.\nDaniel 7:22 — Until the Ancient of days came, and judgment was given to the saints of the most High; and the time came that the saints possessed the kingdom.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "f01ac0bd26594c6d88b47f512e5e4393d031bc03edcb57c7c71788bde3da5b68",
+  "cache": {
+    "hit": false
+  }
+}

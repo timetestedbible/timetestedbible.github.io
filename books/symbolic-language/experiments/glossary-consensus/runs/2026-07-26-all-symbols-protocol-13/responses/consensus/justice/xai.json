@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920155,
+  "completed_at": 1783920177,
+  "id": "624729c6-93e4-9d6f-92be-a9b7306d3623",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_624729c6-93e4-9d6f-92be-a9b7306d3623",
+      "summary": [
+        {
+          "text": "The user wants me to act as a \"blind consensus definer\" for the term \"Justice\" in biblical symbolism. I must return only a JSON object matching the specified schema.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"God's righteous character and fair judgment that upholds moral order by vindicating the innocent, punishing wrongdoing, and requiring humans to act equitably especially toward the vulnerable\",\n  \"primary_basis\": [\n    \"Amos 5:24\",\n    \"Micah 6:8\",\n    \"Psalm 89:14\",\n    \"Isaiah 1:17\",\n    \"Deuteronomy 16:20\",\n    \"Romans 3:25-26\",\n    \"2 Thessalonians 1:6-7\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"primarily restorative or distributive social equity focused on liberating the oppressed and correcting systemic wrongs as central gospel concern\",\n      \"basis\": [\n        \"Isaiah 58:6-7\",\n        \"Luke 4:18-19\",\n        \"Matthew 25:31-46\",\n        \"James 1:27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"strict retributive legal penalty or lex talionis without primary emphasis on mercy or restoration\",\n      \"basis\": [\n        \"Exodus 21:23-25\",\n        \"Leviticus 24:19-20\",\n        \"Romans 6:23\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"personal forensic righteousness or justification by faith rather than social or judicial action\",\n      \"basis\": [\n        \"Romans 1:17\",\n        \"Philippians 3:9\",\n        \"Galatians 2:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"one of the classical cardinal virtues of giving each person their due in interpersonal and civic life\",\n      \"basis\": [\n        \"Matthew 7:12\",\n        \"Romans 13:7\",\n        \"Colossians 4:1\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian interpretation the core linkage of justice to God's righteousness and human ethical duty is stable; differences arise mainly in relative weight given to retributive, restorative, social, or forensic emphases rather than in the fundamental association itself.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_624729c6-93e4-9d6f-92be-a9b7306d3623",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1953,
+    "output_tokens_details": {
+      "reasoning_tokens": 1426
+    },
+    "total_tokens": 2555,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 121540000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1953
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

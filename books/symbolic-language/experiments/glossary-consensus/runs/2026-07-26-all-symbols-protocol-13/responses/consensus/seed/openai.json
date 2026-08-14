@@ -1,0 +1,173 @@
+{
+  "id": "resp_054c04783f9385e3006a54777e85808194ac85c6ae4842249c",
+  "object": "response",
+  "created_at": 1783920510,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920527,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_054c04783f9385e3006a54777f2324819495b6c082f36758f1",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_054c04783f9385e3006a54778185988194b39b039ff0858dbf",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The word or message of God—especially the gospel—which is sown in human hearts and may produce spiritual life and fruit.\",\"primary_basis\":[\"Luke 8:4–15, especially Luke 8:11: “The seed is the word of God.”\",\"Mark 4:1–20, where the sower sows “the word” and differing soils represent differing responses.\",\"Matthew 13:1–23, where the seed is interpreted as “the word of the kingdom.”\",\"1 Peter 1:23–25, which connects imperishable seed with the living and enduring word of God.\",\"James 1:18, 21, which associates new birth and salvation with the implanted word.\"],\"alternatives\":[{\"meaning\":\"Offspring, descendants, or a promised lineage, sometimes interpreted christologically as the Messiah.\",\"basis\":[\"Genesis 3:15, concerning the seed or offspring of the woman.\",\"Genesis 12:7; 13:15–16; 17:7–8, concerning Abraham’s seed.\",\"Galatians 3:16, where Paul applies Abraham’s singular “seed” to Christ.\",\"Romans 9:6–8 and Galatians 3:29, concerning physical and spiritual descendants of Abraham.\"],\"prominence\":\"common\"},{\"meaning\":\"The children or subjects produced by a spiritual source: the “good seed” represents the sons or people of the kingdom, contrasted with the sons of the evil one.\",\"basis\":[\"Matthew 13:24–30, 36–43, especially 13:38, where the good seed is explicitly identified as the sons of the kingdom.\"],\"prominence\":\"common\"},{\"meaning\":\"The kingdom of God in its initially small but ultimately expansive and fruitful growth.\",\"basis\":[\"Matthew 13:31–32 and Mark 4:30–32, the parable of the mustard seed.\",\"Mark 4:26–29, the seed growing secretly.\"],\"prominence\":\"common\"},{\"meaning\":\"Death followed by resurrection or transformation, as a buried seed dies and rises in a new form.\",\"basis\":[\"John 12:24, where a grain of wheat falls into the earth and dies, applied to Jesus’ death and ensuing fruitfulness.\",\"1 Corinthians 15:35–44, where the sowing of seed illustrates bodily resurrection and transformation.\"],\"prominence\":\"common\"},{\"meaning\":\"Faith that appears very small yet is effective or capable of remarkable results.\",\"basis\":[\"Matthew 17:20, faith like a mustard seed.\",\"Luke 17:6, faith like a mustard seed.\"],\"prominence\":\"common\"},{\"meaning\":\"A moral or spiritual principle of sowing and reaping: actions, generosity, or life orientation produce corresponding consequences.\",\"basis\":[\"Galatians 6:7–10, sowing to the flesh or Spirit.\",\"2 Corinthians 9:6–10, seed as generosity that yields a harvest of righteousness.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"“Seed” has no single settled symbolic meaning applicable to every biblical occurrence. Its most recognizable symbolic meaning in general Christian teaching is the word or gospel, because the Synoptic interpretation of the sower states this explicitly. Context can instead make seed signify offspring, people of the kingdom, kingdom growth, resurrection, faith, or actions and their consequences.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 805,
+    "output_tokens_details": {
+      "reasoning_tokens": 107
+    },
+    "total_tokens": 1122
+  },
+  "user": null,
+  "metadata": {}
+}

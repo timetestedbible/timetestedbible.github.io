@@ -1,0 +1,156 @@
+{
+  "created_at": 1785123140,
+  "completed_at": 1785123157,
+  "id": "d12ba872-ff9e-9bb5-b9a7-b7c5f0540936",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_d12ba872-ff9e-9bb5-b9a7-b7c5f0540936",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for the biblical symbolism of \"Sapphire\". I need to respond with a specific JSON format.\nThe primary symbolic meaning most commonly assigned to sapphire in Christian teaching and biblical interpretation is the throne of God or heavenly glory, representing divine presence, purity, and the celestial realm.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Heavenly glory, the firmament, or the throne of God (divine presence and celestial realm)\",\n  \"primary_basis\": [\n    \"Exodus 24:10\",\n    \"Ezekiel 1:26\",\n    \"Ezekiel 10:1\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"One of the foundation stones of the New Jerusalem (eschatological glory or apostolic foundation)\",\n      \"basis\": [\n        \"Revelation 21:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gem on the high priest’s breastplate (tribal or priestly representation)\",\n      \"basis\": [\n        \"Exodus 28:18\",\n        \"Exodus 39:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purity, truth, or heavenly-mindedness (linked to blue color and contemplative virtue in later Christian gem symbolism)\",\n      \"basis\": [\n        \"patristic and medieval gem traditions\",\n        \"color association with sky/heaven\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Specific apostolic or virtue associations in some medieval lists (e.g., linked to particular apostles or theological virtues)\",\n      \"basis\": [\n        \"later liturgical and lapidary traditions\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The throne/heaven association drawn from the theophany and chariot-throne texts is the most consistently cited symbolic reading in Christian biblical interpretation; other uses are largely catalog or decorative rather than primary symbols.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_d12ba872-ff9e-9bb5-b9a7-b7c5f0540936",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1003,
+    "output_tokens_details": {
+      "reasoning_tokens": 610
+    },
+    "total_tokens": 1605,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 70044000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1003
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

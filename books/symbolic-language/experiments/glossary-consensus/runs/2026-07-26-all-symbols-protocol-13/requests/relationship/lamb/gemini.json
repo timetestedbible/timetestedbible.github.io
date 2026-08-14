@@ -1,0 +1,129 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "lamb",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nThe Lamb\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'the Lamb' overwhelmingly refers to Jesus Christ as the sacrificial, atoning offering for sin — the 'Lamb of God' whose death takes away the sins of the world. The image fuses the Passover lamb of the Exodus, the lambs of the Levitical sacrificial system, and the suffering servant 'led like a lamb to the slaughter,' and it culminates in the exalted 'Lamb who was slain' worshiped in Revelation. Innocence, purity (being 'without blemish'), voluntary submission to death, redemptive substitution, and — in Revelation — paradoxical victory and kingship through sacrifice are the standard associated ideas.\",\n  \"primary_basis\": [\n    \"John 1:29\",\n    \"John 1:36\",\n    \"Exodus 12:1-13 (Passover lamb)\",\n    \"Isaiah 53:7\",\n    \"Acts 8:32-35\",\n    \"1 Corinthians 5:7 ('Christ our Passover lamb has been sacrificed')\",\n    \"1 Peter 1:18-19 ('a lamb without blemish or defect')\",\n    \"Revelation 5:6-14 ('the Lamb who was slain')\",\n    \"Revelation 7:14 ('washed... in the blood of the Lamb')\",\n    \"Revelation 12:11\",\n    \"Revelation 13:8\",\n    \"Revelation 21:22-23; 22:1-3 (the Lamb enthroned)\",\n    \"Genesis 22:7-8 ('God will provide the lamb' — Isaac/Akedah typology)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The conquering/warrior Lamb of Revelation: some scholars argue the Lamb (arnion) in Revelation draws on Jewish apocalyptic traditions of a militant messianic ram or horned lamb (e.g., 1 Enoch's Animal Apocalypse, Testament of Joseph), so the image signifies messianic power and conquest, not only sacrifice. Mainstream interpretation typically holds the reverse — that Revelation deliberately subverts warrior expectations by making the slain Lamb the victor — but the warrior-lamb background reading is a recognized scholarly position.\",\n      \"basis\": [\n        \"Revelation 5:5-6 (Lion of Judah revealed as Lamb)\",\n        \"Revelation 6:16 ('the wrath of the Lamb')\",\n        \"Revelation 17:14 ('the Lamb will conquer them')\",\n        \"1 Enoch 89-90 (extrabiblical background)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Lambs as symbols of Christ's followers/believers: vulnerable, innocent disciples entrusted to pastoral care. This is a distinct, well-recognized secondary use of lamb imagery, applied to the flock rather than to Christ.\",\n      \"basis\": [\n        \"John 21:15 ('Feed my lambs')\",\n        \"Luke 10:3 ('I am sending you out like lambs among wolves')\",\n        \"Isaiah 40:11\",\n        \"Psalm 23 (sheep/shepherd imagery generally)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'Lamb of God' as the suffering-servant figure primarily, i.e., a servant/martyr identification rather than a cultic-sacrificial one; some historical-critical scholars (following e.g. C.H. Dodd and debates over the Aramaic talya, which can mean 'servant/boy' as well as 'lamb') argue John the Baptist's phrase originally denoted the Servant of the Lord or even an apocalyptic deliverer rather than a sacrificial victim.\",\n      \"basis\": [\n        \"Isaiah 53 (servant songs)\",\n        \"John 1:29-34 (exegetical debate over the Baptist's intent)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The counterfeit lamb: the second beast of Revelation has 'two horns like a lamb' and is standardly read as a parody or imitation of the true Lamb (the false prophet/antichrist figure). This is a different referent, not a different reading of Christ-as-Lamb.\",\n      \"basis\": [\n        \"Revelation 13:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The daily Tamid offering as the primary background (rather than Passover): a scholarly reading that the morning-and-evening lamb of the continual burnt offering underlies 'Lamb of God' imagery.\",\n      \"basis\": [\n        \"Exodus 29:38-42\",\n        \"Numbers 28:3-8\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"This is one of the most stable and widely attested symbols in Christian interpretation, affirmed across Catholic, Orthodox, and Protestant traditions (e.g., the liturgical 'Agnus Dei') and across academic biblical scholarship. Disagreements concern which Old Testament background is primary (Passover lamb, Isaiah 53 servant, Tamid, Akedah) and how much Revelation's Lamb subverts versus embodies militant messianism — not whether the Lamb symbolizes Christ and his redemptive death. The secondary use of lamb imagery for believers is universally recognized but treated as distinct from the christological title.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Jesus Christ as the ultimate, unblemished sacrifice for human sin, fulfilling the Old Testament sacrificial system (especially the Passover lamb), and reigning as the victorious, slain-yet-living King in Revelation.\",\n  \"primary_basis\": [\n    \"John 1:29\",\n    \"Revelation 5:6-14\",\n    \"Isaiah 53:7\",\n    \"1 Corinthians 5:7\",\n    \"1 Peter 1:19\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A fierce, apocalyptic conqueror and judge who executes God's wrath upon the wicked.\",\n      \"basis\": [\n        \"Revelation 6:16-17\",\n        \"Revelation 17:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The historical Passover sacrifice representing God's deliverance of Israel from Egypt and judgment.\",\n      \"basis\": [\n        \"Exodus 12:1-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Vulnerable followers of Christ or believers in need of pastoral care.\",\n      \"basis\": [\n        \"John 21:15\",\n        \"Luke 10:3\",\n        \"Isaiah 40:11\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The identification of 'The Lamb' (Agnus Dei) with Jesus Christ is one of the most universal and settled symbols in Christian theology, bridging the Old Testament sacrificial system with New Testament atonement theology and apocalyptic victory.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Jesus Christ as the sacrificial, redemptive Lamb—innocent and slain for sin, yet risen, victorious, enthroned, and worthy of worship.\",\n  \"primary_basis\": [\n    \"John 1:29, 36 identifies Jesus as “the Lamb of God” who takes away the sin of the world.\",\n    \"Revelation 5:6-14 portrays the slain yet living Lamb as worthy to open the scroll and receive universal worship.\",\n    \"Revelation 7:9-17; 12:11; 13:8; 17:14; 19:7-9; 21:22-27; 22:1-3 develop the Lamb as redeemer, conqueror, bridegroom, judge, and divine ruler.\",\n    \"1 Peter 1:18-19 describes Christ as a spotless and unblemished lamb whose blood redeems believers.\",\n    \"Isaiah 53:7, read christologically in Acts 8:32-35, supplies the image of the innocent suffering servant led like a lamb to slaughter.\",\n    \"Exodus 12:1-32 and 1 Corinthians 5:7 connect Christ with the Passover lamb and deliverance through sacrificial blood.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Passover lamb specifically: Christ as the agent of a new exodus whose blood delivers from judgment and bondage.\",\n      \"basis\": [\n        \"Exodus 12:1-32\",\n        \"John 19:14, 31-36\",\n        \"1 Corinthians 5:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Isaianic suffering servant: Christ as innocent, submissive, and suffering on behalf of others.\",\n      \"basis\": [\n        \"Isaiah 53:4-7\",\n        \"Acts 8:32-35\",\n        \"1 Peter 1:19; 2:21-25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The victorious apocalyptic Messiah: especially in Revelation, the Lamb is a conquering king, judge, and ruler whose victory comes through sacrificial death.\",\n      \"basis\": [\n        \"Revelation 5:5-10\",\n        \"Revelation 6:15-17\",\n        \"Revelation 17:14\",\n        \"Revelation 19:7-16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A representative sacrificial lamb without commitment to one exclusive Old Testament background, such as Passover, Isaiah 53, the daily temple offering, or other sacrifices.\",\n      \"basis\": [\n        \"John 1:29, 36\",\n        \"Leviticus 4:32-35\",\n        \"Numbers 28:3-8\",\n        \"Isaiah 53:7\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In other contexts, lamb imagery can denote vulnerable or faithful people rather than Christ, or can be imitated deceptively by an anti-Christian power; these are contextual uses rather than the normal meaning of the title “the Lamb.”\",\n      \"basis\": [\n        \"Luke 10:3\",\n        \"John 21:15\",\n        \"Revelation 13:11\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation overwhelmingly identifies the titular “Lamb,” especially in John and Revelation, with Jesus Christ. Debate concerns which scriptural sacrificial background is primary and whether sacrifice, Passover deliverance, suffering innocence, or apocalyptic victory receives the main emphasis; these readings are usually complementary rather than mutually exclusive.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Jesus Christ as the sacrificial Lamb of God whose death atones for sin\",\n  \"primary_basis\": [\n    \"John 1:29, 36 (Lamb of God who takes away the sin of the world)\",\n    \"Revelation 5:6-12; 7:14; 12:11; 13:8 (the slain yet victorious Lamb)\",\n    \"1 Corinthians 5:7 (Christ our Passover lamb)\",\n    \"1 Peter 1:18-19 (redeemed by the precious blood of Christ, a lamb without blemish)\",\n    \"Isaiah 53:7 (suffering servant led like a lamb to the slaughter, read christologically)\",\n    \"Exodus 12 (Passover lamb as typological background)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"General symbol of innocence, meekness, or gentleness (sometimes applied to believers or as a moral quality rather than specifically to Christ's atonement)\",\n      \"basis\": [\n        \"Isaiah 11:6; 65:25 (peaceable kingdom imagery)\",\n        \"Luke 10:3; Matthew 10:16 (disciples sent as lambs among wolves)\",\n        \"Broader pastoral and prophetic lamb imagery\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Passover or temple sacrificial lamb understood primarily in its original Israelite cultic sense, without necessary reference to Jesus\",\n      \"basis\": [\n        \"Exodus 12\",\n        \"Leviticus sacrificial regulations\",\n        \"Historical-critical readings that stop at OT cult\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Apocalyptic or messianic conqueror figure emphasizing victory and judgment more than (or instead of) substitutionary sacrifice\",\n      \"basis\": [\n        \"Revelation's Lamb who opens seals, wages war, and rules (e.g., Rev 6; 17:14)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Literal animal or non-christological metaphor with no fixed doctrinal load\",\n      \"basis\": [\n        \"Ordinary pastoral references in OT narrative and poetry\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In mainstream historic Christian teaching and biblical interpretation, 'the Lamb' (especially capitalized or in titular use) overwhelmingly denotes Jesus Christ in his atoning, paschal role, integrating OT sacrifice typology with NT fulfillment texts. Alternative emphases exist but rarely displace this core identification in confessional or standard exegetical literature.\"\n}\n\nBOOK ENTRY\nJesus Christ — the unblemished Passover sacrifice, slain to redeem His people and now reigning.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 12:5; Isa 53:7; John 1:29; 1 Cor 5:7; 1 Pet 1:18-19; Rev 5:6-13)\n\nAVAILABLE KJV EXCERPTS\nExodus 12:5 — Your lamb shall be without blemish, a male of the first year: ye shall take it out from the sheep, or from the goats:\nIsaiah 53:7 — He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.\nJohn 1:29 — The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world.\n1 Corinthians 5:7 — Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Christ our passover is sacrificed for us:\n1 Peter 1:18 — Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers;\n1 Peter 1:19 — But with the precious blood of Christ, as of a lamb without blemish and without spot:\nRevelation 5:6 — And I beheld, and, lo, in the midst of the throne and of the four beasts, and in the midst of the elders, stood a Lamb as it had been slain, having seven horns and seven eyes, which are the seven Spirits of God sent forth into all the earth.\nRevelation 5:7 — And he came and took the book out of the right hand of him that sat upon the throne.\nRevelation 5:8 — And when he had taken the book, the four beasts and four and twenty elders fell down before the Lamb, having every one of them harps, and golden vials full of odours, which are the prayers of saints.\nRevelation 5:9 — And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to God by thy blood out of every kindred, and tongue, and people, and nation;\nRevelation 5:10 — And hast made us unto our God kings and priests: and we shall reign on the earth.\nRevelation 5:11 — And I beheld, and I heard the voice of many angels round about the throne and the beasts and the elders: and the number of them was ten thousand times ten thousand, and thousands of thousands;\nRevelation 5:12 — Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing.\nRevelation 5:13 — And every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "677af6969419acebdda7b90aea543e96225aee0cbba70c5e8506756249e9cca9",
+  "cache": {
+    "hit": false
+  }
+}

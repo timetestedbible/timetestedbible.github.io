@@ -1,0 +1,130 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "midnight",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nMidnight\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In most Christian teaching, midnight symbolizes the darkest hour—a time of crisis, judgment, and sudden divine intervention—and, above all in the New Testament, the unexpected moment of the Lord's coming, calling believers to watchfulness. Preachers commonly present midnight as the point of deepest darkness at which God decisively acts, whether in judgment (the death of Egypt's firstborn) or in deliverance and visitation (the bridegroom's arrival in the parable of the ten virgins).\",\n  \"primary_basis\": [\n    \"Exodus 12:29 (at midnight the LORD struck down the firstborn of Egypt)\",\n    \"Matthew 25:6 (at midnight the cry went out, 'Behold, the bridegroom comes')\",\n    \"Mark 13:35 (watch, for you do not know when the master comes—evening, midnight, cockcrow, or morning)\",\n    \"Exodus 11:4 (about midnight I will go out into the midst of Egypt)\",\n    \"Acts 16:25-26 (at midnight Paul and Silas prayed and sang, and God delivered them)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Midnight as the hour of eschatological watchfulness specifically—the unknown time of Christ's return and the parousia, urging readiness (an emphasis narrower than general divine intervention)\",\n      \"basis\": [\n        \"Matthew 25:1-13\",\n        \"Mark 13:35\",\n        \"Luke 12:35-40\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Midnight as the hour of prayer, worship, and devotion—praising God in the depths of trial, often linked to deliverance following faithful prayer\",\n      \"basis\": [\n        \"Acts 16:25\",\n        \"Psalm 119:62 (at midnight I rise to give thanks)\",\n        \"Job 35:10 (songs in the night, often paired homiletically)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Midnight as sudden judgment and death striking without warning—God's visitation upon the wicked\",\n      \"basis\": [\n        \"Exodus 12:29\",\n        \"Job 34:20 (in a moment they die, at midnight the people are shaken)\",\n        \"Luke 12:20 ('this night your soul is required of you,' often connected homiletically)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Midnight as spiritual darkness, despair, or the 'dark night of the soul'—a devotional/mystical reading of personal crisis before dawn's deliverance, popular in preaching (e.g., 'a knock at midnight' traditions)\",\n      \"basis\": [\n        \"Luke 11:5-8 (the friend who comes at midnight asking for bread)\",\n        \"Psalm 30:5 (weeping may endure for a night, but joy comes in the morning—used supportively)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Midnight as importunity/persistence in prayer—the inconvenient hour highlighting bold asking\",\n      \"basis\": [\n        \"Luke 11:5-8\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Midnight as a merely literal time marker with no fixed symbolic value, its significance varying entirely by context (the position of many critical commentators)\",\n      \"basis\": [\n        \"Ruth 3:8\",\n        \"Judges 16:3\",\n        \"Acts 20:7\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Midnight is a recurring biblical motif rather than a term with a single fixed symbolic definition. There is broad, recognizable agreement that it connotes the darkest hour and sudden divine action—judgment in Exodus, the bridegroom's arrival in Matthew 25, deliverance in Acts 16—but the emphasis (judgment, watchfulness, prayer, despair-before-dawn) varies by tradition and passage. Homiletical traditions (e.g., African-American preaching, Martin Luther King Jr.'s 'A Knock at Midnight') have strengthened the 'crisis/dark night before deliverance' reading. Because these strands overlap without one universally codified definition, consensus should be described as a cluster of related meanings centered on darkness, crisis, and divine visitation, not a single settled interpretation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The hour of sudden divine intervention, unexpected judgment, and the unanticipated return of Christ, often marking a climactic transition from darkness to deliverance.\",\n  \"primary_basis\": [\n    \"Matthew 25:6\",\n    \"Exodus 12:29\",\n    \"Mark 13:35\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A period of deep spiritual darkness, human ignorance, or the peak of worldly sin before the light of Christ.\",\n      \"basis\": [\n        \"Romans 13:12\",\n        \"1 Thessalonians 5:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An hour of urgent intercession, desperate prayer, and unexpected breakthrough or deliverance in the midst of trials.\",\n      \"basis\": [\n        \"Luke 11:5-8\",\n        \"Acts 16:25\",\n        \"Psalm 119:62\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The dominant eschatological symbolism is derived largely from the Parable of the Ten Virgins and the Exodus Passover account, establishing midnight as the archetypal moment of sudden visitation requiring constant spiritual vigilance.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"The climactic or darkest hour of crisis, especially an unexpected moment when God intervenes in judgment or deliverance and people must be spiritually ready.\",\n  \"primary_basis\": [\n    \"Matthew 25:1–13, especially 25:6: the bridegroom arrives at midnight, commonly applied to Christ’s unexpected return and the need for readiness.\",\n    \"Exodus 11:4–6; 12:29–31: at midnight God judges Egypt’s firstborn and initiates Israel’s deliverance.\",\n    \"Acts 16:25–26: Paul and Silas pray and sing at midnight before the earthquake opens the prison.\",\n    \"Mark 13:32–37, especially 13:35: midnight is one possible watch in which the returning master may arrive, underscoring vigilance and an unknown time.\",\n    \"Job 34:20: midnight is associated with sudden judgment and death.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Second Coming of Christ specifically, with the “midnight cry” representing the announcement immediately preceding his arrival.\",\n      \"basis\": [\n        \"Matthew 25:6\",\n        \"Mark 13:35\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual or moral darkness—the lowest point of suffering, danger, or apparent hopelessness.\",\n      \"basis\": [\n        \"Exodus 12:29–31\",\n        \"Acts 16:25–26\",\n        \"Job 34:20\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A turning point from darkness toward deliverance, renewal, or a new beginning.\",\n      \"basis\": [\n        \"Exodus 12:29–31\",\n        \"Acts 16:25–26\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A special hour of prayer, praise, or devotion.\",\n      \"basis\": [\n        \"Psalm 119:62\",\n        \"Acts 16:25\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A prophetic chronological marker identifying a precise historical date, era, or end-times timetable.\",\n      \"basis\": [\n        \"Matthew 25:6, interpreted through particular prophetic systems rather than an explicit biblical definition\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning for every biblical occurrence of “midnight”; many uses are simply temporal. The strongest recurring interpretive cluster joins darkness or crisis, sudden divine action, and the need for watchfulness. In explicitly eschatological Christian teaching, the unexpected coming of Christ is often foregrounded.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The unexpected hour of Christ's return or sudden divine judgment/intervention, often in the darkest moment\",\n  \"primary_basis\": [\n    \"Matthew 25:6 (parable of the ten virgins: cry at midnight that the bridegroom has come)\",\n    \"Mark 13:35 (watchfulness because the master may come at midnight)\",\n    \"Exodus 11:4; 12:29 (Lord's judgment striking Egypt at midnight)\",\n    \"Matthew 24:42-44; 1 Thessalonians 5:2 (thief-in-the-night motif linked to night watches)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A time of prayer, praise, and deliverance amid trial\",\n      \"basis\": [\n        \"Acts 16:25 (Paul and Silas praying and singing at midnight before earthquake deliverance)\",\n        \"Psalm 119:62 (rising at midnight to give thanks)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual darkness, crisis, or the depth of human extremity before God's act\",\n      \"basis\": [\n        \"Job 34:20 (people dying in a moment at midnight)\",\n        \"Ruth 3:8 (turning point at midnight on the threshing floor)\",\n        \"General association of night/midnight with gloom in prophetic and wisdom literature\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal chronological marker without inherent symbolism\",\n      \"basis\": [\n        \"Narrative time references (e.g., Judges 16:3; Acts 20:7) treated by some exegetes as plain historiography\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation consistently treats midnight as symbolically charged rather than neutral, with the Matthean/Markan eschatological watchfulness motif and the Exodus judgment scene forming the dominant strand across patristic, medieval, Reformation, and modern conservative teaching. Alternative emphases (prayer/deliverance or crisis) are well-attested but secondary and usually complementary rather than contradictory. No major tradition assigns midnight a wholly unrelated primary symbol.\"\n}\n\nBOOK ENTRY\nThe halving of the night (Hebrew chatsot, the night divided) — the appointed hour of visitation, when judgment falls on the oppressor and the captive goes free in one stroke. It is also the one hour the sky itself announces: the full moon alone stands at its height at the night's halving, so the night of fulness publishes the very hour the bridegroom's cry names.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: a literal hour carrying darkest-before-dawn and suddenness themes — no fixed meaning, and no connection to the moon.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ex 11:4; 12:29; Ruth 3:8; Judg 16:3; Job 34:20; Ps 119:62; Matt 25:6; Acts 16:25-26) · see Return on the Full Moon, ch. 32\n\nAVAILABLE KJV EXCERPTS\nExodus 11:4 — And Moses said, Thus saith the LORD, About midnight will I go out into the midst of Egypt:\nExodus 12:29 — And it came to pass, that at midnight the LORD smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh that sat on his throne unto the firstborn of the captive that was in the dungeon; and all the firstborn of cattle.\nRuth 3:8 — And it came to pass at midnight, that the man was afraid, and turned himself: and, behold, a woman lay at his feet.\nJudges 16:3 — And Samson lay till midnight, and arose at midnight, and took the doors of the gate of the city, and the two posts, and went away with them, bar and all, and put them upon his shoulders, and carried them up to the top of an hill that is before Hebron.\nJob 34:20 — In a moment shall they die, and the people shall be troubled at midnight, and pass away: and the mighty shall be taken away without hand.\nPsalms 119:62 — At midnight I will rise to give thanks unto thee because of thy righteous judgments.\nMatthew 25:6 — And at midnight there was a cry made, Behold, the bridegroom cometh; go ye out to meet him.\nActs 16:25 — And at midnight Paul and Silas prayed, and sang praises unto God: and the prisoners heard them.\nActs 16:26 — And suddenly there was a great earthquake, so that the foundations of the prison were shaken: and immediately all the doors were opened, and every one's bands were loosed.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "ec200bee948eed1a221d1bbc8da6f9672d83bd90c0830d5196c752eb33f995f0",
+  "cache": {
+    "hit": true,
+    "source": "same-run raw response"
+  }
+}

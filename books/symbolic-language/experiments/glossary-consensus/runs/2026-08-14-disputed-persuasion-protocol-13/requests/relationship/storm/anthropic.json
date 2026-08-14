@@ -1,0 +1,127 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "storm",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nStorm, tempest\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In the mainstream of Christian teaching and biblical interpretation, the storm or tempest most commonly symbolizes divine judgment and the overwhelming power of God — God's wrath breaking in upon the wicked and, correlatively, God's sovereign command over chaos. Closely fused with this in traditional exegesis is the storm as theophany: the tempest as the vehicle or accompaniment of God's presence and speech.\",\n  \"primary_basis\": [\n    \"Nahum 1:3 — 'The LORD hath his way in the whirlwind and in the storm'\",\n    \"Psalm 83:15 — 'persecute them with thy tempest, and make them afraid with thy storm'\",\n    \"Isaiah 29:6 — visitation 'with storm and tempest, and the flame of devouring fire'\",\n    \"Jeremiah 23:19 / 30:23 — 'a whirlwind of the LORD is gone forth in fury... a grievous whirlwind: it shall fall grievously upon the head of the wicked'\",\n    \"Ezekiel 13:11-13 — a stormy wind rending the whitewashed wall in God's fury\",\n    \"Job 38:1 — 'the LORD answered Job out of the whirlwind' (storm as theophany)\",\n    \"Jonah 1:4-15 — 'the LORD sent out a great wind into the sea, and there was a mighty tempest' as judgment on the fleeing prophet\",\n    \"Psalm 107:23-30 — God raises the stormy wind and stills it, mariners cry to him and he brings them to their haven\",\n    \"Psalm 29 — the voice of the LORD in the thunderstorm\",\n    \"Exodus 19:16-19 — thunder, lightning, and thick cloud at Sinai\",\n    \"Mark 4:35-41 (Matthew 8:23-27; Luke 8:22-25) — Jesus rebukes the wind and sea, demonstrating divine authority over the storm\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Storms as the trials, tribulations, and adversities of the believer's life or of the Church, which Christ calms or carries the faithful through — the standard devotional/homiletic reading, in which the boat is the Church or the soul and the tempest is affliction, persecution, or crisis.\",\n      \"basis\": [\n        \"Mark 4:35-41 and parallels (Christ asleep in the boat during the storm)\",\n        \"Matthew 14:22-33 (Peter walking on the water amid wind and waves)\",\n        \"Matthew 7:24-27 (the house on the rock withstanding wind, rain, and floods)\",\n        \"Acts 27 (Paul's storm and shipwreck read as endurance under trial)\",\n        \"Isaiah 25:4 and Isaiah 32:2 (God/a man as 'a refuge from the storm')\",\n        \"Psalm 107:28-30 (deliverance from the storm as answered prayer)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Storm and raging sea as primordial chaos or the forces opposed to God (the 'chaoskampf' motif of ancient Near Eastern background), which God subdues; Jesus' stilling of the storm is then read christologically as his exercising Yahweh's own mastery over chaos.\",\n      \"basis\": [\n        \"Genesis 1:2 with the deep and the wind/Spirit over the waters\",\n        \"Psalm 89:9 and Psalm 65:7 — God stills the raging of the sea\",\n        \"Job 26:11-13 and Psalm 74:13-14 — subduing the sea and its monsters\",\n        \"Mark 4:39 — Jesus 'rebukes' the wind as one rebukes a hostile power\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Storm imagery as eschatological upheaval — the shaking of nations and the day of the LORD, including political and military turmoil portrayed as whirlwind and tempest.\",\n      \"basis\": [\n        \"Isaiah 28:2 and Isaiah 29:6\",\n        \"Jeremiah 25:32 — 'a great whirlwind shall be raised up from the coasts of the earth'\",\n        \"Zechariah 9:14 — the Lord going forth 'with whirlwinds of the south'\",\n        \"Revelation imagery of cosmic disturbance (e.g., Revelation 6:12-14; 16:18)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The whirlwind as the vehicle of divine transport or rapture, distinct from judgment — e.g., Elijah taken up.\",\n      \"basis\": [\n        \"2 Kings 2:1, 11 — Elijah taken to heaven by a whirlwind\",\n        \"Ezekiel 1:4 — the storm-wind bearing the chariot-throne vision\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Storms as demonic or satanic in origin (some charismatic and popular strands, drawing on Jesus 'rebuking' the storm and on Job), rather than sent by God.\",\n      \"basis\": [\n        \"Mark 4:39 — the exorcism-like rebuke of wind and sea\",\n        \"Job 1:19 — the great wind that killed Job's children within Satan's testing\",\n        \"Ephesians 2:2 — 'the prince of the power of the air' (extended application)\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable but two-tiered consensus. In academic biblical studies and classical exegesis, the storm is primarily theophany and divine judgment — God's power manifested against evil or over chaos. In popular preaching and devotional literature, the dominant application is 'storms of life' (trials that Christ stills or sees the believer through). These two readings are usually treated as complementary rather than competing: the tempest signifies overwhelming power beyond human control, whether wielded by God in judgment/revelation or experienced by believers as trial. No single passage list is universal, but Nahum 1:3, Job 38:1, Psalm 107, Jonah 1, and Mark 4:35-41 are the standard proof texts across traditions (Catholic, Orthodox, and Protestant commentators alike).\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Trials, tribulations, chaotic distress, and overwhelming life circumstances that test faith; also widely seen as a manifestation of divine judgment or power.\",\n  \"primary_basis\": [\n    \"Mark 4:35-41\",\n    \"Matthew 8:23-27\",\n    \"Psalm 107:25-29\",\n    \"Jonah 1:4-15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine theophany, God's majestic presence, and His sovereign, awe-inspiring power.\",\n      \"basis\": [\n        \"Job 38:1\",\n        \"Exodus 19:16\",\n        \"Nahum 1:3\",\n        \"Ezekiel 1:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine wrath and judgment poured out upon the wicked or disobedient.\",\n      \"basis\": [\n        \"Isaiah 29:6\",\n        \"Jeremiah 23:19\",\n        \"Psalm 83:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual warfare and demonic opposition, often drawn from Jesus rebuking the wind as one would an unclean spirit.\",\n      \"basis\": [\n        \"Mark 4:39\",\n        \"Luke 8:24\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical interpretation of storms generally falls into two distinct categories based on context: Old Testament occurrences often symbolize God's sovereign presence, wrath, or judgment, whereas New Testament occurrences are overwhelmingly interpreted in pastoral teaching as the chaotic trials, tribulations, and spiritual attacks of life over which Christ has ultimate authority.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Divine judgment or wrath arriving as overwhelming calamity. In prophetic and apocalyptic imagery, a storm or tempest commonly portrays God’s forceful visitation against sin, nations, or false security.\",\n  \"primary_basis\": [\n    \"Isaiah 28:2—an overpowering storm depicts the Lord’s judgment.\",\n    \"Isaiah 29:6—thunder, earthquake, whirlwind, and tempest accompany divine punishment.\",\n    \"Jeremiah 23:19-20; 30:23-24—the storm of the LORD is explicitly identified with his wrath and judgment.\",\n    \"Ezekiel 13:11-13—a storm, flooding rain, and hail express God’s wrath against false prophets.\",\n    \"Nahum 1:3-6—the whirlwind and storm portray the LORD’s power and anger in judgment.\",\n    \"Psalm 83:13-15—a tempest and hurricane are invoked as images of God pursuing his enemies.\",\n    \"Proverbs 1:27—calamity and distress arrive like a storm as the consequence of rejecting wisdom.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Trials, suffering, fear, or instability in human life, through which faith is tested and divine deliverance may be experienced.\",\n      \"basis\": [\n        \"Matthew 8:23-27; Mark 4:35-41; Luke 8:22-25—the calming of the storm is frequently applied in Christian teaching to fear and trials.\",\n        \"Matthew 7:24-27—the storm tests whether a life is founded on Christ’s teaching.\",\n        \"Psalm 107:23-30—sailors in a storm cry to God, who brings them to safety.\",\n        \"Jonah 1:4-16—a storm creates crisis, exposes disobedience, and leads to repentance.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Chaos, disorder, or hostile powers threatening creation and God’s people.\",\n      \"basis\": [\n        \"Genesis 1:2 is often read alongside broader biblical imagery of unruly waters, though it does not itself mention a storm.\",\n        \"Psalm 46:1-3; 69:1-2,14-15—turbulent waters represent danger and overwhelming chaos.\",\n        \"Psalm 107:25-29—God exercises sovereignty over stormy seas.\",\n        \"Mark 4:35-41 is sometimes interpreted as Christ’s victory over chaotic or demonic powers, not merely bad weather.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A manifestation of God’s presence, majesty, and sovereign power—a storm theophany rather than primarily a symbol of punishment.\",\n      \"basis\": [\n        \"Psalm 18:7-15—the LORD appears amid clouds, thunder, hail, and wind.\",\n        \"Psalm 29—the divine voice rules over thunder, waters, and the storm.\",\n        \"Job 38:1; 40:6—God answers Job from the whirlwind.\",\n        \"Ezekiel 1:4-28—a storm wind and great cloud introduce the vision of divine glory.\",\n        \"Nahum 1:3—the storm is associated with God’s majestic passage.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The church or the believer endangered by persecution, with the boat or ark representing God’s people and Christ preserving them.\",\n      \"basis\": [\n        \"Matthew 8:23-27 and Mark 4:35-41 received ecclesial readings in patristic and later Christian interpretation.\",\n        \"Genesis 6–9 and 1 Peter 3:20-21 contribute to related ark-and-church symbolism, although the storm itself is not consistently isolated as the symbol of persecution.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"There is no single settled symbolic meaning applicable to every biblical storm. Prophetic references most characteristically use storm imagery for divine judgment, while preaching and devotional interpretation often treats storms as life’s trials. Narrative, poetic, and theophanic contexts can instead emphasize chaos, deliverance, or God’s presence and power.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"adversity, trials, tribulations, or times of distress that test faith\",\n  \"primary_basis\": [\n    \"Mark 4:35-41\",\n    \"Matthew 8:23-27\",\n    \"Luke 8:22-25\",\n    \"Psalm 107:23-30\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"divine judgment, wrath, or destructive power of God\",\n      \"basis\": [\n        \"Nahum 1:3\",\n        \"Jeremiah 23:19\",\n        \"Isaiah 29:6\",\n        \"Ezekiel 13:11-13\",\n        \"Job 27:20-23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"theophany or manifestation of God's majesty and sovereign power\",\n      \"basis\": [\n        \"Psalm 29\",\n        \"Job 38:1\",\n        \"Exodus 19:16-19\",\n        \"1 Kings 19:11-12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"chaos, disorder, or forces opposed to divine order\",\n      \"basis\": [\n        \"Jonah 1\",\n        \"Psalm 89:9-10\",\n        \"Revelation 21:1 (no more sea)\",\n        \"ancient Near Eastern chaoskampf background filtered through biblical texts\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Biblical usage is polyvalent: storms function both as metaphors for human trouble (especially in popular Christian teaching via the Gospel calming-of-the-storm pericopes) and as vehicles of divine judgment or theophany (especially in the Prophets, Psalms, and Job). No single fixed symbolic meaning dominates across all Christian traditions or scholarly biblical studies.\"\n}\n\nBOOK ENTRY\nThe nations in turmoil — the raging sea, stilled at Christ's word, “Peace, be still”.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\nCommonly taught: divine judgment, and the trials of life which Christ has power to calm.\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 65:7; Isa 17:12-13; Mark 4:39; Luke 21:25) · see Sea & Waters, ch. 40\n\nAVAILABLE KJV EXCERPTS\nPsalms 65:7 — Which stilleth the noise of the seas, the noise of their waves, and the tumult of the people.\nIsaiah 17:12 — Woe to the multitude of many people, which make a noise like the noise of the seas; and to the rushing of nations, that make a rushing like the rushing of mighty waters!\nIsaiah 17:13 — The nations shall rush like the rushing of many waters: but God shall rebuke them, and they shall flee far off, and shall be chased as the chaff of the mountains before the wind, and like a rolling thing before the whirlwind.\nMark 4:39 — And he arose, and rebuked the wind, and said unto the sea, Peace, be still. And the wind ceased, and there was a great calm.\nLuke 21:25 — And there shall be signs in the sun, and in the moon, and in the stars; and upon the earth distress of nations, with perplexity; the sea and the waves roaring;\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "122623b4076bb7b36116a45f9373c6fecaba14a2a23c726d706506603e629a34",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/relationship/storm/anthropic.json"
+    }
+  }
+}

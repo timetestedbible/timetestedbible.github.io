@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920354,
+  "completed_at": 1783920370,
+  "id": "85eb5b22-b386-93cd-a715-8f5f8077928f",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_85eb5b22-b386-93cd-a715-8f5f8077928f",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Night\" in Christian teaching and biblical interpretation, based on independent knowledge.\n{\n  \"primary_meaning\": \"Night symbolizes the realm of darkness, sin, evil, ignorance, and the absence of God's light and presence.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Spiritual darkness, evil, sin, ignorance, or the absence of God's light and presence (in contrast to day/light)\",\n  \"primary_basis\": [\n    \"Romans 13:12\",\n    \"1 Thessalonians 5:5-7\",\n    \"John 3:19-20\",\n    \"John 9:4\",\n    \"John 11:10\",\n    \"Ephesians 5:8-11\",\n    \"Revelation 21:25; 22:5\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A time of divine guidance, protection, or God's presence (e.g., pillar of fire)\",\n      \"basis\": [\n        \"Exodus 13:21-22\",\n        \"Psalm 121:6\",\n        \"Psalm 16:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A season of trial, suffering, weeping, or waiting for deliverance\",\n      \"basis\": [\n        \"Psalm 30:5\",\n        \"Isaiah 21:11-12\",\n        \"Job 7:3-4\",\n        \"Psalm 77:2-6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The present evil age or time before the full dawning of God's kingdom / second coming\",\n      \"basis\": [\n        \"Romans 13:11-12\",\n        \"1 Thessalonians 5:1-8\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Rest, sleep, or natural cessation of work (sometimes extended to death)\",\n      \"basis\": [\n        \"Psalm 4:8\",\n        \"John 9:4\",\n        \"Psalm 127:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian biblical interpretation, night is most consistently and prominently used as a foil to light/day (God, Christ, truth, righteousness). Positive or neutral uses exist but are secondary to the darkness/evil motif in didactic and apocalyptic teaching. No single exhaustive meaning covers every occurrence; context determines valence.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_85eb5b22-b386-93cd-a715-8f5f8077928f",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1581,
+    "output_tokens_details": {
+      "reasoning_tokens": 1066
+    },
+    "total_tokens": 2183,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 101140000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1581
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

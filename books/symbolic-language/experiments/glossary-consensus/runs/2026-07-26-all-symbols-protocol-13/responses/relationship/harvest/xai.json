@@ -1,0 +1,178 @@
+{
+  "created_at": 1783921569,
+  "completed_at": 1783921580,
+  "id": "0cf54d0d-cfaf-9f3e-8d94-731a0bd23356",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0cf54d0d-cfaf-9f3e-8d94-731a0bd23356",
+      "summary": [
+        {
+          "text": "The task is to classify the relationship between the blind consensus responses and the book's entry for the term \"Harvest\".\n{\n  \"core_relation\": \"MATCH\",\n  \"extension_relation\": \"REFINED\",\n  \"core_support\": \"strong\",\n  \"extension_note\": \"The book narrows the referent to the eschatological end-of-the-age reaping of the field of mankind (wheat gathered, chaff burned), excluding or subordin the evangelistic/missionary harvest and moral-reaping senses that the consensus treats as common or dominant alternatives. The book's citations (Joel 3:13; Matt 13:39) supply strong support for the primary identification.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Consensus responses uniformly identify the primary symbolic meaning of harvest as the eschatological end of the age, when the righteous are gathered (as wheat) and the wicked are judged or destroyed (as chaff or in the winepress), citing Matthew 13, Revelation 14, and Joel 3; secondary alternatives include evangelistic ingathering, moral sowing/reaping, firstfruits/resurrection, and covenant blessing/curse.\",\n  \"book_summary\": \"The book identifies harvest as the end of the age, when the field of mankind is reaped with the wheat gathered and the chaff burned.\",\n  \"consensus_core_identification\": \"Eschatological end-of-the-age reaping that gathers the righteous and judges/separates the wicked.\",\n  \"book_core_identification\": \"End of the age reaping of mankind’s field that gathers wheat and burns chaff.\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"None; the book’s formulation is coextensive with the consensus primary referent and does not add, exclude, or reclassify cases.\",\n  \"material_contradiction\": \"None\",\n  \"rationale\": \"Both the consensus primary and the book’s entry reduce to the identical core identification drawn from the same key texts (Matt 13:39; Joel 3:13): the final reaping of humanity at the end of the age that separates wheat (gathered) from chaff (burned). Differences are purely verbal compression; no boundary shift or replacement of referent occurs.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"The book omits the widely attested evangelistic sense that consensus lists as a dominant secondary use, but this does not alter the primary core match.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_0cf54d0d-cfaf-9f3e-8d94-731a0bd23356",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4133,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1117,
+    "output_tokens_details": {
+      "reasoning_tokens": 704
+    },
+    "total_tokens": 5250,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 142000000,
+    "context_details": {
+      "input_tokens": 4133,
+      "output_tokens": 1117
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

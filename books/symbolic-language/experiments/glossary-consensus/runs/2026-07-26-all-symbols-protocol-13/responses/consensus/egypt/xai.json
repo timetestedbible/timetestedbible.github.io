@@ -1,0 +1,156 @@
+{
+  "created_at": 1783844961,
+  "completed_at": 1783844976,
+  "id": "48a2adb5-d254-993b-85fa-42710a15640b",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_48a2adb5-d254-993b-85fa-42710a15640b",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Egypt\" in Christian teaching and biblical interpretation. I must answer from independent knowledge, without searching or inferring from any autho...{\n  \"primary_meaning\": \"Egypt symbolizes bondage to sin, slavery, and the world system opposed to God, from which God delivers His people through the Exodus.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"bondage/slavery to sin and the world system opposed to God, from which God delivers His people\",\n  \"primary_basis\": [\n    \"Exodus 1–14 (Israel's enslavement under Pharaoh and the exodus deliverance)\",\n    \"Deuteronomy 5:6; 6:12; 8:14; 13:5, 10 (repeated formula of YHWH who brought Israel out of Egypt, the house of bondage)\",\n    \"Hosea 11:1 cited in Matthew 2:15 (typological 'out of Egypt I called my son')\",\n    \"1 Corinthians 10:1–11 (Paul's use of the exodus generation as types for Christian life and warning against returning to sin)\",\n    \"Revelation 11:8 (spiritual 'Egypt' as the place where the Lord was crucified, linking to worldly opposition)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"temporary place of refuge, protection, or material provision\",\n      \"basis\": [\n        \"Genesis 12:10; 37–50 (Abraham and especially Joseph's family preserved in Egypt during famine)\",\n        \"Matthew 2:13–15 (holy family's flight to Egypt to escape Herod)\",\n        \"occasional prophetic or historical notes of Egypt as asylum\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"idolatry, pagan power, and object of divine judgment\",\n      \"basis\": [\n        \"Exodus 12:12; Numbers 33:4 (judgment on the gods of Egypt)\",\n        \"Isaiah 19; Jeremiah 46; Ezekiel 29–32 (oracles against Egypt as proud empire and false security)\",\n        \"Isaiah 31:1–3 (warning against trusting Egypt's horses and chariots rather than YHWH)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the flesh or carnal nature (in some allegorical or puritan traditions)\",\n      \"basis\": [\n        \"extended typology of Pharaoh as the flesh/sin nature and Egypt as its domain (building on Exodus and 1 Cor 10)\",\n        \"occasional homiletic or devotional readings equating return to Egypt with fleshly living\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across patristic, medieval, Reformation, and modern evangelical/biblical-studies sources the dominant symbolic register is negative (bondage/world/opposition), grounded in the exodus paradigm; positive or neutral uses (refuge, provision) are secondary and usually limited to specific narratives. No major Christian tradition treats Egypt as a settled positive symbol of the people of God.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_48a2adb5-d254-993b-85fa-42710a15640b",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1575,
+    "output_tokens_details": {
+      "reasoning_tokens": 961
+    },
+    "total_tokens": 2177,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 104620000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1575
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

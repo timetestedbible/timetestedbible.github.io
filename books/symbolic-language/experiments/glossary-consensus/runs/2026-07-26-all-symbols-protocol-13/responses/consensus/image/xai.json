@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920045,
+  "completed_at": 1783920057,
+  "id": "50a7a618-359a-9c04-9492-77f36750f69f",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_50a7a618-359a-9c04-9492-77f36750f69f",
+      "summary": [
+        {
+          "text": "The task is about the \"Image of metals (gold, silver, brass, clay)\" in biblical symbolism. I need to respond with a specific JSON format.\n{\n  \"primary_symbolic_meaning\": \"Successive world empires or kingdoms, representing the progression of human governments from Babylon through Medo-Persia, Greece, and Rome, culminating in a divided kingdom and ultimately God's eternal kingdom.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Successive Gentile world empires (Babylon, Medo-Persia, Greece, Rome, and a final divided kingdom) that dominate history until God's eternal kingdom destroys them and fills the earth\",\n  \"primary_basis\": [\n    \"Daniel 2:31-45\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"General moral or spiritual decline of human government or civilization from glory (gold) to weakness and division (clay), without fixed identification of specific historical empires\",\n      \"basis\": [\n        \"Daniel 2:31-45 (allegorical reading)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Symbolic stages of church history or spiritual conditions rather than political empires\",\n      \"basis\": [\n        \"Daniel 2 (ecclesial/historicist allegory)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The metal image of Nebuchadnezzar’s dream is one of the most consistently interpreted prophetic symbols in Christian tradition; the four-kingdom succession (with Rome and its divisions as the final stage) is the standard reading across patristic, medieval, Reformation, and modern evangelical commentaries, with only minor variations in the precise identity of the fourth kingdom or the clay mixture.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_50a7a618-359a-9c04-9492-77f36750f69f",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 612,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1012,
+    "output_tokens_details": {
+      "reasoning_tokens": 704
+    },
+    "total_tokens": 1624,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 71040000,
+    "context_details": {
+      "input_tokens": 612,
+      "output_tokens": 1012
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -1,0 +1,156 @@
+{
+  "created_at": 1785123082,
+  "completed_at": 1785123099,
+  "id": "7acc2ab7-9a28-9b05-8126-4d86403c23e3",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_7acc2ab7-9a28-9b05-8126-4d86403c23e3",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for the term \"Midnight\" in biblical symbolism. I need to respond with a specific JSON format.\nThe primary symbolic meaning most commonly assigned to \"midnight\" in Christian teaching and biblical interpretation is the sudden, unexpected hour of Christ's return or divine judgment, often depicted as a time of crisis or decision in the darkest hour.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The unexpected hour of Christ's return or sudden divine judgment/intervention, often in the darkest moment\",\n  \"primary_basis\": [\n    \"Matthew 25:6 (parable of the ten virgins: cry at midnight that the bridegroom has come)\",\n    \"Mark 13:35 (watchfulness because the master may come at midnight)\",\n    \"Exodus 11:4; 12:29 (Lord's judgment striking Egypt at midnight)\",\n    \"Matthew 24:42-44; 1 Thessalonians 5:2 (thief-in-the-night motif linked to night watches)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"A time of prayer, praise, and deliverance amid trial\",\n      \"basis\": [\n        \"Acts 16:25 (Paul and Silas praying and singing at midnight before earthquake deliverance)\",\n        \"Psalm 119:62 (rising at midnight to give thanks)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual darkness, crisis, or the depth of human extremity before God's act\",\n      \"basis\": [\n        \"Job 34:20 (people dying in a moment at midnight)\",\n        \"Ruth 3:8 (turning point at midnight on the threshing floor)\",\n        \"General association of night/midnight with gloom in prophetic and wisdom literature\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Literal chronological marker without inherent symbolism\",\n      \"basis\": [\n        \"Narrative time references (e.g., Judges 16:3; Acts 20:7) treated by some exegetes as plain historiography\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation consistently treats midnight as symbolically charged rather than neutral, with the Matthean/Markan eschatological watchfulness motif and the Exodus judgment scene forming the dominant strand across patristic, medieval, Reformation, and modern conservative teaching. Alternative emphases (prayer/deliverance or crisis) are well-attested but secondary and usually complementary rather than contradictory. No major tradition assigns midnight a wholly unrelated primary symbol.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_7acc2ab7-9a28-9b05-8126-4d86403c23e3",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 893,
+    "output_tokens_details": {
+      "reasoning_tokens": 392
+    },
+    "total_tokens": 1495,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 63444000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 893
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

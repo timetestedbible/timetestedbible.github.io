@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "stone",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nStone\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, 'stone' (and the closely related 'rock') most commonly symbolizes Jesus Christ himself, especially as the rejected stone that becomes the cornerstone/foundation of God's building (the church), and simultaneously as a stone of stumbling for unbelievers. The New Testament writers explicitly apply the Old Testament 'stone' texts christologically, and this reading has been dominant from the patristic era onward.\",\n  \"primary_basis\": [\n    \"Psalm 118:22 (the stone the builders rejected has become the cornerstone)\",\n    \"Isaiah 28:16 (a tested, precious cornerstone laid in Zion)\",\n    \"Isaiah 8:14 (a stone of stumbling, a rock of offense)\",\n    \"Daniel 2:34-35, 44-45 (the stone cut without hands that destroys the statue and becomes a great mountain, read christologically/messianically)\",\n    \"Matthew 21:42-44 and parallels (Mark 12:10-11; Luke 20:17-18)\",\n    \"Acts 4:11 (Peter applies Psalm 118:22 to Jesus)\",\n    \"Romans 9:32-33 (stumbling stone in Zion applied to Christ)\",\n    \"Ephesians 2:20 (Christ Jesus himself the cornerstone)\",\n    \"1 Peter 2:4-8 (the living stone, cornerstone, and stone of stumbling all applied to Christ)\",\n    \"1 Corinthians 10:4 (the rock that followed Israel was Christ)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Believers as 'living stones' built into a spiritual house/temple upon Christ the cornerstone \\\\u2014 the church as God's building.\",\n      \"basis\": [\n        \"1 Peter 2:5\",\n        \"Ephesians 2:19-22\",\n        \"1 Corinthians 3:9-17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God himself as 'the Rock' \\\\u2014 a title of stability, refuge, and faithfulness (often merged with the christological reading but originally a divine epithet).\",\n      \"basis\": [\n        \"Deuteronomy 32:4, 15, 18\",\n        \"Psalm 18:2, 31\",\n        \"Psalm 62:2, 6-7\",\n        \"2 Samuel 22:2-3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Peter as the rock on which the church is built \\\\u2014 dominant in Roman Catholic interpretation; Protestant traditions often read the rock as Peter's confession or as Christ, making this a materially contested reading.\",\n      \"basis\": [\n        \"Matthew 16:18\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Stones as memorials or witnesses \\\\u2014 standing stones, altars, and cairns commemorating covenant events (Bethel, Gilgal, Ebenezer).\",\n      \"basis\": [\n        \"Genesis 28:18-22\",\n        \"Joshua 4:1-9, 20-24\",\n        \"Joshua 24:26-27\",\n        \"1 Samuel 7:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Stone as hardness/deadness of the human heart, contrasted with a heart of flesh in regeneration.\",\n      \"basis\": [\n        \"Ezekiel 11:19\",\n        \"Ezekiel 36:26\",\n        \"2 Corinthians 3:3\",\n        \"Zechariah 7:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Stone tablets of the Law \\\\u2014 stone representing the old covenant written externally, contrasted with the Spirit writing on hearts.\",\n      \"basis\": [\n        \"Exodus 31:18\",\n        \"2 Corinthians 3:3, 7\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The 'white stone' with a new name given to the overcomer \\\\u2014 variously read as acquittal, admission (tessera), or personal acceptance by Christ; no agreed interpretation.\",\n      \"basis\": [\n        \"Revelation 2:17\"\n      ],\n      \"prominence\": \"unclear\"\n    },\n    {\n      \"meaning\": \"The Daniel 2 stone read specifically as the kingdom of God (rather than Christ personally) crushing worldly empires \\\\u2014 emphasized in some eschatological traditions (e.g., historicist and Latter-day Saint readings).\",\n      \"basis\": [\n        \"Daniel 2:34-35, 44-45\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Consensus is strong because the New Testament itself performs the interpretation: Jesus, Peter, and Paul all quote the Old Testament stone texts (Psalm 118:22; Isaiah 8:14; 28:16) and apply them directly to Christ, and 1 Peter 2:4-8 gathers all three into a single christological catena. The main genuine interpretive divergence concerns Matthew 16:18 (Peter vs. Peter's confession vs. Christ), which is a confessional dividing line rather than a challenge to the broader Christ-as-cornerstone consensus. Secondary meanings (living stones, memorial stones, stony hearts, tablets of law) are widely acknowledged but treated as distinct sub-motifs rather than rivals to the primary meaning.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Jesus Christ, functioning as the sure foundation, cornerstone, or stumbling block of faith and divine judgment.\",\n  \"primary_basis\": [\n    \"Psalm 118:22\",\n    \"Isaiah 8:14\",\n    \"Isaiah 28:16\",\n    \"Daniel 2:34-45\",\n    \"Matthew 21:42\",\n    \"Acts 4:11\",\n    \"Ephesians 2:20\",\n    \"1 Peter 2:4-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Believers comprising the Church as a spiritual temple (living stones).\",\n      \"basis\": [\n        \"1 Peter 2:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual stubbornness, unresponsiveness to God, or spiritual death (heart of stone).\",\n      \"basis\": [\n        \"Ezekiel 11:19\",\n        \"Ezekiel 36:26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Old Covenant Law or the Ten Commandments.\",\n      \"basis\": [\n        \"Exodus 24:12\",\n        \"Exodus 31:18\",\n        \"2 Corinthians 3:3\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Memorials of God's faithfulness, presence, or help (e.g., Ebenezer).\",\n      \"basis\": [\n        \"Genesis 28:18\",\n        \"Joshua 4:1-9\",\n        \"1 Samuel 7:12\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The primary Christological consensus centers on Christ as both the foundation of the Church and the rock of offense. Context dictates secondary symbols, most notably spiritual stubbornness in the Old Testament prophets and believers as living stones in the New Testament epistles.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Christ as the rejected yet chosen cornerstone—the secure foundation of salvation, faith, and the people of God.\",\n  \"primary_basis\": [\n    \"Psalm 118:22: the rejected stone becomes the cornerstone.\",\n    \"Isaiah 28:16: God lays in Zion a tested, precious cornerstone as a sure foundation.\",\n    \"Matthew 21:42; Mark 12:10–11; Luke 20:17: Jesus applies the rejected-stone text to himself.\",\n    \"Acts 4:11–12: Jesus is the rejected stone who became the cornerstone, with salvation found in him.\",\n    \"Romans 9:32–33: Christ is both the stone over which unbelievers stumble and the one in whom believers trust.\",\n    \"1 Peter 2:4–8: Christ is the living, chosen cornerstone; he is also a stone of stumbling to the disobedient.\",\n    \"Ephesians 2:20–22: Christ is the cornerstone of the spiritual temple formed by God's people.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God or Christ as rock-like strength, protection, permanence, and refuge.\",\n      \"basis\": [\n        \"Deuteronomy 32:4\",\n        \"Psalm 18:2,31,46\",\n        \"Psalm 62:2,6–7\",\n        \"1 Corinthians 10:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Believers collectively as “living stones” built into the Church or spiritual temple.\",\n      \"basis\": [\n        \"1 Peter 2:5\",\n        \"Ephesians 2:21–22\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual hardness, insensibility, or resistance to God, especially in the expression “heart of stone.”\",\n      \"basis\": [\n        \"Ezekiel 11:19\",\n        \"Ezekiel 36:26\",\n        \"Zechariah 7:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An obstacle of stumbling, offense, judgment, or ruin for those who reject God or Christ.\",\n      \"basis\": [\n        \"Isaiah 8:14\",\n        \"Daniel 2:34–35,44–45\",\n        \"Matthew 21:44\",\n        \"Romans 9:32–33\",\n        \"1 Peter 2:7–8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The divinely established kingdom that destroys worldly kingdoms and fills the earth, represented by Daniel's stone; some Christian traditions identify the stone more directly with Christ.\",\n      \"basis\": [\n        \"Daniel 2:34–35,44–45\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A memorial, witness, or enduring testimony to God's acts and covenant commitments.\",\n      \"basis\": [\n        \"Genesis 28:18–22\",\n        \"Joshua 4:1–9,20–24\",\n        \"Joshua 24:26–27\",\n        \"1 Samuel 7:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The permanence and authority of divine law, associated with commandments written on stone tablets.\",\n      \"basis\": [\n        \"Exodus 31:18\",\n        \"Exodus 32:15–16\",\n        \"2 Corinthians 3:3,7\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A new identity, acquittal, victory, or admission to the messianic banquet, symbolized by the white stone in Revelation; the exact background is disputed.\",\n      \"basis\": [\n        \"Revelation 2:17\"\n      ],\n      \"prominence\": \"unclear\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"“Stone” is highly context-dependent and has no single settled symbolic meaning across Scripture. The dominant specifically Christian use is christological—Jesus as the rejected stone and cornerstone—but hardness, refuge, stumbling, the Church, memorial testimony, and God's kingdom are also established readings.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Jesus Christ as the rejected stone who becomes the cornerstone (foundation of the Church and God's kingdom)\",\n  \"primary_basis\": [\n    \"Psalm 118:22\",\n    \"Isaiah 28:16\",\n    \"Matthew 21:42\",\n    \"Mark 12:10\",\n    \"Luke 20:17\",\n    \"Acts 4:11\",\n    \"Ephesians 2:20\",\n    \"1 Peter 2:4-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"God (the Father) as the Rock/stone of refuge, strength, and salvation\",\n      \"basis\": [\n        \"Deuteronomy 32:4\",\n        \"Psalm 18:2\",\n        \"Psalm 62:2\",\n        \"Isaiah 26:4\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Believers as living stones built into a spiritual house\",\n      \"basis\": [\n        \"1 Peter 2:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The messianic kingdom or Christ as the stone that shatters earthly kingdoms and fills the earth (Daniel's stone)\",\n      \"basis\": [\n        \"Daniel 2:34-35\",\n        \"Daniel 2:44-45\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A stumbling stone or rock of offense (Christ rejected by unbelievers)\",\n      \"basis\": [\n        \"Isaiah 8:14\",\n        \"Romans 9:32-33\",\n        \"1 Peter 2:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Hardened human heart (heart of stone) versus a renewed heart\",\n      \"basis\": [\n        \"Ezekiel 11:19\",\n        \"Ezekiel 36:26\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The tablets of the Law or covenant written on stone\",\n      \"basis\": [\n        \"Exodus 24:12\",\n        \"Exodus 31:18\",\n        \"2 Corinthians 3:3\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian biblical interpretation the dominant and most frequently taught symbolic use of 'stone' is christological (cornerstone/rejected stone/living stone), drawing especially on the NT's explicit application of OT stone texts to Jesus. Related but distinct uses (God as Rock, believers as living stones, Daniel's kingdom-stone) are also standard and widely recognized; they do not displace the primary christological consensus. Purely negative or non-messianic readings are secondary.\"\n}\n\nBOOK ENTRY\nA person as a building member of a house or kingdom. Jesus is the rejected living Stone made the chief cornerstone; His people are living stones built under and aligned to Him. The Stone cut without hands is Christ as Head of the kingdom that grows into the Mountain filling the earth.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 28:16; Ps 118:22; Dan 2:34-35, 44-45; Matt 21:42; Eph 2:20-22; 1 Pet 2:4-7) · see Mountain, ch. 39\n\nAVAILABLE KJV EXCERPTS\nIsaiah 28:16 — Therefore thus saith the Lord GOD, Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste.\nPsalms 118:22 — The stone which the builders refused is become the head stone of the corner.\nDaniel 2:34 — Thou sawest till that a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces.\nDaniel 2:35 — Then was the iron, the clay, the brass, the silver, and the gold, broken to pieces together, and became like the chaff of the summer threshingfloors; and the wind carried them away, that no place was found for them: and the stone that smote the image became a great mountain, and filled the whole earth.\nDaniel 2:44 — And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.\nDaniel 2:45 — Forasmuch as thou sawest that the stone was cut out of the mountain without hands, and that it brake in pieces the iron, the brass, the clay, the silver, and the gold; the great God hath made known to the king what shall come to pass hereafter: and the dream is certain, and the interpretation thereof sure.\nMatthew 21:42 — Jesus saith unto them, Did ye never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is the Lord's doing, and it is marvellous in our eyes?\nEphesians 2:20 — And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone;\nEphesians 2:21 — In whom all the building fitly framed together groweth unto an holy temple in the Lord:\nEphesians 2:22 — In whom ye also are builded together for an habitation of God through the Spirit.\n1 Peter 2:4 — To whom coming, as unto a living stone, disallowed indeed of men, but chosen of God, and precious,\n1 Peter 2:5 — Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to God by Jesus Christ.\n1 Peter 2:6 — Wherefore also it is contained in the scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded.\n1 Peter 2:7 — Unto you therefore which believe he is precious: but unto them which be disobedient, the stone which the builders disallowed, the same is made the head of the corner,\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "1ab0323dfb1c549a9e124942a54e33cb303a02aebddac5538454de0d60334684",
+  "cache": {
+    "hit": false
+  }
+}

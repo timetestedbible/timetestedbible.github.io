@@ -1,0 +1,173 @@
+{
+  "id": "resp_0de3522ad590ccd6006a54789c19688196bb252b32bda66125",
+  "object": "response",
+  "created_at": 1783920796,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920817,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0de3522ad590ccd6006a54789ca5588196b5ad0449b57ae32b",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0de3522ad590ccd6006a5478a71b2481969feb2002b70223fd",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"God’s faithful people—the righteous or true members of the kingdom—who are gathered and saved, often in contrast with weeds or chaff that face judgment.\",\"primary_basis\":[\"Matthew 13:24–30, 36–43 — in the parable of the wheat and weeds, the good crop is explicitly identified with the children of the kingdom.\",\"Matthew 3:11–12 — the Messiah gathers his wheat into the barn while burning the chaff, a picture of final separation and judgment.\",\"Luke 3:16–17 — parallel imagery of wheat gathered into the barn and chaff burned.Christ’s death and resurrection as a life-giving, fruitful self-sacrifice.\",\"basis is John 12:24 — Jesus compares his approaching death to a grain of wheat that dies and bears much fruit.\",\"prominence is common.Resurrection and transformation from mortal to immortal life.\",\"basis is 1 Corinthians 15:35–44 — Paul uses a sown grain, possibly wheat, as an analogy for the resurrection body.\",\"prominence is common.Divine provision, agricultural abundance, and covenant blessing.\",\"basis is Deuteronomy 8:7–10 — wheat is among the provisions of the good land. Psalm 81:16 — God promises satisfaction with the finest wheat. Psalm 147:14 — plentiful wheat signifies God’s blessing and peace. Joel 2:19, 24 — restored grain represents renewed provision.\",\"prominence is common.Bread, the Eucharist, and by extension Christ’s body or the Church’s unity.\",\"basis is John 6:32–58 — Christ is the bread of life, although wheat is not explicitly named. Matthew 26:26–28; 1 Corinthians 10:16–17 — bread signifies Christ’s body and ecclesial unity. Later Christian liturgy and art commonly connect this bread imagery specifically with wheat.\",\"prominence is common.Final judgment or the valuable yield preserved after separation from what is worthless.\",\"basis is Matthew 3:12; Luke 3:17 — wheat and chaff depict the opposed outcomes of judgment. Matthew 13:24–30, 36–43 — wheat and weeds are separated at the end of the age.\",\"prominence is dominant.\"] ,\"alternatives\":[],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single context-independent symbolic definition of wheat. The dominant meaning in Christian exposition of the judgment parables is the faithful or righteous who belong to God’s kingdom, but other passages independently use wheat or grain for Christ’s death, resurrection, fruitfulness, and divine provision.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 318,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 971,
+    "output_tokens_details": {
+      "reasoning_tokens": 426
+    },
+    "total_tokens": 1289
+  },
+  "user": null,
+  "metadata": {}
+}

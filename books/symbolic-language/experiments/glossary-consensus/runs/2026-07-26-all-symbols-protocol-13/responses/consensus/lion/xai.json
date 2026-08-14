@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920214,
+  "completed_at": 1783920229,
+  "id": "0db40843-c5b9-928f-8707-cb6c3679676e",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0db40843-c5b9-928f-8707-cb6c3679676e",
+      "summary": [
+        {
+          "text": "The task is about the biblical symbolism of \"Lion\". I need to respond with a specific JSON format.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Jesus Christ as the conquering Lion of the tribe of Judah, symbolizing royal power, strength, majesty, and victory\",\n  \"primary_basis\": [\n    \"Revelation 5:5\",\n    \"Genesis 49:9-10\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Satan/the devil as a roaring lion seeking to devour\",\n      \"basis\": [\n        \"1 Peter 5:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"General emblem of strength, courage, ferocity, or royal majesty (applied to persons, nations, or qualities)\",\n      \"basis\": [\n        \"Proverbs 28:1\",\n        \"2 Samuel 1:23\",\n        \"Psalms (various)\",\n        \"Numbers 23:24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"One of the four living creatures (often linked in tradition to a Gospel writer, especially Mark)\",\n      \"basis\": [\n        \"Revelation 4:7\",\n        \"Ezekiel 1:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God's fierce judgment or wrath\",\n      \"basis\": [\n        \"Hosea 5:14\",\n        \"Amos 3:8\",\n        \"Isaiah 31:4\",\n        \"Lamentations 3:10\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation recognizes multiple well-attested symbolic uses rather than a single exclusive meaning; the Christological Lion of Judah is the most iconic positive usage, while the Satanic roaring lion is the most common negative counterpart, both widely taught.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_0db40843-c5b9-928f-8707-cb6c3679676e",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1420,
+    "output_tokens_details": {
+      "reasoning_tokens": 1002
+    },
+    "total_tokens": 2022,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 95320000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1420
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

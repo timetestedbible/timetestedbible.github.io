@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "mountain",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nMountain\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, a mountain primarily symbolizes the place of God's presence and divine revelation — the meeting point between heaven and earth where God discloses himself, gives covenant/law, and establishes his dwelling (his 'holy mountain,' Zion). By extension it frequently symbolizes God's kingdom or rule established over the earth.\",\n  \"primary_basis\": [\n    \"Exodus 3:1-12 (Horeb, the mountain of God, burning bush)\",\n    \"Exodus 19-20; 24 (Sinai, giving of the Law, covenant)\",\n    \"1 Kings 19:8-13 (Elijah meets God at Horeb)\",\n    \"Psalm 48:1-2 (Zion, God's holy mountain)\",\n    \"Psalm 2:6 ('I have set my King on Zion, my holy hill')\",\n    \"Isaiah 2:2-4 and Micah 4:1-2 (the mountain of the LORD's house exalted above all mountains)\",\n    \"Ezekiel 28:14 (the holy mountain of God)\",\n    \"Matthew 5:1 (Sermon on the Mount)\",\n    \"Matthew 17:1-8; Mark 9:2-8; Luke 9:28-36 (Transfiguration on a high mountain)\",\n    \"Matthew 28:16-20 (Great Commission given on a mountain)\",\n    \"Hebrews 12:18-24 (Sinai contrasted with Mount Zion, the heavenly Jerusalem)\",\n    \"Revelation 21:10 (the new Jerusalem seen from a great, high mountain)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Kingdoms, governments, or earthly powers — mountains as symbols of political/imperial authority, whether God's kingdom or hostile kingdoms to be brought low.\",\n      \"basis\": [\n        \"Daniel 2:35, 44-45 (the stone becomes a great mountain filling the earth)\",\n        \"Jeremiah 51:24-25 (Babylon as a 'destroying mountain')\",\n        \"Isaiah 41:15 (threshing mountains)\",\n        \"Revelation 17:9-10 (seven mountains = seven kings in many readings)\",\n        \"Isaiah 2:2 (mountain of the LORD exalted above all mountains, read as kingdom over kingdoms)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Obstacles, difficulties, or seemingly impossible problems that faith and prayer can overcome ('faith that moves mountains') — very widespread in devotional and popular preaching.\",\n      \"basis\": [\n        \"Matthew 17:20; 21:21\",\n        \"Mark 11:22-23\",\n        \"1 Corinthians 13:2\",\n        \"Zechariah 4:7 ('Who are you, O great mountain? Before Zerubbabel you shall become a plain')\",\n        \"Isaiah 40:4; Luke 3:5 (every mountain made low)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Stability, permanence, and unshakable security — often applied to God's faithfulness or the believer's trust.\",\n      \"basis\": [\n        \"Psalm 125:1-2 ('Those who trust in the LORD are like Mount Zion, which cannot be moved')\",\n        \"Psalm 36:6 (righteousness like the mountains of God)\",\n        \"Isaiah 54:10 (mountains may depart, but God's steadfast love will not)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human pride, arrogance, or exaltation destined to be humbled before God.\",\n      \"basis\": [\n        \"Isaiah 2:12-14 (a day against all that is lofty, against the high mountains)\",\n        \"Isaiah 40:4 (every mountain and hill made low)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Places of false or idolatrous worship ('high places'), a negative cultic association.\",\n      \"basis\": [\n        \"Deuteronomy 12:2\",\n        \"1 Kings 14:23; 2 Kings 17:10-11\",\n        \"Jeremiah 3:6; Ezekiel 6:13\",\n        \"Hosea 4:13\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Mountains are polyvalent in Scripture, and standard reference works (e.g., Dictionary of Biblical Imagery) list multiple senses. Nevertheless, the dominant and most widely taught symbolic meaning is the mountain as the site of divine encounter, revelation, and God's dwelling/kingdom (Sinai and Zion being the two paradigmatic mountains, taken up christologically in the Gospels and Hebrews). The 'kingdom/government' reading (Daniel 2; Isaiah 2) is especially prominent in prophetic and eschatological interpretation and in some charismatic/dominionist streams; the 'obstacle to faith' reading dominates popular devotional usage but is derived from specific sayings of Jesus rather than the broader biblical pattern. Context determines which sense applies in any given passage, but recognizable consensus on the primary theological symbolism (divine presence/revelation, Zion/kingdom) is well established.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"A place of divine encounter, transcendent revelation, and God's sovereign presence or established kingdom.\",\n  \"primary_basis\": [\n    \"Exodus 19:16-20\",\n    \"Psalm 48:1-2\",\n    \"Isaiah 2:2-3\",\n    \"Matthew 17:1-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Human kingdoms, empires, or governmental earthly powers.\",\n      \"basis\": [\n        \"Daniel 2:35\",\n        \"Revelation 17:9\",\n        \"Jeremiah 51:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Insurmountable obstacles, impossibilities, or immense difficulties.\",\n      \"basis\": [\n        \"Zechariah 4:7\",\n        \"Matthew 17:20\",\n        \"Mark 11:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Places of spiritual rebellion or idolatrous worship, often referred to as high places.\",\n      \"basis\": [\n        \"Ezekiel 6:3\",\n        \"Deuteronomy 12:2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolic meaning of a mountain is highly contextual, typically representing either God's dwelling and absolute authority or human/demonic powers and obstacles that stand in opposition to God.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A mountain most commonly signifies a place or sphere of divine presence, revelation, worship, and encounter with God—often emphasizing holiness, transcendence, and nearness to heaven.\",\n  \"primary_basis\": [\n    \"Exodus 19–20; 24:12–18; 34:1–8 — God appears and gives the covenant at Mount Sinai.\",\n    \"1 Kings 19:8–18 — Elijah encounters God at Horeb, the mountain of God.\",\n    \"Psalm 48:1–3; Isaiah 2:2–3; Micah 4:1–2 — Mount Zion is associated with God's presence, temple, instruction, and universal worship.\",\n    \"Matthew 5:1–2 — Jesus teaches from a mountain, commonly read in relation to Sinai and authoritative revelation.\",\n    \"Matthew 17:1–8; Mark 9:2–8; Luke 9:28–36 — the Transfiguration occurs on a mountain amid divine disclosure.\",\n    \"Hebrews 12:18–24 — Sinai and Zion function as contrasting settings of divine encounter and covenant.\",\n    \"Revelation 21:10 — John is taken to a great, high mountain to receive a vision of the holy city.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Kingdom, empire, government, or enduring dominion—especially God's kingdom when the mountain fills or rises above the earth.\",\n      \"basis\": [\n        \"Daniel 2:34–35, 44–45 — the stone becomes a great mountain, interpreted as God's everlasting kingdom.\",\n        \"Isaiah 2:2–4 and Micah 4:1–4 — the mountain of the LORD is exalted above other mountains, with nations streaming to it.\",\n        \"Jeremiah 51:25 — Babylon is called a destroying mountain.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A formidable obstacle or seemingly impossible difficulty that can be removed through God's power or faith.\",\n      \"basis\": [\n        \"Zechariah 4:7 — the great mountain before Zerubbabel becomes a plain.\",\n        \"Matthew 17:20; 21:21; Mark 11:23; 1 Corinthians 13:2 — moving mountains expresses overcoming what appears impossible.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Human pride, exalted power, or opposition to God that will be humbled.\",\n      \"basis\": [\n        \"Isaiah 2:12–17 — lofty mountains occur within imagery of everything proud and exalted being brought low.\",\n        \"Isaiah 40:4; Luke 3:5 — mountains and hills are made low in preparation for God's coming.\",\n        \"Jeremiah 51:25 — imperial Babylon is portrayed as a mountain destined for destruction.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Stability, permanence, protection, or secure trust.\",\n      \"basis\": [\n        \"Psalm 125:1–2 — those who trust in the LORD are like Mount Zion, which cannot be moved.\",\n        \"Psalm 46:2–3 — mountains moving into the sea represent the collapse of what normally seems most stable.\",\n        \"Psalm 121:1–2 — the hills frame a confession that help ultimately comes from the LORD.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The created order shaken or dissolved under divine judgment and apocalyptic upheaval.\",\n      \"basis\": [\n        \"Micah 1:3–4; Nahum 1:5; Habakkuk 3:6, 10 — mountains melt, quake, or shatter before God's appearing.\",\n        \"Revelation 6:14–16; 8:8; 16:20 — mountains are displaced or destroyed in judgment imagery.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single fixed biblical meaning for every occurrence of “mountain.” Divine presence and revelation is the broadest recognizable symbolic association in Christian interpretation, but prophetic, poetic, and apocalyptic contexts regularly use mountains for kingdoms, obstacles, stability, pride, or cosmic upheaval.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"A place of divine revelation, theophany, or encounter with the presence of God (often linked to covenant, law, temple, or the kingdom of God).\",\n  \"primary_basis\": [\n    \"Exodus 19–20 (Sinai/Horeb as site of theophany and law-giving)\",\n    \"Exodus 3:1–12 (Horeb)\",\n    \"Psalm 48:1–2 and Psalm 2:6 (Zion as God's holy mountain and dwelling)\",\n    \"Isaiah 2:2–3 / Micah 4:1–2 (mountain of the house of the Lord)\",\n    \"Matthew 17:1–8 (Transfiguration)\",\n    \"Hebrews 12:18–24 (contrast of Sinai and Zion)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Obstacles, difficulties, or challenges that faith can overcome or remove\",\n      \"basis\": [\n        \"Matthew 17:20\",\n        \"Matthew 21:21\",\n        \"Mark 11:23\",\n        \"1 Corinthians 13:2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Kingdoms, empires, nations, or political/world powers\",\n      \"basis\": [\n        \"Daniel 2:35, 44–45\",\n        \"Jeremiah 51:25\",\n        \"Revelation 8:8\",\n        \"Revelation 17:9–10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Stability, security, permanence, or strength\",\n      \"basis\": [\n        \"Psalm 125:1–2\",\n        \"Psalm 30:7\",\n        \"Isaiah 54:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sites of idolatry or illegitimate worship (high places)\",\n      \"basis\": [\n        \"1 Kings 11:7\",\n        \"2 Kings 17:9–11\",\n        \"Jeremiah 3:6\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical usage is strongly context-dependent; the divine-encounter/theophany sense is the most frequent positive symbolic assignment in Christian teaching and biblical theology, yet prophetic, wisdom, and Synoptic texts regularly support other readings without contradiction. No single fixed meaning dominates every genre.\"\n}\n\nBOOK ENTRY\nA kingdom, nation, or high place — the seat of ruling authority.\n[.opposite]Opposite: Valley.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Jer 51:25; Dan 2:35) · see Mountain, ch. 39\n\nAVAILABLE KJV EXCERPTS\nJeremiah 51:25 — Behold, I am against thee, O destroying mountain, saith the LORD, which destroyest all the earth: and I will stretch out mine hand upon thee, and roll thee down from the rocks, and will make thee a burnt mountain.\nDaniel 2:35 — Then was the iron, the clay, the brass, the silver, and the gold, broken to pieces together, and became like the chaff of the summer threshingfloors; and the wind carried them away, that no place was found for them: and the stone that smote the image became a great mountain, and filled the whole earth.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "6714ebb7379e6d42aacd0e61bd241faafe1e667fc0084b192330b967bdfc2238",
+  "cache": {
+    "hit": false
+  }
+}

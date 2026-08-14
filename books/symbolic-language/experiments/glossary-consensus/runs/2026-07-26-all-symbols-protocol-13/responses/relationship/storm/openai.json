@@ -1,0 +1,195 @@
+{
+  "id": "resp_0c659cc5fb745819006a547ef45df08190b0be620034e7a98c",
+  "object": "response",
+  "created_at": 1783922420,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783922437,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0c659cc5fb745819006a547ef538388190926c7d1542b38127",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0c659cc5fb745819006a547efd0c308190b1a7905ff42071ba",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"relation\":\"REFINED\",\"consensus_summary\":\"Storm or tempest broadly signifies overwhelming adversity or calamity, especially divine judgment, human trials, divine power/theophany, chaos, and sometimes political or eschatological upheaval among nations.\",\"book_summary\":\"Storm and raging sea specifically symbolize nations in turmoil, whose tumult Christ sovereignly rebukes and stills.\",\"consensus_core_identification\":\"Overwhelming turmoil or calamity, commonly experienced as divine judgment or human trial.\",\"book_core_identification\":\"Political and collective turmoil among nations, figured by a raging sea and subdued by Christ.\",\"core_relation\":\"BOOK_NARROWS\",\"extension_relation\":\"BOOK_SUBSET\",\"boundary_disagreement\":\"The book restricts storm symbolism to national or political tumult. It therefore excludes, as the entry's primary identification, many cases the consensus includes: personal trials, generic adversity, direct divine judgment, storm-theophany, and primordial chaos. National upheaval was already a recognizable consensus alternative, so the identification is narrower rather than novel.\",\"material_contradiction\":\"There is no direct contradiction. The book selects and sharpens one established strand of interpretation rather than replacing turmoil with an incompatible referent. Its common-view note also acknowledges judgment and personal trials as commonly taught readings.\",\"rationale\":\"Both readings retain the central category of overwhelming turmoil. The book materially narrows the affected subject from people or creation generally to nations collectively and reads the calming of the sea christologically as Christ's mastery over political tumult. This is a substantive change in extension, but national and eschatological upheaval already appears among the consensus alternatives.\",\"citation_support\":\"STRONG\",\"strongest_objection\":\"Psalm 65:7 and Isaiah 17:12-13 explicitly associate turbulent waters with peoples and nations, while Luke 21:25 places roaring seas beside national distress. However, Mark 4:39 itself describes the calming of a literal storm and does not explicitly equate the sea with nations, so applying its words to political turmoil depends on synthesis with the other texts.\",\"confidence\":\"high\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_relationship",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 4115,
+    "input_tokens_details": {
+      "cache_write_tokens": 4112,
+      "cached_tokens": 0
+    },
+    "output_tokens": 688,
+    "output_tokens_details": {
+      "reasoning_tokens": 265
+    },
+    "total_tokens": 4803
+  },
+  "user": null,
+  "metadata": {}
+}

@@ -1,0 +1,133 @@
+{
+  "provider": "gemini",
+  "stage": "relationship",
+  "term": "branches",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent",
+  "headers": {
+    "x-goog-api-key": "<REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "systemInstruction": {
+      "parts": [
+        {
+          "text": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+        }
+      ]
+    },
+    "contents": [
+      {
+        "role": "user",
+        "parts": [
+          {
+            "text": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nBranches\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching, 'branches' most commonly symbolize believers (disciples) in living union with Christ, who is the vine; the branches derive spiritual life from him and are expected to bear fruit, while fruitless branches face removal and judgment.\",\n  \"primary_basis\": [\n    \"John 15:1-8 (Jesus: 'I am the vine, you are the branches')\",\n    \"John 15:16 (appointed to bear fruit)\",\n    \"Psalm 80:8-16 (Israel as a vine, background imagery)\",\n    \"Isaiah 5:1-7 (the vineyard of the LORD, background imagery)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Covenant membership in the people of God: in Paul's olive-tree metaphor, natural branches represent Israel/Jews and grafted wild branches represent Gentile believers; broken-off branches represent unbelieving Israel, with warnings and hope of regrafting.\",\n      \"basis\": [\n        \"Romans 11:16-24\",\n        \"Jeremiah 11:16-17 (Israel as an olive tree whose branches are broken)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"'The Branch' (singular, Hebrew tsemach/netser) as a messianic title: a prophesied descendant of David identified in Christian interpretation with Jesus. This is a distinct but closely related usage often discussed alongside 'branches.'\",\n      \"basis\": [\n        \"Isaiah 11:1 ('a shoot from the stump of Jesse, a branch from his roots')\",\n        \"Jeremiah 23:5; 33:15 ('a righteous Branch' for David)\",\n        \"Zechariah 3:8; 6:12 ('my servant the Branch')\",\n        \"Isaiah 4:2\",\n        \"Matthew 2:23 (often linked to netser/Nazarene)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Palm branches as symbols of victory, celebration, and messianic acclamation, used at the triumphal entry and in heavenly worship.\",\n      \"basis\": [\n        \"John 12:13 (Palm Sunday)\",\n        \"Revelation 7:9\",\n        \"Leviticus 23:40 (Feast of Booths)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Branches of a great tree as nations or peoples sheltering under a kingdom's power, or the expansive growth of the kingdom of God/heaven; birds nesting in branches variously read as the nations blessed by the kingdom or (in some minority readings) as intrusive evil elements.\",\n      \"basis\": [\n        \"Ezekiel 17:22-24; 31:3-14\",\n        \"Daniel 4:10-22\",\n        \"Matthew 13:31-32; Mark 4:30-32; Luke 13:18-19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Branches of proud trees as the arrogant or exalted who are cut down in divine judgment, or the wicked destroyed 'root and branch.'\",\n      \"basis\": [\n        \"Isaiah 10:33-34; 18:5\",\n        \"Malachi 4:1\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Family descendants or offspring (genealogical 'branches' of a family tree), an extension of the shoot/root imagery.\",\n      \"basis\": [\n        \"Job 15:32; 18:16\",\n        \"Isaiah 14:19 (contextual imagery)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Consensus is strong that the plural 'branches' primarily evokes John 15: believers abiding in Christ and bearing fruit, with the Romans 11 olive-tree usage as the major secondary corporate/ecclesial reading. Interpretive debate within the John 15 reading concerns the fate of fruitless branches (loss of salvation vs. false professors vs. loss of reward), but that debate does not disturb the basic symbolic identification of branches as people connected to Christ. The singular 'Branch' as a messianic title is a distinct, well-established usage that some authors merge with the plural term. Assessment made without access to the author's material.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Believers or groups of people in covenant relationship with God, deriving their spiritual life, sustenance, and fruitfulness from Christ or the covenant root.\",\n  \"primary_basis\": [\n    \"John 15:1-8\",\n    \"Romans 11:16-24\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Messiah (typically as the singular 'Branch' or 'Shoot'), representing the prophetic restoration of the Davidic royal line.\",\n      \"basis\": [\n        \"Isaiah 11:1\",\n        \"Jeremiah 23:5\",\n        \"Zechariah 3:8\",\n        \"Zechariah 6:12\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Individuals or groups facing divine judgment and removal from the covenant (withered, broken, or burned branches).\",\n      \"basis\": [\n        \"John 15:6\",\n        \"Romans 11:20-21\",\n        \"Malachi 4:1\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Prosperity, expansion, and earthly blessing of a tribe or nation.\",\n      \"basis\": [\n        \"Genesis 49:22\",\n        \"Psalm 80:10-11\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In New Testament interpretation, the plural 'branches' universally symbolizes believers attached to Christ (the Vine) or Israel and Gentiles attached to God's covenant (the Olive Tree). In Old Testament prophecy, the singular 'Branch' is a major Messianic title.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"People belonging to God—especially disciples or believers whose spiritual life and fruitfulness depend on union with Christ, the vine.\",\n  \"primary_basis\": [\n    \"John 15:1–6 — Jesus identifies himself as the true vine and his disciples as the branches; abiding in him produces fruit.\",\n    \"John 15:8,16 — fruitful branches are associated with faithful discipleship.\",\n    \"Romans 11:16–24 — natural and grafted branches represent Jewish and Gentile participants in the covenant people, dependent on the sustaining root.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Israel, Jewish people, and Gentiles in relation to the covenant community; branches may be retained, broken off, or grafted in.\",\n      \"basis\": [\n        \"Romans 11:16–24\",\n        \"Jeremiah 11:16–17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The Messiah or Davidic king as a new shoot or 'Branch' arising from Jesse or David.\",\n      \"basis\": [\n        \"Isaiah 11:1–5\",\n        \"Jeremiah 23:5–6\",\n        \"Jeremiah 33:15–16\",\n        \"Zechariah 3:8\",\n        \"Zechariah 6:12\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Descendants, offspring, or an extending family line.\",\n      \"basis\": [\n        \"Genesis 49:22\",\n        \"Isaiah 11:1\",\n        \"Isaiah 60:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Kingdoms, rulers, nations, or their expanding power, represented by branches of a symbolic tree.\",\n      \"basis\": [\n        \"Ezekiel 17:3–10,22–24\",\n        \"Ezekiel 31:3–9\",\n        \"Daniel 4:10–22\",\n        \"Matthew 13:31–32\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Visible growth, works, influence, or fruitfulness flowing from an underlying spiritual source.\",\n      \"basis\": [\n        \"Psalm 1:3\",\n        \"John 15:2–5\",\n        \"Matthew 13:31–32\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian teaching most recognizably associates branches with believers abiding in Christ because of John 15. However, the Bible uses branch imagery in several materially different ways, so there is no single context-independent symbolic definition. The singular title 'the Branch' is especially associated with the Messiah and should not automatically determine the meaning of plural 'branches' in other passages.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Believers/disciples who must remain united to Christ (the true vine) in order to live and bear fruit; unfruitful branches are pruned or cast away\",\n  \"primary_basis\": [\n    \"John 15:1-8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The covenant people of God (natural Israel as original olive branches; Gentile believers as wild branches grafted in)\",\n      \"basis\": [\n        \"Romans 11:16-24\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Tokens of victory, triumph, festal joy or praise (especially palm branches)\",\n      \"basis\": [\n        \"John 12:13\",\n        \"Revelation 7:9\",\n        \"Leviticus 23:40\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Messianic scion or royal Davidic line (usually the singular 'Branch')\",\n      \"basis\": [\n        \"Isaiah 11:1\",\n        \"Jeremiah 23:5\",\n        \"Zechariah 3:8\",\n        \"Zechariah 6:12\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"The term is strongly context-dependent; no single fixed symbol covers every biblical occurrence. The vine-and-branches metaphor of John 15 is by far the most frequently invoked in Christian teaching and devotion for personal union with Christ, while the olive-tree image of Romans 11 is equally standard for ecclesiological and salvation-historical discussion. Palm-branch imagery forms a separate, well-attested festive/victory motif.\"\n}\n\nBOOK ENTRY\nThe members of a nation — broken off, or grafted in, while the tree itself stands.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Rom 11:17) · see Trees, ch. 41\n\nAVAILABLE KJV EXCERPTS\nRomans 11:17 — And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree;\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+          }
+        ]
+      }
+    ],
+    "generationConfig": {
+      "maxOutputTokens": 12000,
+      "responseMimeType": "application/json",
+      "responseJsonSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "cache_key": "10d7cdaf6d7b9558958783c6cda958f28ad5427015421daa8cde87ff7542160a",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/relationship/branches/gemini.json"
+    }
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "id": "resp_0f0b9ee17313fe0d006a535070e298819490310159494edac6",
+  "object": "response",
+  "created_at": 1783844976,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783844998,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f0b9ee17313fe0d006a535071c5c0819499e47b5df56064c2",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0f0b9ee17313fe0d006a535077f3a48194bee782850edd148b",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Paradise: the ordered, life-giving presence of God in which humanity enjoys communion with God, often extended to the hope of creation restored.\",\"primary_basis\":[\"Genesis 2:8–17 — Eden as the divinely planted place of life, abundance, vocation, and fellowship with God.\",\"Genesis 3:22–24 — expulsion from the garden signifies lost access to life and divine presence.\",\"Isaiah 51:3 — restored Zion is compared to Eden, 'the garden of the LORD.'\",\"Ezekiel 36:35 — the restored desolate land becomes 'like the garden of Eden.'\",\"Revelation 2:7; 22:1–5 — restored access to the tree of life and the river of life evokes Eden in the final dwelling of God with humanity.\"],\"alternatives\":[{\"meaning\":\"The beloved, erotic intimacy, fertility, and exclusive mutual delight of bride and bridegroom.\",\"basis\":[\"Song of Songs 4:12–16 — the beloved is an enclosed garden whose fruits and spices celebrate beauty, sexuality, and intimacy.\",\"Song of Songs 5:1; 6:2–3 — entering or tending the garden continues the imagery of mutual love.\"],\"prominence\":\"common\"},{\"meaning\":\"God’s cultivated people or an individual life made fruitful and well-watered by divine blessing.\",\"basis\":[\"Isaiah 58:11 — the restored faithful person is 'like a watered garden.'\",\"Isaiah 61:11 — righteousness and praise spring up as growth in a garden.\",\"Jeremiah 31:12 — restored Israel’s life becomes 'like a watered garden.'\",\"1 Corinthians 3:6–9 — the church is described through related cultivated-field imagery as 'God’s field.'\"],\"prominence\":\"common\"},{\"meaning\":\"A setting for testing, obedient surrender, suffering, and prayer, especially through Gethsemane, sometimes contrasted with Adam’s disobedience in Eden.\",\"basis\":[\"Matthew 26:36–46; Mark 14:32–42 — Jesus prays and submits to the Father’s will in Gethsemane.\",\"John 18:1–11 — Jesus enters a garden and is arrested there.\",\"Romans 5:12–19; 1 Corinthians 15:21–22,45 — Adam–Christ typology provides the wider basis for contrasting Edenic disobedience with Christ’s obedience.\"],\"prominence\":\"common\"},{\"meaning\":\"New creation and the reversal of Eden through Jesus’ death and resurrection, with the garden tomb and Mary’s identification of Jesus as a gardener carrying symbolic force.\",\"basis\":[\"John 19:41–42 — Jesus is buried in a tomb located in a garden.\",\"John 20:11–18 — the risen Jesus appears there, and Mary initially supposes him to be the gardener.\",\"Genesis 2–3 — supplies the Edenic background often proposed for John’s garden imagery.\"],\"prominence\":\"minority\"},{\"meaning\":\"Mary, the Church, or the faithful soul as an enclosed and fruitful garden in traditional allegorical interpretation.\",\"basis\":[\"Song of Songs 4:12 — 'a garden enclosed' became a major source for Marian, ecclesial, and spiritual allegory.\",\"Song of Songs 4:13–16 — the garden’s fruits and fragrance were interpreted as virtues or spiritual graces.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Garden imagery has a dominant symbolic association with Eden, divine presence, abundant life, and restored creation, but it has no single settled meaning across all biblical contexts. Its significance depends heavily on whether the passage concerns Eden, the Song of Songs, prophetic restoration, Gethsemane, or the garden tomb.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1032,
+    "output_tokens_details": {
+      "reasoning_tokens": 254
+    },
+    "total_tokens": 1349
+  },
+  "user": null,
+  "metadata": {}
+}

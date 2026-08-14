@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "knowing",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nKnowing, to know\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching and biblical scholarship, 'to know' (Hebrew yada'; Greek ginōskō) symbolizes intimate, experiential, relational knowledge rather than mere intellectual or factual awareness. Applied to God, 'knowing' God means being in a living covenant relationship with Him — personal communion, love, obedience, and fidelity — and God's 'knowing' a person signifies His personal, covenantal acknowledgment of them. This is routinely contrasted in commentaries and lexicons (e.g., TDNT, BDB, TWOT) with the Greek philosophical ideal of detached cognition.\",\n  \"primary_basis\": [\n    \"Genesis 4:1 ('Adam knew Eve his wife' — knowledge as intimate union, the paradigm case cited for the relational sense)\",\n    \"John 17:3 ('This is eternal life, that they know you, the only true God')\",\n    \"Jeremiah 31:34 ('They shall all know me, from the least to the greatest')\",\n    \"Hosea 6:6 ('I desire... the knowledge of God rather than burnt offerings')\",\n    \"Jeremiah 9:23-24 ('Let him who boasts boast in this, that he understands and knows me')\",\n    \"John 10:14-15 ('I know my own and my own know me, just as the Father knows me')\",\n    \"Philippians 3:10 ('that I may know him and the power of his resurrection')\",\n    \"Amos 3:2 ('You only have I known of all the families of the earth')\",\n    \"Matthew 7:23 ('I never knew you; depart from me')\",\n    \"1 Corinthians 8:1-3 ('If anyone loves God, he is known by God')\",\n    \"Galatians 4:9 ('now that you have come to know God, or rather to be known by God')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sexual union: 'to know' as a euphemism for sexual intercourse, treated as the concrete instance of the intimate-union sense.\",\n      \"basis\": [\n        \"Genesis 4:1, 4:17, 4:25\",\n        \"Genesis 19:5, 19:8\",\n        \"Judges 19:25\",\n        \"Matthew 1:25\",\n        \"Luke 1:34 ('since I know not a man')\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Divine election / foreknowledge: God's 'knowing' someone as His sovereign choosing, setting apart, or covenantal election of them beforehand — prominent especially in Reformed exegesis of Romans.\",\n      \"basis\": [\n        \"Amos 3:2\",\n        \"Jeremiah 1:5 ('Before I formed you in the womb I knew you')\",\n        \"Romans 8:29 ('those whom he foreknew he also predestined')\",\n        \"Romans 11:2\",\n        \"1 Peter 1:2, 1:20\",\n        \"Matthew 7:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral experience and autonomy: in the 'tree of the knowledge of good and evil' (Genesis 2-3), 'knowing' is read as experiential acquaintance with evil, moral discernment, or the grasping of autonomous moral authority apart from God.\",\n      \"basis\": [\n        \"Genesis 2:9, 2:17\",\n        \"Genesis 3:5, 3:22\",\n        \"Deuteronomy 1:39\",\n        \"Isaiah 7:15-16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Practical obedience: knowing God defined as doing justice and righteousness — knowledge equated with ethical covenant conduct rather than inner experience.\",\n      \"basis\": [\n        \"Jeremiah 22:15-16 ('He judged the cause of the poor and needy... Is not this to know me?')\",\n        \"Hosea 4:1-2, 4:6\",\n        \"1 John 2:3-4 ('By this we know that we know him, if we keep his commandments')\",\n        \"Titus 1:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Salvific esoteric knowledge (gnosis): knowledge itself as the saving principle, a reading associated with ancient Gnosticism and rejected by orthodox interpreters, who take 1 Corinthians 8:1 and 1 Timothy 6:20 as polemics against it.\",\n      \"basis\": [\n        \"1 Corinthians 8:1 ('knowledge puffs up')\",\n        \"1 Timothy 6:20 ('what is falsely called knowledge')\",\n        \"Colossians 2:8, 2:18 (read as anti-proto-gnostic)\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Plain intellectual/factual cognition with no symbolic weight: some occurrences are taken simply as mental awareness of information, and some interpreters caution against over-reading yada'/ginōskō everywhere.\",\n      \"basis\": [\n        \"Lexical treatments (BDB, HALOT, BDAG) noting the ordinary cognitive sense in many contexts, e.g., Genesis 12:11, Exodus 1:8, Luke 1:18\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is broad, recognizable consensus across Protestant, Catholic, and Orthodox interpretation, and across critical scholarship, that biblical 'knowing' denotes relational, experiential, covenantal intimacy rather than detached intellection; the sexual, elective, ethical, and moral-experience senses are generally treated as context-specific expressions of that same core idea rather than competing definitions. Standard reference works (TDNT s.v. ginōskō; TWOT/BDB s.v. yada') are the usual scholarly anchors. The main live debates concern (a) whether 'foreknew' in Romans 8:29 means elective love or mere prescience (a Calvinist-Arminian dispute) and (b) the precise nuance of the 'knowledge of good and evil' in Genesis 2-3; neither disturbs the overall consensus on the term's relational core.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Intimate, experiential relationship and personal fellowship, rather than merely intellectual or cognitive awareness.\",\n  \"primary_basis\": [\n    \"John 17:3\",\n    \"Philippians 3:10\",\n    \"Matthew 7:23\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sexual intimacy or intercourse (euphemistic)\",\n      \"basis\": [\n        \"Genesis 4:1\",\n        \"Luke 1:34\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenantal election, sovereign choice, or foreknowledge\",\n      \"basis\": [\n        \"Amos 3:2\",\n        \"Jeremiah 1:5\",\n        \"Romans 8:29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Obedience and moral acknowledgment (to know God is to act justly and obey Him)\",\n      \"basis\": [\n        \"1 John 2:3-4\",\n        \"Jeremiah 22:16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Intellectual comprehension or factual awareness\",\n      \"basis\": [\n        \"Proverbs 1:2\",\n        \"James 2:19\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In biblical theology, particularly concerning the Hebrew 'yada' and Greek 'ginosko', there is widespread consensus that 'knowing' implies personal, experiential involvement and covenantal intimacy, distinguishing it from Western philosophical concepts of abstract knowledge.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"When “know” carries theological or symbolic force, it most commonly denotes personal, experiential, and covenantal relationship—especially intimate communion with God—rather than mere possession of information. Such knowledge is often understood as involving recognition, love, trust, and obedience.\",\n  \"primary_basis\": [\n    \"Jeremiah 9:23–24 — true boasting is in understanding and knowing the Lord.\",\n    \"Hosea 6:6 — God desires steadfast love and the knowledge of God rather than sacrifice.\",\n    \"John 10:14–15 — Jesus and his sheep mutually “know” one another, modeled on the Father-Son relationship.\",\n    \"John 17:3 — eternal life is defined as knowing the Father and Jesus Christ.\",\n    \"Philippians 3:8–10 — Paul seeks to know Christ through participation in his life, suffering, and resurrection.\",\n    \"1 John 2:3–4 — knowing God is evidenced by keeping his commandments.\",\n    \"1 Corinthians 8:1–3 — merely possessing knowledge is contrasted with loving God and being known by him.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Ordinary intellectual or propositional awareness: knowing facts, truths, distinctions, or doctrine without necessarily implying personal relationship.\",\n      \"basis\": [\n        \"Genesis 3:22\",\n        \"Luke 11:52\",\n        \"Romans 2:20\",\n        \"1 Corinthians 8:1–2\",\n        \"James 4:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sexual intimacy: “to know” functions as a Hebrew-influenced euphemism for sexual intercourse.\",\n      \"basis\": [\n        \"Genesis 4:1\",\n        \"Genesis 4:17\",\n        \"Genesis 19:5–8\",\n        \"Judges 19:22–25\",\n        \"Matthew 1:25\",\n        \"Luke 1:34\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenantal acknowledgment, choice, or belonging: God’s “knowing” someone may signify recognizing that person or people as his own, sometimes with connotations of election.\",\n      \"basis\": [\n        \"Genesis 18:19\",\n        \"Amos 3:2\",\n        \"Matthew 7:23\",\n        \"Galatians 4:9\",\n        \"2 Timothy 2:19\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Discernment or recognition—identifying a person, condition, meaning, or spiritual reality.\",\n      \"basis\": [\n        \"Matthew 7:16–20\",\n        \"Luke 24:30–31\",\n        \"John 7:17\",\n        \"1 Corinthians 2:11–14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Special esoteric or secret revelation available only to a spiritual elite, as in some Gnostic or esoteric systems.\",\n      \"basis\": [\n        \"1 Corinthians 8:1–3 and Colossians 2:2–4 are sometimes discussed in relation to claims of privileged knowledge, though the texts themselves caution against deceptive or prideful forms of knowledge.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"“Know” is not a fixed biblical symbol with one meaning across all contexts; it is a broad verb whose sense depends heavily on its object and literary setting. There is strong consensus that “knowing God” usually has relational and experiential force, but no settled symbolic interpretation governs every occurrence of “know.”\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Intimate, experiential, personal relationship or union (especially with God), as distinct from mere intellectual or propositional awareness\",\n  \"primary_basis\": [\n    \"John 17:3 (eternal life as knowing the only true God and Jesus Christ)\",\n    \"Genesis 4:1 (Adam knew Eve and she conceived—intimate/relational sense)\",\n    \"Hosea 4:1, 6; 6:3, 6 (knowledge of God as relational/covenantal fidelity)\",\n    \"Jeremiah 9:23-24; 31:34 (knowing the Lord as true boast and new-covenant reality)\",\n    \"Matthew 7:23; 25:12 (I never knew you—personal recognition/relationship)\",\n    \"Philippians 3:8-10 (knowing Christ experientially, power of resurrection, sharing sufferings)\",\n    \"1 Corinthians 8:3; Galatians 4:9 (being known by God)\",\n    \"1 John 2:3-4; 4:7-8 (knowing God evidenced in keeping commandments and love)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Sexual intercourse or carnal knowledge (euphemistic use of the verb)\",\n      \"basis\": [\n        \"Genesis 4:1, 17, 25; 19:5, 8; 24:16; 38:26\",\n        \"Judges 11:39; 19:22, 25\",\n        \"1 Samuel 1:19; 1 Kings 1:4\",\n        \"Matthew 1:25 (did not know her until...)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Intellectual, cognitive, or factual awareness/information\",\n      \"basis\": [\n        \"Genesis 3:5, 22 (knowledge of good and evil)\",\n        \"Proverbs and wisdom literature on knowledge/skill\",\n        \"Many NT uses of ginōskō/oida for ordinary cognition or recognition\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Covenantal loyalty, obedience, or recognition of God's character and ways\",\n      \"basis\": [\n        \"Hosea and prophetic literature (knowledge of God vs. cultic ritual)\",\n        \"Jeremiah 22:15-16 (doing justice and righteousness = knowing the Lord)\",\n        \"Psalm 9:10; 36:10; 91:14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mystical or contemplative union/participation in divine life\",\n      \"basis\": [\n        \"John 14–17 and 1 John (abiding, mutual indwelling language)\",\n        \"Later patristic, medieval, and mystical writers reading these texts\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Biblical Hebrew yadaʿ and Greek ginōskō/oida carry a broad semantic range; Christian teaching and biblical scholarship commonly distinguish the frequent relational/experiential/intimate sense (especially 'knowing God') from purely intellectual knowledge, while also recognizing the sexual euphemism and ordinary cognitive uses in context. No single monovalent 'symbol' is claimed for every occurrence, but the intimate/relational reading is the dominant interpretive emphasis when the term is treated symbolically or theologically.\"\n}\n\nBOOK ENTRY\nCovenant relationship recognized and proven by faithful obedience, extending from marital intimacy to acknowledgment by one's covenant Lord. Knowing is not mere mental assent or awareness.\n[.opposite]Opposite: Stranger.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 4:1; Hos 4:6; Matt 7:23; 1 John 2:3-4) · see Love, Knowing, Faith & Belief, ch. 6\n\nAVAILABLE KJV EXCERPTS\nGenesis 4:1 — And Adam knew Eve his wife; and she conceived, and bare Cain, and said, I have gotten a man from the LORD.\nHosea 4:6 — My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee, that thou shalt be no priest to me: seeing thou hast forgotten the law of thy God, I will also forget thy children.\nMatthew 7:23 — And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.\n1 John 2:3 — And hereby we do know that we know him, if we keep his commandments.\n1 John 2:4 — He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "46522212edf833091d8ce0df754c1e0510e17d7eeacc825de5d38e16a8d56aa0",
+  "cache": {
+    "hit": false
+  }
+}

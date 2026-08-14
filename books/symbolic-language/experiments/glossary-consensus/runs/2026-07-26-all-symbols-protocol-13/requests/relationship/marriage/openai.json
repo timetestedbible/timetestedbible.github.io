@@ -1,0 +1,122 @@
+{
+  "provider": "openai",
+  "stage": "relationship",
+  "term": "marriage",
+  "url": "https://api.openai.com/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "gpt-5.6-sol",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nMarriage, bride\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, marriage and the bride are understood as symbols of the covenant union between Christ and the Church: Christ is the bridegroom and the Church (the collective people of God) is his bride. The imagery expresses exclusive covenant loyalty, sacrificial love, purification, and the anticipated consummation of that union at the eschatological 'marriage supper of the Lamb.' This builds on the Old Testament portrayal of Israel as the wife of YHWH, with idolatry depicted as adultery or harlotry.\",\n  \"primary_basis\": [\n    \"Ephesians 5:22-33 (husband/wife as Christ/Church, 'this mystery is great')\",\n    \"Revelation 19:7-9 (marriage supper of the Lamb; the bride has made herself ready)\",\n    \"Revelation 21:2, 9 (New Jerusalem as a bride adorned for her husband; 'the bride, the wife of the Lamb')\",\n    \"Revelation 22:17 ('the Spirit and the bride say, Come')\",\n    \"2 Corinthians 11:2 (Paul betroths the church as a pure virgin to Christ)\",\n    \"John 3:29 (John the Baptist calls Jesus the bridegroom)\",\n    \"Matthew 9:15 / Mark 2:19-20 / Luke 5:34-35 (Jesus as bridegroom)\",\n    \"Matthew 22:1-14 (parable of the wedding banquet)\",\n    \"Matthew 25:1-13 (parable of the ten virgins awaiting the bridegroom)\",\n    \"Hosea 1-3 (Israel as unfaithful wife; God's covenant love)\",\n    \"Isaiah 54:5-6; 62:4-5 ('your Maker is your husband')\",\n    \"Jeremiah 2:2; 3:14, 20 (Israel's bridal devotion and adultery)\",\n    \"Ezekiel 16 and 23 (covenant marriage and unfaithfulness allegories)\",\n    \"Song of Songs (traditionally read allegorically of God/Christ and his people)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Israel as the wife of YHWH: in the Old Testament and in Jewish interpretation, the marriage metaphor refers to the covenant between God and Israel, with the exodus/Sinai as betrothal and idolatry as adultery. Christian interpreters treat this as the foundation the New Testament imagery develops.\",\n      \"basis\": [\n        \"Hosea 1-3\",\n        \"Jeremiah 2:2; 31:32\",\n        \"Isaiah 54:5-6; 62:5\",\n        \"Ezekiel 16; 23\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"The bride as the New Jerusalem, understood primarily as the eschatological city/dwelling of God (a place or renewed creation) rather than, or in addition to, the people themselves.\",\n      \"basis\": [\n        \"Revelation 21:2\",\n        \"Revelation 21:9-10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Mystical/individual reading: the bride represents the individual soul in loving union with God or Christ, a tradition especially developed in allegorical exegesis of the Song of Songs (Origen, Bernard of Clairvaux, John of the Cross, Teresa of Avila).\",\n      \"basis\": [\n        \"Song of Songs (allegorical exegesis)\",\n        \"2 Corinthians 11:2 applied individually\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Dispensationalist distinction: the bride is specifically the New Testament Church, sharply distinguished from Israel; Israel is portrayed as the (restored) wife of YHWH while the Church is the bride of Christ, so the two images refer to different peoples.\",\n      \"basis\": [\n        \"Ephesians 5:22-33\",\n        \"Revelation 19:7-9 contrasted with Hosea 2 and Isaiah 54\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The bride as a select subset of believers rather than all the redeemed — e.g., an especially faithful 'overcomer' class, or in Jehovah's Witnesses' teaching the 144,000 anointed who reign with Christ.\",\n      \"basis\": [\n        \"Revelation 14:1-5\",\n        \"Revelation 19:7-8 read restrictively\"\n      ],\n      \"prominence\": \"rare\"\n    },\n    {\n      \"meaning\": \"Marian reading: Mary as type or embodiment of the Church-bride (and of the New Eve), found in some Catholic and Orthodox theology and exegesis.\",\n      \"basis\": [\n        \"Revelation 12 read Marially alongside Revelation 21\",\n        \"John 2:1-11 and John 19:26-27 in typological readings\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sacramental/creational reading: human marriage itself is the symbol — earthly marriage is an icon or sacrament pointing to Christ's union with the Church, grounding a theology of matrimony rather than only ecclesiology.\",\n      \"basis\": [\n        \"Genesis 2:24 with Ephesians 5:31-32\",\n        \"Matthew 19:4-6\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"This is one of the most stable and widely recognized symbols in Christian interpretation across Catholic, Orthodox, and Protestant traditions: the bride = the Church (people of God) united to Christ the bridegroom, rooted in the Old Testament picture of Israel as YHWH's wife. The alternatives listed are mostly refinements (who exactly the bride is, corporate vs. individual, people vs. city) rather than rejections of the core marital-covenant symbolism. Answer produced without access to the author's book, definition, or argument.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The covenantal relationship and ultimate spiritual union between Christ and the Church, representing God's redeeming love for His people.\",\n  \"primary_basis\": [\n    \"Ephesians 5:22-32\",\n    \"Revelation 19:7-9\",\n    \"Revelation 21:2-9\",\n    \"Hosea 2:16-20\",\n    \"Isaiah 54:5\",\n    \"Song of Solomon\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The mystical union between the individual soul of the believer and Christ.\",\n      \"basis\": [\n        \"Song of Solomon\",\n        \"1 Corinthians 6:17\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A dispensational distinction where Israel is the wife of God the Father and the Church is the bride of God the Son.\",\n      \"basis\": [\n        \"Jeremiah 3:14\",\n        \"Ephesians 5:32\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The physical or renewed eschatological city of New Jerusalem itself, distinct from the people.\",\n      \"basis\": [\n        \"Revelation 21:2\",\n        \"Revelation 21:9-10\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The marriage metaphor is universally recognized in Christian orthodoxy as the primary symbol for the relationship between Christ and the Church, culminating in the eschatological Marriage Supper of the Lamb.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Marriage and bride imagery most commonly symbolizes the covenantal, loving, faithful, and ultimately consummated union between Christ and his people, especially the Church. Christ is the bridegroom, and the Church or redeemed people of God is the bride.\",\n  \"primary_basis\": [\n    \"Ephesians 5:22–32 explicitly relates husband and wife to Christ and the Church and calls this relationship a “great mystery.”\",\n    \"2 Corinthians 11:2 depicts the Corinthian church as a pure virgin betrothed to Christ.\",\n    \"Revelation 19:6–9 describes the marriage supper of the Lamb and the preparation of his bride.\",\n    \"Revelation 21:2, 9–10 and 22:17 identify the bride with the holy city, New Jerusalem, representing the redeemed people of God in final communion with God.\",\n    \"John 3:28–30 presents Jesus as the bridegroom.\",\n    \"Matthew 9:14–15; 25:1–13 and Mark 2:18–20 use bridegroom and wedding imagery for Jesus and the coming kingdom.\",\n    \"Old Testament marital-covenant imagery supplies the background, especially Hosea 1–3; Isaiah 54:4–8; 62:4–5; Jeremiah 2:2; 3:1–14; Ezekiel 16; and 23.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The bride or wife specifically symbolizes Israel in covenant with YHWH, rather than the Church as such. Israel’s idolatry is consequently portrayed as adultery, while restoration is portrayed as renewed marriage.\",\n      \"basis\": [\n        \"Hosea 1–3\",\n        \"Isaiah 54:4–8; 62:4–5\",\n        \"Jeremiah 2:2; 3:1–14; 31:31–32\",\n        \"Ezekiel 16; 23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The bride specifically symbolizes the New Jerusalem, the eschatological holy city and renewed covenant community.\",\n      \"basis\": [\n        \"Revelation 21:2, 9–10 explicitly calls New Jerusalem the bride, the wife of the Lamb.\",\n        \"Revelation 22:17 speaks of “the Spirit and the bride.”\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Marriage symbolizes God’s covenant relationship with his people in a broad, unified sense encompassing both Israel and the Church or the whole redeemed people of God.\",\n      \"basis\": [\n        \"The Old Testament prophetic marriage texts are read together with Ephesians 5 and Revelation 19–22.\",\n        \"Romans 9–11 and related continuity-of-the-people-of-God readings often inform this synthesis, though they do not themselves use bride imagery prominently.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The bride symbolizes the individual believer or soul in personal, contemplative, or mystical union with Christ.\",\n      \"basis\": [\n        \"The Song of Songs has often been interpreted allegorically as the love between Christ and the individual soul.\",\n        \"Psalm 45 and bridal language in Christian mystical and devotional traditions are also used.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Marriage imagery primarily symbolizes the union of Christ with redeemed humanity through the incarnation, rather than chiefly Christ’s relation to the institutional or corporate Church.\",\n      \"basis\": [\n        \"John 1:14 and other incarnation texts are sometimes combined with bridegroom imagery.\",\n        \"Patristic interpretations occasionally understand the bridal chamber or marriage as the union of divine and human natures or of the Word with humanity.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"In the Song of Songs, bride and marriage language primarily celebrates human erotic and marital love without requiring an allegorical referent to God, Christ, Israel, or the Church.\",\n      \"basis\": [\n        \"Song of Songs as a whole, especially Song 2:8–17; 4:1–16; 6:4–10; 8:6–7.\",\n        \"This is widespread in modern historical-critical interpretation, although it addresses that book specifically rather than all biblical bride symbolism.\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable Christian consensus that bride and marriage imagery denotes covenant union between God or Christ and the people of God, with Christ-and-Church language being the standard New Testament formulation. The exact identity of the bride—Israel, Church, New Jerusalem, the whole redeemed community, or the individual soul—varies by passage and interpretive tradition.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The Church (or God's people) as the bride of Christ, with earthly marriage symbolizing the covenantal, loving union between Christ and the Church\",\n  \"primary_basis\": [\n    \"Ephesians 5:22-33\",\n    \"Revelation 19:7-9\",\n    \"Revelation 21:2,9\",\n    \"2 Corinthians 11:2\",\n    \"Matthew 25:1-13\",\n    \"Isaiah 54:5 / 62:5 (read christologically)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Israel as the bride/wife of Yahweh (Old Testament covenant imagery, sometimes retained as distinct from the Church)\",\n      \"basis\": [\n        \"Hosea 1-3\",\n        \"Isaiah 54:5-6\",\n        \"Jeremiah 2:2 / 3:14\",\n        \"Ezekiel 16\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The individual soul's mystical union with Christ (bridal mysticism)\",\n      \"basis\": [\n        \"Allegorical readings of Song of Solomon\",\n        \"Patristic and medieval mystical traditions (e.g., Origen, Bernard of Clairvaux)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The New Jerusalem / eschatological city-people as bride\",\n      \"basis\": [\n        \"Revelation 21:2,9-10\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across historic Christian traditions the dominant, readily recognizable symbolic sense is the Christ-Church bridal/marriage typology grounded especially in Ephesians 5 and Revelation; OT Israel imagery and individual-mystical readings are well-attested but secondary or tradition-specific.\"\n}\n\nBOOK ENTRY\nThe covenant union of God and His people — a one-flesh bond in which the wife receives the Husband's Name and comes under His covering.\n[.opposite]Opposite: Divorce.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Gen 2:24; Ezek 16:8; Eph 5:31-32; Rev 19:7) · see Marriage and Divorce, ch. 12\n\nAVAILABLE KJV EXCERPTS\nGenesis 2:24 — Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.\nEzekiel 16:8 — Now when I passed by thee, and looked upon thee, behold, thy time was the time of love; and I spread my skirt over thee, and covered thy nakedness: yea, I sware unto thee, and entered into a covenant with thee, saith the Lord GOD, and thou becamest mine.\nEphesians 5:31 — For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh.\nEphesians 5:32 — This is a great mystery: but I speak concerning Christ and the church.\nRevelation 19:7 — Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 6000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "c1ac30f8e8751f0caea82af097e8bd244c150cb6704bc2504fe19543eb1bd626",
+  "cache": {
+    "hit": false
+  }
+}

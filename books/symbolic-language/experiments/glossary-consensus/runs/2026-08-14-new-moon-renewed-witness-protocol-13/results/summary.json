@@ -1,0 +1,39 @@
+{
+  "entry_count": 1,
+  "providers": [
+    "openai",
+    "anthropic",
+    "gemini",
+    "xai"
+  ],
+  "counts": {
+    "DISPUTED": 1
+  },
+  "rows": [
+    {
+      "anchor": "new-moon",
+      "term": "New moon",
+      "relation": "DISPUTED",
+      "relationship_votes": [
+        "REFINED",
+        "DIVERGENT",
+        "DIVERGENT",
+        "NOVEL"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "DISPUTED"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "wings",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nWings (kanaph)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching and biblical interpretation, 'wings' (Hebrew kanaph) most commonly symbolizes God's protective care, refuge, and covering — the believer finds shelter 'under the shadow of his wings,' with the image drawn from a mother bird (especially an eagle or hen) sheltering her young. It expresses divine protection, tenderness, and covenantal safekeeping.\",\n  \"primary_basis\": [\n    \"Psalm 91:4 ('He will cover you with his feathers, and under his wings you will find refuge')\",\n    \"Psalm 17:8 ('hide me in the shadow of your wings')\",\n    \"Psalm 36:7; Psalm 57:1; Psalm 61:4; Psalm 63:7 (refuge in the shadow of God's wings)\",\n    \"Ruth 2:12 ('the LORD... under whose wings you have come to take refuge')\",\n    \"Deuteronomy 32:11 (eagle stirring its nest, spreading its wings over its young)\",\n    \"Exodus 19:4 ('I carried you on eagles' wings')\",\n    \"Matthew 23:37 / Luke 13:34 (Jesus: 'as a hen gathers her chicks under her wings')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The corner/edge of a garment as a symbol of covenant covering, marriage, or redemption — since kanaph also means the hem or corner of a robe, spreading one's 'wing' over someone signifies taking them into covenant protection (as Boaz over Ruth, or God over Israel).\",\n      \"basis\": [\n        \"Ruth 3:9 ('spread the corner [kanaph] of your garment over your servant')\",\n        \"Ezekiel 16:8 (God spreads the corner of his garment over Jerusalem in covenant)\",\n        \"Numbers 15:38 and Deuteronomy 22:12 (tassels on the corners/kanaph of garments)\",\n        \"1 Samuel 24:4-5 (David cuts the corner of Saul's robe)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Healing and messianic restoration — 'the sun of righteousness shall rise with healing in its wings,' often read christologically; some interpreters connect it to the woman healed by touching the fringe (on the kanaph) of Jesus' garment.\",\n      \"basis\": [\n        \"Malachi 4:2\",\n        \"Matthew 9:20-21 and 14:36 (touching the fringe/hem of Jesus' garment)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Angelic/cherubic wings signifying the presence, holiness, and mobility of God's heavenly attendants and the mercy seat as the place of divine presence.\",\n      \"basis\": [\n        \"Exodus 25:20 (cherubim wings over the mercy seat)\",\n        \"Isaiah 6:2 (seraphim with six wings)\",\n        \"Ezekiel 1 and 10 (winged living creatures)\",\n        \"1 Kings 8:6-7 (cherubim wings in the temple)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Strength, swiftness, and divine empowerment or deliverance — soaring 'on wings like eagles' as renewed strength, or God riding 'on the wings of the wind' as swift intervention.\",\n      \"basis\": [\n        \"Isaiah 40:31\",\n        \"Psalm 18:10; Psalm 104:3 (wings of the wind)\",\n        \"2 Samuel 22:11\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The extremities or 'ends/corners' of the earth or land — kanaph used geographically to denote the farthest edges.\",\n      \"basis\": [\n        \"Isaiah 24:16 ('from the ends [kanaph] of the earth')\",\n        \"Job 37:3; Job 38:13\",\n        \"Isaiah 11:12 ('four corners of the earth')\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Kanaph is polysemous in Hebrew, covering both a bird's wing and the corner/edge of a garment or the land, so its symbolic range is broader than the English word 'wing' suggests. Nevertheless, there is a clear and widely recognized consensus in Christian devotional, homiletical, and scholarly literature that the primary symbolic use is divine protection and refuge, reinforced by Jesus' own hen-and-chicks image, which is generally treated as continuous with the Old Testament motif. The garment-corner/covenant reading and the Malachi 'healing in his wings' reading are well established secondary strands, particularly in messianic and Hebraic-roots teaching, but they do not displace the protection motif as the dominant interpretation.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Protection, refuge, and divine sheltering care, often representing God's loving provision and deliverance.\",\n  \"primary_basis\": [\n    \"Psalm 91:4\",\n    \"Ruth 2:12\",\n    \"Exodus 19:4\",\n    \"Psalm 36:7\",\n    \"Matthew 23:37\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Speed, swiftness, and mobility, often related to the swiftness of divine judgment, angelic movement, or spiritual elevation.\",\n      \"basis\": [\n        \"Isaiah 40:31\",\n        \"Jeremiah 48:40\",\n        \"Habakkuk 1:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Healing and restoration, specifically associated with the fringes or corners of a prayer garment (tzitzit).\",\n      \"basis\": [\n        \"Malachi 4:2\",\n        \"Numbers 15:38\",\n        \"Zechariah 8:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine glory, presence, and overshadowing majesty, represented by the wings of the Cherubim covering the Mercy Seat.\",\n      \"basis\": [\n        \"Exodus 25:20\",\n        \"Isaiah 6:2\",\n        \"Ezekiel 1:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The extremities, boundaries, or four corners of the earth.\",\n      \"basis\": [\n        \"Isaiah 11:12\",\n        \"Job 37:3\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Hebrew word kanaph translates to both wing and extremity or edge, such as the corner of a garment. While its most dominant symbolic use in Christian devotion is divine protection under the shadow of God's wings, its literal meaning as a garment's edge provides a rich secondary symbolic layer regarding healing, particularly in interpreting passages like Malachi 4:2 alongside the New Testament accounts of individuals being healed by touching the hem of Christ's garment.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Protective refuge and care—especially God sheltering, preserving, and gathering his people “under his wings.”\",\n  \"primary_basis\": [\n    \"Ruth 2:12—Ruth seeks refuge under the wings of the God of Israel.\",\n    \"Psalm 17:8—“Hide me in the shadow of your wings.”\",\n    \"Psalm 36:7—People take refuge in the shadow of God’s wings.\",\n    \"Psalm 57:1—The psalmist seeks refuge under God’s wings until danger passes.\",\n    \"Psalm 61:4—Dwelling in God’s tent and taking refuge under his wings.\",\n    \"Psalm 63:7—Rejoicing in the shadow of God’s wings.\",\n    \"Psalm 91:4—God covers his people with his feathers, and under his wings they find refuge.\",\n    \"Matthew 23:37; Luke 13:34—Jesus depicts his desire to gather Jerusalem as a hen gathers her chicks under her wings.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The edge, corner, or hem of a garment, symbolizing covenantal covering, marital protection, or claimed responsibility.\",\n      \"basis\": [\n        \"Ruth 3:9—Ruth asks Boaz to spread his kanaph over her, commonly understood as a request for marriage and protection.\",\n        \"Ezekiel 16:8—God spreads the corner of his garment over Jerusalem in a covenant or marriage image.\",\n        \"1 Samuel 24:4–5, 11—the kanaph of Saul’s robe is cut, sometimes interpreted in relation to royal authority, though the immediate sense is the garment’s corner.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The specially fringed corner of an Israelite garment, representing covenant identity, obedience, and holiness.\",\n      \"basis\": [\n        \"Numbers 15:38–40—Tassels are placed on the kanaph of garments as reminders of God’s commandments.\",\n        \"Deuteronomy 22:12—Tassels are prescribed for the corners of the garment.\",\n        \"Matthew 9:20–22; 14:36; Mark 5:27–34; Luke 8:44—The woman touches the fringe or edge of Jesus’ garment; Christian interpretation sometimes connects this with covenant symbolism.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Divine or heavenly presence, holiness, and throne-room glory, especially through the wings of cherubim or seraphim.\",\n      \"basis\": [\n        \"Exodus 25:20; 37:9—Cherubim overshadow the mercy seat with their wings.\",\n        \"1 Kings 6:24–27; 8:6–7—Cherubic wings overshadow the ark in the temple.\",\n        \"Isaiah 6:2—Seraphim use their wings in the vision of God’s holiness.\",\n        \"Ezekiel 1:6–11, 23–24; 10:5–21—Winged living creatures accompany the manifestation of divine glory.\",\n        \"Revelation 4:8—Winged living creatures surround God’s throne.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Swift movement, supernatural agency, or deliverance.\",\n      \"basis\": [\n        \"Psalm 18:10; 2 Samuel 22:11—God rides upon a cherub and flies on the wings of the wind.\",\n        \"Isaiah 40:31—Those who hope in the Lord mount up with wings like eagles.\",\n        \"Daniel 7:4, 6—Wings in apocalyptic beasts contribute imagery of power and rapid movement.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Healing or life-giving power associated with the “wings” or rays of the rising sun.\",\n      \"basis\": [\n        \"Malachi 4:2—The “sun of righteousness” rises with healing in its wings; Christian readings often apply this messianically to Christ, while “wings” may denote rays or extremities.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a recognizable primary symbolic association—protective refuge under God’s wings—but kanaph is not a fixed symbol in every occurrence. Its literal semantic range includes wing, extremity, corner, and garment edge, so context can yield substantially different images.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"Divine protection, shelter, and refuge (as a bird covers its young)\",\n  \"primary_basis\": [\n    \"Psalm 91:4\",\n    \"Ruth 2:12\",\n    \"Deuteronomy 32:11\",\n    \"Exodus 19:4\",\n    \"Matthew 23:37 / Luke 13:34\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Strength, renewal, and soaring empowerment\",\n      \"basis\": [\n        \"Isaiah 40:31\",\n        \"Psalm 103:5\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Swiftness, mobility, or theophanic presence (e.g., 'wings of the wind' or cherubim)\",\n      \"basis\": [\n        \"Psalm 18:10\",\n        \"2 Samuel 22:11\",\n        \"Ezekiel 1 and 10 (cherubim)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Healing and restorative power\",\n      \"basis\": [\n        \"Malachi 4:2\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Covenantal covering or marital/protective claim (via garment edge/skirt sense of kanaph)\",\n      \"basis\": [\n        \"Ruth 3:9\",\n        \"Ezekiel 16:8\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian biblical interpretation the protective-refuge sense of wings (kanaph) is the dominant and most frequently taught symbolism, grounded in both Old Testament imagery of God as an eagle/hen and New Testament application by Jesus. Other senses appear regularly but are secondary or context-specific; the Hebrew range of kanaph (wing/edge/corner) is widely noted yet does not displace the protective reading as primary.\"\n}\n\nBOOK ENTRY\nThe covenant edge — wing, skirt, border, corner — where the reminder of the law is bound and refuge is found.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ezek 16:8) · see Wings, ch. 13\n\nAVAILABLE KJV EXCERPTS\nEzekiel 16:8 — Now when I passed by thee, and looked upon thee, behold, thy time was the time of love; and I spread my skirt over thee, and covered thy nakedness: yea, I sware unto thee, and entered into a covenant with thee, saith the Lord GOD, and thou becamest mine.\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "8839a9784e260da194d3c9a8b180ce6bfd8a544ad27fc3b0f9b23582e421d8e8",
+  "cache": {
+    "hit": true,
+    "source": {
+      "run_id": "2026-07-13-all-symbols-phase-2",
+      "request": "runs/2026-07-13-all-symbols-phase-2/requests/relationship/wings/anthropic.json"
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "created_at": 1785122895,
+  "completed_at": 1785122903,
+  "id": "a38e3dfd-e4c1-9088-a5c8-d81600081e67",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_a38e3dfd-e4c1-9088-a5c8-d81600081e67",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for the biblical term \"Ancient of Days (attiq yomin)\". I need to respond with a specific JSON format.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"primary_meaning\":\"A title for God (specifically God the Father) as the eternal, sovereign Judge who sits on the throne in heavenly court, receiving dominion and glory, and before whom the Son of Man appears.\",\"primary_basis\":[\"Daniel 7:9\",\"Daniel 7:13\",\"Daniel 7:22\"],\"alternatives\":[{\"meaning\":\"A title or appearance of Christ (the pre-incarnate or exalted Son) as the eternal Judge\",\"basis\":[\"Daniel 7:9-14 read christologically\",\"Revelation 1:12-16 parallels\",\"some patristic and later Christian interpreters\"],\"prominence\":\"common\"},{\"meaning\":\"A theophany or vision of the Godhead / divine council without strict Trinitarian person distinction\",\"basis\":[\"Daniel 7 throne-room imagery\",\"Second Temple Jewish apocalyptic context\"],\"prominence\":\"minority\"},{\"meaning\":\"An exalted angelic or hypostatic figure distinct from God\",\"basis\":[\"some historical-critical and non-Christian readings of Daniel\"],\"prominence\":\"rare\"}],\"has_settled_consensus\":true,\"confidence\":\"high\",\"notes\":\"In mainstream Christian interpretation the phrase attiq yomin / Ancient of Days is overwhelmingly treated as a designation of God (Father) in Daniel’s judgment scene; identification with Christ is a frequent secondary christological reading but not the primary consensus default.\"}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_a38e3dfd-e4c1-9088-a5c8-d81600081e67",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 609,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 404,
+    "output_tokens_details": {
+      "reasoning_tokens": 110
+    },
+    "total_tokens": 1013,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 34244000,
+    "context_details": {
+      "input_tokens": 609,
+      "output_tokens": 404
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

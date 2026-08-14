@@ -1,0 +1,179 @@
+{
+  "id": "resp_0b4b8cd084a24fd2006a5473d277c881908181aef8ac298680",
+  "object": "response",
+  "created_at": 1783919570,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919600,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0b4b8cd084a24fd2006a5473d37b408190aeb04fa426e512a1",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0b4b8cd084a24fd2006a5473dfbf3481909011dc889e4ccb81",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0b4b8cd084a24fd2006a5473e4ecc88190960dc91e9e10050f",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Money or material value, especially as a symbol of wealth and the believer’s responsibility to use material resources faithfully rather than serve them as an idol.\",\"primary_basis\":[\"Matthew 6:19–24 — earthly treasure is contrasted with heavenly treasure, and service to God with service to mammon.\",\"Luke 16:9–13 — money is treated as a test of faithfulness and as a potential rival master.\",\"Mark 12:41–44; Luke 21:1–4 — the widow’s small coins illustrate sacrificial giving and value measured by devotion rather than amount.\",\"Matthew 25:14–30; Luke 19:11–27 — monetary units entrusted to servants symbolize resources for which people are accountable.\",\"1 Timothy 6:6–10, 17–19 — wealth is morally dangerous when loved or trusted, but can be used generously.\"] ,\"alternatives\":[{\"meaning\":\"A lost person or soul whom God diligently seeks and restores.\",\"basis\":[\"Luke 15:8–10 — the parable of the lost coin is explicitly connected with joy over one sinner who repents.\"],\"prominence\":\"common\"},{\"meaning\":\"Earthly political authority and civic obligation, set within the higher claim of God’s ownership.\",\"basis\":[\"Matthew 22:15–22; Mark 12:13–17; Luke 20:20–26 — Caesar’s image and inscription on the denarius ground the saying, “Render to Caesar … and to God …”\",\"Genesis 1:26–27 is often brought into Christian exposition as an implicit contrast: the coin bears Caesar’s image, while humanity bears God’s image.\"],\"prominence\":\"common\"},{\"meaning\":\"Sacrificial devotion whose spiritual worth exceeds its monetary value.\",\"basis\":[\"Mark 12:41–44; Luke 21:1–4 — the widow’s two small coins are valued because she gives out of poverty.\"],\"prominence\":\"common\"},{\"meaning\":\"Betrayal, corrupt payment, or blood money.\",\"basis\":[\"Matthew 26:14–16; 27:3–10 — the thirty pieces of silver paid for Jesus’ betrayal.\",\"Zechariah 11:12–13 — the thirty pieces of silver provide the prophetic background used by Matthew.\"],\"prominence\":\"common\"},{\"meaning\":\"Humanity bearing the divine image and recovered through salvation; in detailed allegorical readings, the woman searching for the coin represents God, divine Wisdom, or the Church.\",\"basis\":[\"Luke 15:8–10 — developed allegorically from the lost coin’s retained value and recoverability.\",\"Genesis 1:26–27 — invoked because a coin bears an image, analogously to humanity bearing God’s image.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no settled, universal biblical symbolism of the coin. Coins and monetary units function differently according to context: wealth, stewardship, sacrificial giving, civic authority, betrayal, or a lost sinner. The broad association with money and material value is the most recognizable, but interpretation should ordinarily be controlled by the particular passage.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1447,
+    "output_tokens_details": {
+      "reasoning_tokens": 796
+    },
+    "total_tokens": 1764
+  },
+  "user": null,
+  "metadata": {}
+}

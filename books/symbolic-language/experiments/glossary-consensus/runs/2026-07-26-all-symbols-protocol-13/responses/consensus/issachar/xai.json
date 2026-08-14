@@ -1,0 +1,156 @@
+{
+  "created_at": 1785123041,
+  "completed_at": 1785123073,
+  "id": "9e03f037-36c5-9478-9ab4-8110b8c35017",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_9e03f037-36c5-9478-9ab4-8110b8c35017",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for the term \"Issachar\" in biblical symbolism. I need to respond with a specific JSON format.\nThe primary symbolic meaning most commonly assigned to Issachar in Christian teaching and biblical interpretation is that of a strong donkey or ass, representing burden-bearing, hard work, service, and sometimes contentment or a willingness to bear burdens for the sake of rest and provision.\n\nThe biblical passages normally used to support that meaning are Genesis 49 14-15, where Jacob blesses his son Issachar as \"a strong donkey, lying down between the sheepfolds,\" and Deuteronomy 33 18-19, which associates Issachar with rejoicing in tents and drawing from the abundance of the seas.\n\nMaterially different alternative readings include the interpretation of Issachar as understanding the times, drawn from 1 Chronicles 12 32, which is common in modern Christian teaching and prophetic circles; the association with reward or wages, stemming from the etymology of the name and the context of Leah's naming in Genesis 30 18, which is minority; and the link to Torah study or scholarship, based on the blessing in Deuteronomy 33 18-19, which is rare.\n\nThe term does not have a fully settled symbolic interpretation, as it carries multiple layers of meaning depending on the context.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"burden-bearer or strong donkey that labors under loads (often linked to industrious service or voluntary servitude)\",\n  \"primary_basis\": [\n    \"Genesis 49:14-15\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"men who understand the times and know what Israel ought to do (discernment of seasons/strategy)\",\n      \"basis\": [\n        \"1 Chronicles 12:32\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"rejoicing in tents; calling peoples to the mountain for sacrifice; drawing abundance from seas and sand\",\n      \"basis\": [\n        \"Deuteronomy 33:18-19\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"wages/reward/recompense (from the name's etymology)\",\n      \"basis\": [\n        \"Genesis 30:18\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Jacob's oracle in Gen 49 supplies the dominant traditional tribal emblem in Christian exposition of the twelve tribes; the Chronicles notice is widely preached in modern teaching but is not the primary symbolic assignment across historic interpretation. No single meaning is universally fixed.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_9e03f037-36c5-9478-9ab4-8110b8c35017",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 603,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1476,
+    "output_tokens_details": {
+      "reasoning_tokens": 1174
+    },
+    "total_tokens": 2079,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 98444000,
+    "context_details": {
+      "input_tokens": 603,
+      "output_tokens": 1476
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "cedar",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nCedar\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching the cedar—especially the cedar of Lebanon—primarily symbolizes strength, majesty, and enduring stature, applied most often to the flourishing and stability of the righteous person who is planted and grows under God's blessing. The tree's great height, longevity, deep rooting, and incorruptible fragrant wood make it the standard biblical image of noble, God-given greatness.\",\n  \"primary_basis\": [\n    \"Psalm 92:12 – 'The righteous shall flourish like the palm tree: he shall grow like a cedar in Lebanon'\",\n    \"Psalm 104:16 – 'The trees of the LORD are full of sap; the cedars of Lebanon, which he hath planted'\",\n    \"Song of Solomon 5:15 – the beloved's countenance 'excellent as the cedars,' read as majesty/beauty\",\n    \"Psalm 29:5 – the voice of the LORD breaking the cedars, presupposing them as the epitome of strength\",\n    \"1 Kings 5–7 and 6:9–20 – cedar as the choice material for Solomon's temple, connoting durability, purity, and worthiness for God's dwelling\",\n    \"2 Samuel 7:2,7 – a 'house of cedar' as the mark of royal dignity\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Human pride, loftiness, and worldly power destined for divine judgment—the cedar as the tall thing God brings low (applied to Assyria, Lebanon, and the arrogant generally).\",\n      \"basis\": [\n        \"Isaiah 2:12–13 – the day of the LORD 'upon all the cedars of Lebanon, that are high and lifted up'\",\n        \"Ezekiel 31:3–14 – Assyria as a towering cedar cut down\",\n        \"Isaiah 10:33–34; Zechariah 11:1–2 – felling of cedars as judgment on the proud\",\n        \"Amos 2:9 – the Amorite 'whose height was like the height of the cedars,' destroyed\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Royal-Davidic and messianic symbolism: the cedar sprig planted by God as the restored Davidic kingdom or the Messiah, under whose branches all find shelter; often connected typologically to kingdom parables.\",\n      \"basis\": [\n        \"Ezekiel 17:3–4, 22–24 – God takes a tender twig from the high cedar and plants it on Israel's mountain\",\n        \"2 Samuel 7 – 'house of cedar' motif in the Davidic covenant context\",\n        \"Frequently linked by commentators to the mustard-seed/tree imagery of Matthew 13:31–32\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purification, incorruptibility, and (in patristic/typological reading) the incorruptible humanity of Christ or the wood of the cross; cedar's use in cleansing rites and its rot-resistant wood ground this reading.\",\n      \"basis\": [\n        \"Leviticus 14:4–6, 49–52 – cedar wood in the cleansing of lepers and houses\",\n        \"Numbers 19:6 – cedar wood burned with the red heifer\",\n        \"Patristic and medieval typology (e.g., traditions that the cross included cedar; allegorical readings of temple cedar as Christ's flesh)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The Church, the saints, or spiritual growth in holiness—an ecclesial-allegorical extension of Psalm 92:12 and the temple imagery, common in devotional and homiletical literature.\",\n      \"basis\": [\n        \"Psalm 92:12–14 – planted in the house of the LORD, flourishing in God's courts\",\n        \"1 Kings 6 – cedar-lined temple allegorized as the Church/believer as God's dwelling\",\n        \"Hosea 14:5–6 – Israel's restored growth 'as Lebanon'\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Cedar is a genuinely bivalent biblical symbol: the same qualities (height, grandeur) signify righteous flourishing and divine blessing in the Psalms and temple texts, but pride ripe for judgment in the prophets. The 'strength/majesty/flourishing of the righteous' sense is the one most commonly presented as primary in Christian teaching, dictionaries of biblical imagery, and homiletics, with the pride-and-judgment reading widely acknowledged as the prophetic counterpoint rather than a rival definition. Reference works (e.g., Dictionary of Biblical Imagery–type sources) typically list both, with Psalm 92:12 as the anchor text. No single verse defines cedar symbolism; the consensus rests on the cumulative pattern across roughly 70 Old Testament occurrences.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Strength, majesty, enduring stature, and the flourishing of the righteous.\",\n  \"primary_basis\": [\n    \"Psalm 92:12\",\n    \"Ezekiel 31:3\",\n    \"Numbers 24:6\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Human pride, arrogance, and worldly power that opposes God and is ultimately brought low.\",\n      \"basis\": [\n        \"Isaiah 2:13\",\n        \"Psalm 29:5\",\n        \"Zechariah 11:1-2\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Purity, incorruptibility, and cleansing from defilement.\",\n      \"basis\": [\n        \"Leviticus 14:4\",\n        \"Numbers 19:6\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The majesty, permanence, and dwelling of God via its use in building the Temple.\",\n      \"basis\": [\n        \"1 Kings 6\",\n        \"2 Samuel 7:2\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The cedar, particularly the Cedar of Lebanon, is a prominent multivalent symbol. Positively, its great height and rot-resistant wood symbolize enduring strength and righteous flourishing. Negatively, that same height serves as a metaphor for human pride and imperial dominance that God will fell.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Strength, majesty, lofty stature, and enduring stability. The cedar—especially the cedar of Lebanon—is commonly used as an image of impressive, durable greatness; in positive contexts it characterizes the flourishing righteous or divinely established rule.\",\n  \"primary_basis\": [\n    \"Psalm 92:12 — the righteous grow like a cedar in Lebanon.\",\n    \"Psalm 104:16 — the cedars of Lebanon are described as trees planted and sustained by the Lord.\",\n    \"Ezekiel 17:22–24 — God plants a lofty cedar, commonly interpreted in Christian tradition as representing the divinely established Messiah, kingdom, or people of God.\",\n    \"Ezekiel 31:3–9 — Assyria's greatness and power are pictured as a magnificent cedar of Lebanon.\",\n    \"1 Kings 5–6 — cedar's durability and splendor are associated with Solomon's temple.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The flourishing, stability, and spiritual vitality of the righteous.\",\n      \"basis\": [\n        \"Psalm 92:12–15 — the righteous flourish like the cedar and continue bearing fruit.\",\n        \"Psalm 1:3 provides a related, though non-cedar-specific, image of the godly person as a firmly planted tree.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Pride, arrogant power, or human greatness that God will humble.\",\n      \"basis\": [\n        \"Isaiah 2:12–13 — the lofty cedars of Lebanon appear among things brought low in the day of the Lord.\",\n        \"Ezekiel 31:10–14 — the towering cedar becomes proud and is cut down.\",\n        \"Zechariah 11:1–2 — the fallen cedar symbolizes the downfall of what is exalted and powerful.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Messianic kingship and the growth of God's kingdom.\",\n      \"basis\": [\n        \"Ezekiel 17:22–24 — God takes a tender sprig, plants it on Israel's mountain, and causes it to become a noble cedar.\",\n        \"Christian interpretation often connects this royal planting imagery with the Davidic Messiah and the worldwide shelter of his kingdom.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Holiness, incorruptibility, cleansing, or preservation.\",\n      \"basis\": [\n        \"Leviticus 14:4–7, 49–52 — cedarwood is used in purification rites.\",\n        \"Numbers 19:6 — cedarwood is included in preparing the ashes of the red heifer.\",\n        \"The durability and fragrance of cedar, together with these ritual uses, support later Christian typological readings.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The beauty, nobility, or imposing appearance of an individual.\",\n      \"basis\": [\n        \"Song of Songs 5:15 — the beloved's appearance is compared to Lebanon and described as choice as the cedars.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"There is no single settled symbolic meaning applicable to every biblical occurrence. Strength, majesty, durability, and lofty stature form the broadest recognizable association, but context determines whether those qualities are praised as righteousness or divine rule, or condemned as pride and oppressive power.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"strength, majesty, durability, and the flourishing of the righteous\",\n  \"primary_basis\": [\n    \"Psalm 92:12\",\n    \"Psalm 104:16\",\n    \"Ezekiel 31:3-9\",\n    \"1 Kings 5–7 (cedar for the temple)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"human pride and loftiness that God humbles\",\n      \"basis\": [\n        \"Isaiah 2:13\",\n        \"Isaiah 10:33-34\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the messianic kingdom or exalted tree of God’s planting\",\n      \"basis\": [\n        \"Ezekiel 17:22-24\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"purification and incorruptibility (ritual use of cedar wood)\",\n      \"basis\": [\n        \"Leviticus 14:4-6\",\n        \"Numbers 19:6\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Cedars of Lebanon dominate biblical references; Christian teaching most often links them positively to strength and the righteous (via Ps 92), yet context can reverse the image to pride. Multiple secondary associations exist without one exclusive settled meaning.\"\n}\n\nBOOK ENTRY\nA towering power of great height and majesty. Assyria, the house of David, and the righteous may each bear the figure; the cedar signifies stature, not one fixed identity.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ezek 31:3; 17:22-24; Ps 92:12; Isa 2:13) · see Trees, ch. 41\n\nAVAILABLE KJV EXCERPTS\nEzekiel 31:3 — Behold, the Assyrian was a cedar in Lebanon with fair branches, and with a shadowing shroud, and of an high stature; and his top was among the thick boughs.\nEzekiel 17:22 — Thus saith the Lord GOD; I will also take of the highest branch of the high cedar, and will set it; I will crop off from the top of his young twigs a tender one, and will plant it upon an high mountain and eminent:\nEzekiel 17:23 — In the mountain of the height of Israel will I plant it: and it shall bring forth boughs, and bear fruit, and be a goodly cedar: and under it shall dwell all fowl of every wing; in the shadow of the branches thereof shall they dwell.\nEzekiel 17:24 — And all the trees of the field shall know that I the LORD have brought down the high tree, have exalted the low tree, have dried up the green tree, and have made the dry tree to flourish: I the LORD have spoken and have done it.\nPsalms 92:12 — The righteous shall flourish like the palm tree: he shall grow like a cedar in Lebanon.\nIsaiah 2:13 — And upon all the cedars of Lebanon, that are high and lifted up, and upon all the oaks of Bashan,\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "c197894e4131259dd3060e015029eb8ff90c2ea48839759287c886fb5baa046d",
+  "cache": {
+    "hit": false
+  }
+}

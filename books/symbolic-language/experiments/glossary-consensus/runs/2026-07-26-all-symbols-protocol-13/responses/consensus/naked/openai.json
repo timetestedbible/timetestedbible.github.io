@@ -1,0 +1,179 @@
+{
+  "id": "resp_0d7cf0a257bb0dda006a5476ae35a88194a81c07c3a2522afd",
+  "object": "response",
+  "created_at": 1783920302,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920333,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0d7cf0a257bb0dda006a5476afc15481948c3f1047fab3becf",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_0d7cf0a257bb0dda006a5476bb73648194ad52597c0f51448e",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_0d7cf0a257bb0dda006a5476bd1f40819483cfe6f879a834b5",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Shameful exposure and vulnerability, especially the exposure of sin or guilt and the loss of innocence under divine judgment.\",\"primary_basis\":[\"Genesis 2:25 contrasts original nakedness without shame with Genesis 3:7-11, where nakedness becomes associated with disobedience, fear, and shame.\",\"Genesis 3:21 depicts God clothing Adam and Eve after the fall, often interpreted as covering their shame.\",\"Isaiah 47:2-3, Ezekiel 16:36-39, Hosea 2:3,9-10, and Nahum 3:5 use exposed nakedness as imagery for humiliation and judgment.\",\"Revelation 3:17-18 uses nakedness for a church's shameful spiritual condition and counsels receiving white garments.\",\"Revelation 16:15 links keeping one's garments with avoiding exposed shame.\",\"Hebrews 4:13 describes all creatures as naked and exposed before God's searching judgment.\"],\"alternatives\":[{\"meaning\":\"Original innocence, openness, and unashamed intimacy before sin.\",\"basis\":[\"Genesis 2:25 states that the man and woman were naked and not ashamed.\",\"Christian readings commonly contrast this condition with the fear and concealment of Genesis 3.\"],\"prominence\":\"common\"},{\"meaning\":\"Spiritual poverty or lack of righteousness, requiring divine clothing.\",\"basis\":[\"Revelation 3:17-18 associates nakedness with spiritual destitution and white garments with remedy.\",\"Isaiah 61:10 and Zechariah 3:3-5 contribute to the broader biblical symbolism of salvation or righteousness as clothing.\",\"Second Corinthians 5:2-4 uses clothing and nakedness imagery in relation to the believer's heavenly state.\"],\"prominence\":\"common\"},{\"meaning\":\"Public humiliation, defeat, captivity, or loss of social status, without necessarily symbolizing personal moral guilt.\",\"basis\":[\"Isaiah 20:2-4 uses nakedness as a prophetic sign of captives led away in disgrace.\",\"Isaiah 47:2-3 and Nahum 3:5 portray conquered peoples or cities as publicly exposed.\",\"Lamentations 1:8 associates Jerusalem's exposed nakedness with disgrace.\"],\"prominence\":\"common\"},{\"meaning\":\"Human vulnerability and complete exposure before God or other powers.\",\"basis\":[\"Hebrews 4:13 depicts every creature as naked and exposed before God.\",\"Job 1:21 uses nakedness to express human creatureliness and the absence of possessions at birth and death.\",\"Ecclesiastes 5:15 similarly emphasizes human dependence and inability to retain earthly gain.\"],\"prominence\":\"common\"},{\"meaning\":\"Material poverty and bodily need, often meant literally rather than as a symbolic code.\",\"basis\":[\"Matthew 25:36,38,43-44 treats clothing the naked as an act of mercy.\",\"James 2:15 refers to a brother or sister lacking clothing and daily food.\",\"Isaiah 58:7 commands covering the naked as part of true devotion.\"],\"prominence\":\"common\"},{\"meaning\":\"A euphemism for sexual relations, incest, or sexual violation.\",\"basis\":[\"Leviticus 18 and 20 repeatedly use 'uncover nakedness' for prohibited sexual relations.\",\"Genesis 9:20-24 has generated interpretations involving dishonor, sexual impropriety, or literal viewing, though the precise action remains disputed.\",\"Ezekiel 16 and 23 combine nakedness with imagery of sexual infidelity and exploitation.\"],\"prominence\":\"common\"},{\"meaning\":\"Bodilessness or mortality in contrast with being clothed with the resurrection body.\",\"basis\":[\"Second Corinthians 5:1-4 contrasts being unclothed or naked with being further clothed by heavenly life.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Christian interpretation has no single fixed symbolic meaning for every occurrence. The broadest recurring association is shameful exposure following sin or under judgment, but context can instead indicate innocence, poverty, sexuality, captivity, creaturely vulnerability, or bodilessness. Many biblical references are partly or wholly literal rather than symbolic.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 321,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1448,
+    "output_tokens_details": {
+      "reasoning_tokens": 603
+    },
+    "total_tokens": 1769
+  },
+  "user": null,
+  "metadata": {}
+}

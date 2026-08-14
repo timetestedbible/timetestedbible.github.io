@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920100,
+  "completed_at": 1783920114,
+  "id": "cbf49c1d-9dd2-92f3-b423-545b494fc7a0",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_cbf49c1d-9dd2-92f3-b423-545b494fc7a0",
+      "summary": [
+        {
+          "text": "The user wants me to act as a \"blind consensus definer\" for the term \"Jacob\" in biblical symbolism, specifically in Christian teaching and biblical interpretation.\n{\n  \"primary_meaning\": \"Jacob symbolizes the people of Israel or the elect who wrestle with God and are ultimately blessed and transformed.\",\n  \"primary_basis\": [\n    \"Genesis 32:24-30\",\n    \"Romans 9:10-13\",\n    \"Genesis 25:23\",\n    \" 1 Kings 18:31\",\n    \"Hosea 12:3-4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Jacob represents the flesh or the unspiritual life in contrast to Esau representing the world or the natural man.\",\n      \"basis\": [\n        \"Genesis  25:23\",\n        \"Romans 9:10-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Jacob is a type of Christ, particularly in His struggle and victory over sin.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"God's elect/covenant people (Israel/the Church as spiritual Israel)\",\n  \"primary_basis\": [\n    \"Genesis 32:28 (renamed Israel)\",\n    \"Romans 9:6-13 (Jacob loved, election of Israel)\",\n    \"Hosea 12:2-4\",\n    \"Isaiah 41:8; 44:1-2 (Jacob/Israel as servant)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"type of the individual believer who struggles with God, is disciplined, and is transformed/prevails\",\n      \"basis\": [\n        \"Genesis 32:24-30\",\n        \"Hosea 12:3-4\",\n        \"Hebrews 11:21\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"type or foreshadowing of Christ (via Jacob's ladder or the prevailing one)\",\n      \"basis\": [\n        \"John 1:51 (allusion to Genesis 28 ladder)\",\n        \"Genesis 28:12\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"historical patriarch without strong typological/symbolic overlay (or primarily contrast to Esau as flesh vs spirit)\",\n      \"basis\": [\n        \"Genesis 25–50 narrative\",\n        \"Malachi 1:2-3\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian interpretation Jacob is most consistently taken as representative of the covenant people (interchangeable with 'Israel' in OT prophecy and NT election language). Typological readings of his personal story as the struggling believer are also widespread but secondary to the national/elect-people sense; pure historical readings coexist without displacing the symbolic consensus.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_cbf49c1d-9dd2-92f3-b423-545b494fc7a0",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 1416,
+    "output_tokens_details": {
+      "reasoning_tokens": 996
+    },
+    "total_tokens": 2018,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 97000000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1416
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

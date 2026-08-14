@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "palm-tree",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nPalm tree (tamar)\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In Christian teaching the palm tree and palm branch most commonly symbolize victory and triumph — specifically the triumph of Christ (Palm Sunday) and, by extension, the victory of the righteous or of martyrs over sin, persecution, and death. Closely fused with this is the meaning of the flourishing, upright righteous person: 'The righteous shall flourish like the palm tree' (Psalm 92:12). Together these yield the standard composite: the palm represents the righteous who flourish and ultimately triumph.\",\n  \"primary_basis\": [\n    \"Psalm 92:12-14 ('The righteous shall flourish like the palm tree')\",\n    \"John 12:13 (crowds take palm branches to greet Jesus at the triumphal entry)\",\n    \"Revelation 7:9 (the great multitude with palm branches before the throne, traditionally read as victorious saints/martyrs)\",\n    \"Leviticus 23:40 (palm fronds taken in rejoicing at the Feast of Tabernacles)\",\n    \"Song of Solomon 7:7-8 (stature 'like a palm tree')\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Righteous flourishing, uprightness, and fruitfulness in old age — the palm as an image of the godly person who stays green and productive (often treated as the primary meaning in Old Testament–focused teaching rather than an alternative).\",\n      \"basis\": [\n        \"Psalm 92:12-14\",\n        \"Jeremiah 17:7-8 (parallel tree-of-the-righteous imagery)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Victory, triumph, and martyrdom — palm branches as emblems of conquest, taken up strongly in Christian art and liturgy (Palm Sunday; the palm of martyrdom in patristic and later tradition).\",\n      \"basis\": [\n        \"John 12:13\",\n        \"Revelation 7:9\",\n        \"1 Maccabees 13:51 (extra-canonical, palm branches at Simon's victorious entry, often cited as background)\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Joy, festivity, and worship, connected to the Feast of Tabernacles and celebratory processions.\",\n      \"basis\": [\n        \"Leviticus 23:40\",\n        \"Nehemiah 8:15\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Temple, Eden/paradise, and the presence of God — palm carvings in Solomon's temple and Ezekiel's visionary temple read as restored-Eden imagery.\",\n      \"basis\": [\n        \"1 Kings 6:29, 32, 35\",\n        \"2 Chronicles 3:5\",\n        \"Ezekiel 40:16, 22, 26; 41:18-20, 25-26\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Life, refreshment, and provision in the wilderness — the palm as oasis tree (Elim; Jericho the 'city of palms').\",\n      \"basis\": [\n        \"Exodus 15:27\",\n        \"Deuteronomy 34:3\",\n        \"Judges 1:16; 3:13\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Feminine beauty, stature, and grace (also reflected in Tamar as a woman's name).\",\n      \"basis\": [\n        \"Song of Solomon 7:7-8\",\n        \"Genesis 38 (Tamar); 2 Samuel 13:1 (Tamar)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Israel itself, or a specific covenant community, personified as the palm — found in some rabbinic midrash and occasional Christian typology.\",\n      \"basis\": [\n        \"Psalm 92:12 read corporately\",\n        \"Judges 4:5 (the palm of Deborah, sometimes allegorized)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The palm is one of the more stable biblical symbols. Two strands dominate and are usually blended: (1) the flourishing righteous (Psalm 92) and (2) victory/triumph (John 12; Revelation 7), the latter especially strong in Christian liturgy, iconography, and martyrology. There is no serious interpretive dispute over these core meanings; the alternatives listed are supplementary emphases rather than competing readings. The Hebrew word tamar also appears as a personal name (Genesis 38; 2 Samuel 13) and a place name (Tamar/Hazazon-tamar), which some studies fold into the symbolism but which mainstream interpretation treats separately.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"Righteousness, spiritual flourishing, triumph, and victory.\",\n  \"primary_basis\": [\n    \"Psalm 92:12\",\n    \"John 12:13\",\n    \"Revelation 7:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Elegance, beauty, and graceful stature\",\n      \"basis\": [\n        \"Song of Solomon 7:7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Rest, refreshment, and divine provision in the wilderness\",\n      \"basis\": [\n        \"Exodus 15:27\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sacred space, temple worship, and the restoration of Eden\",\n      \"basis\": [\n        \"1 Kings 6:29\",\n        \"Ezekiel 41:18\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In Christian tradition, palm branches strongly connote martyrdom and victory over death, rooted in Revelation 7 and the Triumphal Entry, while Old Testament usage emphasizes the steadfast flourishing of the righteous.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"Righteous flourishing: the palm tree most commonly represents the godly person’s uprightness, vitality, fruitfulness, and enduring prosperity under God’s care.\",\n  \"primary_basis\": [\n    \"Psalm 92:12–15 explicitly compares the righteous to a flourishing palm tree and emphasizes continued fruitfulness in old age.\",\n    \"Psalm 1:3 and Jeremiah 17:7–8, though describing trees more generally rather than palms, are often used as parallel imagery for the fruitful, enduring life of the righteous.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Victory, triumph, and joyful acclaim, especially Christ’s kingship and the final victory of the redeemed.\",\n      \"basis\": [\n        \"John 12:12–13 describes the crowd greeting Jesus with palm branches at his triumphal entry.\",\n        \"Revelation 7:9–10 depicts the redeemed standing before God and the Lamb with palm branches.\",\n        \"Leviticus 23:40 associates palm branches with festal rejoicing before the Lord.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Beauty, stateliness, and desirability, particularly in bridal or nuptial imagery.\",\n      \"basis\": [\n        \"Song of Songs 7:7–8 compares the beloved’s stature to a palm tree and her breasts to its clusters.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sacred life, paradisal abundance, or the beauty of God’s dwelling.\",\n      \"basis\": [\n        \"Palm-tree designs decorate Solomon’s temple in 1 Kings 6:29, 32, and 35.\",\n        \"Palm trees also appear throughout Ezekiel’s visionary temple in Ezekiel 40:16–41:26.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Rest, refreshment, and divine provision in a wilderness setting.\",\n      \"basis\": [\n        \"Exodus 15:27 and Numbers 33:9 describe Israel camping at Elim, with its twelve springs and seventy palm trees.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"There is no universally settled, one-to-one symbolism for tamar in every biblical context. Psalm 92 supplies the clearest explicit symbolic comparison and makes righteous flourishing the strongest meaning for the palm tree itself. Victory and triumph are also highly recognizable Christian associations, but they arise chiefly from palm branches in the New Testament and later Christian iconography.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The righteous person who flourishes uprightly and fruitfully under God's blessing\",\n  \"primary_basis\": [\n    \"Psalm 92:12-14\",\n    \"Jeremiah 17:7-8 (parallel imagery of the thriving tree)\",\n    \"Temple and tabernacle decorations featuring palms (1 Kings 6–7; Ezekiel 40–41) as signs of life and blessing\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Victory, triumph, and festive acclamation (especially via palm branches)\",\n      \"basis\": [\n        \"John 12:13 (Triumphal Entry)\",\n        \"Revelation 7:9\",\n        \"1 Maccabees 13:51; 2 Maccabees 10:7 (intertestamental background often noted in Christian commentaries)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Beauty, stature, and desirability\",\n      \"basis\": [\n        \"Song of Solomon 7:7-8\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Rest, refreshment, and divine provision in the wilderness\",\n      \"basis\": [\n        \"Exodus 15:27 (Elim)\",\n        \"Numbers 33:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Place of judgment, leadership, or sacred association (via named palms)\",\n      \"basis\": [\n        \"Judges 4:5 (Palm of Deborah)\",\n        \"Deuteronomy 34:3; 2 Chronicles 28:15 (Jericho as city of palms)\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian teaching most consistently treats the palm tree itself (tamar) as an emblem of the flourishing righteous, drawing directly on Psalm 92; the closely related palm-branch motif of victory is extremely common but technically distinct and centered on the fronds rather than the tree. No major confessional tradition assigns a contradictory primary sense.\"\n}\n\nBOOK ENTRY\nThe righteous — “The righteous shall flourish like the palm tree… planted in the house of the LORD” — carved beside the cherubim on the temple's walls and doors, and in the hands of the white-robed multitude before the throne. Its branches are kappot — bent palms, the frond named for the open palm of the hand (Leviticus 23:40).\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 92:12-13; 1 Kings 6:29; Ezek 41:18; Lev 23:40; John 12:13; Rev 7:9)\n\nAVAILABLE KJV EXCERPTS\nPsalms 92:12 — The righteous shall flourish like the palm tree: he shall grow like a cedar in Lebanon.\nPsalms 92:13 — Those that be planted in the house of the LORD shall flourish in the courts of our God.\n1 Kings 6:29 — And he carved all the walls of the house round about with carved figures of cherubims and palm trees and open flowers, within and without.\nEzekiel 41:18 — And it was made with cherubims and palm trees, so that a palm tree was between a cherub and a cherub; and every cherub had two faces;\nLeviticus 23:40 — And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before the LORD your God seven days.\nJohn 12:13 — Took branches of palm trees, and went forth to meet him, and cried, Hosanna: Blessed is the King of Israel that cometh in the name of the Lord.\nRevelation 7:9 — After this I beheld, and, lo, a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues, stood before the throne, and before the Lamb, clothed with white robes, and palms in their hands;\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "5050059f38bbd3dc8f3c8c9e91442a681b3b4a32f0cef7c0faf365998c9791ab",
+  "cache": {
+    "hit": false
+  }
+}

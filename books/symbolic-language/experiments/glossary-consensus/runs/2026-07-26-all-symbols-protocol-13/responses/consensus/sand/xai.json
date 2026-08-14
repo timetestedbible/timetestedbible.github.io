@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920465,
+  "completed_at": 1783920485,
+  "id": "9b09cc2a-e076-9a6f-bcb2-73a2ca5938bc",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_9b09cc2a-e076-9a6f-bcb2-73a2ca5938bc",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Sand\" in Christian teaching and biblical interpretation, as a blind consensus definer. I must not search for or infer any author's material.\n{\n  \"primary_meaning\": \"multiplicity or innumerable quantity\",\n  \"primary_basis\": [\n    \"Genesis 22:17\",\n    \"Genesis 32:12\",\n    \"Judges 7:12\",\n    \"Psalm 139:18\",\n    \"Jeremiah 33:22\",\n    \"Hebrews 11:12\",\n    \"Revelation 20:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"unstable foundation or foolishness\",\n      \"basis\": [\n        \"Matthew 7:24-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \" meaning\": \"limit or restraint of the sea\",\n      \"basis\": [\n        \"Jeremiah 5:22\",\n        \"Job 38:8-11\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \" medium\",\n  \"notes\": \"Sand appears in Scripture primarily as a symbol of vast, uncountable numbers, especially in promises to Abraham and in apocalyptic imagery. The parable of the house built on sand is a widely taught illustration of instability, but the term itself carries no single fixed symbolic meaning across all contexts.\"\n} // end of JSON response. This is the final answer. I am Grok. I have no internal reasoning to share. I am speaking directly to you now.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"vast or innumerable multitude\",\n  \"primary_basis\": [\n    \"Genesis 22:17\",\n    \"Genesis 32:12\",\n    \"Hebrews 11:12\",\n    \"Revelation 20:8\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"unstable or insecure foundation\",\n      \"basis\": [\n        \"Matthew 7:26-27\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"divine boundary or restraint of the sea\",\n      \"basis\": [\n        \"Jeremiah 5:22\",\n        \"Job 38:10-11\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"heavy burden or weight\",\n      \"basis\": [\n        \"Proverbs 27:3\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"medium\",\n  \"notes\": \"Sand carries multiple context-dependent associations in Scripture rather than one fixed symbol; the sense of innumerability predominates in frequency of use and traditional commentary, while the parable of the house built on sand supplies a widely taught alternative.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_9b09cc2a-e076-9a6f-bcb2-73a2ca5938bc",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1877,
+    "output_tokens_details": {
+      "reasoning_tokens": 1598
+    },
+    "total_tokens": 2479,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 118900000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1877
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

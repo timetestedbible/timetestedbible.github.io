@@ -1,0 +1,178 @@
+{
+  "created_at": 1785124345,
+  "completed_at": 1785124375,
+  "id": "3344ce1d-0d08-9cfa-959b-e33f3388fbb6",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_3344ce1d-0d08-9cfa-959b-e33f3388fbb6",
+      "summary": [
+        {
+          "text": "The user wants me to classify the relationship between the blind consensus responses and the book's entry on \"Naked, nakedness\".\nThe book's entry aligns closely with the consensus on nakedness as post-Fall shame and exposure of sin, specifically tied to the absence of covenant covering. The core identification matches: both emphasize nakedness as spiritual vulnerability and guilt requiring divine or covenantal clothing. The book's focus on \"covenant covering\" refines the consensus by narrowing to covenantal contexts (e.g., Ezekiel 16:8), while retaining the general referent of exposed sinfulness. This is a REFINED relationship, as the book's precision adds boundary conditions without contradicting the central meaning. The scripture references (Ezek 16:8; Gen 3:7) provide strong support, directly linking exposure to sin and covenantal covering. Overall, the book's entry refines rather than replaces the consensus view.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"relation\": \"MATCH\",\n  \"consensus_summary\": \"Consensus primary meaning: nakedness symbolizes post-Fall shame, guilt, and spiritual exposure of sin, with the corresponding need for divine covering/clothing (righteousness, atonement, garments); pre-Fall unashamed nakedness is the common contrasting foil, while judgment/humiliation, poverty, sexual euphemism, and related senses are recognized contextual alternatives.\",\n  \"book_summary\": \"Nakedness means without covenant covering—exposed in one’s sin; opposite is garment.\",\n  \"consensus_core_identification\": \"shameful/spiritual exposure of sin and guilt that requires divine covering\",\n  \"book_core_identification\": \"exposed in one’s sin by lacking covenant covering\",\n  \"core_relation\": \"EQUIVALENT\",\n  \"extension_relation\": \"SAME_CASES\",\n  \"boundary_disagreement\": \"none material; book’s ‘covenant covering’ is a synonymous precision for the covering/garment motif already central in the consensus (esp. Ezek 16 and righteousness/clothing texts), not a redefinition of scope\",\n  \"material_contradiction\": \"none\",\n  \"rationale\": \"Minimum cores are identical: both identify nakedness as the state of being exposed in sin through lack of (divine/covenant) covering. Wording differences (‘covenant covering’ vs. ‘righteous garments/atonement’) and the book’s explicit opposite (‘Garment’) are immaterial elaborations already present in the consensus primary cluster and its cited texts; no replacement of referent, no excluded or added case classes, and no contradiction with the dominant post-Fall sense.\",\n  \"citation_support\": \"STRONG\",\n  \"strongest_objection\": \"Consensus also catalogs a common pre-Fall innocence reading and other contextual senses the brief book gloss does not mention, which could be over-read as incompleteness rather than focused equivalence on the primary symbol.\",\n  \"confidence\": \"high\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_3344ce1d-0d08-9cfa-959b-e33f3388fbb6",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "MATCH",
+              "REFINED",
+              "DIVERGENT",
+              "NOVEL"
+            ]
+          },
+          "consensus_summary": {
+            "type": "string"
+          },
+          "book_summary": {
+            "type": "string"
+          },
+          "consensus_core_identification": {
+            "type": "string"
+          },
+          "book_core_identification": {
+            "type": "string"
+          },
+          "core_relation": {
+            "type": "string",
+            "enum": [
+              "EQUIVALENT",
+              "BOOK_NARROWS",
+              "BOOK_BROADENS",
+              "COMPATIBLE_OVERLAP",
+              "CONTRADICTS",
+              "NO_CONSENSUS"
+            ]
+          },
+          "extension_relation": {
+            "type": "string",
+            "enum": [
+              "SAME_CASES",
+              "BOOK_SUBSET",
+              "BOOK_SUPERSET",
+              "PARTIAL_RECLASSIFICATION",
+              "DIFFERENT_REFERENT",
+              "NO_BASELINE"
+            ]
+          },
+          "boundary_disagreement": {
+            "type": "string"
+          },
+          "material_contradiction": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation_support": {
+            "type": "string",
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "INSUFFICIENT"
+            ]
+          },
+          "strongest_objection": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "relation",
+          "consensus_summary",
+          "book_summary",
+          "consensus_core_identification",
+          "book_core_identification",
+          "core_relation",
+          "extension_relation",
+          "boundary_disagreement",
+          "material_contradiction",
+          "rationale",
+          "citation_support",
+          "strongest_objection",
+          "confidence"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 4337,
+    "input_tokens_details": {
+      "cached_tokens": 512
+    },
+    "output_tokens": 1507,
+    "output_tokens_details": {
+      "reasoning_tokens": 1089
+    },
+    "total_tokens": 5844,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 168456000,
+    "context_details": {
+      "input_tokens": 4337,
+      "output_tokens": 1507
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness."
+}

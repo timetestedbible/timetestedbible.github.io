@@ -1,0 +1,156 @@
+{
+  "created_at": 1785123029,
+  "completed_at": 1785123044,
+  "id": "0c840365-337a-9231-aed2-f2813435c238",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0c840365-337a-9231-aed2-f2813435c238",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for the term \"Holy\" in biblical symbolism. I must respond with JSON matching the schema.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Set apart or consecrated to God; sacred, distinct from the common or profane, and characterized by divine purity or moral perfection.\",\n  \"primary_basis\": [\n    \"Leviticus 11:44-45 / 19:2 ('Be holy, for I am holy')\",\n    \"Isaiah 6:3 ('Holy, holy, holy is the Lord of hosts')\",\n    \"1 Peter 1:15-16 (echoing the Leviticus call to holiness)\",\n    \"Exodus 3:5 (holy ground as set apart)\",\n    \"Revelation 4:8 (thrice-holy acclamation of God)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Divine otherness or transcendence (God as wholly other, separate from creation)\",\n      \"basis\": [\n        \"Isaiah 6:3 and the trisagion tradition\",\n        \"Rudolf Otto-influenced readings of the numinous in biblical theophanies\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Moral purity or ethical perfection required of believers\",\n      \"basis\": [\n        \"1 Peter 1:15-16\",\n        \"Hebrews 12:14\",\n        \"Matthew 5:48 (be perfect as your heavenly Father is perfect)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Cultic or ritual consecration (objects, places, times, or persons dedicated exclusively to sacred use)\",\n      \"basis\": [\n        \"Exodus 28–29 (priestly consecration)\",\n        \"Leviticus 8–10 and temple/holy-of-holies language\",\n        \"Sabbath and festival texts calling days 'holy'\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across mainstream Christian biblical interpretation the core semantic range of Hebrew qadosh and Greek hagios is widely agreed to center on 'set apartness' for God, with moral purity, divine transcendence, and cultic consecration as closely related and frequently overlapping applications rather than fully competing symbols. No major tradition treats 'holy' as lacking a recognizable primary sense.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_0c840365-337a-9231-aed2-f2813435c238",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 733,
+    "output_tokens_details": {
+      "reasoning_tokens": 225
+    },
+    "total_tokens": 1335,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 53844000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 733
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

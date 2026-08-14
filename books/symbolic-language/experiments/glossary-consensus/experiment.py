@@ -36,6 +36,9 @@ INPUT_FILE = HERE / "inputs" / "glossary.json"
 DEFAULT_CONFIG = HERE / "config.example.json"
 CALL_CACHE = HERE / ".call-cache"
 STAGES = ("consensus", "relationship", "persuasion")
+FOREIGN_CHAPTER_BOOKS = {
+    "time-tested-tradition": ROOT / "books" / "time-tested-tradition",
+}
 
 METHOD_EXCERPTS = (
     (BOOK / "01-introduction.adoc", None, "[discrete]\n=== What Is a Symbolic Word?", "opening"),
@@ -166,9 +169,9 @@ def front_value(front: str, key: str) -> str:
     return match.group(1).strip() if match else ""
 
 
-def chapter_map() -> dict[str, Path]:
+def chapter_map(book: Path = BOOK) -> dict[str, Path]:
     result: dict[str, Path] = {}
-    for path in sorted(BOOK.glob("[0-9]*-*.adoc")):
+    for path in sorted(book.glob("[0-9]*-*.adoc")):
         front, _ = split_front_matter(path.read_text(encoding="utf-8"))
         slug = front_value(front, "slug")
         if slug:
@@ -200,6 +203,10 @@ def clean_adoc(value: str) -> str:
 def parse_glossary(include_words: bool = False) -> list[dict[str, Any]]:
     raw = GLOSSARY.read_text(encoding="utf-8")
     chapters = chapter_map()
+    foreign_chapters = {
+        book_name: chapter_map(book_path)
+        for book_name, book_path in FOREIGN_CHAPTER_BOOKS.items()
+    }
     blocks = re.findall(r"(?ms)^\[\[sym-([^\]]+)\]\](.*?)(?=^\[\[sym-|\Z)", raw)
     entries: list[dict[str, Any]] = []
     for anchor, block in blocks:
@@ -223,7 +230,20 @@ def parse_glossary(include_words: bool = False) -> list[dict[str, Any]]:
             if slug not in slugs:
                 slugs.append(slug)
         chapter_files = [str(chapters[s].relative_to(ROOT)) for s in slugs if s in chapters]
-        entries.append({
+        foreign_chapter_refs: list[dict[str, str]] = []
+        for book_name, slug in re.findall(
+            r"link:/books/(time-tested-tradition)/([^/]+)/",
+            "\n".join(seerefs),
+        ):
+            reference = {"book": book_name, "slug": slug}
+            if reference not in foreign_chapter_refs:
+                foreign_chapter_refs.append(reference)
+            path = foreign_chapters.get(book_name, {}).get(slug)
+            if path:
+                relative = str(path.relative_to(ROOT))
+                if relative not in chapter_files:
+                    chapter_files.append(relative)
+        entry = {
             "anchor": anchor,
             "term": clean_adoc(term),
             "definition": clean_adoc(definition_raw),
@@ -232,7 +252,10 @@ def parse_glossary(include_words: bool = False) -> list[dict[str, Any]]:
             "chapter_slugs": slugs,
             "chapter_files": chapter_files,
             "source_badge": source_badge,
-        })
+        }
+        if foreign_chapter_refs:
+            entry["foreign_chapter_refs"] = foreign_chapter_refs
+        entries.append(entry)
     return entries
 
 
@@ -438,7 +461,7 @@ def validate_relationship_decision(value: dict[str, Any]) -> None:
     extension_allowed = {
         "MATCH": {"SAME_CASES"},
         "REFINED": {"SAME_CASES", "BOOK_SUBSET", "BOOK_SUPERSET", "PARTIAL_RECLASSIFICATION"},
-        "DIVERGENT": {"BOOK_SUBSET", "BOOK_SUPERSET", "PARTIAL_RECLASSIFICATION", "DIFFERENT_REFERENT"},
+        "DIVERGENT": {"SAME_CASES", "BOOK_SUBSET", "BOOK_SUPERSET", "PARTIAL_RECLASSIFICATION", "DIFFERENT_REFERENT"},
         "NOVEL": {"NO_BASELINE", "DIFFERENT_REFERENT"},
     }
     if value["extension_relation"] not in extension_allowed[value["relation"]]:

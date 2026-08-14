@@ -1,0 +1,173 @@
+{
+  "id": "resp_082b2e621fa09cc5006a54789a8bd8819395f7383aff762043",
+  "object": "response",
+  "created_at": 1783920794,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920818,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_082b2e621fa09cc5006a54789b11848193aa529181160f5caa",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_082b2e621fa09cc5006a5478a154288193bc8c399fa65f7c69",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"In prophetic Christian interpretation—especially Daniel 9—a “week” is most commonly understood as a heptad (“seven”), usually a symbolic period of seven years rather than seven days. More broadly, its sevenfold structure can signify a complete or divinely appointed cycle.\",\"primary_basis\":[\"Daniel 9:24–27 — the “seventy weeks” and their subdivisions are commonly read as seventy sevens, usually totaling 490 years.\",\"Genesis 29:27–28 — Jacob fulfills Leah’s bridal “week” and then serves another seven years, often cited as evidence that a week/heptad can be associated with seven years.\",\"Leviticus 25:8 — seven sabbaths of years form a larger calendrical unit, supporting the biblical use of grouped seven-year periods.\",\"Numbers 14:34 and Ezekiel 4:4–6 — a day represents a year in particular symbolic actions; these texts are often invoked to support the prophetic day-year reading, though neither directly defines Daniel’s weeks.\",\"Genesis 1:1–2:3 and Exodus 20:8–11 — the seven-day creation and Sabbath pattern underlies the broader association of a week with a complete ordered cycle.\"],\"alternatives\":[{\"meaning\":\"An ordinary literal period of seven days, with no symbolic conversion.\",\"basis\":[\"Genesis 29:27–28 uses a literal bridal week alongside, but distinct from, seven further years.\",\"Daniel 10:2–3 explicitly refers to “three weeks of days,” commonly understood as ordinary weeks.\",\"Many New Testament references to the first day of the week are straightforward calendrical language, such as Matthew 28:1 and Acts 20:7.\"],\"prominence\":\"common\"},{\"meaning\":\"A symbolic sevenfold period expressing completeness or divinely ordered time without requiring a fixed seven-year duration.\",\"basis\":[\"Genesis 1:1–2:3 establishes the completed seven-day creation pattern.\",\"Leviticus 23 and 25 organize sacred time through recurring sevens.\",\"Revelation repeatedly uses seven symbolically for fullness or completeness, although it does not establish a universal symbolic definition of “week.”\"],\"prominence\":\"common\"},{\"meaning\":\"Daniel’s seventieth week is a still-future seven-year end-times period, often divided into two three-and-a-half-year halves and associated with tribulation.\",\"basis\":[\"Daniel 9:27 — the final week and its midpoint.\",\"Daniel 7:25 and 12:7,11–12 — related periods interpreted as approximately three and a half years.\",\"Matthew 24:15–21 and Revelation 11:2–3; 12:6,14; 13:5 — correlated with Daniel in dispensational and futurist readings.\"],\"prominence\":\"common\"},{\"meaning\":\"Daniel’s weeks are fulfilled continuously in events surrounding the coming and death of Christ and the early covenant era, without a chronological gap before the seventieth week.\",\"basis\":[\"Daniel 9:24–27 — read as a continuous sequence.\",\"Mark 1:15 and Galatians 4:4 — sometimes connected with the fulfillment of appointed messianic time.\",\"Matthew 24:15 — used in differing ways to relate Daniel to first-century and later events.\"],\"prominence\":\"common\"},{\"meaning\":\"Daniel’s seventy weeks are schematic or theological rather than an exact chronological code, emphasizing a complete, divinely determined period culminating in restoration and judgment.\",\"basis\":[\"Daniel 9:2,24 — Jeremiah’s seventy years are transformed into “seventy sevens.”\",\"Jeremiah 25:11–12 and 29:10 — the seventy-year background.\",\"Leviticus 25:8–12 and 26:34–35 — sabbatical and jubilee patterns sometimes viewed as shaping Daniel’s symbolic chronology.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is no single context-independent symbolic meaning of “week” throughout the Bible. Ordinary usage means seven days. In Daniel 9, the broadest interpretive consensus is that the term denotes “sevens” and is usually reckoned as seven-year units, but major Christian traditions disagree about the chronology, fulfillment, and whether the final week is continuous, future, or primarily schematic.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1097,
+    "output_tokens_details": {
+      "reasoning_tokens": 211
+    },
+    "total_tokens": 1414
+  },
+  "user": null,
+  "metadata": {}
+}

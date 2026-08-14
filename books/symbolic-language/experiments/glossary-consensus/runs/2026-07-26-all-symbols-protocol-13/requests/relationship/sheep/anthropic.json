@@ -1,0 +1,123 @@
+{
+  "provider": "anthropic",
+  "stage": "relationship",
+  "term": "sheep",
+  "url": "https://api.anthropic.com/v1/messages",
+  "headers": {
+    "x-api-key": "<REDACTED>",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "claude-fable-5",
+    "max_tokens": 14000,
+    "system": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nSheep\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, sheep primarily symbolize God's people (believers, the church, or Israel) in their relationship of dependence on God or Christ as their Shepherd. The image carries connotations of belonging to and being cared for by God, vulnerability and helplessness without guidance, the need for protection and provision, and a tendency to wander or go astray. Believers are the 'sheep of his pasture' who know the Shepherd's voice and follow him.\",\n  \"primary_basis\": [\n    \"Psalm 23:1-6 (The LORD is my shepherd)\",\n    \"Psalm 100:3 (we are his people, the sheep of his pasture)\",\n    \"Psalm 95:7\",\n    \"Isaiah 53:6 (all we like sheep have gone astray)\",\n    \"Ezekiel 34:11-31 (God as shepherd seeking his scattered sheep)\",\n    \"Jeremiah 23:1-4\",\n    \"Matthew 9:36 (sheep without a shepherd)\",\n    \"Matthew 10:6 and 15:24 (lost sheep of the house of Israel)\",\n    \"Luke 15:3-7 (parable of the lost sheep)\",\n    \"John 10:1-30 (the Good Shepherd; my sheep hear my voice)\",\n    \"John 21:15-17 (feed my sheep)\",\n    \"1 Peter 2:25 (you were straying like sheep but have returned to the Shepherd)\",\n    \"Hebrews 13:20\",\n    \"1 Peter 5:2-4\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Christ himself as the sacrificial sheep/lamb led to the slaughter — a Christological reading in which the sheep imagery points to Jesus' atoning death (closely tied to, though distinct from, the 'Lamb of God' motif).\",\n      \"basis\": [\n        \"Isaiah 53:7 (like a sheep before its shearers is silent)\",\n        \"Acts 8:32-35 (Ethiopian eunuch reading Isaiah, applied to Jesus)\",\n        \"John 1:29\",\n        \"1 Peter 1:18-19\",\n        \"Revelation 5:6-14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sheep as the righteous/saved in contrast to goats as the unrighteous/condemned in eschatological judgment (sheep-and-goats separation).\",\n      \"basis\": [\n        \"Matthew 25:31-46 (separating sheep from goats at the final judgment)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sheep as an emblem specifically of national Israel as God's flock, scattered under bad leaders (shepherds) and regathered by God — a corporate-Israel rather than general-believer reading.\",\n      \"basis\": [\n        \"Ezekiel 34 (whole chapter)\",\n        \"Jeremiah 50:6-7\",\n        \"Zechariah 10:2-3 and 13:7\",\n        \"Micah 2:12\",\n        \"Matthew 10:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sheep as emphasizing human sinfulness, foolishness, and straying — the image foregrounds the negative trait of wandering rather than belonging or care.\",\n      \"basis\": [\n        \"Isaiah 53:6\",\n        \"Psalm 119:176 (I have gone astray like a lost sheep)\",\n        \"1 Peter 2:25\",\n        \"Luke 15:4-7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Sheep as sacrificial animals in the levitical cult, symbolizing atonement, offering, and substitution generally (apart from a specific Christological application).\",\n      \"basis\": [\n        \"Genesis 22:7-8\",\n        \"Exodus 12:3-5 (Passover)\",\n        \"Leviticus 1 and 4-5 (sin and burnt offerings)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sheep as innocence, meekness, gentleness, or harmlessness of character — e.g., disciples sent out 'as sheep among wolves,' or false prophets in 'sheep's clothing' presupposing sheep as emblem of innocence.\",\n      \"basis\": [\n        \"Matthew 10:16 (sheep in the midst of wolves)\",\n        \"Matthew 7:15 (wolves in sheep's clothing)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sheep as a pejorative image of mindless conformity or unthinking followers ('sheeple'). This is a modern cultural usage, not a recognized exegetical tradition, though it occasionally colors popular discussion of the biblical texts.\",\n      \"basis\": [\n        \"No direct biblical basis; a modern colloquial extension\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Sheep is one of the most stable and widely recognized symbols in Christian interpretation: God's people under the care of God/Christ as Shepherd. The alternative readings listed are not so much rival interpretations as context-dependent applications of the same pastoral-flock metaphor (people-as-flock, Christ-as-sacrificial-sheep, righteous-vs-goats, Israel-as-flock). The people-of-God/Good Shepherd reading is dominant across Catholic, Orthodox, and Protestant traditions, patristic through modern commentary, and in liturgy and hymnody (e.g., Good Shepherd Sunday). Interpreters commonly distinguish 'sheep' (the people) from 'lamb' (the sacrificial Christ), though the two motifs overlap in Isaiah 53 and Acts 8.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"God's people or the followers of Christ, characterized by their dependence, vulnerability, and need for a guiding shepherd.\",\n  \"primary_basis\": [\n    \"Psalm 23\",\n    \"John 10:1-30\",\n    \"Ezekiel 34\",\n    \"Psalm 100:3\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Wayward humanity or helpless sinners prone to wandering away from God.\",\n      \"basis\": [\n        \"Isaiah 53:6\",\n        \"Matthew 9:36\",\n        \"1 Peter 2:25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The righteous or saved individuals at the final eschatological judgment, contrasted with goats.\",\n      \"basis\": [\n        \"Matthew 25:31-46\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A sacrificial offering or substitutionary atonement, often pointing to Christ himself.\",\n      \"basis\": [\n        \"Isaiah 53:7\",\n        \"Acts 8:32\",\n        \"Romans 8:36\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The symbolism of sheep is overwhelmingly consistent in biblical literature, primarily emphasizing the relationship between God as the Good Shepherd and humanity as His flock, reliant on His provision and protection.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"God’s people—especially Israel, Christ’s disciples, or the church—pictured as dependent, vulnerable, and in need of divine or pastoral guidance, protection, and care from God or Christ as shepherd.\",\n  \"primary_basis\": [\n    \"Psalm 23:1-4 — the Lord is the shepherd who guides and protects his people.\",\n    \"Psalm 95:7 and Psalm 100:3 — God’s people are the sheep of his pasture.\",\n    \"Isaiah 53:6 — people are compared to sheep that have gone astray.\",\n    \"Ezekiel 34:1-31 — Israel is God’s flock, harmed by false shepherds and gathered by God himself.\",\n    \"Matthew 9:36 — the crowds are like sheep without a shepherd.\",\n    \"Matthew 10:6 and 15:24 — Israel is described as the lost sheep of the house of Israel.\",\n    \"Luke 15:3-7; Matthew 18:12-14 — the lost sheep represents a sinner or vulnerable disciple sought and restored.\",\n    \"John 10:1-30 — Jesus is the Good Shepherd; his sheep know his voice and follow him.\",\n    \"John 21:15-17 — Christ’s followers are sheep entrusted to pastoral care.\",\n    \"1 Peter 2:25 and 5:2-4 — believers return to the Shepherd and form the flock under pastoral oversight.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The righteous or saved, contrasted with the wicked or condemned as goats.\",\n      \"basis\": [\n        \"Matthew 25:31-46 — the sheep at the Son of Man’s right hand inherit the kingdom, while the goats are judged.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Wayward, lost, or sinful human beings who need repentance, rescue, and restoration.\",\n      \"basis\": [\n        \"Isaiah 53:6 — all have gone astray like sheep.\",\n        \"Luke 15:3-7; Matthew 18:12-14 — the lost sheep is sought and restored.\",\n        \"1 Peter 2:25 — believers had been straying like sheep before returning to Christ.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Israel specifically, rather than God’s people in a general or ecclesial sense.\",\n      \"basis\": [\n        \"Jeremiah 50:6 — Israel is described as lost sheep.\",\n        \"Ezekiel 34:1-31 — the flock is explicitly Israel.\",\n        \"Matthew 10:6 and 15:24 — Jesus refers to the lost sheep of the house of Israel.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Innocent, meek, silent, or defenseless sufferers, sometimes associated especially with faithful persecution.\",\n      \"basis\": [\n        \"Isaiah 53:7 — the servant is like a sheep silent before its shearers.\",\n        \"Acts 8:32-35 — Isaiah’s sheep imagery is applied to Jesus.\",\n        \"Romans 8:36; Psalm 44:22 — God’s people are regarded as sheep for slaughter.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Sacrificial victims, with the imagery ultimately focused on Christ’s atoning death.\",\n      \"basis\": [\n        \"Isaiah 53:7 — the suffering servant is led like a sheep to slaughter.\",\n        \"Acts 8:32-35 — the slaughtered sheep imagery is interpreted christologically.\",\n        \"Although related, New Testament sacrificial symbolism more characteristically calls Christ the 'Lamb of God' in John 1:29, 36 and Revelation 5.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Believers or missionaries sent into a hostile world in a condition of vulnerability.\",\n      \"basis\": [\n        \"Matthew 10:16 — disciples are sent as sheep among wolves.\",\n        \"Luke 10:3 — the sent disciples are like lambs among wolves.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"There is a broad consensus that sheep most often symbolize people under shepherding, particularly God’s covenant people or Christ’s followers. The precise emphasis varies by passage: dependence and belonging, straying and restoration, righteous status, vulnerability, or sacrificial suffering. Thus the general symbolism is settled, but no single nuance applies uniformly in every biblical context.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"God's people (Israel in the OT; the Church/believers in the NT) as the flock under the care, guidance, and protection of the divine Shepherd (God or Christ)\",\n  \"primary_basis\": [\n    \"Psalm 23\",\n    \"Psalm 100:3\",\n    \"Isaiah 40:11\",\n    \"Ezekiel 34\",\n    \"John 10:1-30\",\n    \"Luke 15:3-7\",\n    \"Matthew 18:12-14\",\n    \"1 Peter 2:25\",\n    \"Hebrews 13:20\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The righteous/elect (as distinguished from goats representing the unrighteous) at the final judgment\",\n      \"basis\": [\n        \"Matthew 25:31-46\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Vulnerable, dependent, or wayward humans prone to go astray and needing rescue\",\n      \"basis\": [\n        \"Isaiah 53:6\",\n        \"Psalm 119:176\",\n        \"1 Peter 2:25\",\n        \"Luke 15:3-7\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Meek, innocent, or sacrificial figures (often overlapping with 'lamb' imagery)\",\n      \"basis\": [\n        \"Isaiah 53:7\",\n        \"Jeremiah 11:19\",\n        \"Matthew 10:16\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian tradition from the early church onward consistently treats sheep as the people of God under pastoral care; the shepherd-sheep metaphor is one of the most stable and frequently invoked biblical images across OT and NT.\"\n}\n\nBOOK ENTRY\nThe covenant people — His flock — who hear the Shepherd's voice and follow.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Ps 95:7; Ezek 34:30-31; John 10:3-4, 14-16, 27) · see Love, Knowing, Faith & Belief, ch. 6\n\nAVAILABLE KJV EXCERPTS\nPsalms 95:7 — For he is our God; and we are the people of his pasture, and the sheep of his hand. To day if ye will hear his voice,\nEzekiel 34:30 — Thus shall they know that I the LORD their God am with them, and that they, even the house of Israel, are my people, saith the Lord GOD.\nEzekiel 34:31 — And ye my flock, the flock of my pasture, are men, and I am your God, saith the Lord GOD.\nJohn 10:3 — To him the porter openeth; and the sheep hear his voice: and he calleth his own sheep by name, and leadeth them out.\nJohn 10:4 — And when he putteth forth his own sheep, he goeth before them, and the sheep follow him: for they know his voice.\nJohn 10:14 — I am the good shepherd, and know my sheep, and am known of mine.\nJohn 10:15 — As the Father knoweth me, even so know I the Father: and I lay down my life for the sheep.\nJohn 10:16 — And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd.\nJohn 10:27 — My sheep hear my voice, and I know them, and they follow me:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n"
+      }
+    ],
+    "output_config": {
+      "format": {
+        "type": "json_schema",
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    }
+  },
+  "cache_key": "715e2617ad34c74f6ce46969c22c54814c21c81fad0fcde15cf66d09ee9caa0c",
+  "cache": {
+    "hit": false
+  }
+}

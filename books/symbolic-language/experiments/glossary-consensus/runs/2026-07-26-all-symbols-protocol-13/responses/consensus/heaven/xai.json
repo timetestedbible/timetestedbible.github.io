@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920003,
+  "completed_at": 1783920020,
+  "id": "29451880-2ed9-9923-b67d-960d26502320",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_29451880-2ed9-9923-b67d-960d26502320",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Heaven\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"the eternal dwelling place of God and the final abode of the redeemed in perfect communion with Him\",\n  \"primary_basis\": [\n    \"John 14:2-3\",\n    \"Revelation 21:1-4\",\n    \"Matthew 6:9\",\n    \"Philippians 3:20\",\n    \"2 Corinthians 5:1\",\n    \"Hebrews 11:16\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"the created sky or firmament (atmospheric and celestial heavens)\",\n      \"basis\": [\n        \"Genesis 1:1, 6-8\",\n        \"Psalm 19:1\",\n        \"Matthew 24:29\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"the intermediate abode of the righteous after death prior to resurrection and new creation\",\n      \"basis\": [\n        \"Luke 23:43\",\n        \"2 Corinthians 5:8\",\n        \"Revelation 6:9-11\",\n        \"Philippians 1:23\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"a present spiritual state or reign of God rather than (or more than) a future location\",\n      \"basis\": [\n        \"Luke 17:20-21\",\n        \"Matthew 5:3, 10\",\n        \"select modern and mystical theological readings\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"synonym or near-synonym for the kingdom of God as present-and-future divine rule\",\n      \"basis\": [\n        \"Matthew's repeated 'kingdom of heaven'\",\n        \"parallel kingdom sayings in Mark/Luke\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Broad Christian consensus treats heaven primarily as God's dwelling and the believers' eschatological home; variations concern intermediate vs. final state, place vs. state language, and literal vs. metaphorical emphasis, but these do not displace the core symbolic sense in mainstream teaching and biblical interpretation.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_29451880-2ed9-9923-b67d-960d26502320",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1649,
+    "output_tokens_details": {
+      "reasoning_tokens": 1158
+    },
+    "total_tokens": 2251,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 105220000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1649
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

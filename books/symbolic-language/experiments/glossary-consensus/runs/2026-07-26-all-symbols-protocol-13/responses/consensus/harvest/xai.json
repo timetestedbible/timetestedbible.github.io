@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919993,
+  "completed_at": 1783920009,
+  "id": "c7a1484b-62f6-9c62-a2c6-99b72771d76e",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_c7a1484b-62f6-9c62-a2c6-99b72771d76e",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Harvest\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The end of the age / final judgment, when God reaps the earth, gathers the righteous (as wheat or grain) into his kingdom, and separates or destroys the wicked\",\n  \"primary_basis\": [\n    \"Matthew 13:24-30, 36-43 (parable of the weeds: 'the harvest is the end of the age, and the reapers are angels')\",\n    \"Revelation 14:14-20 (the harvest of the earth with the sickle of the Son of Man)\",\n    \"Joel 3:13 ('Put in the sickle, for the harvest is ripe')\",\n    \"Matthew 3:12 / Luke 3:17 (winnowing and burning of chaff)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The present mission field / ready souls awaiting evangelism and gathering into the church\",\n      \"basis\": [\n        \"Matthew 9:37-38 / Luke 10:2 ('The harvest is plentiful, but the laborers are few')\",\n        \"John 4:35 ('the fields are white for harvest')\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The reaping of moral or spiritual consequences / fruit of one's deeds or ministry\",\n      \"basis\": [\n        \"Galatians 6:7-9 ('whatever one sows, that will he also reap')\",\n        \"2 Corinthians 9:6\",\n        \"Hosea 10:12-13\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"God's material or spiritual provision and blessing (abundance as sign of divine favor)\",\n      \"basis\": [\n        \"Old Testament harvest festivals and promises (e.g., Deuteronomy 16; Psalm 67:6)\",\n        \"Parables of growth and fruitfulness\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The eschatological-judgment sense is the most consistently emphasized symbolic reading in biblical studies and historic Christian teaching when 'harvest' functions as a metaphor; contextual uses for evangelism and moral reaping are also frequent but secondary or complementary rather than competing primaries. No single meaning is exclusive; usage is context-dependent across OT and NT.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_c7a1484b-62f6-9c62-a2c6-99b72771d76e",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1594,
+    "output_tokens_details": {
+      "reasoning_tokens": 1073
+    },
+    "total_tokens": 2196,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 105760000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1594
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

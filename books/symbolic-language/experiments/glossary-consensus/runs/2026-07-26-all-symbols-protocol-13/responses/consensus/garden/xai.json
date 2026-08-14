@@ -1,0 +1,156 @@
+{
+  "created_at": 1783844982,
+  "completed_at": 1783844998,
+  "id": "852fc816-ce56-9020-a0b9-badc2349b415",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_852fc816-ce56-9020-a0b9-badc2349b415",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Garden\" in Christian teaching and biblical interpretation, based on independent knowledge.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The Garden of Eden as paradise: the original place of perfect creation, innocence, abundance, and unhindered communion with God, later associated with the Fall and eschatological restoration\",\n  \"primary_basis\": [\n    \"Genesis 2:8–15 (planting of Eden, trees of life and knowledge, rivers, Adam's placement)\",\n    \"Genesis 3 (temptation, Fall, expulsion from the garden)\",\n    \"Revelation 2:7 and 22:1–5 (tree of life and paradise of God restored in the new creation)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The Church (or the soul of the believer) as an enclosed, cultivated garden of divine love and fruitfulness\",\n      \"basis\": [\n        \"Song of Songs 4:12–16; 5:1; 6:2 (enclosed garden, fountain, spices)\",\n        \"Patristic and medieval allegories equating the bride/garden with the Church or soul\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Gethsemane as the place of agony, prayer, submission to the Father's will, and betrayal\",\n      \"basis\": [\n        \"Matthew 26:36–46; Mark 14:32–42; Luke 22:39–46; John 18:1 (Jesus' prayer and arrest in the garden)\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Spiritual growth or the cultivated life of virtue under God's care\",\n      \"basis\": [\n        \"Isaiah 58:11; Jeremiah 31:12 (souls as watered gardens)\",\n        \"Parables and imagery of planting, pruning, and fruitfulness (e.g., John 15)\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"General fertility, life, or the created order under divine blessing (without specific Edenic or ecclesial reference)\",\n      \"basis\": [\n        \"Genesis 1–2 creation motifs; various poetic uses of gardens/orchards in wisdom and prophetic literature\"\n      ],\n      \"prominence\": \"rare\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In mainstream Christian biblical interpretation and teaching the term 'Garden' most immediately and commonly evokes Eden as paradise lost and restored; other readings (ecclesial, Gethsemane, spiritual-cultivation) are well-attested but secondary or context-specific. No major tradition treats the term as lacking symbolic content.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_852fc816-ce56-9020-a0b9-badc2349b415",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 602,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1365,
+    "output_tokens_details": {
+      "reasoning_tokens": 787
+    },
+    "total_tokens": 1967,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 92020000,
+    "context_details": {
+      "input_tokens": 602,
+      "output_tokens": 1365
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

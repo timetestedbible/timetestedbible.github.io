@@ -1,0 +1,179 @@
+{
+  "id": "resp_09d7ece788b80dc7006a54732bbdb08197b3a66c3074a0c68c",
+  "object": "response",
+  "created_at": 1783919403,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783919432,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_09d7ece788b80dc7006a54732c86288197835454e54be590ab",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "rs_09d7ece788b80dc7006a547338cbdc8197911c20317f36ba44",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_09d7ece788b80dc7006a54733baf7081978222015ea799a227",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"The effects of the fall—especially sin, curse, fruitlessness, hardship, and divine judgment. In Christian interpretation, thorns and related plants most broadly signify what corrupts or frustrates good fruit and what grows under God's curse or judgment.\",\"primary_basis\":[\"Genesis 3:17–18 — thorns and thistles arise in connection with the curse upon the ground after human disobedience.\",\"Isaiah 5:5–6; 7:23–25; 32:13; 34:13 — thorns and briers portray judgment, devastation, and the loss of cultivated fruitfulness.\",\"Hosea 10:8 — thorns and thistles overtake judged places of false worship.\",\"Hebrews 6:7–8 — land producing thorns and thistles is worthless and near to being cursed.\",\"Matthew 7:16; Luke 6:43–44 — thornbushes contrast with plants that bear good fruit.\"],\"alternatives\":[{\"meaning\":\"Worldly anxiety, wealth, pleasure, and competing desires that choke the word and prevent spiritual fruitfulness.\",\"basis\":[\"Matthew 13:7,22\",\"Mark 4:7,18–19\",\"Luke 8:7,14\"],\"prominence\":\"common\"},{\"meaning\":\"Worthless, dangerous, or oppressive people and rulers. The lowly bramble can symbolize a destructive claimant to authority, while briers and thorns can represent hostile people surrounding God's servants.\",\"basis\":[\"Judges 9:7–15, especially 9:14–15 — Jotham's bramble represents Abimelech's destructive kingship.\",\"Numbers 33:55; Joshua 23:13 — hostile inhabitants become thorns or scourges.\",\"Ezekiel 2:6; 28:24 — rebellious or hostile neighbors are compared to briers and thorns.\"],\"prominence\":\"common\"},{\"meaning\":\"Christ's suffering, mocked kingship, and, in theological interpretation, his bearing of the curse associated with fallen humanity.\",\"basis\":[\"Matthew 27:27–31\",\"Mark 15:16–20\",\"John 19:2–5\",\"Genesis 3:17–18 is often connected typologically with the crown of thorns, although the Passion narratives do not explicitly make that connection.\"],\"prominence\":\"common\"},{\"meaning\":\"Desolation caused by warfare or divine judgment, sometimes functioning primarily as a concrete image of abandoned land rather than as a fixed symbol of sin.\",\"basis\":[\"Isaiah 7:23–25; 32:13; 34:13\",\"Jeremiah 12:13\",\"Hosea 9:6\"],\"prominence\":\"common\"},{\"meaning\":\"The reversal of curse and restoration of creation, expressed through thorns being removed or replaced by fruitful trees.\",\"basis\":[\"Isaiah 55:13\",\"Isaiah 35:1–2\",\"Ezekiel 28:24\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"There is a strong general consensus that thorns, thistles, and briers most often belong to the biblical imagery of curse, sin's consequences, obstruction, fruitlessness, and judgment. There is not, however, one fixed meaning applicable to every occurrence. Individual passages can specifically denote worldly cares, hostile people, bad rulers, desolated land, Christ's suffering, or the reversal of curse.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 328,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1293,
+    "output_tokens_details": {
+      "reasoning_tokens": 578
+    },
+    "total_tokens": 1621
+  },
+  "user": null,
+  "metadata": {}
+}

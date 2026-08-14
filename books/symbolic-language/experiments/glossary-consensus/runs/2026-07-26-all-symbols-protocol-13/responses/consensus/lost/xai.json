@@ -1,0 +1,156 @@
+{
+  "created_at": 1783920248,
+  "completed_at": 1783920257,
+  "id": "8af727a2-c8ff-994d-9dc0-2e1a58243fe5",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_8af727a2-c8ff-994d-9dc0-2e1a58243fe5",
+      "summary": [
+        {
+          "text": "The user wants me to respond with a specific JSON format about the symbolic meaning of \"Lost sheep\" in Christian teaching and biblical interpretation.\n{\n  \"primary_meaning\": \"The lost sheep symbolizes a sinner who has strayed from God, with the shepherd representing God's pursuit and restoration of the repentant individual.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"A sinner (or spiritually straying person) who has gone astray from God and is sought out and restored by the divine Shepherd (Christ/God), illustrating God's rejoicing over one repentant sinner.\",\n  \"primary_basis\": [\n    \"Luke 15:3-7 (Parable of the Lost Sheep)\",\n    \"Matthew 18:12-14 (parallel parable)\",\n    \"Isaiah 53:6 (all we like sheep have gone astray)\",\n    \"Psalm 119:176\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The people of Israel (the 'lost sheep of the house of Israel') as the primary focus of Jesus' earthly ministry.\",\n      \"basis\": [\n        \"Matthew 10:6\",\n        \"Matthew 15:24\",\n        \"Jeremiah 50:6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A backslidden or temporarily straying believer within the church who needs pastoral restoration rather than an unconverted sinner.\",\n      \"basis\": [\n        \"Matthew 18:12-14 (context of church discipline and little ones)\",\n        \"1 Peter 2:25\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Humanity in general as prone to wander, emphasizing total human waywardness and need for grace without specific focus on individual repentance.\",\n      \"basis\": [\n        \"Isaiah 53:6\",\n        \"1 Peter 2:25\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The Lukan and Matthean parables supply the dominant symbolic usage across historic Christian teaching (patristic, medieval, Reformation, and modern evangelical/catholic). National-Israel and backslider readings appear regularly but remain secondary applications of the same imagery rather than competing primary meanings.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_8af727a2-c8ff-994d-9dc0-2e1a58243fe5",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 603,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 941,
+    "output_tokens_details": {
+      "reasoning_tokens": 501
+    },
+    "total_tokens": 1544,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 62760000,
+    "context_details": {
+      "input_tokens": 603,
+      "output_tokens": 941
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

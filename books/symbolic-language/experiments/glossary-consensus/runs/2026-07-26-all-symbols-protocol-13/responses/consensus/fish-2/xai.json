@@ -1,0 +1,156 @@
+{
+  "created_at": 1785122982,
+  "completed_at": 1785123000,
+  "id": "c70ca1a0-3ce5-97ee-9146-971998dcf045",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_c70ca1a0-3ce5-97ee-9146-971998dcf045",
+      "summary": [
+        {
+          "text": "The user wants me to act as a blind consensus definer for biblical symbolism regarding \"Great Fish (Sea-monster)\". I must respond only with JSON matching the specific schema, no surrounding text.\n",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"Typological foreshadowing of Christ's death, burial, and resurrection (three days in the heart of the earth)\",\n  \"primary_basis\": [\n    \"Matthew 12:39-41\",\n    \"Matthew 16:4\",\n    \"Luke 11:29-32\",\n    \"Jonah 1:17\",\n    \"Jonah 2:1-10\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Image of Sheol/the grave or the realm of death from which God delivers\",\n      \"basis\": [\n        \"Jonah 2:2\",\n        \"Jonah 2:6\",\n        \"Psalm 18:4-6\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Instrument of divine judgment, discipline, and providential rescue/mercy\",\n      \"basis\": [\n        \"Jonah 1:17\",\n        \"Jonah 2:10\",\n        \"Psalm 107:23-30\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Chaos monster or embodiment of primordial evil/disorder (linked to Leviathan/Rahab traditions)\",\n      \"basis\": [\n        \"Job 41\",\n        \"Psalm 74:13-14\",\n        \"Isaiah 27:1\",\n        \"Isaiah 51:9\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"Primarily literal historical creature in a didactic narrative with minimal inherent symbolism\",\n      \"basis\": [\n        \"Jonah 1–2\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"In historic Christian teaching the dominant reading is Christological typology grounded in Jesus' own reference to Jonah; other senses (Sheol, providence, chaos) appear regularly but remain secondary or complementary rather than rival primary meanings.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_c70ca1a0-3ce5-97ee-9146-971998dcf045",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 607,
+    "input_tokens_details": {
+      "cached_tokens": 128
+    },
+    "output_tokens": 1113,
+    "output_tokens_details": {
+      "reasoning_tokens": 670
+    },
+    "total_tokens": 1720,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 76744000,
+    "context_details": {
+      "input_tokens": 607,
+      "output_tokens": 1113
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

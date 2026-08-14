@@ -1,0 +1,122 @@
+{
+  "provider": "xai",
+  "stage": "relationship",
+  "term": "highway",
+  "url": "https://api.x.ai/v1/responses",
+  "headers": {
+    "authorization": "Bearer <REDACTED>",
+    "content-type": "application/json"
+  },
+  "payload": {
+    "model": "grok-4.5",
+    "instructions": "Return only the requested structured result. Classify consensus distance without deciding the full chapter's persuasiveness.",
+    "input": "You are an independent classifier in a blinded experiment about a book of\nbiblical symbolism. The consensus responses below were produced without access\nto the book. Compare them with the book's entry.\n\nTERM\nHighway\n\nBLIND CONSENSUS RESPONSES\nRESPONSE A\n{\n  \"primary_meaning\": \"In mainstream Christian teaching, the 'highway' functions primarily as a symbol of the prepared way of the Lord—God's route of salvation and deliverance by which He comes to His people and by which the redeemed return to Him. It is most often preached as the 'Highway of Holiness' (Isaiah 35:8): the sanctified path of salvation open to the redeemed and closed to the unclean, and, via Isaiah 40:3, as the way prepared for the coming of Christ, which the Gospels apply to John the Baptist's ministry.\",\n  \"primary_basis\": [\n    \"Isaiah 35:8-10 (the Way/Highway of Holiness for the redeemed returning to Zion)\",\n    \"Isaiah 40:3-5 ('prepare the way of the LORD; make straight in the desert a highway for our God')\",\n    \"Matthew 3:3; Mark 1:2-3; Luke 3:4-6; John 1:23 (Gospel application of Isaiah 40:3 to John the Baptist preparing the way for Christ)\",\n    \"Isaiah 11:16 (a highway for the remnant of God's people, echoing the Exodus)\",\n    \"Isaiah 62:10 ('prepare the way for the people; build up the highway')\",\n    \"John 14:6 (Christ as 'the way,' often linked devotionally to the highway imagery)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Historical-eschatological restoration from exile: the highway as a literal/figurative road for the return of Jewish exiles from Babylon (and Assyria), a second Exodus motif, later extended typologically to salvation in Christ.\",\n      \"basis\": [\n        \"Isaiah 11:16\",\n        \"Isaiah 35:8-10\",\n        \"Isaiah 40:3-4\",\n        \"Isaiah 49:11\",\n        \"Isaiah 57:14\",\n        \"Isaiah 62:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The highway as a symbol of the inclusion and reconciliation of the Gentile nations in God's redemptive plan—the eschatological highway linking Egypt, Assyria, and Israel in shared worship.\",\n      \"basis\": [\n        \"Isaiah 19:23-25\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The highway as the sanctified Christian life or journey of holiness—a moral/devotional reading emphasizing progressive sanctification along the 'Way of Holiness' (prominent in Holiness-movement and revivalist preaching).\",\n      \"basis\": [\n        \"Isaiah 35:8\",\n        \"Proverbs 15:19\",\n        \"Proverbs 16:17 ('the highway of the upright is to depart from evil')\",\n        \"Hebrews 12:13-14\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The highway as a call to repentance and removal of moral obstacles—'leveling' and 'straightening' as preparing one's heart for God's coming (a homiletical application of the road-building imagery).\",\n      \"basis\": [\n        \"Isaiah 40:3-4\",\n        \"Isaiah 57:14\",\n        \"Isaiah 62:10\",\n        \"Luke 3:4-6 in context of John's preaching of repentance\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Highways as a negative or neutral image of public exposure, desolation, or judgment—deserted highways signaling societal collapse or divine judgment.\",\n      \"basis\": [\n        \"Judges 5:6 ('the highways were abandoned')\",\n        \"Isaiah 33:8\",\n        \"Lamentations 1:4\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The 'highways and hedges' as a missional symbol of urgent gospel invitation to outsiders and the marginalized.\",\n      \"basis\": [\n        \"Luke 14:23 (Parable of the Great Banquet)\",\n        \"Matthew 22:9-10\"\n      ],\n      \"prominence\": \"common\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The consensus is anchored almost entirely in Isaiah, especially 35:8 and 40:3, and in the Gospel writers' explicit citation of Isaiah 40:3 for John the Baptist. Interpreters broadly agree the highway symbolizes God's prepared way of salvation/holiness; differences lie mainly in emphasis (historical return from exile vs. Christological fulfillment vs. personal sanctification vs. Gentile inclusion) rather than in fundamentally competing meanings. These strands are usually treated as complementary layers of a single 'way of the Lord' motif rather than rival interpretations.\"\n}\n\nRESPONSE B\n{\n  \"primary_meaning\": \"The path of holiness, salvation, and right relationship with God; a prepared spiritual route for God's presence or the believer's journey of sanctification.\",\n  \"primary_basis\": [\n    \"Isaiah 35:8\",\n    \"Isaiah 40:3\",\n    \"Proverbs 16:17\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Repentance and the removal of spiritual obstacles in the human heart to prepare for the Lord's coming.\",\n      \"basis\": [\n        \"Matthew 3:3\",\n        \"Mark 1:3\",\n        \"Luke 3:4\",\n        \"Isaiah 40:3\"\n      ],\n      \"prominence\": \"dominant\"\n    },\n    {\n      \"meaning\": \"Eschatological restoration, peace, and the ingathering of exiles and Gentile nations to Zion.\",\n      \"basis\": [\n        \"Isaiah 11:16\",\n        \"Isaiah 19:23\",\n        \"Isaiah 62:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An inner posture of pilgrimage, devotion, and longing for God's presence.\",\n      \"basis\": [\n        \"Psalm 84:5\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"The 'highway' (often translating the Hebrew 'mesillah') in prophetic literature frequently symbolizes God making an accessible, holy way through the wilderness of sin or exile. In the New Testament, it is most famously applied to the ministry of John the Baptist, representing the preparation of the people's hearts for the arrival of the Messiah.\"\n}\n\nRESPONSE C\n{\n  \"primary_meaning\": \"A divinely prepared way by which God comes to his people and leads the redeemed into salvation, holiness, restoration, and ultimately his presence.\",\n  \"primary_basis\": [\n    \"Isaiah 35:8–10 — the “Highway of Holiness” is the safe way traveled by the redeemed returning to Zion.\",\n    \"Isaiah 40:3–5 — a way is prepared in the wilderness for the coming of the Lord; applied to John the Baptist’s preparation for Christ in Matthew 3:3, Mark 1:2–3, Luke 3:4–6, and John 1:23.\",\n    \"Isaiah 11:15–16 — a highway enables the remnant to return in a new-exodus restoration.\",\n    \"Isaiah 49:11–12 — God turns obstacles into roads for the gathering of his people.\",\n    \"Isaiah 62:10–12 — the highway is prepared and cleared for the salvation and return of God’s people.\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The path of righteous or upright conduct, contrasted with sinful, obstructed, or destructive ways.\",\n      \"basis\": [\n        \"Proverbs 15:19 — the way of the upright is a highway.\",\n        \"Proverbs 16:17 — the highway of the upright turns away from evil.\",\n        \"Isaiah 35:8 — the Highway of Holiness also supports an ethical or sanctification-focused reading.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological reconciliation and free communion among formerly hostile peoples under God’s rule.\",\n      \"basis\": [\n        \"Isaiah 19:23–25 — a highway joins Egypt and Assyria, and both worship with Israel.\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"A route for the gathering of nations or exiles, emphasizing removal of barriers and universal access to God’s restored people.\",\n      \"basis\": [\n        \"Isaiah 11:16\",\n        \"Isaiah 19:23\",\n        \"Isaiah 49:11–12\",\n        \"Isaiah 62:10\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"A literal public road or raised roadway, without an independent symbolic meaning.\",\n      \"basis\": [\n        \"In several biblical contexts, the word denotes an actual road or route; its figurative significance must be determined from the immediate passage.\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"An opened route for military advance, conquest, or judgment rather than salvation.\",\n      \"basis\": [\n        \"Some prophetic road imagery concerns the approach of armies or divine judgment, making the highway an image of unobstructed access rather than inherently of redemption.\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": false,\n  \"confidence\": \"high\",\n  \"notes\": \"Christian interpretation strongly associates highway imagery—especially in Isaiah—with preparation for God’s coming and the redeemed people’s return, salvation, and holiness. Nevertheless, “highway” is not a fixed biblical symbol in every occurrence; its meaning varies among literal travel, righteous conduct, restoration, international reconciliation, and judgment.\"\n}\n\nRESPONSE D\n{\n  \"primary_meaning\": \"The prepared, straight path or way of the Lord (often messianic), enabling God's coming or the people's return/holiness\",\n  \"primary_basis\": [\n    \"Isaiah 40:3-4 (prepare/make straight a highway for our God; quoted of John the Baptist in Matt 3:3; Mark 1:3; Luke 3:4; John 1:23)\",\n    \"Isaiah 35:8 (a highway called the Way of Holiness)\",\n    \"Isaiah 11:16 and 49:11 (highway for the remnant's return)\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"The path of righteousness or upright living that avoids evil\",\n      \"basis\": [\n        \"Proverbs 16:17 (highway of the upright)\",\n        \"occasional moral applications of Isaiah 35:8\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"The believer's pilgrimage or journey of faith toward God/heaven\",\n      \"basis\": [\n        \"broader 'way' language in Psalms and NT (e.g., 'the Way' as early Christian self-designation in Acts)\",\n        \"homiletical extensions of Isaiah highway texts\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Eschatological restoration route or millennial pathway for the nations\",\n      \"basis\": [\n        \"Isaiah 19:23-25; 62:10\",\n        \"some prophetic and dispensational readings\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Consensus centers on Isaiah's prophetic highway imagery (especially 35 and 40) as the dominant symbolic cluster in Christian teaching; NT appropriation via John the Baptist locks in the 'prepare the way of the Lord' reading. Other uses remain secondary or context-specific rather than competing primary symbols. Purely literal road references exist but are not treated as symbolic.\"\n}\n\nBOOK ENTRY\nThe Way of holiness — the prepared road home, made straight and smooth, where the wicked do not walk.\n\nBOOK'S COMMON-VIEW NOTE, IF PRESENT\n(none)\n\nSCRIPTURE REFERENCES PRINTED WITH THE ENTRY\n(Isa 35:8; 40:3-4) · see The Way, the Truth & the Life, ch. 7\n\nAVAILABLE KJV EXCERPTS\nIsaiah 35:8 — And an highway shall be there, and a way, and it shall be called The way of holiness; the unclean shall not pass over it; but it shall be for those: the wayfaring men, though fools, shall not err therein.\nIsaiah 40:3 — The voice of him that crieth in the wilderness, Prepare ye the way of the LORD, make straight in the desert a highway for our God.\nIsaiah 40:4 — Every valley shall be exalted, and every mountain and hill shall be made low: and the crooked shall be made straight, and the rough places plain:\n\nCLASSIFY THE RELATIONSHIP\n\nFirst reduce both readings to their minimum core identifications. Do not let\nextra detail create an artificial disagreement.\n\n- MATCH: the core identifications are equivalent. Differences are merely\n  wording or immaterial detail.\n- REFINED: the book preserves the consensus's general referent or category but\n  materially changes its extension, boundary, conditions, or precision. A\n  narrowing may reject some cases the broader consensus admits; a broadening\n  may admit cases it excludes. This is real disagreement at the boundary, but\n  not replacement of the central referent.\n- DIVERGENT: the cores materially contradict. Both claims cannot be true of the\n  same referent in the same context and sense; accepting the book requires\n  rejecting or replacing the consensus identification. A source and its\n  product remain different referents when the book explicitly denies their\n  identity, even if they are causally related.\n- NOVEL: no recognizable consensus or listed alternative covers the book's\n  core identification. Novelty is absence from consensus, not contradiction.\n\nUse `core_relation` to expose the relationship at the center and\n`extension_relation` to expose disagreement over the cases covered. A REFINED\nverdict must state what cases the book adds, excludes, or reclassifies. A\nDIVERGENT verdict must identify a replaced referent or material contradiction,\nnot merely a narrower boundary.\n\nTreat the two axes independently. A core-divergent reading may still retain\nsome cases covered by the consensus while rejecting its central identification;\ntherefore DIVERGENT does not require disjoint extensions. Conversely, a\nnarrowed extension is REFINED only when the consensus's central referent or\ncategory remains intact.\n\nAlso judge whether the citations printed with the glossary entry alone provide\nstrong, partial, or insufficient support. Do not yet decide whether a divergent\nfull chapter is persuasive; that is a separate stage.\n",
+    "max_output_tokens": 5000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "meat_relationship",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relation": {
+              "type": "string",
+              "enum": [
+                "MATCH",
+                "REFINED",
+                "DIVERGENT",
+                "NOVEL"
+              ]
+            },
+            "consensus_summary": {
+              "type": "string"
+            },
+            "book_summary": {
+              "type": "string"
+            },
+            "consensus_core_identification": {
+              "type": "string"
+            },
+            "book_core_identification": {
+              "type": "string"
+            },
+            "core_relation": {
+              "type": "string",
+              "enum": [
+                "EQUIVALENT",
+                "BOOK_NARROWS",
+                "BOOK_BROADENS",
+                "COMPATIBLE_OVERLAP",
+                "CONTRADICTS",
+                "NO_CONSENSUS"
+              ]
+            },
+            "extension_relation": {
+              "type": "string",
+              "enum": [
+                "SAME_CASES",
+                "BOOK_SUBSET",
+                "BOOK_SUPERSET",
+                "PARTIAL_RECLASSIFICATION",
+                "DIFFERENT_REFERENT",
+                "NO_BASELINE"
+              ]
+            },
+            "boundary_disagreement": {
+              "type": "string"
+            },
+            "material_contradiction": {
+              "type": "string"
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "citation_support": {
+              "type": "string",
+              "enum": [
+                "STRONG",
+                "PARTIAL",
+                "INSUFFICIENT"
+              ]
+            },
+            "strongest_objection": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "consensus_summary",
+            "book_summary",
+            "consensus_core_identification",
+            "book_core_identification",
+            "core_relation",
+            "extension_relation",
+            "boundary_disagreement",
+            "material_contradiction",
+            "rationale",
+            "citation_support",
+            "strongest_objection",
+            "confidence"
+          ]
+        }
+      }
+    },
+    "reasoning": {
+      "effort": "medium"
+    }
+  },
+  "cache_key": "1df1a1768d11e4afe3c18fc517b938753bb14980b17813671529bac82d6f5545",
+  "cache": {
+    "hit": false
+  }
+}

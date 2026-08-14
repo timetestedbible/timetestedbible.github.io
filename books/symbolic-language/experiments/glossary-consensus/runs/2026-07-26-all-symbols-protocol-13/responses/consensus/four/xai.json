@@ -1,0 +1,156 @@
+{
+  "created_at": 1783919910,
+  "completed_at": 1783919925,
+  "id": "15f01f47-c6b5-93f4-b506-ec3320678833",
+  "max_output_tokens": 5000,
+  "model": "grok-4.5",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_15f01f47-c6b5-93f4-b506-ec3320678833",
+      "summary": [
+        {
+          "text": "The task is to define the primary symbolic meaning of \"Four winds\" in Christian teaching and biblical interpretation, without any external influence from an author's book.\n{\n  \"primary_meaning\": \"The four winds as the four cardinal directions, symbolizing the entirety of the earth and all creation, often representing the restraint or release of divine judgment and chaos across the world.",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "status": "completed"
+    },
+    {
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\n  \"primary_meaning\": \"The four cardinal directions (north, south, east, west), representing the whole earth, all nations, or universal scope\",\n  \"primary_basis\": [\n    \"Matthew 24:31\",\n    \"Mark 13:27\",\n    \"Revelation 7:1\",\n    \"Daniel 7:2\",\n    \"Jeremiah 49:36\",\n    \"Zechariah 2:6\",\n    \"Ezekiel 37:9\"\n  ],\n  \"alternatives\": [\n    {\n      \"meaning\": \"Destructive or chaotic forces of divine judgment acting upon the earth\",\n      \"basis\": [\n        \"Revelation 7:1\",\n        \"Daniel 7:2\",\n        \"Jeremiah 49:36\"\n      ],\n      \"prominence\": \"common\"\n    },\n    {\n      \"meaning\": \"Heavenly spirits or angels dispatched from God's presence\",\n      \"basis\": [\n        \"Zechariah 6:5\"\n      ],\n      \"prominence\": \"minority\"\n    },\n    {\n      \"meaning\": \"The life-giving breath or Spirit of God coming from every direction\",\n      \"basis\": [\n        \"Ezekiel 37:9\"\n      ],\n      \"prominence\": \"minority\"\n    }\n  ],\n  \"has_settled_consensus\": true,\n  \"confidence\": \"high\",\n  \"notes\": \"Across standard Christian biblical interpretation and commentaries the directional/universal sense is the most consistently recognized primary symbolism, with contextual overlays (judgment, gathering, or life) treated as secondary applications rather than competing core meanings.\"\n}",
+          "logprobs": [],
+          "annotations": []
+        }
+      ],
+      "id": "msg_15f01f47-c6b5-93f4-b506-ec3320678833",
+      "role": "assistant",
+      "type": "message",
+      "status": "completed"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "previous_response_id": null,
+  "reasoning": {
+    "effort": "medium",
+    "summary": "detailed"
+  },
+  "temperature": 0.7,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      }
+    }
+  },
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.95,
+  "usage": {
+    "input_tokens": 603,
+    "input_tokens_details": {
+      "cached_tokens": 384
+    },
+    "output_tokens": 1688,
+    "output_tokens_details": {
+      "reasoning_tokens": 1336
+    },
+    "total_tokens": 2291,
+    "num_sources_used": 0,
+    "num_server_side_tools_used": 0,
+    "cost_in_usd_ticks": 107580000,
+    "context_details": {
+      "input_tokens": 603,
+      "output_tokens": 1688
+    }
+  },
+  "user": null,
+  "incomplete_details": null,
+  "status": "completed",
+  "store": true,
+  "metadata": {
+    "system_fingerprint": "fp_a39489019fa99b6e"
+  },
+  "background": false,
+  "service_tier": "default",
+  "truncation": "disabled",
+  "top_logprobs": 0,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "prompt_cache_key": null,
+  "max_tool_calls": null,
+  "safety_identifier": null,
+  "error": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position."
+}

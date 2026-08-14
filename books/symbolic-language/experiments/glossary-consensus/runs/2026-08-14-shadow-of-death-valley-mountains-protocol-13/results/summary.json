@@ -1,0 +1,40 @@
+{
+  "entry_count": 1,
+  "providers": [
+    "openai",
+    "anthropic",
+    "gemini",
+    "xai"
+  ],
+  "counts": {
+    "REFINED": 1
+  },
+  "rows": [
+    {
+      "anchor": "shadow-of-death",
+      "term": "Shadow of Death",
+      "relation": "REFINED",
+      "relationship_votes": [
+        "REFINED",
+        "REFINED",
+        "DIVERGENT",
+        "REFINED"
+      ],
+      "citation_support": "PARTIAL",
+      "citation_support_votes": [
+        "PARTIAL",
+        "PARTIAL",
+        "INSUFFICIENT",
+        "PARTIAL"
+      ],
+      "persuasion": "UNPERSUADED",
+      "persuasion_votes": [
+        "UNPERSUADED",
+        "PERSUADED",
+        "UNPERSUADED",
+        "UNPERSUADED"
+      ],
+      "final_verdict": "REFINED"
+    }
+  ]
+}

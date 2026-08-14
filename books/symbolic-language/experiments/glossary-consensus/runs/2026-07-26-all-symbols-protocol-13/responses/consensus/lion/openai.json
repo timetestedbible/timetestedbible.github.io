@@ -1,0 +1,173 @@
+{
+  "id": "resp_00048e837f37ac65006a54764c2d7481958350097974e00b00",
+  "object": "response",
+  "created_at": 1783920204,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1783920223,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "Return only the requested structured result. Remain blind to the author's position.",
+  "max_output_tokens": 6000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_00048e837f37ac65006a54764d60008195881593913f8b18c6",
+      "type": "reasoning",
+      "content": [],
+      "summary": []
+    },
+    {
+      "id": "msg_00048e837f37ac65006a5476522a6881958f8683ee8a460145",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"primary_meaning\":\"Royal power, majesty, courage, and victory—most characteristically the Messiah/Christ as the “Lion of the tribe of Judah.”\",\"primary_basis\":[\"Genesis 49:9–10 — Judah is compared to a lion and associated with enduring rule and the scepter.\",\"Revelation 5:5 — Christ is identified as “the Lion of the tribe of Judah” who has conquered.\",\"Numbers 24:8–9 — Israel’s divinely given strength and security are portrayed through lion imagery.\",\"Proverbs 28:1; 30:29–30 — the lion represents boldness, strength, and stately bearing.\"],\"alternatives\":[{\"meaning\":\"Satan, a persecutor, or a predatory spiritual enemy seeking to destroy believers.\",\"basis\":[\"1 Peter 5:8 — the devil prowls like a roaring lion seeking someone to devour.\",\"Psalm 22:13,21 — hostile attackers are depicted as roaring lions.\",\"2 Timothy 4:17 — rescue “from the lion’s mouth” is commonly understood as deliverance from lethal opposition.\"],\"prominence\":\"common\"},{\"meaning\":\"Divine judgment or irresistible destructive power, sometimes exercised by God and sometimes through invading nations.\",\"basis\":[\"Hosea 5:14; 13:7–8 — God compares himself to a lion in judgment.\",\"Amos 1:2; 3:8 — the Lord’s roar signifies terrifying prophetic judgment.\",\"Jeremiah 4:7; 49:19 — conquering powers or agents of judgment are described as lions.\"],\"prominence\":\"common\"},{\"meaning\":\"Human rulers, kingdoms, warriors, or nations characterized by strength, ferocity, and dominion.\",\"basis\":[\"Daniel 7:4 — the first empire in Daniel’s vision appears as a lion with eagle’s wings.\",\"Ezekiel 19:2–9 — Judah’s princes are portrayed as young lions.\",\"Nahum 2:11–13 — Assyria’s royal and military power is represented through lions.\"],\"prominence\":\"common\"},{\"meaning\":\"The evangelist Mark in traditional Christian iconography.\",\"basis\":[\"Ezekiel 1:10 and Revelation 4:7 — the lion-faced living creature became associated in later Christian tradition with one of the four evangelists.\",\"Mark 1:3 — the wilderness proclamation has often been linked traditionally with the lion’s roar.\"],\"prominence\":\"minority\"},{\"meaning\":\"Nobility, courage, vigilance, or resurrection in later Christian art and heraldry, beyond any single direct biblical identification.\",\"basis\":[\"Proverbs 30:30 — the lion’s stately fearlessness supports the courage and nobility association.\",\"Traditional Christian bestiaries and iconography developed additional lion symbolism not explicitly fixed by Scripture.\"],\"prominence\":\"minority\"}],\"has_settled_consensus\":false,\"confidence\":\"high\",\"notes\":\"Christian symbolism strongly favors royal and messianic power—especially Christ as the Lion of Judah—as the primary positive meaning. Nevertheless, Scripture uses lion imagery in materially opposite ways, including for Satan, violent enemies, empires, and divine judgment. The term therefore has a recognizable primary association but no single context-independent symbolic meaning.\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": true,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "meat_consensus",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "primary_meaning": {
+            "type": "string"
+          },
+          "primary_basis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "meaning": {
+                  "type": "string"
+                },
+                "basis": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "prominence": {
+                  "type": "string",
+                  "enum": [
+                    "dominant",
+                    "common",
+                    "minority",
+                    "rare",
+                    "unclear"
+                  ]
+                }
+              },
+              "required": [
+                "meaning",
+                "basis",
+                "prominence"
+              ]
+            }
+          },
+          "has_settled_consensus": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "primary_meaning",
+          "primary_basis",
+          "alternatives",
+          "has_settled_consensus",
+          "confidence",
+          "notes"
+        ]
+      },
+      "strict": true
+    },
+    "verbosity": "medium"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 317,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 884,
+    "output_tokens_details": {
+      "reasoning_tokens": 220
+    },
+    "total_tokens": 1201
+  },
+  "user": null,
+  "metadata": {}
+}
