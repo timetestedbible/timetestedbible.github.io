@@ -584,7 +584,7 @@ const CalendarView = {
       if (isNewMoonDay) {
         priestlyHtml = `
           <div class="day-detail-priestly new-moon-note">
-            <span class="priestly-icon">🌑</span>
+            <span class="priestly-icon">${this.getMoonIcon(profile.moonPhase)}</span>
             <span class="priestly-note">Renewed Moon Day — outside the weekly priestly cycle</span>
           </div>
         `;
