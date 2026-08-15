@@ -3224,25 +3224,28 @@ const CalendarView = {
    * @returns {string} Moon emoji or empty string
    */
   getMoonIconForDay(day, lunarDay, profile, location) {
-    if (!day?.gregorianDate) return '';
-    
+    if (day?.jd == null && !day?.gregorianDate) return '';
+
     try {
-      // Use actual biblical day boundaries (respects dayStartAngle/dayStartTime)
-      // instead of midnight UTC, so the icon appears on the correct lunar day
-      const nextDate = new Date(day.gregorianDate.getTime());
-      nextDate.setUTCDate(nextDate.getUTCDate() + 1);
-      
-      let dayStartDate = day.gregorianDate;
-      let dayEndDate = nextDate;
-      if (typeof getDayStartTime === 'function') {
-        const startTs = getDayStartTime(day.gregorianDate);
-        const endTs = getDayStartTime(nextDate);
-        if (startTs) dayStartDate = new Date(startTs);
-        if (endTs) dayEndDate = new Date(endTs);
+      // Build the day's window from day.jd, the engine's TRUE-instant boundary.
+      // Never from day.gregorianDate: its UTC fields are Julian-calendar LABELS
+      // for ancient dates, so as an instant it sits ~2 days off in the 1st
+      // century and shifts every phase icon by the era offset.
+      // Boundary semantics (see lunar-calendar-engine): evening mode stores the
+      // day's CLOSING sunset, morning mode its OPENING sunrise.
+      let startJD, endJD;
+      if (day.jd != null) {
+        const isMorning = (profile?.dayStartTime === 'morning');
+        startJD = isMorning ? day.jd : day.jd - 1;
+        endJD = isMorning ? day.jd + 1 : day.jd;
+      } else {
+        // Legacy fallback (modern dates only): label midnight as instant
+        startJD = day.gregorianDate.getTime() / 86400000 + 2440587.5;
+        endJD = startJD + 1;
       }
-      
-      const elongStart = this.getElongationForDate(dayStartDate, profile, location);
-      const elongEnd = this.getElongationForDate(dayEndDate, profile, location);
+
+      const elongStart = this.getElongationForJD(startJD);
+      const elongEnd = this.getElongationForJD(endJD);
       
       if (elongStart === null || elongEnd === null) return '';
       
@@ -3275,24 +3278,33 @@ const CalendarView = {
    * @returns {number|null} Elongation in degrees (0-360)
    */
   getElongationForDate(date, profile, location) {
-    // Try Swiss Ephemeris first
-    if (window.AstroEngines?.swissEphemeris?.isLoaded && 
-        window.AstroEngines.swissEphemeris._dateToJD &&
+    // Instant Date → JD by pure arithmetic, then the JD path
+    return this.getElongationForJD(date.getTime() / 86400000 + 2440587.5);
+  },
+
+  /**
+   * Get moon-sun elongation angle at a Julian Day instant.
+   * Pure-JD path: no Date/calendar-label conversions anywhere.
+   * @param {number} jd
+   * @returns {number|null} Elongation in degrees (0-360)
+   */
+  getElongationForJD(jd) {
+    // Try Swiss Ephemeris first (takes JD directly)
+    if (window.AstroEngines?.swissEphemeris?.isLoaded &&
         window.AstroEngines.swissEphemeris._getMoonSunElongation) {
-      const jd = window.AstroEngines.swissEphemeris._dateToJD(date);
       const elongation = window.AstroEngines.swissEphemeris._getMoonSunElongation(jd);
       if (elongation !== null) return elongation;
     }
-    
-    // Fallback to Astronomy Engine's MoonPhase
+
+    // Fallback to Astronomy Engine's MoonPhase with a true-instant Date
     if (typeof Astronomy !== 'undefined' && Astronomy.MoonPhase) {
       try {
-        return Astronomy.MoonPhase(date);
+        return Astronomy.MoonPhase(new Date((jd - 2440587.5) * 86400000));
       } catch (e) {
         return null;
       }
     }
-    
+
     return null;
   },
 
