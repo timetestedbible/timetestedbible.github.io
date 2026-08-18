@@ -410,7 +410,16 @@ function normalizeCitation(citationStr) {
   );
   preprocessed = preprocessed.replace(
     /(\d+(?:-\d+)?)\s+((?:(?:III|II|I|[123])\s+)?[A-Za-z][A-Za-z .]+?\s+\d)/g,
-    (match, digits, rest) => {
+    (match, digits, rest, offset, fullStr) => {
+      // A 1/2/3 at the start of a citation segment is part of a numbered
+      // book name ("1 John 3:23"), never a citation boundary. Bare "John"
+      // resolves as a book, which would otherwise split this into
+      // "1; John 3:23". Segment start = string start or right after ;/+.
+      const atSegmentStart = offset === 0 || /[;+]\s*$/.test(fullStr.slice(0, offset));
+      if (atSegmentStart && /^[123]$/.test(digits)) {
+        const numbered = normalizeBookName(digits + ' ' + rest.split(/\s+/)[0]);
+        if (BOOK_ABBREVIATIONS[numbered]) return match;
+      }
       const bookCandidate = rest.replace(/\s+\d$/, '').trim();
       const resolved = normalizeBookName(bookCandidate);
       if (resolved !== bookCandidate || BOOK_NAME_MAP[bookCandidate.toLowerCase()]) {
