@@ -4,7 +4,8 @@
   "description": "Snapshot tests for LunarCalendarEngine",
   "main": "snapshot-verify.js",
   "scripts": {
-    "test": "node snapshot-verify.js",
+    "test": "node snapshot-verify.js && node anchor-verify.js && node julian-day-verify.js",
+    "test:quick": "node snapshot-verify.js && node anchor-verify.js && node julian-day-verify.js --quick",
     "snapshot:generate": "node snapshot-generate.js",
     "snapshot:update": "node snapshot-generate.js"
   },

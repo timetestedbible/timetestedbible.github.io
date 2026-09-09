@@ -15,7 +15,11 @@ npm install
 npm test
 ```
 
-This re-runs all 84 test combinations (7 biblical tests x 12 calendar profiles) and compares the output against the golden snapshot. If any JD, weekday, or pass/fail result differs, the test fails with a clear diff.
+This runs three verifiers in sequence:
+
+1. `snapshot-verify.js` — all 84 Sabbath Tester combinations (7 biblical tests x 12 calendar profiles) against the golden snapshot. Detects drift only; it will happily enshrine a bug.
+2. `anchor-verify.js` — external ground truth: attested weekdays, the JD epoch, author-ruled month anchors, and label/weekday/boundary self-consistency. If these fail the engine is wrong regardless of the snapshot.
+3. `julian-day-verify.js` — thorough verification of `julian-day.js` (the one copy of calendar <-> day-number math) and everything rewired to it: Meeus anchors, both leap rules, day-by-day oracle walks of both calendars, Date.UTC and astronomy-engine oracles, the display convention, engine invariants over 8 profiles x 7 locations x 15 years, and cross-file agreement of the browser scripts loaded in layout order. `npm run test:quick` runs a reduced grid.
 
 ## Update Snapshot
 
@@ -50,4 +54,6 @@ The 7 biblical tests are defined in `http/views/sabbath-tester-view.js` (`BIBLIC
 - `astro-engine-node.js` — Node.js wrapper for the astronomy-engine npm package
 - `snapshot-generate.js` — generates the golden snapshot JSON
 - `snapshot-verify.js` — verifies current engine output matches the snapshot
+- `anchor-verify.js` — external-truth anchors (weekdays, epochs, author rulings, self-consistency)
+- `julian-day-verify.js` — oracles, anchors, engine invariants and cross-file agreement for the shared day-number math
 - `snapshots/sabbath-tester.json` — the golden reference data

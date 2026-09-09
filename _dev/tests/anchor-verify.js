@@ -68,6 +68,15 @@ check('instantToJD(2000-01-01T12:00Z)', JulianDay.instantToJD(new Date(Date.UTC(
   check('Julian round-trip 1500 BC–1582 mismatches', bad, 0);
 }
 
+console.log('— Local calendar date of an instant (solar-time offset, 15° per hour) —');
+// 2028-12-31 16:48 UTC is already Jan 1 2029 at Sydney (+10.08h) and still Dec 31 at Honolulu (-10.5h).
+check('Sydney local date of 2028-12-31T16:48Z', eng.getLocalDate(new Date(Date.UTC(2028, 11, 31, 16, 48)), 151.2093).toISOString(), '2029-01-01T00:00:00.000Z');
+check('Honolulu local date of 2028-12-31T16:48Z', eng.getLocalDate(new Date(Date.UTC(2028, 11, 31, 16, 48)), -157.8583).toISOString(), '2028-12-31T00:00:00.000Z');
+// -1444-01-01 09:55 UTC is still Dec 31 of -1445 at Honolulu.
+check('Honolulu local date of -1444-01-01T09:55Z', eng.getLocalDate(new Date(Date.UTC(-1444, 0, 1, 9, 55)), -157.8583).toISOString(), '-001445-12-31T00:00:00.000Z');
+check('Jerusalem local date of 2026-02-28T22:30Z rolls to Mar 1', eng.getLocalDate(new Date(Date.UTC(2026, 1, 28, 22, 30)), 35.2137).toISOString(), '2026-03-01T00:00:00.000Z');
+check('Dallas local date of 2026-03-01T03:00Z is still Feb 28', eng.getLocalDate(new Date(Date.UTC(2026, 2, 1, 3, 0)), -96.797).toISOString(), '2026-02-28T00:00:00.000Z');
+
 console.log('— Historically attested ancient weekdays (Julian calendar dates) —');
 // Julian April 7, 30 AD — the classical crescent-Passover crucifixion candidate — was a Friday.
 check('Julian 30-04-07 weekday', NAMES[JulianDay.jdnToWeekday(JulianDay.julianToJDN(30, 4, 7))], 'Friday');
