@@ -131,7 +131,13 @@
   /** Weekday of a display-labeled Date. (getUTCDay() is wrong for Julian labels.) */
   function displayDateToWeekday(date) { return jdnToWeekday(displayDateToJDN(date)); }
 
-  /** JD -> Date whose UTC fields carry the display label (midnight UTC). */
+  /**
+   * JD -> Date whose UTC fields carry the display label (midnight UTC).
+   * Limitation: a JS Date is proleptic Gregorian inside, so a Julian Feb 29
+   * in a Gregorian non-leap year (100, 200, 300, 500 … 1500 AD and the same
+   * BC century years) has no representable Date; it reads as Mar 1. Weekdays
+   * are unaffected when computed from the JDN.
+   */
   function jdToDisplayDate(jd) {
     const c = jdnToDisplay(jd);
     const d = new Date(Date.UTC(2000, c.month - 1, c.day));

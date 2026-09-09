@@ -359,25 +359,15 @@ class LunarCalendarEngine {
    * @returns {Date}
    */
   getLocalDate(utcDate, longitude) {
-    const hourOffset = longitude / 15;
-    const utcHour = utcDate.getUTCHours() + utcDate.getUTCMinutes() / 60;
-    const localHour = utcHour + hourOffset;
-    
-    let year = utcDate.getUTCFullYear();
-    let month = utcDate.getUTCMonth();
-    let day = utcDate.getUTCDate();
-    
-    // Adjust day if local time crosses midnight
-    if (localHour >= 24) {
-      day += 1;
-    } else if (localHour < 0) {
-      day -= 1;
-    }
-    
-    // Create new date with adjusted components
-    const result = new Date(Date.UTC(2000, month, day, 0, 0, 0));
-    result.setUTCFullYear(year);
-    
+    // Shift the instant by the solar-time offset (15° per hour) and take the
+    // UTC calendar date of the shifted instant. Shifting the INSTANT lets the
+    // Date roll month and year correctly. (The previous version bumped the
+    // day-of-month on a year-2000 template and then restored the original
+    // year, so a local midnight crossing on Dec 31 / Jan 1 landed a whole
+    // year off — at Sydney or Honolulu that turned a month into 394 days.)
+    const shifted = new Date(utcDate.getTime() + (longitude / 15) * 60 * 60 * 1000);
+    const result = new Date(Date.UTC(2000, shifted.getUTCMonth(), shifted.getUTCDate(), 0, 0, 0));
+    result.setUTCFullYear(shifted.getUTCFullYear());
     return result;
   }
 

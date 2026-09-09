@@ -1408,43 +1408,14 @@ const URLRouter = {
     return String(year);
   },
   
-  _parseDateToJD(dateStr) {
-    // Parse YYYY-MM-DD or YYYY to Julian Day
-    const parts = dateStr.split('-').map(p => parseInt(p));
-    const year = parts[0];
-    const month = parts[1] || 1;
-    const day = parts[2] || 1;
-    
-    // Proleptic Gregorian to JD at noon
-    return JulianDay.gregorianToJDN(year, month, day) + 0.5;
-  },
-  
-  _formatDateForURL(jd) {
-    // Convert JD to YYYY-MM-DD
-    const date = this._julianToGregorian(jd);
-    const year = date.year;
-    const month = String(date.month).padStart(2, '0');
-    const day = String(date.day).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-  },
-  
   _todayJD() {
     // Delegate to AppStore's method to avoid duplication
     if (typeof AppStore !== 'undefined' && AppStore._dateToJulian) {
       return AppStore._dateToJulian(new Date());
     }
-    // Fallback for initialization before AppStore is ready: today's UTC date at noon
-    const now = new Date();
-    return JulianDay.gregorianToJDN(now.getUTCFullYear(), now.getUTCMonth() + 1, now.getUTCDate()) + 0.5;
-  },
-  
-  _dateToJD(date) {
-    // Delegate to AppStore's method to avoid duplication
-    if (typeof AppStore !== 'undefined' && AppStore._dateToJulian) {
-      return AppStore._dateToJulian(date);
-    }
-    // Fallback: display-labeled Date (Julian labels pre-1582) -> JD at noon
-    return JulianDay.displayDateToJDN(date) + 0.5;
+    // Fallback for initialization before AppStore is ready: the current instant
+    // (what AppStore would return for a modern Date)
+    return JulianDay.instantToJD(new Date());
   },
   
   // JD -> display-convention civil date {year, month, day} (Julian labels before Oct 15, 1582)

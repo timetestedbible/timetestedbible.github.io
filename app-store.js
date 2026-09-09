@@ -2186,9 +2186,10 @@ const AppStore = {
   _julianToGregorian(jd) {
     // JD -> display-convention civil date plus UTC time of day
     const { year, month, day } = JulianDay.jdnToDisplay(jd);
-    const fracDay = (jd + 0.5) - Math.floor(jd + 0.5);
-    const hours = Math.floor(fracDay * 24);
-    const minutes = Math.floor((fracDay * 24 - hours) * 60);
+    // Nearest minute: floor() on the float product read 18:15 as 18:14.
+    const mins = Math.min(1439, Math.round(((jd + 0.5) - Math.floor(jd + 0.5)) * 1440));
+    const hours = Math.floor(mins / 60);
+    const minutes = mins % 60;
     return { year, month, day, hours, minutes };
   },
 
