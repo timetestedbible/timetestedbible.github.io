@@ -29,6 +29,16 @@ console.log('— JD epoch and modern anchors —');
 check('JDN 0 weekday', NAMES[eng.jdnToWeekday(0)], 'Monday');
 // JDN 2451545 = 2000-01-01 (Gregorian), a Saturday.
 check('JDN 2451545 (2000-01-01) weekday', NAMES[eng.jdnToWeekday(2451545)], 'Saturday');
+// February is the one month where the Fliegel–Van Flandern 'a' term bites:
+// a = floor((14 - m) / 12) must be 1 for BOTH Jan and Feb. A 13-for-14 slip
+// passes every March–December (and January) test yet labels Feb 28 2026 as
+// 'Feb 25' — 3 days behind (2 in leap years) — then snaps back on Mar 1.
+check('Gregorian 2026-02-28 JDN', eng.gregorianCalendarToJDN(2026, 1, 28), 2461100);
+check('Gregorian 2026-02-28 weekday', NAMES[eng.jdnToWeekday(eng.gregorianCalendarToJDN(2026, 1, 28))], 'Saturday');
+check('Gregorian 2000-02-29 JDN (leap day)', eng.gregorianCalendarToJDN(2000, 1, 29), 2451604);
+check('Gregorian 2000-03-01 JDN (day after leap day)', eng.gregorianCalendarToJDN(2000, 2, 1), 2451605);
+check('Julian 2000-02-01 JDN (= Gregorian 2000-02-14)', eng.julianCalendarToJDN(2000, 1, 1), 2451589);
+check('Julian 30-02-28 -> 30-03-01 consecutive', eng.julianCalendarToJDN(30, 2, 1) - eng.julianCalendarToJDN(30, 1, 28), 1);
 
 console.log('— Historically attested ancient weekdays (Julian calendar dates) —');
 // Julian April 7, 30 AD — the classical crescent-Passover crucifixion candidate — was a Friday.
@@ -69,7 +79,7 @@ const profiles = [
   { id: 'dark-evening', moonPhase: 'dark', dayStartTime: 'evening', dayStartAngle: 0, yearStartRule: 'equinox', crescentThreshold: 18 },
   { id: 'full-morning', moonPhase: 'full', dayStartTime: 'morning', dayStartAngle: 12, yearStartRule: 'equinox', crescentThreshold: 18 },
 ];
-for (const [year, month, day] of [[30, 1, 14], [32, 1, 16], [-1445, 2, 22], [2024, 1, 14]]) {
+for (const [year, month, day] of [[30, 1, 14], [32, 1, 16], [-1445, 2, 22], [2024, 1, 14], [2025, 11, 27]]) {
   for (const p of profiles) {
     const e = new LunarCalendarEngine(astro);
     e.configure({ moonPhase: p.moonPhase, dayStartTime: p.dayStartTime, dayStartAngle: p.dayStartAngle, yearStartRule: p.yearStartRule, crescentThreshold: p.crescentThreshold });
@@ -89,6 +99,54 @@ for (const [year, month, day] of [[30, 1, 14], [32, 1, 16], [-1445, 2, 22], [202
     check(`${p.id} y${year} m${month} d${day} boundary jd on labeled day`,
       Math.round(info.jd), labelJDN);
   }
+}
+
+console.log('— Consecutive lunar days carry consecutive date labels (no jumps) —');
+// Reported 2026-09-09: Dallas, Time-Tested 2nd Ed (full moon, daybreak 12°,
+// virgoFeet), 2025 month 11 read 'Feb 25' for day 27 and 'Mar 1' for day 28.
+// Whatever the month-start rule decides, within a month each day's label must
+// be exactly one JDN after the previous day's, and the boundary jd must fall
+// on the labeled day. Both facts hold independent of this codebase.
+{
+  const labelJDN = (d) => {
+    const y2 = d.getUTCFullYear(), m2 = d.getUTCMonth(), day2 = d.getUTCDate();
+    return (y2 < 1582 || (y2 === 1582 && (m2 < 9 || (m2 === 9 && day2 < 15))))
+      ? eng.julianCalendarToJDN(y2, m2, day2)
+      : Math.floor(Date.UTC(y2, m2, day2) / 86400000 + 2440587.5 + 0.5);
+  };
+  const runs = [
+    { id: 'Dallas full-morning-12 virgoFeet y2025', year: 2025, loc: { lat: 32.7767, lon: -96.7970 },
+      cfg: { moonPhase: 'full', dayStartTime: 'morning', dayStartAngle: 12, yearStartRule: 'virgoFeet', crescentThreshold: 18 } },
+    { id: 'Jerusalem crescent-evening equinox y2023', year: 2023, loc: { lat: 31.7683, lon: 35.2137 },
+      cfg: { moonPhase: 'crescent', dayStartTime: 'evening', dayStartAngle: 0, yearStartRule: 'equinox', crescentThreshold: 18 } },
+    { id: 'Jerusalem dark-evening equinox y30', year: 30, loc: { lat: 31.7683, lon: 35.2137 },
+      cfg: { moonPhase: 'dark', dayStartTime: 'evening', dayStartAngle: 0, yearStartRule: 'equinox', crescentThreshold: 18 } },
+  ];
+  for (const r of runs) {
+    const e = new LunarCalendarEngine(astro);
+    e.configure(r.cfg);
+    const cal = e.generateYear(r.year, r.loc, {});
+    let jumps = 0, offDay = 0, total = 0;
+    for (const m of cal.months) {
+      for (let i = 0; i < m.days.length; i++) {
+        const cur = labelJDN(m.days[i].gregorianDate);
+        total++;
+        if (Math.round(m.days[i].jd) !== cur) offDay++;
+        if (i > 0 && cur - labelJDN(m.days[i - 1].gregorianDate) !== 1) jumps++;
+      }
+    }
+    check(`${r.id}: label jumps across ${total} days`, jumps, 0);
+    check(`${r.id}: boundary jd off labeled day`, offDay, 0);
+  }
+  // The reported cells themselves.
+  const e = new LunarCalendarEngine(astro);
+  e.configure(runs[0].cfg);
+  const cal = e.generateYear(2025, runs[0].loc, {});
+  const d27 = e.getDayInfo(cal, 11, 27), d28 = e.getDayInfo(cal, 11, 28);
+  check('Dallas 2025 m11 d27/d28 labels one day apart',
+    labelJDN(d28.gregorianDate) - labelJDN(d27.gregorianDate), 1);
+  check('Dallas 2025 m11 d27 label names the boundary day',
+    labelJDN(d27.gregorianDate), Math.round(d27.jd));
 }
 
 console.log('');

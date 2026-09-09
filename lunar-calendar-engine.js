@@ -880,7 +880,7 @@ class LunarCalendarEngine {
    * @returns {number} Julian Day Number
    */
   julianCalendarToJDN(year, month, day) {
-    const a = Math.floor((13 - (month + 1)) / 12);
+    const a = Math.floor((14 - (month + 1)) / 12);
     const y = year + 4800 - a;
     const mm = (month + 1) + 12 * a - 3;
     return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
@@ -895,7 +895,7 @@ class LunarCalendarEngine {
    * @returns {number} Julian Day Number
    */
   gregorianCalendarToJDN(year, month, day) {
-    const a = Math.floor((13 - (month + 1)) / 12);
+    const a = Math.floor((14 - (month + 1)) / 12);
     const y = year + 4800 - a;
     const mm = (month + 1) + 12 * a - 3;
     return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4)
@@ -1129,7 +1129,7 @@ LunarCalendarEngine.formatAncientDate = function(date) {
   // For ancient dates, use JDN-based weekday
   let weekday;
   if (year < 1582 || (year === 1582 && date.getUTCMonth() < 9)) {
-    const a = Math.floor((13 - (date.getUTCMonth() + 1)) / 12);
+    const a = Math.floor((14 - (date.getUTCMonth() + 1)) / 12);
     const y = year + 4800 - a;
     const mm = (date.getUTCMonth() + 1) + 12 * a - 3;
     const jdn = day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
