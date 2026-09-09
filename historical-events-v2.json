@@ -163,7 +163,7 @@
         "value": 27,
         "unit": "regal_years"
       },
-      "notes": "18th Dynasty Pharaoh (c. 1450–1423 BC). The Pharaoh of the Exodus. Identified by Manetho (via Josephus) as 'Amenophis' during whose reign the Israelites left Egypt. The biblical date of 1446 BC falls within his reign. His firstborn son died (matching the 10th plague), and his successor Thutmose IV was a younger son."
+      "notes": "18th Dynasty Pharaoh (c. 1453–1419 BC). The Pharaoh of the Exodus. Identified by Manetho (via Josephus) as 'Amenophis' during whose reign the Israelites left Egypt. The biblical date of 1446 BC falls within his reign. His firstborn son died (matching the 10th plague), and his successor Thutmose IV was a younger son."
     },
     "thutmose-iv": {
       "name": "Thutmose IV (Egypt)",
@@ -4309,15 +4309,15 @@
       "id": "thutmose-iii-reign",
       "title": "Thutmose III - Pharaoh of the Oppression",
       "type": "reign",
-      "description": "Thutmose III begins his sole reign over Egypt. He is the Pharaoh from whom Moses fled (Exodus 2:15), and who died after Moses had been in Midian for 40 years (Acts 7:30). His 54-year reign is the longest in the 18th Dynasty, matching the biblical requirement that the Pharaoh of the oppression reigned more than 40 years.",
+      "description": "Thutmose III accedes to the throne of Egypt (c. 1504 BC on the higher Egyptian chronology, which Scripture selects; his aunt Hatshepsut ruled as coregent until 1483 BC). He is the Pharaoh from whom Moses fled (Exodus 2:15), and who died after Moses had been in Midian for 40 years (Acts 7:30). His 54-year reign is the longest in the 18th Dynasty, matching the biblical requirement that the Pharaoh of the oppression reigned more than 40 years.",
       "start": {
         "fixed": {
           "gregorian": {
-            "year": -1478,
+            "year": -1503,
             "month": 1,
             "day": 1
           },
-          "source": "Egyptian chronology - 18th Dynasty king lists"
+          "source": "Egyptian chronology - 18th Dynasty king lists (higher framework: accession 1504 BC; see Extra Chapter 06)"
         }
       },
       "duration": {
@@ -4357,15 +4357,15 @@
       "id": "amenhotep-ii-reign",
       "title": "Amenhotep II - Pharaoh of the Exodus",
       "type": "reign",
-      "description": "Amenhotep II becomes Pharaoh of Egypt. According to Manetho (quoted by Josephus), this is the 'Amenophis' during whose reign the Israelites left Egypt. The biblical date of 1446 BC falls within his reign. His firstborn son died mysteriously (matching the 10th plague), and his successor Thutmose IV was not the Crown Prince.",
+      "description": "Amenhotep II becomes Pharaoh of Egypt (c. 1453–1419 BC; coregent with his father Thutmose III until 1450 BC, then sole ruler). According to Manetho (quoted by Josephus), this is the 'Amenophis' during whose reign the Israelites left Egypt. The biblical date of 1446 BC falls within his reign. His firstborn son died mysteriously (matching the 10th plague), and his successor Thutmose IV was not the Crown Prince.",
       "start": {
         "fixed": {
           "gregorian": {
-            "year": -1449,
+            "year": -1452,
             "month": 1,
             "day": 1
           },
-          "source": "Egyptian chronology - 18th Dynasty king lists"
+          "source": "Egyptian chronology - 18th Dynasty king lists (higher framework: coregent 1453 BC, sole ruler from 1450 BC)"
         }
       },
       "duration": {
@@ -4404,11 +4404,11 @@
       "start": {
         "fixed": {
           "gregorian": {
-            "year": -1422,
+            "year": -1418,
             "month": 1,
             "day": 1
           },
-          "source": "Egyptian chronology - 18th Dynasty king lists"
+          "source": "Egyptian chronology - 18th Dynasty king lists (higher framework: accession 1419 BC)"
         }
       },
       "duration": {
@@ -4595,7 +4595,7 @@
       "id": "thutmose-iii-death",
       "title": "Thutmose III Dies - Pharaoh of Oppression",
       "type": "death",
-      "description": "Thutmose III, the Pharaoh from whom Moses fled, dies after a 54-year reign. Scripture records that Moses remained in Midian until this pharaoh's death: 'all the men are dead which sought thy life.' His son Amenhotep II succeeds him as the new Pharaoh of Egypt.",
+      "description": "Thutmose III, the Pharaoh from whom Moses fled, dies after a 54-year reign. Scripture records that Moses remained in Midian until this pharaoh's death: 'all the men are dead which sought thy life.' His son Amenhotep II, coregent for the last years, now rules alone as Pharaoh of Egypt.",
       "start": {
         "relative": {
           "event": "thutmose-iii-reign",
@@ -4604,7 +4604,7 @@
             "years": 54
           }
         },
-        "notes": "Thutmose III reigned 54 years (c. 1479-1425 BC)"
+        "notes": "Thutmose III reigned 54 years (c. 1504–1450 BC, higher chronology); his death four years before the Exodus is what Exodus 2:23 and 4:19 require"
       },
       "certainty": "medium",
       "sources": [
@@ -4678,7 +4678,7 @@
       "id": "exodus-from-egypt",
       "title": "Exodus from Egypt",
       "type": "milestone",
-      "description": "Israel departs Egypt on the 15th of Nisan, the day after the Passover lamb was slain. The Pharaoh of the Exodus was Amenhotep II (c. 1450–1423 BC), as identified by the Egyptian historian Manetho (via Josephus) and confirmed by 1 Kings 6:1 which places the Exodus 480 years before Solomon's Temple foundation (Spring 966 BC) = 1446 BC.",
+      "description": "Israel departs Egypt on the 15th of Nisan, the day after the Passover lamb was slain. The Pharaoh of the Exodus was Amenhotep II (c. 1453–1419 BC), as identified by the Egyptian historian Manetho (via Josephus) and confirmed by 1 Kings 6:1 which places the Exodus 480 years before Solomon's Temple foundation (Spring 966 BC) = 1446 BC.",
       "pharaoh": "amenhotep-ii",
       "start": {
         "relative": {

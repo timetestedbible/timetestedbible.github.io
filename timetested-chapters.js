@@ -160,6 +160,12 @@ const TIME_TESTED_CHAPTERS = [
     title: 'Extra: First Fruits & New Wine', 
     folder: 'extra',
     summary: 'Explores the timing and significance of First Fruits and the Feast of New Wine in relation to the calendar. This extra chapter provides additional evidence for calendar determination.'
+  },
+  {
+    id: 'e06_Pharaoh_of_the_Exodus',
+    title: 'Extra: The Pharaoh of the Exodus',
+    folder: 'extra',
+    summary: 'Identifies the Pharaoh of the Exodus from Scripture outward: 1 Kings 6:1 and Judges 11:26 fix the departure in 1446 BC; the Bible\'s requirements for the Pharaoh of the oppression select the higher Egyptian chronology, in which Thutmose III dies four years before the Exodus and Amenhotep II, the Amenophis of Manetho, is on the throne. Tests the succession of Thutmose IV, the Avaris abandonment and the Ramesses alternative.'
   }
 ];
 

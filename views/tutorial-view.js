@@ -423,7 +423,8 @@ const TutorialView = {
       { id: 'e02_Battle_of_Actium', title: 'Battle of Actium', letter: 'B' },
       { id: 'e03_Herods_Appointment', title: 'Herod\'s Appointment', letter: 'C' },
       { id: 'e04_StabilityOfAustronomy', title: 'Stability of Astronomy', letter: 'D' },
-      { id: 'e05_FirstFruitsNewWine', title: 'First Fruits & New Wine', letter: 'E' }
+      { id: 'e05_FirstFruitsNewWine', title: 'First Fruits & New Wine', letter: 'E' },
+      { id: 'e06_Pharaoh_of_the_Exodus', title: 'The Pharaoh of the Exodus', letter: 'F' }
     ];
     
     return appendices.map(ch => `
