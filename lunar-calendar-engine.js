@@ -62,6 +62,33 @@ class LunarCalendarEngine {
   }
 
   // ==========================================================================
+  // DAY-BOUNDARY LATITUDE RULE
+  // ==========================================================================
+
+  /**
+   * Location used for day-boundary sun events (sunrise, sunset, twilight).
+   * Beyond ±48° latitude the chosen boundary can fail to occur in midsummer —
+   * astronomical dusk (18°) stops above ~48.6°, nautical dawn (12°) above
+   * ~54.6°, sunrise/sunset above 66.6° — so the boundary is taken as it
+   * happens at ±47° on the same meridian. (Author ruling 2026-09-09.) The
+   * moon's position, visibility and the year-start rule still use the true
+   * location; only WHEN the day turns over is clamped.
+   * @param {{lat: number, lon: number}} location
+   * @returns {{lat: number, lon: number}}
+   */
+  static dayBoundaryLocation(location) {
+    const lat = Number(location.lat);
+    if (!(Math.abs(lat) > 48)) return location;
+    return { ...location, lat: lat < 0 ? -47 : 47 };
+  }
+
+  /** Observer for day-boundary sun events at a location (see dayBoundaryLocation). */
+  dayBoundaryObserver(location) {
+    const loc = LunarCalendarEngine.dayBoundaryLocation(location);
+    return this.astro.createObserver(loc.lat, loc.lon, 0);
+  }
+
+  // ==========================================================================
   // CALENDAR SYSTEM HELPERS
   // ==========================================================================
 
@@ -372,30 +399,13 @@ class LunarCalendarEngine {
   }
 
   /**
-   * Get sunset timestamp for a date at given location
-   * @param {Date} date 
-   * @param {Object} location - { lat, lon }
-   * @returns {number|null} UTC timestamp of sunset
-   */
-  getSunsetTime(date, location) {
-    const observer = this.astro.createObserver(location.lat, location.lon, 0);
-    
-    // Search from noon of the day
-    const noon = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 12, 0, 0));
-    noon.setUTCFullYear(date.getUTCFullYear());
-    
-    const result = this.astro.searchRiseSet('sun', observer, -1, noon, 1);
-    return result ? result.date.getTime() : null;
-  }
-
-  /**
    * Get sunrise timestamp for a date at given location
    * @param {Date} date 
    * @param {Object} location - { lat, lon }
    * @returns {number|null} UTC timestamp of sunrise
    */
   getSunriseTime(date, location) {
-    const observer = this.astro.createObserver(location.lat, location.lon, 0);
+    const observer = this.dayBoundaryObserver(location);
     
     // Search from midnight
     const midnight = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 0, 0, 0));
@@ -412,7 +422,7 @@ class LunarCalendarEngine {
    * @returns {number} UTC timestamp of day start
    */
   getDayStartTime(date, location) {
-    const observer = this.astro.createObserver(location.lat, location.lon, 0);
+    const observer = this.dayBoundaryObserver(location);
     
     const midnight = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 0, 0, 0));
     midnight.setUTCFullYear(date.getUTCFullYear());
@@ -506,7 +516,7 @@ class LunarCalendarEngine {
    * @returns {number|null} UTC timestamp of that civil day's sunset
    */
   getSunsetTime(date, location) {
-    const observer = this.astro.createObserver(location.lat, location.lon, 0);
+    const observer = this.dayBoundaryObserver(location);
     const noon = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 12, 0, 0));
     noon.setUTCFullYear(date.getUTCFullYear());
     const result = this.astro.searchRiseSet('sun', observer, -1, noon, 1);

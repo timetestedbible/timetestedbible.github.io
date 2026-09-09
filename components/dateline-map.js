@@ -664,7 +664,11 @@ function getBiblicalDateForLocation(timestamp, latitude, longitude, calendarData
   
   if (engine && typeof engine.createObserver === 'function') {
     try {
-      const observer = engine.createObserver(latitude, longitude, 0);
+      // Day-boundary latitude rule: beyond ±48° use ±47° (LunarCalendarEngine.dayBoundaryLocation)
+      const boundaryLoc = (typeof LunarCalendarEngine !== 'undefined' && LunarCalendarEngine.dayBoundaryLocation)
+        ? LunarCalendarEngine.dayBoundaryLocation({ lat: latitude, lon: longitude })
+        : { lat: latitude, lon: longitude };
+      const observer = engine.createObserver(boundaryLoc.lat, boundaryLoc.lon, 0);
       
       // Search for sunrise/sunset on the local date
       const midnight = new Date(localDate.getTime());

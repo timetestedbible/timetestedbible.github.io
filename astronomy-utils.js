@@ -8,6 +8,16 @@ function isBeforeGregorianReform(date) {
   return JulianDay.isDisplayJulian(date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate());
 }
 
+// Observer for day-boundary sun events (sunrise, sunset, twilight). Latitude
+// follows the engine's rule — beyond ±48° the boundary is taken at ±47° on the
+// same meridian — so the times the UI shows match the calendar's boundaries.
+function dayBoundaryObserver(engine, lat, lon) {
+  const loc = (typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.dayBoundaryLocation === 'function')
+    ? LunarCalendarEngine.dayBoundaryLocation({ lat, lon })
+    : { lat, lon };
+  return engine.createObserver(loc.lat, loc.lon, 0);
+}
+
 // Get the current location name from state or URLRouter
 function getCurrentLocationName() {
   try {
@@ -33,7 +43,7 @@ function getSunriseTimestamp(date) {
   if (typeof getAstroEngine !== 'function') return null;
   const engine = getAstroEngine();
   if (!engine) return null;
-  const observer = engine.createObserver(state.lat, state.lon, 0);
+  const observer = dayBoundaryObserver(engine, state.lat, state.lon);
   // Search for sunrise starting from midnight of that day (use UTC for ancient dates)
   const midnightUTC = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 0, 0, 0));
   midnightUTC.setUTCFullYear(date.getUTCFullYear());
@@ -50,7 +60,7 @@ function getSunsetTimestamp(date) {
   if (typeof getAstroEngine !== 'function') return null;
   const engine = getAstroEngine();
   if (!engine) return null;
-  const observer = engine.createObserver(state.lat, state.lon, 0);
+  const observer = dayBoundaryObserver(engine, state.lat, state.lon);
   // Use noon UTC as search start to find THIS day's sunset (not previous day's)
   const noonUTC = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 12, 0, 0));
   noonUTC.setUTCFullYear(date.getUTCFullYear());
@@ -246,7 +256,8 @@ function getMoonAltitudeAtSunset(date) {
     if (typeof getAstroEngine !== 'function') return null;
     const engine = getAstroEngine();
     if (!engine) return null;
-    const observer = engine.createObserver(state.lat, state.lon, 0);
+    const observer = engine.createObserver(state.lat, state.lon, 0); // true location: moon altitude
+    const boundaryObserver = dayBoundaryObserver(engine, state.lat, state.lon); // sighting dusk
     
     // Create midnight date with proper handling for ancient years
     // Using setUTCFullYear to avoid JavaScript treating small years (0-99) as 1900+year
@@ -254,7 +265,7 @@ function getMoonAltitudeAtSunset(date) {
     midnight.setUTCFullYear(date.getUTCFullYear());
     
     // Find sunset on this day
-    const sunset = engine.searchRiseSet('sun', observer, -1, midnight, 1);
+    const sunset = engine.searchRiseSet('sun', boundaryObserver, -1, midnight, 1);
     
     if (!sunset) {
       return null;
@@ -314,7 +325,7 @@ function getDayStartTime(date) {
   if (typeof getAstroEngine !== 'function') return null;
   const engine = getAstroEngine();
   if (!engine) return null;
-  const observer = engine.createObserver(state.lat, state.lon, 0);
+  const observer = dayBoundaryObserver(engine, state.lat, state.lon);
   
   // Use UTC methods to avoid timezone issues with ancient dates
   const midnightUTC = new Date(Date.UTC(2000, date.getUTCMonth(), date.getUTCDate(), 0, 0, 0));

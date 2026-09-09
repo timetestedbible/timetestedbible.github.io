@@ -207,14 +207,13 @@ const LOCS = {
   Ushuaia: { lat: -54.8019, lon: -68.303 }, Anchorage: { lat: 61.2181, lon: -149.9003 },
 };
 const YEARS = QUICK ? [30, 1582, 2025, 2026] : [-1445, -586, 0, 30, 33, 70, 1582, 1583, 1900, 2000, 2024, 2025, 2026, 2028, 2100];
-// Strict invariants below 48° latitude. Beyond it the chosen boundary can fail
-// to occur in midsummer — astronomical dusk (18°) above ~48.6°, nautical
-// dawn (12°) above ~54.6°, sunrise/sunset above 66.6° — and the engine falls
-// back to a fixed UTC clock time, which yields 28/31-day months and uneven
-// day steps. Those locations are exercised separately and only reported.
-const STRICT_LOCS = Object.keys(LOCS).filter(k => Math.abs(LOCS[k].lat) <= 48);
-const POLAR_LOCS = Object.keys(LOCS).filter(k => Math.abs(LOCS[k].lat) > 48);
-const LOC_NAMES = QUICK ? ['Jerusalem', 'Dallas', 'Auckland', 'Honolulu'] : STRICT_LOCS;
+// Every location is held to the same invariants. Beyond ±48° latitude the
+// engine evaluates day-boundary sun events at ±47° on the same meridian
+// (LunarCalendarEngine.dayBoundaryLocation), so 28/31-day months and clock-time
+// fallbacks must not appear anywhere. The Virgo's-feet YEAR rule is not
+// clamped and can yield an 11-month year at high latitude; that is reported.
+const LOC_NAMES = QUICK ? ['Jerusalem', 'Dallas', 'Auckland', 'Tromso'] : Object.keys(LOCS);
+const yearRuleInfo = {};
 const labelJDN = d => JulianDay.displayDateToJDN(d);
 const agg = { calendars: 0, days: 0, lenBad: 0, len2930Bad: 0, startBad: 0, consecBad: 0, weekdayBad: 0, boundaryBad: 0, jdStepBad: 0, findBad: 0, monthsBad: 0, first: {} };
 const roundStats = {}; // informational: how often Math.round(jd) !== label JDN, by location+mode
@@ -224,7 +223,10 @@ for (const [cn, cfg] of Object.entries(CONFIGS)) for (const ln of LOC_NAMES) for
   const eng = new LunarCalendarEngine(astro).configure({ ...cfg, crescentThreshold: 18 });
   const cal = eng.generateYear(y, LOCS[ln], { includeUncertainty: (idx++ % 2) === 0 });
   agg.calendars++;
-  if (cal.months.length !== 12 && cal.months.length !== 13) note('monthsBad', { cn, ln, y, months: cal.months.length });
+  if (cal.months.length !== 12 && cal.months.length !== 13) {
+    if (Math.abs(LOCS[ln].lat) <= 48) note('monthsBad', { cn, ln, y, months: cal.months.length });
+    else yearRuleInfo[`${ln}/${cn}`] = (yearRuleInfo[`${ln}/${cn}`] || []).concat(`${y}: ${cal.months.length} months`);
+  }
   let prevL = null, prevJd = null;
   const rk = `${ln}/${cfg.dayStartTime}`; roundStats[rk] ??= { days: 0, off: 0 };
   for (const m of cal.months) {
@@ -267,26 +269,8 @@ for (const k of ['monthsBad', 'lenBad', 'len2930Bad', 'startBad', 'consecBad', '
   }
   summary(`year seams (${n} pairs)`, n, bad, first);
 }
-{ // High latitudes: report, don't fail (see STRICT_LOCS note). Year-wrap bugs (|days| > 100) DO fail anywhere.
-  const polar = {}; let wrap = 0, firstWrap = null;
-  for (const [cn, cfg] of Object.entries(CONFIGS)) for (const ln of POLAR_LOCS) for (const y of (QUICK ? [2025] : YEARS)) {
-    const eng = new LunarCalendarEngine(astro).configure({ ...cfg, crescentThreshold: 18 });
-    const cal = eng.generateYear(y, LOCS[ln], {});
-    const k = `${ln}/${cn}`; polar[k] ??= { months: 0, odd: 0, years: 0, oddYears: 0 };
-    polar[k].months += cal.months.length; polar[k].years++;
-    if (cal.months.length !== 12 && cal.months.length !== 13) polar[k].oddYears++;
-    for (const m of cal.months) {
-      if (m.daysInMonth < 0 || m.daysInMonth > 100) { wrap++; firstWrap ??= { cn, ln, y, m: m.monthNumber, daysInMonth: m.daysInMonth }; }
-      else if (m.daysInMonth !== 29 && m.daysInMonth !== 30) polar[k].odd++;
-    }
-  }
-  check('high-latitude: year-wrapped months (|length| > 100)', wrap, 0);
-  if (wrap) console.log(`        first: ${JSON.stringify(firstWrap)}`);
-  console.log('  info — high-latitude fallbacks (months not 29/30, years not 12/13 months), by location/profile:');
-  let any = false;
-  for (const [k, v] of Object.entries(polar)) if (v.odd || v.oddYears) { any = true; console.log(`        ${k}: ${v.odd}/${v.months} months, ${v.oddYears}/${v.years} years`); }
-  if (!any) console.log('        none');
-}
+console.log('  info — high-latitude years with other than 12/13 months (Virgo\'s-feet year rule is not latitude-clamped):');
+if (Object.keys(yearRuleInfo).length) for (const [k, v] of Object.entries(yearRuleInfo)) console.log(`        ${k}: ${v.join(', ')}`); else console.log('        none');
 console.log('  info — Math.round(jd) !== label JDN (the Sabbath Tester row-identity assumption), by location/mode:');
 for (const [k, v] of Object.entries(roundStats)) if (v.off) console.log(`        ${k}: ${v.off}/${v.days} days (${(100 * v.off / v.days).toFixed(0)}%)`);
 if (!Object.values(roundStats).some(v => v.off)) console.log('        none');
@@ -364,6 +348,18 @@ if (loaded['astronomy-utils.js']) {
   check('formatMoonEventDate: Feb 1 2026 22:09 UTC at Dallas is Sunday Feb 1, 3:41 PM local', [mod.dayOfWeek, mod.monthName, mod.dayNum, mod.year, mod.moonTimeStr], ['Sunday', 'Feb', 1, '2026', '3:41 PM']);
   const east = fmt(Date.UTC(2026, 1, 1, 22, 9), 174.7633);
   check('formatMoonEventDate: same instant at Auckland is Monday Feb 2 (local day rolls over)', [east.dayOfWeek, east.monthName, east.dayNum], ['Monday', 'Feb', 2]);
+  // UI day-boundary helpers must apply the engine's latitude rule (beyond ±48° -> ±47°).
+  ctx.__astro = astro;
+  g('globalThis.getAstroEngine = () => __astro; globalThis.state = { lat: 69.6492, lon: 18.9553, dayStartTime: "morning", dayStartAngle: 12 };');
+  const uiDayStart = g('getDayStartTime'), uiSunset = g('getSunsetTimestamp'), uiSunrise = g('getSunriseTimestamp');
+  const tromso = { lat: 69.6492, lon: 18.9553 }, engT = new LunarCalendarEngine(astro).configure({ dayStartTime: 'morning', dayStartAngle: 12 });
+  for (const d of [new Date(Date.UTC(2025, 5, 21)), new Date(Date.UTC(2025, 11, 21)), new Date(Date.UTC(2026, 1, 28))]) {
+    const tag = d.toISOString().slice(0, 10);
+    check(`UI getDayStartTime at Tromso ${tag} == engine getDayStartTime`, uiDayStart(d), engT.getDayStartTime(d, tromso));
+    check(`UI getSunsetTimestamp at Tromso ${tag} == engine getSunsetTime`, uiSunset(d), engT.getSunsetTime(d, tromso));
+    check(`UI getSunriseTimestamp at Tromso ${tag} == engine getSunriseTime`, uiSunrise(d), engT.getSunriseTime(d, tromso));
+  }
+  check('UI getDayStartTime at Tromso midsummer is a real event (47N), not the 06:00 fallback', uiDayStart(new Date(Date.UTC(2025, 5, 21))) !== Date.UTC(2025, 5, 21) + 6 * 3600000, true);
 }
 if (loaded['day-detail.js']) {
   const parts = g('getFormattedDateParts'), fad = g('formatAncientDate');

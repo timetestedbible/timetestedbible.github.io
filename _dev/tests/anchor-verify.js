@@ -77,6 +77,34 @@ check('Honolulu local date of -1444-01-01T09:55Z', eng.getLocalDate(new Date(Dat
 check('Jerusalem local date of 2026-02-28T22:30Z rolls to Mar 1', eng.getLocalDate(new Date(Date.UTC(2026, 1, 28, 22, 30)), 35.2137).toISOString(), '2026-03-01T00:00:00.000Z');
 check('Dallas local date of 2026-03-01T03:00Z is still Feb 28', eng.getLocalDate(new Date(Date.UTC(2026, 2, 1, 3, 0)), -96.797).toISOString(), '2026-02-28T00:00:00.000Z');
 
+console.log('— Day-boundary latitude rule (author ruling 2026-09-09): beyond ±48° use ±47°, same meridian —');
+check('dayBoundaryLocation 69.65N -> 47N', JSON.stringify(LunarCalendarEngine.dayBoundaryLocation({ lat: 69.6492, lon: 18.9553 })), JSON.stringify({ lat: 47, lon: 18.9553 }));
+check('dayBoundaryLocation 54.8S -> 47S', JSON.stringify(LunarCalendarEngine.dayBoundaryLocation({ lat: -54.8019, lon: -68.303 })), JSON.stringify({ lat: -47, lon: -68.303 }));
+check('dayBoundaryLocation 48N unchanged', JSON.stringify(LunarCalendarEngine.dayBoundaryLocation({ lat: 48, lon: 10 })), JSON.stringify({ lat: 48, lon: 10 }));
+check('dayBoundaryLocation 47.9N unchanged', LunarCalendarEngine.dayBoundaryLocation({ lat: 47.9, lon: 10 }).lat, 47.9);
+{
+  const midsummer = new Date(Date.UTC(2025, 5, 21)), midwinter = new Date(Date.UTC(2025, 11, 21));
+  const tromso = { lat: 69.6492, lon: 18.9553 }, tromso47 = { lat: 47, lon: 18.9553 };
+  const ushuaia = { lat: -54.8019, lon: -68.303 }, ushuaia47 = { lat: -47, lon: -68.303 };
+  const e12 = new LunarCalendarEngine(astro).configure({ dayStartTime: 'morning', dayStartAngle: 12 });
+  const e18 = new LunarCalendarEngine(astro).configure({ dayStartTime: 'evening', dayStartAngle: 18 });
+  const e0 = new LunarCalendarEngine(astro).configure({ dayStartTime: 'evening', dayStartAngle: 0 });
+  for (const d of [midsummer, midwinter]) {
+    const tag = d.toISOString().slice(0, 10);
+    check(`Tromso dawn (12°) ${tag} == 47N on its meridian`, e12.getDayStartTime(d, tromso), e12.getDayStartTime(d, tromso47));
+    check(`Tromso sunset ${tag} == 47N on its meridian`, e0.getSunsetTime(d, tromso), e0.getSunsetTime(d, tromso47));
+    check(`Tromso sunrise ${tag} == 47N on its meridian`, e0.getSunriseTime(d, tromso), e0.getSunriseTime(d, tromso47));
+    check(`Ushuaia dusk (18°) ${tag} == 47S on its meridian`, e18.getDayStartTime(d, ushuaia), e18.getDayStartTime(d, ushuaia47));
+  }
+  // At 47° every boundary occurs even at midsummer, so the value is a real event, never the clock-time fallback.
+  check('Tromso midsummer dawn is a real event, not the 06:00 UTC fallback', e12.getDayStartTime(midsummer, tromso) !== Date.UTC(2025, 5, 21) + 6 * 3600000, true);
+  check('Tromso midsummer sunset exists', e0.getSunsetTime(midsummer, tromso) !== null, true);
+  check('Ushuaia December astronomical dusk exists', e18.getDayStartTime(midwinter, ushuaia) !== Date.UTC(2025, 11, 21) + 18 * 3600000, true);
+  // Below the limit nothing changes.
+  const jer = { lat: 31.7683, lon: 35.2137 };
+  check('Jerusalem is its own boundary location', LunarCalendarEngine.dayBoundaryLocation(jer) === jer, true);
+}
+
 console.log('— Historically attested ancient weekdays (Julian calendar dates) —');
 // Julian April 7, 30 AD — the classical crescent-Passover crucifixion candidate — was a Friday.
 check('Julian 30-04-07 weekday', NAMES[JulianDay.jdnToWeekday(JulianDay.julianToJDN(30, 4, 7))], 'Friday');
