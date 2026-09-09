@@ -39,7 +39,8 @@ class LunarCalendarEngine {
     };
     
     // Instance-owned caches (no global state pollution)
-    this._virgoCache = {};      // Keyed by "year_lat_lon"
+    this._virgoCache = {};      // Counted year starts, keyed by "year_lat_lon"
+    this._virgoPlainCache = {}; // Bare observations per year (see _observeFirstVirgoMoon)
     this._moonEventsCache = {}; // Keyed by year
     this._calendarCache = {};   // Keyed by "year_lat_lon_config"
   }
@@ -235,11 +236,6 @@ class LunarCalendarEngine {
     return equinox;
   }
   
-  /** Years per anchor block of the Virgo chain (see _findVirgoFeetFullMoon). */
-  static get VIRGO_CHAIN_BLOCK() { return 40; }
-  /** Minimum chain length before a requested year. */
-  static get VIRGO_CHAIN_MIN() { return 20; }
-
   _virgoKey(year, location) {
     return `${year}_${location.lat.toFixed(4)}_${location.lon.toFixed(4)}`;
   }
@@ -298,11 +294,20 @@ class LunarCalendarEngine {
   }
 
   /**
-   * Chain anchor: the observation alone — the first full moon from Jan 20 of
-   * the year at which Spica sets first (up to 7 moons; falls back to the last
-   * one checked). Used only to start a chain, never for a requested year.
+   * The bare observation for a year: the first full moon from Jan 20 at which
+   * Spica sets first (up to 7 moons; falls back to the last one checked).
+   * This is what an observer with no count to carry would pick. It equals the
+   * counted start except in the rare year whose eleventh moon qualifies.
    */
-  _observeFirstVirgoMoon(year, location, anchorYear) {
+  _observeFirstVirgoMoon(year, location) {
+    const key = this._virgoKey(year, location);
+    if (this._virgoPlainCache[key]) return this._virgoPlainCache[key];
+    const entry = this._observeFirstVirgoMoonUncached(year, location);
+    if (entry) this._virgoPlainCache[key] = entry;
+    return entry;
+  }
+
+  _observeFirstVirgoMoonUncached(year, location) {
     const searchStart = new Date(Date.UTC(2000, 0, 20));
     searchStart.setUTCFullYear(year);
     let searchDate = searchStart;
@@ -312,13 +317,13 @@ class LunarCalendarEngine {
       if (!fm) break;
       const obs = this._observeVirgo(fm, location);
       attempts.push(obs);
-      if (obs.qualifies) return this._virgoEntry(year, location, fm, obs, attempts, { anchorYear, anchor: true });
+      if (obs.qualifies) return this._virgoEntry(year, location, fm, obs, attempts, { observed: true });
       searchDate = new Date(fm.getTime() + 24 * 60 * 60 * 1000);
     }
-    console.warn(`[Engine] No qualifying Virgo full moon found in 7 attempts for anchor year ${year}`);
+    console.warn(`[Engine] No qualifying Virgo full moon found in 7 attempts for year ${year}`);
     const last = attempts[attempts.length - 1];
     if (!last) return null;
-    return this._virgoEntry(year, location, new Date(last.fullMoon), last, attempts, { anchorYear, anchor: true, fallback: true });
+    return this._virgoEntry(year, location, new Date(last.fullMoon), last, attempts, { observed: true, fallback: true });
   }
 
   /**
@@ -335,7 +340,7 @@ class LunarCalendarEngine {
     const twelfth = this._nextFullMoonAfter(new Date(prevStart.getTime() + (12 * SYNODIC - 15) * 86400000));
     const obs12 = this._observeVirgo(twelfth, location);
     const attempts = [obs12];
-    const common = { anchorYear: prevEntry.anchorYear, previousStart: prevEntry.selectedFullMoon };
+    const common = { baseYear: prevEntry.baseYear, previousStart: prevEntry.selectedFullMoon };
     if (prevEntry.fallback) common.fallback = true;
     if (obs12.qualifies) {
       return this._virgoEntry(year, location, twelfth, obs12, attempts, { ...common, monthsInPreviousYear: 12 });
@@ -357,16 +362,20 @@ class LunarCalendarEngine {
    * full moon that follows the twelfth month is either month 1 of the new
    * year (Spica seen to set before the Moon at the next sunrise) or month 13,
    * in which case the following full moon is month 1. Reading the sign at
-   * whichever sunrise follows the full moon could otherwise let an early
-   * moon qualify one year and a late one fail the next, producing an
-   * 11-month year (Reykjavik 1583 under the previous per-year search).
+   * every spring moon could otherwise let an early moon qualify one year and
+   * a late one fail the next, leaving an 11-month year (Reykjavik 1583).
    *
-   * Each year's start therefore follows from the previous year's. Chains are
-   * anchored on a fixed grid (every VIRGO_CHAIN_BLOCK years, at least
-   * VIRGO_CHAIN_MIN years before the requested year) with the observation
-   * alone; two chains started a month apart merge at the first 13-month
-   * year, so the anchor's own choice cannot reach the requested year. Fixed
-   * anchors make the result independent of the order years are asked for.
+   * Each year's start therefore follows from the previous year's, but the
+   * count need only be carried back to the nearest UNAMBIGUOUS year: one
+   * whose bare observation falls thirteen months after the previous year's
+   * bare observation. The bare observation is never more than one moon
+   * before the counted start (an eleventh moon can qualify; a tenth cannot,
+   * being ~40° short of Spica). So at such a year the moon after month 12 is
+   * either the observed moon itself (it passes) or the moon before it (it
+   * fails, and the count lands on the observed moon anyway). Thirteen-month
+   * years come at least every three years, so the walk back is 1–3 years
+   * and the result is a pure function of the observations — the same
+   * whatever order years are asked for.
    *
    * @param {number} year
    * @param {Object} location - { lat, lon } - REQUIRED
@@ -376,24 +385,28 @@ class LunarCalendarEngine {
     const key = this._virgoKey(year, location);
     if (this._virgoCache[key]) return new Date(this._virgoCache[key].selectedFullMoon);
 
-    const block = LunarCalendarEngine.VIRGO_CHAIN_BLOCK;
-    const anchorYear = Math.floor((year - LunarCalendarEngine.VIRGO_CHAIN_MIN) / block) * block;
+    const SYNODIC_MS = 29.530589 * 86400000;
+    const lunations = (a, b) => Math.round((new Date(b) - new Date(a)) / SYNODIC_MS);
+    const MAX_WALK = 8;  // safety cap; the walk normally ends within 3 years
 
-    // Resume from the latest cached link of THIS anchor's chain, else observe the anchor
-    let entry = null, y = year - 1;
-    for (; y >= anchorYear; y--) {
-      const c = this._virgoCache[this._virgoKey(y, location)];
-      if (c && c.anchorYear === anchorYear) { entry = c; break; }
+    // Walk back to the nearest unambiguous year
+    let z = year, base = null;
+    for (;;) {
+      const p = this._observeFirstVirgoMoon(z, location);
+      if (!p) return null;
+      const q = this._observeFirstVirgoMoon(z - 1, location);
+      if (!q || p.fallback || q.fallback || year - z >= MAX_WALK
+          || lunations(q.selectedFullMoon, p.selectedFullMoon) >= 13) { base = p; break; }
+      z--;
     }
-    if (!entry) {
-      entry = this._observeFirstVirgoMoon(anchorYear, location, anchorYear);
-      if (!entry) return null;
-      this._virgoCache[this._virgoKey(anchorYear, location)] = entry;
-      y = anchorYear;
-    }
-    for (let z = y + 1; z <= year; z++) {
-      entry = this._nextVirgoYearStart(entry, z, location);
-      this._virgoCache[this._virgoKey(z, location)] = entry;
+
+    // Carry the count forward from there
+    let entry = this._virgoCache[this._virgoKey(z, location)] || { ...base, baseYear: z };
+    this._virgoCache[this._virgoKey(z, location)] = entry;
+    for (let w = z + 1; w <= year; w++) {
+      const k = this._virgoKey(w, location);
+      entry = this._virgoCache[k] || this._nextVirgoYearStart(entry, w, location);
+      this._virgoCache[k] = entry;
     }
     return new Date(entry.selectedFullMoon);
   }
@@ -432,8 +445,19 @@ class LunarCalendarEngine {
    * @returns {Object|null} Cached Virgo calculation details
    */
   getVirgoCalculation(year, location) {
-    const cacheKey = `${year}_${location.lat.toFixed(4)}_${location.lon.toFixed(4)}`;
-    return this._virgoCache[cacheKey] || null;
+    if (this.config.yearStartRule !== 'virgoFeet') return this._virgoCache[this._virgoKey(year, location)] || null;
+    if (!this._findVirgoFeetFullMoon(year, location)) return null;
+    const entry = this._virgoCache[this._virgoKey(year, location)];
+    // A year that was itself unambiguous carries only its bare observation;
+    // add the count summary the UI shows (previous start, 12 or 13 months).
+    if (entry && !entry.previousStart) {
+      const prev = this._findVirgoFeetFullMoon(year - 1, location);
+      if (prev) {
+        entry.previousStart = prev.toISOString();
+        entry.monthsInPreviousYear = Math.round((new Date(entry.selectedFullMoon) - prev) / (29.530589 * 86400000));
+      }
+    }
+    return entry || null;
   }
 
   /**

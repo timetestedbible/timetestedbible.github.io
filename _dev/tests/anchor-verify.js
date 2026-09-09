@@ -115,15 +115,26 @@ console.log('— Virgo year rule (author ruling 2026-09-09): twelve months, then
   check('Reykjavik 1584 has 12 months', e.generateYear(1584, reyk, {}).months.length, 12);
   check('Reykjavik 1584 opens Apr 24 (the moon after month 12 of 1583 was month 13)', e.generateYear(1584, reyk, {}).months[0].moonEvent.toISOString().slice(0, 10), '1584-04-24');
   check('Reykjavik 1584 diagnostics: previous year (1583) had 12 months', e.getVirgoCalculation(1584, reyk).monthsInPreviousYear, 12);
-  check('Reykjavik 1583 diagnostics: previous year (1582) had 13 months, start deferred by count', JSON.stringify([e.getVirgoCalculation(1583, reyk).monthsInPreviousYear, e.getVirgoCalculation(1583, reyk).attempts.length, e.getVirgoCalculation(1583, reyk).attempts[1].byCount]), JSON.stringify([13, 2, true]));
+  check('Reykjavik 1583 diagnostics: previous year (1582) had 13 months', e.getVirgoCalculation(1583, reyk).monthsInPreviousYear, 13);
+  { // Every year reports a 12- or 13-month predecessor. (A year whose moon after month 12 fails
+    // is, by definition, one whose bare observation lies 13 months after the previous one — an
+    // unambiguous year — so the walk records the observation itself; the by-count branch of
+    // _nextVirgoYearStart is reached only through the safety cap.)
+    let ok = 0, n = 0;
+    for (let y = 1900; y <= 2100; y++) { n++; const c = e.getVirgoCalculation(y, jer); if (c && (c.monthsInPreviousYear === 12 || c.monthsInPreviousYear === 13)) ok++; }
+    check('Jerusalem 1900–2100: every year reports a 12- or 13-month predecessor', ok, n);
+  }
   check('Reykjavik 1583 opens May 6 (Apr 7 was month 13 of 1582)', e.generateYear(1583, reyk, {}).months[0].moonEvent.toISOString().slice(0, 10), '1583-05-06');
   // In an ordinary year the chain and the bare observation agree (Jerusalem 2020–2030).
-  let agree = 0; for (let y = 2020; y <= 2030; y++) { const chain = e._findVirgoFeetFullMoon(y, jer).getTime(); const plain = new Date(e._observeFirstVirgoMoon(y, jer, y).selectedFullMoon).getTime(); if (chain === plain) agree++; }
+  let agree = 0; for (let y = 2020; y <= 2030; y++) { const chain = e._findVirgoFeetFullMoon(y, jer).getTime(); const plain = new Date(e._observeFirstVirgoMoon(y, jer).selectedFullMoon).getTime(); if (chain === plain) agree++; }
   check('Jerusalem 2020–2030: chained start == observed start', agree, 11);
   // Order independence: asking for 2026 first, or 1990 first, must not change 2025.
   const fresh = new LunarCalendarEngine(astro).configure(cfg).generateYear(2025, jer, {}).months[0].moonEvent.getTime();
   const warm = new LunarCalendarEngine(astro).configure(cfg); warm.generateYear(2026, jer, {}); warm.generateYear(1990, jer, {});
   check('Jerusalem 2025 start independent of evaluation order', warm.generateYear(2025, jer, {}).months[0].moonEvent.getTime(), fresh);
+  // The count is carried back only to the nearest unambiguous year — a few years, not decades.
+  let maxWalk = 0; for (let y = 1900; y <= 2100; y++) { e._findVirgoFeetFullMoon(y, reyk); maxWalk = Math.max(maxWalk, y - e.getVirgoCalculation(y, reyk).baseYear); }
+  check('Reykjavik 1900–2100: longest walk back to an unambiguous year is <= 3 years', maxWalk <= 3, true);
 }
 
 console.log('— Historically attested ancient weekdays (Julian calendar dates) —');
