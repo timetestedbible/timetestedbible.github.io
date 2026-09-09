@@ -2172,82 +2172,23 @@ const AppStore = {
    * Used for "today" since users care about their local date
    */
   _localDateToJulian(date) {
-    const y = date.getFullYear();
-    const m = date.getMonth() + 1;
-    const d = date.getDate();
-    const h = date.getHours();
-    const min = date.getMinutes();
-    const s = date.getSeconds();
-    
-    const a = Math.floor((14 - m) / 12);
-    const yy = y + 4800 - a;
-    const mm = m + 12 * a - 3;
-    
     // Gregorian calendar (modern dates only use local time for "today")
-    const jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + 
-                Math.floor(yy / 4) - Math.floor(yy / 100) + 
-                Math.floor(yy / 400) - 32045;
-    
-    // Add fractional day
-    return jdn + (h - 12) / 24 + min / 1440 + s / 86400;
+    const jdn = JulianDay.gregorianToJDN(date.getFullYear(), date.getMonth() + 1, date.getDate());
+    return jdn + (date.getHours() - 12) / 24 + date.getMinutes() / 1440 + date.getSeconds() / 86400;
   },
 
   _dateToJulian(date) {
-    // Convert JavaScript Date to Julian Day using UTC
-    // Uses Julian calendar for dates before Oct 15, 1582, Gregorian after
-    const y = date.getUTCFullYear();
-    const m = date.getUTCMonth() + 1;
-    const d = date.getUTCDate();
-    const h = date.getUTCHours();
-    const min = date.getUTCMinutes();
-    const s = date.getUTCSeconds();
-    
-    const a = Math.floor((14 - m) / 12);
-    const yy = y + 4800 - a;
-    const mm = m + 12 * a - 3;
-    
-    let jdn;
-    if (y < 1582 || (y === 1582 && (m < 10 || (m === 10 && d < 15)))) {
-      // Julian calendar (no /100, /400 corrections)
-      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - 32083;
-    } else {
-      // Gregorian calendar
-      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + 
-            Math.floor(yy / 4) - Math.floor(yy / 100) + 
-            Math.floor(yy / 400) - 32045;
-    }
-    
-    // Add fractional day
-    const jd = jdn + (h - 12) / 24 + min / 1440 + s / 86400;
-    
-    return jd;
+    // Display-labeled Date (UTC fields: Julian calendar before Oct 15, 1582,
+    // Gregorian after) -> JD, keeping the UTC time of day
+    return JulianDay.displayDateToJD(date);
   },
   
   _julianToGregorian(jd) {
-    // Convert Julian Day to Gregorian date components
-    const z = Math.floor(jd + 0.5);
-    const f = (jd + 0.5) - z;
-    
-    let a = z;
-    if (z >= 2299161) {
-      const alpha = Math.floor((z - 1867216.25) / 36524.25);
-      a = z + 1 + alpha - Math.floor(alpha / 4);
-    }
-    
-    const b = a + 1524;
-    const c = Math.floor((b - 122.1) / 365.25);
-    const d = Math.floor(365.25 * c);
-    const e = Math.floor((b - d) / 30.6001);
-    
-    const day = b - d - Math.floor(30.6001 * e);
-    const month = (e < 14) ? e - 1 : e - 13;
-    const year = (month > 2) ? c - 4716 : c - 4715;
-    
-    // Fractional day to time
-    const fracDay = f;
+    // JD -> display-convention civil date plus UTC time of day
+    const { year, month, day } = JulianDay.jdnToDisplay(jd);
+    const fracDay = (jd + 0.5) - Math.floor(jd + 0.5);
     const hours = Math.floor(fracDay * 24);
     const minutes = Math.floor((fracDay * 24 - hours) * 60);
-    
     return { year, month, day, hours, minutes };
   },
 

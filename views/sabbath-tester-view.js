@@ -194,8 +194,8 @@ const SabbathTesterView = {
 
     // Start rendering tests (async — yields between computations)
     this._isRendering = true;
-    console.log('[SabbathTester] view build: JDN-v11 | engine has jdnToWeekday:',
-      typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function');
+    console.log('[SabbathTester] view build: JDN-v11 | JulianDay loaded:',
+      typeof JulianDay !== 'undefined' && typeof JulianDay.jdnToWeekday === 'function');
     this.renderTests(container);
   },
   
@@ -760,7 +760,7 @@ const SabbathTesterView = {
         const lines = [
           'engine build: JDN-v11 | cache: ' + cacheHits + ' hits / ' + cacheMisses + ' fresh | seed: ' + this._cacheVersionGet().slice(0, 24),
           'astro engine: ' + engineDesc,
-          'engine.jdnToWeekday loaded: ' + (typeof LunarCalendarEngine !== 'undefined' && typeof LunarCalendarEngine.prototype.jdnToWeekday === 'function')
+          'JulianDay loaded: ' + (typeof JulianDay !== 'undefined' && typeof JulianDay.jdnToWeekday === 'function')
         ];
         if (t30) {
           for (const r of t30.results) {
@@ -1384,21 +1384,9 @@ const SabbathTesterView = {
   jdRowIdentity(jd) {
     if (jd == null || isNaN(jd)) return null;
     const jdn = Math.round(jd);
-    const weekdayNum = ((jdn + 1) % 7 + 7) % 7;
-    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    let year, month, day;
-    if (jdn < 2299161) { // Julian calendar labels before Oct 15, 1582
-      const B = jdn + 1524, C = Math.floor((B - 122.1) / 365.25), D = Math.floor(365.25 * C), E = Math.floor((B - D) / 30.6001);
-      day = B - D - Math.floor(30.6001 * E);
-      month = E < 14 ? E - 1 : E - 13;
-      year = month > 2 ? C - 4716 : C - 4715;
-    } else {
-      const a = jdn + 32044, b = Math.floor((4 * a + 3) / 146097), c = a - Math.floor(146097 * b / 4);
-      const d2 = Math.floor((4 * c + 3) / 1461), e = c - Math.floor(1461 * d2 / 4), m = Math.floor((5 * e + 2) / 153);
-      day = e - Math.floor((153 * m + 2) / 5) + 1;
-      month = m + 3 - 12 * Math.floor(m / 10);
-      year = 100 * b + d2 - 4800 + Math.floor(m / 10);
-    }
+    const weekdayNum = JulianDay.jdnToWeekday(jdn);
+    const weekdays = JulianDay.WEEKDAY_NAMES;
+    const { year, month, day } = JulianDay.jdnToDisplay(jdn); // Julian labels before Oct 15, 1582
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const yearStr = year <= 0 ? `${1 - year} BC` : `${year} AD`;
     return {

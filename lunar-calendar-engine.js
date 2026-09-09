@@ -11,6 +11,12 @@
  *   const dayInfo = engine.getDayInfo(calendar, 1, 16); // Month 1, Day 16
  */
 
+// Calendar <-> Julian Day Number arithmetic is owned by julian-day.js (the one
+// copy). Browser: loaded first via <script>. Node: required here.
+const JulianDay = (typeof module !== 'undefined' && module.exports)
+  ? require('./julian-day.js')
+  : globalThis.JulianDay;
+
 class LunarCalendarEngine {
   
   /**
@@ -60,75 +66,21 @@ class LunarCalendarEngine {
   // ==========================================================================
 
   /**
-   * Convert Julian Day to Julian Calendar date
-   * Use for dates before Oct 15, 1582 (JD 2299161)
-   * @param {number} jd - Julian Day Number
-   * @returns {{year: number, month: number, day: number}}
-   */
-  jdToJulianCalendar(jd) {
-    const Z = Math.floor(jd + 0.5);
-    const A = Z;  // No Gregorian correction
-    const B = A + 1524;
-    const C = Math.floor((B - 122.1) / 365.25);
-    const D = Math.floor(365.25 * C);
-    const E = Math.floor((B - D) / 30.6001);
-    
-    const day = B - D - Math.floor(30.6001 * E);
-    const month = E < 14 ? E - 1 : E - 13;
-    const year = month > 2 ? C - 4716 : C - 4715;
-    
-    return { year, month, day };
-  }
-
-  /**
-   * Convert Julian Day to Gregorian Calendar date (proleptic)
-   * @param {number} jd - Julian Day Number
-   * @returns {{year: number, month: number, day: number}}
-   */
-  jdToGregorianCalendar(jd) {
-    const Z = Math.floor(jd + 0.5);
-    const alpha = Math.floor((Z - 1867216.25) / 36524.25);
-    const A = Z + 1 + alpha - Math.floor(alpha / 4);
-    const B = A + 1524;
-    const C = Math.floor((B - 122.1) / 365.25);
-    const D = Math.floor(365.25 * C);
-    const E = Math.floor((B - D) / 30.6001);
-    
-    const day = B - D - Math.floor(30.6001 * E);
-    const month = E < 14 ? E - 1 : E - 13;
-    const year = month > 2 ? C - 4716 : C - 4715;
-    
-    return { year, month, day };
-  }
-
-  /**
-   * Convert JD to the appropriate calendar based on date
-   * Before Oct 15, 1582 (JD 2299161) uses Julian calendar
-   * @param {number} jd - Julian Day Number
+   * JD -> display-convention civil date (Julian labels before Oct 15, 1582).
+   * @param {number} jd
    * @returns {{year: number, month: number, day: number, isJulian: boolean}}
    */
   jdToDisplayDate(jd) {
-    const GREGORIAN_START_JD = 2299161; // Oct 15, 1582
-    if (jd < GREGORIAN_START_JD) {
-      const julian = this.jdToJulianCalendar(jd);
-      return { ...julian, isJulian: true };
-    }
-    const gregorian = this.jdToGregorianCalendar(jd);
-    return { ...gregorian, isJulian: false };
+    return JulianDay.jdnToDisplay(jd);
   }
 
   /**
-   * Create a Date object from JD using the appropriate calendar
-   * For ancient dates, the Date will have Julian calendar values
-   * (even though JavaScript Date is internally Gregorian)
-   * @param {number} jd - Julian Day Number
+   * JD -> Date whose UTC fields carry the display label (NOT the instant).
+   * @param {number} jd
    * @returns {Date}
    */
   jdToDate(jd) {
-    const cal = this.jdToDisplayDate(jd);
-    const date = new Date(Date.UTC(2000, cal.month - 1, cal.day));
-    date.setUTCFullYear(cal.year);
-    return date;
+    return JulianDay.jdToDisplayDate(jd);
   }
 
   // ==========================================================================
@@ -726,9 +678,9 @@ class LunarCalendarEngine {
         // — but tempDate's labels are the primary source, valid at any
         // longitude. Date label AND weekday both derive from this one JDN, so
         // they can never refer to different physical days.
-        const dayJDN = this.gregorianCalendarToJDN(
-          tempDate.getUTCFullYear(), tempDate.getUTCMonth(), tempDate.getUTCDate());
-        const dayDate = this.jdToDate(dayJDN);
+        const dayJDN = JulianDay.gregorianToJDN(
+          tempDate.getUTCFullYear(), tempDate.getUTCMonth() + 1, tempDate.getUTCDate());
+        const dayDate = JulianDay.jdToDisplayDate(dayJDN);
         
         // Determine if this specific day is uncertain
         // Day 30 with '+' direction is impossible (can't add days past 30)
@@ -746,15 +698,14 @@ class LunarCalendarEngine {
         // converters, no calendar conventions: (JDN + 1) mod 7 anchored on the
         // known fact JDN 0 = Monday. Same JDN as the date label above, so the
         // displayed date and weekday are guaranteed to agree.
-        const weekday = this.jdnToWeekday(dayJDN);
-        const weekdayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const weekday = JulianDay.jdnToWeekday(dayJDN);
         
         days.push({
           lunarDay: d,
           gregorianDate: dayDate,  // Now uses Julian calendar for ancient dates
           jd: dayStartJD,  // JD of day start (sunrise/sunset based on config)
           weekday: weekday,
-          weekdayName: weekdayNames[weekday],
+          weekdayName: JulianDay.WEEKDAY_NAMES[weekday],
           isUncertain: isUncertain,
           uncertaintyDirection: isUncertain ? monthUncertainty.direction : null,
           uncertaintyProbability: isUncertain ? monthUncertainty.probability : 0,
@@ -762,7 +713,7 @@ class LunarCalendarEngine {
       }
       
       // Convert month start to appropriate calendar (Julian for ancient)
-      const monthStartDate = this.jdToDate(monthStartJD);
+      const monthStartDate = JulianDay.jdToDisplayDate(monthStartJD);
       
       months.push({
         monthNumber: m + 1,
@@ -858,90 +809,32 @@ class LunarCalendarEngine {
   // ==========================================================================
 
   /**
-   * Check if date is before Gregorian calendar reform (Oct 15, 1582)
-   * @param {Date} date 
+   * True when a display-labeled Date falls before the Gregorian reform
+   * (Oct 15, 1582), i.e. its UTC fields are Julian-calendar labels.
+   * @param {Date} date
    * @returns {boolean}
    */
   isBeforeGregorianReform(date) {
-    const year = date.getUTCFullYear();
-    if (year < 1582) return true;
-    if (year > 1582) return false;
-    const month = date.getUTCMonth();
-    if (month < 9) return true; // Before October
-    if (month > 9) return false;
-    return date.getUTCDate() < 15;
+    return JulianDay.isDisplayJulian(date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate());
   }
 
   /**
-   * Convert Julian calendar date to Julian Day Number
-   * @param {number} year 
-   * @param {number} month - 0-indexed
-   * @param {number} day 
-   * @returns {number} Julian Day Number
-   */
-  julianCalendarToJDN(year, month, day) {
-    const a = Math.floor((14 - (month + 1)) / 12);
-    const y = year + 4800 - a;
-    const mm = (month + 1) + 12 * a - 3;
-    return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
-  }
-
-  /**
-   * Convert proleptic-Gregorian calendar date to Julian Day Number
-   * (Fliegel–Van Flandern; pure integer arithmetic, valid for negative years)
-   * @param {number} year - astronomical year (0 = 1 BC)
-   * @param {number} month - 0-indexed
-   * @param {number} day
-   * @returns {number} Julian Day Number
-   */
-  gregorianCalendarToJDN(year, month, day) {
-    const a = Math.floor((14 - (month + 1)) / 12);
-    const y = year + 4800 - a;
-    const mm = (month + 1) + 12 * a - 3;
-    return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4)
-      - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
-  }
-
-  /**
-   * Get weekday from Julian Day Number
-   * JDN 0 = Monday (weekday 1)
-   * @param {number} jdn 
-   * @returns {number} 0 = Sunday, 6 = Saturday
-   */
-  jdnToWeekday(jdn) {
-    // weekday = (jdn + 1) mod 7
-    // JavaScript % can return negative for negative jdn, so fix it
-    return ((jdn + 1) % 7 + 7) % 7;
-  }
-
-  /**
-   * Get correct weekday for a date (handles Julian calendar for ancient dates)
-   * WARNING: for pre-1582 dates this interprets the Date's Y/M/D fields as a
-   * JULIAN-calendar label (jdToDate output). Passing a native JS Date (whose
-   * fields are proleptic-Gregorian) shifts the result by the era's calendar
-   * offset. Prefer jdnToWeekday(JDN) wherever a JD is available.
-   * @param {Date} date 
+   * Weekday of a display-labeled Date (engine output). getUTCDay() would
+   * read pre-1582 Julian labels as Gregorian and drift by the era offset.
+   * @param {Date} date
    * @returns {number} 0 = Sunday, 6 = Saturday
    */
   getWeekday(date) {
-    if (this.isBeforeGregorianReform(date)) {
-      const year = date.getUTCFullYear();
-      const month = date.getUTCMonth();
-      const day = date.getUTCDate();
-      const jdn = this.julianCalendarToJDN(year, month, day);
-      return this.jdnToWeekday(jdn);
-    }
-    return date.getUTCDay();
+    return JulianDay.displayDateToWeekday(date);
   }
 
   /**
    * Get weekday name
-   * @param {Date} date 
+   * @param {Date} date
    * @returns {string}
    */
   getWeekdayName(date) {
-    const names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    return names[this.getWeekday(date)];
+    return JulianDay.WEEKDAY_NAMES[this.getWeekday(date)];
   }
 
   // ==========================================================================
@@ -1111,46 +1004,6 @@ class LunarCalendarEngine {
 // ==========================================================================
 // STATIC UTILITY METHODS
 // ==========================================================================
-
-/**
- * Format a Gregorian date for ancient years (BC/AD notation)
- * @param {Date} date 
- * @returns {string}
- */
-LunarCalendarEngine.formatAncientDate = function(date) {
-  const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
-                  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  
-  const year = date.getUTCFullYear();
-  const month = months[date.getUTCMonth()];
-  const day = date.getUTCDate();
-  
-  // For ancient dates, use JDN-based weekday
-  let weekday;
-  if (year < 1582 || (year === 1582 && date.getUTCMonth() < 9)) {
-    const a = Math.floor((14 - (date.getUTCMonth() + 1)) / 12);
-    const y = year + 4800 - a;
-    const mm = (date.getUTCMonth() + 1) + 12 * a - 3;
-    const jdn = day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
-    weekday = weekdays[(jdn + 1) % 7];
-  } else {
-    weekday = weekdays[date.getUTCDay()];
-  }
-  
-  const suffix = (d) => {
-    if (d >= 11 && d <= 13) return 'th';
-    switch (d % 10) {
-      case 1: return 'st';
-      case 2: return 'nd';
-      case 3: return 'rd';
-      default: return 'th';
-    }
-  };
-  
-  const yearStr = year < 1 ? `${Math.abs(year - 1)} BC` : `${year} AD`;
-  return `${weekday}, ${month} ${day}${suffix(day)}, ${yearStr}`;
-};
 
 /**
  * Get uncertainty explanation text for month-level uncertainty

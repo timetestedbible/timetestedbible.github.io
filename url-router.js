@@ -1415,17 +1415,8 @@ const URLRouter = {
     const month = parts[1] || 1;
     const day = parts[2] || 1;
     
-    // Gregorian to JD
-    const a = Math.floor((14 - month) / 12);
-    const y = year + 4800 - a;
-    const m = month + 12 * a - 3;
-    
-    let jd = day + Math.floor((153 * m + 2) / 5) + 365 * y + 
-             Math.floor(y / 4) - Math.floor(y / 100) + 
-             Math.floor(y / 400) - 32045;
-    
-    // Add noon (0.5) to get midday
-    return jd + 0.5;
+    // Proleptic Gregorian to JD at noon
+    return JulianDay.gregorianToJDN(year, month, day) + 0.5;
   },
   
   _formatDateForURL(jd) {
@@ -1442,18 +1433,9 @@ const URLRouter = {
     if (typeof AppStore !== 'undefined' && AppStore._dateToJulian) {
       return AppStore._dateToJulian(new Date());
     }
-    // Fallback for initialization before AppStore is ready
+    // Fallback for initialization before AppStore is ready: today's UTC date at noon
     const now = new Date();
-    const y = now.getUTCFullYear();
-    const m = now.getUTCMonth() + 1;
-    const d = now.getUTCDate();
-    const a = Math.floor((14 - m) / 12);
-    const yy = y + 4800 - a;
-    const mm = m + 12 * a - 3;
-    let jd = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + 
-             Math.floor(yy / 4) - Math.floor(yy / 100) + 
-             Math.floor(yy / 400) - 32045;
-    return jd + 0.5;
+    return JulianDay.gregorianToJDN(now.getUTCFullYear(), now.getUTCMonth() + 1, now.getUTCDate()) + 0.5;
   },
   
   _dateToJD(date) {
@@ -1461,45 +1443,13 @@ const URLRouter = {
     if (typeof AppStore !== 'undefined' && AppStore._dateToJulian) {
       return AppStore._dateToJulian(date);
     }
-    // Fallback - handles both Julian (pre-1582) and Gregorian calendars
-    const y = date.getUTCFullYear();
-    const m = date.getUTCMonth() + 1;
-    const d = date.getUTCDate();
-    const a = Math.floor((14 - m) / 12);
-    const yy = y + 4800 - a;
-    const mm = m + 12 * a - 3;
-    let jdn;
-    if (y < 1582 || (y === 1582 && (m < 10 || (m === 10 && d < 15)))) {
-      // Julian calendar
-      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - 32083;
-    } else {
-      // Gregorian calendar
-      jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + 
-            Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
-    }
-    return jdn + 0.5;
+    // Fallback: display-labeled Date (Julian labels pre-1582) -> JD at noon
+    return JulianDay.displayDateToJDN(date) + 0.5;
   },
   
+  // JD -> display-convention civil date {year, month, day} (Julian labels before Oct 15, 1582)
   _julianToGregorian(jd) {
-    const z = Math.floor(jd + 0.5);
-    const f = (jd + 0.5) - z;
-    
-    let a = z;
-    if (z >= 2299161) {
-      const alpha = Math.floor((z - 1867216.25) / 36524.25);
-      a = z + 1 + alpha - Math.floor(alpha / 4);
-    }
-    
-    const b = a + 1524;
-    const c = Math.floor((b - 122.1) / 365.25);
-    const d = Math.floor(365.25 * c);
-    const e = Math.floor((b - d) / 30.6001);
-    
-    const day = b - d - Math.floor(30.6001 * e);
-    const month = (e < 14) ? e - 1 : e - 13;
-    const year = (month > 2) ? c - 4716 : c - 4715;
-    
-    return { year, month, day };
+    return JulianDay.jdnToDisplay(jd);
   },
   
   // ═══════════════════════════════════════════════════════════════════════

@@ -13,6 +13,7 @@
 
 const astro = require('./astro-engine-node');
 const { LunarCalendarEngine } = require('../../lunar-calendar-engine.js');
+const JulianDay = require('../../julian-day.js');
 
 const NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const eng = new LunarCalendarEngine(astro);
@@ -26,27 +27,54 @@ function check(label, actual, expected) {
 
 console.log('— JD epoch and modern anchors —');
 // JD 0 (noon, Jan 1, 4713 BC Julian) is a Monday — the epoch's defining fact.
-check('JDN 0 weekday', NAMES[eng.jdnToWeekday(0)], 'Monday');
+check('JDN 0 weekday', NAMES[JulianDay.jdnToWeekday(0)], 'Monday');
 // JDN 2451545 = 2000-01-01 (Gregorian), a Saturday.
-check('JDN 2451545 (2000-01-01) weekday', NAMES[eng.jdnToWeekday(2451545)], 'Saturday');
+check('JDN 2451545 (2000-01-01) weekday', NAMES[JulianDay.jdnToWeekday(2451545)], 'Saturday');
 // February is the one month where the Fliegel–Van Flandern 'a' term bites:
 // a = floor((14 - m) / 12) must be 1 for BOTH Jan and Feb. A 13-for-14 slip
 // passes every March–December (and January) test yet labels Feb 28 2026 as
 // 'Feb 25' — 3 days behind (2 in leap years) — then snaps back on Mar 1.
-check('Gregorian 2026-02-28 JDN', eng.gregorianCalendarToJDN(2026, 1, 28), 2461100);
-check('Gregorian 2026-02-28 weekday', NAMES[eng.jdnToWeekday(eng.gregorianCalendarToJDN(2026, 1, 28))], 'Saturday');
-check('Gregorian 2000-02-29 JDN (leap day)', eng.gregorianCalendarToJDN(2000, 1, 29), 2451604);
-check('Gregorian 2000-03-01 JDN (day after leap day)', eng.gregorianCalendarToJDN(2000, 2, 1), 2451605);
-check('Julian 2000-02-01 JDN (= Gregorian 2000-02-14)', eng.julianCalendarToJDN(2000, 1, 1), 2451589);
-check('Julian 30-02-28 -> 30-03-01 consecutive', eng.julianCalendarToJDN(30, 2, 1) - eng.julianCalendarToJDN(30, 1, 28), 1);
+check('Gregorian 2026-02-28 JDN', JulianDay.gregorianToJDN(2026, 2, 28), 2461100);
+check('Gregorian 2026-02-28 weekday', NAMES[JulianDay.jdnToWeekday(JulianDay.gregorianToJDN(2026, 2, 28))], 'Saturday');
+check('Gregorian 2000-02-29 JDN (leap day)', JulianDay.gregorianToJDN(2000, 2, 29), 2451604);
+check('Gregorian 2000-03-01 JDN (day after leap day)', JulianDay.gregorianToJDN(2000, 3, 1), 2451605);
+check('Julian 2000-02-01 JDN (= Gregorian 2000-02-14)', JulianDay.julianToJDN(2000, 2, 1), 2451589);
+check('Julian 30-02-28 -> 30-03-01 consecutive', JulianDay.julianToJDN(30, 3, 1) - JulianDay.julianToJDN(30, 2, 28), 1);
+// JD 2451545.0 is 2000-01-01 12:00 UT — the JD epoch tie to Unix time.
+check('instantToJD(2000-01-01T12:00Z)', JulianDay.instantToJD(new Date(Date.UTC(2000, 0, 1, 12))), 2451545);
+// Every civil day 1900–2100 must round-trip through both the Gregorian and the
+// display converters and agree with Date.UTC epoch arithmetic.
+{
+  let bad = 0;
+  for (let y = 1900; y <= 2100; y++) for (let m = 1; m <= 12; m++) for (let d = 1; d <= 31; d++) {
+    const t = new Date(Date.UTC(2000, m - 1, d)); t.setUTCFullYear(y);
+    if (t.getUTCMonth() !== m - 1) continue;
+    const ref = Math.round(t.getTime() / 86400000 + 2440587.5);
+    const jdn = JulianDay.gregorianToJDN(y, m, d), back = JulianDay.jdnToGregorian(jdn);
+    const disp = JulianDay.jdnToDisplay(JulianDay.displayToJDN(y, m, d));
+    if (jdn !== ref || back.year !== y || back.month !== m || back.day !== d
+        || disp.year !== y || disp.month !== m || disp.day !== d || disp.isJulian
+        || JulianDay.jdnToWeekday(jdn) !== t.getUTCDay()) bad++;
+  }
+  check('Gregorian round-trip 1900–2100 mismatches', bad, 0);
+}
+// Julian-calendar round-trip, 1500 BC – 1582 AD (every 7th year, all months).
+{
+  let bad = 0;
+  for (let y = -1500; y <= 1580; y += 7) for (let m = 1; m <= 12; m++) for (let d = 1; d <= 28; d++) {
+    const back = JulianDay.jdnToJulian(JulianDay.julianToJDN(y, m, d));
+    if (back.year !== y || back.month !== m || back.day !== d) bad++;
+  }
+  check('Julian round-trip 1500 BC–1582 mismatches', bad, 0);
+}
 
 console.log('— Historically attested ancient weekdays (Julian calendar dates) —');
 // Julian April 7, 30 AD — the classical crescent-Passover crucifixion candidate — was a Friday.
-check('Julian 30-04-07 weekday', NAMES[eng.jdnToWeekday(eng.julianCalendarToJDN(30, 3, 7))], 'Friday');
+check('Julian 30-04-07 weekday', NAMES[JulianDay.jdnToWeekday(JulianDay.julianToJDN(30, 4, 7))], 'Friday');
 // Julian April 3, 33 AD — the other classical candidate — was a Friday.
-check('Julian 33-04-03 weekday', NAMES[eng.jdnToWeekday(eng.julianCalendarToJDN(33, 3, 3))], 'Friday');
+check('Julian 33-04-03 weekday', NAMES[JulianDay.jdnToWeekday(JulianDay.julianToJDN(33, 4, 3))], 'Friday');
 // Julian April 28, 32 AD — the solar-eclipse Passover — was a Monday.
-check('Julian 32-04-28 weekday', NAMES[eng.jdnToWeekday(eng.julianCalendarToJDN(32, 3, 28))], 'Monday');
+check('Julian 32-04-28 weekday', NAMES[JulianDay.jdnToWeekday(JulianDay.julianToJDN(32, 4, 28))], 'Monday');
 
 console.log('— Author-ruled month anchors (2026-08-04) —');
 // 30 AD: conjunction Wed Mar 22 ~8pm Jerusalem local (computed: JD 1732096.23).
@@ -56,11 +84,11 @@ console.log('— Author-ruled month anchors (2026-08-04) —');
 // 33 AD crescent Nisan 14 lands on Friday Apr 3 — the classical date.
 {
   const cases = [
-    { phase: 'dark',     year: 30, month: 1, day: 1,  jdn: eng.julianCalendarToJDN(30, 2, 23), name: 'Julian 30-03-23' },
-    { phase: 'crescent', year: 30, month: 1, day: 1,  jdn: eng.julianCalendarToJDN(30, 2, 24), name: 'Julian 30-03-24' },
-    { phase: 'dark',     year: 30, month: 1, day: 14, jdn: eng.julianCalendarToJDN(30, 3, 5),  name: 'Julian 30-04-05' },
-    { phase: 'crescent', year: 30, month: 1, day: 14, jdn: eng.julianCalendarToJDN(30, 3, 6),  name: 'Julian 30-04-06' },
-    { phase: 'crescent', year: 33, month: 1, day: 14, jdn: eng.julianCalendarToJDN(33, 3, 3),  name: 'Julian 33-04-03 (classical Friday)' },
+    { phase: 'dark',     year: 30, month: 1, day: 1,  jdn: JulianDay.julianToJDN(30, 3, 23), name: 'Julian 30-03-23' },
+    { phase: 'crescent', year: 30, month: 1, day: 1,  jdn: JulianDay.julianToJDN(30, 3, 24), name: 'Julian 30-03-24' },
+    { phase: 'dark',     year: 30, month: 1, day: 14, jdn: JulianDay.julianToJDN(30, 4, 5),  name: 'Julian 30-04-05' },
+    { phase: 'crescent', year: 30, month: 1, day: 14, jdn: JulianDay.julianToJDN(30, 4, 6),  name: 'Julian 30-04-06' },
+    { phase: 'crescent', year: 33, month: 1, day: 14, jdn: JulianDay.julianToJDN(33, 4, 3),  name: 'Julian 33-04-03 (classical Friday)' },
   ];
   for (const c of cases) {
     const e = new LunarCalendarEngine(astro);
@@ -90,10 +118,10 @@ for (const [year, month, day] of [[30, 1, 14], [32, 1, 16], [-1445, 2, 22], [202
     const y2 = d.getUTCFullYear(), m2 = d.getUTCMonth(), day2 = d.getUTCDate();
     // Label is Julian-calendar for pre-1582, Gregorian after (jdToDisplayDate).
     const labelJDN = (y2 < 1582 || (y2 === 1582 && (m2 < 9 || (m2 === 9 && day2 < 15))))
-      ? eng.julianCalendarToJDN(y2, m2, day2)
+      ? JulianDay.julianToJDN(y2, m2 + 1, day2)
       : Math.floor(Date.UTC(y2, m2, day2) / 86400000 + 2440587.5 + 0.5);
     check(`${p.id} y${year} m${month} d${day} label/weekday agree (label ${d.toISOString().slice(0, 10)})`,
-      info.weekdayName, NAMES[eng.jdnToWeekday(labelJDN)]);
+      info.weekdayName, NAMES[JulianDay.jdnToWeekday(labelJDN)]);
     // The stored boundary jd must lie ON the labeled day (within ±12h of its
     // noon). Catches opening/closing-boundary confusion (the JDN-v6 off-by-one).
     check(`${p.id} y${year} m${month} d${day} boundary jd on labeled day`,
@@ -111,7 +139,7 @@ console.log('— Consecutive lunar days carry consecutive date labels (no jumps)
   const labelJDN = (d) => {
     const y2 = d.getUTCFullYear(), m2 = d.getUTCMonth(), day2 = d.getUTCDate();
     return (y2 < 1582 || (y2 === 1582 && (m2 < 9 || (m2 === 9 && day2 < 15))))
-      ? eng.julianCalendarToJDN(y2, m2, day2)
+      ? JulianDay.julianToJDN(y2, m2 + 1, day2)
       : Math.floor(Date.UTC(y2, m2, day2) / 86400000 + 2440587.5 + 0.5);
   };
   const runs = [

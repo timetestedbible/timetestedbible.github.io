@@ -1,28 +1,11 @@
 // Astronomy Utility Functions
 
-// Gregorian calendar reform date: October 15, 1582
-// Before this date, use Julian calendar (following NASA/Stellarium convention)
-const GREGORIAN_REFORM_DATE = new Date(1582, 9, 15); // Oct 15, 1582
-
-// Check if a date is before the Gregorian reform
+// Date labels follow the NASA/Stellarium convention: Julian calendar before
+// Oct 15, 1582, Gregorian after. A display-labeled Date (engine output)
+// carries those labels in its UTC fields. All day-number math is in
+// julian-day.js — do not re-derive it here.
 function isBeforeGregorianReform(date) {
-  return date < GREGORIAN_REFORM_DATE;
-}
-
-// Calculate Julian Day Number from Julian calendar date (year, month 0-indexed, day)
-function julianCalendarToJDN(year, month, day) {
-  // Convert 0-indexed month to 1-indexed
-  const m = month + 1;
-  const a = Math.floor((14 - m) / 12);
-  const y = year + 4800 - a;
-  const mm = m + 12 * a - 3;
-  // Julian calendar formula
-  return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
-}
-
-// Calculate day of week from Julian Day Number (0 = Sunday, 6 = Saturday)
-function jdnToWeekday(jdn) {
-  return (jdn + 1) % 7;
+  return JulianDay.isDisplayJulian(date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate());
 }
 
 // Get the current location name from state or URLRouter
@@ -921,15 +904,9 @@ function getTimezoneFromLongitude(lon) {
     return 'Pacific';
   }
 }
+// Weekday of a display-labeled Date (getUTCDay() misreads Julian labels).
 function getCorrectWeekday(date) {
-  if (isBeforeGregorianReform(date)) {
-    const year = date.getUTCFullYear();
-    const month = date.getUTCMonth();
-    const day = date.getUTCDate();
-    const jdn = julianCalendarToJDN(year, month, day);
-    return jdnToWeekday(jdn);
-  }
-  return date.getUTCDay();
+  return JulianDay.displayDateToWeekday(date);
 }
 function getLocalDateFromUTC(utcDate, longitude) {
   // Calculate timezone offset based on longitude
@@ -1024,18 +1001,23 @@ function formatMoonEventDate(moonEventTimestamp, longitude) {
   const moonLocalTime = utcToLocalTime(moonEventDate.getTime(), longitude);
   const moonTimeStr = formatLocalTimeStr(moonLocalTime);
 
+  // moonLocalTime is a real instant shifted to local wall time, so its UTC
+  // fields are proleptic Gregorian. Convert to the site's display labels
+  // (Julian calendar before Oct 15, 1582) before reading date or weekday —
+  // reading the raw fields as labels put the 30 AD conjunction on "Monday,
+  // Mar 20" instead of Wednesday, Mar 22.
+  const localDisplay = JulianDay.instantToDisplayDate(moonLocalTime);
   const moonParts = (typeof getFormattedDateParts === 'function')
-    ? getFormattedDateParts(moonLocalTime)
+    ? getFormattedDateParts(localDisplay)
     : null;
 
-  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-  const dayOfWeek = moonParts ? moonParts.weekdayName : weekdays[moonLocalTime.getUTCDay()];
-  const monthName = moonParts ? moonParts.shortMonthName : shortMonths[moonLocalTime.getUTCMonth()];
-  const dayNum = moonParts ? moonParts.day : moonLocalTime.getUTCDate();
+  const dayOfWeek = moonParts ? moonParts.weekdayName : JulianDay.WEEKDAY_NAMES[JulianDay.displayDateToWeekday(localDisplay)];
+  const monthName = moonParts ? moonParts.shortMonthName : shortMonths[localDisplay.getUTCMonth()];
+  const dayNum = moonParts ? moonParts.day : localDisplay.getUTCDate();
   const daySuffix = (typeof getOrdinalSuffix === 'function') ? getOrdinalSuffix(dayNum) : 'th';
-  const year = moonParts ? moonParts.yearStr : String(moonLocalTime.getUTCFullYear());
+  const year = moonParts ? moonParts.yearStr : String(localDisplay.getUTCFullYear());
 
   const isPast = moonEventDate < new Date();
   const occurVerb = isPast ? 'occurred' : 'will occur';
@@ -1056,5 +1038,3 @@ function formatMoonEventDate(moonEventTimestamp, longitude) {
 
 // Explicitly expose key functions on window for cross-file access
 window.isBeforeGregorianReform = isBeforeGregorianReform;
-window.julianCalendarToJDN = julianCalendarToJDN;
-window.jdnToWeekday = jdnToWeekday;

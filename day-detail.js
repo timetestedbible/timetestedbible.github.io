@@ -18,22 +18,6 @@ function isSabbath(dayObj) {
   return weekday === targetDay;
 }
 
-// Calculate Julian Day Number from Julian calendar date (year, month 0-indexed, day)
-function julianCalendarToJDN(year, month, day) {
-  // Convert 0-indexed month to 1-indexed
-  const m = month + 1;
-  const a = Math.floor((14 - m) / 12);
-  const y = year + 4800 - a;
-  const mm = m + 12 * a - 3;
-  // Julian calendar formula
-  return day + Math.floor((153 * mm + 2) / 5) + 365 * y + Math.floor(y / 4) - 32083;
-}
-
-// Calculate day of week from Julian Day Number (0 = Sunday, 6 = Saturday)
-function jdnToWeekday(jdn) {
-  return (jdn + 1) % 7;
-}
-
 // Get formatted date components (handles Julian calendar for pre-1582 dates)
 // Note: Dates from _jdToDate() already have Julian calendar components stored,
 // so we just use getFullYear/getMonth/getDate directly - no conversion needed.
@@ -48,17 +32,11 @@ function getFormattedDateParts(date) {
   const year = date.getUTCFullYear();
   const month = date.getUTCMonth();
   const day = date.getUTCDate();
-  const isJulian = isBeforeGregorianReform(date);
+  const isJulian = JulianDay.isDisplayJulian(year, month + 1, day);
   
-  // Calculate weekday from Julian Day Number for correct result
-  // (JavaScript's getUTCDay() uses proleptic Gregorian internally, which is wrong for Julian dates)
-  let weekday;
-  if (isJulian) {
-    const jdn = julianCalendarToJDN(year, month, day);
-    weekday = jdnToWeekday(jdn);
-  } else {
-    weekday = date.getUTCDay();
-  }
+  // Weekday from the day number, not getUTCDay(): JavaScript reads the UTC
+  // fields as proleptic Gregorian, which is wrong for Julian-labeled dates.
+  const weekday = JulianDay.displayDateToWeekday(date);
   
   // Year string: only BC suffix, never AD
   const yearStr = year <= 0 ? `${Math.abs(year - 1)} BC` : `${year}`;
@@ -75,6 +53,13 @@ function getFormattedDateParts(date) {
     isJulian,
     calendarSuffix: isJulian ? ' (Julian)' : ''
   };
+}
+
+// Observer-local calendar date of a real instant (conjunction, sunset) with the
+// site's display labels: "Wednesday, Mar 22, 30 AD".
+function formatAncientDate(instant, longitude) {
+  const p = formatMoonEventDate(instant instanceof Date ? instant.getTime() : instant, longitude);
+  return `${p.dayOfWeek}, ${p.monthName} ${p.dayNum}, ${p.year}`;
 }
 
 // Format a date for display in day detail panel: "Monday, January 1, 2025"
@@ -241,9 +226,9 @@ function showDayDetail(dayObj, month) {
             const altStr = sightingData.moonAltitude.toFixed(1);
             const elongStr = sightingData.elongation.toFixed(1);
             const sunsetFormatted = formatTimeInObserverTimezone(sightingData.sunsetTime);
-            const sunsetDateStr = formatAncientDate(sightingData.sunsetTime);
+            const sunsetDateStr = formatAncientDate(sightingData.sunsetTime, state.lon);
             const conjTimeFormatted = formatTimeInObserverTimezone(conjunctionDate);
-            const conjDateStr = formatAncientDate(conjunctionDate);
+            const conjDateStr = formatAncientDate(conjunctionDate, state.lon);
             
             // Determine visibility status
             let visibilityNote = '';

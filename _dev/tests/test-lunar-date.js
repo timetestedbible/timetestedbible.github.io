@@ -55,44 +55,13 @@ const astroEngine = {
   }
 };
 
-// Julian Day conversions
+// Julian Day conversions (shared implementation)
+const JulianDay = require('../../julian-day.js');
 function gregorianToJulianDay(year, month, day) {
-  let y = year;
-  let m = month;
-  
-  if (m <= 2) {
-    y = y - 1;
-    m = m + 12;
-  }
-  
-  const a = Math.floor(y / 100);
-  const b = 2 - a + Math.floor(a / 4);
-  
-  return Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + day + b - 1524.5;
+  return JulianDay.gregorianToJDN(year, month, day) - 0.5; // 0h UT
 }
-
 function julianDayToGregorian(jd) {
-  const z = Math.floor(jd + 0.5);
-  const f = (jd + 0.5) - z;
-  
-  let a;
-  if (z < 2299161) {
-    a = z;
-  } else {
-    const alpha = Math.floor((z - 1867216.25) / 36524.25);
-    a = z + 1 + alpha - Math.floor(alpha / 4);
-  }
-  
-  const b = a + 1524;
-  const c = Math.floor((b - 122.1) / 365.25);
-  const d = Math.floor(365.25 * c);
-  const e = Math.floor((b - d) / 30.6001);
-  
-  const day = b - d - Math.floor(30.6001 * e) + f;
-  const month = e < 14 ? e - 1 : e - 13;
-  const year = month > 2 ? c - 4716 : c - 4715;
-  
-  return { year: Math.floor(year), month, day: Math.floor(day) };
+  return JulianDay.jdnToDisplay(jd); // Julian labels before Oct 15, 1582
 }
 
 console.log('\n=== LUNAR DATE CALCULATION TEST ===\n');

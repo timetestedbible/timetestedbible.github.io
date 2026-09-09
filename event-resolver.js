@@ -6,8 +6,13 @@
 (function() {
 'use strict';
 
+// Calendar <-> JD arithmetic lives in julian-day.js (browser global / Node require).
+const JulianDay = (typeof module !== 'undefined' && module.exports)
+  ? require('./julian-day.js')
+  : globalThis.JulianDay;
+
 // ============================================================================
-// JULIAN DAY CONVERSION UTILITIES
+// JULIAN DAY CONVERSION UTILITIES (thin wrappers over JulianDay)
 // ============================================================================
 
 /**
@@ -19,23 +24,9 @@
  * @returns {number} Julian Day Number
  */
 function gregorianToJulianDay(year, month, day) {
-  // Algorithm from Astronomical Algorithms by Jean Meeus
-  // Uses astronomical year numbering: 1 BC = year 0, 2 BC = year -1, 35 BC = year -34
-  // Our data uses astronomical years directly
-  let y = year;
-  let m = month;
-  
-  if (m <= 2) {
-    y -= 1;
-    m += 12;
-  }
-  
-  const A = Math.floor(y / 100);
-  const B = 2 - A + Math.floor(A / 4);
-  
-  return Math.floor(365.25 * (y + 4716)) +
-         Math.floor(30.6001 * (m + 1)) +
-         day + B - 1524.5;
+  // Proleptic Gregorian, astronomical year numbering (1 BC = 0, 2 BC = -1).
+  // Returns the JD at 0h UT of that day (JDN - 0.5), as the Meeus form did.
+  return JulianDay.gregorianToJDN(year, month, day) - 0.5;
 }
 
 /**
@@ -44,25 +35,8 @@ function gregorianToJulianDay(year, month, day) {
  * @returns {{year: number, month: number, day: number}}
  */
 function julianDayToGregorian(jd) {
-  const Z = Math.floor(jd + 0.5);
-  const F = (jd + 0.5) - Z;
-  
-  // Apply Gregorian correction for all dates (proleptic Gregorian)
-  const alpha = Math.floor((Z - 1867216.25) / 36524.25);
-  const A = Z + 1 + alpha - Math.floor(alpha / 4);
-  
-  const B = A + 1524;
-  const C = Math.floor((B - 122.1) / 365.25);
-  const D = Math.floor(365.25 * C);
-  const E = Math.floor((B - D) / 30.6001);
-  
-  const day = B - D - Math.floor(30.6001 * E) + F;
-  const month = E < 14 ? E - 1 : E - 13;
-  const year = month > 2 ? C - 4716 : C - 4715;
-  
-  // Return astronomical year numbering:
-  // Year 1 = 1 AD, Year 0 = 1 BC, Year -1 = 2 BC, Year -17 = 18 BC
-  return { year, month, day: Math.floor(day) };
+  // Proleptic Gregorian for ALL dates (no 1582 switch); astronomical years.
+  return JulianDay.jdnToGregorian(jd);
 }
 
 /**
@@ -71,9 +45,7 @@ function julianDayToGregorian(jd) {
  * @returns {Date}
  */
 function julianDayToDate(jd) {
-  // JD to Unix timestamp: (JD - 2440587.5) * 86400000
-  const unixMs = (jd - 2440587.5) * 86400000;
-  return new Date(unixMs);
+  return JulianDay.jdToInstant(jd);
 }
 
 /**
@@ -83,23 +55,7 @@ function julianDayToDate(jd) {
  * @returns {{year: number, month: number, day: number}}
  */
 function julianDayToJulianCalendar(jd) {
-  const Z = Math.floor(jd + 0.5);
-  const F = (jd + 0.5) - Z;
-  
-  // No Gregorian correction - straight Julian calendar
-  const A = Z;
-  
-  const B = A + 1524;
-  const C = Math.floor((B - 122.1) / 365.25);
-  const D = Math.floor(365.25 * C);
-  const E = Math.floor((B - D) / 30.6001);
-  
-  const day = B - D - Math.floor(30.6001 * E) + F;
-  const month = E < 14 ? E - 1 : E - 13;
-  const year = month > 2 ? C - 4716 : C - 4715;
-  
-  // Return astronomical year numbering
-  return { year, month, day: Math.floor(day) };
+  return JulianDay.jdnToJulian(jd);
 }
 
 /**

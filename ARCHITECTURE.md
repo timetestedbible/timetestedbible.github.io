@@ -261,6 +261,7 @@ Event: john-baptist-conception
 
 ### 1. Separation of Concerns
 - **app-store.js**: UI state, navigation, profile management
+- **julian-day.js**: The one copy of calendar <-> Julian Day Number math (Gregorian, Julian, and the site's display convention); every other file converts through it
 - **lunar-calendar-engine.js**: Pure astronomical calculations
 - **priestly-divisions.js**: Priestly cycle logic only
 - **event-resolver.js**: Event → JD resolution

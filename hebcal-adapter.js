@@ -15,6 +15,8 @@
   'use strict';
 
   const RD_TO_JD_OFFSET = 1721424.5;
+  const JulianDay = global.JulianDay
+    || (typeof require === 'function' ? require('./julian-day.js') : null);
 
   function getHDate() {
     if (typeof global.Hebcal !== 'undefined' && global.Hebcal.HDate) {
@@ -54,43 +56,21 @@
   }
 
   /**
-   * JD to Gregorian date (for jdToDisplayDate). Same logic as LunarCalendarEngine.
+   * JD -> display-convention civil date (Julian labels before Oct 15, 1582),
+   * matching LunarCalendarEngine.jdToDisplayDate.
    */
   function jdToGregorian(jd) {
-    const z = Math.floor(jd + 0.5);
-    const f = (jd + 0.5) - z;
-    let a = z;
-    if (z >= 2299161) {
-      const alpha = Math.floor((z - 1867216.25) / 36524.25);
-      a = z + 1 + alpha - Math.floor(alpha / 4);
-    }
-    const b = a + 1524;
-    const c = Math.floor((b - 122.1) / 365.25);
-    const d = Math.floor(365.25 * c);
-    const e = Math.floor((b - d) / 30.6001);
-    const day = b - d - Math.floor(30.6001 * e);
-    const month = (e < 14) ? e - 1 : e - 13;
-    const year = (month > 2) ? c - 4716 : c - 4715;
-    return { year, month, day };
+    return JulianDay.jdnToDisplay(jd);
   }
 
-
   // Convert a physical (proleptic-Gregorian) Date to the display convention the
-  // engine uses: Julian-calendar labels before Oct 15, 1582. Pure JDN math.
+  // engine uses: Julian-calendar labels before Oct 15, 1582. On/after the
+  // reform the Date is returned as-is (its time of day is preserved).
   function toDisplayDate(gregDate) {
-    const y = gregDate.getUTCFullYear(), mo = gregDate.getUTCMonth() + 1, d = gregDate.getUTCDate();
-    // Gregorian civil date -> JDN
-    const a = Math.floor((14 - mo) / 12), yy = y + 4800 - a, mm = mo + 12 * a - 3;
-    const jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
-    if (jdn >= 2299161) return gregDate; // on/after Oct 15 1582: Gregorian labels
-    // JDN -> Julian-calendar civil date
-    const B = jdn + 1524, C = Math.floor((B - 122.1) / 365.25), D = Math.floor(365.25 * C), E = Math.floor((B - D) / 30.6001);
-    const day = B - D - Math.floor(30.6001 * E);
-    const month = E < 14 ? E - 1 : E - 13;
-    const year = month > 2 ? C - 4716 : C - 4715;
-    const out = new Date(Date.UTC(2000, month - 1, day));
-    out.setUTCFullYear(year);
-    return out;
+    const jdn = JulianDay.gregorianToJDN(
+      gregDate.getUTCFullYear(), gregDate.getUTCMonth() + 1, gregDate.getUTCDate());
+    if (jdn >= JulianDay.REFORM_JDN) return gregDate;
+    return JulianDay.jdToDisplayDate(jdn);
   }
 
   function HebcalCalendarAdapter() {

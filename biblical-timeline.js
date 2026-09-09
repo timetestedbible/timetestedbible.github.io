@@ -3295,15 +3295,9 @@ function toggleClusterDropdown(parentEventId, badgeEl) {
   dropdown.className = 'cluster-dropdown';
   dropdown.dataset.clusterParent = parentEventId;
   
-  // Helper to format year from JD (precise Gregorian conversion)
+  // Helper to format year from JD (display convention: Julian labels before 1582)
   const jdToYearDisplay = (jd) => {
-    const Z = Math.floor(jd + 0.5);
-    let A = Z < 2299161 ? Z : Z + 1 + Math.floor((Z - 1867216.25) / 36524.25) - Math.floor(Math.floor((Z - 1867216.25) / 36524.25) / 4);
-    const B = A + 1524;
-    const C = Math.floor((B - 122.1) / 365.25);
-    const E = Math.floor((B - Math.floor(365.25 * C)) / 30.6001);
-    const month = E < 14 ? E - 1 : E - 13;
-    const year = month > 2 ? C - 4716 : C - 4715;
+    const { year } = JulianDay.jdnToDisplay(jd);
     if (year <= 0) return `${1 - year} BC`;
     return `${year} AD`;
   };
@@ -3775,16 +3769,8 @@ async function renderBiblicalTimelineInternal(container) {
           return { month, day, year: biblicalYear };
         };
         
-        // Helper: Gregorian to JD (simplified)
-        const gregorianToJD = (g) => {
-          const y = g.year;
-          const m = g.month;
-          const d = g.day;
-          const a = Math.floor((14 - m) / 12);
-          const y2 = y + 4800 - a;
-          const m2 = m + 12 * a - 3;
-          return d + Math.floor((153 * m2 + 2) / 5) + 365 * y2 + Math.floor(y2 / 4) - Math.floor(y2 / 100) + Math.floor(y2 / 400) - 32045;
-        };
+        // Helper: proleptic Gregorian {year, month, day} -> JDN
+        const gregorianToJD = (g) => JulianDay.gregorianToJDN(g.year, g.month, g.day);
         
         // Resolve lunar date through reference chain
         // Returns { month, day, year, source: 'stipulated'|'=formula' }
@@ -4423,12 +4409,7 @@ async function renderBiblicalTimelineInternal(container) {
   // Calculate Julian Day range (use EventResolver if available, else inline calculation)
   const gregorianToJD = (typeof EventResolver !== 'undefined') 
     ? EventResolver.gregorianToJulianDay 
-    : (y, m, d) => {
-        if (m <= 2) { y -= 1; m += 12; }
-        const A = Math.floor(y / 100);
-        const B = 2 - A + Math.floor(A / 4);
-        return Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + d + B - 1524.5;
-      };
+    : (y, m, d) => JulianDay.gregorianToJDN(y, m, d) - 0.5; // midnight JD, as EventResolver returns
   const minJD = gregorianToJD(minYear, 1, 1);
   const maxJD = gregorianToJD(maxYear, 12, 31);
   
@@ -5128,19 +5109,7 @@ async function renderBiblicalTimelineInternal(container) {
   // Julian Day to Gregorian (fallback if EventResolver not available)
   const jdToGregorian = (typeof EventResolver !== 'undefined')
     ? EventResolver.julianDayToGregorian
-    : (jd) => {
-        const Z = Math.floor(jd + 0.5);
-        const F = (jd + 0.5) - Z;
-        let A = Z < 2299161 ? Z : Z + 1 + Math.floor((Z - 1867216.25) / 36524.25) - Math.floor(Math.floor((Z - 1867216.25) / 36524.25) / 4);
-        const B = A + 1524;
-        const C = Math.floor((B - 122.1) / 365.25);
-        const D = Math.floor(365.25 * C);
-        const E = Math.floor((B - D) / 30.6001);
-        const day = B - D - Math.floor(30.6001 * E) + F;
-        const month = E < 14 ? E - 1 : E - 13;
-        const year = month > 2 ? C - 4716 : C - 4715;
-        return { year, month, day: Math.floor(day) };
-      };
+    : (jd) => JulianDay.jdnToDisplay(jd);
   
   // Build pointEventsForStack directly from slotWinners (no cascade stacking)
   const pointEventsForStack = [];

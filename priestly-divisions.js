@@ -122,27 +122,10 @@ async function ensurePriestlyDivisionsLoaded() {
   return PRIESTLY_DIVISIONS;
 }
 
-// Calculate Julian Day Number from a date
-// This uses the same algorithm as astronomy-engine-abstraction.js
+// Display-labeled Date (UTC fields: Julian labels before Oct 15, 1582,
+// Gregorian after) -> JD, keeping the UTC time of day.
 function dateToJulianDay(date) {
-  const y = date.getUTCFullYear();
-  const m = date.getUTCMonth() + 1;
-  const d = date.getUTCDate();
-  const h = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
-  
-  const a = Math.floor((14 - m) / 12);
-  const yy = y + 4800 - a;
-  const mm = m + 12 * a - 3;
-  
-  // Julian calendar for dates before Oct 15, 1582
-  // Gregorian calendar for dates on or after Oct 15, 1582
-  let jdn;
-  if (y < 1582 || (y === 1582 && (m < 10 || (m === 10 && d < 15)))) {
-    jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - 32083;
-  } else {
-    jdn = d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
-  }
-  return jdn + (h - 12) / 24;
+  return JulianDay.displayDateToJD(date);
 }
 
 // Get the reference date (15th of 7th month, 959 BC - Temple Dedication) for the current calendar settings

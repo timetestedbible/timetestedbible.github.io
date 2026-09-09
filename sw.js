@@ -34,6 +34,7 @@ const CORE_ASSETS = [
   '/content-manager.js',
   '/url-router.js',
   '/timezone-utils.js',
+  '/julian-day.js',
   '/lunar-calendar-engine.js',
   '/astronomy-utils.js',
   '/day-detail.js',
