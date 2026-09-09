@@ -210,10 +210,9 @@ const YEARS = QUICK ? [30, 1582, 2025, 2026] : [-1445, -586, 0, 30, 33, 70, 1582
 // Every location is held to the same invariants. Beyond ±48° latitude the
 // engine evaluates day-boundary sun events at ±47° on the same meridian
 // (LunarCalendarEngine.dayBoundaryLocation), so 28/31-day months and clock-time
-// fallbacks must not appear anywhere. The Virgo's-feet YEAR rule is not
-// clamped and can yield an 11-month year at high latitude; that is reported.
+// fallbacks must not appear anywhere. The Virgo's-feet year rule counts twelve
+// months before reading the sign, so every year has 12 or 13 months everywhere.
 const LOC_NAMES = QUICK ? ['Jerusalem', 'Dallas', 'Auckland', 'Tromso'] : Object.keys(LOCS);
-const yearRuleInfo = {};
 const labelJDN = d => JulianDay.displayDateToJDN(d);
 const agg = { calendars: 0, days: 0, lenBad: 0, len2930Bad: 0, startBad: 0, consecBad: 0, weekdayBad: 0, boundaryBad: 0, jdStepBad: 0, findBad: 0, monthsBad: 0, first: {} };
 const roundStats = {}; // informational: how often Math.round(jd) !== label JDN, by location+mode
@@ -223,10 +222,7 @@ for (const [cn, cfg] of Object.entries(CONFIGS)) for (const ln of LOC_NAMES) for
   const eng = new LunarCalendarEngine(astro).configure({ ...cfg, crescentThreshold: 18 });
   const cal = eng.generateYear(y, LOCS[ln], { includeUncertainty: (idx++ % 2) === 0 });
   agg.calendars++;
-  if (cal.months.length !== 12 && cal.months.length !== 13) {
-    if (Math.abs(LOCS[ln].lat) <= 48) note('monthsBad', { cn, ln, y, months: cal.months.length });
-    else yearRuleInfo[`${ln}/${cn}`] = (yearRuleInfo[`${ln}/${cn}`] || []).concat(`${y}: ${cal.months.length} months`);
-  }
+  if (cal.months.length !== 12 && cal.months.length !== 13) note('monthsBad', { cn, ln, y, months: cal.months.length });
   let prevL = null, prevJd = null;
   const rk = `${ln}/${cfg.dayStartTime}`; roundStats[rk] ??= { days: 0, off: 0 };
   for (const m of cal.months) {
@@ -269,8 +265,22 @@ for (const k of ['monthsBad', 'lenBad', 'len2930Bad', 'startBad', 'consecBad', '
   }
   summary(`year seams (${n} pairs)`, n, bad, first);
 }
-console.log('  info — high-latitude years with other than 12/13 months (Virgo\'s-feet year rule is not latitude-clamped):');
-if (Object.keys(yearRuleInfo).length) for (const [k, v] of Object.entries(yearRuleInfo)) console.log(`        ${k}: ${v.join(', ')}`); else console.log('        none');
+{ // Virgo chain sweep: successive year starts are 12 or 13 lunations apart, at every location, for seven centuries.
+  const SYN = 29.530589 * 86400000;
+  const [y0, y1] = QUICK ? [2000, 2100] : [1400, 2100];
+  for (const ln of (QUICK ? ['Jerusalem', 'Reykjavik'] : ['Jerusalem', 'Reykjavik', 'Dallas', 'Sydney'])) {
+    const e = new LunarCalendarEngine(astro).configure({ ...CONFIGS.timeTested2, crescentThreshold: 18 });
+    const gaps = {}; let bad = 0, first = null;
+    let prev = e._findVirgoFeetFullMoon(y0 - 1, LOCS[ln]);
+    for (let y = y0; y <= y1; y++) {
+      const cur = e._findVirgoFeetFullMoon(y, LOCS[ln]);
+      const g = Math.round((cur - prev) / SYN); gaps[g] = (gaps[g] || 0) + 1;
+      if (g !== 12 && g !== 13) { bad++; first ??= { y, prev: prev.toISOString().slice(0, 10), cur: cur.toISOString().slice(0, 10), g }; }
+      prev = cur;
+    }
+    summary(`Virgo chain ${ln} ${y0}–${y1}: year lengths other than 12/13 months (${JSON.stringify(gaps)})`, y1 - y0 + 1, bad, first);
+  }
+}
 console.log('  info — Math.round(jd) !== label JDN (the Sabbath Tester row-identity assumption), by location/mode:');
 for (const [k, v] of Object.entries(roundStats)) if (v.off) console.log(`        ${k}: ${v.off}/${v.days} days (${(100 * v.off / v.days).toFixed(0)}%)`);
 if (!Object.values(roundStats).some(v => v.off)) console.log('        none');

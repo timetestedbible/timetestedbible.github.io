@@ -707,7 +707,7 @@ function getVirgoMethodologyHtml(options = {}) {
   const { showCalculation = false, virgoCalc = null } = options;
   
   let html = `<p><strong>♍ Moon Under Virgo's Feet (Revelation 12:1)</strong></p>
-    <p>The year begins with the first full moon where the Moon's leading edge RA &gt; Spica RA. When this is true, Spica sets before the Moon, placing the Moon "under" Virgo's feet.</p>`;
+    <p>A year always has twelve months. The full moon that follows the twelfth month is watched at the next sunrise: if the Moon's leading edge has passed Spica (RA &gt; Spica RA), Spica sets before the Moon — the Moon stands "under" Virgo's feet — and that moon is month 1 of the new year. If not, it is month 13, and the following full moon begins the year.</p>`;
   
   // Add detailed calculation with human-readable explanations
   if (showCalculation && virgoCalc) {
@@ -729,6 +729,7 @@ function getVirgoMethodologyHtml(options = {}) {
     html += `
     <div style="margin: 12px 0; padding: 12px; background: var(--color-purple-muted); border: 1px solid var(--color-purple-muted); border-radius: 8px;">
       <div style="font-size: 1.1em; font-weight: bold; margin-bottom: 10px; ${validityStyle}">${validityIcon} Selected Full Moon: ${virgoDateStr}</div>
+      ${virgoCalc.monthsInPreviousYear ? `<div style="margin-bottom: 10px; font-size: 0.95em;">The previous year had <strong>${virgoCalc.monthsInPreviousYear}</strong> months${virgoCalc.monthsInPreviousYear === 13 ? ' — the moon after month 12 had not yet passed Spica, so it was month 13 and this moon opens the year by count' : ' — the moon after month 12 stood under Virgo\'s feet'}.</div>` : ''}
       
       <div style="background: var(--surface-hover); padding: 10px; border-radius: 6px; margin-bottom: 10px;">
         <strong>The Test (at daystart ${daystartTimeStr} in ${virgoCalc.locationName || 'Jerusalem'}):</strong>
@@ -779,7 +780,7 @@ function getVirgoMethodologyHtml(options = {}) {
       }
       
       html += `</table>
-          <p style="margin-top: 8px; font-size: 0.85em; color: var(--text-secondary);"><strong>Rule:</strong> Select the first full moon where Moon RA &gt; Spica RA (positive difference). Objects with lower RA set earlier.</p>
+          <p style="margin-top: 8px; font-size: 0.85em; color: var(--text-secondary);"><strong>Rule:</strong> Count twelve months from the previous year's start. The next full moon is month 1 if Moon RA &gt; Spica RA (positive difference); otherwise it is month 13 and the following full moon is month 1. Objects with lower RA set earlier.</p>
         </div></details>`;
     }
     
@@ -805,7 +806,10 @@ function getVirgoMethodologyHtml(options = {}) {
         <p>When Moon RA &gt; Spica RA, the Moon is "behind" Spica. As they move west, Spica (at Virgo's feet) sets first while the Moon is still visible—the Moon is "under" where Virgo's feet were.</p>
         
         <p><strong>Why Full Moon?</strong></p>
-        <p>At full moon, the Moon is opposite the Sun. In spring (Sun in Pisces/Aries, RA ~0-30°), the full Moon is in Virgo/Libra (RA ~180-210°). The first full moon where Moon RA exceeds Spica RA (~201°) marks the year.</p>
+        <p>At full moon, the Moon is opposite the Sun. In spring (Sun in Pisces/Aries, RA ~0-30°), the full Moon is in Virgo/Libra (RA ~180-210°). The sign is read once a year, at the full moon after the twelfth month: past Spica (~201°) it opens the year; short of it, one more month is counted first.</p>
+
+        <p><strong>Why count to twelve?</strong></p>
+        <p>The sign is observed, not computed, and an observer reads it at a sunrise — anywhere from a few minutes to a full day after the Moon is full, during which the Moon moves up to 13°. Reading it every spring moon would let a moon barely qualify one year and barely fail the next, leaving an 11-month year between. Counting twelve months first, then reading the sign once, keeps every year at 12 or 13 months.</p>
         
         <p><strong>Biblical Basis</strong></p>
         <blockquote>"And there appeared a great wonder in heaven; a woman clothed with the sun, and the moon under her feet..."<br>— Revelation 12:1</blockquote>

@@ -136,8 +136,9 @@ class LunarCalendarEngine {
     let searchDate = new Date(Date.UTC(2000, 11, 1));
     searchDate.setUTCFullYear(year - 1);
     
-    // End in May of next year to cover full lunar year
-    let endDate = new Date(Date.UTC(2000, 5, 1));
+    // End in August of next year: covers a full lunar year even when the
+    // Virgo count defers a year start into June
+    let endDate = new Date(Date.UTC(2000, 7, 1));
     endDate.setUTCFullYear(year + 1);
     
     // Moon phase angles: 0 = new/dark, 180 = full
@@ -221,7 +222,8 @@ class LunarCalendarEngine {
     }
     
     if (this.config.yearStartRule === 'virgoFeet') {
-      // Creator's Calendar: First full moon where moon is "under Virgo's feet" (Spica)
+      // Creator's Calendar: after twelve months, the next full moon is month 1 if the
+      // Moon is seen under Virgo's feet (past Spica), else month 13 (see _findVirgoFeetFullMoon)
       const virgoFullMoon = this._findVirgoFeetFullMoon(year, location);
       if (virgoFullMoon) {
         // Return a point just before the full moon so it gets selected
@@ -233,114 +235,169 @@ class LunarCalendarEngine {
     return equinox;
   }
   
+  /** Years per anchor block of the Virgo chain (see _findVirgoFeetFullMoon). */
+  static get VIRGO_CHAIN_BLOCK() { return 40; }
+  /** Minimum chain length before a requested year. */
+  static get VIRGO_CHAIN_MIN() { return 20; }
+
+  _virgoKey(year, location) {
+    return `${year}_${location.lat.toFixed(4)}_${location.lon.toFixed(4)}`;
+  }
+
+  /** Spica's right ascension (degrees) for a year, precessed from J2000. */
+  _spicaRA(year) {
+    return 201.298 + (year - 2000) * 0.0139;
+  }
+
+  _nextFullMoonAfter(date) {
+    const r = this.astro.searchMoonPhase(180, date, 40);
+    return r ? r.date : null;
+  }
+
   /**
-   * Find the first full moon where Moon is "under Virgo's feet" (Moon RA > Spica RA at sunrise)
-   * Uses instance-owned cache - no global state pollution
-   * @param {number} year - Gregorian year
-   * @param {Object} location - { lat, lon } - REQUIRED
-   * @returns {Date|null} The qualifying full moon date, or null if not found
+   * The observation: at the first sunrise after a full moon, from this
+   * location, has the Moon's leading edge passed Spica? If so, Spica sets
+   * before the Moon — the Moon stands under Virgo's feet.
    */
-  _findVirgoFeetFullMoon(year, location) {
-    const cacheKey = `${year}_${location.lat.toFixed(4)}_${location.lon.toFixed(4)}`;
-    
-    // Check instance cache first
-    if (this._virgoCache[cacheKey]) {
-      return new Date(this._virgoCache[cacheKey].selectedFullMoon);
-    }
-    
-    // Spica's RA with precession adjustment
-    const PRECESSION_RATE = 0.0139;  // degrees per year
-    const yearsFromJ2000 = year - 2000;
-    const spicaRA_J2000 = 201.298;  // degrees
-    const spicaRA = spicaRA_J2000 + (yearsFromJ2000 * PRECESSION_RATE);
-    
+  _observeVirgo(fullMoonDate, location) {
     const observer = this.astro.createObserver(location.lat, location.lon, 0);
-    // Use setUTCFullYear to avoid JS Date treating years 0-99 as 1900-based
+    const sunriseResult = this.astro.searchRiseSet('sun', observer, +1, fullMoonDate, 1);
+    const sunriseTime = sunriseResult ? sunriseResult.date : fullMoonDate;
+    const spicaRA = this._spicaRA(fullMoonDate.getUTCFullYear());
+    const moonEquator = this.astro.getEquator('moon', sunriseTime, observer);
+    const moonCenterRA = moonEquator ? moonEquator.ra * 15 : 0;  // hours -> degrees
+    const MOON_ANGULAR_RADIUS = 0.25;
+    const moonLeadingEdgeRA = moonCenterRA + MOON_ANGULAR_RADIUS;
+    const diff = moonLeadingEdgeRA - spicaRA;
+    return {
+      fullMoon: fullMoonDate.toISOString(),
+      daystart: sunriseTime.toISOString(),
+      moonCenterRA: moonCenterRA.toFixed(3),
+      moonRA: moonLeadingEdgeRA.toFixed(3),
+      spicaRA: spicaRA.toFixed(3),
+      diff: diff.toFixed(3),
+      qualifies: diff > 0,
+    };
+  }
+
+  _virgoEntry(year, location, fullMoon, obs, attempts, extra) {
+    return {
+      year,
+      selectedFullMoon: fullMoon.toISOString(),
+      daystart: obs.daystart,
+      moonRA: obs.moonRA,
+      moonCenterRA: obs.moonCenterRA,
+      spicaRA: obs.spicaRA,
+      difference: obs.diff,
+      attempts,
+      location: { lat: location.lat, lon: location.lon },
+      locationLat: location.lat,
+      locationLon: location.lon,
+      ...extra,
+    };
+  }
+
+  /**
+   * Chain anchor: the observation alone — the first full moon from Jan 20 of
+   * the year at which Spica sets first (up to 7 moons; falls back to the last
+   * one checked). Used only to start a chain, never for a requested year.
+   */
+  _observeFirstVirgoMoon(year, location, anchorYear) {
     const searchStart = new Date(Date.UTC(2000, 0, 20));
     searchStart.setUTCFullYear(year);
-    
-    let searchDate = new Date(searchStart.getTime());
+    let searchDate = searchStart;
     const attempts = [];
-    
-    // Search up to 7 full moons (Jan-Jul)
     for (let attempt = 0; attempt < 7; attempt++) {
-      const result = this.astro.searchMoonPhase(180, searchDate, 40);
-      if (!result) break;
-      
-      const fullMoonDate = result.date;
-      
-      // Find the FIRST SUNRISE AFTER the full moon at this location
-      // This is the correct time to check Moon vs Spica position
-      // The rule is: "On the morning after the full moon, has Moon passed Spica?"
-      
-      // Search for sunrise starting from the full moon time
-      // This finds the next sunrise after the full moon occurs
-      const sunriseResult = this.astro.searchRiseSet('sun', observer, +1, fullMoonDate, 1);
-      const sunriseTime = sunriseResult ? sunriseResult.date : fullMoonDate;
-      
-      // Calculate local date for logging
-      const offsetHours = location.lon / 15;  // Each 15° = 1 hour
-      const localSunriseTime = new Date(sunriseTime.getTime() + offsetHours * 60 * 60 * 1000);
-      const localYear = localSunriseTime.getUTCFullYear();
-      const localMonth = localSunriseTime.getUTCMonth();
-      const localDay = localSunriseTime.getUTCDate();
-      
-      // Get Moon's RA at sunrise
-      const moonEquator = this.astro.getEquator('moon', sunriseTime, observer);
-      const moonCenterRA = moonEquator ? moonEquator.ra * 15 : 0;  // Convert hours to degrees
-      const MOON_ANGULAR_RADIUS = 0.25;
-      const moonLeadingEdgeRA = moonCenterRA + MOON_ANGULAR_RADIUS;
-      
-      const diff = moonLeadingEdgeRA - spicaRA;
-      const spicaSetsFirst = diff > 0;
-      
-      // Virgo logging removed for cleaner console
-      
-      attempts.push({
-        fullMoon: fullMoonDate.toISOString(),
-        moonRA: moonLeadingEdgeRA.toFixed(3),
-        spicaRA: spicaRA.toFixed(3),
-        diff: diff.toFixed(3),
-        qualifies: spicaSetsFirst
-      });
-      
-      if (spicaSetsFirst) {
-        // Found qualifying moon - cache and return
-        this._virgoCache[cacheKey] = {
-          year,
-          selectedFullMoon: fullMoonDate.toISOString(),
-          daystart: sunriseTime.toISOString(),
-          moonRA: moonLeadingEdgeRA.toFixed(3),
-          spicaRA: spicaRA.toFixed(3),
-          difference: diff.toFixed(3),
-          attempts,
-          location: { lat: location.lat, lon: location.lon }
-        };
-        return fullMoonDate;
-      }
-      
-      // Move to after this full moon
-      searchDate = new Date(fullMoonDate.getTime() + 24 * 60 * 60 * 1000);
+      const fm = this._nextFullMoonAfter(searchDate);
+      if (!fm) break;
+      const obs = this._observeVirgo(fm, location);
+      attempts.push(obs);
+      if (obs.qualifies) return this._virgoEntry(year, location, fm, obs, attempts, { anchorYear, anchor: true });
+      searchDate = new Date(fm.getTime() + 24 * 60 * 60 * 1000);
     }
-    
-    // Fallback: use last checked moon
-    console.warn(`[Engine] No qualifying Virgo full moon found in 7 attempts for year ${year}`);
-    const lastAttempt = attempts[attempts.length - 1];
-    if (lastAttempt) {
-      const fallbackDate = new Date(lastAttempt.fullMoon);
-      this._virgoCache[cacheKey] = {
-        year,
-        selectedFullMoon: fallbackDate.toISOString(),
-        fallback: true,
-        attempts,
-        location: { lat: location.lat, lon: location.lon }
-      };
-      return fallbackDate;
-    }
-    
-    return null;
+    console.warn(`[Engine] No qualifying Virgo full moon found in 7 attempts for anchor year ${year}`);
+    const last = attempts[attempts.length - 1];
+    if (!last) return null;
+    return this._virgoEntry(year, location, new Date(last.fullMoon), last, attempts, { anchorYear, anchor: true, fallback: true });
   }
-  
+
+  /**
+   * One link of the chain: from the previous year's start, count twelve
+   * months, then read the sign once at the full moon that follows month 12.
+   * Under her feet -> that moon begins the year (12-month year). Not yet ->
+   * it is month 13 and the NEXT full moon begins the year by count, with no
+   * further test (it always passes: the Moon is a further ~18° east of Spica
+   * by then, more than a day's wait could take back).
+   */
+  _nextVirgoYearStart(prevEntry, year, location) {
+    const prevStart = new Date(prevEntry.selectedFullMoon);
+    const SYNODIC = 29.530589;
+    const twelfth = this._nextFullMoonAfter(new Date(prevStart.getTime() + (12 * SYNODIC - 15) * 86400000));
+    const obs12 = this._observeVirgo(twelfth, location);
+    const attempts = [obs12];
+    const common = { anchorYear: prevEntry.anchorYear, previousStart: prevEntry.selectedFullMoon };
+    if (prevEntry.fallback) common.fallback = true;
+    if (obs12.qualifies) {
+      return this._virgoEntry(year, location, twelfth, obs12, attempts, { ...common, monthsInPreviousYear: 12 });
+    }
+    const thirteenth = this._nextFullMoonAfter(new Date(twelfth.getTime() + 24 * 60 * 60 * 1000));
+    const obs13 = { ...this._observeVirgo(thirteenth, location), observed: undefined };
+    obs13.observed = obs13.qualifies;
+    obs13.qualifies = true;   // month 1 by count
+    obs13.byCount = true;
+    attempts.push(obs13);
+    return this._virgoEntry(year, location, thirteenth, obs13, attempts, { ...common, monthsInPreviousYear: 13 });
+  }
+
+  /**
+   * Year start under the Virgo's-feet rule (Rev 12:1).
+   *
+   * Observational rule (author ruling 2026-09-09): a year always has twelve
+   * months, and the sign is read once, at the boundary after month 12 — the
+   * full moon that follows the twelfth month is either month 1 of the new
+   * year (Spica seen to set before the Moon at the next sunrise) or month 13,
+   * in which case the following full moon is month 1. Reading the sign at
+   * whichever sunrise follows the full moon could otherwise let an early
+   * moon qualify one year and a late one fail the next, producing an
+   * 11-month year (Reykjavik 1583 under the previous per-year search).
+   *
+   * Each year's start therefore follows from the previous year's. Chains are
+   * anchored on a fixed grid (every VIRGO_CHAIN_BLOCK years, at least
+   * VIRGO_CHAIN_MIN years before the requested year) with the observation
+   * alone; two chains started a month apart merge at the first 13-month
+   * year, so the anchor's own choice cannot reach the requested year. Fixed
+   * anchors make the result independent of the order years are asked for.
+   *
+   * @param {number} year
+   * @param {Object} location - { lat, lon } - REQUIRED
+   * @returns {Date|null} The full moon that begins the year
+   */
+  _findVirgoFeetFullMoon(year, location) {
+    const key = this._virgoKey(year, location);
+    if (this._virgoCache[key]) return new Date(this._virgoCache[key].selectedFullMoon);
+
+    const block = LunarCalendarEngine.VIRGO_CHAIN_BLOCK;
+    const anchorYear = Math.floor((year - LunarCalendarEngine.VIRGO_CHAIN_MIN) / block) * block;
+
+    // Resume from the latest cached link of THIS anchor's chain, else observe the anchor
+    let entry = null, y = year - 1;
+    for (; y >= anchorYear; y--) {
+      const c = this._virgoCache[this._virgoKey(y, location)];
+      if (c && c.anchorYear === anchorYear) { entry = c; break; }
+    }
+    if (!entry) {
+      entry = this._observeFirstVirgoMoon(anchorYear, location, anchorYear);
+      if (!entry) return null;
+      this._virgoCache[this._virgoKey(anchorYear, location)] = entry;
+      y = anchorYear;
+    }
+    for (let z = y + 1; z <= year; z++) {
+      entry = this._nextVirgoYearStart(entry, z, location);
+      this._virgoCache[this._virgoKey(z, location)] = entry;
+    }
+    return new Date(entry.selectedFullMoon);
+  }
+
   /**
    * Debug method: Check Moon and Spica RA at specific times
    * Call from console: AppStore._engine.debugMoonSpica(new Date('2025-04-12T17:00:00Z'), 35)

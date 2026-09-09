@@ -105,6 +105,27 @@ check('dayBoundaryLocation 47.9N unchanged', LunarCalendarEngine.dayBoundaryLoca
   check('Jerusalem is its own boundary location', LunarCalendarEngine.dayBoundaryLocation(jer) === jer, true);
 }
 
+console.log('— Virgo year rule (author ruling 2026-09-09): twelve months, then read the sign once —');
+{
+  const cfg = { moonPhase: 'full', dayStartTime: 'morning', dayStartAngle: 12, yearStartRule: 'virgoFeet', crescentThreshold: 18 };
+  const reyk = { lat: 64.1466, lon: -21.9426 }, jer = { lat: 31.7683, lon: 35.2137 };
+  const e = new LunarCalendarEngine(astro).configure(cfg);
+  // The former per-year search gave Reykjavik 11 months in 1583 (May 6 1583 -> Mar 26 1584) and 13 in 1584.
+  check('Reykjavik 1583 has 12 months', e.generateYear(1583, reyk, {}).months.length, 12);
+  check('Reykjavik 1584 has 12 months', e.generateYear(1584, reyk, {}).months.length, 12);
+  check('Reykjavik 1584 opens Apr 24 (the moon after month 12 of 1583 was month 13)', e.generateYear(1584, reyk, {}).months[0].moonEvent.toISOString().slice(0, 10), '1584-04-24');
+  check('Reykjavik 1584 diagnostics: previous year (1583) had 12 months', e.getVirgoCalculation(1584, reyk).monthsInPreviousYear, 12);
+  check('Reykjavik 1583 diagnostics: previous year (1582) had 13 months, start deferred by count', JSON.stringify([e.getVirgoCalculation(1583, reyk).monthsInPreviousYear, e.getVirgoCalculation(1583, reyk).attempts.length, e.getVirgoCalculation(1583, reyk).attempts[1].byCount]), JSON.stringify([13, 2, true]));
+  check('Reykjavik 1583 opens May 6 (Apr 7 was month 13 of 1582)', e.generateYear(1583, reyk, {}).months[0].moonEvent.toISOString().slice(0, 10), '1583-05-06');
+  // In an ordinary year the chain and the bare observation agree (Jerusalem 2020–2030).
+  let agree = 0; for (let y = 2020; y <= 2030; y++) { const chain = e._findVirgoFeetFullMoon(y, jer).getTime(); const plain = new Date(e._observeFirstVirgoMoon(y, jer, y).selectedFullMoon).getTime(); if (chain === plain) agree++; }
+  check('Jerusalem 2020–2030: chained start == observed start', agree, 11);
+  // Order independence: asking for 2026 first, or 1990 first, must not change 2025.
+  const fresh = new LunarCalendarEngine(astro).configure(cfg).generateYear(2025, jer, {}).months[0].moonEvent.getTime();
+  const warm = new LunarCalendarEngine(astro).configure(cfg); warm.generateYear(2026, jer, {}); warm.generateYear(1990, jer, {});
+  check('Jerusalem 2025 start independent of evaluation order', warm.generateYear(2025, jer, {}).months[0].moonEvent.getTime(), fresh);
+}
+
 console.log('— Historically attested ancient weekdays (Julian calendar dates) —');
 // Julian April 7, 30 AD — the classical crescent-Passover crucifixion candidate — was a Friday.
 check('Julian 30-04-07 weekday', NAMES[JulianDay.jdnToWeekday(JulianDay.julianToJDN(30, 4, 7))], 'Friday');

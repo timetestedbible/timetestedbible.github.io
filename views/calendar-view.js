@@ -2513,7 +2513,7 @@ const CalendarView = {
             <p>Based on the requirement that Passover (Day 14-15) must occur on or after the spring equinox. This can result in a month starting up to 13 days before the equinox.</p>
             
             <h4>Moon Under Virgo's Feet (Rev 12:1)</h4>
-            <p>Revelation 12:1 describes "a woman clothed with the sun, and the moon under her feet" — and the Hebrew text adds the ranking: "from her head begins the cycle, the <em>first of the twelve</em>." Virgo is the first of the twelve constellations, and the year begins with the full moon standing under her feet near the spring equinox. This is the reckoning of <em>Time Tested Tradition</em>, 2nd edition — the full case is in <a href="/books/meat-bibles-symbolic-language/sun-moon-and-stars/">MEAT ch. 29, Sun, Moon, and Stars</a>.</p>
+            <p>Revelation 12:1 describes "a woman clothed with the sun, and the moon under her feet" — and the Hebrew text adds the ranking: "from her head begins the cycle, the <em>first of the twelve</em>." Virgo is the first of the twelve constellations, and the year begins with the full moon standing under her feet near the spring equinox. A year always has twelve months: the full moon after the twelfth month is watched once, at the next sunrise — past Spica it is month 1, short of Spica it is month 13 and the following moon opens the year. This is the reckoning of <em>Time Tested Tradition</em>, 2nd edition — the full case is in <a href="/books/meat-bibles-symbolic-language/sun-moon-and-stars/">MEAT ch. 29, Sun, Moon, and Stars</a>.</p>
           </div>
         </details>
         <div class="yearstart-hebcal-doc" style="display: none;">
