@@ -824,7 +824,13 @@ const URLRouter = {
           if (parts[1]) params.study = parts[1];
         } else if (contentType === 'timetested') {
           // Parse book chapter: /reader/timetested/chapter-slug
-          if (parts[1]) params.chapterId = parts[1];
+          // Shared links may carry a folder segment (/reader/timetested/extra/e03_...) or a
+          // legacy kebab-case slug; resolve them against the chapter registry when it is loaded.
+          if (parts[1]) {
+            const rest = parts.slice(1).filter(Boolean);
+            const resolved = (typeof resolveTimeTestedChapterLink === 'function') ? resolveTimeTestedChapterLink(rest.join('/')) : null;
+            params.chapterId = resolved ? resolved.chapterId : rest[rest.length - 1];
+          }
         } else if (contentType === 'blog') {
           // Parse blog post: /reader/blog/post-slug
           if (parts[1]) params.slug = parts[1];

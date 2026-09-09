@@ -163,5 +163,27 @@ const TIME_TESTED_CHAPTERS = [
   }
 ];
 
+/**
+ * Resolve a book link found in data — "/chapters/extra/e03_Herods_Appointment/",
+ * "/chapters/18-appointed-times/#passover", "13_Herod_the_Great" — to a registry
+ * chapter id plus optional section. Folders are not part of ids (the registry
+ * carries them), and legacy kebab-case slugs match case-insensitively.
+ * Returns null when no chapter matches, so callers can skip a dead link.
+ * @param {string} path
+ * @returns {{chapterId: string, section: string|null}|null}
+ */
+function resolveTimeTestedChapterLink(path) {
+  if (!path) return null;
+  let p = String(path), section = null;
+  const hash = p.indexOf('#');
+  if (hash !== -1) { section = p.slice(hash + 1) || null; p = p.slice(0, hash); }
+  const slug = p.replace(/\.md$/, '').split('/').filter(Boolean).pop() || '';
+  if (!slug) return null;
+  const norm = s => s.toLowerCase().replace(/[-_\s]+/g, '_');
+  const hit = TIME_TESTED_CHAPTERS.find(c => c.id === slug) || TIME_TESTED_CHAPTERS.find(c => norm(c.id) === norm(slug));
+  return hit ? { chapterId: hit.id, section } : null;
+}
+
 // Make available globally
 window.TIME_TESTED_CHAPTERS = TIME_TESTED_CHAPTERS;
+window.resolveTimeTestedChapterLink = resolveTimeTestedChapterLink;

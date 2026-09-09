@@ -55,6 +55,8 @@ function getFormattedDateParts(date) {
   };
 }
 
+const day_detail_warnedChapters = {};
+
 // Observer-local calendar date of a real instant (conjunction, sunset) with the
 // site's display labels: "Wednesday, Mar 22, 30 AD".
 function formatAncientDate(instant, longitude) {
@@ -385,9 +387,10 @@ function showDayDetail(dayObj, month) {
           section = chapterPath.slice(hashIdx + 1);
           chapterPath = chapterPath.slice(0, hashIdx);
         }
-        let chapterId = chapterPath.replace(/^\/chapters\//, '').replace(/\/$/, '');
-        // Convert dashes to underscores and fix title case: "18-appointed-times" -> "18_Appointed_Times"
-        chapterId = chapterId.split('-').map((part, i) => i === 0 ? part : part.charAt(0).toUpperCase() + part.slice(1)).join('_');
+        // Resolve against the chapter registry (handles folder prefixes and legacy kebab-case slugs)
+        const resolved = (typeof resolveTimeTestedChapterLink === 'function') ? resolveTimeTestedChapterLink(feast.chapter) : null;
+        let chapterId = resolved ? resolved.chapterId
+          : chapterPath.replace(/^\/chapters\//, '').replace(/\/$/, '').split('-').map((part, i) => i === 0 ? part : part.charAt(0).toUpperCase() + part.slice(1)).join('_');
         const sectionParam = section ? `,section:'${section}'` : '';
         feastChapterLink = `<a href="#" class="day-detail-feast-link" onclick="event.preventDefault();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${chapterId}'${sectionParam}}})">Learn more &rarr;</a>`;
       }
@@ -846,13 +849,19 @@ function showDayDetail(dayObj, month) {
           articlePath = articlePath.slice(0, hashIdx);
         }
         
-        let chapterId = articlePath
-          .replace(/^\/chapters\//, '')  // Remove /chapters/ prefix
-          .replace(/\/$/, '');           // Remove trailing slash
-        
-        // Build the AppStore dispatch params
-        const sectionParam = section ? `,section:'${section}'` : '';
-        bookLinkHtml = `<div class="bible-event-book-link"><a href="#" onclick="event.preventDefault();event.stopPropagation();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${chapterId}'${sectionParam}}})">📖 Read more in the book chapter</a></div>`;
+        // Resolve against the chapter registry: folders ("extra/") are not part of chapter ids,
+        // and legacy kebab-case slugs are matched case-insensitively. No match -> no dead link.
+        const resolved = (typeof resolveTimeTestedChapterLink === 'function')
+          ? resolveTimeTestedChapterLink(event.bookChapter)
+          : { chapterId: articlePath.replace(/^\/chapters\//, '').replace(/\/$/, '').split('/').pop(), section };
+        if (resolved) {
+          const chapterId = resolved.chapterId;
+          const sectionParam = section ? `,section:'${section}'` : '';
+          bookLinkHtml = `<div class="bible-event-book-link"><a href="#" onclick="event.preventDefault();event.stopPropagation();AppStore.dispatch({type:'SET_VIEW',view:'reader',params:{contentType:'timetested',chapterId:'${chapterId}'${sectionParam}}})">📖 Read more in the book chapter</a></div>`;
+        } else if (typeof console !== 'undefined' && !(day_detail_warnedChapters[event.bookChapter])) {
+          day_detail_warnedChapters[event.bookChapter] = true;
+          console.warn('[DayDetail] Event links to a chapter that is not in the registry:', event.bookChapter, '—', event.title);
+        }
       }
       
       // Add expandable details section if present
