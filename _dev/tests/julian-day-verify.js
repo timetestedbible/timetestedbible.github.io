@@ -329,7 +329,7 @@ function makeBrowserContext() {
   return vm.createContext(ctx);
 }
 // Same relative order as _layouts/default.html
-const BROWSER_FILES = ['julian-day.js', 'timezone-utils.js', 'astronomy-utils.js', 'lunar-calendar-engine.js', 'hebcal-adapter.js', 'priestly-divisions.js', 'year-utils.js', 'app-store.js', 'url-router.js', 'event-resolver.js', 'day-detail.js', 'views/sabbath-tester-view.js'];
+const BROWSER_FILES = ['julian-day.js', 'timezone-utils.js', 'astronomy-utils.js', 'lunar-calendar-engine.js', 'lib/hebcal/hebcal-core.min.js', 'lib/hebcal/hebcal-loader.js', 'hebcal-adapter.js', 'priestly-divisions.js', 'year-utils.js', 'app-store.js', 'url-router.js', 'event-resolver.js', 'day-detail.js', 'views/sabbath-tester-view.js'];
 const ctx = makeBrowserContext();
 const loaded = {};
 for (const f of BROWSER_FILES) {
@@ -403,6 +403,26 @@ if (loaded['url-router.js']) {
 if (loaded['views/sabbath-tester-view.js']) {
   const STV = g('SabbathTesterView');
   agree('SabbathTesterView.jdRowIdentity date and weekday agree with JulianDay', () => { const jdn = sampleJDN(); const r = STV.jdRowIdentity(jdn + rnd() * 0.98 - 0.49), disp = JulianDay.jdnToDisplay(jdn); const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; const yearStr = disp.year <= 0 ? `${1 - disp.year} BC` : `${disp.year} AD`; return (r.jdn === jdn && r.weekdayName === NAMES[JulianDay.jdnToWeekday(jdn)] && r.dateStr === `${MON[disp.month - 1]} ${disp.day}, ${yearStr}`) ? null : { jdn, r, disp }; });
+}
+if (loaded['hebcal-adapter.js'] && loaded['lib/hebcal/hebcal-core.min.js']) {
+  // The Modern Jewish profile: a Nisan-to-Adar year assembled from two Hebrew year numbers.
+  const A = g('new HebcalCalendarAdapter()');
+  const cal26 = A.generateYear(2026, { lat: 31.7683, lon: 35.2137 }, {});
+  const m6 = cal26.months.find(m => m.monthNumber === 6), m7 = cal26.months.find(m => m.monthNumber === 7);
+  check('Modern Jewish 2026: Elul 29 is Sep 11', m6.days[m6.days.length - 1].gregorianDate.toISOString().slice(0, 10), '2026-09-11');
+  check('Modern Jewish 2026: Tishri 1 (Rosh Hashanah 5787) is Sep 12', m7.days[0].gregorianDate.toISOString().slice(0, 10), '2026-09-12');
+  check('Modern Jewish 2026: Tishri 10 (Yom Kippur 5787) is Sep 21', m7.days[9].gregorianDate.toISOString().slice(0, 10), '2026-09-21');
+  check('Modern Jewish 2026: 13 months (5787 doubles Adar)', cal26.months.length, 13);
+  { // every day label consecutive across the whole year, 12 or 13 months, for 1900-2100
+    let bad = 0, first = null, n = 0;
+    for (let y = 1900; y <= 2100; y += (QUICK ? 10 : 1)) {
+      const cal = A.generateYear(y, { lat: 31.7683, lon: 35.2137 }, {}); n++;
+      if (cal.months.length !== 12 && cal.months.length !== 13) { bad++; first ??= { y, months: cal.months.length }; continue; }
+      let prev = null;
+      for (const m of cal.months) for (const d of m.days) { const L = JulianDay.displayDateToJDN(d.gregorianDate); if (prev !== null && L - prev !== 1) { bad++; first ??= { y, m: m.monthNumber, d: d.lunarDay, prev, L }; } prev = L; }
+    }
+    summary(`Modern Jewish ${QUICK ? 'sampled ' : ''}1900-2100: consecutive labels, 12/13 months (${n} years)`, n, bad, first);
+  }
 }
 if (loaded['hebcal-adapter.js']) {
   // toDisplayDate / jdToGregorian are private to the adapter's IIFE; lift them out of the source text.

@@ -111,15 +111,23 @@
       return this._calendarCache[cacheKey];
     }
 
+    // This calendar's year runs Nisan to Adar, but the Hebrew year NUMBER turns
+    // over at Tishri (month 7). Months 1-6 (Nisan-Elul) belong to Hebrew year H;
+    // months 7-12/13 (Tishri-Adar) belong to H+1. Building every month from H
+    // put Tishri a year early (2026's month 7 rendered as Sep 23, 2025, right
+    // after Elul 29 = Sep 11, 2026) and read the leap status from the wrong year
+    // (5787 doubles Adar; 5786 does not).
+    const yearForMonth = function (m) { return m >= 7 ? hebrewYear + 1 : hebrewYear; };
     const months = [];
-    const monthCount = HDate.monthsInYear ? HDate.monthsInYear(hebrewYear) : 13;
+    const monthCount = HDate.monthsInYear ? HDate.monthsInYear(hebrewYear + 1) : 13;
 
     for (let m = 1; m <= monthCount; m++) {
-      const daysInMonth = HDate.daysInMonth ? HDate.daysInMonth(m, hebrewYear) : 30;
+      const hy = yearForMonth(m);
+      const daysInMonth = HDate.daysInMonth ? HDate.daysInMonth(m, hy) : 30;
       const days = [];
 
       for (let d = 1; d <= daysInMonth; d++) {
-        const hd = new HDate(d, m, hebrewYear);
+        const hd = new HDate(d, m, hy);
         const rd = hd.abs();
         const jd = rdToJd(rd);
         // Build Date from JD so year is correct for 1-99 AD (hd.greg() uses JS Date which treats year 33 as 1933)
@@ -142,6 +150,7 @@
       const firstDay = days[0];
       months.push({
         monthNumber: m,
+        hebrewYear: hy,
         startDate: firstDay ? firstDay.gregorianDate : null,
         startJD: firstDay ? firstDay.jd : null,
         daysInMonth: days.length,
