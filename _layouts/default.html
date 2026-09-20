@@ -100,7 +100,7 @@
   <link rel="preload" href="/lib/swisseph/swisseph-browser.js" as="script" crossorigin>
   
   <!-- Theme tokens MUST load first (defines all color variables for both themes) -->
-  <link rel="stylesheet" href="/assets/css/theme-tokens.css?v=jdn25">
+  <link rel="stylesheet" href="/assets/css/theme-tokens.css?v=jdn26">
   
   <!-- Prevent flash-of-wrong-theme: apply theme before first paint -->
   <script>
@@ -146,7 +146,7 @@
   <link rel="stylesheet" href="/assets/css/symbols.css">
   <link rel="stylesheet" href="/assets/css/reader.css">
   <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/sabbath-tester.css?v=jdn25">
+  <link rel="stylesheet" href="/assets/css/sabbath-tester.css?v=jdn26">
   <link rel="stylesheet" href="/assets/css/blog.css">
   <link rel="stylesheet" href="/assets/css/book.css">
   
@@ -657,19 +657,19 @@
   <script src="/lib/marked.min.js"></script>
   
   <!-- Calendar <-> Julian Day Number arithmetic (single source; everything below depends on it) -->
-  <script src="/julian-day.js?v=jdn25"></script>
+  <script src="/julian-day.js?v=jdn26"></script>
   
   <!-- Timezone lookup utility -->
   <script src="/timezone-utils.js"></script>
   
   <!-- Astronomy Engine Abstraction (loads Swiss Ephemeris, NASA Eclipse data) -->
-  <script src="/astronomy-engine-abstraction.js?v=jdn25"></script>
-  <script src="/astronomy-utils.js?v=jdn25"></script>
-  <script src="/lunar-calendar-engine.js?v=jdn25"></script>
+  <script src="/astronomy-engine-abstraction.js?v=jdn26"></script>
+  <script src="/astronomy-utils.js?v=jdn26"></script>
+  <script src="/lunar-calendar-engine.js?v=jdn26"></script>
   <!-- Hebcal (optional): run scripts/fetch-hebcal.sh to download the bundle -->
   <script src="/lib/hebcal/hebcal-core.min.js"></script>
   <script src="/lib/hebcal/hebcal-loader.js"></script>
-  <script src="/hebcal-adapter.js?v=jdn25"></script>
+  <script src="/hebcal-adapter.js?v=jdn26"></script>
   <script src="/jubilee-cycle.js"></script>
   <script src="/feasts.js"></script>
   <script src="/bible-events-loader.js"></script>
@@ -680,8 +680,8 @@
   <script src="/year-utils.js"></script>
   
   <!-- Core (cache-bust with version) -->
-  <script src="/app-store.js?v=jdn25"></script>
-  <script src="/url-router.js?v=jdn25"></script>
+  <script src="/app-store.js?v=jdn26"></script>
+  <script src="/url-router.js?v=jdn26"></script>
   <script src="/layout.js"></script>
   <script src="/content-manager.js"></script>
   
@@ -696,7 +696,7 @@
   <script src="/global-search.js"></script>
   
   <!-- Views -->
-  <script src="/views/calendar-view.js?v=jdn25"></script>
+  <script src="/views/calendar-view.js?v=jdn26"></script>
   
   <!-- Bible Reader and Strong's Dictionaries -->
   <script src="/strongs-hebrew-dictionary.js"></script>
@@ -709,7 +709,7 @@
   <script src="/book-scripture-index.js"></script>
   <script src="/cross-references.js"></script>
   <script src="/verse-event-links.js"></script>
-  <script src="/bible.js?v=jdn25"></script>
+  <script src="/bible.js?v=jdn26"></script>
   <script src="/classics.js"></script>
   <script src="/morphology-decoder.js"></script>
   <script src="/morphhb-gloss.js"></script>
@@ -718,8 +718,8 @@
   <script src="/views/bible-view.js"></script>
   <script src="/views/symbols-view.js"></script>
   <script src="/timetested-chapters.js"></script>
-  <script src="/symbolic-language-chapters.js?v=jdn25"></script>
-  <script src="/time-tested-tradition-chapters.js?v=jdn25"></script>
+  <script src="/symbolic-language-chapters.js?v=jdn26"></script>
+  <script src="/time-tested-tradition-chapters.js?v=jdn26"></script>
   <script defer src="/assets/js/glossary-popup.js"></script>
   <script src="/views/reader-view.js"></script>
   
@@ -730,16 +730,16 @@
   <script src="/views/timeline-view.js"></script>
   
   <!-- Day Detail and World Clock -->
-  <script src="/day-detail.js?v=jdn25"></script>
-  <script src="/world-clock.js?v=jdn25"></script>
+  <script src="/day-detail.js?v=jdn26"></script>
+  <script src="/world-clock.js?v=jdn26"></script>
   <script src="/views/book-view.js"></script>
-  <script src="/views/tutorial-view.js?v=jdn25"></script>
+  <script src="/views/tutorial-view.js?v=jdn26"></script>
   <script src="/views/help-view.js"></script>
   <script src="/views/methodology-view.js"></script>
   <script src="/views/meat-tester-view.js"></script>
   <script src="/views/priestly-view.js"></script>
-  <script src="/views/sabbath-tester-view.js?v=jdn25"></script>
-  <script src="/views/blog-view.js?v=jdn25"></script>
+  <script src="/views/sabbath-tester-view.js?v=jdn26"></script>
+  <script src="/views/blog-view.js?v=jdn26"></script>
   <script src="/views/settings-view.js"></script>
   
   <!-- Initialize App -->
@@ -1115,11 +1115,16 @@
           });
         }
 
-        navigator.serviceWorker.register('/sw.js')
+        // updateViaCache 'none': sw.js pulls its version from version.js via
+        // importScripts. With the default ('imports') that import is served
+        // from the HTTP cache, so a browser could keep the old worker, and
+        // the old precached bundle, through a deploy even on a hard reload.
+        navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
           .then((registration) => {
             console.log('[PWA] Service worker registered:', registration.scope);
             
-            // Check for updates every hour
+            // Check for updates now and every hour
+            registration.update().catch(() => {});
             setInterval(() => registration.update(), 60 * 60 * 1000);
             
           })

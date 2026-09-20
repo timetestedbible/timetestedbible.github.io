@@ -57,10 +57,12 @@ function formatCitySlug(slug) {
 }
 
 // Get local time string for a location based on longitude
-function getLocalTimeForLocation(lat, lon) {
-  // Get current view time - try getViewTime, then AppStore, then current time
-  let viewTime;
-  if (typeof getViewTime === 'function') {
+function getLocalTimeForLocation(lat, lon, instant) {
+  // Get current view time - the caller's instant, then getViewTime, then AppStore, then now
+  let viewTime = (instant instanceof Date && isFinite(instant.getTime())) ? instant : null;
+  if (viewTime) {
+    // use the caller's instant
+  } else if (typeof getViewTime === 'function') {
     viewTime = getViewTime();
   } else if (typeof AppStore !== 'undefined' && AppStore.getState) {
     const selectedJD = AppStore.getState()?.context?.selectedDate;
@@ -84,6 +86,36 @@ function getLocalTimeForLocation(lat, lon) {
   const ampm = hours >= 12 ? 'PM' : 'AM';
   const h12 = hours % 12 || 12;
   return `${h12}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+}
+
+// The instant "This Moment on Other Calendars" evaluates and displays: the
+// selected day's civil label at the clock time being shown. context.selectedDate
+// is a real instant after "Today" but midnight UTC of the label after
+// navigating by lunar date (02:00 in Jerusalem, hours before dawn), so reading
+// the lunar day straight from it put morning calendars a day early. The
+// label's JDN plus the displayed time of day is one coherent moment either way.
+function worldClockMomentJD(labelJDN, now) {
+  const frac = (now.getUTCHours() * 3600 + now.getUTCMinutes() * 60 + now.getUTCSeconds()) / 86400;
+  return labelJDN - 0.5 + frac;
+}
+
+function getWorldClockMoment(derived, context) {
+  const now = new Date();
+  let labelJDN = null;
+  try {
+    // Exact label of the selected day when the calendar has it
+    const months = derived?.lunarMonths || [];
+    const month = months[derived?.currentMonthIndex ?? -1];
+    const dayObj = month?.days?.find(d => d.lunarDay === derived?.currentLunarDay);
+    if (dayObj?.gregorianDate) labelJDN = JulianDay.displayDateToJDN(dayObj.gregorianDate);
+  } catch (e) { /* fall back to the JD */ }
+  if (labelJDN == null) {
+    const sel = derived?.currentJD || context?.selectedDate;
+    if (sel == null || !isFinite(sel)) return { jd: JulianDay.instantToJD(now), instant: now };
+    labelJDN = JulianDay.jdnOf(sel);
+  }
+  const jd = worldClockMomentJD(labelJDN, now);
+  return { jd, instant: JulianDay.jdToInstant(jd) };
 }
 
 // Render profile icon (supports favicon URLs)

@@ -402,6 +402,14 @@ if (loaded['world-clock.js'] && loaded['lunar-calendar-engine.js'] && loaded['he
   check('world-clock: Time-Tested 2033 Month 13 Day 10 labels Apr 13, 2034', g('getLunarDateOnCalendar(2033, 13, 10, __tt)').gregorianDate.toISOString().slice(0, 10), '2034-04-13');
   check('world-clock: formatTimeAtLocation without tz-lookup uses the whole-hour longitude rule (noon UTC at 35.2E -> 2:00 PM)', g('formatTimeAtLocation(2461350.0, 31.7683, 35.2137)'), '2:00 PM');
   check('world-clock: formatShortDisplayDate uses the display label', g('formatShortDisplayDate(JulianDay.jdToDisplayDate(2461350))'), 'Thu, Nov 5, 2026');
+  // "This Moment": the selected day's label at the displayed clock time, never midnight UTC of the label.
+  ctx.__now = new Date(Date.UTC(2026, 8, 20, 19, 13, 0));
+  check('world-clock: moment for label Nov 5 at 19:13 UTC is Nov 5 19:13 UTC', g('worldClockMomentJD(2461350, __now)').toFixed(4), '2461350.3007');
+  ctx.__x = g('worldClockMomentJD(2461350, __now)');
+  check('world-clock: that moment reads Day 10 of Month 7 on Time-Tested at Jerusalem (midnight UTC would have read Day 9)', JSON.stringify(g('getLunarDayForJD(__x, __tt)')), JSON.stringify({ day: 10, month: 7 }));
+  ctx.__x = 2461349.5;
+  check('world-clock: control, midnight UTC Nov 5 itself is still before dawn, Day 9', JSON.stringify(g('getLunarDayForJD(__x, __tt)')), JSON.stringify({ day: 9, month: 7 }));
+  check('world-clock: getLocalTimeForLocation formats a supplied instant at the location', g('getLocalTimeForLocation(31.7683, 35.2137, __now)'), '9:13 PM');
 }
 if (loaded['priestly-divisions.js']) {
   const dtj = g('dateToJulianDay');

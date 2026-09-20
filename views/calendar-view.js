@@ -3389,8 +3389,10 @@ const CalendarView = {
       return;
     }
     
-    // Get the selected Julian Day
-    const selectedJD = derived.currentJD || AppStore.getState()?.context?.selectedDate;
+    // The moment shown: the selected day's civil date at the clock time
+    // displayed below each calendar (see getWorldClockMoment).
+    const moment = (typeof getWorldClockMoment === 'function') ? getWorldClockMoment(derived, context) : null;
+    const selectedJD = moment ? moment.jd : (derived.currentJD || AppStore.getState()?.context?.selectedDate);
     if (!selectedJD) {
       compareContainer.innerHTML = '';
       return;
@@ -3451,7 +3453,7 @@ const CalendarView = {
       // Get local time for this location
       let localTime = '';
       if (typeof getLocalTimeForLocation === 'function') {
-        localTime = getLocalTimeForLocation(coords.lat, coords.lon);
+        localTime = getLocalTimeForLocation(coords.lat, coords.lon, moment ? moment.instant : undefined);
       }
       
       // Get priestly course for this calendar
@@ -3461,7 +3463,7 @@ const CalendarView = {
         const skipPriestly = lunarDayInfo.day === 1 && (profile.sabbathMode === 'lunar');
         if (!skipPriestly) {
           const courseInfo = getPriestlyCourse(
-            new Date(checkTimestamp),
+            moment ? moment.instant : new Date(),  // checkTimestamp was never defined here
             lunarDayInfo.day,
             lunarDayInfo.month,
             { ...tempProfile, sabbathMode: profile.sabbathMode || 'lunar' }

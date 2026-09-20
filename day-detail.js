@@ -1131,7 +1131,7 @@ function showDayDetail(dayObj, month) {
         const skipPriestly = lunarDayInfo.day === 1 && (profile.sabbathMode === 'lunar');
         if (!skipPriestly) {
           const courseInfo = getPriestlyCourse(
-            new Date(checkTimestamp),
+            new Date(),  // checkTimestamp was never defined here
             lunarDayInfo.day,
             lunarDayInfo.month,
             { ...tempProfile, sabbathMode: profile.sabbathMode || 'lunar' }
