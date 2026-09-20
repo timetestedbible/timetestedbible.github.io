@@ -1115,10 +1115,12 @@
           });
         }
 
-        // updateViaCache 'none': sw.js pulls its version from version.js via
-        // importScripts. With the default ('imports') that import is served
-        // from the HTTP cache, so a browser could keep the old worker, and
-        // the old precached bundle, through a deploy even on a hard reload.
+        // sw.js carries its build stamp inline (Jekyll), so its bytes change on
+        // every deploy and the browser's update check, which always revalidates
+        // the worker script, sees each release. updateViaCache 'none' extends
+        // that to any script the worker may import; with the default
+        // ('imports') an import is served from the HTTP cache, which is how
+        // browsers kept an old worker and its precached bundle through a deploy.
         navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
           .then((registration) => {
             console.log('[PWA] Service worker registered:', registration.scope);
@@ -1126,6 +1128,22 @@
             // Check for updates now and every hour
             registration.update().catch(() => {});
             setInterval(() => registration.update(), 60 * 60 * 1000);
+            
+            // Belt and braces: sw.js calls skipWaiting itself, but if a new
+            // worker is ever left waiting (an older worker build, a browser
+            // quirk) tell it to take over so the controllerchange reload below
+            // brings this page onto the new version.
+            const promote = (worker) => {
+              if (worker && navigator.serviceWorker.controller) worker.postMessage({ type: 'SKIP_WAITING' });
+            };
+            promote(registration.waiting);
+            registration.addEventListener('updatefound', () => {
+              const installing = registration.installing;
+              if (!installing) return;
+              installing.addEventListener('statechange', () => {
+                if (installing.state === 'installed') promote(installing);
+              });
+            });
             
           })
           .catch((error) => {

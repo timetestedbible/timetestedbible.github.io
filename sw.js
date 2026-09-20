@@ -1,7 +1,19 @@
+---
+layout: null
+---
 // Time Tested Bible Service Worker
+//
+// Jekyll processes this file so the build stamp is inlined below. The stamp
+// used to arrive through importScripts('/version.js'), which left the bytes of
+// sw.js identical from one deploy to the next. Browsers always revalidate the
+// worker script itself on an update check, but the import could be answered
+// from the HTTP cache, so a deployed update went unnoticed until that cache
+// entry expired (or, in some browsers, indefinitely). With the stamp in the
+// file, every deploy changes sw.js, every visit detects it, the new worker
+// installs, skipWaiting + clients.claim hand it the page, and the page reloads.
 
 // On localhost, immediately unregister and skip all caching.
-// Jekyll rebuilds change version.js on every save, causing an SW reinstall storm
+// Jekyll rebuilds change the stamp on every save, causing an SW reinstall storm
 // (169+ parallel fetches, skipWaiting → reload loop, CPU peg).
 const _isLocalDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
 if (_isLocalDev) {
@@ -14,7 +26,7 @@ if (_isLocalDev) {
 
 if (!_isLocalDev) {
 
-importScripts('/version.js');
+const APP_VERSION = {{ site.time | date: '%s' }};  // build stamp, inlined by Jekyll
 const CACHE_NAME = 'timetested-bible-v' + APP_VERSION;
 
 // Static Jekyll pages the SPA cannot render itself (router staticPage passthrough)
