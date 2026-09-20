@@ -88,7 +88,9 @@ function refreshDayDetailIfVisible() {
   if (compareContainer && typeof CalendarView !== 'undefined' && CalendarView.populateWorldClock) {
     const state = AppStore.getState();
     const derived = AppStore.getDerived();
-    CalendarView.populateWorldClock(panel.closest('.calendar-content') || panel.parentElement, derived, state.context);
+    const root = panel.closest('.calendar-content') || panel.parentElement;
+    CalendarView.populateWorldClock(root, derived, state.context);
+    if (CalendarView.populateBiblicalDateCompare) CalendarView.populateBiblicalDateCompare(root, derived, state.context);
     return;
   }
   

@@ -3674,10 +3674,42 @@ span.nav-arrow.month-nav {
   display: none;
 }
 
-.day-detail-profile-compare {
+.day-detail-profile-compare,
+.day-detail-biblical-compare {
   margin-top: 16px;
   padding-top: 12px;
   border-top: 1px solid var(--border-accent);
+}
+
+/* Header spacer stands in for the "+" button so both section titles line up */
+.profile-compare-spacer {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.profile-compare-subtitle {
+  font-weight: normal;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+/* A calendar with no such Month/Day this year: shown, not clickable */
+.profile-compare-item.unavailable {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.profile-compare-item.unavailable:hover {
+  background: var(--surface-sunken);
+  border-color: transparent;
+}
+
+.profile-compare-missing {
+  color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .profile-compare-title {

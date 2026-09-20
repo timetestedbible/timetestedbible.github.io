@@ -329,7 +329,7 @@ function makeBrowserContext() {
   return vm.createContext(ctx);
 }
 // Same relative order as _layouts/default.html
-const BROWSER_FILES = ['julian-day.js', 'timezone-utils.js', 'astronomy-utils.js', 'lunar-calendar-engine.js', 'lib/hebcal/hebcal-core.min.js', 'lib/hebcal/hebcal-loader.js', 'hebcal-adapter.js', 'priestly-divisions.js', 'year-utils.js', 'app-store.js', 'url-router.js', 'event-resolver.js', 'day-detail.js', 'views/sabbath-tester-view.js'];
+const BROWSER_FILES = ['julian-day.js', 'timezone-utils.js', 'astronomy-utils.js', 'lunar-calendar-engine.js', 'lib/hebcal/hebcal-core.min.js', 'lib/hebcal/hebcal-loader.js', 'hebcal-adapter.js', 'priestly-divisions.js', 'year-utils.js', 'app-store.js', 'url-router.js', 'event-resolver.js', 'day-detail.js', 'world-clock.js', 'views/sabbath-tester-view.js'];
 const ctx = makeBrowserContext();
 const loaded = {};
 for (const f of BROWSER_FILES) {
@@ -376,6 +376,32 @@ if (loaded['day-detail.js']) {
   agree('day-detail.getFormattedDateParts weekday/isJulian/day agree with JulianDay', () => { const jdn = sampleJDN(); const d = JulianDay.jdToDisplayDate(jdn); const p = parts(d), disp = JulianDay.jdnToDisplay(jdn); return (p.weekday === JulianDay.jdnToWeekday(jdn) && p.weekdayName === NAMES[p.weekday] && p.isJulian === disp.isJulian && p.day === disp.day && p.month === disp.month - 1 && p.year === disp.year) ? null : { jdn, p, disp }; });
   check('day-detail.formatAncientDate is defined and formats the 30 AD conjunction', fad(JulianDay.jdToInstant(1732096.23), 35.2137), 'Wednesday, Mar 22, 30');
   check('day-detail.formatAncientDate accepts a timestamp too', fad(Date.UTC(2026, 1, 1, 22, 9), -96.797), 'Sunday, Feb 1, 2026');
+}
+if (loaded['world-clock.js'] && loaded['lunar-calendar-engine.js'] && loaded['hebcal-adapter.js']) {
+  // "This Biblical Date on Other Calendars": lunar year/month/day -> that calendar's civil label and day start.
+  g('globalThis.__tt = { moonPhase: "full", dayStartTime: "morning", dayStartAngle: 12, yearStartRule: "virgoFeet", crescentThreshold: 18, lat: 31.7683, lon: 35.2137 };' +
+    'globalThis.__mj = { moonPhase: "dark", dayStartTime: "evening", dayStartAngle: 0, yearStartRule: "equinox", crescentThreshold: 18, calendarBackend: "hebcal", lat: 31.7683, lon: 35.2137 };');
+  const iso = jd => JulianDay.jdToInstant(jd).toISOString();
+  const tt = g('getLunarDateOnCalendar(2026, 7, 10, __tt)');
+  check('world-clock: Time-Tested 7/10 of 2026 (Atonement) at Jerusalem labels Nov 5, 2026', tt && tt.gregorianDate.toISOString().slice(0, 10), '2026-11-05');
+  check('world-clock: ...and begins at dawn on that date (12 deg twilight, 02:00-05:00 UTC)', tt && iso(tt.startJD).slice(0, 10) === '2026-11-05' && (h => h >= 2 && h <= 5)(JulianDay.jdToInstant(tt.startJD).getUTCHours()), true);
+  ctx.__x = tt.startJD + 0.2;
+  check('world-clock: round trip, an instant inside 7/10 reads as 7/10 (lunar backend)', JSON.stringify(g('getLunarDayForJD(__x, __tt)')), JSON.stringify({ day: 10, month: 7 }));
+  ctx.__x = tt.startJD - 0.3;
+  check('world-clock: an instant before the 7/10 boundary reads as 7/9', JSON.stringify(g('getLunarDayForJD(__x, __tt)')), JSON.stringify({ day: 9, month: 7 }));
+  const mj = g('getLunarDateOnCalendar(2026, 7, 10, __mj)');
+  check('world-clock: Modern Jewish 7/10 of 2026 (Yom Kippur 5787) labels Sep 21, 2026', mj && mj.gregorianDate.toISOString().slice(0, 10), '2026-09-21');
+  check('world-clock: ...and begins at the previous sunset, Sep 20 15:00-17:00 UTC', mj && iso(mj.startJD).slice(0, 10) === '2026-09-20' && (h => h >= 15 && h <= 17)(JulianDay.jdToInstant(mj.startJD).getUTCHours()), true);
+  ctx.__x = JulianDay.instantToJD(new Date(Date.UTC(2026, 8, 21, 12)));
+  check('world-clock: Modern Jewish noon UTC Sep 21 2026 reads 7/10 (hebcal backend, not the lunar engine)', JSON.stringify(g('getLunarDayForJD(__x, __mj)')), JSON.stringify({ day: 10, month: 7 }));
+  ctx.__x = JulianDay.instantToJD(new Date(Date.UTC(2026, 8, 20, 18)));
+  check('world-clock: Modern Jewish 18:00 UTC Sep 20 (after Jerusalem sunset) already reads 7/10', JSON.stringify(g('getLunarDayForJD(__x, __mj)')), JSON.stringify({ day: 10, month: 7 }));
+  ctx.__x = JulianDay.instantToJD(new Date(Date.UTC(2026, 8, 20, 12)));
+  check('world-clock: Modern Jewish noon UTC Sep 20 reads 7/9', JSON.stringify(g('getLunarDayForJD(__x, __mj)')), JSON.stringify({ day: 9, month: 7 }));
+  check('world-clock: Time-Tested 2026 has no Month 13 (reported, not thrown)', JSON.stringify(g('getLunarDateOnCalendar(2026, 13, 1, __tt)')), JSON.stringify({ missing: 'month', monthsInYear: 12 }));
+  check('world-clock: Time-Tested 2033 Month 13 Day 10 labels Apr 13, 2034', g('getLunarDateOnCalendar(2033, 13, 10, __tt)').gregorianDate.toISOString().slice(0, 10), '2034-04-13');
+  check('world-clock: formatTimeAtLocation without tz-lookup uses the whole-hour longitude rule (noon UTC at 35.2E -> 2:00 PM)', g('formatTimeAtLocation(2461350.0, 31.7683, 35.2137)'), '2:00 PM');
+  check('world-clock: formatShortDisplayDate uses the display label', g('formatShortDisplayDate(JulianDay.jdToDisplayDate(2461350))'), 'Thu, Nov 5, 2026');
 }
 if (loaded['priestly-divisions.js']) {
   const dtj = g('dateToJulianDay');

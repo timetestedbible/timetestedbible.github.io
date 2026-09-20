@@ -128,58 +128,48 @@ function getFeastIconsForLunarDay(month, day) {
 function getLunarDayForJD(jd, profile) {
   if (!jd || !isFinite(jd)) return null;
   
+  const isHebcal = profile.calendarBackend === 'hebcal';
+  const finder = isHebcal ? _findHebcalDayInMonths : _findDayInMonths;
+  
+  // Fast path: search the already-computed calendar from AppStore. Only valid
+  // when it was built by the same backend with the same rules at the same
+  // place (day boundaries move with latitude and longitude).
   try {
-    // Fast path: search the already-computed calendar from AppStore
     if (typeof AppStore !== 'undefined') {
       const appState = AppStore.getState();
       const derived = AppStore.getDerived();
       const currentProfile = window.PROFILES?.[appState.context?.profileId] || {};
+      const loc = appState.context?.location || {};
       
-      const sameProfile = profile.moonPhase === (currentProfile.moonPhase || 'full') &&
-                          profile.dayStartTime === (currentProfile.dayStartTime || 'morning') &&
-                          profile.yearStartRule === (currentProfile.yearStartRule || 'equinox') &&
-                          Math.abs((profile.dayStartAngle ?? 12) - (currentProfile.dayStartAngle ?? 12)) < 0.01 &&
-                          Math.abs((profile.crescentThreshold ?? 18) - (currentProfile.crescentThreshold ?? 18)) < 0.01;
+      const sameBackend = (currentProfile.calendarBackend === 'hebcal') === isHebcal;
+      const sameProfile = sameBackend && (isHebcal || (
+        profile.moonPhase === (currentProfile.moonPhase || 'full') &&
+        profile.dayStartTime === (currentProfile.dayStartTime || 'morning') &&
+        profile.yearStartRule === (currentProfile.yearStartRule || 'equinox') &&
+        Math.abs((profile.dayStartAngle ?? 12) - (currentProfile.dayStartAngle ?? 12)) < 0.01 &&
+        Math.abs((profile.crescentThreshold ?? 18) - (currentProfile.crescentThreshold ?? 18)) < 0.01 &&
+        Math.abs((profile.lat ?? 31.7683) - (loc.lat ?? 31.7683)) < 0.01 &&
+        Math.abs((profile.lon ?? 35.2137) - (loc.lon ?? 35.2137)) < 0.01));
       
       if (sameProfile && derived.lunarMonths && derived.lunarMonths.length > 0) {
-        const result = _findDayInMonths(derived.lunarMonths, jd);
+        const result = finder(derived.lunarMonths, jd, profile);
         if (result) return result;
       }
     }
-    
-    // Slow path: generate calendar via shared LunarCalendarEngine
-    if (typeof LunarCalendarEngine === 'undefined') return null;
-    const astroEngine = typeof getAstroEngine === 'function' ? getAstroEngine() : null;
-    if (!astroEngine) return null;
-    
-    if (!getLunarDayForJD._engine) {
-      getLunarDayForJD._engine = new LunarCalendarEngine(astroEngine);
-    }
-    const calEngine = getLunarDayForJD._engine;
-    
-    calEngine.configure({
-      moonPhase: profile.moonPhase || 'full',
-      dayStartTime: profile.dayStartTime || 'morning',
-      dayStartAngle: profile.dayStartAngle ?? 12,
-      yearStartRule: profile.yearStartRule || 'equinox',
-      crescentThreshold: profile.crescentThreshold ?? 18
-    });
-    
-    const location = { lat: profile.lat ?? 31.7683, lon: profile.lon ?? 35.2137 };
-    
-    // Convert JD to calendar year using the engine's accurate conversion,
-    // then try that year and previous (dates before spring equinox belong
-    // to the previous biblical year).
-    const calDate = calEngine.jdToDisplayDate(jd);
-    const approxYear = calDate.year;
+  } catch (e) {
+    // fall through to the slow path
+  }
+  
+  try {
+    // Slow path: build that calendar's year. Dates before the spring new year
+    // belong to the previous calendar year, so try the label year and the one before.
+    const approxYear = JulianDay.jdnToDisplay(jd).year;
     for (const year of [approxYear, approxYear - 1]) {
-      const calendar = calEngine.generateYear(year, location);
+      const calendar = getCalendarForProfile(year, profile);
       if (!calendar || !calendar.months) continue;
-      
-      const result = _findDayInMonths(calendar.months, jd);
+      const result = finder(calendar.months, jd, profile);
       if (result) return result;
     }
-    
     return null;
   } catch (e) {
     console.warn('Error calculating lunar day for profile:', e);
@@ -187,20 +177,177 @@ function getLunarDayForJD(jd, profile) {
   }
 }
 
+// Build a calendar year for an arbitrary profile at its own location.
+// Profiles with calendarBackend 'hebcal' come from the hebcal adapter (the
+// Modern Jewish calendar is arithmetic, no sky); everything else from the
+// shared LunarCalendarEngine, reconfigured per call (its own cache is keyed by
+// year, place and rules, so repeat calls are cheap).
+function getCalendarForProfile(year, profile) {
+  const location = { lat: profile.lat ?? 31.7683, lon: profile.lon ?? 35.2137 };
+  
+  if (profile.calendarBackend === 'hebcal') {
+    if (typeof HebcalCalendarAdapter === 'undefined' || !HebcalCalendarAdapter.isAvailable()) return null;
+    if (!getCalendarForProfile._hebcal) getCalendarForProfile._hebcal = new HebcalCalendarAdapter();
+    return getCalendarForProfile._hebcal.generateYear(year, location, {});
+  }
+  
+  const calEngine = _sharedLunarEngine();
+  if (!calEngine) return null;
+  calEngine.configure({
+    moonPhase: profile.moonPhase || 'full',
+    dayStartTime: profile.dayStartTime || 'morning',
+    dayStartAngle: profile.dayStartAngle ?? 12,
+    yearStartRule: profile.yearStartRule || 'equinox',
+    crescentThreshold: profile.crescentThreshold ?? 18
+  });
+  return calEngine.generateYear(year, location);
+}
+
+// One LunarCalendarEngine for every world-clock lookup (null until the
+// astronomy engine has loaded).
+function _sharedLunarEngine() {
+  if (typeof LunarCalendarEngine === 'undefined') return null;
+  if (!getLunarDayForJD._engine) {
+    const astroEngine = typeof getAstroEngine === 'function' ? getAstroEngine() : null;
+    if (!astroEngine) return null;
+    getLunarDayForJD._engine = new LunarCalendarEngine(astroEngine);
+  }
+  return getLunarDayForJD._engine;
+}
+
 // Search an array of lunar months for the day containing a given JD.
-// Each day has a .jd field (day start in JD). We find the day whose JD
-// is closest to (but not after) the target JD.
+// Each day has a .jd field, the instant the day begins (dawn or sunset by the
+// profile). The containing day is the last one whose start is at or before the
+// target. (Bucketing by whole Julian day, as this once did, put the hours
+// between midnight and dawn, or between noon and sunset, in the wrong day.)
 function _findDayInMonths(months, targetJD) {
-  const jdFloor = Math.floor(targetJD);
+  let found = null;
   for (const month of months) {
     if (!month.days || month.days.length === 0) continue;
     for (const day of month.days) {
-      if (day.jd != null && Math.floor(day.jd) === jdFloor) {
+      if (day.jd == null) continue;
+      if (day.jd > targetJD) {
+        return found ? { day: found.day, month: found.month } : null;  // null: before this year began
+      }
+      found = { day: day.lunarDay, month: month.monthNumber, jd: day.jd };
+    }
+  }
+  // Past the last boundary we know: inside the final day only while it lasts.
+  if (found && targetJD < found.jd + 1.1) return { day: found.day, month: found.month };
+  return null;
+}
+
+// The hebcal adapter's days carry midnight of their civil label, not a day
+// boundary, so match by label: the civil date at the observer's longitude,
+// rolled forward once the sun has set there (the Jewish day begins at sunset).
+function _findHebcalDayInMonths(months, targetJD, profile) {
+  const lat = profile.lat ?? 31.7683, lon = profile.lon ?? 35.2137;
+  let labelJDN = JulianDay.jdnOf(targetJD + lon / 360);
+  const sunsetJD = _sunsetJD(labelJDN, lat, lon);
+  if (sunsetJD != null && targetJD >= sunsetJD) labelJDN += 1;
+  for (const month of months) {
+    if (!month.days) continue;
+    for (const day of month.days) {
+      if (day.gregorianDate && JulianDay.displayDateToJDN(day.gregorianDate) === labelJDN) {
         return { day: day.lunarDay, month: month.monthNumber };
       }
     }
   }
   return null;
+}
+
+// Sunset, as a JD, on the civil day with the given JDN at a location; null
+// without an astronomy engine.
+function _sunsetJD(jdn, lat, lon) {
+  try {
+    const calEngine = _sharedLunarEngine();
+    if (!calEngine) return null;
+    // Proleptic-Gregorian fields for this JDN: the engine builds its search
+    // instant from the Date's UTC fields, so no Julian label may leak in here.
+    const civil = new Date((jdn - 0.5 - 2440587.5) * 86400000);
+    const ms = calEngine.getSunsetTime(civil, { lat, lon });
+    return ms == null ? null : JulianDay.instantToJD(new Date(ms));
+  } catch (e) {
+    return null;
+  }
+}
+
+// ── "This Biblical Date on Other Calendars" ──────────────────────────────────
+
+// Where a lunar year/month/day falls on some other calendar (profile at a
+// location). Returns the day's label date and the instant the day begins, or
+// { missing: 'month' | 'day' } when that calendar has no such date this year
+// (a 12-month year has no Month 13; a 29-day month has no Day 30).
+function getLunarDateOnCalendar(year, month, day, profile) {
+  const calendar = getCalendarForProfile(year, profile);
+  if (!calendar || !calendar.months || calendar.months.length === 0) return null;
+  const monthData = calendar.months.find(m => m.monthNumber === month);
+  if (!monthData) return { missing: 'month', monthsInYear: calendar.months.length };
+  const days = monthData.days || [];
+  const dayData = days.find(d => d.lunarDay === day);
+  if (!dayData) return { missing: 'day', daysInMonth: days.length };
+  
+  // Lunar-engine days carry their real boundary in .jd. Adapter days carry
+  // midnight of the civil label; that Jewish day began at the previous sunset.
+  let startJD = dayData.jd;
+  if (profile.calendarBackend === 'hebcal') {
+    const labelJDN = JulianDay.displayDateToJDN(dayData.gregorianDate);
+    startJD = _sunsetJD(labelJDN - 1, profile.lat ?? 31.7683, profile.lon ?? 35.2137);
+  }
+  return {
+    year, month, day,
+    gregorianDate: dayData.gregorianDate,
+    weekday: dayData.weekday,
+    weekdayName: dayData.weekdayName,
+    startJD,
+    monthsInYear: calendar.months.length,
+    daysInMonth: days.length
+  };
+}
+
+// Time of day of an instant (JD) at a location: the IANA zone when tz-lookup
+// is present and the date is modern, else the whole-hour longitude rule that
+// getLocalTimeForLocation uses.
+function formatTimeAtLocation(jd, lat, lon) {
+  if (jd == null || !isFinite(jd)) return '';
+  const instant = JulianDay.jdToInstant(jd);
+  if (instant.getUTCFullYear() >= 1900) {
+    try {
+      const tz = (typeof TimezoneUtils !== 'undefined' && TimezoneUtils.getTimezoneFromCoords)
+        ? TimezoneUtils.getTimezoneFromCoords(lat, lon) : null;
+      if (typeof tz === 'string' && tz) {
+        return new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: tz }).format(instant);
+      }
+    } catch (e) { /* fall through to the longitude rule */ }
+  }
+  const local = new Date(instant.getTime() + Math.round(lon / 15) * 3600000);
+  const h = local.getUTCHours(), m = local.getUTCMinutes();
+  return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`;
+}
+
+// "Thu, Nov 5, 2026" or "Wed, Mar 22, 30 (Julian)" from a display-labeled Date.
+function formatShortDisplayDate(date) {
+  if (typeof getFormattedDateParts === 'function') {
+    const p = getFormattedDateParts(date);
+    return `${p.weekdayName.slice(0, 3)}, ${p.shortMonthName} ${p.day}, ${p.yearStr}${p.calendarSuffix}`;
+  }
+  return date.toISOString().slice(0, 10);
+}
+
+// Go to a lunar date on another calendar: profile, location and date in one
+// dispatch, so the store recomputes once and the URL becomes
+// /profile/location/year/month/day.
+function navigateToLunarDateOnCalendar(profileId, locationSlug, year, month, day) {
+  const profile = window.PROFILES?.[profileId];
+  const coords = (typeof URLRouter !== 'undefined') ? URLRouter.CITY_SLUGS?.[locationSlug] : null;
+  if (!profile || !coords || typeof AppStore === 'undefined') return;
+  AppStore.dispatch({
+    type: 'SET_LUNAR_DATETIME',
+    profileId,
+    lat: coords.lat,
+    lon: coords.lon,
+    year, month, day
+  });
 }
 
 // Legacy wrapper for callers still passing timestamps

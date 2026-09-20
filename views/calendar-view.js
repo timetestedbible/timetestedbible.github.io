@@ -87,6 +87,7 @@ const CalendarView = {
       const _context = state.context;
       requestAnimationFrame(() => {
         this.populateWorldClock(container, _derived, _context);
+        this.populateBiblicalDateCompare(container, _derived, _context);
       });
     }
     
@@ -736,6 +737,7 @@ const CalendarView = {
         <div class="day-detail-body">
           ${yearInfoHtml}
           <div class="day-detail-profile-compare"></div>
+          <div class="day-detail-biblical-compare"></div>
           ${feastsHtml}
           ${torahHtml}
           ${eventsHtml}
@@ -3509,6 +3511,114 @@ const CalendarView = {
     grid.style.display = isHidden ? '' : 'none';
     if (arrow) arrow.textContent = isHidden ? '▼' : '▶';
     localStorage.setItem('worldClockCollapsed', isHidden ? '0' : '1');
+  },
+
+  /**
+   * "This Biblical Date on Other Calendars": the selected lunar month/day looked
+   * up on every world-clock calendar. Each card shows the civil date that
+   * calendar gives the same Day/Month and when that day begins there; clicking
+   * goes to that day on that calendar.
+   */
+  populateBiblicalDateCompare(container, derived, context) {
+    const el = container.querySelector('.day-detail-biblical-compare');
+    if (!el) return;
+    if (typeof getWorldClockEntries !== 'function' || typeof getLunarDateOnCalendar !== 'function') {
+      el.innerHTML = '';
+      return;
+    }
+    const entries = getWorldClockEntries();
+    const sel = context?.selectedLunarDate
+      || ((derived?.year != null && derived?.currentLunarDay != null)
+        ? { year: derived.year, month: (derived.currentMonthIndex ?? 0) + 1, day: derived.currentLunarDay }
+        : null);
+    if (!entries || entries.length === 0 || !sel) {
+      el.innerHTML = '';
+      return;
+    }
+    
+    const isCollapsed = localStorage.getItem('biblicalCompareCollapsed') === '1';
+    const currentProfileId = context?.profileId || 'timeTested2';
+    const currentLocationSlug = (typeof URLRouter !== 'undefined' && URLRouter._getLocationSlug && context?.location)
+      ? URLRouter._getLocationSlug(context.location) : 'jerusalem';
+    
+    let html = `
+      <div class="profile-compare-header" onclick="CalendarView.toggleBiblicalCompare(event)">
+        <span class="profile-compare-arrow biblical-compare-arrow">${isCollapsed ? '▶' : '▼'}</span>
+        <span class="profile-compare-title">📖 This Biblical Date on Other Calendars <span class="profile-compare-subtitle">Day ${sel.day} of Month ${sel.month}</span></span>
+        <span class="profile-compare-spacer"></span>
+      </div>
+      <div class="profile-compare-grid biblical-compare-grid" style="${isCollapsed ? 'display:none' : ''}">`;
+    
+    let hasResults = false;
+    entries.forEach((entry, index) => {
+      const profile = window.PROFILES?.[entry.profileId];
+      if (!profile) return;
+      const coords = (typeof URLRouter !== 'undefined') ? URLRouter.CITY_SLUGS?.[entry.locationSlug] : null;
+      if (!coords) return;
+      const tempProfile = { ...profile, lat: coords.lat, lon: coords.lon };
+      
+      let info = null;
+      try {
+        info = getLunarDateOnCalendar(sel.year, sel.month, sel.day, tempProfile);
+      } catch (e) {
+        console.warn('[CalendarView] biblical date lookup failed:', entry.profileId, e);
+      }
+      if (!info) return;
+      hasResults = true;
+      
+      const isCurrent = entry.profileId === currentProfileId && entry.locationSlug === currentLocationSlug;
+      const iconHtml = (typeof renderProfileIcon === 'function') ? renderProfileIcon(profile) : (profile.icon || '');
+      const locName = entry.locationName || this.formatCitySlug(entry.locationSlug);
+      
+      let body, clickable = false, title = '';
+      if (info.missing === 'month') {
+        body = `<span class="profile-compare-day profile-compare-missing">No Month ${sel.month}</span>
+          <span class="profile-compare-location">${info.monthsInYear} months in this year · ${locName}</span>`;
+      } else if (info.missing === 'day') {
+        body = `<span class="profile-compare-day profile-compare-missing">No Day ${sel.day}</span>
+          <span class="profile-compare-location">Month ${sel.month} has ${info.daysInMonth} days · ${locName}</span>`;
+      } else {
+        clickable = true;
+        const dateStr = (typeof formatShortDisplayDate === 'function') ? formatShortDisplayDate(info.gregorianDate) : '';
+        let beginsStr = '';
+        if (info.startJD != null && typeof formatTimeAtLocation === 'function') {
+          beginsStr = formatTimeAtLocation(info.startJD, coords.lat, coords.lon);
+          // An evening-start day begins on the civil day before its label: name that day.
+          if (typeof formatMoonEventDate === 'function') {
+            const startLocal = formatMoonEventDate(JulianDay.jdToInstant(info.startJD).getTime(), coords.lon);
+            if (startLocal.dayNum !== info.gregorianDate.getUTCDate()) {
+              beginsStr = `${startLocal.dayOfWeek.slice(0, 3)} ${beginsStr}`;
+            }
+          }
+        }
+        body = `<span class="profile-compare-day">${dateStr}</span>
+          <span class="profile-compare-location">${locName}${beginsStr ? ' · begins ' + beginsStr : ''}</span>`;
+        title = `Go to Day ${sel.day} of Month ${sel.month} on the ${profile.name} calendar`;
+      }
+      
+      const onclick = clickable
+        ? `onclick="navigateToLunarDateOnCalendar('${entry.profileId}', '${entry.locationSlug}', ${sel.year}, ${sel.month}, ${sel.day})"`
+        : '';
+      html += `
+        <div class="profile-compare-item${isCurrent ? ' current' : ''}${clickable ? '' : ' unavailable'}" ${onclick} title="${title}">
+          <button class="world-clock-remove-btn" onclick="event.stopPropagation(); removeWorldClockEntryAndRefresh(${index})" title="Remove">×</button>
+          <span class="profile-compare-name">${iconHtml} ${profile.name}</span>
+          ${body}
+        </div>`;
+    });
+    html += `</div>`;
+    el.innerHTML = hasResults ? html : '';
+  },
+
+  toggleBiblicalCompare(e) {
+    e.stopPropagation();
+    const grid = document.querySelector('.biblical-compare-grid');
+    const arrow = document.querySelector('.biblical-compare-arrow');
+    if (!grid) return;
+    const isHidden = grid.style.display === 'none';
+    grid.style.display = isHidden ? '' : 'none';
+    if (arrow) arrow.textContent = isHidden ? '▼' : '▶';
+    localStorage.setItem('biblicalCompareCollapsed', isHidden ? '0' : '1');
   },
 
   /**
